@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-structured-writing
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-structured-writing
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Structured Writing
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-structured-writing`.
+> Consolidated module standardized under namespace `.periodic-structured-writing`.
 
 ---
 

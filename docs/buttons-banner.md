@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-buttons-banner
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-buttons-banner
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Buttons Banner
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-buttons-banner`.
+> Consolidated module standardized under namespace `.periodic-buttons-banner`.
 
 ---
 

@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-table-of-contents
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-table-of-contents
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Table Of Contents
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-table-of-contents`.
+> Consolidated module standardized under namespace `.periodic-table-of-contents`.
 
 ---
 

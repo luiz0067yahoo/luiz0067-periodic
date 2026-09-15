@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-advanced-spacer
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-advanced-spacer
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Advanced Spacer
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-advanced-spacer`.
+> Consolidated module standardized under namespace `.periodic-advanced-spacer`.
 
 ---
 

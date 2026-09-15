@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-pdf-flipbook
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-pdf-flipbook
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Pdf Flipbook
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-pdf-flipbook`.
+> Consolidated module standardized under namespace `.periodic-pdf-flipbook`.
 
 ---
 

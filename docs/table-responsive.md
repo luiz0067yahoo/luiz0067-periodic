@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-table-responsive
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-table-responsive
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Table Responsive
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-table-responsive`.
+> Consolidated module standardized under namespace `.periodic-table-responsive`.
 
 ---
 

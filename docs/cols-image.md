@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-cols-image
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-cols-image
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Cols Image
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-cols-image`.
+> Consolidated module standardized under namespace `.periodic-cols-image`.
 
 ---
 

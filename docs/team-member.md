@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-team-member
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-team-member
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Team Member
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-team-member`.
+> Consolidated module standardized under namespace `.periodic-team-member`.
 
 ---
 

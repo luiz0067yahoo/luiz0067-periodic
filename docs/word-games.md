@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-word-games
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-word-games
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Word Games
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-word-games`.
+> Consolidated module standardized under namespace `.periodic-word-games`.
 
 ---
 

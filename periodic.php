@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Periodic Component Suite
  * Plugin URI:        https://github.com/luiz0067yahoo/luiz0067-periodic
- * Description:       Suíte unificada de 61 componentes modulares frontend e blocos Gutenberg com i18n em 4 idiomas (pt-BR, en-US, es, it) e escopo BEM isolado.
+ * Description:       Unified suite of 61 frontend modular components and Gutenberg blocks with i18n in 4 languages (en-US, pt-BR, es, it) and isolated BEM scoping.
  * Version:           2.0.0
  * Requires at least: 6.0
  * Requires PHP:      7.4

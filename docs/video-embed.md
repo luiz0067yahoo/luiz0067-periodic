@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-video-embed
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-video-embed
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Video Embed
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-video-embed`.
+> Consolidated module standardized under namespace `.periodic-video-embed`.
 
 ---
 

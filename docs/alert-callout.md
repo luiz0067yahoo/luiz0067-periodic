@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-alert-callout
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-alert-callout
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Alert Callout
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-alert-callout`.
+> Consolidated module standardized under namespace `.periodic-alert-callout`.
 
 ---
 

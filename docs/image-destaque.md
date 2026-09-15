@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-image-destaque
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-image-destaque
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Image Destaque
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-image-destaque`.
+> Consolidated module standardized under namespace `.periodic-image-destaque`.
 
 ---
 

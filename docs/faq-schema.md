@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-faq-schema
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-faq-schema
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Faq Schema
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-faq-schema`.
+> Consolidated module standardized under namespace `.periodic-faq-schema`.
 
 ---
 

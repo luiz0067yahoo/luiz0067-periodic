@@ -46,9 +46,9 @@ class PeriodicWordGames {
                 <div class="periodic-word-game__hint">${this.options.hint}</div>
                 <div class="periodic-word-game__display">${this.maskedWord}</div>
                 <div class="periodic-word-game__stats">
-                    ${isWon ? '<div class="badge badge-success">🎉 Parabéns! Você acertou!</div>' : 
-                      isLost ? '<div class="badge badge-danger">❌ Fim de jogo! Palavra: ' + this.options.word + '</div>' : 
-                      'Erros: ' + mistakes + ' / ' + this.maxMistakes}
+                    ${isWon ? '<div class="badge badge-success">🎉 Congratulations! You guessed the word!</div>' : 
+                      isLost ? '<div class="badge badge-danger">❌ Game Over! Word: ' + this.options.word + '</div>' : 
+                      'Mistakes: ' + mistakes + ' / ' + this.maxMistakes}
                 </div>
                 <div class="periodic-word-game__keyboard">
                     ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(char => `

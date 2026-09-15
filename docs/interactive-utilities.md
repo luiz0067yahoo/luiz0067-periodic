@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-interactive-utilities
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-interactive-utilities
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Interactive Utilities
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-interactive-utilities`.
+> Consolidated module standardized under namespace `.periodic-interactive-utilities`.
 
 ---
 

@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-ad-banner
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-ad-banner
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Ad Banner
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-ad-banner`.
+> Consolidated module standardized under namespace `.periodic-ad-banner`.
 
 ---
 

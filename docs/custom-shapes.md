@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-custom-shapes
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-custom-shapes
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Custom Shapes
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-custom-shapes`.
+> Consolidated module standardized under namespace `.periodic-custom-shapes`.
 
 ---
 

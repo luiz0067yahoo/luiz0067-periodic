@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-form-builder
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-form-builder
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Form Builder
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-form-builder`.
+> Consolidated module standardized under namespace `.periodic-form-builder`.
 
 ---
 

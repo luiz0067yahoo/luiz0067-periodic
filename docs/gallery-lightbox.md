@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-gallery-lightbox
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-gallery-lightbox
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Gallery Lightbox
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-gallery-lightbox`.
+> Consolidated module standardized under namespace `.periodic-gallery-lightbox`.
 
 ---
 

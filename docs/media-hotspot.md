@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-media-hotspot
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-media-hotspot
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Media Hotspot
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-media-hotspot`.
+> Consolidated module standardized under namespace `.periodic-media-hotspot`.
 
 ---
 

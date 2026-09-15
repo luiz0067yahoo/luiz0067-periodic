@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-accordion
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-accordion
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Accordion
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-accordion`.
+> Consolidated module standardized under namespace `.periodic-accordion`.
 
 ---
 

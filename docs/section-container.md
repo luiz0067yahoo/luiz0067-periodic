@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-section-container
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-section-container
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Section Container
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-section-container`.
+> Consolidated module standardized under namespace `.periodic-section-container`.
 
 ---
 

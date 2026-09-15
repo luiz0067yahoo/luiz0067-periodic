@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-thumbnail-pdf-link
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-thumbnail-pdf-link
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Thumbnail Pdf Link
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-thumbnail-pdf-link`.
+> Consolidated module standardized under namespace `.periodic-thumbnail-pdf-link`.
 
 ---
 

@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             case 'breadcrumbs':
                 wrapper.innerHTML = `
                     <div id="demoBreadcrumb"></div>
-                    <div class="mt-4"><small class="text-muted">Exemplo com microdados Schema.org ativos.</small></div>
+                    <div class="mt-4"><small class="text-muted">Example with active Schema.org microdata.</small></div>
                 `;
                 container.appendChild(wrapper);
                 new window.PeriodicBreadcrumbs('#demoBreadcrumb', [
@@ -161,12 +161,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 wrapper.innerHTML = `
                     <div class="periodic-ad-banner">
                         <div>
-                            <div class="periodic-ad-banner__title">🎉 Lançamento da Suíte Periodic v2.0</div>
-                            <div class="periodic-ad-banner__text">Consolidação de 61 módulos com alto desempenho e suporte a 4 idiomas.</div>
+                            <div class="periodic-ad-banner__title">🎉 Periodic Component Suite v2.0 Launch</div>
+                            <div class="periodic-ad-banner__text">Consolidation of 61 high-performance modules with 4-language i18n support.</div>
                         </div>
                         <div class="d-flex align-items-center gap-2">
-                            <a href="#" class="periodic-ad-banner__action">Acessar Docs</a>
-                            <button class="periodic-ad-banner__close" title="Fechar">&times;</button>
+                            <a href="#" class="periodic-ad-banner__action">View Docs</a>
+                            <button class="periodic-ad-banner__close" title="Close">&times;</button>
                         </div>
                     </div>
                 `;
@@ -179,14 +179,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="d-flex justify-content-around flex-wrap gap-4">
                         <div class="periodic-counter-stats">
                             <div class="periodic-counter-stats__number" data-periodic-target="61" data-periodic-suffix=" Módulos">0</div>
-                            <div class="periodic-counter-stats__label">Consolidados</div>
+                            <div class="periodic-counter-stats__label">Consolidated</div>
                         </div>
                         <div class="periodic-counter-stats">
                             <div class="periodic-counter-stats__number" data-periodic-target="100" data-periodic-suffix="%">0</div>
-                            <div class="periodic-counter-stats__label">Cobertura i18n</div>
+                            <div class="periodic-counter-stats__label">i18n Coverage</div>
                         </div>
                         <div class="periodic-counter-stats">
-                            <div class="periodic-counter-stats__number" data-periodic-target="4" data-periodic-suffix=" Idiomas">0</div>
+                            <div class="periodic-counter-stats__number" data-periodic-target="4" data-periodic-suffix=" Languages">0</div>
                             <div class="periodic-counter-stats__label">pt-br / en / es / it</div>
                         </div>
                     </div>
@@ -200,13 +200,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 wrapper.appendChild(fbContainer);
                 container.appendChild(wrapper);
                 new window.PeriodicFormBuilder(fbContainer, {
-                    title: 'Contato & Demonstração',
+                    title: 'Contact & Inquiry',
                     fields: [
-                        { name: 'name', label: 'Nome Completo', placeholder: 'Digite seu nome', required: true },
+                        { name: 'name', label: 'Full Name', placeholder: 'Enter your name', required: true },
                         { name: 'email', label: 'E-mail', type: 'email', placeholder: 'seu@email.com', required: true },
-                        { name: 'message', label: 'Mensagem', type: 'textarea', placeholder: 'Conte-nos sobre o seu projeto...', required: true }
+                        { name: 'message', label: 'Message', type: 'textarea', placeholder: 'Tell us about your project...', required: true }
                     ],
-                    submitText: 'Enviar Mensagem',
+                    submitText: 'Enviar Message',
                     onSubmit: (data) => console.log('Form data:', data)
                 });
                 break;
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 container.appendChild(wrapper);
                 new window.PeriodicWordGames(wgContainer, {
                     word: 'PERIODIC',
-                    hint: 'Suíte modular unificada de componentes frontend'
+                    hint: 'Unified modular frontend component suite'
                 });
                 break;
 
@@ -227,24 +227,24 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
-                                    O que é a Suíte Periodic?
+                                    What is the Periodic Suite?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionPreview">
                                 <div class="accordion-body">
-                                    A Suíte Periodic unifica 61 repositórios de componentes em um monorepo modular e desacoplado.
+                                    The Periodic Suite consolidates 61 component repositories into a clean, decoupled monorepo.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
-                                    Como funciona a internacionalização?
+                                    How does internationalization work?
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionPreview">
                                 <div class="accordion-body">
-                                    Suporta 4 idiomas simétricos: pt-br, en-us, es e it, com alternância em tempo de execução sem recarregar a página.
+                                    Supports 4 symmetrical languages: en-us, pt-br, es, and it, with zero-reload runtime switching.
                                 </div>
                             </div>
                         </div>
@@ -259,9 +259,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div>
                             <div class="fs-1 text-primary mb-3"><i class="fa-solid fa-cube"></i></div>
                             <h4 class="fw-bold mb-2">Módulo: periodic-${slug}</h4>
-                            <p class="text-muted mb-3">Componente integrado pronto para uso em aplicações web e no WordPress.</p>
+                            <p class="text-muted mb-3">Integrated component ready for standalone web applications and WordPress.</p>
                             <a href="../docs/${slug}.md" target="_blank" class="btn btn-outline-primary">
-                                <i class="fa-regular fa-file-code me-1"></i> Abrir Especificações em /docs/${slug}.md
+                                <i class="fa-regular fa-file-code me-1"></i> Open Specifications in /docs/${slug}.md
                             </a>
                         </div>
                     </div>

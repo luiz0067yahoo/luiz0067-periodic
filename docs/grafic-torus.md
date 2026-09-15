@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-grafic-torus
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-grafic-torus
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Grafic Torus
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-grafic-torus`.
+> Consolidated module standardized under namespace `.periodic-grafic-torus`.
 
 ---
 

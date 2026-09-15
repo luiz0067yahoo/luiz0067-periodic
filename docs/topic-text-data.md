@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-topic-text-data
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-topic-text-data
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Topic Text Data
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-topic-text-data`.
+> Consolidated module standardized under namespace `.periodic-topic-text-data`.
 
 ---
 

@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-drag-drop-engine
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-drag-drop-engine
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Drag Drop Engine
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-drag-drop-engine`.
+> Consolidated module standardized under namespace `.periodic-drag-drop-engine`.
 
 ---
 

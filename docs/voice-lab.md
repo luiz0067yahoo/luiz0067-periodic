@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-voice-lab
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-voice-lab
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Voice Lab
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-voice-lab`.
+> Consolidated module standardized under namespace `.periodic-voice-lab`.
 
 ---
 

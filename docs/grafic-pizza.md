@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-grafic-pizza
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-grafic-pizza
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Grafic Pizza
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-grafic-pizza`.
+> Consolidated module standardized under namespace `.periodic-grafic-pizza`.
 
 ---
 

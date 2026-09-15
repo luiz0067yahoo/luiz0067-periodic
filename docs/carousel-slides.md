@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-carousel-slides
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-carousel-slides
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Carousel Slides
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-carousel-slides`.
+> Consolidated module standardized under namespace `.periodic-carousel-slides`.
 
 ---
 

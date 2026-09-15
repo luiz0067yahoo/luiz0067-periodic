@@ -1,12 +1,12 @@
 <!--
-  Módulo: periodic-quiz-engine
-  Consolidado sob: Periodic Component Suite
-  Data de consolidação: 2026-09-15
+  Module: periodic-quiz-engine
+  Consolidated under: Periodic Component Suite
+  Consolidation date: 2026-09-15
 -->
 
 # Periodic Quiz Engine
 
-> Módulo consolidado e padronizado sob o namespace `.periodic-quiz-engine`.
+> Consolidated module standardized under namespace `.periodic-quiz-engine`.
 
 ---
 
