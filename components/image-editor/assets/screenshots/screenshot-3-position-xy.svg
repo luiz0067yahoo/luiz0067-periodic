@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  <rect width="1200" height="50" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="30" y="32" fill="#1e1e1e" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Periodic Image Editor — Aba 3: Posicionamento X / Y</text>
+  
+  <rect x="50" y="80" width="700" height="670" rx="12" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+  <rect x="80" y="110" width="640" height="450" rx="12" fill="#0f172a"/>
+  <circle cx="340" cy="300" r="140" fill="#10b981" opacity="0.7"/>
+  <text x="240" y="340" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="18" font-weight="600">Translação: X: -60px | Y: -35px</text>
+
+  <rect x="780" y="80" width="370" height="670" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <rect x="780" y="80" width="370" height="45" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="800" y="108" fill="#6c757d" font-family="-apple-system, sans-serif" font-size="13">Mídia</text>
+  <text x="880" y="108" fill="#6c757d" font-family="-apple-system, sans-serif" font-size="13">Zoom/Giro</text>
+  <text x="980" y="108" fill="#0d6efd" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Posição X / Y</text>
+
+  <text x="805" y="160" fill="#212529" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Eixo X (Horizontal): -60px</text>
+  <line x1="805" y1="185" x2="1125" y2="185" stroke="#ced4da" stroke-width="4"/>
+  <circle cx="910" cy="185" r="8" fill="#0d6efd"/>
+
+  <text x="805" y="240" fill="#212529" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Eixo Y (Vertical): -35px</text>
+  <line x1="805" y1="265" x2="1125" y2="265" stroke="#ced4da" stroke-width="4"/>
+  <circle cx="930" cy="265" r="8" fill="#0d6efd"/>
+
+  <rect x="805" y="300" width="320" height="38" rx="6" fill="#f8f9fa" stroke="#ced4da"/>
+  <text x="840" y="324" fill="#212529" font-family="-apple-system, sans-serif" font-size="13">⌖ Centralizar Imagem (X: 0, Y: 0)</text>
+
+  <rect x="805" y="380" width="320" height="38" rx="6" fill="#dc3545"/>
+  <text x="830" y="404" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">↺ Resetar Todas as Transformações</text>
+</svg>

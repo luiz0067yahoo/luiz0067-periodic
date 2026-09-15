@@ -1,0 +1,75 @@
+{
+  "translation-revision-date": "2026-09-11 21:00:00-0300",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/blocks/date-title-link.js",
+  "domain": "custom-adm",
+  "locale_data": {
+    "custom-adm": {
+      "": {
+        "domain": "custom-adm",
+        "lang": "es_ES",
+        "plural_forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Data, Título e Link": [
+        "Fecha, Título y Enlace"
+      ],
+      "Exibe publicações oficiais, editais ou notícias com data, título descritivo e URL de redirecionamento.": [
+        "Muestra publicaciones oficiales, convocatorias o noticias con fecha, título descriptivo y URL de redirección."
+      ],
+      "data": [
+        "fecha"
+      ],
+      "título": [
+        "título"
+      ],
+      "link": [
+        "enlace"
+      ],
+      "edital": [
+        "convocatoria"
+      ],
+      "notícia": [
+        "noticia"
+      ],
+      "Edital de Concurso Público Nº 04/2026 - Convocação para Provas Objetivas": [
+        "Convocatoria de Oposición Pública Nº 04/2026 - Llamamiento a Pruebas"
+      ],
+      "Configurações do Link e Publicação": [
+        "Configuración del Enlace y Publicación"
+      ],
+      "URL de Redirecionamento": [
+        "URL de Redirección"
+      ],
+      "Endereço para onde o usuário será direcionado ao clicar no item.": [
+        "Dirección a la que se dirigirá al usuario al hacer clic en el elemento."
+      ],
+      "Abrir link em nova aba (_blank)": [
+        "Abrir enlace en una nueva pestaña (_blank)"
+      ],
+      "O link será aberto em uma nova guia do navegador.": [
+        "El enlace se abrirá en una nueva pestaña del navegador."
+      ],
+      "O link será aberto na mesma página.": [
+        "El enlace se abrirá en la misma página."
+      ],
+      "Data da Publicação / Evento": [
+        "Fecha de Publicación / Evento"
+      ],
+      "Ex: 11/09/2026 ou 11 de Setembro": [
+        "Ej: 11/09/2026 o 11 de Septiembre"
+      ],
+      "Você também pode editar a data diretamente no bloco.": [
+        "También puede editar la fecha directamente en el bloque."
+      ],
+      "Data (ex: 11/09/2026)": [
+        "Fecha (ej: 11/09/2026)"
+      ],
+      "Digite o título descritivo do edital, notícia ou publicação oficial...": [
+        "Escriba el título descriptivo de la convocatoria, noticia o publicación..."
+      ],
+      "URL não informada (clique para definir na barra lateral)": [
+        "URL no definida (haga clic para configurar en la barra lateral)"
+      ]
+    }
+  }
+}

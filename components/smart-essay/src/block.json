@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/smart-essay",
+  "version": "1.0.0",
+  "title": "Smart Essay",
+  "category": "widgets",
+  "icon": "welcome-write-blog",
+  "description": "Área de redação com pontuação automática baseada em palavras-chave obrigatórias, contagem mínima de palavras e densidade lexical.",
+  "keywords": [
+    "essay",
+    "redação",
+    "educação",
+    "assessment",
+    "feedback"
+  ],
+  "textdomain": "periodic-smart-essay",
+  "attributes": {
+    "promptInstructions": {
+      "type": "string",
+      "default": "<p>Escreva sua redação com base no tema proposto. Certifique-se de abordar os conceitos fundamentais exigidos para alcançar a pontuação mínima.</p>"
+    },
+    "minWords": {
+      "type": "number",
+      "default": 50
+    },
+    "maxWords": {
+      "type": "number",
+      "default": 500
+    },
+    "passingPercentage": {
+      "type": "number",
+      "default": 70
+    },
+    "keywords": {
+      "type": "array",
+      "default": [
+        {
+          "term": "sustentabilidade",
+          "weight": 30,
+          "synonyms": "desenvolvimento sustentável, ecológico, ambiental, preservação",
+          "feedback": "Excelente abordagem sobre práticas sustentáveis e meio ambiente."
+        },
+        {
+          "term": "inovação",
+          "weight": 35,
+          "synonyms": "tecnologia, transformação digital, modernização, novas ideias",
+          "feedback": "Ótima menção ao papel da inovação e evolução tecnológica."
+        },
+        {
+          "term": "sociedade",
+          "weight": 35,
+          "synonyms": "cidadãos, comunidade, população, coletividade, impacto social",
+          "feedback": "Muito bom incluir a perspectiva social e bem-estar comunitário."
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

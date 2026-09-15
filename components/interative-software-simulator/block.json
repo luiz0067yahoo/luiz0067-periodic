@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "custom/simulador-software",
+  "version": "1.0.0",
+  "title": "Simulador de Software Interativo",
+  "category": "media",
+  "icon": "desktop",
+  "description": "Crie tutoriais guiados passo a passo simulando softwares reais com prints e camadas interativas responsivas.",
+  "keywords": [
+    "simulador",
+    "software",
+    "tutorial",
+    "abnt",
+    "windows",
+    "interativo"
+  ],
+  "textdomain": "simulador-software-abnt",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "simulatorTitle": {
+      "type": "string",
+      "default": "Simulador de Software: Formatação ABNT no Windows 11"
+    },
+    "steps": {
+      "type": "array",
+      "default": []
+    },
+    "showProgressBar": {
+      "type": "boolean",
+      "default": true
+    },
+    "showRestartButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showStepIndicator": {
+      "type": "boolean",
+      "default": true
+    },
+    "highlightHints": {
+      "type": "boolean",
+      "default": true
+    },
+    "allowClickAnywhereHint": {
+      "type": "boolean",
+      "default": true
+    },
+    "customSuccessMessage": {
+      "type": "string",
+      "default": "Parabéns! Você completou com sucesso a configuração de margens ABNT no Word!"
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js",
+  "render": "file:./inc/render.php"
+}

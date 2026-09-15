@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/scroll-top",
+  "version": "1.0.0",
+  "title": "Voltar ao Topo",
+  "category": "widgets",
+  "icon": "arrow-up-alt2",
+  "description": "Botão flutuante para voltar ao topo da página com rolagem suave, visível apenas após rolar determinada distância da página.",
+  "keywords": [
+    "scroll",
+    "topo",
+    "back to top",
+    "rolagem",
+    "suave",
+    "subir"
+  ],
+  "textdomain": "periodic-scroll-top",
+  "attributes": {
+    "iconClass": {
+      "type": "string",
+      "default": "fas fa-chevron-up"
+    },
+    "position": {
+      "type": "string",
+      "default": "bottom-right"
+    },
+    "scrollOffset": {
+      "type": "number",
+      "default": 300
+    },
+    "buttonShape": {
+      "type": "string",
+      "default": "circle"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "buttonSize": {
+      "type": "number",
+      "default": 48
+    },
+    "offsetX": {
+      "type": "number",
+      "default": 24
+    },
+    "offsetY": {
+      "type": "number",
+      "default": 24
+    },
+    "zIndex": {
+      "type": "number",
+      "default": 9999
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": "Voltar ao topo"
+    }
+  },
+  "supports": {
+    "html": false,
+    "multiple": false
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/code",
+  "version": "1.0.0",
+  "title": "Periodic Code",
+  "category": "formatting",
+  "icon": "editor-code",
+  "description": "Native professional code block with authorial syntax highlighting.",
+  "keywords": [
+    "code",
+    "syntax highlighting",
+    "developer"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "default": ""
+    },
+    "language": {
+      "type": "string",
+      "default": "javascript"
+    },
+    "theme": {
+      "type": "string",
+      "default": "default"
+    }
+  },
+  "textdomain": "periodic-code",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

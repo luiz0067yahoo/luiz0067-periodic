@@ -1,0 +1,74 @@
+/**
+ * Estilos específicos do editor Gutenberg para Luiz0067 Card Wrapper.
+ */
+
+.wp-block-luiz0067-card-wrapper {
+	.luiz0067-card-header {
+		.card-title {
+			outline: none;
+
+			&:focus {
+				box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #007cba);
+				border-radius: 2px;
+			}
+		}
+	}
+
+	.luiz0067-card-body {
+		min-height: 80px;
+
+		/* Estilo discreto do placeholder e da área de blocos internos */
+		.block-editor-block-list__layout {
+			min-height: 48px;
+		}
+	}
+
+	.luiz0067-card-footer {
+		.luiz0067-card-footer-content {
+			outline: none;
+
+			&:focus {
+				box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #007cba);
+				border-radius: 2px;
+			}
+		}
+	}
+}
+
+/* Estilização elegante das abas no painel lateral do InspectorControls */
+.luiz0067-inspector-tabs-wrapper {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
+		background: #f8f9fa;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			padding: 10px 8px;
+			font-size: 11px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			color: #555;
+			border-radius: 0;
+			border-bottom: 2px solid transparent;
+			transition: all 0.2s ease;
+
+			&:hover {
+				color: #000;
+				background-color: #eee;
+			}
+
+			&.active-tab {
+				color: var(--wp-admin-theme-color, #007cba);
+				border-bottom-color: var(--wp-admin-theme-color, #007cba);
+				background: #fff;
+			}
+		}
+	}
+
+	.components-tab-panel__tab-content {
+		padding-top: 4px;
+	}
+}

@@ -1,0 +1,188 @@
+/**
+ * Estilos de Frontend e Editor para 'luiz0067-pricing-table'
+ * Desenvolvido por Luiz Fernando Brogliatto Ferreira
+ */
+
+:root {
+	--luiz0067-pt-featured-border: #0d6efd;
+	--luiz0067-pt-badge-bg: #0d6efd;
+	--luiz0067-pt-badge-color: #ffffff;
+}
+
+.luiz0067-pricing-table-wrapper {
+	width: 100%;
+	position: relative;
+	padding: 1.5rem 0;
+
+	.luiz0067-pricing-card {
+		border-radius: 1.25rem;
+		border: 1px solid #e2e8f0;
+		background: #ffffff;
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+		position: relative;
+		overflow: visible;
+
+		&:hover {
+			box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+			transform: translateY(-4px);
+		}
+
+		/* Destaque / Plano Popular */
+		&.is-featured {
+			border: 2px solid var(--luiz0067-pt-featured-border, #0d6efd);
+			box-shadow: 0 20px 36px -10px rgba(13, 110, 253, 0.22);
+			z-index: 2;
+
+			@media (min-width: 992px) {
+				&.elevate-featured {
+					transform: scale(1.04);
+
+					&:hover {
+						transform: scale(1.04) translateY(-4px);
+					}
+				}
+			}
+		}
+
+		/* Badge de Destaque */
+		.pricing-badge-wrapper {
+			position: absolute;
+			top: -14px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 5;
+			white-space: nowrap;
+
+			.pricing-badge {
+				background-color: var(--luiz0067-pt-badge-bg, #0d6efd);
+				color: var(--luiz0067-pt-badge-color, #ffffff);
+				font-size: 0.8rem;
+				font-weight: 700;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				padding: 0.45rem 1.2rem;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4rem;
+			}
+		}
+
+		/* Cabeçalho do Card */
+		.card-header {
+			background: transparent;
+			border-bottom: 1px dashed #edf2f7;
+			padding: 2.2rem 1.5rem 1.5rem;
+
+			.plan-title {
+				font-size: 1.35rem;
+				font-weight: 800;
+				color: #1e293b;
+				margin-bottom: 0.75rem;
+				letter-spacing: -0.02em;
+			}
+
+			.price-box {
+				display: flex;
+				align-items: baseline;
+				justify-content: center;
+				gap: 0.25rem;
+				line-height: 1;
+
+				.currency {
+					font-size: 1.35rem;
+					font-weight: 700;
+					color: #475569;
+				}
+
+				.price {
+					font-size: 3.25rem;
+					font-weight: 900;
+					color: #0f172a;
+					letter-spacing: -0.04em;
+				}
+
+				.period {
+					font-size: 0.95rem;
+					font-weight: 600;
+					color: #64748b;
+					margin-left: 0.2rem;
+				}
+			}
+		}
+
+		/* Corpo e Lista de Recursos */
+		.card-body {
+			padding: 1.75rem 1.5rem;
+			display: flex;
+			flex-direction: column;
+
+			.pricing-features-list {
+				list-style: none;
+				padding: 0;
+				margin: 0 0 1.75rem 0;
+				flex-grow: 1;
+
+				.feature-item {
+					display: flex;
+					align-items: flex-start;
+					gap: 0.75rem;
+					padding: 0.65rem 0;
+					font-size: 0.95rem;
+					color: #334155;
+					border-bottom: 1px solid #f8fafc;
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+					.feature-icon {
+						font-size: 1.05rem;
+						margin-top: 0.15rem;
+						flex-shrink: 0;
+
+						&.icon-included {
+							color: #10b981;
+						}
+
+						&.icon-excluded {
+							color: #94a3b8;
+							opacity: 0.6;
+						}
+					}
+
+					.feature-text {
+						line-height: 1.45;
+
+						&.is-excluded {
+							color: #94a3b8;
+							text-decoration: line-through;
+						}
+					}
+				}
+			}
+
+			/* Botão de Chamada para Ação */
+			.pricing-cta {
+				margin-top: auto;
+
+				.btn {
+					border-radius: 0.75rem;
+					font-weight: 700;
+					letter-spacing: 0.01em;
+					padding: 0.75rem 1.5rem;
+					transition: all 0.2s ease-in-out;
+					display: block;
+					width: 100%;
+					text-align: center;
+					text-decoration: none;
+
+					&:hover {
+						transform: translateY(-2px);
+						box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+					}
+				}
+			}
+		}
+	}
+}

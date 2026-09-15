@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/table-responsive",
+  "version": "1.0.0",
+  "title": "Tabela Responsiva (Bootstrap 5)",
+  "category": "widgets",
+  "icon": "editor-table",
+  "description": "Tabela responsiva elegante com opções nativas do Bootstrap 5, edição inline estilo planilha e suporte ao Font Awesome 6.",
+  "keywords": [
+    "table",
+    "tabela",
+    "responsive",
+    "responsiva",
+    "bootstrap",
+    "periodic"
+  ],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "color": {
+      "background": false,
+      "text": false
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "headers": {
+      "type": "array",
+      "default": ["Coluna 1", "Coluna 2", "Coluna 3"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "rows": {
+      "type": "array",
+      "default": [
+        ["Dado 1A", "Dado 1B", "Dado 1C"],
+        ["Dado 2A", "Dado 2B", "Dado 2C"],
+        ["Dado 3A", "Dado 3B", "Dado 3C"]
+      ],
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "isStriped": {
+      "type": "boolean",
+      "default": true
+    },
+    "isHoverable": {
+      "type": "boolean",
+      "default": true
+    },
+    "isBordered": {
+      "type": "boolean",
+      "default": true
+    },
+    "headerTheme": {
+      "type": "string",
+      "default": "table-dark"
+    }
+  },
+  "textdomain": "periodic-table-responsive",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

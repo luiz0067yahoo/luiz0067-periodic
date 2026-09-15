@@ -1,0 +1,22 @@
+{
+  "Data, Título e Link": "Date, Title and Link",
+  "Exibe publicações oficiais, editais ou notícias com data, título descritivo e URL de redirecionamento.": "Displays official notices, announcements, or news with date, descriptive title, and redirection URL.",
+  "data": "date",
+  "título": "title",
+  "link": "link",
+  "edital": "notice",
+  "notícia": "news",
+  "Edital de Concurso Público Nº 04/2026 - Convocação para Provas Objetivas": "Public Notice No. 04/2026 - Examination Call and Results",
+  "Configurações do Link e Publicação": "Link and Publication Settings",
+  "URL de Redirecionamento": "Redirection URL",
+  "Endereço para onde o usuário será direcionado ao clicar no item.": "Address where the user will be redirected when clicking the item.",
+  "Abrir link em nova aba (_blank)": "Open link in new tab (_blank)",
+  "O link será aberto em uma nova guia do navegador.": "The link will open in a new browser tab.",
+  "O link será aberto na mesma página.": "The link will open on the same page.",
+  "Data da Publicação / Evento": "Publication / Event Date",
+  "Ex: 11/09/2026 ou 11 de Setembro": "E.g.: 2026-09-11 or September 11",
+  "Você também pode editar a data diretamente no bloco.": "You can also edit the date directly within the block.",
+  "Data (ex: 11/09/2026)": "Date (e.g.: 2026-09-11)",
+  "Digite o título descritivo do edital, notícia ou publicação oficial...": "Enter the descriptive title of the notice, news, or publication...",
+  "URL não informada (clique para definir na barra lateral)": "URL not set (click to configure in sidebar)"
+}

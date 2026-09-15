@@ -1,0 +1,62 @@
+{
+  "locale": "en-US",
+  "block": {
+    "title": "Periodic Interactive Utilities",
+    "description": "Interactive block suite: Dynamic QR Code Generator, 24-door Advent Calendar with calendar-date locking and Bootstrap 5 modals, and AR Marker Trigger clues."
+  },
+  "utilityTypes": {
+    "qrCode": "QR Code Generator",
+    "adventCalendar": "Advent Calendar (24 Days)",
+    "arTrigger": "AR Marker Clues"
+  },
+  "qrCode": {
+    "title": "Dynamic QR Code Generator",
+    "labelContent": "QR Code Content or URL",
+    "placeholderContent": "https://yoursite.com or any text...",
+    "labelFgColor": "Foreground Color",
+    "labelBgColor": "Background Color",
+    "labelSize": "Dimension (Pixels)",
+    "btnDownloadPng": "Download PNG",
+    "btnDownloadSvg": "Download SVG",
+    "btnCopy": "Copy Content",
+    "copiedSuccess": "Content copied to clipboard!",
+    "livePreview": "QR Code Live Preview"
+  },
+  "adventCalendar": {
+    "title": "Interactive Advent Calendar",
+    "subtitle": "Open boxes every day in December to reveal the surprises!",
+    "day": "Day",
+    "doorLockedTitle": "Door Locked!",
+    "doorLockedMessage": "This surprise will only unlock on",
+    "doorLockedRemainingDays": "{days} day(s) remaining until unlock!",
+    "doorUnlocked": "Unlocked! Click to reveal the surprise.",
+    "doorOpened": "Already Opened",
+    "btnOpenDoor": "Open Surprise",
+    "btnCloseModal": "Close",
+    "testDateLabel": "Current Date Simulator (Testing Mode):",
+    "resetProgress": "Reset Progress",
+    "progressResetSuccess": "Calendar progress has been reset!",
+    "doorsUnlockedCount": "doors unlocked so far"
+  },
+  "arTrigger": {
+    "title": "AR Clues & Augmented Reality Challenge",
+    "subtitle": "Point your camera at the marker or solve the riddle to reveal the clue.",
+    "markerInfo": "Standard HIRO / QR Tracking Marker",
+    "btnViewMarker": "View Reference Marker",
+    "btnPrintMarker": "Print Marker",
+    "btnScanCamera": "Activate AR Camera / Scanner",
+    "clueTitle": "Enigmatic Clue",
+    "clueHint": "Special Hint:",
+    "showHint": "Reveal Hint",
+    "hideHint": "Hide Hint",
+    "arStatusReady": "Ready for tracking",
+    "arModalTitle": "Augmented Reality Target Marker"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred while loading the utility.",
+    "settings": "Block Settings",
+    "preview": "Preview",
+    "poweredBy": "Periodic Interactive Ecosystem"
+  }
+}

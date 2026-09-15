@@ -1,0 +1,402 @@
+/**
+ * Antigravity Prompt / Floating Cards - Styles
+ * Package: Periodic_Topic_Title_Text
+ */
+
+:root {
+	--ag-color: #6366f1;
+	--ag-speed: 5s;
+	--ag-delay: 0s;
+	--ag-glow: rgba(99, 102, 241, 0.35);
+}
+
+/* ==========================================================================
+   Outer Block Layout & Physics Wrapper
+   ========================================================================== */
+
+.antigravity-card-outer {
+	position: relative;
+	display: block;
+	margin: 2rem auto;
+	max-width: 100%;
+	perspective: 1000px;
+	box-sizing: border-box;
+}
+
+.antigravity-card-outer.align-left {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.antigravity-card-outer.align-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.antigravity-card-outer.align-right {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+/* Floating Levitating Container */
+.antigravity-card-float {
+	position: relative;
+	z-index: 2;
+	animation-name: antigravity-float;
+	animation-duration: var(--ag-speed, 5s);
+	animation-delay: var(--ag-delay, 0s);
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+	will-change: transform;
+}
+
+/* Pause animation on hover to facilitate interaction & reading */
+.antigravity-card-float:hover {
+	animation-play-state: paused;
+}
+
+/* Ground Depth Shadow */
+.antigravity-ground-shadow {
+	position: absolute;
+	bottom: -18px;
+	left: 8%;
+	right: 8%;
+	height: 16px;
+	border-radius: 50%;
+	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.05) 60%, transparent 80%);
+	pointer-events: none;
+	z-index: 1;
+	animation-name: antigravity-shadow;
+	animation-duration: var(--ag-speed, 5s);
+	animation-delay: var(--ag-delay, 0s);
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   Card Container & Themes
+   ========================================================================== */
+
+.antigravity-card-inner {
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 20px;
+	padding: 2rem 2.25rem;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	text-align: left;
+}
+
+/* Theme 1: Glassmorphism (Default) */
+.antigravity-card-inner.style-glassmorphism {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(243, 244, 246, 0.75) 100%);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08),
+	            0 4px 12px rgba(15, 23, 42, 0.04),
+	            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	color: #1e293b;
+}
+
+.antigravity-card-inner.style-glassmorphism:hover {
+	box-shadow: 0 20px 40px rgba(15, 23, 42, 0.14),
+	            0 0 24px var(--ag-glow, rgba(99, 102, 241, 0.3)),
+	            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Theme 2: Dark Neon */
+.antigravity-card-inner.style-dark-neon {
+	background: linear-gradient(140deg, #111827 0%, #0b0f19 100%);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5),
+	            0 0 20px var(--ag-glow, rgba(99, 102, 241, 0.25));
+	color: #f8fafc;
+}
+
+.antigravity-card-inner.style-dark-neon:hover {
+	border-color: var(--ag-color, #6366f1);
+	box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6),
+	            0 0 35px var(--ag-glow, rgba(99, 102, 241, 0.45));
+}
+
+/* Theme 3: Cyberpunk / Vibrant Accent */
+.antigravity-card-inner.style-cyber-glow {
+	background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 50%), #0d1117;
+	border: 1.5px solid var(--ag-color, #6366f1);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45),
+	            inset 0 0 15px var(--ag-glow, rgba(99, 102, 241, 0.2));
+	color: #f1f5f9;
+}
+
+.antigravity-card-inner.style-cyber-glow:hover {
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6),
+	            0 0 25px var(--ag-glow, rgba(99, 102, 241, 0.5)),
+	            inset 0 0 25px var(--ag-glow, rgba(99, 102, 241, 0.3));
+}
+
+/* Theme 4: Clean Minimalist */
+.antigravity-card-inner.style-minimal {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+	color: #0f172a;
+}
+
+.antigravity-card-inner.style-minimal:hover {
+	border-color: var(--ag-color, #6366f1);
+	box-shadow: 0 16px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Accent Line / Top Indicator */
+.antigravity-accent-line {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3.5px;
+	background: linear-gradient(90deg, transparent, var(--ag-color, #6366f1), transparent);
+	opacity: 0.9;
+}
+
+/* ==========================================================================
+   Card Header: Prompt Tag & Meta
+   ========================================================================== */
+
+.antigravity-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	gap: 0.75rem;
+}
+
+.antigravity-tag-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	padding: 0.35rem 0.85rem;
+	border-radius: 9999px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	line-height: 1;
+	background: var(--ag-color, #6366f1);
+	color: #ffffff;
+	box-shadow: 0 2px 8px var(--ag-glow, rgba(99, 102, 241, 0.4));
+	transition: all 0.2s ease;
+}
+
+.antigravity-tag-badge svg {
+	width: 12px;
+	height: 12px;
+	fill: currentColor;
+}
+
+/* Levitating Pulse Dot */
+.antigravity-pulse-dot {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	box-shadow: 0 0 6px #ffffff;
+	animation: antigravity-dot-pulse 2s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   Typography: Title & Content
+   ========================================================================== */
+
+.antigravity-card-title {
+	margin: 0 0 0.75rem 0;
+	font-size: 1.45rem;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: -0.02em;
+	color: inherit;
+	transition: color 0.2s ease;
+}
+
+.style-dark-neon .antigravity-card-title,
+.style-cyber-glow .antigravity-card-title {
+	color: #ffffff;
+}
+
+.antigravity-card-content {
+	margin: 0 0 1.5rem 0;
+	font-size: 0.975rem;
+	line-height: 1.65;
+	opacity: 0.88;
+	color: inherit;
+}
+
+.style-dark-neon .antigravity-card-content,
+.style-cyber-glow .antigravity-card-content {
+	color: #cbd5e1;
+}
+
+.antigravity-card-content p {
+	margin: 0 0 0.75rem 0;
+}
+
+.antigravity-card-content p:last-child {
+	margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Actions: Copy Prompt & Link Buttons
+   ========================================================================== */
+
+.antigravity-card-action {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	margin-top: 0.5rem;
+}
+
+.antigravity-action-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	padding: 0.65rem 1.35rem;
+	border-radius: 12px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.4;
+	text-decoration: none;
+	cursor: pointer;
+	border: 1.5px solid transparent;
+	background: var(--ag-color, #6366f1);
+	color: #ffffff;
+	box-shadow: 0 4px 14px var(--ag-glow, rgba(99, 102, 241, 0.35));
+	transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+	user-select: none;
+}
+
+.antigravity-action-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px var(--ag-glow, rgba(99, 102, 241, 0.5));
+	filter: brightness(1.08);
+	color: #ffffff;
+}
+
+.antigravity-action-btn:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 8px var(--ag-glow, rgba(99, 102, 241, 0.3));
+}
+
+.antigravity-action-btn svg {
+	width: 15px;
+	height: 15px;
+	fill: currentColor;
+	flex-shrink: 0;
+	transition: transform 0.2s ease;
+}
+
+.antigravity-action-btn:hover svg {
+	transform: scale(1.1);
+}
+
+/* Success / Copied Notification Tooltip */
+.antigravity-feedback-toast {
+	position: absolute;
+	top: -38px;
+	left: 50%;
+	transform: translateX(-50%) translateY(4px);
+	background: #10b981;
+	color: #ffffff;
+	padding: 0.3rem 0.75rem;
+	border-radius: 6px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.25s ease;
+	pointer-events: none;
+	box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+	z-index: 10;
+}
+
+.antigravity-feedback-toast::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 4px 4px 0 4px;
+	border-style: solid;
+	border-color: #10b981 transparent transparent transparent;
+}
+
+.antigravity-card-action.copied .antigravity-feedback-toast {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   CSS Keyframes Animations
+   ========================================================================== */
+
+/* Antigravity Levitation Loop */
+@keyframes antigravity-float {
+	0% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-16px) rotate(0.4deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+}
+
+/* Ground Shadow Distance Scaling */
+@keyframes antigravity-shadow {
+	0% {
+		transform: scale(1);
+		opacity: 0.35;
+		filter: blur(6px);
+	}
+	50% {
+		transform: scale(0.82);
+		opacity: 0.15;
+		filter: blur(12px);
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0.35;
+		filter: blur(6px);
+	}
+}
+
+/* Tag Pulse Dot */
+@keyframes antigravity-dot-pulse {
+	0%, 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(0.7);
+	}
+}
+
+/* ==========================================================================
+   Accessibility: Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+	.antigravity-card-float,
+	.antigravity-ground-shadow,
+	.antigravity-pulse-dot {
+		animation: none !important;
+		transform: none !important;
+	}
+}

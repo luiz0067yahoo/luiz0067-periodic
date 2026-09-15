@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d6efd" />
+      <stop offset="100%" stop-color="#0b5ed7" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="680" fill="url(#bgGrad)" />
+
+  <!-- WordPress Top Bar Mockup -->
+  <rect x="0" y="0" width="1200" height="52" fill="#1e293b" border-bottom="1px solid #334155" />
+  <circle cx="30" cy="26" r="14" fill="#38bdf8" opacity="0.2"/>
+  <path d="M 23 26 L 37 26 M 30 19 L 30 33" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="60" y="32" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600">Gutenberg Editor — Periodic Table Responsive</text>
+  <rect x="1060" y="12" width="110" height="28" rx="4" fill="#0d6efd"/>
+  <text x="1090" y="30" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="600">Publicar</text>
+
+  <!-- Main Work Area -->
+  <!-- Editor Document Box -->
+  <g filter="url(#cardShadow)">
+    <rect x="70" y="85" width="760" height="540" rx="12" fill="#ffffff" />
+    
+    <!-- Table Toolbar Inline -->
+    <rect x="90" y="105" width="720" height="46" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <circle cx="112" cy="128" r="6" fill="#0d6efd"/>
+    <text x="126" y="132" fill="#1e293b" font-family="sans-serif" font-size="13" font-weight="bold">Tabela Responsiva Bootstrap 5 (WYSIWYG Inline)</text>
+    
+    <rect x="620" y="114" width="85" height="28" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="632" y="132" fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="500">+ Coluna</text>
+    <rect x="715" y="114" width="78" height="28" rx="4" fill="#0d6efd"/>
+    <text x="728" y="132" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="600">+ Linha</text>
+
+    <!-- Table Graphic Elements -->
+    <g transform="translate(90, 165)">
+      <!-- Table Header -->
+      <rect x="0" y="0" width="720" height="42" fill="#212529" rx="4"/>
+      <text x="24" y="26" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Item / Serviço</text>
+      <text x="220" y="26" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Categoria</text>
+      <text x="420" y="26" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Preço Mensal</text>
+      <text x="590" y="26" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Status</text>
+
+      <!-- Row 1 -->
+      <rect x="0" y="44" width="720" height="46" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5"/>
+      <text x="24" y="72" fill="#1e293b" font-family="sans-serif" font-size="13">Hospedagem Cloud Turbo</text>
+      <text x="220" y="72" fill="#64748b" font-family="sans-serif" font-size="13">Infraestrutura Web</text>
+      <text x="420" y="72" fill="#0f172a" font-family="sans-serif" font-size="13" font-weight="600">R$ 89,90</text>
+      <rect x="588" y="58" width="62" height="22" rx="11" fill="#d1e7dd"/>
+      <text x="604" y="73" fill="#0f5132" font-family="sans-serif" font-size="11" font-weight="bold">Ativo</text>
+
+      <!-- Row 2 -->
+      <rect x="0" y="90" width="720" height="46" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5"/>
+      <text x="24" y="118" fill="#1e293b" font-family="sans-serif" font-size="13">Registro Domínio .com.br</text>
+      <text x="220" y="118" fill="#64748b" font-family="sans-serif" font-size="13">Identidade Digital</text>
+      <text x="420" y="118" fill="#0f172a" font-family="sans-serif" font-size="13" font-weight="600">R$ 40,00</text>
+      <rect x="588" y="104" width="74" height="22" rx="11" fill="#cfe2ff"/>
+      <text x="599" y="119" fill="#084298" font-family="sans-serif" font-size="11" font-weight="bold">Renovado</text>
+
+      <!-- Row 3 Focused Cell -->
+      <rect x="0" y="136" width="720" height="46" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5"/>
+      <text x="24" y="164" fill="#1e293b" font-family="sans-serif" font-size="13">Certificado SSL EV 2048-bit</text>
+      <text x="220" y="164" fill="#64748b" font-family="sans-serif" font-size="13">Segurança Cibernética</text>
+      
+      <!-- Focused Cell Highlight -->
+      <rect x="410" y="142" width="130" height="34" rx="4" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+      <text x="420" y="164" fill="#0d6efd" font-family="sans-serif" font-size="13" font-weight="bold">R$ 199,00|</text>
+
+      <rect x="588" y="150" width="68" height="22" rx="11" fill="#d1e7dd"/>
+      <text x="600" y="165" fill="#0f5132" font-family="sans-serif" font-size="11" font-weight="bold">Instalado</text>
+    </g>
+
+    <rect x="90" y="380" width="720" height="40" rx="6" fill="#eff6ff"/>
+    <text x="110" y="405" fill="#1e40af" font-family="sans-serif" font-size="12">💡 Dica: O autor clica e digita livremente nas células como no Excel/Google Sheets.</text>
+  </g>
+
+  <!-- Sidebar (InspectorControls) Mockup -->
+  <g filter="url(#cardShadow)">
+    <rect x="860" y="85" width="280" height="540" rx="12" fill="#ffffff"/>
+    
+    <!-- Inspector Title -->
+    <rect x="860" y="85" width="280" height="52" fill="#f8fafc" rx="12"/>
+    <text x="880" y="116" fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="bold">Configurações da Tabela</text>
+    
+    <!-- Tabs -->
+    <rect x="860" y="137" width="280" height="38" fill="#f1f5f9"/>
+    <rect x="860" y="137" width="93" height="38" fill="#ffffff"/>
+    <rect x="860" y="173" width="93" height="2" fill="#0d6efd"/>
+    <text x="874" y="160" fill="#0d6efd" font-family="sans-serif" font-size="11" font-weight="bold">Estrutura</text>
+    
+    <text x="972" y="160" fill="#64748b" font-family="sans-serif" font-size="11">Estilos</text>
+    <text x="1066" y="160" fill="#64748b" font-family="sans-serif" font-size="11">Cores</text>
+
+    <!-- Content of Tab 1 -->
+    <text x="880" y="210" fill="#334155" font-family="sans-serif" font-size="12" font-weight="bold">LINHAS (3)</text>
+    <rect x="880" y="222" width="116" height="32" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="892" y="243" fill="#1e293b" font-family="sans-serif" font-size="11">+ Linha</text>
+    <rect x="1004" y="222" width="116" height="32" rx="4" fill="#fee2e2" stroke="#fca5a5"/>
+    <text x="1022" y="243" fill="#dc2626" font-family="sans-serif" font-size="11">Excluir Linha</text>
+
+    <text x="880" y="285" fill="#334155" font-family="sans-serif" font-size="12" font-weight="bold">COLUNAS (4)</text>
+    <rect x="880" y="297" width="116" height="32" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="892" y="318" fill="#1e293b" font-family="sans-serif" font-size="11">+ Coluna</text>
+    <rect x="1004" y="297" width="116" height="32" rx="4" fill="#fee2e2" stroke="#fca5a5"/>
+    <text x="1018" y="318" fill="#dc2626" font-family="sans-serif" font-size="11">Excluir Coluna</text>
+
+    <!-- Reset Option -->
+    <rect x="880" y="355" width="240" height="32" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="912" y="375" fill="#64748b" font-family="sans-serif" font-size="11">Restaurar Exemplo</text>
+  </g>
+</svg>

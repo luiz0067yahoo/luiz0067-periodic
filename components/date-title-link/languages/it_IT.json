@@ -1,0 +1,22 @@
+{
+  "Data, Título e Link": "Data, Titolo e Link",
+  "Exibe publicações oficiais, editais ou notícias com data, título descritivo e URL de redirecionamento.": "Mostra bandi ufficiali, avvisi o notizie con data, titolo descrittivo e URL di reindirizzamento.",
+  "data": "data",
+  "título": "titolo",
+  "link": "link",
+  "edital": "bando",
+  "notícia": "notizia",
+  "Edital de Concurso Público Nº 04/2026 - Convocação para Provas Objetivas": "Bando di Concorso Pubblico N. 04/2026 - Convocazione alle Prove",
+  "Configurações do Link e Publicação": "Impostazioni del Link e Pubblicazione",
+  "URL de Redirecionamento": "URL di Reindirizzamento",
+  "Endereço para onde o usuário será direcionado ao clicar no item.": "Indirizzo a cui l'utente verrà reindirizzato facendo clic sull'elemento.",
+  "Abrir link em nova aba (_blank)": "Apri link in una nuova scheda (_blank)",
+  "O link será aberto em uma nova guia do navegador.": "Il link verrà aperto in una nuova scheda del browser.",
+  "O link será aberto na mesma página.": "Il link verrà aperto nella stessa pagina.",
+  "Data da Publicação / Evento": "Data di Pubblicazione / Evento",
+  "Ex: 11/09/2026 ou 11 de Setembro": "Es: 11/09/2026 o 11 Settembre",
+  "Você também pode editar a data diretamente no bloco.": "È inoltre possibile modificare la data direttamente nel blocco.",
+  "Data (ex: 11/09/2026)": "Data (es: 11/09/2026)",
+  "Digite o título descritivo do edital, notícia ou publicação oficial...": "Inserisci il titolo descrittivo del bando, notizia o pubblicazione...",
+  "URL não informada (clique para definir na barra lateral)": "URL non impostato (fai clic per configurare nella barra laterale)"
+}

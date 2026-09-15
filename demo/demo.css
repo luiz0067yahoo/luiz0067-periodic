@@ -1,0 +1,42 @@
+/* Demo Catalog Styles */
+.periodic-demo-header {
+    background-color: var(--periodic-bg-card);
+    border-bottom: 1px solid var(--periodic-border);
+}
+
+.periodic-demo-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--periodic-radius-md);
+    background: var(--periodic-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comp-card-wrapper {
+    transition: transform var(--periodic-transition-fast), opacity var(--periodic-transition-fast);
+}
+
+.comp-card-wrapper.is-hidden {
+    display: none !important;
+}
+
+.periodic-card {
+    transition: all 0.2s ease-in-out;
+}
+
+.periodic-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--periodic-primary) !important;
+}
+
+.preview-container {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--periodic-bg-subtle);
+    border-radius: var(--periodic-radius-md);
+    padding: 2rem;
+}

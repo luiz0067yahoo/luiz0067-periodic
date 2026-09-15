@@ -1,0 +1,90 @@
+# Translation of Date Title Link in English (United States)
+msgid ""
+msgstr ""
+"Project-Id-Version: Date Title Link 1.0.0\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: custom-adm\n"
+
+#: js/blocks/date-title-link.js
+msgid "Data, Título e Link"
+msgstr "Date, Title and Link"
+
+#: js/blocks/date-title-link.js
+msgid "Exibe publicações oficiais, editais ou notícias com data, título descritivo e URL de redirecionamento."
+msgstr "Displays official notices, announcements, or news with date, descriptive title, and redirection URL."
+
+#: js/blocks/date-title-link.js
+msgid "data"
+msgstr "date"
+
+#: js/blocks/date-title-link.js
+msgid "título"
+msgstr "title"
+
+#: js/blocks/date-title-link.js
+msgid "link"
+msgstr "link"
+
+#: js/blocks/date-title-link.js
+msgid "edital"
+msgstr "notice"
+
+#: js/blocks/date-title-link.js
+msgid "notícia"
+msgstr "news"
+
+#: js/blocks/date-title-link.js
+msgid "Edital de Concurso Público Nº 04/2026 - Convocação para Provas Objetivas"
+msgstr "Public Notice No. 04/2026 - Examination Call and Results"
+
+#: js/blocks/date-title-link.js
+msgid "Configurações do Link e Publicação"
+msgstr "Link and Publication Settings"
+
+#: js/blocks/date-title-link.js
+msgid "URL de Redirecionamento"
+msgstr "Redirection URL"
+
+#: js/blocks/date-title-link.js
+msgid "Endereço para onde o usuário será direcionado ao clicar no item."
+msgstr "Address where the user will be redirected when clicking the item."
+
+#: js/blocks/date-title-link.js
+msgid "Abrir link em nova aba (_blank)"
+msgstr "Open link in new tab (_blank)"
+
+#: js/blocks/date-title-link.js
+msgid "O link será aberto em uma nova guia do navegador."
+msgstr "The link will open in a new browser tab."
+
+#: js/blocks/date-title-link.js
+msgid "O link será aberto na mesma página."
+msgstr "The link will open on the same page."
+
+#: js/blocks/date-title-link.js
+msgid "Data da Publicação / Evento"
+msgstr "Publication / Event Date"
+
+#: js/blocks/date-title-link.js
+msgid "Ex: 11/09/2026 ou 11 de Setembro"
+msgstr "E.g.: 2026-09-11 or September 11"
+
+#: js/blocks/date-title-link.js
+msgid "Você também pode editar a data diretamente no bloco."
+msgstr "You can also edit the date directly within the block."
+
+#: js/blocks/date-title-link.js
+msgid "Data (ex: 11/09/2026)"
+msgstr "Date (e.g.: 2026-09-11)"
+
+#: js/blocks/date-title-link.js
+msgid "Digite o título descritivo do edital, notícia ou publicação oficial..."
+msgstr "Enter the descriptive title of the notice, news, or publication..."
+
+#: js/blocks/date-title-link.js
+msgid "URL não informada (clique para definir na barra lateral)"
+msgstr "URL not set (click to configure in sidebar)"
+

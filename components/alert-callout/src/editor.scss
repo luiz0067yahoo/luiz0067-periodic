@@ -1,0 +1,89 @@
+/**
+ * Estilos específicos do editor Gutenberg para luiz0067-alert-callout
+ */
+
+.luiz0067-alert-callout-wrapper {
+	margin: 1.5rem 0;
+
+	.alert {
+		margin-bottom: 0;
+
+		.alert-heading[data-rich-text-placeholder]::before {
+			opacity: 0.6;
+		}
+
+		.alert-body-content[data-rich-text-placeholder]::before {
+			opacity: 0.6;
+		}
+
+		.btn-close {
+			pointer-events: none;
+			opacity: 0.6;
+		}
+	}
+}
+
+// Estilização das abas no InspectorControls (painel lateral)
+.luiz0067-tabs-wrapper {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
+		background: #f8f9fa;
+		margin: 0;
+		padding: 0;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			padding: 10px 8px;
+			font-size: 12px;
+			font-weight: 600;
+			border-radius: 0;
+			border-bottom: 2px solid transparent;
+			color: #495057;
+			transition: all 0.2s ease-in-out;
+
+			&.is-active {
+				color: #0d6efd;
+				border-bottom: 2px solid #0d6efd;
+				background: #ffffff;
+			}
+
+			&:hover:not(.is-active) {
+				background: #e9ecef;
+			}
+		}
+	}
+
+	.components-tab-panel__tab-content {
+		padding-top: 8px;
+	}
+}
+
+// Grid de presets de ícones
+.luiz0067-icon-presets-grid {
+	.luiz0067-icon-preset-btn {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 6px;
+		font-size: 16px;
+		padding: 0;
+		cursor: pointer;
+		transition: transform 0.15s ease, background-color 0.15s ease;
+
+		&:hover {
+			transform: scale(1.08);
+		}
+	}
+}
+
+// Caixa de pré-visualização de estilo
+.luiz0067-type-preview-box {
+	background: #f8f9fa;
+	border: 1px dashed #ced4da;
+	border-radius: 6px;
+	padding: 10px;
+}

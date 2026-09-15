@@ -1,0 +1,80 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "periodic/advanced-spacer",
+	"version": "1.0.0",
+	"title": "Espaçador Avançado Responsivo",
+	"category": "design",
+	"icon": "separator",
+	"description": "Espaçador vertical responsivo com controle de altura por dispositivo e opções de visibilidade do Bootstrap 5.",
+	"keywords": [
+		"espacador",
+		"spacer",
+		"divisor",
+		"separador",
+		"periodic"
+	],
+	"textdomain": "periodic-advanced-spacer",
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"anchor": true,
+		"customClassName": true,
+		"html": false
+	},
+	"attributes": {
+		"heightDesktop": {
+			"type": "number",
+			"default": 60
+		},
+		"heightTablet": {
+			"type": "number",
+			"default": 40
+		},
+		"heightMobile": {
+			"type": "number",
+			"default": 25
+		},
+		"hideOnDesktop": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideOnTablet": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideOnMobile": {
+			"type": "boolean",
+			"default": false
+		},
+		"dividerStyle": {
+			"type": "string",
+			"default": "none"
+		},
+		"dividerColor": {
+			"type": "string",
+			"default": "#cbd5e1"
+		},
+		"dividerThickness": {
+			"type": "number",
+			"default": 1
+		},
+		"dividerWidth": {
+			"type": "number",
+			"default": 100
+		},
+		"dividerAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"dividerIcon": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

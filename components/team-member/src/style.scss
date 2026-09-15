@@ -1,0 +1,113 @@
+/**
+ * Estilos Frontend e Editor do Bloco luiz0067/team-member
+ */
+
+.luiz0067-team-members-block,
+.luiz0067-team-members-block-editor {
+	/* Transições suaves e elevação no hover do cartão */
+	.luiz0067-member-card {
+		transition: transform 0.28s ease, box-shadow 0.28s ease;
+		background-color: #ffffff;
+		border-radius: 0.75rem;
+		overflow: hidden;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+		}
+
+		.card-title {
+			font-size: 1.25rem;
+			line-height: 1.35;
+			letter-spacing: -0.01em;
+		}
+
+		.card-subtitle {
+			font-size: 0.95rem;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+		}
+
+		.card-text {
+			font-size: 0.925rem;
+			line-height: 1.6;
+		}
+	}
+
+	/* Tratamento e enquadramento visual da foto */
+	.luiz0067-member-photo-container {
+		.luiz0067-member-photo {
+			display: inline-block;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.03);
+			}
+
+			&.rounded-circle {
+				border-radius: 50% !important;
+			}
+
+			&.rounded {
+				border-radius: 0.75rem !important;
+			}
+
+			&.img-thumbnail {
+				padding: 0.25rem;
+				background-color: #ffffff;
+				border: 1px solid #dee2e6;
+				border-radius: 0.5rem;
+			}
+		}
+
+		.luiz0067-member-photo-placeholder {
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+			&.rounded-circle {
+				border-radius: 50% !important;
+			}
+
+			&.rounded {
+				border-radius: 0.75rem !important;
+			}
+
+			&.img-thumbnail {
+				padding: 0.25rem;
+				border: 1px solid #dee2e6;
+				border-radius: 0.5rem;
+			}
+		}
+	}
+
+	/* Botões circulares para redes sociais */
+	.luiz0067-social-links {
+		.luiz0067-social-btn {
+			width: 36px;
+			height: 36px;
+			padding: 0;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 0.9rem;
+			color: #495057;
+			background-color: #f8f9fa;
+			border-color: #e9ecef;
+			text-decoration: none;
+			transition: all 0.22s ease-in-out;
+
+			&:hover {
+				color: #ffffff;
+				background-color: #0d6efd;
+				border-color: #0d6efd;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+			}
+
+			&:focus {
+				outline: 2px solid #0d6efd;
+				outline-offset: 2px;
+			}
+		}
+	}
+}

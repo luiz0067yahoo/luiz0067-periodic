@@ -1,0 +1,126 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "periodic/advanced-banner",
+	"version": "1.0.0",
+	"title": "Banner Avançado Interativo",
+	"category": "media",
+	"icon": "cover-image",
+	"description": "Banner de cobertura interativo (cover) com animações dinâmicas de zoom e transição de texto no efeito hover.",
+	"keywords": [
+		"banner",
+		"cover",
+		"hover",
+		"zoom",
+		"periodic"
+	],
+	"textdomain": "periodic-advanced-banner",
+	"supports": {
+		"align": [
+			"full",
+			"wide"
+		],
+		"anchor": true,
+		"customClassName": true,
+		"html": false
+	},
+	"attributes": {
+		"bgImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"bgImageId": {
+			"type": "number"
+		},
+		"bgImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"focalPoint": {
+			"type": "object",
+			"default": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"badgeText": {
+			"type": "string",
+			"default": "Destaque"
+		},
+		"showBadge": {
+			"type": "boolean",
+			"default": true
+		},
+		"title": {
+			"type": "string",
+			"default": "Título de Impacto Visual"
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "h2"
+		},
+		"subtitle": {
+			"type": "string",
+			"default": "Experiência interativa moderna com transições fluidas e alto engajamento visual."
+		},
+		"showButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Saiba Mais"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": "#"
+		},
+		"buttonTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonStyle": {
+			"type": "string",
+			"default": "btn-primary"
+		},
+		"minHeight": {
+			"type": "string",
+			"default": "450px"
+		},
+		"minHeightMobile": {
+			"type": "string",
+			"default": "320px"
+		},
+		"hoverImageEffect": {
+			"type": "string",
+			"default": "zoom-in"
+		},
+		"hoverTextEffect": {
+			"type": "string",
+			"default": "slide-up"
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "#0f172a"
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 0.45
+		},
+		"overlayHoverOpacity": {
+			"type": "number",
+			"default": 0.65
+		},
+		"contentAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 12
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

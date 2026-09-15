@@ -1,0 +1,216 @@
+{
+  "translation-revision-date": "2026-09-13 16:50:00-0300",
+  "generator": "WP-CLI/2.10.0",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Tabela de Preços (Bootstrap 5)": [
+        "Tabla de Precios (Bootstrap 5)"
+      ],
+      "Tabela comparativa de planos de preços para landing pages com destaque para Plano Popular, lista de recursos com ícones e suporte nativo ao Bootstrap 5 e Font Awesome 6.": [
+        "Tabla comparativa de planes de precios para landing pages con destaque para Plan Popular, lista de características con iconos y soporte nativo para Bootstrap 5 y Font Awesome 6."
+      ],
+      "Planos": [
+        "Planes"
+      ],
+      "Recursos e Itens": [
+        "Características y Elementos"
+      ],
+      "Estilo do Destaque": [
+        "Estilo del Destacado"
+      ],
+      "Configuração dos Planos": [
+        "Configuración de los Planes"
+      ],
+      "Selecionar Plano para Edição": [
+        "Seleccionar Plan para Editar"
+      ],
+      "Mover para cima/esquerda": [
+        "Mover arriba/izquierda"
+      ],
+      "Mover para baixo/direita": [
+        "Mover abajo/derecha"
+      ],
+      "Duplicar este plano": [
+        "Duplicar este plan"
+      ],
+      "Excluir plano": [
+        "Eliminar plan"
+      ],
+      "Nome do Plano": [
+        "Nombre del Plan"
+      ],
+      "Moeda": [
+        "Moneda"
+      ],
+      "Preço": [
+        "Precio"
+      ],
+      "Período de Faturamento": [
+        "Período de Facturación"
+      ],
+      "Exemplo: /mês, /ano, ou taxa única": [
+        "Ejemplo: /mes, /año o tarifa única"
+      ],
+      "Plano em Destaque (Popular)": [
+        "Plan Destacado (Popular)"
+      ],
+      "Texto do Distintivo (Badge)": [
+        "Texto de la Insignia (Badge)"
+      ],
+      "Texto do Botão": [
+        "Texto del Botón"
+      ],
+      "URL do Botão": [
+        "URL del Botón"
+      ],
+      "Estilo do Botão": [
+        "Estilo del Botón"
+      ],
+      "Azul Primário (btn-primary)": [
+        "Azul Primario (btn-primary)"
+      ],
+      "Contorno Azul (btn-outline-primary)": [
+        "Contorno Azul (btn-outline-primary)"
+      ],
+      "Verde Sucesso (btn-success)": [
+        "Verde Éxito (btn-success)"
+      ],
+      "Contorno Verde (btn-outline-success)": [
+        "Contorno Verde (btn-outline-success)"
+      ],
+      "Preto / Escuro (btn-dark)": [
+        "Negro / Oscuro (btn-dark)"
+      ],
+      "Contorno Escuro (btn-outline-dark)": [
+        "Contorno Oscuro (btn-outline-dark)"
+      ],
+      "Cinza Secundário (btn-secondary)": [
+        "Gris Secundario (btn-secondary)"
+      ],
+      "Adicionar Novo Plano": [
+        "Añadir Nuevo Plan"
+      ],
+      "Colunas no Desktop": [
+        "Columnas en Escritorio"
+      ],
+      "Gerenciar Recursos da Tabela": [
+        "Gestionar Características de la Tabla"
+      ],
+      "Plano Atual": [
+        "Plan Actual"
+      ],
+      "Adicione, edite e alterne entre recursos inclusos (ícone de visto verde) e exclusos (ícone de x cinza).": [
+        "Añada, edite y alterne entre características incluidas (marca verde) y excluidas (x gris)."
+      ],
+      "✓ Incluso no plano": [
+        "✓ Incluido en el plan"
+      ],
+      "✕ Não incluso no plano": [
+        "✕ No incluido en el plan"
+      ],
+      "Remover": [
+        "Eliminar"
+      ],
+      "Recurso Incluso?": [
+        "¿Característica Incluida?"
+      ],
+      "Adicionar Recurso a Este Plano": [
+        "Añadir Característica a Este Plan"
+      ],
+      "Personalização do Destaque": [
+        "Personalización del Destacado"
+      ],
+      "Exibir Distintivos (Badges)": [
+        "Mostrar Insignias (Badges)"
+      ],
+      "Exibe o distintivo flutuante sobre os planos com destaque.": [
+        "Muestra la insignia flotante sobre los planes destacados."
+      ],
+      "Elevar Plano em Destaque": [
+        "Elevar Plan Destacado"
+      ],
+      "Aplica leve ampliação e elevação com sombra mais profunda no plano em destaque.": [
+        "Aplica una ligera ampliación y elevación con sombra más profunda en el plan destacado."
+      ],
+      "Cor da Borda de Destaque": [
+        "Color del Borde Destacado"
+      ],
+      "Cor de Fundo da Badge": [
+        "Color de Fondo de la Insignia"
+      ],
+      "Cor do Texto da Badge": [
+        "Color del Texto de la Insignia"
+      ],
+      "Novo Plano": [
+        "Nuevo Plan"
+      ],
+      "/mês": [
+        "/mes"
+      ],
+      "Destaque": [
+        "Destacado"
+      ],
+      "Mais Popular": [
+        "Más Popular"
+      ],
+      "Recurso essencial incluso": [
+        "Característica esencial incluida"
+      ],
+      "Suporte padrão incluso": [
+        "Soporte estándar incluido"
+      ],
+      "Funcionalidade avançada": [
+        "Funcionalidad avanzada"
+      ],
+      "Novo recurso do plano": [
+        "Nueva característica del plan"
+      ],
+      "Assinar Agora": [
+        "Suscribirse Ahora"
+      ],
+      "Cópia": [
+        "Copia"
+      ],
+      "Alternar Plano em Destaque (Popular)": [
+        "Alternar Plan Destacado (Popular)"
+      ],
+      "Destacar": [
+        "Destacar"
+      ],
+      "Mover para a esquerda": [
+        "Mover a la izquierda"
+      ],
+      "Mover para a direita": [
+        "Mover a la derecha"
+      ],
+      "Duplicar plano": [
+        "Duplicar plan"
+      ],
+      "Recurso Incluso (clique para desmarcar)": [
+        "Característica incluida (haga clic para desmarcar)"
+      ],
+      "Recurso Não Incluso (clique para marcar)": [
+        "Característica no incluida (haga clic para marcar)"
+      ],
+      "Descrição do recurso...": [
+        "Descripción de la característica..."
+      ],
+      "Remover item": [
+        "Eliminar elemento"
+      ],
+      "Adicionar Recurso": [
+        "Añadir Característica"
+      ],
+      "Adicionar Novo Card de Plano": [
+        "Añadir Nueva Tarjeta de Plan"
+      ]
+    }
+  }
+}

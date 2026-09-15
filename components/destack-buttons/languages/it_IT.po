@@ -1,0 +1,182 @@
+# Italian translation for Destack Buttons.
+# Copyright (C) 2026 luiz0067
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Destack Buttons (Botões de Destaque) 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/luiz0067yahoo/luiz0067-destack-buttons/issues\n"
+"PO-Revision-Date: 2026-09-11 21:20-0300\n"
+"Last-Translator: luiz0067\n"
+"Language-Team: Italiano\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: destack-buttons\n"
+
+#: js/blocks/destack-buttons.js:68
+msgid "Destack Buttons (Botões de Destaque)"
+msgstr "Pulsanti in Evidenza (Accesso Rapido)"
+
+#: js/blocks/destack-buttons.js:69
+msgid "Exiba uma grade de botões e atalhos rápidos com ícones, títulos e links customizados."
+msgstr "Mostra una griglia di pulsanti e scorciatoie con icone, titoli e collegamenti personalizzati."
+
+#: js/blocks/destack-buttons.js:72
+msgid "destaque"
+msgstr "evidenza"
+
+#: js/blocks/destack-buttons.js:73
+msgid "botões"
+msgstr "pulsanti"
+
+#: js/blocks/destack-buttons.js:74
+msgid "acesso rápido"
+msgstr "accesso rapido"
+
+#: js/blocks/destack-buttons.js:75
+msgid "serviços"
+msgstr "servizi"
+
+#: js/blocks/destack-buttons.js:89
+msgid "Serviço 1"
+msgstr "Servizio 1"
+
+#: js/blocks/destack-buttons.js:90
+msgid "Serviço 2"
+msgstr "Servizio 2"
+
+#: js/blocks/destack-buttons.js:91
+msgid "Serviço 3"
+msgstr "Servizio 3"
+
+#: js/blocks/destack-buttons.js:92
+msgid "Serviço 4"
+msgstr "Servizio 4"
+
+#: js/blocks/destack-buttons.js:145
+msgid "Novo Botão "
+msgstr "Nuovo Pulsante "
+
+#: js/blocks/destack-buttons.js:192
+msgid "Configurações do Grid"
+msgstr "Impostazioni Griglia"
+
+#: js/blocks/destack-buttons.js:196
+msgid "Quantidade de Colunas por Linha"
+msgstr "Colonne per Riga"
+
+#: js/blocks/destack-buttons.js:203
+msgid "Ajuste a quantidade de botões exibidos por linha em telas grandes."
+msgstr "Regola il numero di pulsanti visualizzati per riga su schermi grandi."
+
+#: js/blocks/destack-buttons.js:211
+#: js/blocks/destack-buttons.js:264
+msgid "Adicionar Botão"
+msgstr "Aggiungi Pulsante"
+
+#: js/blocks/destack-buttons.js:215
+msgid "Gerenciador de Links e Atalhos"
+msgstr "Gestione Collegamenti e Scorciatoie"
+
+#: js/blocks/destack-buttons.js:220
+msgid "Sem título"
+msgstr "Senza titolo"
+
+#: js/blocks/destack-buttons.js:227
+msgid "Mover para cima"
+msgstr "Sposta in alto"
+
+#: js/blocks/destack-buttons.js:234
+msgid "Mover para baixo"
+msgstr "Sposta in basso"
+
+#: js/blocks/destack-buttons.js:241
+msgid "Excluir botão"
+msgstr "Elimina pulsante"
+
+#: js/blocks/destack-buttons.js:246
+msgid "URL de Destino"
+msgstr "URL di Destinazione"
+
+#: js/blocks/destack-buttons.js:253
+msgid "Abrir em nova aba"
+msgstr "Apri in una nuova scheda"
+
+#: js/blocks/destack-buttons.js:258
+msgid "Botões de Destaque"
+msgstr "Pulsanti in Evidenza"
+
+#: js/blocks/destack-buttons.js:259
+msgid "item"
+msgstr "elemento"
+
+#: js/blocks/destack-buttons.js:259
+msgid "itens"
+msgstr "elementi"
+
+#: js/blocks/destack-buttons.js:260
+msgid "coluna"
+msgstr "colonna"
+
+#: js/blocks/destack-buttons.js:260
+msgid "colunas"
+msgstr "colonne"
+
+#: js/blocks/destack-buttons.js:275
+msgid "Mover para a esquerda"
+msgstr "Sposta a sinistra"
+
+#: js/blocks/destack-buttons.js:283
+msgid "Mover para a direita"
+msgstr "Sposta a destra"
+
+#: js/blocks/destack-buttons.js:291
+msgid "Excluir este botão"
+msgstr "Elimina questo pulsante"
+
+#: js/blocks/destack-buttons.js:311
+#: js/blocks/destack-buttons.js:372
+msgid "Ícone do botão"
+msgstr "Icona del pulsante"
+
+#: js/blocks/destack-buttons.js:318
+msgid "Alterar ícone"
+msgstr "Modifica icona"
+
+#: js/blocks/destack-buttons.js:319
+msgid "Trocar"
+msgstr "Sostituisci"
+
+#: js/blocks/destack-buttons.js:324
+msgid "Remover ícone"
+msgstr "Rimuovi icona"
+
+#: js/blocks/destack-buttons.js:325
+msgid "Remover"
+msgstr "Rimuovi"
+
+#: js/blocks/destack-buttons.js:329
+msgid "Escolha uma imagem ou ícone"
+msgstr "Scegli un'immagine o un'icona"
+
+#: js/blocks/destack-buttons.js:332
+msgid "Inserir Ícone"
+msgstr "Inserisci Icona"
+
+#: js/blocks/destack-buttons.js:342
+msgid "Nome do Botão..."
+msgstr "Nome del Pulsante..."
+
+#: js/blocks/destack-buttons.js:354
+msgid "https://link-de-destino..."
+msgstr "https://collegamento-destinazione..."
+
+#: js/blocks/destack-buttons.js:361
+msgid "Abre em nova aba (ativo)"
+msgstr "Si apre in una nuova scheda (attivo)"
+
+#: js/blocks/destack-buttons.js:361
+msgid "Abrir em mesma aba"
+msgstr "Apri nella stessa scheda"

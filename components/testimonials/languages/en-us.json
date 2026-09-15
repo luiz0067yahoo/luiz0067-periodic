@@ -1,0 +1,153 @@
+{
+  "translation-revision-date": "2026-09-13 17:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Depoimentos": [
+        "Testimonials"
+      ],
+      "Avaliação/Estrelas": [
+        "Rating / Stars"
+      ],
+      "Layout": [
+        "Layout"
+      ],
+      "Gerenciar Depoimentos": [
+        "Manage Testimonials"
+      ],
+      "Adicione, reordene e configure cada um dos relatos dos seus clientes.": [
+        "Add, reorder, and configure each of your customer reviews."
+      ],
+      "Adicionar Depoimento": [
+        "Add Testimonial"
+      ],
+      "Sem nome": [
+        "Unnamed"
+      ],
+      "Mover para cima": [
+        "Move up"
+      ],
+      "Mover para baixo": [
+        "Move down"
+      ],
+      "Remover": [
+        "Remove"
+      ],
+      "Foto de Perfil (Avatar)": [
+        "Profile Picture (Avatar)"
+      ],
+      "Alterar Foto": [
+        "Change Photo"
+      ],
+      "Enviar Foto": [
+        "Upload Photo"
+      ],
+      "Classificação (Estrelas)": [
+        "Rating (Stars)"
+      ],
+      "Configurações de Avaliação e Estrelas": [
+        "Rating & Star Settings"
+      ],
+      "Exibir Avaliação por Estrelas": [
+        "Show Star Rating"
+      ],
+      "Exibe ícones de estrelas correspondentes à nota de cada depoimento.": [
+        "Display star icons matching the rating of each testimonial."
+      ],
+      "Exibir Ícone Decorativo de Aspas": [
+        "Show Decorative Quote Icon"
+      ],
+      "Mostra ícone sutil de aspas superiores no cabeçalho do card.": [
+        "Show subtle quote icon in the card header."
+      ],
+      "Cor das Estrelas": [
+        "Star Color"
+      ],
+      "Layout e Estilo dos Cards": [
+        "Card Layout & Style"
+      ],
+      "Modo de Exibição": [
+        "Display Mode"
+      ],
+      "Grid Responsivo (Múltiplas Colunas)": [
+        "Responsive Grid (Multiple Columns)"
+      ],
+      "Card Único em Destaque": [
+        "Featured Single Card"
+      ],
+      "Quantidade de Colunas no Grid": [
+        "Grid Columns Count"
+      ],
+      "Número de cards exibidos por linha em telas desktop.": [
+        "Number of cards displayed per row on desktop screens."
+      ],
+      "Sombra Suave nos Cards": [
+        "Soft Card Shadow"
+      ],
+      "Aplica classe shadow-sm do Bootstrap 5 com elevação no hover.": [
+        "Applies Bootstrap 5 shadow-sm class with hover elevation."
+      ],
+      "Arredondamento das Bordas (px)": [
+        "Border Radius (px)"
+      ],
+      "Cor de Fundo do Card": [
+        "Card Background Color"
+      ],
+      "Cor do Texto do Card": [
+        "Card Text Color"
+      ],
+      "Mover para esquerda / cima": [
+        "Move left / up"
+      ],
+      "Mover para direita / baixo": [
+        "Move right / down"
+      ],
+      "Duplicar depoimento": [
+        "Duplicate testimonial"
+      ],
+      "Remover depoimento": [
+        "Remove testimonial"
+      ],
+      "Escreva aqui o depoimento do cliente...": [
+        "Write client testimonial here..."
+      ],
+      "Digite aqui o depoimento ou citação com suas próprias palavras.": [
+        "Type the testimonial or quote here in your own words."
+      ],
+      "Nome do Cliente": [
+        "Client Name"
+      ],
+      "Cargo ou Empresa": [
+        "Role or Company"
+      ],
+      "Alterar foto de perfil": [
+        "Change profile picture"
+      ],
+      "Nome do Autor": [
+        "Author Name"
+      ],
+      "Cargo / Empresa": [
+        "Role / Company"
+      ],
+      "Adicionar Outro Depoimento": [
+        "Add Another Testimonial"
+      ],
+      "É necessário manter pelo menos um depoimento.": [
+        "At least one testimonial must be kept."
+      ],
+      "estrela": [
+        "star"
+      ],
+      "estrelas": [
+        "stars"
+      ]
+    }
+  }
+}

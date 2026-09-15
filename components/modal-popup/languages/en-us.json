@@ -1,0 +1,100 @@
+{
+	"translation-revision-date": "2026-09-13 16:35:00-0300",
+	"generator": "WP-CLI/2.8.1",
+	"source": "src/edit.js",
+	"domain": "messages",
+	"locale_data": {
+		"messages": {
+			"": {
+				"domain": "messages",
+				"lang": "en_US",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Gatilho / Botão": [ "Trigger / Button" ],
+			"Conteúdo do Modal": [ "Modal Content" ],
+			"Comportamento": [ "Behavior" ],
+			"Ocultar Pré-visualização do Modal": [ "Hide Modal Preview" ],
+			"Alternar Pré-visualização do Modal": [ "Toggle Modal Preview" ],
+			"Fechar Modal": [ "Close Modal" ],
+			"Pré-visualizar Modal": [ "Preview Modal" ],
+			"Configurações do Gatilho": [ "Trigger Settings" ],
+			"Texto do Botão": [ "Button Text" ],
+			"Rótulo exibido no botão que abre a janela.": [
+				"Label displayed on the button that opens the modal window."
+			],
+			"Ícone do Botão (Font Awesome)": [ "Button Icon (Font Awesome)" ],
+			"Exemplo: fa-solid fa-circle-info, fa-solid fa-bell, fa-solid fa-envelope": [
+				"Example: fa-solid fa-circle-info, fa-solid fa-bell, fa-solid fa-envelope"
+			],
+			"Variante de Cor (Bootstrap 5)": [ "Color Variant (Bootstrap 5)" ],
+			"Primary (Azul)": [ "Primary (Blue)" ],
+			"Secondary (Cinza)": [ "Secondary (Gray)" ],
+			"Success (Verde)": [ "Success (Green)" ],
+			"Danger (Vermelho)": [ "Danger (Red)" ],
+			"Warning (Amarelo)": [ "Warning (Yellow)" ],
+			"Info (Ciano)": [ "Info (Cyan)" ],
+			"Light (Claro)": [ "Light" ],
+			"Dark (Escuro)": [ "Dark" ],
+			"Outline Primary": [ "Outline Primary" ],
+			"Outline Secondary": [ "Outline Secondary" ],
+			"Outline Success": [ "Outline Success" ],
+			"Outline Danger": [ "Outline Danger" ],
+			"Tamanho do Botão": [ "Button Size" ],
+			"Padrão (Médio)": [ "Default (Medium)" ],
+			"Pequeno (btn-sm)": [ "Small (btn-sm)" ],
+			"Grande (btn-lg)": [ "Large (btn-lg)" ],
+			"Conteúdo da Janela Modal": [ "Modal Window Content" ],
+			"Título da Modal": [ "Modal Title" ],
+			"Título exibido no cabeçalho superior da janela modal.": [
+				"Title displayed in the top header of the modal window."
+			],
+			"Texto do Botão de Fechar": [ "Close Button Text" ],
+			"Texto do botão de fechamento no rodapé do modal.": [
+				"Text of the closing button in the modal footer."
+			],
+			"Dica WYSIWYG:": [ "WYSIWYG Tip:" ],
+			"Você pode editar o título e o texto completo da modal com formatações ricas diretamente no canvas ativando a pré-visualização.": [
+				"You can edit the title and full modal text with rich formatting directly on the canvas by enabling the preview."
+			],
+			"Abrir Pré-visualização para Edição": [
+				"Open Preview for Editing"
+			],
+			"Comportamento e Dimensões": [ "Behavior and Dimensions" ],
+			"Tamanho da Janela": [ "Window Size" ],
+			"Padrão (500px)": [ "Default (500px)" ],
+			"Pequeno (modal-sm - 300px)": [ "Small (modal-sm - 300px)" ],
+			"Grande (modal-lg - 800px)": [ "Large (modal-lg - 800px)" ],
+			"Extra Grande (modal-xl - 1140px)": [
+				"Extra Large (modal-xl - 1140px)"
+			],
+			"Tela Cheia (modal-fullscreen)": [
+				"Full Screen (modal-fullscreen)"
+			],
+			"Backdrop Estático": [ "Static Backdrop" ],
+			"Impede o fechamento acidental ao clicar fora da janela modal.": [
+				"Prevents accidental closing when clicking outside the modal window."
+			],
+			"Centralizar Verticalmente": [ "Vertically Centered" ],
+			"Posiciona a janela exatamente no centro vertical da tela.": [
+				"Positions the modal window exactly in the vertical center of the screen."
+			],
+			"Rolagem Interna": [ "Scrollable Content" ],
+			"Adiciona barra de rolagem ao corpo quando o conteúdo ultrapassar a tela.": [
+				"Adds internal scrollbar to the modal body when content exceeds screen height."
+			],
+			"ID HTML Único": [ "Unique HTML ID" ],
+			"Identificador exclusivo usado pelo gatilho Bootstrap para acionar esta janela.": [
+				"Exclusive identifier used by Bootstrap trigger to open this window."
+			],
+			"Abrir Modal": [ "Open Modal" ],
+			"Clique para alternar a pré-visualização do modal": [
+				"Click to toggle modal preview"
+			],
+			"Título da Modal...": [ "Modal Title..." ],
+			"Fechar": [ "Close" ],
+			"Escreva aqui o conteúdo rico da sua janela modal...": [
+				"Type here the rich content of your modal window..."
+			]
+		}
+	}
+}

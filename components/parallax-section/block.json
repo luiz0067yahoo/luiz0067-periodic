@@ -1,0 +1,99 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "periodic/parallax-section",
+	"version": "1.0.0",
+	"title": "Seção com Paralaxe",
+	"category": "layout",
+	"icon": "format-image",
+	"description": "Container de seção moderno com efeito paralaxe nativo e fluido na imagem de fundo durante a rolagem.",
+	"keywords": [
+		"parallax",
+		"seção",
+		"container",
+		"fundo",
+		"periodic"
+	],
+	"textdomain": "periodic-parallax-section",
+	"supports": {
+		"align": [
+			"full",
+			"wide"
+		],
+		"anchor": true,
+		"customClassName": true,
+		"html": false
+	},
+	"attributes": {
+		"bgImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"bgImageId": {
+			"type": "number"
+		},
+		"bgImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"focalPoint": {
+			"type": "object",
+			"default": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"parallaxSpeed": {
+			"type": "number",
+			"default": 0.3
+		},
+		"parallaxDirection": {
+			"type": "string",
+			"default": "down"
+		},
+		"minHeight": {
+			"type": "string",
+			"default": "500px"
+		},
+		"minHeightMobile": {
+			"type": "string",
+			"default": "350px"
+		},
+		"containerType": {
+			"type": "string",
+			"default": "container"
+		},
+		"contentVerticalAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"contentHorizontalAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 0.45
+		},
+		"overlayBlendMode": {
+			"type": "string",
+			"default": "normal"
+		},
+		"paddingTop": {
+			"type": "number",
+			"default": 80
+		},
+		"paddingBottom": {
+			"type": "number",
+			"default": 80
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css",
+	"viewScript": "file:./build/view.js"
+}

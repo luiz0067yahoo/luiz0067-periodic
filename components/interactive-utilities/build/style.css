@@ -1,0 +1,580 @@
+/**
+ * Periodic Interactive Utilities - Block Stylesheet
+ * Responsive, Glassmorphic, 3D Perspective & Dynamic Animations
+ */
+
+:root {
+  --luiz-primary: #3b82f6;
+  --luiz-primary-glow: rgba(59, 130, 246, 0.4);
+  --luiz-gold: #f59e0b;
+  --luiz-gold-glow: rgba(245, 158, 11, 0.35);
+  --luiz-festive-red: #dc2626;
+  --luiz-festive-green: #15803d;
+  --luiz-dark-bg: #0f172a;
+  --luiz-card-bg: rgba(255, 255, 255, 0.95);
+  --luiz-glass-bg: rgba(255, 255, 255, 0.08);
+  --luiz-glass-border: rgba(255, 255, 255, 0.18);
+  --luiz-text-dark: #1e293b;
+  --luiz-text-muted: #64748b;
+  --luiz-radius: 16px;
+  --luiz-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --luiz-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Base Block Container
+   ========================================================================== */
+.periodic-interactive-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 2rem 0;
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--luiz-radius);
+  background: linear-gradient(135deg, #0b132b 0%, #1c2541 50%, #3a506b 100%);
+  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(11, 19, 43, 0.4);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.periodic-interactive-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  animation: luizBackgroundPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes luizBackgroundPulse {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-3%, -3%) scale(1.05); }
+}
+
+.luiz-util-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.luiz-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 9999px;
+  color: #93c5fd;
+  margin-bottom: 1rem;
+}
+
+.luiz-util-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luiz-util-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Utility 1: Dynamic QR Code Generator
+   ========================================================================== */
+.luiz-qr-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border-radius: var(--luiz-radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+}
+
+.luiz-qr-display-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luiz-qr-display-box:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.luiz-qr-display-box canvas,
+.luiz-qr-display-box svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.luiz-qr-text-preview {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #38bdf8;
+  word-break: break-all;
+  margin-bottom: 1.5rem;
+}
+
+.luiz-qr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.luiz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.luiz-btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.luiz-btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  color: #ffffff;
+}
+
+.luiz-btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f8fafc;
+}
+
+.luiz-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Utility 2: Advent Calendar (24 Doors 3D Grid)
+   ========================================================================== */
+.luiz-advent-grid-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.luiz-calendar-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.luiz-test-mode-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fbbf24;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.luiz-test-date-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.luiz-test-date-input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+/* 3D Door Perspective & Card Architecture */
+.luiz-door-item {
+  perspective: 1200px;
+  margin-bottom: 1.5rem;
+}
+
+.luiz-door-card {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.luiz-door-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.luiz-door-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* Front Face Styling */
+.luiz-door-front {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.luiz-door-item:hover .luiz-door-front {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.25);
+  transform: translateY(-4px);
+}
+
+.luiz-door-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #f8fafc;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.luiz-door-icon {
+  font-size: 1.5rem;
+  color: #f59e0b;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.luiz-door-item:hover .luiz-door-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.luiz-door-status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.luiz-door-status-badge.status-locked {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}
+
+.luiz-door-status-badge.status-unlocked {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #86efac;
+}
+
+.luiz-door-status-badge.status-opened {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+/* Back Face (Surprise preview) */
+.luiz-door-back {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 2px solid #38bdf8;
+  transform: rotateY(180deg);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+}
+
+.luiz-door-back-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.luiz-door-back-btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.luiz-door-back-btn:hover {
+  background: #7dd3fc;
+}
+
+/* Locked Door Shake Animation */
+@keyframes luizDoorShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.luiz-door-card.shake {
+  animation: luizDoorShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* ==========================================================================
+   Utility 3: AR Marker Clues (AR Trigger)
+   ========================================================================== */
+.luiz-ar-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.luiz-ar-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border-radius: var(--luiz-radius);
+  padding: 2.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.luiz-ar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .luiz-ar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.luiz-ar-marker-frame {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.luiz-ar-marker-frame svg,
+.luiz-ar-marker-frame img {
+  display: block;
+  margin: 0 auto 0.75rem;
+  max-width: 100%;
+  height: auto;
+  border: 4px solid #000000;
+}
+
+.luiz-ar-marker-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.luiz-ar-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.luiz-clue-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #38bdf8;
+  padding: 1.25rem;
+  border-radius: 0 10px 10px 0;
+}
+
+.luiz-clue-box h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.luiz-clue-box p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.luiz-hint-container {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.luiz-hint-text {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #fef08a;
+  line-height: 1.5;
+  display: none;
+}
+
+.luiz-hint-text.is-visible {
+  display: block;
+  animation: luizFadeIn 0.3s ease-in-out;
+}
+
+@keyframes luizFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Bootstrap 5 Modal Customizations & Standalone Fallback
+   ========================================================================== */
+.periodic-modal.luiz-modal-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 13, 26, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10550;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.periodic-modal.luiz-modal-active .modal-dialog {
+  max-width: 520px;
+  width: 100%;
+  margin: auto;
+}
+
+.periodic-modal .modal-content {
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.periodic-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.periodic-modal .modal-title {
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.periodic-modal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.periodic-modal .modal-body {
+  padding: 2rem 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+.periodic-modal .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Confetti Sparkles / Celebration particles */
+.luiz-confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #f59e0b;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 3px;
+  animation: luizConfettiFall 2s ease-out forwards;
+}
+
+@keyframes luizConfettiFall {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translateY(200px) rotate(720deg) scale(0.2); }
+}

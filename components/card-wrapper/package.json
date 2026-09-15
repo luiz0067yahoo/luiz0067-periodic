@@ -1,0 +1,19 @@
+{
+  "name": "periodic-card-wrapper",
+  "version": "1.0.0",
+  "description": "Bloco Gutenberg de Cartão Bootstrap 5 customizável e estruturado com suporte a InnerBlocks.",
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  }
+}

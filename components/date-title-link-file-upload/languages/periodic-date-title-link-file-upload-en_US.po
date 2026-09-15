@@ -1,0 +1,145 @@
+# Translation of date-title-link-file-upload in en_US
+msgid ""
+msgstr ""
+"Project-Id-Version: luiz0067 Date Title Link File Upload 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data, Título, Link e Upload de Arquivo"
+msgstr "Date, Title, Link and File Upload"
+
+msgid "Exibe publicações, editais ou documentos com data destacada, título descritivo, link e download de anexo."
+msgstr "Displays publications, notices, or documents with a highlighted date, descriptive title, link, and attachment download."
+
+msgid "arquivo"
+msgstr "file"
+
+msgid "download"
+msgstr "download"
+
+msgid "edital"
+msgstr "notice"
+
+msgid "pdf"
+msgstr "pdf"
+
+msgid "data"
+msgstr "date"
+
+msgid "Edital de Licitação"
+msgstr "Public Tender Notice"
+
+msgid "Novo"
+msgstr "New"
+
+msgid "Edital de Licitação Nº 042/2026 - Contratação de Serviços Especializados de TI"
+msgstr "Public Tender Notice No. 042/2026 - Procurement of Specialized IT Services"
+
+msgid "Baixar Edital"
+msgstr "Download Notice"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Arquivo e Download"
+msgstr "File and Download"
+
+msgid "Arquivo:"
+msgstr "File:"
+
+msgid "Tamanho:"
+msgstr "Size:"
+
+msgid "Substituir Arquivo"
+msgstr "Replace File"
+
+msgid "Remover"
+msgstr "Remove"
+
+msgid "Selecionar / Enviar Arquivo"
+msgstr "Select / Upload File"
+
+msgid "URL Direta do Arquivo"
+msgstr "Direct File URL"
+
+msgid "URL preenchida automaticamente pelo upload ou informada manualmente."
+msgstr "URL populated automatically by upload or entered manually."
+
+msgid "Nome de Exibição do Arquivo"
+msgstr "File Display Name"
+
+msgid "Tamanho Formatado (ex: 2.5 MB)"
+msgstr "Formatted Size (e.g. 2.5 MB)"
+
+msgid "Texto do Botão de Download"
+msgstr "Download Button Text"
+
+msgid "Data e Metadados"
+msgstr "Date and Metadata"
+
+msgid "Data de Publicação"
+msgstr "Publication Date"
+
+msgid "Ex: 12/09/2026"
+msgstr "E.g. 09/12/2026"
+
+msgid "Categoria / Órgão Emissor (Caption)"
+msgstr "Category / Issuing Agency (Caption)"
+
+msgid "Ex: Secretaria de Finanças"
+msgstr "E.g. Department of Finance"
+
+msgid "Etiqueta em Destaque (Badge)"
+msgstr "Highlight Badge"
+
+msgid "Ex: Novo, Retificado, Edital"
+msgstr "E.g. New, Revised, Notice"
+
+msgid "Link de Redirecionamento"
+msgstr "Redirect Link"
+
+msgid "URL da Página ou Detalhes"
+msgstr "Page URL or Details"
+
+msgid "Link alternativo ou página interna de detalhes da publicação."
+msgstr "Alternative link or internal details page of the publication."
+
+msgid "Abrir links em nova aba (_blank)"
+msgstr "Open links in a new tab (_blank)"
+
+msgid "Estilo de Exibição"
+msgstr "Display Style"
+
+msgid "Modelo de Apresentação"
+msgstr "Layout Template"
+
+msgid "Cartão Moderno (Card)"
+msgstr "Modern Card"
+
+msgid "Linha de Tabela / Lista (Row)"
+msgstr "Table Row / List"
+
+msgid "Data (DD/MM/AAAA)"
+msgstr "Date (YYYY-MM-DD)"
+
+msgid "Digite aqui o título descritivo do documento ou edital..."
+msgstr "Enter the descriptive title of the document or notice here..."
+
+msgid "(Nenhum arquivo vinculado)"
+msgstr "(No file attached)"
+
+msgid "Alterar Arquivo"
+msgstr "Change File"
+
+msgid "Vincular Arquivo"
+msgstr "Attach File"
+
+msgid "Acessar Página"
+msgstr "Visit Page"
+
+msgid "Acessar"
+msgstr "View"
+

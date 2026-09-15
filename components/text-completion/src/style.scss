@@ -1,0 +1,170 @@
+/**
+ * Frontend and Shared Styles for luiz0067-text-completion
+ */
+
+.luiz0067-text-completion {
+  margin: 1.5rem 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  .card {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+  }
+
+  .card-header {
+    background-color: #f8fafc;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.25rem;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  /* Audio player dictation container */
+  .audio-player-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    .audio-player-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    audio {
+      width: 100%;
+      height: 40px;
+      outline: none;
+      border-radius: 20px;
+    }
+
+    .audio-controls-extra {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  /* Text completion content */
+  .text-completion-content {
+    font-size: 1.125rem;
+    line-height: 2.2;
+    color: #1e293b;
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Embedded Input inside paragraph */
+    .text-completion-input {
+      display: inline-block;
+      width: auto;
+      min-width: 100px;
+      padding: 0.25rem 0.6rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #0f172a;
+      background-color: #ffffff;
+      border: 1.5px solid #94a3b8;
+      border-radius: 6px;
+      margin: 0 0.35rem;
+      vertical-align: middle;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+
+      &:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        outline: none;
+      }
+
+      &.is-valid {
+        border-color: #198754 !important;
+        background-color: #f0fdf4 !important;
+        color: #166534 !important;
+        padding-right: 2rem !important;
+      }
+
+      &.is-invalid {
+        border-color: #dc3545 !important;
+        background-color: #fef2f2 !important;
+        color: #991b1b !important;
+        padding-right: 2rem !important;
+      }
+
+      &:disabled {
+        background-color: #f1f5f9;
+        cursor: not-allowed;
+        opacity: 0.85;
+      }
+    }
+  }
+
+  /* Word bank */
+  .word-bank-container {
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+
+    .word-bank-chip {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #334155;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 16px;
+      margin: 0.25rem;
+      font-size: 0.875rem;
+      border: 1px solid #cbd5e1;
+      user-select: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  /* Action buttons bar */
+  .text-completion-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  /* Feedback box */
+  .feedback-banner {
+    margin-top: 1.25rem;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* Solutions reveal */
+  .solutions-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

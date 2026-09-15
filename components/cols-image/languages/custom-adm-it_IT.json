@@ -1,0 +1,43 @@
+{
+	"translation-revision-date": "2026-09-11 20:00:00-0300",
+	"generator": "Antigravity i18n Generator",
+	"domain": "custom-adm",
+	"locale_data": {
+		"custom-adm": {
+			"": {
+				"domain": "custom-adm",
+				"lang": "it_IT",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Imagem em Colunas": ["Immagine in Colonne"],
+			"Exibe uma grade de até 4 colunas de imagens com títulos, descrições e sobreposição.": ["Mostra una griglia fino a 4 colonne di immagini con titoli, descrizioni e sovrapposizione."],
+			"colunas": ["colonne"],
+			"galeria": ["galleria"],
+			"imagens": ["immagini"],
+			"Paisagens Naturais": ["Paesaggi Naturali"],
+			"Arquitetura Urbana": ["Architettura Urbana"],
+			"Cultura e História": ["Cultura e Storia"],
+			"Descubra os parques ecológicos e trilhas deslumbrantes da nossa região.": ["Scopri i parchi ecologici e gli splendidi sentieri della nostra regione."],
+			"Conheça os projetos modernos e sustentáveis de revitalização da cidade.": ["Scopri i progetti moderni e sostenibili di riqualificazione della città."],
+			"Explore o patrimônio cultural e os monumentos históricos tombados.": ["Esplora il ricco patrimonio culturale e i monumenti storici protetti."],
+			"Novo Título": ["Nuovo Titolo"],
+			"Descrição breve sobre este destaque...": ["Breve descrizione di questo elemento..."],
+			"Configurações de Layout": ["Impostazioni di Layout"],
+			"Número de Colunas": ["Numero di Colonne"],
+			"Altura dos Cards (px)": ["Altezza delle Schede (px)"],
+			"Aparência e Sobreposição": ["Aspetto e Sovrapposizione"],
+			"Opacidade da Máscara Escura (%)": ["Opacità Maschera Scura (%)"],
+			"Bordas Arredondadas": ["Bordi Arrotondati"],
+			"Gerenciamento de Itens": ["Gestione Elementi"],
+			"Adicionar Nova Coluna": ["Aggiungi Nuova Colonna"],
+			"Alterar Imagem": ["Cambia Immagine"],
+			"Mover para Esquerda": ["Sposta a Sinistra"],
+			"Mover para Direita": ["Sposta a Destra"],
+			"Remover Coluna": ["Rimuovi Colonna"],
+			"Digite o título...": ["Inserisci il titolo..."],
+			"Digite a descrição (até 100 caracteres)...": ["Inserisci la descrizione (fino a 100 caratteri)..."],
+			"Clique na câmera para enviar foto": ["Fai clic sulla fotocamera per caricare la foto"],
+			" Adicionar Coluna": [" Aggiungi Colonna"]
+		}
+	}
+}

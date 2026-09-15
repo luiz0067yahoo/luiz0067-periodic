@@ -1,0 +1,249 @@
+/**
+ * Editor Styles for periodic Build Grafics (Gutenberg Admin Canvas)
+ * Block Name: cms-adm/build-grafics
+ *
+ * @package Periodic_Build_Grafics
+ */
+
+/* Utilitário d-none para alternar visibilidade da tabela de edição */
+.all-grafics-element .d-none {
+	display: none !important;
+}
+
+/* Toolbar de Ações do Gráfico no Editor */
+.grafic-toolbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 12px;
+	position: relative;
+	z-index: 10;
+}
+
+.btn-grafic-action {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-grafic-action:hover {
+	transform: scale(1.08);
+}
+
+.btn-grafic-action.btn-danger {
+	background-color: #d63638;
+}
+
+.btn-grafic-action.btn-danger:hover {
+	background-color: #b32d2e;
+}
+
+.btn-grafic-action.btn-primary {
+	background-color: #2271b1;
+}
+
+.btn-grafic-action.btn-primary:hover {
+	background-color: #135e96;
+}
+
+.btn-grafic-action.btn-dark {
+	background-color: #1e1e1e;
+}
+
+.btn-grafic-action.btn-dark:hover {
+	background-color: #000000;
+}
+
+/* Tabela Flutuante de Edição do Gráfico */
+.edit-grafic-element {
+	position: absolute;
+	z-index: 1000;
+	width: 440px !important;
+	max-width: 90vw !important;
+	background: #ffffff !important;
+	border: 1px solid #c3c4c7 !important;
+	border-radius: 8px !important;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+	padding: 0 !important;
+	margin-top: 10px;
+	overflow: hidden;
+	font-size: 13px;
+	color: #3c434a;
+}
+
+.edit-grafic-element caption {
+	padding: 10px 14px;
+	background-color: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+	text-align: left;
+}
+
+.edit-table-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+}
+
+.edit-table-header strong {
+	font-size: 14px;
+	color: #1d2327;
+}
+
+.btn-close-table {
+	background: transparent;
+	border: none;
+	font-size: 20px;
+	line-height: 1;
+	color: #787c82;
+	cursor: pointer;
+	padding: 0 4px;
+}
+
+.btn-close-table:hover {
+	color: #d63638;
+}
+
+.edit-grafic-element caption input[type="text"] {
+	width: 100%;
+	padding: 6px 10px;
+	font-size: 13px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+}
+
+.edit-grafic-element caption input[type="text"]:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: none;
+}
+
+/* Cabeçalho da Tabela */
+.edit-grafic-element thead tr {
+	background-color: #f0f0f1;
+}
+
+.edit-grafic-element thead td {
+	font-weight: 600;
+	padding: 8px;
+	border-bottom: 1px solid #dcdcde;
+	text-align: center;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Linhas e Células da Tabela */
+.edit-grafic-element tbody td {
+	padding: 6px 8px;
+	vertical-align: middle;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.edit-grafic-element tbody tr:nth-child(even) {
+	background-color: #fbfbfb;
+}
+
+/* Célula de Seletor de Cores */
+.color-picker-cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+
+.input-color-hex {
+	width: 72px !important;
+	font-size: 12px !important;
+	padding: 4px 6px !important;
+	text-align: center;
+	border: 1px solid #8c8f94 !important;
+	border-radius: 4px !important;
+}
+
+.input-color-native {
+	width: 26px !important;
+	height: 26px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 1px solid #8c8f94 !important;
+	border-radius: 4px !important;
+	cursor: pointer;
+	background: transparent;
+}
+
+.divColor {
+	width: 24px;
+	height: 24px;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Inputs de Descrição e Valor */
+.edit-grafic-element .description input {
+	width: 100%;
+	padding: 4px 8px;
+	font-size: 13px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+}
+
+.edit-grafic-element .data-value-cell input {
+	width: 65px;
+	padding: 4px 8px;
+	font-size: 13px;
+	text-align: right;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+}
+
+/* Botões de Ação na Linha */
+.actions-cell {
+	white-space: nowrap;
+}
+
+.btn-action-row {
+	width: 24px;
+	height: 24px;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	cursor: pointer;
+	margin: 0 2px;
+	padding: 0;
+	line-height: 24px;
+	transition: background-color 0.15s;
+}
+
+.btn-add-row {
+	background-color: #2271b1;
+}
+
+.btn-add-row:hover {
+	background-color: #135e96;
+}
+
+.btn-remove-row {
+	background-color: #d63638;
+}
+
+.btn-remove-row:hover {
+	background-color: #b32d2e;
+}

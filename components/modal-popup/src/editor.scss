@@ -1,0 +1,200 @@
+/**
+ * Estilos específicos do editor Gutenberg para Luiz0067 Modal Popup
+ */
+
+/* Estilização elegante das abas no painel lateral do InspectorControls */
+.luiz0067-inspector-tabs-wrapper {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
+		background: #f8f9fa;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			padding: 10px 6px;
+			font-size: 11px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			color: #555;
+			border-radius: 0;
+			border-bottom: 2px solid transparent;
+			transition: all 0.2s ease;
+
+			&:hover {
+				color: #000;
+				background-color: #eee;
+			}
+
+			&.active-tab {
+				color: var(--wp-admin-theme-color, #007cba);
+				border-bottom-color: var(--wp-admin-theme-color, #007cba);
+				background: #fff;
+			}
+		}
+	}
+
+	.components-tab-panel__tab-content {
+		padding-top: 6px;
+	}
+
+	.luiz0067-tab-notice {
+		background: #f0f6fc;
+		border-left: 3px solid var(--wp-admin-theme-color, #007cba);
+		padding: 10px 12px;
+		margin-top: 14px;
+		font-size: 12px;
+		line-height: 1.5;
+		border-radius: 0 4px 4px 0;
+
+		p {
+			margin-bottom: 8px;
+		}
+	}
+}
+
+/* Área de trabalho no canvas do editor */
+.luiz0067-modal-popup-editor-block {
+	display: block;
+	margin: 10px 0;
+
+	.luiz0067-trigger-preview-wrapper {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		flex-wrap: wrap;
+		padding: 6px;
+		border-radius: 6px;
+		border: 1px dashed rgba(0, 0, 0, 0.15);
+		background-color: #fdfdfd;
+
+		.luiz0067-trigger-btn {
+			cursor: default;
+		}
+
+		.luiz0067-preview-badge-control {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.luiz0067-modal-id-badge {
+			font-size: 11px;
+			background: #f0f0f1;
+			padding: 3px 7px;
+			border-radius: 4px;
+			color: #50575e;
+			font-weight: 500;
+
+			code {
+				font-weight: 600;
+				color: #1e1e1e;
+			}
+		}
+	}
+
+	/* Modal Interativo de Pré-visualização no Canvas */
+	.luiz0067-modal-editor-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 100000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.luiz0067-modal-editor-backdrop {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.55);
+			backdrop-filter: blur(2px);
+			z-index: 100001;
+		}
+
+		.luiz0067-modal-dialog-preview {
+			position: relative;
+			z-index: 100002;
+			max-height: 90vh;
+			overflow-y: auto;
+			margin: 0;
+			animation: luiz0067FadeInDown 0.25s ease-out;
+
+			.modal-content {
+				background: #ffffff;
+				border-radius: 8px;
+				box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+			}
+
+			.modal-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 1rem 1.25rem;
+				border-bottom: 1px solid #dee2e6;
+
+				.modal-title {
+					flex: 1;
+					margin: 0;
+					font-size: 1.25rem;
+					font-weight: 600;
+					outline: none;
+
+					&:focus {
+						box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #007cba);
+						border-radius: 2px;
+					}
+				}
+
+				.btn-close {
+					cursor: pointer;
+					background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+					border: 0;
+					width: 1em;
+					height: 1em;
+					opacity: 0.5;
+
+					&:hover {
+						opacity: 0.9;
+					}
+				}
+			}
+
+			.modal-body {
+				padding: 1.25rem;
+				min-height: 100px;
+				outline: none;
+
+				&:focus {
+					box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #007cba);
+					border-radius: 2px;
+				}
+			}
+
+			.modal-footer {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				padding: 0.75rem 1.25rem;
+				border-top: 1px solid #dee2e6;
+				background-color: #f8f9fa;
+			}
+		}
+	}
+}
+
+@keyframes luiz0067FadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

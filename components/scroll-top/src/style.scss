@@ -1,0 +1,58 @@
+/**
+ * Estilos Frontend e Globais do Bloco luiz0067/scroll-top
+ */
+
+.luiz0067-scroll-top-btn {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(16px) scale(0.85);
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease,
+		transform 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		box-shadow 0.25s ease,
+		filter 0.2s ease;
+	border: none;
+	cursor: pointer;
+	line-height: 1;
+	user-select: none;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+
+	/* Estado Ativado / Visível ao rolar */
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transform: translateY(0) scale(1);
+	}
+
+	/* Efeito de Elevação ao Passar o Mouse (Hover) */
+	&:hover {
+		transform: translateY(-4px) scale(1.05);
+		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+		filter: brightness(1.08);
+	}
+
+	/* Efeito ao Pressionar o Botão */
+	&:active {
+		transform: translateY(-1px) scale(0.95);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	/* Foco Acessível via Teclado */
+	&:focus-visible {
+		outline: 3px solid rgba(13, 110, 253, 0.5);
+		outline-offset: 3px;
+	}
+
+	/* Ícone centralizado */
+	i {
+		display: inline-block;
+		transition: transform 0.2s ease;
+	}
+
+	&:hover i {
+		transform: translateY(-2px);
+	}
+}

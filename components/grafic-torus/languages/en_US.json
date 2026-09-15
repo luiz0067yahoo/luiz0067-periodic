@@ -1,0 +1,172 @@
+{
+  "translation-revision-date": "2026-09-12 10:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-grafic-torus",
+  "locale_data": {
+    "periodic-grafic-torus": {
+      "": {
+        "domain": "periodic-grafic-torus",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Grafic Torus": [
+        "Periodic - Grafic Torus"
+      ],
+      "Responsive and modern Torus / Donut SVG chart with center values and interactive legend.": [
+        "Responsive and modern Torus / Donut SVG chart with center values and interactive legend."
+      ],
+      "Chart Settings": [
+        "Chart Settings"
+      ],
+      "Center Value": [
+        "Center Value"
+      ],
+      "Center Subtitle": [
+        "Center Subtitle"
+      ],
+      "Ring Thickness": [
+        "Ring Thickness"
+      ],
+      "Chart Diameter (px)": [
+        "Chart Diameter (px)"
+      ],
+      "Manage Segments": [
+        "Manage Segments"
+      ],
+      "Segment": [
+        "Segment"
+      ],
+      "Label": [
+        "Label"
+      ],
+      "Value / Percentage": [
+        "Value / Percentage"
+      ],
+      "Color": [
+        "Color"
+      ],
+      "Remove Segment": [
+        "Remove Segment"
+      ],
+      "+ Add Segment": [
+        "+ Add Segment"
+      ],
+      "New Segment": [
+        "New Segment"
+      ],
+      "torus": [
+        "torus"
+      ],
+      "donut chart": [
+        "donut chart"
+      ],
+      "grafico rosca": [
+        "donut chart"
+      ],
+      "Coral Red": [
+        "Coral Red"
+      ],
+      "Vibrant Green": [
+        "Vibrant Green"
+      ],
+      "Purple Violet": [
+        "Purple Violet"
+      ],
+      "Sky Blue": [
+        "Sky Blue"
+      ],
+      "Amber Orange": [
+        "Amber Orange"
+      ],
+      "Teal Cyan": [
+        "Teal Cyan"
+      ],
+      "Dark Slate": [
+        "Dark Slate"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Grafic Torus": [
+        "Periodic - Grafic Torus"
+      ],
+      "Responsive and modern Torus / Donut SVG chart with center values and interactive legend.": [
+        "Responsive and modern Torus / Donut SVG chart with center values and interactive legend."
+      ],
+      "Chart Settings": [
+        "Chart Settings"
+      ],
+      "Center Value": [
+        "Center Value"
+      ],
+      "Center Subtitle": [
+        "Center Subtitle"
+      ],
+      "Ring Thickness": [
+        "Ring Thickness"
+      ],
+      "Chart Diameter (px)": [
+        "Chart Diameter (px)"
+      ],
+      "Manage Segments": [
+        "Manage Segments"
+      ],
+      "Segment": [
+        "Segment"
+      ],
+      "Label": [
+        "Label"
+      ],
+      "Value / Percentage": [
+        "Value / Percentage"
+      ],
+      "Color": [
+        "Color"
+      ],
+      "Remove Segment": [
+        "Remove Segment"
+      ],
+      "+ Add Segment": [
+        "+ Add Segment"
+      ],
+      "New Segment": [
+        "New Segment"
+      ],
+      "torus": [
+        "torus"
+      ],
+      "donut chart": [
+        "donut chart"
+      ],
+      "grafico rosca": [
+        "donut chart"
+      ],
+      "Coral Red": [
+        "Coral Red"
+      ],
+      "Vibrant Green": [
+        "Vibrant Green"
+      ],
+      "Purple Violet": [
+        "Purple Violet"
+      ],
+      "Sky Blue": [
+        "Sky Blue"
+      ],
+      "Amber Orange": [
+        "Amber Orange"
+      ],
+      "Teal Cyan": [
+        "Teal Cyan"
+      ],
+      "Dark Slate": [
+        "Dark Slate"
+      ]
+    }
+  }
+}

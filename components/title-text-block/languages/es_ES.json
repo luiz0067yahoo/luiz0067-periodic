@@ -1,0 +1,51 @@
+{
+  "translation-revision-date": "2026-09-11 21:53:30",
+  "generator": "WP-CLI/2.x",
+  "source": "js/blocks/title-text-block.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Title and Text (Title and Text Block)": [
+        "Título y Texto (Bloque de Título y Texto)"
+      ],
+      "A section with a heading, optional subtitle, rich text content and optional accent bar.": [
+        "Una sección con encabezado, subtítulo opcional, contenido enriquecido y barra de acento opcional."
+      ],
+      "Settings": [
+        "Ajustes"
+      ],
+      "Heading level": [
+        "Nivel de encabezado"
+      ],
+      "Alignment": [
+        "Alineación"
+      ],
+      "Left": [
+        "Izquierda"
+      ],
+      "Center": [
+        "Centrar"
+      ],
+      "Right": [
+        "Derecha"
+      ],
+      "Show accent bar": [
+        "Mostrar barra de acento"
+      ],
+      "Subtitle...": [
+        "Subtítulo..."
+      ],
+      "Title...": [
+        "Título..."
+      ],
+      "Content...": [
+        "Contenido..."
+      ]
+    }
+  }
+}

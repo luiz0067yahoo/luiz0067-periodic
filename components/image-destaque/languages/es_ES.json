@@ -1,0 +1,45 @@
+{
+  "translation-revision-date": "2026-09-11 21:00:00-03:00",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/blocks/image-destaque.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Imagem de Destaque": ["Imagen Destacada"],
+      "Exibe uma imagem principal ou banner promocional em destaque com suporte a link, legenda e acessibilidade.": ["Muestra una imagen principal o banner promocional destacado con soporte para enlaces, subtítulos y accesibilidad."],
+      "imagem": ["imagen"],
+      "banner": ["banner"],
+      "destaque": ["destacado"],
+      "Portal Institucional e Serviços Municipais": ["Portal Institucional y Servicios Municipales"],
+      "Campanha Oficial de Desenvolvimento e Infraestrutura 2026": ["Campaña Oficial de Desarrollo e Infraestructura 2026"],
+      "Configurações de Link": ["Configuración del Enlace"],
+      "URL de Destino": ["URL de Destino"],
+      "Insira a URL que será aberta quando o usuário clicar na imagem.": ["Ingrese la URL que se abrirá cuando el usuario haga clic en la imagen."],
+      "Abrir em Nova Aba": ["Abrir en Pestaña Nueva"],
+      "O link será aberto em uma nova aba do navegador.": ["El enlace se abrirá en una nueva pestaña del navegador."],
+      "O link será aberto na mesma aba.": ["El enlace se abrirá en la misma pestaña."],
+      "Acessibilidade e SEO": ["Accesibilidad y SEO"],
+      "Texto Alternativo (Alt Text)": ["Texto Alternativo (Alt Text)"],
+      "Descreva a imagem para leitores de tela": ["Describa la imagen para lectores de pantalla"],
+      "Essencial para acessibilidade digital e otimização para motores de busca.": ["Esencial para la accesibilidad web y la optimización de motores de búsqueda."],
+      "Alinhamento e Exibição": ["Alineación y Visualización"],
+      "Alinhamento do Bloco": ["Alineación del Bloque"],
+      "Alinhar ao Centro": ["Alinear al Centro"],
+      "Alinhar à Esquerda": ["Alinear a la Izquierda"],
+      "Alinhar à Direita": ["Alinear a la Derecha"],
+      "Largura Total": ["Ancho Completo"],
+      "Imagem de Destaque / Banner": ["Imagen Destacada / Banner"],
+      "Carregue ou selecione uma imagem de alta resolução na biblioteca de mídia.": ["Suba o seleccione una imagen de alta resolución de la biblioteca de medios."],
+      "Selecionar Imagem de Destaque": ["Seleccionar Imagen Destacada"],
+      "Substituir": ["Reemplazar"],
+      "Remover": ["Eliminar"],
+      "Imagem de destaque": ["Imagen destacada"],
+      "Adicione uma legenda ou título em destaque...": ["Agregue una leyenda o título destacado..."]
+    }
+  }
+}

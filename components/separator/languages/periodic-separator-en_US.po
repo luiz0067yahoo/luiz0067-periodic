@@ -1,0 +1,192 @@
+# Translation for luiz0067 Separator in en_US.
+# Copyright (C) 2026 Luiz Fernando Brogliatto Ferreira
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: luiz0067 Separator 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/luiz0067yahoo/luiz0067-separator/issues\n"
+"Last-Translator: Luiz Fernando Brogliatto Ferreira\n"
+"Language-Team: English <en@li.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-11T16:30:00+00:00\n"
+"PO-Revision-Date: 2026-09-11 16:30+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WP-CLI/2.x\n"
+"X-Domain: luiz0067-separator\n"
+
+msgid "Alinhado à Direita"
+msgstr "Align Right"
+
+msgid "Alinhado à Esquerda"
+msgstr "Align Left"
+
+msgid "Alinhamento Horizontal"
+msgstr "Horizontal Alignment"
+
+msgid "Arredondamento dos Cantos (px)"
+msgstr "Border Radius (px)"
+
+msgid "Azul"
+msgstr "Blue"
+
+msgid "Azul Escuro"
+msgstr "Dark Blue"
+
+msgid "Centralizado"
+msgstr "Centered"
+
+msgid "Cinza Claro"
+msgstr "Light Gray"
+
+msgid "Cinza Médio"
+msgstr "Medium Gray"
+
+msgid "Cor Principal"
+msgstr "Primary Color"
+
+msgid "Cor Secundária (Gradiente)"
+msgstr "Secondary Color (Gradient)"
+
+msgid "Coral / Vermelho"
+msgstr "Coral / Red"
+
+msgid "Coração (♥)"
+msgstr "Heart (♥)"
+
+msgid "Círculo (●)"
+msgstr "Circle (●)"
+
+msgid "Dimensões e Posição"
+msgstr "Dimensions and Position"
+
+msgid "Dourado / Amarelo"
+msgstr "Golden / Yellow"
+
+msgid "Escolha o Símbolo"
+msgstr "Choose Symbol"
+
+msgid "Espaçamento Inferior (px)"
+msgstr "Bottom Spacing (px)"
+
+msgid "Espaçamento Superior (px)"
+msgstr "Top Spacing (px)"
+
+msgid "Espessura / Altura (px)"
+msgstr "Thickness / Height (px)"
+
+msgid "Estilo e Cor"
+msgstr "Style and Color"
+
+msgid "Estrela (★)"
+msgstr "Star (★)"
+
+msgid "Exibir símbolo no centro"
+msgstr "Display symbol in center"
+
+msgid "Flor / Cruz (✤)"
+msgstr "Flower / Cross (✤)"
+
+msgid "Folha (❧)"
+msgstr "Leaf (❧)"
+
+msgid "Gradiente Moderno"
+msgstr "Modern Gradient"
+
+msgid "Grafite Escuro"
+msgstr "Dark Graphite"
+
+msgid "Largura (%)"
+msgstr "Width (%)"
+
+msgid "Linha Dupla (Double)"
+msgstr "Double Line"
+
+msgid "Linha Pontilhada (Dotted)"
+msgstr "Dotted Line"
+
+msgid "Linha Sólida"
+msgstr "Solid Line"
+
+msgid "Linha Tracejada (Dashed)"
+msgstr "Dashed Line"
+
+msgid "Linha com Sombra"
+msgstr "Shadowed Line"
+
+msgid "Losango (◆)"
+msgstr "Diamond (◆)"
+
+msgid "Luiz Fernando Brogliatto Ferreira"
+msgstr "Luiz Fernando Brogliatto Ferreira"
+
+msgid "Modelo do Separador"
+msgstr "Separator Style"
+
+msgid "O separador divide os conteúdos por uma linha elegante e personalizável."
+msgstr "The separator divides content with an elegant, customizable line."
+
+msgid "Opacidade (%)"
+msgstr "Opacity (%)"
+
+msgid "Preto"
+msgstr "Black"
+
+msgid "Quadrado (■)"
+msgstr "Square (■)"
+
+msgid "Roxo"
+msgstr "Purple"
+
+msgid "Separador"
+msgstr "Separator"
+
+msgid "Separador (cms-adm)"
+msgstr "Separator (cms-adm)"
+
+msgid "Separador compatível com customADM / prefeitura."
+msgstr "Separator compatible with customADM / city hall."
+
+msgid "Símbolo Central (Decorativo)"
+msgstr "Center Symbol (Decorative)"
+
+msgid "Três Pontos Decorativos"
+msgstr "Three Decorative Dots"
+
+msgid "Verde Escuro"
+msgstr "Dark Green"
+
+msgid "Verde Esmeralda"
+msgstr "Emerald Green"
+
+msgid "Verde Institucional"
+msgstr "Institutional Green"
+
+msgid "Verde Institucional (Prefeitura)"
+msgstr "Institutional Green (City Hall)"
+
+msgid "WordPress Gutenberg Block para separadores e divisores de conteúdo personalizados, com suporte ao estilo clássico verde institucional da prefeitura, estilos sólidos, tracejados, pontilhados, duplos, gradientes, dimensões ajustáveis e total compatibilidade retroativa."
+msgstr "WordPress Gutenberg Block for custom content separators and dividers, featuring classic institutional green style, solid, dashed, dotted, double lines, gradients, adjustable dimensions and full backward compatibility."
+
+msgid "divider"
+msgstr "divider"
+
+msgid "divisor"
+msgstr "divider"
+
+msgid "https://github.com/luiz0067yahoo/luiz0067-separator"
+msgstr "https://github.com/luiz0067yahoo/luiz0067-separator"
+
+msgid "https://profiles.wordpress.org/luiz0067/"
+msgstr "https://profiles.wordpress.org/luiz0067/"
+
+msgid "linha"
+msgstr "line"
+
+msgid "luiz0067 Separator"
+msgstr "luiz0067 Separator"
+
+msgid "separador"
+msgstr "separator"

@@ -1,0 +1,94 @@
+/**
+ * Estilos Exclusivos do Editor Gutenberg
+ * Plugin: Periodic - Video Embed
+ */
+
+/* Placeholder de Inserção Elegante */
+.periodic-video-placeholder {
+	border: 2px dashed #cbd5e1 !important;
+	border-radius: 12px !important;
+	padding: 32px 24px !important;
+	background: #f8fafc !important;
+	box-shadow: none !important;
+	text-align: center;
+	transition: border-color 0.2s ease;
+}
+
+.periodic-video-placeholder:hover {
+	border-color: #7b1fa2 !important;
+}
+
+.periodic-video-placeholder .components-placeholder__label {
+	color: #1e293b;
+	font-weight: 600;
+	font-size: 1.15rem;
+}
+
+.periodic-video-placeholder .components-placeholder__instructions {
+	color: #64748b;
+	margin-bottom: 20px;
+}
+
+.periodic-video-placeholder-form {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	max-width: 580px;
+	margin: 0 auto;
+	align-items: flex-end;
+}
+
+.periodic-video-placeholder-form .components-base-control {
+	flex-grow: 1;
+	margin-bottom: 0 !important;
+}
+
+.periodic-video-placeholder-form input[type="text"] {
+	border-radius: 6px !important;
+	height: 40px !important;
+	border: 1px solid #cbd5e1 !important;
+	font-size: 14px !important;
+}
+
+.periodic-video-placeholder-form .components-button.is-primary {
+	background: #7b1fa2 !important;
+	border-color: #7b1fa2 !important;
+	height: 40px !important;
+	border-radius: 6px !important;
+	padding: 0 20px !important;
+	font-weight: 600 !important;
+	white-space: nowrap;
+}
+
+.periodic-video-placeholder-form .components-button.is-primary:hover {
+	background: #6a1b9a !important;
+}
+
+/* Overlay Transparente de Seleção do Iframe no Editor */
+.periodic-video-editor-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background: transparent;
+	cursor: pointer;
+}
+
+/* Indicação de Seleção no Canvas do Gutenberg */
+.periodic-video-embed-wrapper.is-selected .periodic-video-responsive-container {
+	outline: 2px solid #7b1fa2;
+	outline-offset: 4px;
+}
+
+/* Campo RichText no Editor */
+.periodic-video-embed-wrapper .periodic-video-caption:empty::before {
+	color: #94a3b8;
+	font-style: italic;
+}
+
+.periodic-video-embed-wrapper .periodic-video-caption:focus {
+	outline: none;
+	border-bottom: 1px dashed #7b1fa2;
+}

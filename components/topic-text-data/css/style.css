@@ -1,0 +1,39 @@
+/* Front‑end styles for periodic-topic-text-data block */
+.topic-text-data-block {
+    position: relative;
+    background: #222;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.topic-text-data-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
+    opacity: 0.5;
+    pointer-events: none;
+}
+.topic-text-data-block h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+.topic-text-data-block p {
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+    color: #e0e0e0;
+}
+.topic-text-data-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+.topic-text-data-link:hover {
+    background: #e55a00;
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/team-member",
+  "version": "1.0.0",
+  "title": "Membros da Equipe",
+  "category": "widgets",
+  "icon": "groups",
+  "description": "Cartão institucional de apresentação de membros de equipe, instrutores ou professores com foto, nome, especialidade, biografia e links para redes sociais com ícones Font Awesome e grid Bootstrap 5.",
+  "keywords": [
+    "equipe",
+    "team",
+    "member",
+    "membro",
+    "professor",
+    "instrutor"
+  ],
+  "textdomain": "periodic-team-member",
+  "attributes": {
+    "members": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "photoUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&h=400&q=80",
+          "photoId": 0,
+          "photoAlt": "Dra. Mariana Souza",
+          "name": "Dra. Mariana Souza",
+          "role": "Líder de Arquitetura de Software",
+          "bio": "Especialista em microsserviços e sistemas distribuídos de alta escala, com mais de 12 anos de experiência na liderança de equipes técnicas.",
+          "socialLinks": [
+            {
+              "platform": "LinkedIn",
+              "url": "https://www.linkedin.com/",
+              "iconClass": "fa-brands fa-linkedin-in"
+            },
+            {
+              "platform": "GitHub",
+              "url": "https://github.com/",
+              "iconClass": "fa-brands fa-github"
+            },
+            {
+              "platform": "E-mail",
+              "url": "mailto:mariana@exemplo.com",
+              "iconClass": "fa-solid fa-envelope"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80",
+          "photoId": 0,
+          "photoAlt": "Prof. Carlos Eduardo Mendes",
+          "name": "Prof. Carlos Eduardo Mendes",
+          "role": "Instrutor Sênior de UX/UI Design",
+          "bio": "Pesquisador de interação humano-computador e design systems modernos. Apaixonado por criar experiências digitais acessíveis e intuitivas.",
+          "socialLinks": [
+            {
+              "platform": "LinkedIn",
+              "url": "https://www.linkedin.com/",
+              "iconClass": "fa-brands fa-linkedin-in"
+            },
+            {
+              "platform": "Twitter/X",
+              "url": "https://x.com/",
+              "iconClass": "fa-brands fa-x-twitter"
+            },
+            {
+              "platform": "Website",
+              "url": "https://exemplo.com",
+              "iconClass": "fa-solid fa-globe"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "photoUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&q=80",
+          "photoId": 0,
+          "photoAlt": "Beatriz Alencar",
+          "name": "Beatriz Alencar",
+          "role": "Engenheira de Dados e Inteligência Artificial",
+          "bio": "Mestre em Ciência da Computação, atua na modelagem preditiva e automação de pipelines analíticos com foco em tomada de decisão em tempo real.",
+          "socialLinks": [
+            {
+              "platform": "LinkedIn",
+              "url": "https://www.linkedin.com/",
+              "iconClass": "fa-brands fa-linkedin-in"
+            },
+            {
+              "platform": "GitHub",
+              "url": "https://github.com/",
+              "iconClass": "fa-brands fa-github"
+            },
+            {
+              "platform": "Instagram",
+              "url": "https://instagram.com/",
+              "iconClass": "fa-brands fa-instagram"
+            }
+          ]
+        }
+      ]
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "imageShape": {
+      "type": "string",
+      "default": "rounded-circle"
+    },
+    "cardStyle": {
+      "type": "string",
+      "default": "shadow-sm"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "imageSize": {
+      "type": "number",
+      "default": 140
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

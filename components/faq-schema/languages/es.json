@@ -1,0 +1,144 @@
+{
+  "translation-revision-date": "2026-09-13 17:30:00+0000",
+  "generator": "WP-CLI",
+  "source": "build/index.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Perguntas e Respostas": [
+        "Preguntas y Respuestas"
+      ],
+      "Configurações de SEO": [
+        "Ajustes de SEO"
+      ],
+      "Estilo do Accordion": [
+        "Estilo del Acordeón"
+      ],
+      "Gerenciador de Perguntas": [
+        "Gestor de Preguntas"
+      ],
+      "Organize a ordem, status inicial e itens das perguntas frequentes.": [
+        "Organice el orden, estado inicial y elementos de las preguntas frecuentes."
+      ],
+      "(Pergunta sem título)": [
+        "(Pregunta sin título)"
+      ],
+      "Mover para cima": [
+        "Mover hacia arriba"
+      ],
+      "Mover para baixo": [
+        "Mover hacia abajo"
+      ],
+      "Excluir pergunta": [
+        "Eliminar pregunta"
+      ],
+      "Aberto inicialmente por padrão": [
+        "Abierto inicialmente por defecto"
+      ],
+      "Adicionar Nova Pergunta": [
+        "Añadir Nueva Pregunta"
+      ],
+      "Marcação Schema.org FAQPage": [
+        "Marcado Schema.org FAQPage"
+      ],
+      "Ativar Schema.org FAQPage (JSON-LD)": [
+        "Activar Schema.org FAQPage (JSON-LD)"
+      ],
+      "A marcação JSON-LD será injetada no HTML da página para leitura dos robôs de busca (Googlebot).": [
+        "El marcado JSON-LD se inyectará en el HTML de la página para los robots de búsqueda (Googlebot)."
+      ],
+      "Injeção desativada. O accordion será exibido sem dados estruturados de SEO.": [
+        "Inyección desactivada. El acordeón se mostrará sin datos estructurados de SEO."
+      ],
+      "Diretrizes do Google Rich Results:": [
+        "Directrices de Google Rich Results:"
+      ],
+      "O conteúdo das perguntas e respostas deve corresponder exatamente ao visível para o usuário.": [
+        "El contenido de las preguntas y respuestas debe coincidir exactamente con lo visible para el usuario."
+      ],
+      "Prévia dos Dados Estruturados (JSON-LD):": [
+        "Vista Previa de Datos Estructurados (JSON-LD):"
+      ],
+      "Estrutura e Comportamento": [
+        "Estructura y Comportamiento"
+      ],
+      "Estilo Flush (sem bordas externas)": [
+        "Estilo Flush (sin bordes externos)"
+      ],
+      "Remove bordas e cantos arredondados externos conforme padrão Bootstrap 5.": [
+        "Elimina bordes externos y esquinas redondeadas según el estándar de Bootstrap 5."
+      ],
+      "Permitir múltiplos itens abertos": [
+        "Permitir múltiples elementos abiertos"
+      ],
+      "Mantém outros itens abertos quando o usuário clica em uma nova pergunta.": [
+        "Mantiene otros elementos abiertos cuando el usuario hace clic en una nueva pregunta."
+      ],
+      "Tag Semântica do Cabeçalho": [
+        "Etiqueta Semántica del Encabezado"
+      ],
+      "Define a hierarquia de títulos HTML para acessibilidade e SEO.": [
+        "Define la jerarquía de títulos HTML para accesibilidad y SEO."
+      ],
+      "Estilo do Ícone Indicador": [
+        "Estilo del Icono Indicador"
+      ],
+      "Font Awesome 6 (Chevron)": [
+        "Font Awesome 6 (Chevron)"
+      ],
+      "Font Awesome 6 (Mais / Menos)": [
+        "Font Awesome 6 (Más / Menos)"
+      ],
+      "Bootstrap 5 Padrão (SVG)": [
+        "Bootstrap 5 Estándar (SVG)"
+      ],
+      "Nenhum (Sem Ícone)": [
+        "Ninguno (Sin Icono)"
+      ],
+      "Cores Personalizadas": [
+        "Colores Personalizados"
+      ],
+      "Cor de Destaque / Ativo": [
+        "Color de Realce / Activo"
+      ],
+      "SEO Schema Ativo: schema.org/FAQPage JSON-LD habilitado": [
+        "SEO Schema Activo: schema.org/FAQPage JSON-LD habilitado"
+      ],
+      "SEO Schema Desativado": [
+        "SEO Schema Desactivado"
+      ],
+      "Bootstrap 5 + Font Awesome 6": [
+        "Bootstrap 5 + Font Awesome 6"
+      ],
+      "Digite a pergunta frequente...": [
+        "Escriba la pregunta frecuente..."
+      ],
+      "Abre expandido por padrão no carregamento": [
+        "Se abre expandido por defecto al cargar"
+      ],
+      "Aberto por padrão": [
+        "Abierto por defecto"
+      ],
+      "Excluir": [
+        "Eliminar"
+      ],
+      "Resposta (suporta formatação, links e listas):": [
+        "Respuesta (admite formato, enlaces y listas):"
+      ],
+      "Digite aqui a resposta detalhada...": [
+        "Escriba aquí la respuesta detallada..."
+      ],
+      "Adicionar Pergunta": [
+        "Añadir Pregunta"
+      ],
+      "O accordion deve conter pelo menos uma pergunta.": [
+        "El acordeón debe contener al menos una pregunta."
+      ]
+    }
+  }
+}

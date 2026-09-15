@@ -1,0 +1,310 @@
+{
+  "translation-revision-date": "2026-09-12 10:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-grafic-line-bar",
+  "locale_data": {
+    "periodic-grafic-line-bar": {
+      "": {
+        "domain": "periodic-grafic-line-bar",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Grafic Line & Bar": [
+        "Periodic - Gráfico de Linha e Barras"
+      ],
+      "Gráfico moderno de Linha + Barras em SVG nativo responsivo.": [
+        "Gráfico moderno de Linha + Barras em SVG nativo responsivo."
+      ],
+      "Periodic - Grafic Torus": [
+        "Periodic - Gráfico Torus"
+      ],
+      "Gráfico elegante no formato Torus / Donut circular em SVG nativo.": [
+        "Gráfico elegante no formato Torus / Donut circular em SVG nativo."
+      ],
+      "Chart Settings": [
+        "Configurações do Gráfico"
+      ],
+      "Title": [
+        "Título"
+      ],
+      "Subtitle (Optional)": [
+        "Subtítulo (Opcional)"
+      ],
+      "Y-Axis Maximum (Max Y)": [
+        "Máximo do Eixo Y (Max Y)"
+      ],
+      "Show Columns / Bars": [
+        "Exibir Colunas / Barras"
+      ],
+      "Show Connected Line": [
+        "Exibir Linha Conectada"
+      ],
+      "Show Point Markers": [
+        "Exibir Marcadores de Ponto"
+      ],
+      "Color Palette": [
+        "Paleta de Cores"
+      ],
+      "Bar Color": [
+        "Cor das Barras"
+      ],
+      "Line & Point Color": [
+        "Cor da Linha e Pontos"
+      ],
+      "Data Points": [
+        "Pontos de Dados"
+      ],
+      "Point": [
+        "Ponto"
+      ],
+      "Label": [
+        "Rótulo"
+      ],
+      "Value": [
+        "Valor"
+      ],
+      "+ Add Data Point": [
+        "+ Adicionar Ponto de Dado"
+      ],
+      "Center Value": [
+        "Valor Central"
+      ],
+      "Center Subtitle": [
+        "Subtítulo Central"
+      ],
+      "Ring Thickness": [
+        "Espessura do Anel"
+      ],
+      "Chart Diameter (px)": [
+        "Diâmetro do Gráfico (px)"
+      ],
+      "Manage Segments": [
+        "Gerenciar Segmentos"
+      ],
+      "Segment": [
+        "Segmento"
+      ],
+      "Value / Percentage": [
+        "Valor / Porcentagem"
+      ],
+      "Color": [
+        "Cor"
+      ],
+      "+ Add Segment": [
+        "+ Adicionar Segmento"
+      ],
+      "New Segment": [
+        "Novo Segmento"
+      ],
+      "line chart": [
+        "gráfico de linha"
+      ],
+      "bar chart": [
+        "gráfico de barras"
+      ],
+      "grafico linha barra": [
+        "gráfico linha barra"
+      ],
+      "torus": [
+        "torus"
+      ],
+      "donut chart": [
+        "gráfico de rosca"
+      ],
+      "grafico rosca": [
+        "gráfico rosca"
+      ],
+      "Vibrant Blue": [
+        "Azul Vibrante"
+      ],
+      "Soft Pastel Blue": [
+        "Azul Pastel Suave"
+      ],
+      "Emerald Green": [
+        "Verde Esmeralda"
+      ],
+      "Soft Green": [
+        "Verde Suave"
+      ],
+      "Violet Purple": [
+        "Roxo Violeta"
+      ],
+      "Soft Purple": [
+        "Roxo Suave"
+      ],
+      "Amber Orange": [
+        "Laranja Âmbar"
+      ],
+      "Soft Amber": [
+        "Âmbar Suave"
+      ],
+      "Slate Dark": [
+        "Ardósia Escuro"
+      ],
+      "Coral Red": [
+        "Vermelho Coral"
+      ],
+      "Sky Blue": [
+        "Azul Céu"
+      ],
+      "Teal Cyan": [
+        "Ciano Petróleo"
+      ],
+      "Dark Slate": [
+        "Ardósia Escuro"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Grafic Line & Bar": [
+        "Periodic - Gráfico de Linha e Barras"
+      ],
+      "Gráfico moderno de Linha + Barras em SVG nativo responsivo.": [
+        "Gráfico moderno de Linha + Barras em SVG nativo responsivo."
+      ],
+      "Periodic - Grafic Torus": [
+        "Periodic - Gráfico Torus"
+      ],
+      "Gráfico elegante no formato Torus / Donut circular em SVG nativo.": [
+        "Gráfico elegante no formato Torus / Donut circular em SVG nativo."
+      ],
+      "Chart Settings": [
+        "Configurações do Gráfico"
+      ],
+      "Title": [
+        "Título"
+      ],
+      "Subtitle (Optional)": [
+        "Subtítulo (Opcional)"
+      ],
+      "Y-Axis Maximum (Max Y)": [
+        "Máximo do Eixo Y (Max Y)"
+      ],
+      "Show Columns / Bars": [
+        "Exibir Colunas / Barras"
+      ],
+      "Show Connected Line": [
+        "Exibir Linha Conectada"
+      ],
+      "Show Point Markers": [
+        "Exibir Marcadores de Ponto"
+      ],
+      "Color Palette": [
+        "Paleta de Cores"
+      ],
+      "Bar Color": [
+        "Cor das Barras"
+      ],
+      "Line & Point Color": [
+        "Cor da Linha e Pontos"
+      ],
+      "Data Points": [
+        "Pontos de Dados"
+      ],
+      "Point": [
+        "Ponto"
+      ],
+      "Label": [
+        "Rótulo"
+      ],
+      "Value": [
+        "Valor"
+      ],
+      "+ Add Data Point": [
+        "+ Adicionar Ponto de Dado"
+      ],
+      "Center Value": [
+        "Valor Central"
+      ],
+      "Center Subtitle": [
+        "Subtítulo Central"
+      ],
+      "Ring Thickness": [
+        "Espessura do Anel"
+      ],
+      "Chart Diameter (px)": [
+        "Diâmetro do Gráfico (px)"
+      ],
+      "Manage Segments": [
+        "Gerenciar Segmentos"
+      ],
+      "Segment": [
+        "Segmento"
+      ],
+      "Value / Percentage": [
+        "Valor / Porcentagem"
+      ],
+      "Color": [
+        "Cor"
+      ],
+      "+ Add Segment": [
+        "+ Adicionar Segmento"
+      ],
+      "New Segment": [
+        "Novo Segmento"
+      ],
+      "line chart": [
+        "gráfico de linha"
+      ],
+      "bar chart": [
+        "gráfico de barras"
+      ],
+      "grafico linha barra": [
+        "gráfico linha barra"
+      ],
+      "torus": [
+        "torus"
+      ],
+      "donut chart": [
+        "gráfico de rosca"
+      ],
+      "grafico rosca": [
+        "gráfico rosca"
+      ],
+      "Vibrant Blue": [
+        "Azul Vibrante"
+      ],
+      "Soft Pastel Blue": [
+        "Azul Pastel Suave"
+      ],
+      "Emerald Green": [
+        "Verde Esmeralda"
+      ],
+      "Soft Green": [
+        "Verde Suave"
+      ],
+      "Violet Purple": [
+        "Roxo Violeta"
+      ],
+      "Soft Purple": [
+        "Roxo Suave"
+      ],
+      "Amber Orange": [
+        "Laranja Âmbar"
+      ],
+      "Soft Amber": [
+        "Âmbar Suave"
+      ],
+      "Slate Dark": [
+        "Ardósia Escuro"
+      ],
+      "Coral Red": [
+        "Vermelho Coral"
+      ],
+      "Sky Blue": [
+        "Azul Céu"
+      ],
+      "Teal Cyan": [
+        "Ciano Petróleo"
+      ],
+      "Dark Slate": [
+        "Ardósia Escuro"
+      ]
+    }
+  }
+}

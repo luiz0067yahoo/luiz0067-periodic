@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/tabs",
+  "version": "1.0.0",
+  "title": "Periodic Tabs",
+  "category": "design",
+  "icon": "index-card",
+  "description": "Sistema profissional de abas e pílulas horizontais e verticais com Bootstrap 5 e Font Awesome 6.",
+  "keywords": ["tabs", "abas", "bootstrap", "pills", "nav"],
+  "textdomain": "periodic-tabs",
+  "attributes": {
+    "tabStyle": {
+      "type": "string",
+      "enum": ["tabs", "pills"],
+      "default": "tabs"
+    },
+    "tabAlignment": {
+      "type": "string",
+      "enum": ["horizontal", "vertical"],
+      "default": "horizontal"
+    },
+    "activeColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "tabs": {
+      "type": "array",
+      "default": [
+        {
+          "id": "luiz-tab-1",
+          "title": "Aba 1",
+          "icon": "fas fa-layer-group",
+          "active": true,
+          "contentHtml": "<p>Conteúdo da primeira aba. Personalize este texto como desejar no editor.</p>"
+        },
+        {
+          "id": "luiz-tab-2",
+          "title": "Aba 2",
+          "icon": "fas fa-star",
+          "active": false,
+          "contentHtml": "<p>Conteúdo da segunda aba com informações adicionais e suporte a estilos.</p>"
+        },
+        {
+          "id": "luiz-tab-3",
+          "title": "Aba 3",
+          "icon": "fas fa-gear",
+          "active": false,
+          "contentHtml": "<p>Conteúdo da terceira aba configurável facilmente pelo painel lateral.</p>"
+        }
+      ]
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

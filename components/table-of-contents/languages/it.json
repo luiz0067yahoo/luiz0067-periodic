@@ -1,0 +1,42 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-table-of-contents",
+	"locale_data": {
+		"periodic-table-of-contents": {
+			"": {
+				"domain": "periodic-table-of-contents",
+				"lang": "it_IT",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Sumário Automático (Table of Contents)": [ "Sommario Automatico (Table of Contents)" ],
+			"Sumário / índice automático que escaneia títulos (H2, H3, H4) gerando links de ancoragem com rolagem suave e rastreamento ativo.": [
+				"Sommario automatico che scansiona i titoli (H2, H3, H4) generando collegamenti di ancoraggio con scorrimento fluido e scrollspy."
+			],
+			"Títulos": [ "Titoli" ],
+			"Estilo": [ "Stile" ],
+			"Navegação": [ "Navigazione" ],
+			"Níveis de Títulos Incluídos": [ "Livelli di Titoli Inclusi" ],
+			"Incluir Títulos H2": [ "Includi Titoli H2" ],
+			"Incluir Subtítulos H3": [ "Includi Sottotitoli H3" ],
+			"Incluir Tópicos H4": [ "Includi Argomenti H4" ],
+			"Estilo & Identidade Visual": [ "Stile e Identità Visiva" ],
+			"Tipo de Marcador da Lista": [ "Tipo di Marcatore della Lista" ],
+			"Lista Numerada (1, 2, 3...)": [ "Lista Numerata (1, 2, 3...)" ],
+			"Marcador Redondo (Bullets)": [ "Elenco Puntato (Bullets)" ],
+			"Lista Limpa / Minimalista": [ "Lista Pulita / Minimalista" ],
+			"Tema Visual do Cartão": [ "Tema Visivo della Scheda" ],
+			"Card Elegante com Sombra": [ "Scheda Elegante con Ombra" ],
+			"Borda Lateral de Destaque": [ "Bordo Laterale di Evidenza" ],
+			"Fundo Plano Suave (Flat)": [ "Sfondo Piatto Morbido (Flat)" ],
+			"Cor de Destaque / Links": [ "Colore di Evidenza / Link" ],
+			"Cor de Fundo": [ "Colore di Sfondo" ],
+			"Arredondamento de Bordas (px)": [ "Arrotondamento dei Bordi (px)" ],
+			"Comportamento & Rolagem": [ "Comportamento e Scorrimento" ],
+			"Painel Recolhível / Accordion": [ "Pannello Pieghevole / Accordion" ],
+			"Iniciar Fechado em Telas Mobile": [ "Avvia Chiuso su Schermi Mobili" ],
+			"Rastreamento Ativo / Scrollspy": [ "Tracciamento Attivo / Scrollspy" ],
+			"Compensação de Topo / Header Offset (px)": [ "Compensazione Superiore / Offset (px)" ]
+		}
+	}
+}

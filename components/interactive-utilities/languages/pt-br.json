@@ -1,0 +1,62 @@
+{
+  "locale": "pt-BR",
+  "block": {
+    "title": "Utilitários Interativos Periodic",
+    "description": "Suíte interativa: Gerador de QR Code dinâmico, Calendário do Advento com 24 caixas com trava temporal e modais Bootstrap 5, e Pistas AR com marcadores."
+  },
+  "utilityTypes": {
+    "qrCode": "Gerador de QR Code",
+    "adventCalendar": "Calendário do Advento (24 Dias)",
+    "arTrigger": "Pistas com Marcador AR"
+  },
+  "qrCode": {
+    "title": "Gerador de QR Code Dinâmico",
+    "labelContent": "Conteúdo ou URL do QR Code",
+    "placeholderContent": "https://seusite.com ou qualquer texto...",
+    "labelFgColor": "Cor dos Módulos (Frente)",
+    "labelBgColor": "Cor de Fundo",
+    "labelSize": "Dimensão (Pixels)",
+    "btnDownloadPng": "Baixar PNG",
+    "btnDownloadSvg": "Baixar SVG",
+    "btnCopy": "Copiar Conteúdo",
+    "copiedSuccess": "Conteúdo copiado com sucesso!",
+    "livePreview": "Pré-visualização do QR Code"
+  },
+  "adventCalendar": {
+    "title": "Calendário do Advento Interativo",
+    "subtitle": "Abra as caixas a cada dia de dezembro para revelar as surpresas!",
+    "day": "Dia",
+    "doorLockedTitle": "Porta Trancada!",
+    "doorLockedMessage": "Esta surpresa só estará disponível em",
+    "doorLockedRemainingDays": "Faltam {days} dia(s) para o desbloqueio!",
+    "doorUnlocked": "Desbloqueado! Clique para abrir a surpresa.",
+    "doorOpened": "Já Aberto",
+    "btnOpenDoor": "Abrir Surpresa",
+    "btnCloseModal": "Fechar",
+    "testDateLabel": "Simulador de Data Atual (Modo Teste):",
+    "resetProgress": "Reiniciar Progresso",
+    "progressResetSuccess": "Progresso do calendário reiniciado!",
+    "doorsUnlockedCount": "portas desbloqueadas até o momento"
+  },
+  "arTrigger": {
+    "title": "Pistas & Desafio de Realidade Aumentada",
+    "subtitle": "Aponte a câmera para o marcador ou decifre o enigma para desbloquear a pista.",
+    "markerInfo": "Marcador Padrão HIRO / QR de Rastreamento",
+    "btnViewMarker": "Ver Marcador de Referência",
+    "btnPrintMarker": "Imprimir Marcador",
+    "btnScanCamera": "Ativar Scanner / Câmera AR",
+    "clueTitle": "Pista Enigmática",
+    "clueHint": "Dica Especial:",
+    "showHint": "Revelar Dica",
+    "hideHint": "Ocultar Dica",
+    "arStatusReady": "Pronto para rastrear",
+    "arModalTitle": "Marcador de Realidade Aumentada"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro ao carregar o utilitário.",
+    "settings": "Configurações do Bloco",
+    "preview": "Pré-visualização",
+    "poweredBy": "Ecossistema Interativo periodic"
+  }
+}

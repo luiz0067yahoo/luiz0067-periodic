@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <filter id="page-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Word Background (Light Gray) -->
+  <rect width="1920" height="1080" fill="#edebe9"/>
+
+  <!-- TITLE BAR -->
+  <rect x="0" y="0" width="1920" height="42" fill="#185abd"/>
+  <rect x="15" y="10" width="22" height="22" rx="3" fill="#ffffff"/>
+  <text x="26" y="27" fill="#185abd" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">W</text>
+  <text x="50" y="26" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600">Salvar automaticamente</text>
+  <rect x="200" y="14" width="30" height="14" rx="7" fill="#103c80"/>
+  <circle cx="207" cy="21" r="5" fill="#ffffff"/>
+
+  <!-- Document Title Centered -->
+  <text x="960" y="26" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600" text-anchor="middle">Documento1 - Microsoft Word</text>
+  
+  <!-- Window Controls -->
+  <g transform="translate(1780, 0)">
+    <rect x="0" y="0" width="45" height="42" fill="transparent"/>
+    <line x1="18" y1="21" x2="28" y2="21" stroke="#ffffff" stroke-width="1.5"/>
+    <rect x="45" y="0" width="45" height="42" fill="transparent"/>
+    <rect x="62" y="16" width="11" height="11" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+    <rect x="90" y="0" width="48" height="42" fill="#c42b1c"/>
+    <line x1="108" y1="16" x2="120" y2="28" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="120" y1="16" x2="108" y2="28" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+
+  <!-- RIBBON TABS BAR -->
+  <rect x="0" y="42" width="1920" height="38" fill="#f3f2f1" stroke="#e1dfdd" stroke-width="1"/>
+  
+  <text x="30" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Arquivo</text>
+  
+  <!-- Active Tab: Página Inicial -->
+  <g>
+    <rect x="85" y="44" width="95" height="36" fill="#ffffff"/>
+    <text x="132" y="66" fill="#185abd" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600" text-anchor="middle">Página Inicial</text>
+    <rect x="85" y="77" width="95" height="3" fill="#185abd"/>
+  </g>
+
+  <text x="210" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Inserir</text>
+  <text x="280" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Desenhar</text>
+  <text x="365" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Design</text>
+
+  <!-- TAB: LAYOUT (HOTSPOT TARGET) -->
+  <g id="tab-layout-target">
+    <rect x="430" y="44" width="75" height="36" rx="4" fill="#e1dfdd" fill-opacity="0.6"/>
+    <text x="467" y="66" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" text-anchor="middle">Layout</text>
+  </g>
+
+  <text x="535" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Referências</text>
+  <text x="640" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Correspondências</text>
+  <text x="775" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Revisão</text>
+  <text x="855" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Exibir</text>
+  <text x="915" y="66" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="13">Ajuda</text>
+
+  <!-- RIBBON COMMANDS TOOLBAR (Página Inicial content) -->
+  <rect x="0" y="80" width="1920" height="98" fill="#ffffff" stroke="#e1dfdd" stroke-width="1"/>
+  
+  <!-- Font tools mockup -->
+  <g transform="translate(200, 92)">
+    <rect x="0" y="0" width="140" height="26" rx="2" fill="#f3f2f1" stroke="#8a8886" stroke-width="0.75"/>
+    <text x="10" y="17" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="12">Calibri (Corpo)</text>
+    <rect x="150" y="0" width="45" height="26" rx="2" fill="#f3f2f1" stroke="#8a8886" stroke-width="0.75"/>
+    <text x="160" y="17" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="12">11</text>
+    
+    <g transform="translate(0, 34)">
+      <text x="10" y="18" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="bold">N</text>
+      <text x="35" y="18" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="14" font-style="italic">I</text>
+      <text x="60" y="18" fill="#323130" font-family="'Segoe UI', sans-serif" font-size="14" text-decoration="underline">S</text>
+    </g>
+    <text x="100" y="80" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Fonte</text>
+  </g>
+  <line x1="410" y1="88" x2="410" y2="168" stroke="#e1dfdd" stroke-width="1"/>
+
+  <!-- Parágrafo tools mockup -->
+  <g transform="translate(430, 92)">
+    <line x1="10" y1="10" x2="40" y2="10" stroke="#323130" stroke-width="2"/>
+    <line x1="10" y1="16" x2="30" y2="16" stroke="#323130" stroke-width="2"/>
+    <line x1="10" y1="22" x2="45" y2="22" stroke="#323130" stroke-width="2"/>
+    <text x="80" y="80" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Parágrafo</text>
+  </g>
+  <line x1="610" y1="88" x2="610" y2="168" stroke="#e1dfdd" stroke-width="1"/>
+
+  <!-- RULER -->
+  <rect x="0" y="178" width="1920" height="24" fill="#f3f2f1" stroke="#e1dfdd" stroke-width="1"/>
+  <rect x="560" y="180" width="800" height="20" fill="#ffffff"/>
+  <!-- Ruler tick marks -->
+  <line x1="560" y1="195" x2="1360" y2="195" stroke="#a19f9d" stroke-width="0.5"/>
+  <text x="660" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">2</text>
+  <text x="760" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">4</text>
+  <text x="860" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">6</text>
+  <text x="960" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">8</text>
+  <text x="1060" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">10</text>
+  <text x="1160" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">12</text>
+  <text x="1260" y="193" fill="#605e5c" font-family="'Segoe UI', sans-serif" font-size="10">14</text>
+
+  <!-- A4 DOCUMENT BLANK CANVAS -->
+  <g transform="translate(560, 220)" filter="url(#page-shadow)">
+    <rect width="800" height="820" fill="#ffffff" stroke="#d2d0ce" stroke-width="1"/>
+    <!-- Blinking cursor mockup on page -->
+    <line x1="90" y1="90" x2="90" y2="114" stroke="#185abd" stroke-width="2"/>
+  </g>
+
+  <!-- STATUS BAR -->
+  <rect x="0" y="1052" width="1920" height="28" fill="#185abd"/>
+  <text x="25" y="1070" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="12">Página 1 de 1</text>
+  <text x="120" y="1070" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="12">0 palavras</text>
+  <text x="220" y="1070" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="12">Português (Brasil)</text>
+  <text x="1800" y="1070" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="12">100%</text>
+</svg>

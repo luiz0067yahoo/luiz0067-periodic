@@ -1,0 +1,91 @@
+# Copyright (C) 2026 Luiz Fernando Brogliatto Ferreira
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Date Title Link 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/date-title-link\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: custom-adm\n"
+
+#: js/blocks/date-title-link.js
+msgid "Data, Título e Link"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Exibe publicações oficiais, editais ou notícias com data, título descritivo e URL de redirecionamento."
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "data"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "título"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "link"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "edital"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "notícia"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Edital de Concurso Público Nº 04/2026 - Convocação para Provas Objetivas"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Configurações do Link e Publicação"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "URL de Redirecionamento"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Endereço para onde o usuário será direcionado ao clicar no item."
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Abrir link em nova aba (_blank)"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "O link será aberto em uma nova guia do navegador."
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "O link será aberto na mesma página."
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Data da Publicação / Evento"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Ex: 11/09/2026 ou 11 de Setembro"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Você também pode editar a data diretamente no bloco."
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Data (ex: 11/09/2026)"
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "Digite o título descritivo do edital, notícia ou publicação oficial..."
+msgstr ""
+
+#: js/blocks/date-title-link.js
+msgid "URL não informada (clique para definir na barra lateral)"
+msgstr ""
+

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/text-completion",
+  "version": "1.0.0",
+  "title": "periodic Text Completion",
+  "category": "widgets",
+  "icon": "edit",
+  "description": "Interactive fill-in-the-blanks and audio dictation Gutenberg block with Bootstrap 5 and Vanilla JS.",
+  "keywords": [
+    "text completion",
+    "fill in the blanks",
+    "dictation",
+    "ditado",
+    "lacunas",
+    "quiz",
+    "bootstrap",
+    "periodic"
+  ],
+  "textdomain": "periodic-text-completion",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Complete as Lacunas"
+    },
+    "instruction": {
+      "type": "string",
+      "default": "Preencha os espaços em branco com as palavras corretas."
+    },
+    "rawText": {
+      "type": "string",
+      "default": "O céu é *azul* e o mar é *salgado*."
+    },
+    "audioUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "audioId": {
+      "type": "number",
+      "default": 0
+    },
+    "caseSensitive": {
+      "type": "boolean",
+      "default": false
+    },
+    "acceptTypos": {
+      "type": "boolean",
+      "default": true
+    },
+    "attempts": {
+      "type": "number",
+      "default": 3
+    },
+    "themeColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "showWordBank": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreAccents": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

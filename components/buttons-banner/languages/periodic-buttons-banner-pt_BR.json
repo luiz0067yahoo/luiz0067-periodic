@@ -1,0 +1,219 @@
+{
+  "translation-revision-date": "2026-09-11 20:30:00+0000",
+  "generator": "wp-cli/python",
+  "source": "assets/js/buttons-banner.js",
+  "domain": "periodic-buttons-banner",
+  "locale_data": {
+    "periodic-buttons-banner": {
+      "": {
+        "domain": "periodic-buttons-banner",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Abrir em Nova Aba (_blank)": [
+        "Abrir em Nova Aba (_blank)"
+      ],
+      "Adiciona Linha": [
+        "Adiciona Linha"
+      ],
+      "Adicionar Botão": [
+        "Adicionar Botão"
+      ],
+      "Agendamentos e consultas": [
+        "Agendamentos e consultas"
+      ],
+      "Alinhamento": [
+        "Alinhamento"
+      ],
+      "Alterar Logotipo": [
+        "Alterar Logotipo"
+      ],
+      "Atendimento Online": [
+        "Atendimento Online"
+      ],
+      "Atendimento ao cidadão": [
+        "Atendimento ao cidadão"
+      ],
+      "Azul Corporativo": [
+        "Azul Corporativo"
+      ],
+      "Azul Escuro": [
+        "Azul Escuro"
+      ],
+      "Azul Institucional": [
+        "Azul Institucional"
+      ],
+      "Botão #": [
+        "Botão #"
+      ],
+      "Botões Banner": [
+        "Botões Banner"
+      ],
+      "Branco": [
+        "Branco"
+      ],
+      "Centralizado": [
+        "Centralizado"
+      ],
+      "Certidões e IPTU": [
+        "Certidões e IPTU"
+      ],
+      "Cinza Claro": [
+        "Cinza Claro"
+      ],
+      "Clique para enviar ou alterar o logotipo": [
+        "Clique para enviar ou alterar o logotipo"
+      ],
+      "Coloque seu Link aqui...": [
+        "Coloque seu Link aqui..."
+      ],
+      "Coloque seu texto aqui...": [
+        "Coloque seu texto aqui..."
+      ],
+      "Coloque titulo aqui...": [
+        "Coloque titulo aqui..."
+      ],
+      "Colunas por Linha": [
+        "Colunas por Linha"
+      ],
+      "Configurações de Layout e Estilo": [
+        "Configurações de Layout e Estilo"
+      ],
+      "Contorno / Outline": [
+        "Contorno / Outline"
+      ],
+      "Cor do Destaque / Fundo": [
+        "Cor do Destaque / Fundo"
+      ],
+      "Coral / Vermelho": [
+        "Coral / Vermelho"
+      ],
+      "Cores Personalizadas": [
+        "Cores Personalizadas"
+      ],
+      "Descrição do serviço": [
+        "Descrição do serviço"
+      ],
+      "Deve haver pelo menos 1 botão no bloco.": [
+        "Deve haver pelo menos 1 botão no bloco."
+      ],
+      "Direita": [
+        "Direita"
+      ],
+      "Dourado / Amarelo": [
+        "Dourado / Amarelo"
+      ],
+      "EDUCAÇÃO": [
+        "EDUCAÇÃO"
+      ],
+      "Enviar Logotipo": [
+        "Enviar Logotipo"
+      ],
+      "Escolas e Alunos": [
+        "Escolas e Alunos"
+      ],
+      "Escuro / Dark Mode": [
+        "Escuro / Dark Mode"
+      ],
+      "Esquerda": [
+        "Esquerda"
+      ],
+      "Estilo Visual": [
+        "Estilo Visual"
+      ],
+      "Gerenciador de Botões (": [
+        "Gerenciador de Botões ("
+      ],
+      "Grafite Escuro": [
+        "Grafite Escuro"
+      ],
+      "Limite máximo recomendado atingido.": [
+        "Limite máximo recomendado atingido."
+      ],
+      "Link de Destino (URL)": [
+        "Link de Destino (URL)"
+      ],
+      "Link de destino": [
+        "Link de destino"
+      ],
+      "Logotipo / Ícone:": [
+        "Logotipo / Ícone:"
+      ],
+      "Matrículas e escolas": [
+        "Matrículas e escolas"
+      ],
+      "NOTÍCIAS": [
+        "NOTÍCIAS"
+      ],
+      "NOVO BOTÃO": [
+        "NOVO BOTÃO"
+      ],
+      "Padrão Prefeitura (Gradiente Verde/Azul)": [
+        "Padrão Prefeitura (Gradiente Verde/Azul)"
+      ],
+      "Portal da Saúde": [
+        "Portal da Saúde"
+      ],
+      "Preto": [
+        "Preto"
+      ],
+      "Quantidade de até 5 botões por linha com logos, descrições ricas e links personalizáveis.": [
+        "Quantidade de até 5 botões por linha com logos, descrições ricas e links personalizáveis."
+      ],
+      "Remover": [
+        "Remover"
+      ],
+      "Remover Botão": [
+        "Remover Botão"
+      ],
+      "Remover Linha": [
+        "Remover Linha"
+      ],
+      "SAÚDE": [
+        "SAÚDE"
+      ],
+      "SERVIÇOS": [
+        "SERVIÇOS"
+      ],
+      "Selecione o logotipo do botão": [
+        "Selecione o logotipo do botão"
+      ],
+      "Sem título": [
+        "Sem título"
+      ],
+      "TRIBUTOS": [
+        "TRIBUTOS"
+      ],
+      "Título / Sigla": [
+        "Título / Sigla"
+      ],
+      "Utilizar como logotipo": [
+        "Utilizar como logotipo"
+      ],
+      "Verde Institucional": [
+        "Verde Institucional"
+      ],
+      "banner": [
+        "banner"
+      ],
+      "botões": [
+        "botões"
+      ],
+      "buttons": [
+        "buttons"
+      ],
+      "custom adm": [
+        "custom adm"
+      ],
+      "links": [
+        "links"
+      ],
+      "prefeitura": [
+        "prefeitura"
+      ],
+      "Últimos comunicados": [
+        "Últimos comunicados"
+      ]
+    }
+  }
+}

@@ -1,0 +1,267 @@
+/**
+ * luiz0067 Quiz Engine - Shared Styles (Frontend & Editor)
+ * Integrates cleanly with Bootstrap 5 & Font Awesome 6
+ */
+
+.wp-block-luiz0067-quiz-engine {
+  margin: 1.5rem 0;
+  font-family: inherit;
+
+  .quiz-engine-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease-in-out;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    overflow: hidden;
+
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  /* Progress bar container */
+  .quiz-progress-wrapper {
+    margin-bottom: 1.25rem;
+
+    .progress {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #e9ecef;
+      overflow: hidden;
+
+      .progress-bar {
+        transition: width 0.4s ease;
+      }
+    }
+  }
+
+  /* Quiz Timer */
+  .quiz-timer-badge {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &.timer-warning {
+      background-color: #ffc107;
+      color: #000;
+      animation: pulse-warning 1s infinite alternate;
+    }
+
+    &.timer-danger {
+      background-color: #dc3545;
+      color: #fff;
+      animation: pulse-danger 0.6s infinite alternate;
+    }
+  }
+
+  @keyframes pulse-warning {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+  }
+
+  @keyframes pulse-danger {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+
+  /* Question options list */
+  .quiz-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+
+    .quiz-option-item {
+      display: flex;
+      align-items: center;
+      padding: 0.85rem 1.15rem;
+      border: 2px solid #e9ecef;
+      border-radius: 0.5rem;
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      position: relative;
+
+      &:hover:not(.disabled) {
+        border-color: #0d6efd;
+        background-color: #f0f7ff;
+        transform: translateY(-1px);
+      }
+
+      &.selected {
+        border-color: #0d6efd;
+        background-color: #e7f1ff;
+        font-weight: 500;
+      }
+
+      &.is-correct {
+        border-color: #198754 !important;
+        background-color: #d1e7dd !important;
+        color: #0f5132 !important;
+
+        .option-feedback-icon {
+          color: #198754;
+        }
+      }
+
+      &.is-incorrect {
+        border-color: #dc3545 !important;
+        background-color: #f8d7da !important;
+        color: #842029 !important;
+
+        .option-feedback-icon {
+          color: #dc3545;
+        }
+      }
+
+      .form-check-input {
+        margin-right: 0.75rem;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .option-text {
+        flex-grow: 1;
+        line-height: 1.4;
+      }
+
+      .option-feedback-icon {
+        margin-left: 0.5rem;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  /* Arithmetic mode input */
+  .quiz-arithmetic-container {
+    margin: 1.5rem 0;
+
+    .arithmetic-display {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #0d6efd;
+      text-align: center;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .arithmetic-input {
+      font-size: 1.5rem;
+      text-align: center;
+      max-width: 260px;
+      margin: 0 auto;
+      border: 2px solid #ced4da;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+
+      &:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+    }
+  }
+
+  /* Survey scale mode */
+  .quiz-survey-scale {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+
+    .survey-scale-btn {
+      flex: 1;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      border: 2px solid #dee2e6;
+      border-radius: 0.5rem;
+      background: #ffffff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: #0d6efd;
+        background: #f0f7ff;
+      }
+
+      &.selected {
+        background: #0d6efd;
+        color: #ffffff;
+        border-color: #0d6efd;
+      }
+    }
+  }
+
+  /* Explanation box */
+  .quiz-explanation-alert {
+    margin-top: 1.25rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* Results Card */
+  .quiz-results-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+
+    .results-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+
+      &.text-success {
+        color: #198754;
+      }
+
+      &.text-danger {
+        color: #dc3545;
+      }
+    }
+
+    .results-score-badge {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0.5rem 0;
+      color: #212529;
+    }
+
+    .results-summary-list {
+      text-align: left;
+      margin: 1.5rem auto;
+      max-width: 600px;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

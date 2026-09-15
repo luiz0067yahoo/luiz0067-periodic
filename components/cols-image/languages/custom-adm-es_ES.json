@@ -1,0 +1,43 @@
+{
+	"translation-revision-date": "2026-09-11 20:00:00-0300",
+	"generator": "Antigravity i18n Generator",
+	"domain": "custom-adm",
+	"locale_data": {
+		"custom-adm": {
+			"": {
+				"domain": "custom-adm",
+				"lang": "es_ES",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Imagem em Colunas": ["Imagen en Columnas"],
+			"Exibe uma grade de até 4 colunas de imagens com títulos, descrições e sobreposição.": ["Muestra una cuadrícula de hasta 4 columnas de imágenes con títulos, descripciones y superposición."],
+			"colunas": ["columnas"],
+			"galeria": ["galería"],
+			"imagens": ["imágenes"],
+			"Paisagens Naturais": ["Paisajes Naturales"],
+			"Arquitetura Urbana": ["Arquitectura Urbana"],
+			"Cultura e História": ["Cultura e Historia"],
+			"Descubra os parques ecológicos e trilhas deslumbrantes da nossa região.": ["Descubra los parques ecológicos y senderos impresionantes de nuestra región."],
+			"Conheça os projetos modernos e sustentáveis de revitalização da cidade.": ["Conozca los proyectos modernos y sostenibles de revitalización de la ciudad."],
+			"Explore o patrimônio cultural e os monumentos históricos tombados.": ["Explore el patrimonio cultural y los monumentos históricos protegidos."],
+			"Novo Título": ["Nuevo Título"],
+			"Descrição breve sobre este destaque...": ["Breve descripción sobre este elemento..."],
+			"Configurações de Layout": ["Ajustes de Diseño"],
+			"Número de Colunas": ["Número de Columnas"],
+			"Altura dos Cards (px)": ["Altura de Tarjetas (px)"],
+			"Aparência e Sobreposição": ["Apariencia y Superposición"],
+			"Opacidade da Máscara Escura (%)": ["Opacidad de Máscara Oscura (%)"],
+			"Bordas Arredondadas": ["Bordes Redondeados"],
+			"Gerenciamento de Itens": ["Gestión de Elementos"],
+			"Adicionar Nova Coluna": ["Añadir Nueva Columna"],
+			"Alterar Imagem": ["Cambiar Imagen"],
+			"Mover para Esquerda": ["Mover a la Izquierda"],
+			"Mover para Direita": ["Mover a la Derecha"],
+			"Remover Coluna": ["Eliminar Columna"],
+			"Digite o título...": ["Escriba el título..."],
+			"Digite a descrição (até 100 caracteres)...": ["Escriba la descripción (hasta 100 caracteres)..."],
+			"Clique na câmera para enviar foto": ["Haga clic en la cámara para subir foto"],
+			" Adicionar Coluna": [" Añadir Columna"]
+		}
+	}
+}

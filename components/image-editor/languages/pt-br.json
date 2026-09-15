@@ -1,0 +1,90 @@
+{
+  "translation-revision-date": "2026-09-13 19:00:00+0000",
+  "generator": "WP-CLI",
+  "source": "periodic-image-editor",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Periodic Image Editor": [
+        "Periodic Image Editor"
+      ],
+      "Mídia e Seleção": [
+        "Mídia e Seleção"
+      ],
+      "Zoom e Rotação": [
+        "Zoom e Rotação"
+      ],
+      "Posicionamento X / Y": [
+        "Posicionamento X / Y"
+      ],
+      "Seleção de Imagem": [
+        "Seleção de Imagem"
+      ],
+      "Selecionar Imagem": [
+        "Selecionar Imagem"
+      ],
+      "Trocar Imagem": [
+        "Trocar Imagem"
+      ],
+      "Remover Imagem": [
+        "Remover Imagem"
+      ],
+      "Texto Alternativo (Alt Text)": [
+        "Texto Alternativo (Alt Text)"
+      ],
+      "Dimensões e Moldura": [
+        "Dimensões e Moldura"
+      ],
+      "Altura do Contêiner": [
+        "Altura do Contêiner"
+      ],
+      "Cantos Arredondados (Bootstrap 5)": [
+        "Cantos Arredondados (Bootstrap 5)"
+      ],
+      "Sombra (Bootstrap 5)": [
+        "Sombra (Bootstrap 5)"
+      ],
+      "Escala e Zoom": [
+        "Escala e Zoom"
+      ],
+      "Fator de Zoom": [
+        "Fator de Zoom"
+      ],
+      "Giro e Rotação": [
+        "Giro e Rotação"
+      ],
+      "Ângulo em Graus": [
+        "Ângulo em Graus"
+      ],
+      "Giro Rápido:": [
+        "Giro Rápido:"
+      ],
+      "Deslocamento nos Eixos X e Y": [
+        "Deslocamento nos Eixos X e Y"
+      ],
+      "Posição Horizontal (Eixo X)": [
+        "Posição Horizontal (Eixo X)"
+      ],
+      "Posição Vertical (Eixo Y)": [
+        "Posição Vertical (Eixo Y)"
+      ],
+      "Centralizar Imagem (X: 0, Y: 0)": [
+        "Centralizar Imagem (X: 0, Y: 0)"
+      ],
+      "Comportamento (Object Fit)": [
+        "Comportamento (Object Fit)"
+      ],
+      "Resetar Todas as Transformações": [
+        "Resetar Todas as Transformações"
+      ],
+      "Carregar Imagem": [
+        "Carregar Imagem"
+      ]
+    }
+  }
+}

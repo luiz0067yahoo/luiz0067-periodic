@@ -1,0 +1,40 @@
+/**
+ * Periodic Voice Lab - Editor Styles
+ */
+
+.periodic-voice-lab-editor-preview {
+    margin: 1.5rem 0;
+}
+
+.periodic-voice-lab-editor-preview .voice-lab-card {
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.periodic-voice-lab-editor-preview .soundwave-mockup {
+    background-color: #0f172a;
+    min-height: 70px;
+}
+
+.periodic-voice-lab-editor-preview .wave-bar {
+    transition: height 0.2s ease;
+    animation: wave-bounce 1.2s infinite ease-in-out;
+}
+
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(6) { animation-delay: 0.5s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(8) { animation-delay: 0.7s; }
+.periodic-voice-lab-editor-preview .wave-bar:nth-child(9) { animation-delay: 0.8s; }
+
+@keyframes wave-bounce {
+    0%, 100% {
+        transform: scaleY(0.4);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}

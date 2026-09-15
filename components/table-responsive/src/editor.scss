@@ -1,0 +1,349 @@
+/**
+ * Estilos exclusivos para o editor Gutenberg
+ * luiz0067-table-responsive
+ */
+
+// Estilização do InspectorControls e Abas
+.luiz0067-inspector-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 16px 16px 12px;
+	background: #f8fafc;
+	border-bottom: 1px solid #e2e8f0;
+
+	i {
+		color: #0d6efd;
+		font-size: 1.25rem;
+	}
+
+	h4 {
+		margin: 0;
+		font-size: 14px;
+		font-weight: 600;
+		color: #1e293b;
+	}
+}
+
+.luiz0067-table-tabs {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e2e8f0;
+		background: #ffffff;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			padding: 10px 6px;
+			font-size: 12px;
+			font-weight: 500;
+			color: #64748b;
+			border-radius: 0;
+			border-bottom: 2px solid transparent;
+			transition: all 0.2s ease;
+
+			&.is-active {
+				color: #0d6efd;
+				border-bottom-color: #0d6efd;
+				font-weight: 600;
+				background: #f0f7ff;
+			}
+
+			&:hover:not(.is-active) {
+				color: #1e293b;
+				background: #f8fafc;
+			}
+		}
+	}
+
+	.components-panel__body {
+		border-top: none;
+	}
+}
+
+.luiz0067-control-group {
+	margin-bottom: 16px;
+
+	.luiz0067-group-title {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		color: #475569;
+		margin-bottom: 8px;
+
+		i {
+			color: #0d6efd;
+		}
+	}
+
+	.luiz0067-btn-group-full {
+		display: flex;
+		width: 100%;
+		gap: 6px;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			font-size: 12px;
+		}
+	}
+}
+
+.luiz0067-theme-preview-palette {
+	margin-top: 14px;
+
+	.preview-label {
+		font-size: 12px;
+		font-weight: 600;
+		color: #475569;
+		margin-bottom: 8px;
+	}
+
+	.preview-badges {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 6px;
+
+		.palette-badge {
+			padding: 6px 4px;
+			font-size: 11px;
+			font-weight: 600;
+			border-radius: 4px;
+			cursor: pointer;
+			text-align: center;
+			border: 2px solid transparent;
+			transition: transform 0.15s ease, border-color 0.15s ease;
+
+			&:hover {
+				transform: translateY(-1px);
+			}
+
+			&.selected {
+				border-color: #0d6efd;
+				box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+			}
+
+			&.default {
+				background: #ffffff;
+				color: #212529;
+				border: 1px solid #ced4da;
+			}
+			&.table-dark {
+				background: #212529;
+				color: #ffffff;
+			}
+			&.table-primary {
+				background: #0d6efd;
+				color: #ffffff;
+			}
+			&.table-secondary {
+				background: #6c757d;
+				color: #ffffff;
+			}
+			&.table-success {
+				background: #198754;
+				color: #ffffff;
+			}
+			&.table-danger {
+				background: #dc3545;
+				color: #ffffff;
+			}
+			&.table-warning {
+				background: #ffc107;
+				color: #000000;
+			}
+			&.table-info {
+				background: #0dcaf0;
+				color: #000000;
+			}
+			&.table-light {
+				background: #f8f9fa;
+				color: #212529;
+				border: 1px solid #dee2e6;
+			}
+		}
+	}
+}
+
+// Estilização da Planilha Inline no Editor
+.luiz0067-table-editor-wrapper {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 16px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+	.luiz0067-table-toolbar-inline {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 12px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #f1f5f9;
+
+		.table-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 13px;
+			font-weight: 600;
+			color: #334155;
+
+			i {
+				color: #0d6efd;
+			}
+		}
+
+		.table-actions {
+			display: flex;
+			gap: 8px;
+
+			.action-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 5px;
+				background: #f1f5f9;
+				color: #1e293b;
+				border: 1px solid #cbd5e1;
+				border-radius: 4px;
+				padding: 4px 10px;
+				font-size: 12px;
+				font-weight: 500;
+				cursor: pointer;
+				transition: background 0.15s ease, border-color 0.15s ease;
+
+				&:hover {
+					background: #e2e8f0;
+					border-color: #94a3b8;
+				}
+
+				i {
+					font-size: 10px;
+					color: #0d6efd;
+				}
+			}
+		}
+	}
+
+	.luiz0067-table-container {
+		position: relative;
+		overflow-x: auto;
+
+		table {
+			margin-bottom: 0;
+			width: 100%;
+
+			th, td {
+				position: relative;
+				padding: 10px 14px;
+				min-width: 110px;
+				vertical-align: middle;
+
+				&:focus-within {
+					outline: 2px solid #0d6efd;
+					outline-offset: -2px;
+					background-color: rgba(13, 110, 253, 0.04);
+				}
+			}
+
+			th {
+				font-weight: 600;
+
+				.th-cell-content {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 6px;
+
+					span {
+						flex: 1;
+						outline: none;
+					}
+
+					.cell-delete-col {
+						background: rgba(220, 53, 69, 0.15);
+						color: #dc3545;
+						border: none;
+						border-radius: 3px;
+						width: 18px;
+						height: 18px;
+						line-height: 16px;
+						text-align: center;
+						padding: 0;
+						font-size: 14px;
+						cursor: pointer;
+						opacity: 0;
+						transition: opacity 0.15s ease;
+
+						&:hover {
+							background: #dc3545;
+							color: #ffffff;
+						}
+					}
+				}
+
+				&:hover .cell-delete-col {
+					opacity: 0.8;
+				}
+			}
+
+			td {
+				.td-cell-content {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 6px;
+
+					span {
+						flex: 1;
+						outline: none;
+					}
+
+					.cell-delete-row {
+						background: rgba(220, 53, 69, 0.15);
+						color: #dc3545;
+						border: none;
+						border-radius: 3px;
+						width: 18px;
+						height: 18px;
+						line-height: 16px;
+						text-align: center;
+						padding: 0;
+						font-size: 14px;
+						cursor: pointer;
+						opacity: 0;
+						transition: opacity 0.15s ease;
+
+						&:hover {
+							background: #dc3545;
+							color: #ffffff;
+						}
+					}
+				}
+
+				&:hover .cell-delete-row {
+					opacity: 0.8;
+				}
+			}
+
+			tr.is-row-active td {
+				background-color: rgba(13, 110, 253, 0.02);
+			}
+		}
+	}
+
+	.luiz0067-table-footer-hint {
+		margin-top: 10px;
+		color: #64748b;
+		font-size: 12px;
+
+		i {
+			color: #f59e0b;
+			margin-right: 4px;
+		}
+	}
+}

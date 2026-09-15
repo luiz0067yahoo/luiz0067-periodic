@@ -1,0 +1,20 @@
+{
+  "name": "periodic-interactive-utilities",
+  "version": "1.0.0",
+  "description": "Interactive utilities Gutenberg block suite: dynamic QR Code generator, date-unlocked Advent Calendar with Bootstrap 5 modals, and AR trigger clues.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "node test/validate.js"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "qr-code",
+    "advent-calendar",
+    "ar-marker",
+    "periodic"
+  ],
+  "author": "periodic",
+  "license": "GPL-2.0-or-later"
+}

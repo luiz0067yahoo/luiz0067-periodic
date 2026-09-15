@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Structured Writing - Test Preview</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Block Styles -->
+  <link href="build/style-index.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f1f5f9;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+    .preview-navbar {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px 20px;
+    }
+    .preview-template-btn.active {
+      background-color: #3b82f6 !important;
+      color: #ffffff !important;
+      border-color: #3b82f6 !important;
+    }
+  </style>
+</head>
+<body class="py-4">
+  <div class="container" style="max-width: 980px;">
+    <!-- Demo Switcher Header (Hidden in Print) -->
+    <div class="preview-navbar shadow-sm mb-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div>
+        <h5 class="mb-0 fw-bold text-white d-flex align-items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#60a5fa" class="bi bi-layout-text-window" viewBox="0 0 16 16">
+            <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5zM1.5 3a.5.5 0 0 0-.5.5V4h14v-.5a.5.5 0 0 0-.5-.5zM15 5H1v7.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5z"/>
+          </svg>
+          Periodic Structured Writing - Preview &amp; Test
+        </h5>
+        <small class="text-secondary">Simulação interativa WordPress frontend com Bootstrap 5 e JS nativo</small>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <span class="text-white-50 small me-1">Alternar Modelo:</span>
+        <button type="button" class="btn btn-sm btn-outline-light preview-template-btn active" data-template="cornell">
+          Cornell
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-light preview-template-btn" data-template="step-by-step">
+          Passo a Passo
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-light preview-template-btn" data-template="report-doc">
+          Relatório
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Block Container Area -->
+    <div id="block-container-target">
+      <!-- Will be rendered dynamically based on template selected -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="build/view.js"></script>
+
+  <script>
+    // Templates demo configurations
+    const DEMO_TEMPLATES = {
+      cornell: {
+        templateType: "cornell",
+        documentTitle: "Metodologia de Estudo & Notas Cornell",
+        documentSubtitle: "Preencha suas anotações durante a leitura ou aula, destaque conceitos-chave à esquerda e conclua com a síntese.",
+        allowPrintPdf: true,
+        allowCopy: true,
+        allowClearDraft: true,
+        showWordCount: true,
+        sections: [
+          {
+            id: "cues",
+            title: "Tópicos & Palavras-chave",
+            placeholder: "Perguntas essenciais, gatilhos de memória, dúvidas e termos para revisão rápida...",
+            promptGuidance: "Destaque palavras-chave, perguntas e ideias-força que sintetizem os pontos abordados.",
+            colSpan: "col-md-4"
+          },
+          {
+            id: "notes",
+            title: "Notas de Aula & Conceitos",
+            placeholder: "Anote as explicações detalhadas, conceitos, exemplos e observações...",
+            promptGuidance: "Escreva com suas próprias palavras os argumentos e raciocínios explicados pelo professor.",
+            colSpan: "col-md-8"
+          },
+          {
+            id: "summary",
+            title: "Síntese & Conclusão",
+            placeholder: "Resuma em 2 a 4 frases a ideia central e o aprendizado principal...",
+            promptGuidance: "Sintetize a essência de todo o conteúdo em um parágrafo conciso e conclusivo.",
+            colSpan: "col-12"
+          }
+        ]
+      },
+      "step-by-step": {
+        templateType: "step-by-step",
+        documentTitle: "Guia de Redação Dissertativa-Argumentativa",
+        documentSubtitle: "Siga o fluxo estruturado pelas abas para construir uma proposta completa e coesa.",
+        allowPrintPdf: true,
+        allowCopy: true,
+        allowClearDraft: true,
+        showWordCount: true,
+        sections: [
+          {
+            id: "step1",
+            title: "1. Introdução & Tese",
+            placeholder: "Contextualize a temática e formule sua tese com clareza...",
+            promptGuidance: "Apresente o problema, mostre a relevância social ou científica e declare o objetivo.",
+            colSpan: "col-12"
+          },
+          {
+            id: "step2",
+            title: "2. Desenvolvimento & Repertório",
+            placeholder: "Apresente dados, argumentos de sustentação, exemplos práticos e contraposições...",
+            promptGuidance: "Fundamente cada argumento com fatos e conexões lógicas que comprovem a tese.",
+            colSpan: "col-12"
+          },
+          {
+            id: "step3",
+            title: "3. Conclusão & Proposta",
+            placeholder: "Recapitule a tese e formule uma proposta de intervenção com agente, ação e efeito...",
+            promptGuidance: "Amarre todas as conclusões e aponte ações práticas e perspectivas futuras.",
+            colSpan: "col-12"
+          }
+        ]
+      },
+      "report-doc": {
+        templateType: "report-doc",
+        documentTitle: "Relatório de Análise Técnica & Metodologia",
+        documentSubtitle: "Documentação formal estruturada para apresentações técnicas e pareceres executivos.",
+        allowPrintPdf: true,
+        allowCopy: true,
+        allowClearDraft: true,
+        showWordCount: true,
+        sections: [
+          {
+            id: "obj",
+            title: "Objetivo & Escopo",
+            placeholder: "Defina claramente as metas do projeto, parâmetros avaliados e limitações...",
+            promptGuidance: "Especifique o propósito central, público destinatário e prazos envolvidos.",
+            colSpan: "col-md-6"
+          },
+          {
+            id: "method",
+            title: "Metodologia & Instrumentação",
+            placeholder: "Descreva procedimentos experimentais, tecnologias utilizadas e amostragem...",
+            promptGuidance: "Documente o processo de coleta de evidências e validação estatística.",
+            colSpan: "col-md-6"
+          },
+          {
+            id: "results",
+            title: "Resultados, Parecer & Encaminhamentos",
+            placeholder: "Consolide os achados, indicadores e recomendações operacionais...",
+            promptGuidance: "Destaque os impactos medidos e proponha o plano de ação correspondente.",
+            colSpan: "col-12"
+          }
+        ]
+      }
+    };
+
+    function renderTemplate(tplKey) {
+      const data = DEMO_TEMPLATES[tplKey];
+      const target = document.getElementById("block-container-target");
+
+      const configJson = JSON.stringify(data);
+      const isStep = data.templateType === 'step-by-step';
+      const isCornell = data.templateType === 'cornell';
+
+      let html = `
+        <div class="wp-block-periodic-structured-writing periodic-structured-writing-container my-4" data-structured-writing-config='${configJson}'>
+          <div class="card shadow-sm border-0 structured-writing-card">
+            <!-- Header -->
+            <div class="card-header structured-writing-header text-white p-4">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                <span class="badge bg-light text-primary fw-semibold px-3 py-1 text-uppercase template-type-badge">
+                  ${isCornell ? 'Notas Cornell' : isStep ? 'Escrita Passo a Passo' : 'Relatório Técnico'}
+                </span>
+                <span class="autosave-status text-white-50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-cloud-check me-1" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                    <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+                  </svg>
+                  <span class="autosave-text">Salvamento local ativado</span>
+                </span>
+              </div>
+              <h4 class="mb-1 text-white fw-bold document-title">${data.documentTitle}</h4>
+              <p class="mb-0 text-white-50 small document-subtitle">${data.documentSubtitle}</p>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body p-4">
+      `;
+
+      if (isStep) {
+        html += `
+          <ul class="nav nav-pills mb-4 flex-wrap gap-2 writing-nav-tabs" role="tablist">
+            ${data.sections.map((sec, idx) => `
+              <li class="nav-item" role="presentation">
+                <button type="button" class="nav-link ${idx === 0 ? 'active' : ''}" data-section-index="${idx}" role="tab" aria-selected="${idx === 0 ? 'true' : 'false'}">
+                  <span class="badge-step">${idx + 1}</span>
+                  ${sec.title}
+                </button>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+      }
+
+      html += `<div class="row g-4 ${isCornell ? 'cornell-row' : ''}">`;
+
+      data.sections.forEach((sec, idx) => {
+        let colClass = sec.colSpan || 'col-12';
+        if (isCornell) {
+          colClass = idx === 0 ? 'col-md-4 cornell-cues-col' : (idx === 1 ? 'col-md-8 cornell-notes-col' : 'col-12 cornell-summary-col');
+        } else if (data.templateType === 'report-doc') {
+          colClass = sec.colSpan || (idx < 2 ? 'col-md-6' : 'col-12');
+        }
+
+        const stepHiddenClass = isStep && idx !== 0 ? 'd-none' : '';
+
+        html += `
+          <div class="${colClass} section-wrapper ${stepHiddenClass}" data-section-index="${idx}">
+            <div class="p-3 structured-section-box h-100 ${idx === 2 && isCornell ? 'cornell-summary-box' : ''}">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="fw-bold text-primary mb-0 section-header-title">${sec.title}</h6>
+                <span class="badge bg-secondary-subtle text-secondary small section-counter">
+                  <span class="section-words">0</span> palavras
+                </span>
+              </div>
+
+              ${sec.promptGuidance ? `
+                <div class="section-guidance-callout mb-3">
+                  <div class="d-flex align-items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb-fill text-primary flex-shrink-0 mt-1" viewBox="0 0 16 16">
+                      <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15.5a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                    <div>
+                      <strong class="text-dark">Dica / Orientação: </strong>
+                      <span>${sec.promptGuidance}</span>
+                    </div>
+                  </div>
+                </div>
+              ` : ''}
+
+              <textarea
+                id="structured-field-${idx}"
+                name="section_${idx}"
+                class="form-control structured-textarea"
+                rows="${colClass.includes('col-12') ? 4 : 8}"
+                placeholder="${sec.placeholder}"
+                data-section-id="${sec.id}"
+                aria-label="${sec.title}"
+              ></textarea>
+              <div class="print-content-view d-none"></div>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+
+      if (isStep && data.sections.length > 1) {
+        html += `
+          <div class="d-flex justify-content-between align-items-center mt-3 pt-2 step-nav-controls">
+            <button type="button" class="btn btn-outline-secondary btn-prev-step" disabled>&larr; Etapa Anterior</button>
+            <span class="small text-muted current-step-indicator">Etapa 1 de ${data.sections.length}</span>
+            <button type="button" class="btn btn-primary btn-next-step">Próxima Etapa &rarr;</button>
+          </div>
+        `;
+      }
+
+      html += `
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4 pt-3 border-top structured-writing-actions">
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm btn-clear-draft d-flex align-items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                  </svg>
+                  <span>Limpar Rascunho</span>
+                </button>
+                <span class="text-muted small word-counter-badge ms-2">
+                  Total: <strong class="total-words">0</strong> palavras (<span class="total-chars">0</span> caracteres)
+                </span>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-primary btn-sm btn-copy-formatted d-flex align-items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+                  </svg>
+                  <span>Copiar Formatado</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm btn-print-pdf d-flex align-items-center gap-1 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+                    <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1"/>
+                    <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+                  </svg>
+                  <span>Imprimir / PDF</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer bg-light px-4 py-2 text-muted small d-flex flex-wrap justify-content-between align-items-center">
+            <span>Suas anotações são salvas continuamente no seu navegador.</span>
+            <span>Periodic Structured Writing</span>
+          </div>
+        </div>
+      </div>
+      `;
+
+      target.innerHTML = html;
+
+      // Re-initialize view.js
+      if (window.initPeriodicStructuredWriting) {
+        window.initPeriodicStructuredWriting();
+      }
+    }
+
+    // Switcher controls
+    document.querySelectorAll(".preview-template-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        document.querySelectorAll(".preview-template-btn").forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        renderTemplate(this.dataset.template);
+      });
+    });
+
+    // Default load
+    renderTemplate("cornell");
+  </script>
+</body>
+</html>

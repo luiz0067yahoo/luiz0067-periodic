@@ -1,0 +1,28 @@
+{
+  "name": "periodic-scroll-top",
+  "version": "1.0.0",
+  "description": "Plugin de bloco Gutenberg para botão flutuante de voltar ao topo da página com rolagem suave, Bootstrap 5 e Font Awesome 6.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build --webpack-copy-php",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "scroll-top",
+    "back-to-top",
+    "smooth-scroll",
+    "bootstrap",
+    "font-awesome"
+  ],
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@wordpress/scripts": "^27.9.0"
+  }
+}

@@ -1,0 +1,42 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-table-of-contents",
+	"locale_data": {
+		"periodic-table-of-contents": {
+			"": {
+				"domain": "periodic-table-of-contents",
+				"lang": "en_US",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Sumário Automático (Table of Contents)": [ "Automatic Table of Contents" ],
+			"Sumário / índice automático que escaneia títulos (H2, H3, H4) gerando links de ancoragem com rolagem suave e rastreamento ativo.": [
+				"Automatic table of contents scanning headings (H2, H3, H4) generating anchor links with smooth scroll and active tracking."
+			],
+			"Títulos": [ "Headings" ],
+			"Estilo": [ "Styling" ],
+			"Navegação": [ "Navigation" ],
+			"Níveis de Títulos Incluídos": [ "Included Heading Levels" ],
+			"Incluir Títulos H2": [ "Include H2 Headings" ],
+			"Incluir Subtítulos H3": [ "Include H3 Subheadings" ],
+			"Incluir Tópicos H4": [ "Include H4 Subheadings" ],
+			"Estilo & Identidade Visual": [ "Style & Visual Identity" ],
+			"Tipo de Marcador da Lista": [ "List Bullet Type" ],
+			"Lista Numerada (1, 2, 3...)": [ "Numbered List (1, 2, 3...)" ],
+			"Marcador Redondo (Bullets)": [ "Bullet List" ],
+			"Lista Limpa / Minimalista": [ "Plain / Minimalist List" ],
+			"Tema Visual do Cartão": [ "Card Visual Theme" ],
+			"Card Elegante com Sombra": [ "Elegant Card with Shadow" ],
+			"Borda Lateral de Destaque": [ "Accent Border Minimalist" ],
+			"Fundo Plano Suave (Flat)": [ "Soft Flat Background" ],
+			"Cor de Destaque / Links": [ "Accent / Link Color" ],
+			"Cor de Fundo": [ "Background Color" ],
+			"Arredondamento de Bordas (px)": [ "Border Radius (px)" ],
+			"Comportamento & Rolagem": [ "Behavior & Scrolling" ],
+			"Painel Recolhível / Accordion": [ "Collapsible Accordion Panel" ],
+			"Iniciar Fechado em Telas Mobile": [ "Start Collapsed on Mobile" ],
+			"Rastreamento Ativo / Scrollspy": [ "Active Scrollspy Tracking" ],
+			"Compensação de Topo / Header Offset (px)": [ "Header Scroll Offset (px)" ]
+		}
+	}
+}

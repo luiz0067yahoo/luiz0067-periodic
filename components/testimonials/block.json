@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/testimonials",
+  "version": "1.0.0",
+  "title": "Depoimentos",
+  "category": "layout",
+  "icon": "format-quote",
+  "description": "Exiba depoimentos de clientes e alunos com citações, fotos de perfil arredondadas, nomes, cargos e avaliação por estrelas.",
+  "keywords": [
+    "depoimentos",
+    "testimonials",
+    "reviews",
+    "avaliação",
+    "estrelas",
+    "citação"
+  ],
+  "textdomain": "periodic-testimonials",
+  "attributes": {
+    "testimonials": {
+      "type": "array",
+      "default": [
+        {
+          "id": "testimonial-1",
+          "quote": "O serviço superou todas as nossas expectativas. A agilidade, qualidade no código e atenção aos detalhes transformaram totalmente o nosso fluxo de trabalho digital.",
+          "authorName": "Mariana Albuquerque",
+          "authorRole": "Diretora de Tecnologia na SoftPulse",
+          "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+          "rating": 5
+        },
+        {
+          "id": "testimonial-2",
+          "quote": "Uma experiência extraordinária! O suporte prestado e a facilidade de integração dos componentes permitiram entregar nosso projeto 2 semanas antes do prazo previsto.",
+          "authorName": "Carlos Eduardo Mendes",
+          "authorRole": "Lead Developer & Arquiteto de Software",
+          "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+          "rating": 5
+        },
+        {
+          "id": "testimonial-3",
+          "quote": "Design impecável, visual moderno e alta performance. Nossos clientes elogiaram diretamente a nova interface e a taxa de conversão aumentou significativamente.",
+          "authorName": "Beatriz Vasconcelos",
+          "authorRole": "Gerente de Produto na InovaWeb",
+          "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+          "rating": 4
+        }
+      ]
+    },
+    "layoutMode": {
+      "type": "string",
+      "default": "grid"
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "cardBgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "cardTextColor": {
+      "type": "string",
+      "default": "#212529"
+    },
+    "starColor": {
+      "type": "string",
+      "default": "#ffc107"
+    },
+    "showRating": {
+      "type": "boolean",
+      "default": true
+    },
+    "showQuoteIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardShadow": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardBorderRadius": {
+      "type": "number",
+      "default": 16
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

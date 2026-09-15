@@ -1,0 +1,47 @@
+{
+  "locale": "it-IT",
+  "blockTitle": "Periodic Drag & Drop Engine",
+  "blockDescription": "Motore interattivo per il riordino dei paragrafi, riempimento di spazi con token di testo e bersagli su immagini.",
+  "modes": {
+    "reorderParagraphs": "Riordino dei Paragrafi",
+    "textTokens": "Token di Testo (Spazi / Dropzone)",
+    "imageTargets": "Bersagli su Immagine"
+  },
+  "settings": {
+    "modeSelection": "Modalità Operativa",
+    "modeDescription": "Scegli la meccanica interattiva di trascinamento e rilascio.",
+    "itemsSection": "Elementi Trascinabili",
+    "addItem": "+ Aggiungi Nuovo Elemento",
+    "removeItem": "Rimuovi Elemento",
+    "itemText": "Testo dell'Elemento",
+    "correctOrder": "Posizione Corretta (Ordine)",
+    "targetAssociation": "Zona Bersaglio Associata (Soluzione)",
+    "targetsSection": "Zone Bersaglio (Dropzone)",
+    "addTarget": "+ Aggiungi Zona Bersaglio",
+    "removeTarget": "Rimuovi Bersaglio",
+    "targetLabel": "Etichetta / Descrizione della Zona",
+    "targetCoords": "Coordinate Immagine (% X, % Y)",
+    "imageSection": "Impostazioni Immagine di Sfondo",
+    "uploadImage": "Seleziona Immagine di Sfondo",
+    "removeImage": "Rimuovi Immagine",
+    "feedbackSection": "Messaggi di Feedback",
+    "successMessage": "Messaggio di Successo",
+    "errorMessage": "Messaggio di Errore",
+    "allowRetry": "Consenti di riprovare"
+  },
+  "frontend": {
+    "dragInstruction": "Trascina gli elementi nelle rispettive zone o riordinali come richiesto:",
+    "availableItems": "Elementi Disponibili:",
+    "dropzonePlaceholder": "Rilascia l'elemento corrispondente qui...",
+    "checkButton": "Verifica Risposte",
+    "resetButton": "Riprova",
+    "scoreLabel": "Il Tuo Punteggio:",
+    "allCorrect": "Eccellente! Tutti gli elementi sono stati posizionati correttamente!",
+    "partialCorrect": "Hai posizionato correttamente {correct} su {total} elementi. Rivedi le tue risposte!",
+    "noneCorrect": "Nessuna corrispondenza esatta. Riprova con attenzione!",
+    "targetPrefix": "Bersaglio",
+    "grabHandle": "Trascina per spostare",
+    "correctBadge": "Corretto!",
+    "incorrectBadge": "Non corretto!"
+  }
+}

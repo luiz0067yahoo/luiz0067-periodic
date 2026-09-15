@@ -1,0 +1,46 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-banner",
+	"locale_data": {
+		"periodic-advanced-banner": {
+			"": {
+				"domain": "periodic-advanced-banner",
+				"lang": "it_IT",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Banner Avançado Interativo": [ "Banner Avanzato Interattivo" ],
+			"Banner de cobertura interativo (cover) com animações dinâmicas de zoom e transição de texto no efeito hover.": [
+				"Banner interattivo di copertura (cover) con animazioni dinamiche di zoom e transizione di testo all'effetto hover."
+			],
+			"Conteúdo": [ "Contenuto" ],
+			"Fundo": [ "Sfondo" ],
+			"Efeitos Hover": [ "Effetti Hover" ],
+			"Layout": [ "Layout" ],
+			"Textos & Chamada para Ação (CTA)": [ "Testi & Invito all'Azione (CTA)" ],
+			"Exibir Selo / Badge": [ "Mostra Badge" ],
+			"Texto do Selo": [ "Testo del Badge" ],
+			"Tag HTML do Título": [ "Tag HTML del Titolo" ],
+			"Exibir Botão de Ação": [ "Mostra Pulsante di Azione" ],
+			"Texto do Botão": [ "Testo del Pulsante" ],
+			"URL / Link do Botão": [ "URL / Link del Pulsante" ],
+			"Abrir em Nova Aba": [ "Apri in Nuova Scheda" ],
+			"Estilo do Botão (Bootstrap 5)": [ "Stile del Pulsante (Bootstrap 5)" ],
+			"Imagem e Sobreposição": [ "Immagine e Sovrapposizione" ],
+			"Imagem de Capa (Cover Image)": [ "Immagine di Copertina (Cover Image)" ],
+			"Ponto Focal da Imagem": [ "Punto Focale dell'Immagine" ],
+			"Cor da Camada de Sobreposição": [ "Colore del Livello di Sovrapposizione" ],
+			"Opacidade Padrão da Sobreposição": [ "Opacità Predefinita della Sovrapposizione" ],
+			"Opacidade da Sobreposição no Hover": [ "Opacità della Sovrapposizione su Hover" ],
+			"Animações & Transições no Hover": [ "Animazioni e Transizioni su Hover" ],
+			"Simular Efeito Hover no Editor": [ "Simula Effetto Hover nell'Editor" ],
+			"Efeito de Imagem no Hover": [ "Effetto Immagine su Hover" ],
+			"Efeito de Transição do Texto": [ "Effetto Transizione del Testo" ],
+			"Layout & Dimensões": [ "Layout e Dimensioni" ],
+			"Alinhamento do Conteúdo": [ "Allineamento del Contenuto" ],
+			"Altura Mínima (Desktop)": [ "Altezza Minima (Desktop)" ],
+			"Altura Mínima (Mobile)": [ "Altezza Minima (Mobile)" ],
+			"Cantos Arredondados (Border Radius em px)": [ "Angoli Arrotondati (Border Radius in px)" ]
+		}
+	}
+}

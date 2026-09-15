@@ -1,0 +1,42 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-table-of-contents",
+	"locale_data": {
+		"periodic-table-of-contents": {
+			"": {
+				"domain": "periodic-table-of-contents",
+				"lang": "es_ES",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Sumário Automático (Table of Contents)": [ "Tabla de Contenidos Automática" ],
+			"Sumário / índice automático que escaneia títulos (H2, H3, H4) gerando links de ancoragem com rolagem suave e rastreamento ativo.": [
+				"Tabla de contenidos automática que escanea encabezados (H2, H3, H4) generando enlaces de anclaje con desplazamiento suave y seguimiento activo."
+			],
+			"Títulos": [ "Encabezados" ],
+			"Estilo": [ "Estilo" ],
+			"Navegação": [ "Navegación" ],
+			"Níveis de Títulos Incluídos": [ "Niveles de Encabezados Incluidos" ],
+			"Incluir Títulos H2": [ "Incluir Encabezados H2" ],
+			"Incluir Subtítulos H3": [ "Incluir Subtítulos H3" ],
+			"Incluir Tópicos H4": [ "Incluir Subtemas H4" ],
+			"Estilo & Identidade Visual": [ "Estilo e Identidad Visual" ],
+			"Tipo de Marcador da Lista": [ "Tipo de Marcador de Lista" ],
+			"Lista Numerada (1, 2, 3...)": [ "Lista Numerada (1, 2, 3...)" ],
+			"Marcador Redondo (Bullets)": [ "Lista con Viñetas (Bullets)" ],
+			"Lista Limpa / Minimalista": [ "Lista Limpia / Minimalista" ],
+			"Tema Visual do Cartão": [ "Tema Visual de Tarjeta" ],
+			"Card Elegante com Sombra": [ "Tarjeta Elegante con Sombra" ],
+			"Borda Lateral de Destaque": [ "Borde Lateral Resaltado" ],
+			"Fundo Plano Suave (Flat)": [ "Fondo Plano Suave (Flat)" ],
+			"Cor de Destaque / Links": [ "Color de Resaltado / Enlaces" ],
+			"Cor de Fundo": [ "Color de Fondo" ],
+			"Arredondamento de Bordas (px)": [ "Bordes Redondeados (px)" ],
+			"Comportamento & Rolagem": [ "Comportamiento y Desplazamiento" ],
+			"Painel Recolhível / Accordion": [ "Panel Plegable / Acordeón" ],
+			"Iniciar Fechado em Telas Mobile": [ "Iniciar Plegado en Pantallas Móviles" ],
+			"Rastreamento Ativo / Scrollspy": [ "Seguimiento Activo / Scrollspy" ],
+			"Compensação de Topo / Header Offset (px)": [ "Compensación Superior de Encabezado (px)" ]
+		}
+	}
+}

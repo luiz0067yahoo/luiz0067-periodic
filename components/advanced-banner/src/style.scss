@@ -1,0 +1,146 @@
+.luiz0067-advanced-banner-block {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	min-height: var(--luiz0067-banner-min-height, 450px);
+	border-radius: var(--luiz0067-banner-radius, 12px);
+	box-sizing: border-box;
+
+	@media (max-width: 767.98px) {
+		min-height: var(--luiz0067-banner-min-height-mobile, 320px);
+	}
+
+	.luiz0067-banner-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		z-index: 1;
+		transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s ease;
+		will-change: transform, filter;
+	}
+
+	.luiz0067-banner-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--luiz0067-banner-overlay-color, #0f172a);
+		opacity: var(--luiz0067-banner-overlay-opacity, 0.45);
+		transition: opacity 0.5s ease;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	.luiz0067-banner-content {
+		position: relative;
+		z-index: 3;
+		width: 100%;
+		min-height: inherit;
+		padding: 2.5rem 2rem;
+		box-sizing: border-box;
+		transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+		.luiz0067-banner-title {
+			font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+			line-height: 1.2;
+			transition: transform 0.4s ease;
+		}
+
+		.luiz0067-banner-subtitle {
+			font-size: clamp(1rem, 1.8vw, 1.25rem);
+			max-width: 650px;
+			transition: opacity 0.4s ease, transform 0.4s ease;
+		}
+
+		.luiz0067-banner-cta {
+			transition: opacity 0.4s ease, transform 0.4s ease;
+		}
+	}
+
+	/* Efeitos de Imagem no Hover */
+	&:hover,
+	&.is-simulated-hover {
+		.luiz0067-banner-overlay {
+			opacity: var(--luiz0067-banner-overlay-hover-opacity, 0.65);
+		}
+
+		&.hover-img-zoom-in .luiz0067-banner-bg {
+			transform: scale(1.12);
+		}
+
+		&.hover-img-zoom-out .luiz0067-banner-bg {
+			transform: scale(0.95);
+		}
+
+		&.hover-img-pan-right .luiz0067-banner-bg {
+			transform: scale(1.1) translateX(20px);
+		}
+
+		&.hover-img-rotate-subtle .luiz0067-banner-bg {
+			transform: scale(1.12) rotate(2deg);
+		}
+
+		&.hover-img-brighten .luiz0067-banner-bg {
+			transform: scale(1.08);
+			filter: brightness(1.2) contrast(1.1);
+		}
+
+		&.hover-img-grayscale-color .luiz0067-banner-bg {
+			filter: grayscale(0%);
+			transform: scale(1.08);
+		}
+	}
+
+	&.hover-img-grayscale-color .luiz0067-banner-bg {
+		filter: grayscale(100%);
+	}
+
+	/* Efeitos de Texto no Hover */
+	&.hover-text-slide-up {
+		.luiz0067-banner-cta {
+			transform: translateY(15px);
+			opacity: 0.85;
+		}
+
+		&:hover,
+		&.is-simulated-hover {
+			.luiz0067-banner-content {
+				transform: translateY(-8px);
+			}
+
+			.luiz0067-banner-cta {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+
+	&.hover-text-fade-in {
+		.luiz0067-banner-subtitle,
+		.luiz0067-banner-cta {
+			opacity: 0.4;
+		}
+
+		&:hover,
+		&.is-simulated-hover {
+			.luiz0067-banner-subtitle,
+			.luiz0067-banner-cta {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.hover-text-zoom-in {
+		&:hover,
+		&.is-simulated-hover {
+			.luiz0067-banner-title {
+				transform: scale(1.04);
+			}
+		}
+	}
+}

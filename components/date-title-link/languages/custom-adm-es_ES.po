@@ -1,0 +1,90 @@
+# Translation of Date Title Link in Español
+msgid ""
+msgstr ""
+"Project-Id-Version: Date Title Link 1.0.0\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: custom-adm\n"
+
+#: js/blocks/date-title-link.js
+msgid "Data, Título e Link"
+msgstr "Fecha, Título y Enlace"
+
+#: js/blocks/date-title-link.js
+msgid "Exibe publicações oficiais, editais ou notícias com data, título descritivo e URL de redirecionamento."
+msgstr "Muestra publicaciones oficiales, convocatorias o noticias con fecha, título descriptivo y URL de redirección."
+
+#: js/blocks/date-title-link.js
+msgid "data"
+msgstr "fecha"
+
+#: js/blocks/date-title-link.js
+msgid "título"
+msgstr "título"
+
+#: js/blocks/date-title-link.js
+msgid "link"
+msgstr "enlace"
+
+#: js/blocks/date-title-link.js
+msgid "edital"
+msgstr "convocatoria"
+
+#: js/blocks/date-title-link.js
+msgid "notícia"
+msgstr "noticia"
+
+#: js/blocks/date-title-link.js
+msgid "Edital de Concurso Público Nº 04/2026 - Convocação para Provas Objetivas"
+msgstr "Convocatoria de Oposición Pública Nº 04/2026 - Llamamiento a Pruebas"
+
+#: js/blocks/date-title-link.js
+msgid "Configurações do Link e Publicação"
+msgstr "Configuración del Enlace y Publicación"
+
+#: js/blocks/date-title-link.js
+msgid "URL de Redirecionamento"
+msgstr "URL de Redirección"
+
+#: js/blocks/date-title-link.js
+msgid "Endereço para onde o usuário será direcionado ao clicar no item."
+msgstr "Dirección a la que se dirigirá al usuario al hacer clic en el elemento."
+
+#: js/blocks/date-title-link.js
+msgid "Abrir link em nova aba (_blank)"
+msgstr "Abrir enlace en una nueva pestaña (_blank)"
+
+#: js/blocks/date-title-link.js
+msgid "O link será aberto em uma nova guia do navegador."
+msgstr "El enlace se abrirá en una nueva pestaña del navegador."
+
+#: js/blocks/date-title-link.js
+msgid "O link será aberto na mesma página."
+msgstr "El enlace se abrirá en la misma página."
+
+#: js/blocks/date-title-link.js
+msgid "Data da Publicação / Evento"
+msgstr "Fecha de Publicación / Evento"
+
+#: js/blocks/date-title-link.js
+msgid "Ex: 11/09/2026 ou 11 de Setembro"
+msgstr "Ej: 11/09/2026 o 11 de Septiembre"
+
+#: js/blocks/date-title-link.js
+msgid "Você também pode editar a data diretamente no bloco."
+msgstr "También puede editar la fecha directamente en el bloque."
+
+#: js/blocks/date-title-link.js
+msgid "Data (ex: 11/09/2026)"
+msgstr "Fecha (ej: 11/09/2026)"
+
+#: js/blocks/date-title-link.js
+msgid "Digite o título descritivo do edital, notícia ou publicação oficial..."
+msgstr "Escriba el título descriptivo de la convocatoria, noticia o publicación..."
+
+#: js/blocks/date-title-link.js
+msgid "URL não informada (clique para definir na barra lateral)"
+msgstr "URL no definida (haga clic para configurar en la barra lateral)"
+

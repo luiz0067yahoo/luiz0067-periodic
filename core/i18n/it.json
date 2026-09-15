@@ -1,0 +1,265 @@
+{
+  "ui": {
+    "suite_title": "Suite di Componenti Periodic",
+    "suite_subtitle": "61 componenti modulari unificati con isolamento BEM e internazionalizzazione",
+    "search_placeholder": "Cerca componenti...",
+    "filter_all": "Tutti",
+    "category_layout": "Layout e Struttura",
+    "category_content": "Contenuto e Tipografia",
+    "category_media": "Media e Galleria",
+    "category_interactive": "Interattività e Coinvolgimento",
+    "category_forms": "Moduli e Business",
+    "category_charts": "Grafici e Dati",
+    "category_games": "Giochi ed Educazione",
+    "view_doc": "Visualizza Documentazione",
+    "interactive_demo": "Dimostrazione Interattiva",
+    "code_snippet": "Snippet di Codice",
+    "language_name": "Italiano"
+  },
+  "components": {
+    "accordion": {
+      "title": "Fisarmonica",
+      "description": "Pannelli espandibili e richiudibili reattivi."
+    },
+    "ad-banner": {
+      "title": "Banner Pubblicitario",
+      "description": "Banner promozionale per call-to-action."
+    },
+    "advanced-banner": {
+      "title": "Banner Avanzato",
+      "description": "Banner ricco di funzionalità ed effetti."
+    },
+    "advanced-spacer": {
+      "title": "Distanziatore Avanzato",
+      "description": "Controllo reattivo della spaziatura."
+    },
+    "alert-callout": {
+      "title": "Avviso e Riquadro",
+      "description": "Avvisi, notifiche e schede in evidenza."
+    },
+    "audio-embed": {
+      "title": "Player Audio",
+      "description": "Lettore audio HTML5 personalizzabile."
+    },
+    "big-button": {
+      "title": "Grande Bottone",
+      "description": "Pulsante ad alta conversione con micro-animazioni."
+    },
+    "breadcrumbs": {
+      "title": "Briciole di Pane",
+      "description": "Navigazione gerarchica con Schema.org."
+    },
+    "buttons-banner": {
+      "title": "Banner di Pulsanti",
+      "description": "Gruppo di pulsanti per azioni multiple."
+    },
+    "card-trainer": {
+      "title": "Allenatore a Schede",
+      "description": "Flashcard e studio interattivo."
+    },
+    "card-wrapper": {
+      "title": "Contenitore di Scheda",
+      "description": "Contenitore flessibile per schede stilizzate."
+    },
+    "carousel-slides": {
+      "title": "Carosello di Diapositive",
+      "description": "Slider fluido e reattivo per slide e immagini."
+    },
+    "carousel-slides-plus": {
+      "title": "Carosello Avanzato",
+      "description": "Slider avanzato con autoplay e gesti touch."
+    },
+    "code": {
+      "title": "Blocco di Codice",
+      "description": "Presentazione codice con evidenziazione sintassi."
+    },
+    "cols-image": {
+      "title": "Colonne di Immagini",
+      "description": "Layout a colonne bilanciate per immagini."
+    },
+    "counter-stats": {
+      "title": "Contatore Statistico",
+      "description": "Contatori numerici animati durante lo scorrimento."
+    },
+    "custom-shapes": {
+      "title": "Forme Personalizzate",
+      "description": "Divisori eleganti di sezione in SVG."
+    },
+    "date-title-link": {
+      "title": "Data, Titolo e Link",
+      "description": "Elemento cronologico con titolo e link."
+    },
+    "date-title-link-file-upload": {
+      "title": "Link con Caricamento File",
+      "description": "Elemento di download e caricamento documenti."
+    },
+    "destack-buttons": {
+      "title": "Pulsanti in Evidenza",
+      "description": "Pulsanti stilizzati con effetto di profondità."
+    },
+    "drag-drop-engine": {
+      "title": "Motore Drag & Drop",
+      "description": "Motore fluido di trascinamento e rilascio."
+    },
+    "faq-schema": {
+      "title": "Domande Frequenti (FAQ)",
+      "description": "Sezione FAQ strutturata per SEO rich snippets."
+    },
+    "form-builder": {
+      "title": "Costruttore di Moduli",
+      "description": "Moduli dichiarativi dinamici con convalida."
+    },
+    "gallery-lightbox": {
+      "title": "Galleria con Lightbox",
+      "description": "Galleria fotografica con vista a schermo intero."
+    },
+    "grafic-line-bar": {
+      "title": "Grafico a Linee e Barre",
+      "description": "Grafici a linee e barre per serie e metriche."
+    },
+    "grafic-pizza": {
+      "title": "Grafico a Torta",
+      "description": "Distribuzione percentuale delle proporzioni."
+    },
+    "grafic-torus": {
+      "title": "Grafico a Ciambella",
+      "description": "Grafico moderno a ciambella con indicatori."
+    },
+    "grid-flex": {
+      "title": "Griglia Flessibile",
+      "description": "Sistema di griglia CSS e Flexbox reattivo."
+    },
+    "icons": {
+      "title": "Icone e Vettori",
+      "description": "Libreria centralizzata di icone e vettori."
+    },
+    "image-destaque": {
+      "title": "Immagine in Evidenza",
+      "description": "Immagine hero in evidenza con testo sovrapposto."
+    },
+    "image-editor": {
+      "title": "Editor di Immagini",
+      "description": "Filtri, ritaglio e regolazioni nel browser."
+    },
+    "image-only": {
+      "title": "Solo Immagine",
+      "description": "Contenitore di immagini ottimizzato con lazy loading."
+    },
+    "interactive-utilities": {
+      "title": "Utilità Interattive",
+      "description": "Micro-helper per eventi e interfaccia utente."
+    },
+    "interative-software-simulator": {
+      "title": "Simulatore di Software",
+      "description": "Dimostrazione interattiva di interfacce guidate."
+    },
+    "maps": {
+      "title": "Mappe Interattive",
+      "description": "Mappe geografiche con pin personalizzati e popup."
+    },
+    "media-hotspot": {
+      "title": "Punti di Interesse (Hotspot)",
+      "description": "Punti interattivi cliccabili su immagini e diagrammi."
+    },
+    "modal-popup": {
+      "title": "Finestra Modale / Popup",
+      "description": "Finestre modali fluttuanti e accessibili."
+    },
+    "parallax-section": {
+      "title": "Sezione Parallax",
+      "description": "Effetto di scorrimento tridimensionale a livelli."
+    },
+    "pdf-flipbook": {
+      "title": "Libro Digitale (Flipbook)",
+      "description": "Visualizzatore di documenti con sfoglio realistico delle pagine."
+    },
+    "pricing-table": {
+      "title": "Tabella dei Prezzi",
+      "description": "Schede di confronto per piani e abbonamenti."
+    },
+    "quiz-engine": {
+      "title": "Motore di Quiz ed Esami",
+      "description": "Quiz interattivi con punteggio immediato e feedback."
+    },
+    "scroll-top": {
+      "title": "Torna all'Inizio",
+      "description": "Pulsante fluttuante per tornare rapidamente in cima."
+    },
+    "section-container": {
+      "title": "Contenitore di Sezione",
+      "description": "Contenitore strutturale con margini standardizzati."
+    },
+    "separator": {
+      "title": "Separatore e Divisore",
+      "description": "Linee decorative e limiti visivi di sezione."
+    },
+    "smart-essay": {
+      "title": "Saggio Intelligente",
+      "description": "Ambiente di scrittura con obiettivi di parole e metriche."
+    },
+    "structured-writing": {
+      "title": "Scrittura Strutturata",
+      "description": "Modelli di stesura metodica passo dopo passo."
+    },
+    "table-of-contents": {
+      "title": "Indice dei Contenuti",
+      "description": "Generazione automatica dell'indice dai titoli."
+    },
+    "table-responsive": {
+      "title": "Tabella Reattiva",
+      "description": "Tabelle di dati fluide con scorrimento touch."
+    },
+    "tabs": {
+      "title": "Schede di Navigazione",
+      "description": "Selettore di contenuti a schede accessibili."
+    },
+    "team-member": {
+      "title": "Membro del Team",
+      "description": "Scheda profilo del team con foto, ruolo e social network."
+    },
+    "testimonials": {
+      "title": "Testimonianze",
+      "description": "Recensioni dei clienti con valutazioni e riprova sociale."
+    },
+    "text-completion": {
+      "title": "Completamento del Testo",
+      "description": "Esercizio di riempimento degli spazi vuoti e grammatica."
+    },
+    "thumbnail-pdf-link": {
+      "title": "Miniatura con Link a PDF",
+      "description": "Scheda di anteprima del documento collegata al PDF."
+    },
+    "thumbnail-pdf-link-multiple": {
+      "title": "Multipli Link PDF",
+      "description": "Griglia di documenti PDF scaricabili."
+    },
+    "timeline-vertical": {
+      "title": "Cronologia Verticale",
+      "description": "Narrazione cronologica delle tappe con icone."
+    },
+    "title-text-block": {
+      "title": "Blocco Titolo e Testo",
+      "description": "Composizione tipografica per intestazione di sezione."
+    },
+    "topic-text-data": {
+      "title": "Argomento con Dati",
+      "description": "Presentazione di fatti, statistiche e argomenti chiave."
+    },
+    "topic-title-text": {
+      "title": "Argomento con Titolo e Testo",
+      "description": "Blocco di evidenziazione concettuale con elenchi personalizzati."
+    },
+    "video-embed": {
+      "title": "Incorporamento Video",
+      "description": "Lettore video reattivo con proporzioni protette."
+    },
+    "voice-lab": {
+      "title": "Laboratorio Vocale",
+      "description": "Registrazione da microfono e test audio interattivi."
+    },
+    "word-games": {
+      "title": "Giochi di Parole",
+      "description": "Giochi educativi di ortografia, impiccato e vocabolario."
+    }
+  }
+}

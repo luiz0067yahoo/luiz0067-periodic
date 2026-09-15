@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Drag & Drop Engine - Live Interactive Preview</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet do Bloco -->
+  <link rel="stylesheet" href="src/style.css">
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --bg-surface: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f1f5f9;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top navigation header */
+    .preview-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #0d6efd, #004dc7);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(13, 110, 253, 0.25);
+    }
+
+    .brand-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0f172a;
+    }
+
+    .brand-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .controls-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .mode-nav {
+      display: flex;
+      background: #f1f5f9;
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+      gap: 0.25rem;
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active {
+      background: #ffffff;
+      color: var(--primary-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .lang-select {
+      padding: 0.45rem 0.75rem;
+      border-radius: 0.45rem;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+    }
+
+    .main-container {
+      max-width: 1080px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    .mode-view {
+      display: none;
+    }
+
+    .mode-view.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .info-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.9rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #1e40af;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Background diagram placeholder for Image Targets */
+    .diagram-bg {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420"><rect width="900" height="420" fill="%231e293b"/><circle cx="450" cy="210" r="140" fill="none" stroke="%23334155" stroke-width="2" stroke-dasharray="6,6"/><circle cx="450" cy="210" r="70" fill="%230f172a" stroke="%230d6efd" stroke-width="3"/><rect x="180" y="80" width="180" height="80" rx="10" fill="%23334155" opacity="0.6"/><rect x="540" y="80" width="180" height="80" rx="10" fill="%23334155" opacity="0.6"/><rect x="360" y="300" width="180" height="80" rx="10" fill="%23334155" opacity="0.6"/><text x="450" y="215" fill="%2394a3b8" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold">NÚCLEO DO SISTEMA</text><line x1="270" y1="160" x2="400" y2="190" stroke="%233b82f6" stroke-width="2" stroke-dasharray="4,4"/><line x1="630" y1="160" x2="500" y2="190" stroke="%233b82f6" stroke-width="2" stroke-dasharray="4,4"/><line x1="450" y1="300" x2="450" y2="250" stroke="%233b82f6" stroke-width="2" stroke-dasharray="4,4"/></svg>');
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="preview-header">
+    <div class="brand-group">
+      <span class="brand-badge">PERIODIC</span>
+      <div>
+        <h1 class="brand-title">Drag & Drop Engine</h1>
+        <p class="brand-subtitle">Gutenberg Block Interactive Demonstration</p>
+      </div>
+    </div>
+
+    <div class="controls-toolbar">
+      <div class="mode-nav" role="tablist">
+        <button class="mode-btn active" data-mode="tokens" onclick="switchTab('tokens')">
+          🏷️ Text Tokens
+        </button>
+        <button class="mode-btn" data-mode="reorder" onclick="switchTab('reorder')">
+          ↕️ Reorder Paragraphs
+        </button>
+        <button class="mode-btn" data-mode="image" onclick="switchTab('image')">
+          🎯 Image Targets
+        </button>
+      </div>
+
+      <select class="lang-select" id="langSelector" onchange="changeLanguage(this.value)">
+        <option value="pt-br" selected>🇧🇷 Português</option>
+        <option value="en-us">🇺🇸 English</option>
+        <option value="It">🇮🇹 Italiano</option>
+        <option value="es">🇪🇸 Español</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="info-card">
+      <span style="font-size: 1.4rem;">💡</span>
+      <div>
+        <strong>Demonstração Interativa ao Vivo:</strong> Arraste e solte com toque ou mouse. Suporte nativo a telas móveis (touch/mobile) e desktop. Clique em <em>"Verificar Respostas"</em> para conferir o gabarito com animações de acerto (glow verde) e erro (shake vibratório).
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- MODO 1: TEXT TOKENS -->
+    <!-- ============================================== -->
+    <section id="view-tokens" class="mode-view active">
+      <div
+        class="periodic-dnd-container mode-text-tokens"
+        data-drag-mode="text-tokens"
+        data-config='{"dragMode":"text-tokens","successMessage":"Excelente! Todas as lacunas foram preenchidas corretamente!","errorMessage":"Alguns termos não correspondem às definições. Verifique o gabarito e tente novamente.","allowRetry":true}'
+      >
+        <div class="periodic-dnd-header">
+          <h3 class="periodic-dnd-title">Atividade 1: Associação de Conceitos e Lacunas</h3>
+          <p class="periodic-dnd-desc">Arraste os tokens/badges de texto do pool para suas respectivas definições e dropzones correspondentes.</p>
+        </div>
+
+        <!-- Pool de Itens Arrastáveis: Badges Bootstrap -->
+        <div class="periodic-source-pool" data-source-pool="true">
+          <span class="pool-label">Itens Arrastáveis Disponíveis:</span>
+          <span class="badge bg-primary fs-6 p-2 periodic-draggable-item" data-item-id="token-intro" data-target-id="target-intro">
+            <span class="dnd-drag-icon">⠿</span>
+            <span class="item-text">Introdução Contextual</span>
+          </span>
+          <span class="badge bg-primary fs-6 p-2 periodic-draggable-item" data-item-id="token-dev" data-target-id="target-dev">
+            <span class="dnd-drag-icon">⠿</span>
+            <span class="item-text">Argumentação Crítica</span>
+          </span>
+          <span class="badge bg-primary fs-6 p-2 periodic-draggable-item" data-item-id="token-concl" data-target-id="target-concl">
+            <span class="dnd-drag-icon">⠿</span>
+            <span class="item-text">Proposta de Intervenção</span>
+          </span>
+        </div>
+
+        <!-- Áreas de Dropzone -->
+        <div class="periodic-tokens-layout">
+          <div class="periodic-targets-list">
+            <div class="periodic-dropzone-box">
+              <div class="dropzone-header">
+                <span>🎯 Zona 1: Abertura do Texto</span>
+              </div>
+              <div class="periodic-dropzone-target" data-target-id="target-intro">
+                <span class="dropzone-placeholder">Solte a fase inicial aqui...</span>
+              </div>
+            </div>
+
+            <div class="periodic-dropzone-box">
+              <div class="dropzone-header">
+                <span>🎯 Zona 2: Sustentação de Ideias</span>
+              </div>
+              <div class="periodic-dropzone-target" data-target-id="target-dev">
+                <span class="dropzone-placeholder">Solte a fase de desenvolvimento aqui...</span>
+              </div>
+            </div>
+
+            <div class="periodic-dropzone-box">
+              <div class="dropzone-header">
+                <span>🎯 Zona 3: Desfecho e Solução</span>
+              </div>
+              <div class="periodic-dropzone-target" data-target-id="target-concl">
+                <span class="dropzone-placeholder">Solte a conclusão aqui...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="periodic-dnd-footer">
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" class="btn btn-primary periodic-check-btn">
+              <span>✓</span> Verificar Respostas
+            </button>
+            <button type="button" class="btn btn-outline-secondary periodic-reset-btn" style="display: none;">
+              <span>↺</span> Tentar Novamente
+            </button>
+          </div>
+
+          <div class="periodic-feedback-alert" role="alert" aria-live="polite">
+            <span class="feedback-icon"></span>
+            <span class="feedback-text"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- MODO 2: REORDER PARAGRAPHS -->
+    <!-- ============================================== -->
+    <section id="view-reorder" class="mode-view">
+      <div
+        class="periodic-dnd-container mode-reorder-paragraphs"
+        data-drag-mode="reorder-paragraphs"
+        data-config='{"dragMode":"reorder-paragraphs","successMessage":"Perfeito! O fluxo argumentativo da redação está em perfeita harmonia!","errorMessage":"A ordem lógica dos parágrafos não está ideal. Revise a introdução, desenvolvimento e conclusão.","allowRetry":true}'
+      >
+        <div class="periodic-dnd-header">
+          <h3 class="periodic-dnd-title">Atividade 2: Reordenação Lógica de Parágrafos</h3>
+          <p class="periodic-dnd-desc">Arraste os blocos para organizar os parágrafos de uma redação dissertativa na sequência correta.</p>
+        </div>
+
+        <div class="periodic-reorder-layout">
+          <div class="periodic-reorder-list" data-reorder-container="true">
+            <div class="periodic-reorder-card" data-item-id="card-3" data-correct-order="3">
+              <span class="reorder-handle">⠿</span>
+              <span class="reorder-index">1</span>
+              <span class="reorder-content">
+                <strong>Conclusão:</strong> Portanto, medidas governamentais coordenadas com a sociedade civil são imperativas para consolidar o acesso equitativo à cidadania plena.
+              </span>
+            </div>
+
+            <div class="periodic-reorder-card" data-item-id="card-1" data-correct-order="1">
+              <span class="reorder-handle">⠿</span>
+              <span class="reorder-index">2</span>
+              <span class="reorder-content">
+                <strong>Introdução:</strong> Na obra "Utopia", de Thomas More, retrata-se uma sociedade harmônica. Fora da ficção, a persistência da desigualdade inviabiliza essa plena integração social.
+              </span>
+            </div>
+
+            <div class="periodic-reorder-card" data-item-id="card-2" data-correct-order="2">
+              <span class="reorder-handle">⠿</span>
+              <span class="reorder-index">3</span>
+              <span class="reorder-content">
+                <strong>Desenvolvimento:</strong> Nesse contexto, a inoperância de políticas públicas atua como catalisador das disparidades regionais históricas observadas no país.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="periodic-dnd-footer">
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" class="btn btn-primary periodic-check-btn">
+              <span>✓</span> Verificar Respostas
+            </button>
+            <button type="button" class="btn btn-outline-secondary periodic-reset-btn" style="display: none;">
+              <span>↺</span> Tentar Novamente
+            </button>
+          </div>
+
+          <div class="periodic-feedback-alert" role="alert" aria-live="polite">
+            <span class="feedback-icon"></span>
+            <span class="feedback-text"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- MODO 3: IMAGE TARGETS -->
+    <!-- ============================================== -->
+    <section id="view-image" class="mode-view">
+      <div
+        class="periodic-dnd-container mode-image-targets"
+        data-drag-mode="image-targets"
+        data-config='{"dragMode":"image-targets","successMessage":"Excelente identificação! Todas as zonas da infraestrutura foram mapeadas com exatidão.","errorMessage":"Alguns rótulos foram posicionados em pontos incorretos do diagrama. Ajuste e verifique novamente.","allowRetry":true}'
+      >
+        <div class="periodic-dnd-header">
+          <h3 class="periodic-dnd-title">Atividade 3: Identificação de Alvos em Diagrama / Imagem</h3>
+          <p class="periodic-dnd-desc">Arraste as etiquetas de identificação para os respectivos nós do diagrama arquitetural.</p>
+        </div>
+
+        <!-- Pool de Itens Arrastáveis: Badges Bootstrap -->
+        <div class="periodic-source-pool" data-source-pool="true">
+          <span class="pool-label">Rótulos para Alocação:</span>
+          <span class="badge bg-primary fs-6 p-2 periodic-draggable-item" data-item-id="node-ingress" data-target-id="spot-ingress">
+            <span class="dnd-drag-icon">⠿</span>
+            <span class="item-text">API Gateway Ingress</span>
+          </span>
+          <span class="badge bg-primary fs-6 p-2 periodic-draggable-item" data-item-id="node-cluster" data-target-id="spot-cluster">
+            <span class="dnd-drag-icon">⠿</span>
+            <span class="item-text">Core Engine Microservice</span>
+          </span>
+          <span class="badge bg-primary fs-6 p-2 periodic-draggable-item" data-item-id="node-db" data-target-id="spot-db">
+            <span class="dnd-drag-icon">⠿</span>
+            <span class="item-text">Distributed Database</span>
+          </span>
+        </div>
+
+        <!-- Canvas com Imagem e Zonas Alvo -->
+        <div class="periodic-image-layout">
+          <div class="periodic-image-canvas diagram-bg" style="min-height: 420px;">
+            <!-- Spot 1: Ingress (Top Left) -->
+            <div class="periodic-image-target-spot" style="left: 30%; top: 29%;">
+              <div class="target-pin">1</div>
+              <div class="target-spot-label">Nó de Entrada</div>
+              <div class="periodic-dropzone-target" data-target-id="spot-ingress">
+                <span class="dropzone-placeholder">Solte o Gateway aqui...</span>
+              </div>
+            </div>
+
+            <!-- Spot 2: Core (Center) -->
+            <div class="periodic-image-target-spot" style="left: 50%; top: 50%;">
+              <div class="target-pin">2</div>
+              <div class="target-spot-label">Processamento Central</div>
+              <div class="periodic-dropzone-target" data-target-id="spot-cluster">
+                <span class="dropzone-placeholder">Solte o Core aqui...</span>
+              </div>
+            </div>
+
+            <!-- Spot 3: DB (Bottom Center) -->
+            <div class="periodic-image-target-spot" style="left: 50%; top: 82%;">
+              <div class="target-pin">3</div>
+              <div class="target-spot-label">Armazenamento</div>
+              <div class="periodic-dropzone-target" data-target-id="spot-db">
+                <span class="dropzone-placeholder">Solte o Banco de Dados aqui...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="periodic-dnd-footer">
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" class="btn btn-primary periodic-check-btn">
+              <span>✓</span> Verificar Respostas
+            </button>
+            <button type="button" class="btn btn-outline-secondary periodic-reset-btn" style="display: none;">
+              <span>↺</span> Tentar Novamente
+            </button>
+          </div>
+
+          <div class="periodic-feedback-alert" role="alert" aria-live="polite">
+            <span class="feedback-icon"></span>
+            <span class="feedback-text"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script Interativo do Bloco -->
+  <script src="src/view.js"></script>
+
+  <!-- Script Auxiliar de Troca de Abas e Idiomas da Demonstração -->
+  <script>
+    function switchTab(modeKey) {
+      document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-mode') === modeKey);
+      });
+      document.querySelectorAll('.mode-view').forEach(view => {
+        view.classList.toggle('active', view.id === 'view-' + modeKey);
+      });
+    }
+
+    async function changeLanguage(langKey) {
+      try {
+        const response = await fetch(`languages/${langKey}.json`);
+        if (!response.ok) return;
+        const data = await response.json();
+        
+        // Atualiza textos comuns
+        document.querySelectorAll('.periodic-check-btn').forEach(btn => {
+          btn.innerHTML = `<span>✓</span> ${data.frontend.checkButton}`;
+        });
+        document.querySelectorAll('.periodic-reset-btn').forEach(btn => {
+          btn.innerHTML = `<span>↺</span> ${data.frontend.resetButton}`;
+        });
+        document.querySelectorAll('.pool-label').forEach(lbl => {
+          lbl.textContent = data.frontend.availableItems;
+        });
+      } catch (err) {
+        console.warn('Falha ao alternar idioma:', err);
+      }
+    }
+  </script>
+</body>
+</html>

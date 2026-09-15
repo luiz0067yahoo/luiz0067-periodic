@@ -1,0 +1,49 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-spacer",
+	"locale_data": {
+		"periodic-advanced-spacer": {
+			"": {
+				"domain": "periodic-advanced-spacer",
+				"lang": "es_ES",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Espaçador Avançado Responsivo": [ "Espaciador Avanzado Responsivo" ],
+			"Espaçador vertical responsivo com controle de altura por dispositivo e opções de visibilidade do Bootstrap 5.": [
+				"Espaciador vertical responsivo con control de altura por dispositivo y opciones de visibilidad de Bootstrap 5."
+			],
+			"Alturas": [ "Alturas" ],
+			"Visibilidade": [ "Visibilidad" ],
+			"Linha Divisória": [ "Línea Divisoria" ],
+			"Alturas por Dispositivo": [ "Alturas por Dispositivo" ],
+			"Simulação Visual no Editor": [ "Simulación Visual en el Editor" ],
+			"Altura no Desktop (≥ 992px)": [ "Altura en Escritorio (≥ 992px)" ],
+			"Altura no Tablet (768px a 991px)": [ "Altura en Tableta (768px a 991px)" ],
+			"Altura no Mobile (< 768px)": [ "Altura en Móvil (< 768px)" ],
+			"Regras de Visibilidade (Bootstrap 5)": [ "Reglas de Visibilidad (Bootstrap 5)" ],
+			"Ocultar no Desktop (d-lg-none)": [ "Ocultar en Escritorio (d-lg-none)" ],
+			"Ocultar no Tablet": [ "Ocultar en Tableta" ],
+			"Ocultar no Mobile (d-none d-sm-block)": [ "Ocultar en Móvil (d-none d-sm-block)" ],
+			"Estilização da Linha Divisória": [ "Estilo de la Línea Divisoria" ],
+			"Estilo da Linha": [ "Estilo de la Línea" ],
+			"Nenhuma (Apenas Espaço)": [ "Ninguna (Solo Espacio)" ],
+			"Linha Sólida": [ "Línea Sólida" ],
+			"Linha Tracejada (Dashed)": [ "Línea Discontinua (Dashed)" ],
+			"Linha Pontilhada (Dotted)": [ "Línea Punteada (Dotted)" ],
+			"Gradiente de Luxo": [ "Gradiente de Lujo" ],
+			"Cor da Linha": [ "Color de la Línea" ],
+			"Espessura da Linha (px)": [ "Grosor de la Línea (px)" ],
+			"Largura da Linha (%)": [ "Ancho de la Línea (%)" ],
+			"Alinhamento da Linha": [ "Alineación de la Línea" ],
+			"Esquerda": [ "Izquierda" ],
+			"Centralizado": [ "Centrado" ],
+			"Direita": [ "Derecha" ],
+			"Ícone Decorativo Central": [ "Icono Decorativo Central" ],
+			"Nenhum": [ "Ninguno" ],
+			"Estrela (★)": [ "Estrella (★)" ],
+			"Diamante (◆)": [ "Diamante (◆)" ],
+			"Círculo (●)": [ "Círculo (●)" ]
+		}
+	}
+}

@@ -1,0 +1,175 @@
+{
+  "translation-revision-date": "2026-09-12 10:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-audio-embed",
+  "locale_data": {
+    "periodic-audio-embed": {
+      "": {
+        "domain": "periodic-audio-embed",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Audio Embed": [
+        "Periodic - Audio Embed"
+      ],
+      "Player de áudio e podcast moderno com upload nativo, capa, informações e download.": [
+        "Reproductor de audio y podcast moderno con subida nativa, portada, información y descarga."
+      ],
+      "audio": [
+        "audio"
+      ],
+      "podcast": [
+        "podcast"
+      ],
+      "musica": [
+        "música"
+      ],
+      "player": [
+        "reproductor"
+      ],
+      "mp3": [
+        "mp3"
+      ],
+      "Configurações de Áudio": [
+        "Ajustes de Audio"
+      ],
+      "URL do Arquivo de Áudio": [
+        "URL del Archivo de Audio"
+      ],
+      "Cole a URL direta ou utilize o botão abaixo para enviar um arquivo.": [
+        "Pegue la URL directa o use el botón inferior para subir un archivo."
+      ],
+      "Substituir Arquivo de Áudio": [
+        "Reemplazar Archivo de Audio"
+      ],
+      "Selecionar / Upload de Áudio": [
+        "Seleccionar / Subir Audio"
+      ],
+      "Remover Áudio": [
+        "Eliminar Audio"
+      ],
+      "Capa do Áudio / Álbum": [
+        "Portada del Audio / Álbum"
+      ],
+      "Pré-visualização da Capa": [
+        "Vista Previa de la Portada"
+      ],
+      "Substituir Imagem de Capa": [
+        "Reemplazar Imagen de Portada"
+      ],
+      "Adicionar Imagem de Capa": [
+        "Añadir Imagen de Portada"
+      ],
+      "Remover Imagem de Capa": [
+        "Eliminar Imagen de Portada"
+      ],
+      "Exibir Botão de Download": [
+        "Mostrar Botón de Descarga"
+      ],
+      "Permite que os visitantes façam download direto da faixa.": [
+        "Permite a los visitantes descargar directamente la pista."
+      ],
+      "Botão de download oculto.": [
+        "Botón de descarga oculto."
+      ],
+      "Repetição Contínua (Loop)": [
+        "Repetición Continua (Loop)"
+      ],
+      "O áudio recomeçará automaticamente ao finalizar.": [
+        "El audio se reiniciará automáticamente al terminar."
+      ],
+      "Reprodução única normal.": [
+        "Reproducción única normal."
+      ],
+      "Pré-carregamento (Preload)": [
+        "Precarga (Preload)"
+      ],
+      "Metadados apenas (Padrão)": [
+        "Solo metadatos (Por defecto)"
+      ],
+      "Automático (Buffer completo)": [
+        "Automático (Búfer completo)"
+      ],
+      "Nenhum (Economiza banda)": [
+        "Ninguno (Ahorra ancho de banda)"
+      ],
+      "Cores e Aparência": [
+        "Colores y Apariencia"
+      ],
+      "Cor de Fundo do Card": [
+        "Color de Fondo de la Tarjeta"
+      ],
+      "Cor dos Textos e Títulos": [
+        "Color de Textos y Títulos"
+      ],
+      "Periodic - Bloco de Áudio com Upload e Embed": [
+        "Periodic - Bloque de Audio con Subida y Embed"
+      ],
+      "Envie um arquivo de áudio (MP3, WAV, OGG, M4A) da biblioteca ou insira uma URL direta para criar o player.": [
+        "Suba un archivo de audio (MP3, WAV, OGG, M4A) de su biblioteca o introduzca una URL directa para crear el reproductor."
+      ],
+      "Enviar ou Selecionar Áudio": [
+        "Subir o Seleccionar Audio"
+      ],
+      "ou insira a URL direta:": [
+        "o inserte la URL directa:"
+      ],
+      "Aplicar": [
+        "Aplicar"
+      ],
+      "Capa do Áudio": [
+        "Portada del Audio"
+      ],
+      "Sem Capa": [
+        "Sin Portada"
+      ],
+      "Alterar Imagem de Capa": [
+        "Cambiar Imagen de Portada"
+      ],
+      "Título da faixa ou episódio...": [
+        "Título de la pista o episodio..."
+      ],
+      "Nome do artista, autor ou locutor...": [
+        "Nombre del artista, autor o locutor..."
+      ],
+      "Baixar Áudio": [
+        "Descargar Audio"
+      ],
+      "Trocar arquivo": [
+        "Cambiar archivo"
+      ],
+      "Seu navegador não suporta a reprodução deste arquivo de áudio.": [
+        "Su navegador no soporta la reproducción de este archivo de audio."
+      ],
+      "Branco Puro": [
+        "Blanco Puro"
+      ],
+      "Cinza Claro": [
+        "Gris Claro"
+      ],
+      "Azul Névoa": [
+        "Azul Niebla"
+      ],
+      "Índigo Suave": [
+        "Índigo Suave"
+      ],
+      "Ardósia Escuro": [
+        "Pizarra Oscura"
+      ],
+      "Carvão Grafite": [
+        "Carbón Grafito"
+      ],
+      "Azul Oceano": [
+        "Azul Océano"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      }
+    }
+  }
+}

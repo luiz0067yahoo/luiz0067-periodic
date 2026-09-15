@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/faq-schema",
+  "version": "1.0.0",
+  "title": "FAQ Sanfona com Schema.org",
+  "category": "widgets",
+  "icon": "editor-help",
+  "description": "Sanfona de Perguntas Frequentes (FAQ) com Bootstrap 5, Font Awesome 6 e injeção automática de dados estruturados Schema.org FAQPage em JSON-LD.",
+  "keywords": [
+    "faq",
+    "accordion",
+    "schema",
+    "seo",
+    "rich snippet",
+    "bootstrap"
+  ],
+  "textdomain": "periodic-faq-schema",
+  "attributes": {
+    "accordionId": {
+      "type": "string",
+      "default": ""
+    },
+    "faqs": {
+      "type": "array",
+      "default": [
+        {
+          "id": "faq-item-1",
+          "question": "Como funciona a marcação Schema.org FAQPage?",
+          "answer": "A marcação estruturada JSON-LD permite que motores de busca como o Google compreendam perguntas e respostas, exibindo rich snippets diretamente nos resultados de pesquisa.",
+          "isOpenByDefault": true
+        },
+        {
+          "id": "faq-item-2",
+          "question": "Preciso de plugins adicionais para o design Bootstrap?",
+          "answer": "Não. O bloco já inclui estilos compatíveis com o Bootstrap 5 e ícones Font Awesome 6, funcionando com total integridade visual em qualquer tema WordPress.",
+          "isOpenByDefault": false
+        }
+      ]
+    },
+    "schemaEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "flush": {
+      "type": "boolean",
+      "default": false
+    },
+    "alwaysOpen": {
+      "type": "boolean",
+      "default": false
+    },
+    "headerTag": {
+      "type": "string",
+      "default": "h3"
+    },
+    "iconType": {
+      "type": "string",
+      "default": "fontawesome-chevron"
+    },
+    "customAccentColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

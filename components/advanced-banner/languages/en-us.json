@@ -1,0 +1,46 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-banner",
+	"locale_data": {
+		"periodic-advanced-banner": {
+			"": {
+				"domain": "periodic-advanced-banner",
+				"lang": "en_US",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Banner Avançado Interativo": [ "Interactive Advanced Banner" ],
+			"Banner de cobertura interativo (cover) com animações dinâmicas de zoom e transição de texto no efeito hover.": [
+				"Interactive cover banner with dynamic zoom animations and smooth text transitions on hover."
+			],
+			"Conteúdo": [ "Content" ],
+			"Fundo": [ "Background" ],
+			"Efeitos Hover": [ "Hover Effects" ],
+			"Layout": [ "Layout" ],
+			"Textos & Chamada para Ação (CTA)": [ "Texts & Call to Action (CTA)" ],
+			"Exibir Selo / Badge": [ "Show Badge / Tag" ],
+			"Texto do Selo": [ "Badge Text" ],
+			"Tag HTML do Título": [ "Title HTML Tag" ],
+			"Exibir Botão de Ação": [ "Show Action Button" ],
+			"Texto do Botão": [ "Button Text" ],
+			"URL / Link do Botão": [ "Button URL / Link" ],
+			"Abrir em Nova Aba": [ "Open in New Tab" ],
+			"Estilo do Botão (Bootstrap 5)": [ "Button Style (Bootstrap 5)" ],
+			"Imagem e Sobreposição": [ "Image & Overlay" ],
+			"Imagem de Capa (Cover Image)": [ "Cover Image" ],
+			"Ponto Focal da Imagem": [ "Image Focal Point" ],
+			"Cor da Camada de Sobreposição": [ "Overlay Layer Color" ],
+			"Opacidade Padrão da Sobreposição": [ "Default Overlay Opacity" ],
+			"Opacidade da Sobreposição no Hover": [ "Hover Overlay Opacity" ],
+			"Animações & Transições no Hover": [ "Hover Animations & Transitions" ],
+			"Simular Efeito Hover no Editor": [ "Simulate Hover Effect in Editor" ],
+			"Efeito de Imagem no Hover": [ "Image Hover Effect" ],
+			"Efeito de Transição do Texto": [ "Text Transition Effect" ],
+			"Layout & Dimensões": [ "Layout & Dimensions" ],
+			"Alinhamento do Conteúdo": [ "Content Alignment" ],
+			"Altura Mínima (Desktop)": [ "Minimum Height (Desktop)" ],
+			"Altura Mínima (Mobile)": [ "Minimum Height (Mobile)" ],
+			"Cantos Arredondados (Border Radius em px)": [ "Rounded Corners (Border Radius in px)" ]
+		}
+	}
+}

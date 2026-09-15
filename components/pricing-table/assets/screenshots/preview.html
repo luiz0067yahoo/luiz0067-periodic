@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Periodic - Pricing Table (Bootstrap 5) - Preview</title>
+	<!-- Bootstrap 5.3.3 CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<!-- Font Awesome 6.5.2 CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<!-- Inter Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--periodic-pt-featured-border: #0d6efd;
+			--periodic-pt-badge-bg: #0d6efd;
+			--periodic-pt-badge-color: #ffffff;
+			--wp-admin-theme-color: #007cba;
+		}
+
+		body {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+			background-color: #f1f5f9;
+			color: #1e293b;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Barra de navegação do Preview */
+		.preview-nav {
+			background: #0f172a;
+			color: #ffffff;
+			padding: 0.75rem 1.5rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+		}
+
+		.preview-nav h1 {
+			font-size: 1rem;
+			font-weight: 700;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.nav-tabs-bar {
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.nav-btn {
+			background: #1e293b;
+			border: 1px solid #334155;
+			color: #cbd5e1;
+			padding: 0.4rem 0.9rem;
+			border-radius: 0.5rem;
+			font-size: 0.85rem;
+			font-weight: 600;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.nav-btn:hover, .nav-btn.active {
+			background: #2563eb;
+			color: #ffffff;
+			border-color: #3b82f6;
+		}
+
+		/* Gutenberg Editor Mockup Layout */
+		.gutenberg-editor-shell {
+			display: grid;
+			grid-template-columns: 1fr 340px;
+			min-height: calc(100vh - 56px);
+			background: #ffffff;
+		}
+
+		.editor-canvas-area {
+			background: #f8fafc;
+			padding: 2.5rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.editor-block-container {
+			width: 100%;
+			max-width: 1000px;
+			background: #ffffff;
+			border: 2px solid #0d6efd;
+			border-radius: 1rem;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+			padding: 2rem;
+			position: relative;
+		}
+
+		.block-breadcrumbs {
+			font-size: 0.75rem;
+			font-weight: 600;
+			color: #64748b;
+			margin-bottom: 1.5rem;
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+		}
+
+		/* Sidebar InspectorControls */
+		.inspector-sidebar {
+			background: #ffffff;
+			border-left: 1px solid #e2e8f0;
+			padding: 1.25rem;
+			overflow-y: auto;
+			box-shadow: -4px 0 16px rgba(0,0,0,0.03);
+		}
+
+		.sidebar-header {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #e2e8f0;
+			margin-bottom: 1rem;
+		}
+
+		.sidebar-header h2 {
+			font-size: 0.95rem;
+			font-weight: 700;
+			margin: 0;
+			color: #0f172a;
+		}
+
+		/* Pricing Table Styles */
+		.periodic-pricing-table-wrapper {
+			width: 100%;
+			position: relative;
+		}
+
+		.periodic-pricing-card {
+			border-radius: 1.25rem;
+			border: 1px solid #e2e8f0;
+			background: #ffffff;
+			transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			position: relative;
+			overflow: visible;
+		}
+
+		.periodic-pricing-card:hover {
+			box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+			transform: translateY(-4px);
+		}
+
+		.periodic-pricing-card.is-featured {
+			border: 2px solid var(--periodic-pt-featured-border, #0d6efd);
+			box-shadow: 0 20px 36px -10px rgba(13, 110, 253, 0.22);
+			z-index: 2;
+		}
+
+		@media (min-width: 992px) {
+			.periodic-pricing-card.is-featured.elevate-featured {
+				transform: scale(1.04);
+			}
+			.periodic-pricing-card.is-featured.elevate-featured:hover {
+				transform: scale(1.04) translateY(-4px);
+			}
+		}
+
+		.pricing-badge-wrapper {
+			position: absolute;
+			top: -14px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 5;
+			white-space: nowrap;
+		}
+
+		.pricing-badge {
+			background-color: var(--periodic-pt-badge-bg, #0d6efd);
+			color: var(--periodic-pt-badge-color, #ffffff);
+			font-size: 0.8rem;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			padding: 0.45rem 1.2rem;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+		}
+
+		.card-header {
+			background: transparent;
+			border-bottom: 1px dashed #edf2f7;
+			padding: 2.2rem 1.5rem 1.5rem;
+		}
+
+		.plan-title {
+			font-size: 1.35rem;
+			font-weight: 800;
+			color: #1e293b;
+			margin-bottom: 0.75rem;
+			letter-spacing: -0.02em;
+		}
+
+		.price-box {
+			display: flex;
+			align-items: baseline;
+			justify-content: center;
+			gap: 0.25rem;
+			line-height: 1;
+		}
+
+		.currency {
+			font-size: 1.35rem;
+			font-weight: 700;
+			color: #475569;
+		}
+
+		.price {
+			font-size: 3.25rem;
+			font-weight: 900;
+			color: #0f172a;
+			letter-spacing: -0.04em;
+		}
+
+		.period {
+			font-size: 0.95rem;
+			font-weight: 600;
+			color: #64748b;
+			margin-left: 0.2rem;
+		}
+
+		.card-body {
+			padding: 1.75rem 1.5rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.pricing-features-list {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 1.75rem 0;
+			flex-grow: 1;
+		}
+
+		.feature-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.75rem;
+			padding: 0.65rem 0;
+			font-size: 0.95rem;
+			color: #334155;
+			border-bottom: 1px solid #f8fafc;
+		}
+
+		.feature-item:last-child {
+			border-bottom: none;
+		}
+
+		.feature-icon {
+			font-size: 1.05rem;
+			margin-top: 0.15rem;
+			flex-shrink: 0;
+		}
+
+		.feature-icon.icon-included {
+			color: #10b981;
+		}
+
+		.feature-icon.icon-excluded {
+			color: #94a3b8;
+			opacity: 0.6;
+		}
+
+		.feature-text.is-excluded {
+			color: #94a3b8;
+			text-decoration: line-through;
+		}
+
+		.pricing-cta {
+			margin-top: auto;
+		}
+
+		.pricing-cta .btn {
+			border-radius: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.01em;
+			padding: 0.75rem 1.5rem;
+			transition: all 0.2s ease-in-out;
+			display: block;
+			width: 100%;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.pricing-cta .btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+		}
+
+		/* Frontend Standalone View */
+		.frontend-standalone {
+			max-width: 1140px;
+			margin: 3rem auto;
+			padding: 0 1.5rem;
+		}
+
+		.frontend-title-area {
+			text-align: center;
+			margin-bottom: 3.5rem;
+		}
+
+		.frontend-title-area h2 {
+			font-size: 2.5rem;
+			font-weight: 900;
+			color: #0f172a;
+			margin-bottom: 0.75rem;
+			letter-spacing: -0.03em;
+		}
+
+		.frontend-title-area p {
+			font-size: 1.15rem;
+			color: #64748b;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="preview-nav">
+		<h1><i class="fa-solid fa-layer-group text-primary"></i> Periodic - Pricing Table Preview</h1>
+		<div class="nav-tabs-bar">
+			<button class="nav-btn active" onclick="showView('tab-planos')">01. Aba Planos</button>
+			<button class="nav-btn" onclick="showView('tab-recursos')">02. Aba Recursos</button>
+			<button class="nav-btn" onclick="showView('tab-destaque')">03. Aba Destaque</button>
+			<button class="nav-btn" onclick="showView('frontend')">04. Frontend Final</button>
+		</div>
+	</div>
+
+	<!-- VIEW 1: Aba Planos -->
+	<div id="view-tab-planos" class="view-panel">
+		<div class="gutenberg-editor-shell">
+			<div class="editor-canvas-area">
+				<div class="editor-block-container">
+					<div class="block-breadcrumbs">
+						<i class="fa-solid fa-cube text-primary"></i> Bloco: periodic/pricing-table &rsaquo; Tabela de Preços (Bootstrap 5)
+					</div>
+
+					<div class="periodic-pricing-table-wrapper">
+						<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center align-items-stretch">
+							<!-- Básico -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card">
+									<div class="card-header text-center">
+										<h3 class="plan-title">Básico</h3>
+										<div class="price-box">
+											<span class="currency">R$</span>
+											<span class="price">29</span>
+											<span class="period">/mês</span>
+										</div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">1 Domínio personalizado</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">10 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Suporte por e-mail</span></li>
+											<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Backup diário automático</span></li>
+											<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Acesso via SSH / SFTP</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-outline-primary">Começar Agora</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- Profissional (Destaque) -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card is-featured elevate-featured" style="border: 2px solid #0d6efd; box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);">
+									<div class="pricing-badge-wrapper"><span class="badge rounded-pill pricing-badge"><i class="fa-solid fa-crown"></i> Mais Popular</span></div>
+									<div class="card-header text-center">
+										<h3 class="plan-title">Profissional</h3>
+										<div class="price-box">
+											<span class="currency">R$</span>
+											<span class="price">79</span>
+											<span class="period">/mês</span>
+										</div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">5 Domínios personalizados</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">50 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Suporte prioritário 24/7</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Backup diário automático</span></li>
+											<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Acesso via SSH / SFTP</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-primary">Assinar Plano Pro</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- Enterprise -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card">
+									<div class="card-header text-center">
+										<h3 class="plan-title">Enterprise</h3>
+										<div class="price-box">
+											<span class="currency">R$</span>
+											<span class="price">149</span>
+											<span class="period">/mês</span>
+										</div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Domínios ilimitados</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">200 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL Wildcard</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Gerente de conta dedicado</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Backup diário e CDN global</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Acesso completo SSH / SFTP</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-dark">Falar com Consultor</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sidebar Tab Planos -->
+			<div class="inspector-sidebar">
+				<div class="sidebar-header">
+					<h2>Configurações do Bloco</h2>
+				</div>
+				<!-- Tabs Navigation -->
+				<div class="d-flex bg-light p-1 rounded mb-3">
+					<button class="btn btn-sm btn-light text-primary fw-bold flex-fill shadow-sm">Planos</button>
+					<button class="btn btn-sm text-secondary fw-semibold flex-fill">Recursos</button>
+					<button class="btn btn-sm text-secondary fw-semibold flex-fill">Destaque</button>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label small fw-bold">Selecionar Plano para Edição</label>
+					<select class="form-select form-select-sm">
+						<option>1. Básico</option>
+						<option selected>2. Profissional ★</option>
+						<option>3. Enterprise</option>
+					</select>
+				</div>
+
+				<div class="card p-2 bg-light border mb-3">
+					<div class="d-flex justify-content-between align-items-center mb-2">
+						<span class="small fw-bold text-dark">Profissional</span>
+						<div class="btn-group btn-group-sm">
+							<button class="btn btn-outline-secondary">↑</button>
+							<button class="btn btn-outline-secondary">↓</button>
+							<button class="btn btn-outline-secondary">⧉</button>
+							<button class="btn btn-outline-danger">✕</button>
+						</div>
+					</div>
+					<div class="mb-2">
+						<label class="form-label small text-muted mb-1">Nome do Plano</label>
+						<input type="text" class="form-control form-control-sm" value="Profissional">
+					</div>
+					<div class="row g-2 mb-2">
+						<div class="col-4">
+							<label class="form-label small text-muted mb-1">Moeda</label>
+							<input type="text" class="form-control form-control-sm" value="R$">
+						</div>
+						<div class="col-8">
+							<label class="form-label small text-muted mb-1">Preço</label>
+							<input type="text" class="form-control form-control-sm" value="79">
+						</div>
+					</div>
+					<div class="mb-2">
+						<label class="form-label small text-muted mb-1">Período de Faturamento</label>
+						<input type="text" class="form-control form-control-sm" value="/mês">
+					</div>
+					<div class="form-check form-switch mb-2">
+						<input class="form-check-input" type="checkbox" checked>
+						<label class="form-check-label small fw-bold">Plano em Destaque (Popular)</label>
+					</div>
+					<div class="mb-2">
+						<label class="form-label small text-muted mb-1">Texto do Distintivo (Badge)</label>
+						<input type="text" class="form-control form-control-sm" value="Mais Popular">
+					</div>
+					<div class="mb-2">
+						<label class="form-label small text-muted mb-1">Texto do Botão</label>
+						<input type="text" class="form-control form-control-sm" value="Assinar Plano Pro">
+					</div>
+					<div class="mb-2">
+						<label class="form-label small text-muted mb-1">Estilo do Botão</label>
+						<select class="form-select form-select-sm">
+							<option selected>Azul Primário (btn-primary)</option>
+							<option>Contorno Azul (btn-outline-primary)</option>
+							<option>Verde Sucesso (btn-success)</option>
+							<option>Preto / Escuro (btn-dark)</option>
+						</select>
+					</div>
+				</div>
+
+				<button class="btn btn-primary btn-sm w-100 mb-3">+ Adicionar Novo Plano</button>
+				<hr>
+				<label class="form-label small fw-bold">Colunas no Desktop (3)</label>
+				<input type="range" class="form-range" min="2" max="4" value="3">
+			</div>
+		</div>
+	</div>
+
+	<!-- VIEW 2: Aba Recursos e Itens -->
+	<div id="view-tab-recursos" class="view-panel" style="display:none;">
+		<div class="gutenberg-editor-shell">
+			<div class="editor-canvas-area">
+				<div class="editor-block-container">
+					<div class="block-breadcrumbs">
+						<i class="fa-solid fa-cube text-primary"></i> Bloco: periodic/pricing-table &rsaquo; Gerenciador de Recursos e Ícones
+					</div>
+					<!-- Mesma tabela com foco nos recursos -->
+					<div class="periodic-pricing-table-wrapper">
+						<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center align-items-stretch">
+							<!-- Básico -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card">
+									<div class="card-header text-center">
+										<h3 class="plan-title">Básico</h3>
+										<div class="price-box"><span class="currency">R$</span><span class="price">29</span><span class="period">/mês</span></div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">1 Domínio personalizado</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">10 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+											<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Backup diário automático</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-outline-primary">Começar Agora</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- Profissional Selecionado -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card is-featured elevate-featured" style="border: 2px solid #0d6efd;">
+									<div class="pricing-badge-wrapper"><span class="badge rounded-pill pricing-badge"><i class="fa-solid fa-crown"></i> Mais Popular</span></div>
+									<div class="card-header text-center">
+										<h3 class="plan-title">Profissional</h3>
+										<div class="price-box"><span class="currency">R$</span><span class="price">79</span><span class="period">/mês</span></div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">5 Domínios personalizados</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">50 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Suporte prioritário 24/7</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Backup diário automático</span></li>
+											<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Acesso via SSH / SFTP</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-primary">Assinar Plano Pro</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- Enterprise -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card">
+									<div class="card-header text-center">
+										<h3 class="plan-title">Enterprise</h3>
+										<div class="price-box"><span class="currency">R$</span><span class="price">149</span><span class="period">/mês</span></div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Domínios ilimitados</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">200 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL Wildcard</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Acesso completo SSH / SFTP</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-dark">Falar com Consultor</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sidebar Tab Recursos -->
+			<div class="inspector-sidebar">
+				<div class="sidebar-header">
+					<h2>Gerenciar Recursos da Tabela</h2>
+				</div>
+				<div class="d-flex bg-light p-1 rounded mb-3">
+					<button class="btn btn-sm text-secondary fw-semibold flex-fill">Planos</button>
+					<button class="btn btn-sm btn-light text-primary fw-bold flex-fill shadow-sm">Recursos</button>
+					<button class="btn btn-sm text-secondary fw-semibold flex-fill">Destaque</button>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label small fw-bold">Plano Selecionado</label>
+					<select class="form-select form-select-sm">
+						<option>1. Básico</option>
+						<option selected>2. Profissional</option>
+						<option>3. Enterprise</option>
+					</select>
+				</div>
+
+				<p class="small text-muted mb-2">Alterne entre recursos inclusos (ícone de visto verde) e exclusos (ícone de xis cinza).</p>
+
+				<!-- Item 1 -->
+				<div class="card p-2 bg-white border mb-2">
+					<div class="d-flex justify-content-between align-items-center mb-1">
+						<span class="small fw-bold text-success"><i class="fa-solid fa-check me-1"></i> Incluso no plano</span>
+						<button class="btn btn-link text-danger p-0 small text-decoration-none">Remover</button>
+					</div>
+					<input type="text" class="form-control form-control-sm mb-1" value="5 Domínios personalizados">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" checked>
+						<label class="form-check-label small">Recurso Incluso?</label>
+					</div>
+				</div>
+
+				<!-- Item 2 -->
+				<div class="card p-2 bg-white border mb-2">
+					<div class="d-flex justify-content-between align-items-center mb-1">
+						<span class="small fw-bold text-success"><i class="fa-solid fa-check me-1"></i> Incluso no plano</span>
+						<button class="btn btn-link text-danger p-0 small text-decoration-none">Remover</button>
+					</div>
+					<input type="text" class="form-control form-control-sm mb-1" value="Suporte prioritário 24/7">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" checked>
+						<label class="form-check-label small">Recurso Incluso?</label>
+					</div>
+				</div>
+
+				<!-- Item 3: Excluso -->
+				<div class="card p-2 bg-light border mb-2">
+					<div class="d-flex justify-content-between align-items-center mb-1">
+						<span class="small fw-bold text-secondary"><i class="fa-solid fa-xmark me-1"></i> Não incluso no plano</span>
+						<button class="btn btn-link text-danger p-0 small text-decoration-none">Remover</button>
+					</div>
+					<input type="text" class="form-control form-control-sm mb-1 text-muted" value="Acesso via SSH / SFTP">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox">
+						<label class="form-check-label small">Recurso Incluso?</label>
+					</div>
+				</div>
+
+				<button class="btn btn-outline-primary btn-sm w-100 mt-2">+ Adicionar Recurso a Este Plano</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- VIEW 3: Aba Estilo do Destaque -->
+	<div id="view-tab-destaque" class="view-panel" style="display:none;">
+		<div class="gutenberg-editor-shell">
+			<div class="editor-canvas-area">
+				<div class="editor-block-container">
+					<div class="block-breadcrumbs">
+						<i class="fa-solid fa-palette text-primary"></i> Bloco: periodic/pricing-table &rsaquo; Estilização do Destaque
+					</div>
+					<!-- Tabela com destaque -->
+					<div class="periodic-pricing-table-wrapper">
+						<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center align-items-stretch">
+							<!-- Básico -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card">
+									<div class="card-header text-center">
+										<h3 class="plan-title">Básico</h3>
+										<div class="price-box"><span class="currency">R$</span><span class="price">29</span><span class="period">/mês</span></div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">1 Domínio personalizado</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">10 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-outline-primary">Começar Agora</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- Profissional (Destaque ampliado) -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card is-featured elevate-featured" style="border: 2px solid #0d6efd;">
+									<div class="pricing-badge-wrapper"><span class="badge rounded-pill pricing-badge" style="background:#0d6efd; color:#fff;"><i class="fa-solid fa-crown"></i> Mais Popular</span></div>
+									<div class="card-header text-center">
+										<h3 class="plan-title">Profissional</h3>
+										<div class="price-box"><span class="currency">R$</span><span class="price">79</span><span class="period">/mês</span></div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">5 Domínios personalizados</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">50 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Suporte prioritário 24/7</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-primary">Assinar Plano Pro</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- Enterprise -->
+							<div class="col">
+								<div class="card h-100 periodic-pricing-card">
+									<div class="card-header text-center">
+										<h3 class="plan-title">Enterprise</h3>
+										<div class="price-box"><span class="currency">R$</span><span class="price">149</span><span class="period">/mês</span></div>
+									</div>
+									<div class="card-body">
+										<ul class="pricing-features-list">
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Domínios ilimitados</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">200 GB de armazenamento SSD</span></li>
+											<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL Wildcard</span></li>
+										</ul>
+										<div class="pricing-cta"><a href="#" class="btn btn-dark">Falar com Consultor</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sidebar Tab Destaque -->
+			<div class="inspector-sidebar">
+				<div class="sidebar-header">
+					<h2>Personalização do Destaque</h2>
+				</div>
+				<div class="d-flex bg-light p-1 rounded mb-3">
+					<button class="btn btn-sm text-secondary fw-semibold flex-fill">Planos</button>
+					<button class="btn btn-sm text-secondary fw-semibold flex-fill">Recursos</button>
+					<button class="btn btn-sm btn-light text-primary fw-bold flex-fill shadow-sm">Destaque</button>
+				</div>
+
+				<div class="form-check form-switch mb-3">
+					<input class="form-check-input" type="checkbox" checked>
+					<label class="form-check-label small fw-bold">Exibir Distintivos (Badges)</label>
+					<div class="text-muted" style="font-size:11px;">Exibe o distintivo flutuante sobre os planos com destaque.</div>
+				</div>
+
+				<div class="form-check form-switch mb-3">
+					<input class="form-check-input" type="checkbox" checked>
+					<label class="form-check-label small fw-bold">Elevar Plano em Destaque</label>
+					<div class="text-muted" style="font-size:11px;">Aplica ampliação sutil e sombra profunda no plano recomendado.</div>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label small fw-bold">Cor da Borda de Destaque</label>
+					<div class="d-flex gap-2 align-items-center">
+						<span style="width:24px;height:24px;border-radius:50%;background:#0d6efd;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1px #cbd5e1;"></span>
+						<span class="small text-monospace">#0d6efd (Azul Bootstrap)</span>
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label small fw-bold">Cor de Fundo da Badge</label>
+					<div class="d-flex gap-2 align-items-center">
+						<span style="width:24px;height:24px;border-radius:50%;background:#0d6efd;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1px #cbd5e1;"></span>
+						<span class="small text-monospace">#0d6efd</span>
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label small fw-bold">Cor do Texto da Badge</label>
+					<div class="d-flex gap-2 align-items-center">
+						<span style="width:24px;height:24px;border-radius:50%;background:#ffffff;display:inline-block;border:1px solid #cbd5e1;"></span>
+						<span class="small text-monospace">#ffffff (Branco)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- VIEW 4: Frontend Final Preview -->
+	<div id="view-frontend" class="view-panel" style="display:none;">
+		<div class="frontend-standalone">
+			<div class="frontend-title-area">
+				<span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 rounded-pill mb-2">Planos e Preços Transparentes</span>
+				<h2>Escolha o plano perfeito para o seu projeto</h2>
+				<p>Todos os planos incluem suporte dedicado, atualizações automáticas e garantia de satisfação por 30 dias.</p>
+			</div>
+
+			<div class="periodic-pricing-table-wrapper">
+				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center align-items-stretch">
+					<!-- Plano Básico -->
+					<div class="col">
+						<div class="card h-100 periodic-pricing-card shadow-sm">
+							<div class="card-header text-center">
+								<h3 class="plan-title">Básico</h3>
+								<div class="price-box">
+									<span class="currency">R$</span>
+									<span class="price">29</span>
+									<span class="period">/mês</span>
+								</div>
+							</div>
+							<div class="card-body">
+								<ul class="pricing-features-list">
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">1 Domínio personalizado</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">10 GB de armazenamento SSD</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Suporte por e-mail</span></li>
+									<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Backup diário automático</span></li>
+									<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Acesso via SSH / SFTP</span></li>
+								</ul>
+								<div class="pricing-cta">
+									<a href="#" class="btn btn-outline-primary shadow-sm">Começar Agora</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Plano Profissional (Destaque) -->
+					<div class="col">
+						<div class="card h-100 periodic-pricing-card is-featured elevate-featured shadow">
+							<div class="pricing-badge-wrapper">
+								<span class="badge rounded-pill pricing-badge">
+									<i class="fa-solid fa-crown me-1"></i> Mais Popular
+								</span>
+							</div>
+							<div class="card-header text-center">
+								<h3 class="plan-title">Profissional</h3>
+								<div class="price-box">
+									<span class="currency">R$</span>
+									<span class="price">79</span>
+									<span class="period">/mês</span>
+								</div>
+							</div>
+							<div class="card-body">
+								<ul class="pricing-features-list">
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">5 Domínios personalizados</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">50 GB de armazenamento SSD</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL grátis</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Suporte prioritário 24/7</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Backup diário automático</span></li>
+									<li class="feature-item"><i class="fa-solid fa-xmark feature-icon icon-excluded"></i><span class="feature-text is-excluded">Acesso via SSH / SFTP</span></li>
+								</ul>
+								<div class="pricing-cta">
+									<a href="#" class="btn btn-primary shadow">Assinar Plano Pro</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Plano Enterprise -->
+					<div class="col">
+						<div class="card h-100 periodic-pricing-card shadow-sm">
+							<div class="card-header text-center">
+								<h3 class="plan-title">Enterprise</h3>
+								<div class="price-box">
+									<span class="currency">R$</span>
+									<span class="price">149</span>
+									<span class="period">/mês</span>
+								</div>
+							</div>
+							<div class="card-body">
+								<ul class="pricing-features-list">
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Domínios ilimitados</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">200 GB de armazenamento SSD</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Certificado SSL Wildcard</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Gerente de conta dedicado</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Backup diário e CDN global</span></li>
+									<li class="feature-item"><i class="fa-solid fa-check feature-icon icon-included"></i><span class="feature-text">Acesso completo SSH / SFTP</span></li>
+								</ul>
+								<div class="pricing-cta">
+									<a href="#" class="btn btn-dark shadow-sm">Falar com Consultor</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function showView(viewId) {
+			document.querySelectorAll('.view-panel').forEach(p => p.style.display = 'none');
+			document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+			if (viewId === 'tab-planos') {
+				document.getElementById('view-tab-planos').style.display = 'block';
+				document.querySelectorAll('.nav-btn')[0].classList.add('active');
+			} else if (viewId === 'tab-recursos') {
+				document.getElementById('view-tab-recursos').style.display = 'block';
+				document.querySelectorAll('.nav-btn')[1].classList.add('active');
+			} else if (viewId === 'tab-destaque') {
+				document.getElementById('view-tab-destaque').style.display = 'block';
+				document.querySelectorAll('.nav-btn')[2].classList.add('active');
+			} else if (viewId === 'frontend') {
+				document.getElementById('view-frontend').style.display = 'block';
+				document.querySelectorAll('.nav-btn')[3].classList.add('active');
+			}
+		}
+	</script>
+</body>
+</html>

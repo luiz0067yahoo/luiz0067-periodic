@@ -1,0 +1,138 @@
+{
+  "translation-revision-date": "2026-09-11 21:20:00+0000",
+  "generator": "destack-buttons-i18n-builder",
+  "source": "js/blocks/destack-buttons.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Destack Buttons (Botões de Destaque)": [
+        "Featured Buttons (Quick Access)"
+      ],
+      "Exiba uma grade de botões e atalhos rápidos com ícones, títulos e links customizados.": [
+        "Display a grid of quick access buttons and cards with custom icons, titles, and links."
+      ],
+      "destaque": [
+        "featured"
+      ],
+      "botões": [
+        "buttons"
+      ],
+      "acesso rápido": [
+        "quick access"
+      ],
+      "serviços": [
+        "services"
+      ],
+      "Serviço 1": [
+        "Service 1"
+      ],
+      "Serviço 2": [
+        "Service 2"
+      ],
+      "Serviço 3": [
+        "Service 3"
+      ],
+      "Serviço 4": [
+        "Service 4"
+      ],
+      "Novo Botão ": [
+        "New Button "
+      ],
+      "Configurações do Grid": [
+        "Grid Settings"
+      ],
+      "Quantidade de Colunas por Linha": [
+        "Columns per Row"
+      ],
+      "Ajuste a quantidade de botões exibidos por linha em telas grandes.": [
+        "Adjust the number of buttons displayed per row on large screens."
+      ],
+      "Adicionar Botão": [
+        "Add Button"
+      ],
+      "Gerenciador de Links e Atalhos": [
+        "Links & Shortcuts Manager"
+      ],
+      "Sem título": [
+        "Untitled"
+      ],
+      "Mover para cima": [
+        "Move up"
+      ],
+      "Mover para baixo": [
+        "Move down"
+      ],
+      "Excluir botão": [
+        "Delete button"
+      ],
+      "URL de Destino": [
+        "Destination URL"
+      ],
+      "Abrir em nova aba": [
+        "Open in new tab"
+      ],
+      "Botões de Destaque": [
+        "Featured Buttons"
+      ],
+      "item": [
+        "item"
+      ],
+      "itens": [
+        "items"
+      ],
+      "coluna": [
+        "column"
+      ],
+      "colunas": [
+        "columns"
+      ],
+      "Mover para a esquerda": [
+        "Move left"
+      ],
+      "Mover para a direita": [
+        "Move right"
+      ],
+      "Excluir este botão": [
+        "Delete this button"
+      ],
+      "Ícone do botão": [
+        "Button icon"
+      ],
+      "Alterar ícone": [
+        "Change icon"
+      ],
+      "Trocar": [
+        "Replace"
+      ],
+      "Remover ícone": [
+        "Remove icon"
+      ],
+      "Remover": [
+        "Remove"
+      ],
+      "Escolha uma imagem ou ícone": [
+        "Choose an image or icon"
+      ],
+      "Inserir Ícone": [
+        "Insert Icon"
+      ],
+      "Nome do Botão...": [
+        "Button Label..."
+      ],
+      "https://link-de-destino...": [
+        "https://destination-url..."
+      ],
+      "Abre em nova aba (ativo)": [
+        "Opens in new tab (active)"
+      ],
+      "Abrir em mesma aba": [
+        "Open in same tab"
+      ]
+    }
+  }
+}

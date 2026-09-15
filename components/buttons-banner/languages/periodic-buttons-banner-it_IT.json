@@ -1,0 +1,219 @@
+{
+  "translation-revision-date": "2026-09-11 20:30:00+0000",
+  "generator": "wp-cli/python",
+  "source": "assets/js/buttons-banner.js",
+  "domain": "periodic-buttons-banner",
+  "locale_data": {
+    "periodic-buttons-banner": {
+      "": {
+        "domain": "periodic-buttons-banner",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Abrir em Nova Aba (_blank)": [
+        "Apri in una nuova scheda (_blank)"
+      ],
+      "Adiciona Linha": [
+        "Aggiungi Riga"
+      ],
+      "Adicionar Botão": [
+        "Aggiungi Pulsante"
+      ],
+      "Agendamentos e consultas": [
+        "Appuntamenti e visite"
+      ],
+      "Alinhamento": [
+        "Allineamento"
+      ],
+      "Alterar Logotipo": [
+        "Modifica Logo"
+      ],
+      "Atendimento Online": [
+        "Supporto Online"
+      ],
+      "Atendimento ao cidadão": [
+        "Assistenza ai cittadini"
+      ],
+      "Azul Corporativo": [
+        "Blu Aziendale"
+      ],
+      "Azul Escuro": [
+        "Blu Scuro"
+      ],
+      "Azul Institucional": [
+        "Blu Istituzionale"
+      ],
+      "Botão #": [
+        "Pulsante #"
+      ],
+      "Botões Banner": [
+        "Banner Pulsanti"
+      ],
+      "Branco": [
+        "Bianco"
+      ],
+      "Centralizado": [
+        "Centrato"
+      ],
+      "Certidões e IPTU": [
+        "Certificati e tasse locali"
+      ],
+      "Cinza Claro": [
+        "Grigio Chiaro"
+      ],
+      "Clique para enviar ou alterar o logotipo": [
+        "Clicca per caricare o modificare il logo"
+      ],
+      "Coloque seu Link aqui...": [
+        "Inserisci il tuo Link qui..."
+      ],
+      "Coloque seu texto aqui...": [
+        "Inserisci il tuo testo qui..."
+      ],
+      "Coloque titulo aqui...": [
+        "Inserisci il titolo qui..."
+      ],
+      "Colunas por Linha": [
+        "Colonne per Riga"
+      ],
+      "Configurações de Layout e Estilo": [
+        "Impostazioni di Layout e Stile"
+      ],
+      "Contorno / Outline": [
+        "Contorno / Tratteggio"
+      ],
+      "Cor do Destaque / Fundo": [
+        "Colore di Evidenziazione / Sfondo"
+      ],
+      "Coral / Vermelho": [
+        "Corallo / Rosso"
+      ],
+      "Cores Personalizadas": [
+        "Colori Personalizzati"
+      ],
+      "Descrição do serviço": [
+        "Descrizione del servizio"
+      ],
+      "Deve haver pelo menos 1 botão no bloco.": [
+        "Deve esserci almeno 1 pulsante nel blocco."
+      ],
+      "Direita": [
+        "Destra"
+      ],
+      "Dourado / Amarelo": [
+        "Oro / Giallo"
+      ],
+      "EDUCAÇÃO": [
+        "EDUCAZIONE"
+      ],
+      "Enviar Logotipo": [
+        "Carica Logo"
+      ],
+      "Escolas e Alunos": [
+        "Scuole e Studenti"
+      ],
+      "Escuro / Dark Mode": [
+        "Scuro / Modalità Scura"
+      ],
+      "Esquerda": [
+        "Sinistra"
+      ],
+      "Estilo Visual": [
+        "Stile Visivo"
+      ],
+      "Gerenciador de Botões (": [
+        "Gestione Pulsanti ("
+      ],
+      "Grafite Escuro": [
+        "Grafite Scuro"
+      ],
+      "Limite máximo recomendado atingido.": [
+        "Limite massimo consigliato raggiunto."
+      ],
+      "Link de Destino (URL)": [
+        "Collegamento di Destinazione (URL)"
+      ],
+      "Link de destino": [
+        "Collegamento di destinazione"
+      ],
+      "Logotipo / Ícone:": [
+        "Logo / Icona:"
+      ],
+      "Matrículas e escolas": [
+        "Iscrizioni e scuole"
+      ],
+      "NOTÍCIAS": [
+        "NOTIZIE"
+      ],
+      "NOVO BOTÃO": [
+        "NUOVO PULSANTE"
+      ],
+      "Padrão Prefeitura (Gradiente Verde/Azul)": [
+        "Predefinito Municipio (Gradiente Verde/Blu)"
+      ],
+      "Portal da Saúde": [
+        "Portale della Salute"
+      ],
+      "Preto": [
+        "Nero"
+      ],
+      "Quantidade de até 5 botões por linha com logos, descrições ricas e links personalizáveis.": [
+        "Fino a 5 pulsanti per riga con loghi, descrizioni avanzate e link personalizzabili."
+      ],
+      "Remover": [
+        "Rimuovi"
+      ],
+      "Remover Botão": [
+        "Rimuovi Pulsante"
+      ],
+      "Remover Linha": [
+        "Rimuovi Riga"
+      ],
+      "SAÚDE": [
+        "SALUTE"
+      ],
+      "SERVIÇOS": [
+        "SERVIZI"
+      ],
+      "Selecione o logotipo do botão": [
+        "Seleziona il logo del pulsante"
+      ],
+      "Sem título": [
+        "Senza titolo"
+      ],
+      "TRIBUTOS": [
+        "TRIBUTI"
+      ],
+      "Título / Sigla": [
+        "Titolo / Sigla"
+      ],
+      "Utilizar como logotipo": [
+        "Usa come logo"
+      ],
+      "Verde Institucional": [
+        "Verde Istituzionale"
+      ],
+      "banner": [
+        "banner"
+      ],
+      "botões": [
+        "pulsanti"
+      ],
+      "buttons": [
+        "pulsanti"
+      ],
+      "custom adm": [
+        "custom adm"
+      ],
+      "links": [
+        "collegamenti"
+      ],
+      "prefeitura": [
+        "municipio"
+      ],
+      "Últimos comunicados": [
+        "Ultimi comunicati"
+      ]
+    }
+  }
+}

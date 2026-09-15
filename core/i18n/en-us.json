@@ -1,0 +1,265 @@
+{
+  "ui": {
+    "suite_title": "Periodic Component Suite",
+    "suite_subtitle": "61 unified modular components with BEM scoping and internationalization",
+    "search_placeholder": "Search components...",
+    "filter_all": "All",
+    "category_layout": "Layout & Structure",
+    "category_content": "Content & Typography",
+    "category_media": "Media & Gallery",
+    "category_interactive": "Interactivity & Engagement",
+    "category_forms": "Forms & Business",
+    "category_charts": "Charts & Data",
+    "category_games": "Games & Education",
+    "view_doc": "View Documentation",
+    "interactive_demo": "Interactive Demo",
+    "code_snippet": "Code Snippet",
+    "language_name": "English (US)"
+  },
+  "components": {
+    "accordion": {
+      "title": "Accordion",
+      "description": "Responsive collapsible and expandable panels."
+    },
+    "ad-banner": {
+      "title": "Ad Banner",
+      "description": "Promotional banner for calls-to-action."
+    },
+    "advanced-banner": {
+      "title": "Advanced Banner",
+      "description": "Feature-rich banner with gradients and effects."
+    },
+    "advanced-spacer": {
+      "title": "Advanced Spacer",
+      "description": "Responsive spacing and divider controls."
+    },
+    "alert-callout": {
+      "title": "Alert Callout",
+      "description": "Alerts, notifications, and callout cards."
+    },
+    "audio-embed": {
+      "title": "Audio Embed",
+      "description": "Customizable HTML5 audio player."
+    },
+    "big-button": {
+      "title": "Big Button",
+      "description": "High-converting button with micro-animations."
+    },
+    "breadcrumbs": {
+      "title": "Breadcrumbs",
+      "description": "Hierarchical breadcrumb navigation with Schema.org."
+    },
+    "buttons-banner": {
+      "title": "Buttons Banner",
+      "description": "Organized button group for action suites."
+    },
+    "card-trainer": {
+      "title": "Card Trainer",
+      "description": "Flashcards and interactive study training."
+    },
+    "card-wrapper": {
+      "title": "Card Wrapper",
+      "description": "Flexible container for styled card content."
+    },
+    "carousel-slides": {
+      "title": "Carousel Slides",
+      "description": "Fluid responsive slider for slides and images."
+    },
+    "carousel-slides-plus": {
+      "title": "Carousel Slides Plus",
+      "description": "Advanced slider with autoplay and touch gestures."
+    },
+    "code": {
+      "title": "Code Block",
+      "description": "Code presentation with syntax highlighting."
+    },
+    "cols-image": {
+      "title": "Columns Image",
+      "description": "Balanced column layout for media."
+    },
+    "counter-stats": {
+      "title": "Counter Stats",
+      "description": "Animated numeric stats counters on scroll."
+    },
+    "custom-shapes": {
+      "title": "Custom Shapes",
+      "description": "Elegant SVG section dividers and shapes."
+    },
+    "date-title-link": {
+      "title": "Date Title Link",
+      "description": "Chronological item with title and hyperlink."
+    },
+    "date-title-link-file-upload": {
+      "title": "Date Title Link & Upload",
+      "description": "Document download and upload attachment item."
+    },
+    "destack-buttons": {
+      "title": "Featured Buttons",
+      "description": "Styled buttons with depth and glow effects."
+    },
+    "drag-drop-engine": {
+      "title": "Drag & Drop Engine",
+      "description": "Smooth drag and drop interaction engine."
+    },
+    "faq-schema": {
+      "title": "FAQ Schema",
+      "description": "FAQ accordion structured for SEO rich snippets."
+    },
+    "form-builder": {
+      "title": "Form Builder",
+      "description": "Dynamic declarative forms with validation."
+    },
+    "gallery-lightbox": {
+      "title": "Gallery Lightbox",
+      "description": "Photo gallery with modal fullscreen view."
+    },
+    "grafic-line-bar": {
+      "title": "Line & Bar Charts",
+      "description": "Dynamic line and bar charts for metrics."
+    },
+    "grafic-pizza": {
+      "title": "Pie Chart",
+      "description": "Percentage slice distribution charts."
+    },
+    "grafic-torus": {
+      "title": "Donut (Torus) Chart",
+      "description": "Modern doughnut chart with center indicators."
+    },
+    "grid-flex": {
+      "title": "Grid Flex",
+      "description": "CSS Grid and Flexbox responsive layout system."
+    },
+    "icons": {
+      "title": "Icons & Vectors",
+      "description": "Centralized icon helper and SVG library."
+    },
+    "image-destaque": {
+      "title": "Featured Image",
+      "description": "Hero image display with text overlays."
+    },
+    "image-editor": {
+      "title": "Image Editor",
+      "description": "In-browser filters, cropping, and adjustments."
+    },
+    "image-only": {
+      "title": "Image Only",
+      "description": "Optimized image container with lazy loading."
+    },
+    "interactive-utilities": {
+      "title": "Interactive Utilities",
+      "description": "Micro-helpers for events, tooltips and UI."
+    },
+    "interative-software-simulator": {
+      "title": "Software Simulator",
+      "description": "Interactive walkthrough of application screens."
+    },
+    "maps": {
+      "title": "Interactive Maps",
+      "description": "Geographic maps with custom pins and popups."
+    },
+    "media-hotspot": {
+      "title": "Media Hotspot",
+      "description": "Interactive clickable pins over diagrams and images."
+    },
+    "modal-popup": {
+      "title": "Modal Popup",
+      "description": "Accessible floating modal dialogs and overlays."
+    },
+    "parallax-section": {
+      "title": "Parallax Section",
+      "description": "Multi-layer 3D depth scrolling effect."
+    },
+    "pdf-flipbook": {
+      "title": "PDF Flipbook",
+      "description": "Interactive document viewer with realistic page turn."
+    },
+    "pricing-table": {
+      "title": "Pricing Table",
+      "description": "Subscription and feature comparison cards."
+    },
+    "quiz-engine": {
+      "title": "Quiz Engine",
+      "description": "Interactive quizzes with instant scoring and feedback."
+    },
+    "scroll-top": {
+      "title": "Scroll to Top",
+      "description": "Smooth floating button to return to page top."
+    },
+    "section-container": {
+      "title": "Section Container",
+      "description": "Standardized section wrapper with responsive bounds."
+    },
+    "separator": {
+      "title": "Separator & Divider",
+      "description": "Decorative rule lines and section boundaries."
+    },
+    "smart-essay": {
+      "title": "Smart Essay",
+      "description": "Writing environment with word goals and metrics."
+    },
+    "structured-writing": {
+      "title": "Structured Writing",
+      "description": "Step-by-step drafting templates for structured essays."
+    },
+    "table-of-contents": {
+      "title": "Table of Contents",
+      "description": "Automatic table of contents generated from headings."
+    },
+    "table-responsive": {
+      "title": "Responsive Table",
+      "description": "Fluid data tables with horizontal touch scrolling."
+    },
+    "tabs": {
+      "title": "Navigation Tabs",
+      "description": "Tabbed content switcher with accessibility attributes."
+    },
+    "team-member": {
+      "title": "Team Member",
+      "description": "Team profile card with photo, role and social links."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "description": "Customer quote cards with ratings and social proof."
+    },
+    "text-completion": {
+      "title": "Text Completion",
+      "description": "Fill-in-the-blanks reading and grammar exercise."
+    },
+    "thumbnail-pdf-link": {
+      "title": "PDF Thumbnail Link",
+      "description": "Document cover preview card linking to PDF."
+    },
+    "thumbnail-pdf-link-multiple": {
+      "title": "Multiple PDF Links",
+      "description": "Grid of downloadable document resources."
+    },
+    "timeline-vertical": {
+      "title": "Vertical Timeline",
+      "description": "Chronological milestone narrative with icons."
+    },
+    "title-text-block": {
+      "title": "Title & Text Block",
+      "description": "Header and typography lead section."
+    },
+    "topic-text-data": {
+      "title": "Topic Text & Data",
+      "description": "Structured facts, key statistics and topics."
+    },
+    "topic-title-text": {
+      "title": "Topic Title & Text",
+      "description": "Conceptual highlight block with custom bullets."
+    },
+    "video-embed": {
+      "title": "Video Embed",
+      "description": "Responsive aspect-ratio video player wrapper."
+    },
+    "voice-lab": {
+      "title": "Voice Lab",
+      "description": "Interactive microphone recording and audio playground."
+    },
+    "word-games": {
+      "title": "Word Games",
+      "description": "Educational spelling, hangman and vocabulary puzzles."
+    }
+  }
+}

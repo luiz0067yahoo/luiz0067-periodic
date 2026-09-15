@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: luiz0067-maps\n"
+"POT-Creation-Date: 2026-09-11 22:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Your Name <you@example.com>\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Block title
+msgid "Mapa Interativo"
+msgstr "Mapa Interativo"
+
+# Inspector labels
+msgid "URL do iframe (Google Maps / OSM)"
+msgstr "URL do iframe (Google Maps / OSM)"
+
+msgid "Cole o link completo de embed do mapa."
+msgstr "Cole o link completo de embed do mapa."
+
+msgid "Altura (px)"
+msgstr "Altura (px)"
+
+msgid "Borda Arredondada (px)"
+msgstr "Borda Arredondada (px)"
+
+msgid "Legenda"
+msgstr "Legenda"
+
+msgid "Classe CSS extra"
+msgstr "Classe CSS extra"
+
+msgid "Use para estilos customizados."
+msgstr "Use para estilos customizados."
+
+msgid "Insira a URL do mapa no painel lateral."
+msgstr "Insira a URL do mapa no painel lateral."

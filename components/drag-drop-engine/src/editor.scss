@@ -1,0 +1,80 @@
+/**
+ * Luiz0067 Drag & Drop Engine - Editor Styles
+ */
+
+.wp-block-luiz0067-drag-drop-engine {
+  .luiz0067-editor-notice {
+    padding: 0.6rem 0.9rem;
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+    color: #1e40af;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .editor-mode-badge {
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+  }
+
+  .editor-item-preview-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.35rem;
+    margin-bottom: 0.4rem;
+
+    .item-preview-text {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .item-preview-meta {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+  }
+}
+
+/* Sidebar Inspector controls */
+.luiz0067-inspector-panel {
+  .components-base-control {
+    margin-bottom: 1rem;
+  }
+
+  .item-config-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+
+    .item-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+  }
+
+  .add-item-button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

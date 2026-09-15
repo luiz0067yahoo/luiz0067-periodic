@@ -1,0 +1,340 @@
+{
+  "translation-revision-date": "2026-09-11 16:30:00+0000",
+  "generator": "WP-CLI/2.x",
+  "source": "assets/js/block.js",
+  "domain": "periodic-separator",
+  "locale_data": {
+    "periodic-separator": {
+      "": {
+        "domain": "periodic-separator",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Alinhado à Direita": [
+        "Allineato a Destra"
+      ],
+      "Alinhado à Esquerda": [
+        "Allineato a Sinistra"
+      ],
+      "Alinhamento Horizontal": [
+        "Allineamento Orizzontale"
+      ],
+      "Arredondamento dos Cantos (px)": [
+        "Arrotondamento degli Angoli (px)"
+      ],
+      "Azul": [
+        "Blu"
+      ],
+      "Azul Escuro": [
+        "Blu Scuro"
+      ],
+      "Centralizado": [
+        "Centrato"
+      ],
+      "Cinza Claro": [
+        "Grigio Chiaro"
+      ],
+      "Cinza Médio": [
+        "Grigio Medio"
+      ],
+      "Cor Principal": [
+        "Colore Principale"
+      ],
+      "Cor Secundária (Gradiente)": [
+        "Colore Secondario (Gradiente)"
+      ],
+      "Coral / Vermelho": [
+        "Corallo / Rosso"
+      ],
+      "Coração (♥)": [
+        "Cuore (♥)"
+      ],
+      "Círculo (●)": [
+        "Cerchio (●)"
+      ],
+      "Dimensões e Posição": [
+        "Dimensioni e Posizione"
+      ],
+      "Dourado / Amarelo": [
+        "Dorato / Giallo"
+      ],
+      "Escolha o Símbolo": [
+        "Scegli il Simbolo"
+      ],
+      "Espaçamento Inferior (px)": [
+        "Spaziatura Inferiore (px)"
+      ],
+      "Espaçamento Superior (px)": [
+        "Spaziatura Superiore (px)"
+      ],
+      "Espessura / Altura (px)": [
+        "Spessore / Altezza (px)"
+      ],
+      "Estilo e Cor": [
+        "Stile e Colore"
+      ],
+      "Estrela (★)": [
+        "Stella (★)"
+      ],
+      "Exibir símbolo no centro": [
+        "Mostra simbolo al centro"
+      ],
+      "Flor / Cruz (✤)": [
+        "Fiore / Croce (✤)"
+      ],
+      "Folha (❧)": [
+        "Foglia (❧)"
+      ],
+      "Gradiente Moderno": [
+        "Gradiente Moderno"
+      ],
+      "Grafite Escuro": [
+        "Grafite Scuro"
+      ],
+      "Largura (%)": [
+        "Larghezza (%)"
+      ],
+      "Linha Dupla (Double)": [
+        "Linea Doppia (Double)"
+      ],
+      "Linha Pontilhada (Dotted)": [
+        "Linea Punteggiata (Dotted)"
+      ],
+      "Linha Sólida": [
+        "Linea Continua"
+      ],
+      "Linha Tracejada (Dashed)": [
+        "Linea Tratteggiata (Dashed)"
+      ],
+      "Linha com Sombra": [
+        "Linea con Ombra"
+      ],
+      "Losango (◆)": [
+        "Rombo (◆)"
+      ],
+      "Modelo do Separador": [
+        "Modello del Separatore"
+      ],
+      "O separador divide os conteúdos por uma linha elegante e personalizável.": [
+        "Il separatore divide i contenuti con una linea elegante e personalizzabile."
+      ],
+      "Opacidade (%)": [
+        "Opacità (%)"
+      ],
+      "Preto": [
+        "Nero"
+      ],
+      "Quadrado (■)": [
+        "Quadrato (■)"
+      ],
+      "Roxo": [
+        "Viola"
+      ],
+      "Separador": [
+        "Separatore"
+      ],
+      "Separador (cms-adm)": [
+        "Separatore (cms-adm)"
+      ],
+      "Separador compatível com customADM / prefeitura.": [
+        "Separatore compatibile con customADM / comune."
+      ],
+      "Símbolo Central (Decorativo)": [
+        "Simbolo Centrale (Decorativo)"
+      ],
+      "Três Pontos Decorativos": [
+        "Tre Punti Decorativi"
+      ],
+      "Verde Escuro": [
+        "Verde Scuro"
+      ],
+      "Verde Esmeralda": [
+        "Verde Smeraldo"
+      ],
+      "Verde Institucional": [
+        "Verde Istituzionale"
+      ],
+      "Verde Institucional (Prefeitura)": [
+        "Verde Istituzionale (Comune)"
+      ],
+      "divider": [
+        "divider"
+      ],
+      "divisor": [
+        "divisore"
+      ],
+      "linha": [
+        "linea"
+      ],
+      "separador": [
+        "separatore"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "periodic-separator",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Alinhado à Direita": [
+        "Allineato a Destra"
+      ],
+      "Alinhado à Esquerda": [
+        "Allineato a Sinistra"
+      ],
+      "Alinhamento Horizontal": [
+        "Allineamento Orizzontale"
+      ],
+      "Arredondamento dos Cantos (px)": [
+        "Arrotondamento degli Angoli (px)"
+      ],
+      "Azul": [
+        "Blu"
+      ],
+      "Azul Escuro": [
+        "Blu Scuro"
+      ],
+      "Centralizado": [
+        "Centrato"
+      ],
+      "Cinza Claro": [
+        "Grigio Chiaro"
+      ],
+      "Cinza Médio": [
+        "Grigio Medio"
+      ],
+      "Cor Principal": [
+        "Colore Principale"
+      ],
+      "Cor Secundária (Gradiente)": [
+        "Colore Secondario (Gradiente)"
+      ],
+      "Coral / Vermelho": [
+        "Corallo / Rosso"
+      ],
+      "Coração (♥)": [
+        "Cuore (♥)"
+      ],
+      "Círculo (●)": [
+        "Cerchio (●)"
+      ],
+      "Dimensões e Posição": [
+        "Dimensioni e Posizione"
+      ],
+      "Dourado / Amarelo": [
+        "Dorato / Giallo"
+      ],
+      "Escolha o Símbolo": [
+        "Scegli il Simbolo"
+      ],
+      "Espaçamento Inferior (px)": [
+        "Spaziatura Inferiore (px)"
+      ],
+      "Espaçamento Superior (px)": [
+        "Spaziatura Superiore (px)"
+      ],
+      "Espessura / Altura (px)": [
+        "Spessore / Altezza (px)"
+      ],
+      "Estilo e Cor": [
+        "Stile e Colore"
+      ],
+      "Estrela (★)": [
+        "Stella (★)"
+      ],
+      "Exibir símbolo no centro": [
+        "Mostra simbolo al centro"
+      ],
+      "Flor / Cruz (✤)": [
+        "Fiore / Croce (✤)"
+      ],
+      "Folha (❧)": [
+        "Foglia (❧)"
+      ],
+      "Gradiente Moderno": [
+        "Gradiente Moderno"
+      ],
+      "Grafite Escuro": [
+        "Grafite Scuro"
+      ],
+      "Largura (%)": [
+        "Larghezza (%)"
+      ],
+      "Linha Dupla (Double)": [
+        "Linea Doppia (Double)"
+      ],
+      "Linha Pontilhada (Dotted)": [
+        "Linea Punteggiata (Dotted)"
+      ],
+      "Linha Sólida": [
+        "Linea Continua"
+      ],
+      "Linha Tracejada (Dashed)": [
+        "Linea Tratteggiata (Dashed)"
+      ],
+      "Linha com Sombra": [
+        "Linea con Ombra"
+      ],
+      "Losango (◆)": [
+        "Rombo (◆)"
+      ],
+      "Modelo do Separador": [
+        "Modello del Separatore"
+      ],
+      "O separador divide os conteúdos por uma linha elegante e personalizável.": [
+        "Il separatore divide i contenuti con una linea elegante e personalizzabile."
+      ],
+      "Opacidade (%)": [
+        "Opacità (%)"
+      ],
+      "Preto": [
+        "Nero"
+      ],
+      "Quadrado (■)": [
+        "Quadrato (■)"
+      ],
+      "Roxo": [
+        "Viola"
+      ],
+      "Separador": [
+        "Separatore"
+      ],
+      "Separador (cms-adm)": [
+        "Separatore (cms-adm)"
+      ],
+      "Separador compatível com customADM / prefeitura.": [
+        "Separatore compatibile con customADM / comune."
+      ],
+      "Símbolo Central (Decorativo)": [
+        "Simbolo Centrale (Decorativo)"
+      ],
+      "Três Pontos Decorativos": [
+        "Tre Punti Decorativi"
+      ],
+      "Verde Escuro": [
+        "Verde Scuro"
+      ],
+      "Verde Esmeralda": [
+        "Verde Smeraldo"
+      ],
+      "Verde Institucional": [
+        "Verde Istituzionale"
+      ],
+      "Verde Institucional (Prefeitura)": [
+        "Verde Istituzionale (Comune)"
+      ],
+      "divider": [
+        "divider"
+      ],
+      "divisor": [
+        "divisore"
+      ],
+      "linha": [
+        "linea"
+      ],
+      "separador": [
+        "separatore"
+      ]
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "translation-revision-date": "2026-09-11 21:00:00+0000",
+  "generator": "WP-CLI 2.10.0",
+  "source": "js/blocks/date-title-link-file-upload.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Data, Título, Link e Upload de Arquivo": [
+        "Data, Titolo, Link e Caricamento File"
+      ],
+      "Exibe publicações, editais ou documentos com data destacada, título descritivo, link e download de anexo.": [
+        "Mostra pubblicazioni, bandi o documenti con data in evidenza, titolo descrittivo, link e download dell'allegato."
+      ],
+      "arquivo": [
+        "file"
+      ],
+      "download": [
+        "scarica"
+      ],
+      "edital": [
+        "bando"
+      ],
+      "pdf": [
+        "pdf"
+      ],
+      "data": [
+        "data"
+      ],
+      "Edital de Licitação": [
+        "Bando di Gara"
+      ],
+      "Novo": [
+        "Nuovo"
+      ],
+      "Edital de Licitação Nº 042/2026 - Contratação de Serviços Especializados de TI": [
+        "Bando di Gara N. 042/2026 - Appalto per Servizi Informatici Specializzati"
+      ],
+      "Baixar Edital": [
+        "Scarica Bando"
+      ],
+      "Download": [
+        "Scarica"
+      ],
+      "Arquivo e Download": [
+        "File e Download"
+      ],
+      "Arquivo:": [
+        "File:"
+      ],
+      "Tamanho:": [
+        "Dimensione:"
+      ],
+      "Substituir Arquivo": [
+        "Sostituisci File"
+      ],
+      "Remover": [
+        "Rimuovi"
+      ],
+      "Selecionar / Enviar Arquivo": [
+        "Seleziona / Carica File"
+      ],
+      "URL Direta do Arquivo": [
+        "URL Diretto del File"
+      ],
+      "URL preenchida automaticamente pelo upload ou informada manualmente.": [
+        "URL compilato automaticamente dal caricamento o inserito manualmente."
+      ],
+      "Nome de Exibição do Arquivo": [
+        "Nome Visualizzato del File"
+      ],
+      "Tamanho Formatado (ex: 2.5 MB)": [
+        "Dimensione Formattata (es: 2.5 MB)"
+      ],
+      "Texto do Botão de Download": [
+        "Testo del Pulsante di Download"
+      ],
+      "Data e Metadados": [
+        "Data e Metadati"
+      ],
+      "Data de Publicação": [
+        "Data di Pubblicazione"
+      ],
+      "Ex: 12/09/2026": [
+        "Es: 12/09/2026"
+      ],
+      "Categoria / Órgão Emissor (Caption)": [
+        "Categoria / Ente Emittente (Caption)"
+      ],
+      "Ex: Secretaria de Finanças": [
+        "Es: Dipartimento delle Finanze"
+      ],
+      "Etiqueta em Destaque (Badge)": [
+        "Etichetta in Evidenza (Badge)"
+      ],
+      "Ex: Novo, Retificado, Edital": [
+        "Es: Nuovo, Rettificato, Bando"
+      ],
+      "Link de Redirecionamento": [
+        "Link di Reindirizzamento"
+      ],
+      "URL da Página ou Detalhes": [
+        "URL della Pagina o Dettagli"
+      ],
+      "Link alternativo ou página interna de detalhes da publicação.": [
+        "Link alternativo o pagina interna con i dettagli della pubblicazione."
+      ],
+      "Abrir links em nova aba (_blank)": [
+        "Apri link in una nuova scheda (_blank)"
+      ],
+      "Estilo de Exibição": [
+        "Stile di Visualizzazione"
+      ],
+      "Modelo de Apresentação": [
+        "Modello di Presentazione"
+      ],
+      "Cartão Moderno (Card)": [
+        "Scheda Moderna (Card)"
+      ],
+      "Linha de Tabela / Lista (Row)": [
+        "Riga di Tabella / Elenco (Row)"
+      ],
+      "Data (DD/MM/AAAA)": [
+        "Data (GG/MM/AAAA)"
+      ],
+      "Digite aqui o título descritivo do documento ou edital...": [
+        "Inserisci qui il titolo descrittivo del documento o bando..."
+      ],
+      "(Nenhum arquivo vinculado)": [
+        "(Nessun file allegato)"
+      ],
+      "Alterar Arquivo": [
+        "Modifica File"
+      ],
+      "Vincular Arquivo": [
+        "Collega File"
+      ],
+      "Acessar Página": [
+        "Accedi alla Pagina"
+      ],
+      "Acessar": [
+        "Accedi"
+      ]
+    }
+  }
+}

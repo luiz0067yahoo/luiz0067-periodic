@@ -1,0 +1,183 @@
+/* Estilos Exclusivos do Editor Gutenberg: luiz0067-testimonials */
+
+.luiz0067-testimonials-block-wrapper {
+	.luiz0067-testimonial-card {
+		/* Impede o hover exagerado durante a digitação no editor */
+		&:hover {
+			transform: none;
+		}
+
+		/* Barra de Ferramentas Rápida no Topo do Card */
+		.luiz0067-card-quick-bar {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 0.5rem 0.75rem 0;
+			background-color: transparent;
+			gap: 0.25rem;
+			z-index: 10;
+
+			.badge {
+				font-size: 0.7rem;
+				padding: 0.25em 0.5em;
+			}
+
+			.btn {
+				font-size: 0.75rem;
+				line-height: 1.4;
+				border-radius: 4px;
+				transition: all 0.2s ease;
+
+				&:hover {
+					background-color: #f1f3f5;
+				}
+			}
+		}
+
+		/* Botão de edição rápida de avatar */
+		.luiz0067-avatar-container {
+			position: relative;
+
+			.luiz0067-avatar-edit-overlay {
+				position: absolute;
+				bottom: -2px;
+				right: -2px;
+				width: 22px;
+				height: 22px;
+				border-radius: 50%;
+				background-color: #0d6efd;
+				color: #ffffff;
+				border: 2px solid #ffffff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 0.65rem;
+				cursor: pointer;
+				padding: 0;
+				transition: transform 0.2s ease, background-color 0.2s ease;
+
+				&:hover {
+					background-color: #0b5ed7;
+					transform: scale(1.15);
+				}
+			}
+		}
+
+		/* Botões de estrela clicáveis no editor */
+		.luiz0067-star-btn {
+			background: none;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			font-size: 1rem;
+			line-height: 1;
+			transition: transform 0.15s ease;
+
+			&:hover {
+				transform: scale(1.25);
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		/* RichText inputs dentro do editor */
+		.luiz0067-testimonial-quote {
+			min-height: 48px;
+
+			&:focus {
+				outline: 1px dashed rgba(13, 110, 253, 0.5);
+				border-radius: 4px;
+			}
+		}
+
+		.luiz0067-author-name {
+			min-height: 20px;
+
+			&:focus {
+				outline: 1px dashed rgba(13, 110, 253, 0.5);
+				border-radius: 4px;
+			}
+		}
+
+		.luiz0067-author-role {
+			min-height: 16px;
+
+			&:focus {
+				outline: 1px dashed rgba(13, 110, 253, 0.5);
+				border-radius: 4px;
+			}
+		}
+	}
+
+	.luiz0067-canvas-add-btn {
+		font-weight: 500;
+		border-radius: 50px;
+		padding: 0.4rem 1.25rem;
+		box-shadow: 0 2px 5px rgba(13, 110, 253, 0.15);
+		transition: all 0.2s ease;
+
+		&:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+		}
+	}
+}
+
+/* Painel Lateral / InspectorControls */
+.luiz0067-inspector-tabs-wrapper {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
+		margin-bottom: 0;
+
+		.components-button {
+			flex: 1;
+			justify-content: center;
+			height: 44px;
+			border-radius: 0;
+			font-size: 0.82rem;
+			font-weight: 600;
+			color: #555d66;
+			border-bottom: 2px solid transparent;
+
+			&.is-active {
+				color: #0d6efd;
+				border-bottom-color: #0d6efd;
+				box-shadow: none;
+			}
+		}
+	}
+
+	.luiz0067-testimonials-sidebar-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+
+		.luiz0067-sidebar-card {
+			padding: 0.75rem;
+			border-radius: 6px;
+			border: 1px solid #e2e8f0;
+			background-color: #f8fafc;
+			cursor: pointer;
+			transition: all 0.2s ease;
+
+			&:hover {
+				border-color: #cbd5e1;
+				background-color: #f1f5f9;
+			}
+
+			&.is-selected {
+				border-color: #0d6efd;
+				background-color: #ffffff;
+				box-shadow: 0 2px 4px rgba(13, 110, 253, 0.1);
+			}
+
+			strong {
+				font-size: 0.85rem;
+				color: #1e293b;
+			}
+		}
+	}
+}

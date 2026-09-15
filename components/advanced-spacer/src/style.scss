@@ -1,0 +1,60 @@
+.luiz0067-advanced-spacer-block {
+	width: 100%;
+	height: var(--luiz0067-spacer-desktop, 60px);
+	box-sizing: border-box;
+
+	@media (max-width: 991.98px) and (min-width: 768px) {
+		height: var(--luiz0067-spacer-tablet, 40px);
+	}
+
+	@media (max-width: 767.98px) {
+		height: var(--luiz0067-spacer-mobile, 25px);
+	}
+
+	.luiz0067-spacer-inner {
+		width: 100%;
+		height: 100%;
+	}
+
+	.luiz0067-spacer-divider {
+		display: flex;
+		align-items: center;
+		width: var(--luiz0067-divider-width, 100%);
+
+		.luiz0067-divider-line {
+			flex-grow: 1;
+			height: var(--luiz0067-divider-thickness, 1px);
+			background-color: var(--luiz0067-divider-color, #cbd5e1);
+		}
+
+		&.style-dashed .luiz0067-divider-line {
+			background: none;
+			border-top: var(--luiz0067-divider-thickness, 1px) dashed var(--luiz0067-divider-color, #cbd5e1);
+			height: 0;
+		}
+
+		&.style-dotted .luiz0067-divider-line {
+			background: none;
+			border-top: var(--luiz0067-divider-thickness, 1px) dotted var(--luiz0067-divider-color, #cbd5e1);
+			height: 0;
+		}
+
+		&.style-gradient .luiz0067-divider-line {
+			background: linear-gradient(90deg, transparent, var(--luiz0067-divider-color, #cbd5e1), transparent);
+		}
+
+		.luiz0067-divider-icon {
+			padding: 0 12px;
+			color: var(--luiz0067-divider-color, #cbd5e1);
+			font-size: 13px;
+			line-height: 1;
+		}
+	}
+}
+
+/* Regra de Visibilidade para Tablets Bootstrap */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.d-md-none-tablet {
+		display: none !important;
+	}
+}

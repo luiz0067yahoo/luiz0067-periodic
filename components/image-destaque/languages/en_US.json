@@ -1,0 +1,45 @@
+{
+  "translation-revision-date": "2026-09-11 21:00:00-03:00",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/blocks/image-destaque.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Imagem de Destaque": ["Featured Image Banner"],
+      "Exibe uma imagem principal ou banner promocional em destaque com suporte a link, legenda e acessibilidade.": ["Displays a primary featured image or promotional banner with link support, caption, and accessibility options."],
+      "imagem": ["image"],
+      "banner": ["banner"],
+      "destaque": ["featured"],
+      "Portal Institucional e Serviços Municipais": ["Institutional Portal and Municipal Services"],
+      "Campanha Oficial de Desenvolvimento e Infraestrutura 2026": ["Official Infrastructure and Development Campaign 2026"],
+      "Configurações de Link": ["Link Settings"],
+      "URL de Destino": ["Target URL"],
+      "Insira a URL que será aberta quando o usuário clicar na imagem.": ["Enter the URL to be opened when the user clicks the image."],
+      "Abrir em Nova Aba": ["Open in New Tab"],
+      "O link será aberto em uma nova aba do navegador.": ["The link will open in a new browser tab."],
+      "O link será aberto na mesma aba.": ["The link will open in the same tab."],
+      "Acessibilidade e SEO": ["Accessibility & SEO"],
+      "Texto Alternativo (Alt Text)": ["Alternative Text (Alt Text)"],
+      "Descreva a imagem para leitores de tela": ["Describe the image for screen readers"],
+      "Essencial para acessibilidade digital e otimização para motores de busca.": ["Essential for web accessibility and search engine optimization."],
+      "Alinhamento e Exibição": ["Alignment & Display"],
+      "Alinhamento do Bloco": ["Block Alignment"],
+      "Alinhar ao Centro": ["Align Center"],
+      "Alinhar à Esquerda": ["Align Left"],
+      "Alinhar à Direita": ["Align Right"],
+      "Largura Total": ["Full Width"],
+      "Imagem de Destaque / Banner": ["Featured Image / Banner"],
+      "Carregue ou selecione uma imagem de alta resolução na biblioteca de mídia.": ["Upload or select a high-resolution image from your media library."],
+      "Selecionar Imagem de Destaque": ["Select Featured Image"],
+      "Substituir": ["Replace"],
+      "Remover": ["Remove"],
+      "Imagem de destaque": ["Featured image"],
+      "Adicione uma legenda ou título em destaque...": ["Add a caption or featured title..."]
+    }
+  }
+}

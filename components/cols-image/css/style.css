@@ -1,0 +1,131 @@
+/**
+ * Estilos do Bloco Imagem em Colunas (cols-image)
+ * Frontend e Editor Canvas
+ * Text Domain: custom-adm
+ */
+
+.cols-image-block-wrapper {
+	width: 100%;
+	margin: 2rem auto;
+	box-sizing: border-box;
+}
+
+.cols-image-grid {
+	display: grid;
+	gap: 1.5rem;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Colunas Responsivas */
+.cols-image-grid-1 {
+	grid-template-columns: 1fr;
+}
+
+.cols-image-grid-2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cols-image-grid-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cols-image-grid-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Fallback e Cards */
+.cols-image-col {
+	width: 100%;
+	display: flex;
+}
+
+.col-image-card {
+	position: relative;
+	width: 100%;
+	min-height: 300px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+	box-sizing: border-box;
+}
+
+.col-image-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.col-image-card.has-rounded-corners {
+	border-radius: 12px;
+}
+
+/* Camada de Sobreposição / Máscara Escura */
+.col-image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+	pointer-events: none;
+	z-index: 1;
+	transition: opacity 0.3s ease;
+}
+
+/* Conteúdo de Texto do Card */
+.col-image-content-wrap {
+	position: relative;
+	z-index: 2;
+	padding: 1.5rem;
+	color: #ffffff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.col-image-title {
+	margin: 0 0 0.5rem 0;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1.3;
+	color: #ffffff !important;
+	word-break: break-word;
+}
+
+.col-image-description {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.92) !important;
+	word-break: break-word;
+}
+
+/* Responsividade Mobile e Tablet */
+@media (max-width: 991px) {
+	.cols-image-grid-3,
+	.cols-image-grid-4 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.cols-image-grid-2,
+	.cols-image-grid-3,
+	.cols-image-grid-4 {
+		grid-template-columns: 1fr;
+	}
+	
+	.col-image-card {
+		min-height: 240px !important;
+	}
+	
+	.col-image-content-wrap {
+		padding: 1.2rem;
+	}
+}

@@ -1,0 +1,47 @@
+{
+  "locale": "en-US",
+  "blockTitle": "Periodic Drag & Drop Engine",
+  "blockDescription": "Interactive engine for paragraph reordering, text token blanks, and targets placed over images.",
+  "modes": {
+    "reorderParagraphs": "Paragraph Reordering",
+    "textTokens": "Text Tokens (Gaps / Dropzones)",
+    "imageTargets": "Image Targets"
+  },
+  "settings": {
+    "modeSelection": "Operating Mode",
+    "modeDescription": "Choose the interactive drag and drop mechanic.",
+    "itemsSection": "Draggable Items",
+    "addItem": "+ Add New Item",
+    "removeItem": "Remove Item",
+    "itemText": "Item Text",
+    "correctOrder": "Correct Position (Order)",
+    "targetAssociation": "Associated Dropzone Target (Key)",
+    "targetsSection": "Target Zones (Dropzones)",
+    "addTarget": "+ Add Target Zone",
+    "removeTarget": "Remove Target",
+    "targetLabel": "Zone Label / Description",
+    "targetCoords": "Image Coordinates (% X, % Y)",
+    "imageSection": "Background Image Settings",
+    "uploadImage": "Select Background Image",
+    "removeImage": "Remove Image",
+    "feedbackSection": "Feedback Messages",
+    "successMessage": "Success Message",
+    "errorMessage": "Error Message",
+    "allowRetry": "Allow retry after submission"
+  },
+  "frontend": {
+    "dragInstruction": "Drag the items into their respective zones or reorder as requested:",
+    "availableItems": "Available Items:",
+    "dropzonePlaceholder": "Drop the matching item here...",
+    "checkButton": "Check Answers",
+    "resetButton": "Try Again",
+    "scoreLabel": "Your Score:",
+    "allCorrect": "Outstanding! All items have been placed correctly!",
+    "partialCorrect": "You got {correct} out of {total} items correct. Check your answers!",
+    "noneCorrect": "No correct matches yet. Try again carefully!",
+    "targetPrefix": "Target",
+    "grabHandle": "Drag to move",
+    "correctBadge": "Correct!",
+    "incorrectBadge": "Incorrect!"
+  }
+}

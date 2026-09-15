@@ -1,0 +1,150 @@
+/**
+ * Estilos compartilhados (Frontend e Editor) do bloco luiz0067/tabs
+ */
+
+.luiz0067-tabs-block {
+	--luiz0067-tab-active-color: #0d6efd;
+
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+
+	.luiz0067-tabs-wrapper {
+		width: 100%;
+	}
+
+	// Customização das abas clássicas (nav-tabs)
+	&.luiz0067-tabs-tabs {
+		.nav-tabs {
+			border-bottom: 2px solid #dee2e6;
+
+			.nav-link {
+				color: #495057;
+				font-weight: 500;
+				border: 1px solid transparent;
+				border-top-left-radius: 0.375rem;
+				border-top-right-radius: 0.375rem;
+				transition: all 0.2s ease-in-out;
+				padding: 0.65rem 1.25rem;
+
+				&:hover {
+					border-color: #e9ecef #e9ecef #dee2e6;
+					color: var(--luiz0067-tab-active-color);
+				}
+
+				&.active {
+					color: var(--luiz0067-tab-active-color);
+					background-color: #ffffff;
+					border-color: #dee2e6 #dee2e6 #ffffff;
+					border-bottom: 2px solid #ffffff;
+					margin-bottom: -2px;
+					font-weight: 600;
+				}
+			}
+		}
+
+		.tab-content {
+			border: 1px solid #dee2e6;
+			border-radius: 0 0.5rem 0.5rem 0.5rem;
+			background-color: #ffffff;
+			padding: 1.5rem;
+			box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+		}
+	}
+
+	// Customização das abas em pílulas (nav-pills)
+	&.luiz0067-tabs-pills {
+		.nav-pills {
+			gap: 0.5rem;
+
+			.nav-link {
+				color: #495057;
+				font-weight: 500;
+				border-radius: 0.375rem;
+				padding: 0.6rem 1.2rem;
+				transition: all 0.2s ease-in-out;
+				background-color: #f8f9fa;
+				border: 1px solid #e9ecef;
+
+				&:hover {
+					background-color: #e9ecef;
+					color: #212529;
+				}
+
+				&.active {
+					background-color: var(--luiz0067-tab-active-color);
+					border-color: var(--luiz0067-tab-active-color);
+					color: #ffffff;
+					box-shadow: 0 0.25rem 0.5rem rgba(13, 110, 253, 0.25);
+				}
+			}
+		}
+
+		.tab-content {
+			border: 1px solid #e9ecef;
+			border-radius: 0.5rem;
+			background-color: #ffffff;
+			padding: 1.5rem;
+			box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
+		}
+	}
+
+	// Alinhamento Vertical
+	&.luiz0067-alignment-vertical {
+		.luiz0067-tabs-wrapper {
+			display: flex;
+			flex-direction: column;
+
+			@media (min-width: 768px) {
+				flex-direction: row;
+				align-items: flex-start;
+			}
+		}
+
+		.nav {
+			min-width: 220px;
+
+			@media (min-width: 768px) {
+				margin-bottom: 0;
+			}
+		}
+
+		.nav-tabs {
+			border-bottom: none;
+			border-right: 2px solid #dee2e6;
+
+			.nav-link {
+				border-radius: 0.375rem 0 0 0.375rem;
+				margin-bottom: 0.25rem;
+				text-align: left;
+
+				&.active {
+					border-color: #dee2e6 transparent #dee2e6 #dee2e6;
+					border-right: 2px solid #ffffff;
+					margin-right: -2px;
+				}
+			}
+		}
+
+		.nav-pills {
+			.nav-link {
+				text-align: left;
+				margin-bottom: 0.35rem;
+			}
+		}
+
+		.tab-content {
+			flex: 1;
+			border-radius: 0.5rem !important;
+		}
+	}
+
+	// Conteúdo interno do painel
+	.luiz0067-tab-pane-inner {
+		line-height: 1.6;
+		color: #333333;
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

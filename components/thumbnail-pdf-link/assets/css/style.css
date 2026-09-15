@@ -1,0 +1,286 @@
+/* ==========================================================================
+   periodic Mini PDF Image - Styles (Frontend & Canvas)
+   ========================================================================== */
+
+:root {
+  --periodic-pdf-primary: #dc2626;
+  --periodic-pdf-primary-hover: #b91c1c;
+  --periodic-pdf-card-bg: #ffffff;
+  --periodic-pdf-card-border: #e2e8f0;
+  --periodic-pdf-card-radius: 10px;
+  --periodic-pdf-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --periodic-pdf-card-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.12);
+  --periodic-pdf-title-color: #1e293b;
+  --periodic-pdf-text-color: #64748b;
+  --periodic-pdf-date-color: #94a3b8;
+  --periodic-pdf-thumb-bg: #f8fafc;
+}
+
+/* Grid Wrapper */
+.periodic-pdf-grid,
+.pdf-mini-bloco-block {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  box-sizing: border-box;
+}
+
+/* Column Variants */
+.periodic-pdf-grid.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.periodic-pdf-grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.periodic-pdf-grid.cols-3,
+.pdf-mini-bloco-block {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.periodic-pdf-grid.cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Responsive Grid */
+@media (max-width: 960px) {
+  .periodic-pdf-grid.cols-3,
+  .periodic-pdf-grid.cols-4,
+  .pdf-mini-bloco-block {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .periodic-pdf-grid,
+  .periodic-pdf-grid.cols-2,
+  .periodic-pdf-grid.cols-3,
+  .periodic-pdf-grid.cols-4,
+  .pdf-mini-bloco-block {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Card Container */
+.periodic-pdf-card,
+.pdf-mini-bloco {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--periodic-pdf-card-bg);
+  border: 1px solid var(--periodic-pdf-card-border);
+  border-radius: var(--periodic-pdf-card-radius);
+  box-shadow: var(--periodic-pdf-card-shadow);
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none !important;
+  color: inherit;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.periodic-pdf-card:hover,
+.pdf-mini-bloco:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--periodic-pdf-card-shadow-hover);
+}
+
+/* Card Style Modifiers */
+.periodic-pdf-card.style-bordered {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.periodic-pdf-card.style-shadow {
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.periodic-pdf-card.style-flat {
+  border: 1px solid #f1f5f9;
+  background: #f8fafc;
+  box-shadow: none;
+}
+
+/* Thumbnail Link & Container */
+.periodic-pdf-thumb-link,
+.height-square {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: var(--periodic-pdf-thumb-bg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--periodic-pdf-card-border);
+  cursor: pointer;
+}
+
+/* Aspect Ratios */
+.periodic-pdf-thumb-link.ratio-square,
+.height-square {
+  aspect-ratio: 1 / 1;
+}
+
+.periodic-pdf-thumb-link.ratio-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.periodic-pdf-thumb-link.ratio-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+/* Fallback for browsers without aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+  .periodic-pdf-thumb-link.ratio-square,
+  .height-square {
+    height: 260px;
+  }
+  .periodic-pdf-thumb-link.ratio-portrait {
+    height: 340px;
+  }
+  .periodic-pdf-thumb-link.ratio-landscape {
+    height: 180px;
+  }
+}
+
+/* Thumbnail Image */
+.periodic-pdf-thumb-img,
+.height-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.periodic-pdf-card:hover .periodic-pdf-thumb-img,
+.pdf-mini-bloco:hover .height-square img {
+  transform: scale(1.03);
+}
+
+/* Placeholder when no image */
+.periodic-pdf-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.periodic-pdf-placeholder svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  opacity: 0.65;
+}
+
+/* PDF Badge */
+.periodic-pdf-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--periodic-pdf-primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.periodic-pdf-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+/* Card Content Body */
+.periodic-pdf-body,
+.all-text-pdf {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+/* Date meta */
+.periodic-pdf-date {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--periodic-pdf-date-color);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* Title */
+.periodic-pdf-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--periodic-pdf-title-color);
+  margin: 0 0 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Description */
+.periodic-pdf-description {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--periodic-pdf-text-color);
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Action Button */
+.periodic-pdf-action {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: var(--periodic-pdf-primary);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.periodic-pdf-action:hover {
+  background-color: var(--periodic-pdf-primary-hover);
+  color: #ffffff !important;
+}
+
+.periodic-pdf-action svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}

@@ -1,0 +1,93 @@
+{
+  "translation-revision-date": "2026-09-12 08:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-video-embed",
+  "locale_data": {
+    "periodic-video-embed": {
+      "": {
+        "domain": "periodic-video-embed",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Vídeo Incorporado": [
+        "Periodic - Video Embed"
+      ],
+      "Incorpore vídeos do YouTube, Vimeo ou iframes com proporções personalizáveis, bordas e sombras.": [
+        "Embed YouTube, Vimeo or custom iframes with customizable aspect ratios, rounded corners and soft shadows."
+      ],
+      "video": [
+        "video"
+      ],
+      "youtube": [
+        "youtube"
+      ],
+      "vimeo": [
+        "vimeo"
+      ],
+      "embed": [
+        "embed"
+      ],
+      "player": [
+        "player"
+      ],
+      "Configurações do Vídeo": [
+        "Video Settings"
+      ],
+      "URL do Vídeo ou Código de Incorporação": [
+        "Video URL or Embed Code"
+      ],
+      "Cole a URL do YouTube, Vimeo ou a tag <iframe> completa.": [
+        "Paste YouTube, Vimeo URL or the full <iframe> tag."
+      ],
+      "Proporção da Tela (Aspect Ratio)": [
+        "Aspect Ratio"
+      ],
+      "16:9 - Widescreen (Padrão)": [
+        "16:9 - Widescreen (Default)"
+      ],
+      "4:3 - Clássico / TV": [
+        "4:3 - Classic / TV"
+      ],
+      "1:1 - Quadrado / Feed": [
+        "1:1 - Square / Feed"
+      ],
+      "Aparência e Estilo": [
+        "Appearance and Style"
+      ],
+      "Largura Máxima (px)": [
+        "Max Width (px)"
+      ],
+      "Cantos Arredondados (px)": [
+        "Rounded Corners (px)"
+      ],
+      "Sombra Projetada Suave": [
+        "Soft Drop Shadow"
+      ],
+      "Sombra ativada conferindo profundidade visual.": [
+        "Shadow enabled providing visual depth."
+      ],
+      "Sombra desativada.": [
+        "Shadow disabled."
+      ],
+      "Vídeo Incorporado Responsivo": [
+        "Responsive Video Embed"
+      ],
+      "Insira a URL do YouTube, Vimeo ou tag <iframe> para exibir o player.": [
+        "Enter YouTube, Vimeo URL or <iframe> tag to display the player."
+      ],
+      "Incorporar Vídeo": [
+        "Embed Video"
+      ],
+      "Pré-visualização do Vídeo": [
+        "Video Preview"
+      ],
+      "Adicione uma legenda opcional para o vídeo...": [
+        "Add an optional video caption..."
+      ],
+      "Vídeo Incorporado": [
+        "Embedded Video"
+      ]
+    }
+  }
+}

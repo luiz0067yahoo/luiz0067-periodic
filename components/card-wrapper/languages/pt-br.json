@@ -1,0 +1,168 @@
+{
+  "translation-revision-date": "2026-09-13 16:30:00+0000",
+  "generator": "WP-CLI",
+  "source": "src/edit.js",
+  "domain": "periodic-card-wrapper",
+  "locale_data": {
+    "periodic-card-wrapper": {
+      "": {
+        "domain": "periodic-card-wrapper",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Periodic Card Wrapper": [
+        "Periodic Card Wrapper"
+      ],
+      "Bloco estrutural de Cartão Bootstrap 5 completo com suporte a InnerBlocks, cabeçalho, corpo e rodapé.": [
+        "Bloco estrutural de Cartão Bootstrap 5 completo com suporte a InnerBlocks, cabeçalho, corpo e rodapé."
+      ],
+      "Adicione o conteúdo principal do cartão aqui (textos, botões, colunas, imagens)...": [
+        "Adicione o conteúdo principal do cartão aqui (textos, botões, colunas, imagens)..."
+      ],
+      "Estrutura do Card": [
+        "Estrutura do Card"
+      ],
+      "Estilo e Cores": [
+        "Estilo e Cores"
+      ],
+      "Sombras e Efeitos": [
+        "Sombras e Efeitos"
+      ],
+      "Configurações de Estrutura": [
+        "Configurações de Estrutura"
+      ],
+      "Exibir Cabeçalho (Header)": [
+        "Exibir Cabeçalho (Header)"
+      ],
+      "Cabeçalho do cartão ativo.": [
+        "Cabeçalho do cartão ativo."
+      ],
+      "Cabeçalho do cartão oculto.": [
+        "Cabeçalho do cartão oculto."
+      ],
+      "Exibir Rodapé (Footer)": [
+        "Exibir Rodapé (Footer)"
+      ],
+      "Rodapé do cartão ativo.": [
+        "Rodapé do cartão ativo."
+      ],
+      "Rodapé do cartão oculto.": [
+        "Rodapé do cartão oculto."
+      ],
+      "Bordas e Cantos": [
+        "Bordas e Cantos"
+      ],
+      "Estilo de Borda (Bootstrap)": [
+        "Estilo de Borda (Bootstrap)"
+      ],
+      "Padrão (border)": [
+        "Padrão (border)"
+      ],
+      "Sem Borda (border-0)": [
+        "Sem Borda (border-0)"
+      ],
+      "Primária (border-primary)": [
+        "Primária (border-primary)"
+      ],
+      "Secundária (border-secondary)": [
+        "Secundária (border-secondary)"
+      ],
+      "Sucesso (border-success)": [
+        "Sucesso (border-success)"
+      ],
+      "Perigo (border-danger)": [
+        "Perigo (border-danger)"
+      ],
+      "Aviso (border-warning)": [
+        "Aviso (border-warning)"
+      ],
+      "Informativa (border-info)": [
+        "Informativa (border-info)"
+      ],
+      "Clara (border-light)": [
+        "Clara (border-light)"
+      ],
+      "Escura (border-dark)": [
+        "Escura (border-dark)"
+      ],
+      "Arredondamento (Border Radius)": [
+        "Arredondamento (Border Radius)"
+      ],
+      "Padrão (rounded)": [
+        "Padrão (rounded)"
+      ],
+      "Reto (rounded-0)": [
+        "Reto (rounded-0)"
+      ],
+      "Pequeno (rounded-1)": [
+        "Pequeno (rounded-1)"
+      ],
+      "Médio (rounded-2)": [
+        "Médio (rounded-2)"
+      ],
+      "Grande (rounded-3)": [
+        "Grande (rounded-3)"
+      ],
+      "Extra Grande (rounded-4)": [
+        "Extra Grande (rounded-4)"
+      ],
+      "Pílula (rounded-pill)": [
+        "Pílula (rounded-pill)"
+      ],
+      "Cores do Cartão": [
+        "Cores do Cartão"
+      ],
+      "Cor de Fundo do Cartão": [
+        "Cor de Fundo do Cartão"
+      ],
+      "Cor do Texto do Cartão": [
+        "Cor do Texto do Cartão"
+      ],
+      "Cores do Cabeçalho": [
+        "Cores do Cabeçalho"
+      ],
+      "Fundo do Cabeçalho": [
+        "Fundo do Cabeçalho"
+      ],
+      "Texto do Cabeçalho": [
+        "Texto do Cabeçalho"
+      ],
+      "Cores do Rodapé": [
+        "Cores do Rodapé"
+      ],
+      "Fundo do Rodapé": [
+        "Fundo do Rodapé"
+      ],
+      "Texto do Rodapé": [
+        "Texto do Rodapé"
+      ],
+      "Sombras Bootstrap 5": [
+        "Sombras Bootstrap 5"
+      ],
+      "Intensidade da Sombra": [
+        "Intensidade da Sombra"
+      ],
+      "Sem Sombra (none)": [
+        "Sem Sombra (none)"
+      ],
+      "Sombra Suave (shadow-sm)": [
+        "Sombra Suave (shadow-sm)"
+      ],
+      "Sombra Regular (shadow)": [
+        "Sombra Regular (shadow)"
+      ],
+      "Sombra Pronunciada (shadow-lg)": [
+        "Sombra Pronunciada (shadow-lg)"
+      ],
+      "Aplica classes nativas de elevação do Bootstrap 5.": [
+        "Aplica classes nativas de elevação do Bootstrap 5."
+      ],
+      "Título do Cartão...": [
+        "Título do Cartão..."
+      ],
+      "Texto ou notas do rodapé...": [
+        "Texto ou notas do rodapé..."
+      ]
+    }
+  }
+}

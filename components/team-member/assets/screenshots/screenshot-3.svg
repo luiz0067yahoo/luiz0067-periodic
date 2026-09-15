@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="panelShadow3" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="700" fill="url(#bg3)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 40)">
+    <rect x="0" y="0" width="180" height="28" rx="14" fill="#2563eb" fill-opacity="0.1" stroke="#2563eb"/>
+    <text x="90" y="19" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">INSPECTOR CONTROLS</text>
+    <text x="0" y="65" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800">Aba 2: Redes Sociais e Ícones Font Awesome 6</text>
+  </g>
+
+  <!-- Inspector Panel Frame -->
+  <g transform="translate(60, 130)" filter="url(#panelShadow3)">
+    <rect width="880" height="520" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+    
+    <!-- Tab Bar -->
+    <rect width="880" height="52" rx="12" fill="#f8fafc"/>
+    <text x="150" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Membros</text>
+
+    <!-- Active Tab 2 -->
+    <rect x="300" y="10" width="260" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="300" y="48" width="260" height="4" fill="#2563eb"/>
+    <text x="430" y="36" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Redes Sociais</text>
+
+    <text x="710" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Estilo da Foto e Cartão</text>
+
+    <!-- Content of Tab 2 -->
+    <g transform="translate(40, 75)">
+      <text x="0" y="25" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">SELECIONAR MEMBRO DA EQUIPE</text>
+      <rect x="0" y="35" width="800" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="16" y="60" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">1. Dra. Mariana Souza</text>
+      <text x="770" y="60" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">▼</text>
+
+      <!-- Active Links Section -->
+      <g transform="translate(0, 95)">
+        <!-- Link 1 -->
+        <rect x="0" y="0" width="800" height="75" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="16" y="26" fill="#0284c7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">● LinkedIn</text>
+        <rect x="760" y="10" width="24" height="24" rx="4" fill="#fee2e2"/>
+        <text x="772" y="26" fill="#ef4444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">✕</text>
+        <rect x="16" y="36" width="460" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="26" y="55" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">https://www.linkedin.com/in/mariana-souza</text>
+        <rect x="490" y="36" width="294" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="500" y="55" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">fa-brands fa-linkedin-in</text>
+
+        <!-- Link 2 -->
+        <rect x="0" y="85" width="800" height="75" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="16" y="111" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">● GitHub</text>
+        <rect x="760" y="95" width="24" height="24" rx="4" fill="#fee2e2"/>
+        <text x="772" y="111" fill="#ef4444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">✕</text>
+        <rect x="16" y="121" width="460" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="26" y="140" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">https://github.com/mariana-souza</text>
+        <rect x="490" y="121" width="294" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="500" y="140" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">fa-brands fa-github</text>
+      </g>
+
+      <!-- Quick Presets -->
+      <g transform="translate(0, 275)">
+        <text x="0" y="16" fill="#1e293b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">Adicionar Rede Rápida:</text>
+        
+        <!-- Preset pills -->
+        <rect x="0" y="30" width="110" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="55" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ LinkedIn</text>
+
+        <rect x="120" y="30" width="100" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="170" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ GitHub</text>
+
+        <rect x="230" y="30" width="110" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="285" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ Twitter / X</text>
+
+        <rect x="350" y="30" width="115" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="407" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ Instagram</text>
+
+        <rect x="475" y="30" width="105" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="527" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ Website</text>
+
+        <rect x="590" y="30" width="100" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="640" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ E-mail</text>
+
+        <rect x="700" y="30" width="100" height="32" rx="16" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="750" y="51" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">+ WhatsApp</text>
+      </g>
+    </g>
+  </g>
+</svg>

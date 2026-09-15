@@ -1,0 +1,46 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-banner",
+	"locale_data": {
+		"periodic-advanced-banner": {
+			"": {
+				"domain": "periodic-advanced-banner",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=(n > 1);"
+			},
+			"Banner Avançado Interativo": [ "Banner Avançado Interativo" ],
+			"Banner de cobertura interativo (cover) com animações dinâmicas de zoom e transição de texto no efeito hover.": [
+				"Banner de cobertura interativo (cover) com animações dinâmicas de zoom e transição de texto no efeito hover."
+			],
+			"Conteúdo": [ "Conteúdo" ],
+			"Fundo": [ "Fundo" ],
+			"Efeitos Hover": [ "Efeitos Hover" ],
+			"Layout": [ "Layout" ],
+			"Textos & Chamada para Ação (CTA)": [ "Textos & Chamada para Ação (CTA)" ],
+			"Exibir Selo / Badge": [ "Exibir Selo / Badge" ],
+			"Texto do Selo": [ "Texto do Selo" ],
+			"Tag HTML do Título": [ "Tag HTML do Título" ],
+			"Exibir Botão de Ação": [ "Exibir Botão de Ação" ],
+			"Texto do Botão": [ "Texto do Botão" ],
+			"URL / Link do Botão": [ "URL / Link do Botão" ],
+			"Abrir em Nova Aba": [ "Abrir em Nova Aba" ],
+			"Estilo do Botão (Bootstrap 5)": [ "Estilo do Botão (Bootstrap 5)" ],
+			"Imagem e Sobreposição": [ "Imagem e Sobreposição" ],
+			"Imagem de Capa (Cover Image)": [ "Imagem de Capa (Cover Image)" ],
+			"Ponto Focal da Imagem": [ "Ponto Focal da Imagem" ],
+			"Cor da Camada de Sobreposição": [ "Cor da Camada de Sobreposição" ],
+			"Opacidade Padrão da Sobreposição": [ "Opacidade Padrão da Sobreposição" ],
+			"Opacidade da Sobreposição no Hover": [ "Opacidade da Sobreposição no Hover" ],
+			"Animações & Transições no Hover": [ "Animações & Transições no Hover" ],
+			"Simular Efeito Hover no Editor": [ "Simular Efeito Hover no Editor" ],
+			"Efeito de Imagem no Hover": [ "Efeito de Imagem no Hover" ],
+			"Efeito de Transição do Texto": [ "Efeito de Transição do Texto" ],
+			"Layout & Dimensões": [ "Layout & Dimensões" ],
+			"Alinhamento do Conteúdo": [ "Alinhamento do Conteúdo" ],
+			"Altura Mínima (Desktop)": [ "Altura Mínima (Desktop)" ],
+			"Altura Mínima (Mobile)": [ "Altura Mínima (Mobile)" ],
+			"Cantos Arredondados (Border Radius em px)": [ "Cantos Arredondados (Border Radius em px)" ]
+		}
+	}
+}

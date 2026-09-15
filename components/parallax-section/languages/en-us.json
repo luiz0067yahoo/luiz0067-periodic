@@ -1,0 +1,54 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-parallax-section",
+	"locale_data": {
+		"periodic-parallax-section": {
+			"": {
+				"domain": "periodic-parallax-section",
+				"lang": "en_US",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Seção com Paralaxe": [ "Parallax Section" ],
+			"Container de seção moderno com efeito paralaxe nativo e fluido na imagem de fundo durante a rolagem.": [
+				"Modern container section with smooth native parallax scrolling effect on the background image."
+			],
+			"Layout": [ "Layout" ],
+			"Fundo": [ "Background" ],
+			"Sobreposição": [ "Overlay" ],
+			"Configurações de Layout & Espaçamento": [ "Layout & Spacing Settings" ],
+			"Tipo de Container (Bootstrap 5)": [ "Container Type (Bootstrap 5)" ],
+			"Container Padrão (container)": [ "Default Container (container)" ],
+			"Container Fluido (container-fluid)": [ "Fluid Container (container-fluid)" ],
+			"Sem Container (100% largura)": [ "No Container (100% width)" ],
+			"Alinhamento Vertical do Conteúdo": [ "Vertical Content Alignment" ],
+			"Alinhamento Horizontal do Conteúdo": [ "Horizontal Content Alignment" ],
+			"Superior": [ "Top" ],
+			"Centralizado": [ "Center" ],
+			"Inferior": [ "Bottom" ],
+			"Esquerda": [ "Left" ],
+			"Direita": [ "Right" ],
+			"Altura Mínima (Desktop)": [ "Minimum Height (Desktop)" ],
+			"Altura Mínima (Mobile)": [ "Minimum Height (Mobile)" ],
+			"Espaçamento Superior (Padding Top em px)": [ "Top Spacing (Padding Top in px)" ],
+			"Espaçamento Inferior (Padding Bottom em px)": [ "Bottom Spacing (Padding Bottom in px)" ],
+			"Imagem de Fundo e Efeito Paralaxe": [ "Background Image & Parallax Effect" ],
+			"Imagem de Fundo em Alta Resolução": [ "High-Resolution Background Image" ],
+			"Ponto Focal da Imagem": [ "Image Focal Point" ],
+			"Velocidade do Paralaxe": [ "Parallax Speed" ],
+			"Direção do Efeito": [ "Effect Direction" ],
+			"Descendente Natural (down)": [ "Natural Downward (down)" ],
+			"Ascendente Inverso (up)": [ "Inverse Upward (up)" ],
+			"Camada de Sobreposição (Overlay)": [ "Overlay Layer" ],
+			"Cor da Sobreposição": [ "Overlay Color" ],
+			"Opacidade da Sobreposição": [ "Overlay Opacity" ],
+			"Modo de Mesclagem (Blend Mode)": [ "Blend Mode" ],
+			"Substituir Imagem": [ "Replace Image" ],
+			"Remover": [ "Remove" ],
+			"Selecionar Imagem da Biblioteca": [ "Select Image from Library" ],
+			"Defina uma imagem no painel lateral para ativar o efeito paralaxe.": [
+				"Select an image in the sidebar panel to enable the parallax effect."
+			]
+		}
+	}
+}

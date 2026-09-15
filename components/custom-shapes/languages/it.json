@@ -1,0 +1,40 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-custom-shapes",
+	"locale_data": {
+		"periodic-custom-shapes": {
+			"": {
+				"domain": "periodic-custom-shapes",
+				"lang": "it_IT",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Divisores de Formas (Custom Shapes)": [ "Divisori di Forme (Custom Shapes)" ],
+			"Divisores de formas geométricas personalizados (ondas, inclinados, triângulos e curvas) para as bordas de seções.": [
+				"Divisori geometrici personalizzati (onde, inclinati, triangoli e curve) per i bordi delle sezioni."
+			],
+			"Forma Superior": [ "Forma Superiore" ],
+			"Forma Inferior": [ "Forma Inferiore" ],
+			"Fundo & Layout": [ "Sfondo e Layout" ],
+			"Divisor Superior (Top Shape)": [ "Divisore Superiore (Top Shape)" ],
+			"Divisor Inferior (Bottom Shape)": [ "Divisore Inferiore (Bottom Shape)" ],
+			"Ativar Forma Superior": [ "Abilita Forma Superiore" ],
+			"Ativar Forma Inferior": [ "Abilita Forma Inferiore" ],
+			"Tipo de Forma Geométrica": [ "Tipo di Forma Geometrica" ],
+			"Cor de Preenchimento": [ "Colore di Riempimento" ],
+			"Altura da Forma (px)": [ "Altezza della Forma (px)" ],
+			"Opacidade": [ "Opacità" ],
+			"Inverter Horizontalmente (Flip)": [ "Capovolgi Orizzontalmente" ],
+			"Inverter Verticalmente": [ "Inverti Verticalmente" ],
+			"Camada (Z-Index)": [ "Livello (Z-Index)" ],
+			"Estilização da Seção & Bootstrap 5": [ "Stile della Sezione e Bootstrap 5" ],
+			"Cor de Fundo da Seção": [ "Colore di Sfondo della Sezione" ],
+			"Largura do Container": [ "Larghezza del Container" ],
+			"Container Padrão (container)": [ "Container Predefinito (container)" ],
+			"Container Fluido (container-fluid)": [ "Container Fluido (container-fluid)" ],
+			"Sem Container (100% largura)": [ "Senza Container (100% larghezza)" ],
+			"Espaçamento Superior (Padding Top em px)": [ "Spaziatura Superiore (Padding Top in px)" ],
+			"Espaçamento Inferior (Padding Bottom em px)": [ "Spaziatura Inferiore (Padding Bottom in px)" ]
+		}
+	}
+}

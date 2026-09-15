@@ -1,0 +1,188 @@
+/**
+ * Estilos Frontend e Globais do Bloco Luiz0067 FAQ Schema
+ * Baseado no design system do Bootstrap 5 com suporte a Font Awesome 6
+ */
+
+.luiz0067-faq-accordion {
+	--bs-accordion-color: #212529;
+	--bs-accordion-bg: #ffffff;
+	--bs-accordion-border-color: #dee2e6;
+	--bs-accordion-border-width: 1px;
+	--bs-accordion-border-radius: 0.5rem;
+	--bs-accordion-inner-border-radius: calc(0.5rem - 1px);
+	--bs-accordion-btn-padding-x: 1.25rem;
+	--bs-accordion-btn-padding-y: 1rem;
+	--bs-accordion-btn-color: #212529;
+	--bs-accordion-btn-bg: #ffffff;
+	--bs-accordion-active-color: var(--faq-accent-color, #0d6efd);
+	--bs-accordion-active-bg: rgba(13, 110, 253, 0.08);
+	--bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
+	--bs-accordion-body-padding-x: 1.25rem;
+	--bs-accordion-body-padding-y: 1rem;
+
+	margin-bottom: 1.5rem;
+	border-radius: var(--bs-accordion-border-radius);
+
+	.accordion-item {
+		color: var(--bs-accordion-color);
+		background-color: var(--bs-accordion-bg);
+		border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+		overflow: hidden;
+
+		&:first-of-type {
+			border-top-left-radius: var(--bs-accordion-border-radius);
+			border-top-right-radius: var(--bs-accordion-border-radius);
+		}
+
+		&:not(:first-of-type) {
+			border-top: 0;
+		}
+
+		&:last-of-type {
+			border-bottom-right-radius: var(--bs-accordion-border-radius);
+			border-bottom-left-radius: var(--bs-accordion-border-radius);
+		}
+	}
+
+	.accordion-header {
+		margin-bottom: 0;
+		font-size: 1.15rem;
+		line-height: 1.4;
+	}
+
+	.accordion-button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+		font-size: inherit;
+		font-weight: 600;
+		color: var(--bs-accordion-btn-color);
+		text-align: left;
+		background-color: var(--bs-accordion-btn-bg);
+		border: 0;
+		border-radius: 0;
+		overflow-anchor: none;
+		cursor: pointer;
+		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+		&:focus {
+			z-index: 3;
+			outline: 0;
+			box-shadow: var(--bs-accordion-btn-focus-box-shadow);
+		}
+
+		&:not(.collapsed) {
+			color: var(--bs-accordion-active-color);
+			background-color: var(--bs-accordion-active-bg);
+			box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+		}
+
+		.luiz0067-faq-question-text {
+			flex: 1;
+			margin-right: 1rem;
+		}
+	}
+
+	/* Ícones nativos Bootstrap 5 (SVG) */
+	&[data-icon-type="bootstrap"] {
+		.accordion-button::after {
+			flex-shrink: 0;
+			width: 1.25rem;
+			height: 1.25rem;
+			margin-left: auto;
+			content: "";
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+			background-repeat: no-repeat;
+			background-size: 1.25rem;
+			transition: transform 0.2s ease-in-out;
+		}
+
+		.accordion-button:not(.collapsed)::after {
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+			transform: rotate(-180deg);
+		}
+	}
+
+	/* Ícones Font Awesome 6 */
+	&[data-icon-type^="fontawesome-"],
+	&[data-icon-type="none"] {
+		.accordion-button::after {
+			display: none !important;
+		}
+	}
+
+	.luiz0067-faq-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: auto;
+		font-size: 1rem;
+		transition: transform 0.25s ease-in-out, color 0.2s ease;
+
+		&.fa-icon-chevron {
+			i {
+				transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+		}
+	}
+
+	.accordion-button:not(.collapsed) .fa-icon-chevron i {
+		transform: rotate(180deg);
+	}
+
+	.accordion-collapse {
+		transition: height 0.3s ease;
+
+		&:not(.show) {
+			display: none;
+		}
+
+		&.collapsing {
+			height: 0;
+			overflow: hidden;
+			transition: height 0.35s ease;
+		}
+	}
+
+	.accordion-body {
+		padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+		font-size: 1rem;
+		line-height: 1.65;
+		color: var(--bs-accordion-color);
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		a {
+			color: var(--bs-accordion-active-color);
+			text-decoration: underline;
+
+			&:hover {
+				opacity: 0.85;
+			}
+		}
+	}
+
+	/* Variação Flush */
+	&.accordion-flush {
+		border-radius: 0;
+
+		.accordion-item {
+			border-right: 0;
+			border-left: 0;
+			border-radius: 0;
+
+			&:first-child {
+				border-top: 0;
+			}
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+}

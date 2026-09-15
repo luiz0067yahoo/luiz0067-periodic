@@ -1,0 +1,125 @@
+/**
+ * periodic Separator - Gutenberg Block Editor Styles
+ * 
+ * Styles applied specifically inside the Gutenberg block editor canvas
+ * and sidebar inspector panels.
+ *
+ * @package Periodic_Separator
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   Área de Edição e Seleção no Canvas do Gutenberg
+   ========================================================================== */
+.wp-block[data-type="periodic/separator"],
+.wp-block[data-type="cms-adm/separator"],
+.wp-block-periodic-separator,
+.wp-block-cms-adm-separator {
+	position: relative;
+	cursor: pointer;
+	min-height: 24px;
+	display: flex;
+	align-items: center;
+	padding: 8px 0;
+	transition: all 0.2s ease-in-out;
+}
+
+/* Área de clique transparente para facilitar seleção de linhas finas */
+.periodic-separator-editor-container {
+	position: relative;
+	width: 100%;
+	padding: 10px 0;
+	transition: all 0.2s ease;
+	border-radius: 4px;
+}
+
+/* Efeito ao passar o mouse no editor */
+.wp-block[data-type="periodic/separator"]:hover .periodic-separator-editor-container,
+.wp-block[data-type="cms-adm/separator"]:hover .periodic-separator-editor-container,
+.periodic-separator-editor-container:hover {
+	background-color: rgba(1, 145, 58, 0.04);
+	outline: 1px dashed rgba(1, 145, 58, 0.35);
+	outline-offset: 4px;
+}
+
+/* Efeito de foco quando o bloco está selecionado */
+.wp-block[data-type="periodic/separator"].is-selected .periodic-separator-editor-container,
+.wp-block[data-type="cms-adm/separator"].is-selected .periodic-separator-editor-container,
+.is-selected > .periodic-separator-editor-container,
+.is-selected .periodic-separator-editor-container {
+	outline: 2px solid #01913a !important;
+	outline-offset: 6px;
+	background-color: rgba(1, 145, 58, 0.06);
+}
+
+/* Etiqueta visual indicando o bloco quando selecionado */
+.is-selected .periodic-separator-editor-container::after {
+	content: 'Separador';
+	position: absolute;
+	top: -12px;
+	left: 12px;
+	background: #01913a;
+	color: #ffffff;
+	font-size: 10px;
+	font-weight: 600;
+	padding: 1px 7px;
+	border-radius: 10px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	pointer-events: none;
+	z-index: 10;
+}
+
+/* ==========================================================================
+   Controles Customizados no Painel Lateral (InspectorControls)
+   ========================================================================== */
+.periodic-separator-sidebar-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	margin-bottom: 12px;
+	color: #1e1e1e;
+}
+
+.periodic-separator-sidebar-header svg {
+	fill: #01913a;
+}
+
+.periodic-color-swatches-grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 6px;
+	margin-top: 8px;
+	margin-bottom: 12px;
+}
+
+.periodic-color-swatch-btn {
+	width: 100%;
+	height: 28px;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	padding: 0;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.periodic-color-swatch-btn:hover {
+	transform: scale(1.1);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.periodic-color-swatch-btn.is-active {
+	outline: 2px solid #000;
+	outline-offset: 2px;
+}
+
+.periodic-range-value-display {
+	display: flex;
+	justify-content: space-between;
+	font-size: 11px;
+	color: #757575;
+	margin-top: -4px;
+	margin-bottom: 10px;
+}

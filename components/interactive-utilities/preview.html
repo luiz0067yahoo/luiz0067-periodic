@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Interactive Utilities - Showcase & Preview</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Plugin Style -->
+  <link rel="stylesheet" href="src/style.css">
+
+  <style>
+    body {
+      background-color: #080d1a;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .showcase-navbar {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .showcase-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .showcase-brand-icon {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    .showcase-tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.35rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .showcase-tab-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .showcase-tab-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .showcase-tab-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    }
+
+    .showcase-hero {
+      text-align: center;
+      padding: 3rem 1.5rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .showcase-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #93c5fd 60%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .showcase-hero p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .showcase-content-area {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .utility-pane {
+      display: none;
+      animation: fadeInPane 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .utility-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeInPane {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Live Control Bar for Demo */
+    .showcase-control-bar {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .lang-selector-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .lang-pill.active, .lang-pill:hover {
+      background: #3b82f6;
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Showcase Navigation -->
+  <header class="showcase-navbar">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <a href="#" class="showcase-brand">
+        <div class="showcase-brand-icon">
+          <i class="fa-solid fa-shapes"></i>
+        </div>
+        <span>periodic <span style="font-weight: 400; color: #94a3b8;">interactive-utilities</span></span>
+      </a>
+
+      <!-- Tab navigation -->
+      <nav class="showcase-tab-nav" id="showcase-tabs">
+        <button type="button" class="showcase-tab-btn active" data-target="tab-advent">
+          <i class="fa-solid fa-calendar-days"></i> Calendário do Advento
+        </button>
+        <button type="button" class="showcase-tab-btn" data-target="tab-qr">
+          <i class="fa-solid fa-qrcode"></i> QR Code Dinâmico
+        </button>
+        <button type="button" class="showcase-tab-btn" data-target="tab-ar">
+          <i class="fa-solid fa-vr-cardboard"></i> Pistas com Marcador AR
+        </button>
+      </nav>
+
+      <!-- Language selector -->
+      <div class="lang-selector-group">
+        <span style="font-size: 0.8rem; color: #64748b;"><i class="fa-solid fa-globe"></i> Idiomas:</span>
+        <button type="button" class="lang-pill active" data-lang="pt-br">PT-BR</button>
+        <button type="button" class="lang-pill" data-lang="en-us">EN-US</button>
+        <button type="button" class="lang-pill" data-lang="it">IT</button>
+        <button type="button" class="lang-pill" data-lang="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Showcase Hero -->
+  <section class="showcase-hero">
+    <span class="luiz-badge-pill">
+      <i class="fa-solid fa-wand-magic-sparkles"></i> Gutenberg Block Suite v1.0.0
+    </span>
+    <h1>Utilitários Interativos para WordPress</h1>
+    <p>
+      Engaje visitantes com elementos lúdicos de alta conversão: Calendário do Advento com 24 caixas sincronizadas ao calendário real, gerador de QR Code vetorial personalizável e pistas com gatilhos de Realidade Aumentada.
+    </p>
+  </section>
+
+  <!-- Main Content Areas -->
+  <main class="showcase-content-area">
+
+    <!-- ==================== PANE 1: ADVENT CALENDAR ==================== -->
+    <div class="utility-pane active" id="tab-advent">
+      <div
+        class="periodic-interactive-container"
+        data-luiz-interactive="true"
+        data-utility-type="advent-calendar"
+      >
+        <div class="luiz-advent-grid-wrapper">
+          <div class="luiz-util-header">
+            <span class="luiz-badge-pill">
+              <i class="fa-solid fa-calendar-star"></i> Dezembro Mágico
+            </span>
+            <h2 class="luiz-util-title">Calendário do Advento Interativo</h2>
+            <p class="luiz-util-subtitle">Abra as caixas a cada dia de dezembro para revelar as surpresas e brindes exclusivos!</p>
+          </div>
+
+          <!-- Date Simulator Toolbar -->
+          <div class="luiz-calendar-toolbar">
+            <div class="luiz-test-mode-badge">
+              <i class="fa-solid fa-calendar-check text-warning"></i> <span class="luiz-current-date-display">Data Atual: 2026-12-14</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <label for="demo-test-date" class="text-light small mb-0">Simular Data do Calendário:</label>
+              <input type="date" id="demo-test-date" class="luiz-test-date-input" value="2026-12-14">
+              <button type="button" class="luiz-btn luiz-btn-outline py-1 px-3 small luiz-btn-reset-doors" title="Reiniciar Portas">
+                <i class="fa-solid fa-rotate-right"></i> Reiniciar
+              </button>
+            </div>
+          </div>
+
+          <!-- 24 Doors Grid -->
+          <div class="row g-3 luiz-doors-grid" id="advent-doors-container">
+            <!-- Dynamically populated below for 24 doors with rich content -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PANE 2: QR CODE GENERATOR ==================== -->
+    <div class="utility-pane" id="tab-qr">
+      <div
+        class="periodic-interactive-container"
+        data-luiz-interactive="true"
+        data-utility-type="qr-code"
+        data-qr-text="https://github.com/periodic"
+        data-qr-color="#2563eb"
+        data-qr-bg-color="#ffffff"
+        data-qr-size="240"
+      >
+        <div class="luiz-qr-wrapper">
+          <div class="luiz-util-header">
+            <span class="luiz-badge-pill">
+              <i class="fa-solid fa-qrcode"></i> Utilitário de Compartilhamento
+            </span>
+            <h3 class="luiz-util-title">Gerador de QR Code Dinâmico</h3>
+            <p class="luiz-util-subtitle">Insira um link ou mensagem, personalize as cores e faça o download instantâneo em PNG ou SVG.</p>
+          </div>
+
+          <!-- Interactive controls for live editing in preview -->
+          <div class="mb-3 text-start bg-dark bg-opacity-50 p-3 rounded-3 border border-secondary border-opacity-25">
+            <label class="form-label small text-info fw-bold mb-1">Alterar Link / Conteúdo:</label>
+            <input type="text" id="demo-qr-input" class="form-control form-control-sm bg-dark text-light border-secondary mb-2" value="https://github.com/periodic">
+            <div class="d-flex gap-3">
+              <div>
+                <label class="form-label small text-light mb-1">Cor do QR:</label>
+                <input type="color" id="demo-qr-color" class="form-control form-control-color form-control-sm" value="#2563eb">
+              </div>
+              <div>
+                <label class="form-label small text-light mb-1">Fundo:</label>
+                <input type="color" id="demo-qr-bg" class="form-control form-control-color form-control-sm" value="#ffffff">
+              </div>
+            </div>
+          </div>
+
+          <div class="luiz-qr-display-box" id="demo-qr-target">
+            <div class="luiz-qr-placeholder" style="min-width: 240px; min-height: 240px; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+            </div>
+          </div>
+
+          <div class="luiz-qr-text-preview">
+            <span class="luiz-qr-text-value">https://github.com/periodic</span>
+          </div>
+
+          <div class="luiz-qr-actions">
+            <button type="button" class="luiz-btn luiz-btn-primary luiz-btn-dl-png">
+              <i class="fa-solid fa-download"></i> Baixar PNG
+            </button>
+            <button type="button" class="luiz-btn luiz-btn-outline luiz-btn-dl-svg">
+              <i class="fa-solid fa-file-code"></i> Baixar SVG
+            </button>
+            <button type="button" class="luiz-btn luiz-btn-outline luiz-btn-copy">
+              <i class="fa-solid fa-copy"></i> Copiar Link
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PANE 3: AR MARKER TRIGGER ==================== -->
+    <div class="utility-pane" id="tab-ar">
+      <div
+        class="periodic-interactive-container"
+        data-luiz-interactive="true"
+        data-utility-type="ar-trigger"
+        data-ar-marker-type="hiro"
+        data-ar-clue-title="Desafio da Realidade Aumentada - Pista 01"
+        data-ar-clue-hint="Dica do Mestre: Alinhe a borda preta do marcador com o visor da câmera para estabilizar o holograma 3D."
+      >
+        <div class="luiz-ar-wrapper">
+          <div class="luiz-util-header">
+            <span class="luiz-badge-pill">
+              <i class="fa-solid fa-vr-cardboard"></i> Experiência Imersiva
+            </span>
+            <h2 class="luiz-util-title">Pistas & Desafio AR</h2>
+            <p class="luiz-util-subtitle">Aponte sua câmera para o marcador impresso ou na tela para revelar a chave secreta do enigma.</p>
+          </div>
+
+          <div class="luiz-ar-card">
+            <div class="luiz-ar-grid">
+              <div class="luiz-ar-marker-frame">
+                <svg width="220" height="220" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100" fill="#000000" />
+                  <rect x="15" y="15" width="70" height="70" fill="#ffffff" />
+                  <text x="50" y="58" font-family="monospace" font-size="22" font-weight="bold" fill="#000000" text-anchor="middle">
+                    HIRO
+                  </text>
+                </svg>
+                <div class="luiz-ar-marker-badge">Marcador Padrão HIRO</div>
+              </div>
+
+              <div class="luiz-ar-content-box">
+                <div class="luiz-clue-box">
+                  <h4><i class="fa-solid fa-magnifying-glass"></i> Enigma da Pista #01</h4>
+                  <p>Um artefato ancestral repousa sobre este símbolo. Ao detectar a matriz com a câmera, as coordenadas tridimensionais revelarão o segredo final.</p>
+                </div>
+
+                <div class="luiz-hint-container">
+                  <button type="button" class="luiz-btn luiz-btn-outline luiz-btn-toggle-hint">
+                    <i class="fa-solid fa-lightbulb"></i> <span class="luiz-hint-btn-text">Revelar Dica</span>
+                  </button>
+                  <div class="luiz-hint-text">
+                    Dica do Mestre: Alinhe a borda preta do marcador com o visor da câmera para estabilizar o holograma 3D.
+                  </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <button type="button" class="luiz-btn luiz-btn-primary luiz-btn-ar-scan" data-bs-toggle="modal" data-bs-target="#arCameraModal">
+                    <i class="fa-solid fa-camera"></i> Abrir Scanner AR
+                  </button>
+                  <button type="button" class="luiz-btn luiz-btn-outline luiz-btn-print-marker">
+                    <i class="fa-solid fa-print"></i> Imprimir Marcador
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AR Scanner Simulation Modal -->
+        <div class="modal fade periodic-modal" id="arCameraModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  <i class="fa-solid fa-camera text-primary"></i> Scanner de Realidade Aumentada
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center p-4">
+                <div style="position: relative; width: 100%; height: 320px; background: #000; border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px dashed #38bdf8;">
+                  <div style="position: absolute; border: 2px solid #22c55e; width: 220px; height: 220px; border-radius: 8px; box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); animation: pulseReticle 2s infinite ease-in-out;"></div>
+                  <div style="z-index: 2; color: #ffffff;">
+                    <i class="fa-solid fa-cube fa-3x text-info mb-3"></i>
+                    <h5>Marcador HIRO Detectado!</h5>
+                    <p class="text-success small mb-0"><i class="fa-solid fa-check"></i> Objeto 3D Carregado com Sucesso</p>
+                    <p class="text-light small">Chave Secreta: <strong>PERIODIC-AR-EXP-2026</strong></p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar Scanner</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/lib/qrcode.min.js"></script>
+  <script src="src/view.js"></script>
+
+  <!-- Showcase Setup Script -->
+  <script>
+    // Tab switching
+    const tabs = document.querySelectorAll('#showcase-tabs .showcase-tab-btn');
+    const panes = document.querySelectorAll('.utility-pane');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panes.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const targetId = tab.dataset.target;
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) targetPane.classList.add('active');
+      });
+    });
+
+    // Populate 24 Doors for the Advent Calendar Showcase
+    const doorsContainer = document.getElementById('advent-doors-container');
+    const icons = [
+      'fa-gift', 'fa-star', 'fa-bell', 'fa-snowflake', 'fa-tree', 'fa-cookie-bite',
+      'fa-candy-cane', 'fa-sleigh', 'fa-snowman', 'fa-mistletoe', 'fa-ribbon', 'fa-gem',
+      'fa-trophy', 'fa-crown', 'fa-medal', 'fa-key', 'fa-magic', 'fa-wand-magic-sparkles',
+      'fa-rocket', 'fa-heart', 'fa-bolt', 'fa-compass', 'fa-lightbulb', 'fa-champagne-glasses'
+    ];
+
+    const surprises = [
+      "Bem-vindo ao Advento! Aqui está um cupom de 15% de desconto exclusivo.",
+      "Dica Pro: Você pode integrar este bloco com qualquer tema WordPress moderno!",
+      "Surpresa 3: Pacote de ícones comemorativos vetorizados liberado.",
+      "Surpresa 4: Um snippet de CSS para efeitos de vidro e neon.",
+      "Surpresa 5: Curiosidade: O ecossistema periodic prioriza performance e estética premium.",
+      "Surpresa 6: E-book rápido sobre como criar temas Gutenberg modernos.",
+      "Surpresa 7: Uma playlist festiva para codificar com alta produtividade!",
+      "Surpresa 8: Segredo revelado: Use o gerador de QR Code para promoções relâmpago.",
+      "Surpresa 9: Template de Landing Page responsiva compatível com Bootstrap 5.",
+      "Surpresa 10: Dica de acessibilidade para componentes interativos.",
+      "Surpresa 11: Mais da metade do caminho! Brinde especial em seu painel.",
+      "Surpresa 12: Efeito 3D para cards e portas com perspectiva realista.",
+      "Surpresa 13: Ferramenta recomendada para testar marcadores de Realidade Aumentada.",
+      "Surpresa 14: Cupom especial para desenvolvedores do ecossistema periodic!",
+      "Surpresa 15: 10 dias para o Natal! Prepare suas campanhas interativas.",
+      "Surpresa 16: Checklist de SEO para posts de final de ano.",
+      "Surpresa 17: Snippet para rastrear cliques em QR Codes com analytics.",
+      "Surpresa 18: Inspiração de design: Paletas de cores para datas comemorativas.",
+      "Surpresa 19: Código bônus para liberar o próximo desafio de realidade aumentada.",
+      "Surpresa 20: Dica sobre persistência local sem necessidade de banco de dados pesado.",
+      "Surpresa 21: Quase lá! O solstício de verão/inverno se aproxima.",
+      "Surpresa 22: Brinde de alta tecnologia para o seu site WordPress.",
+      "Surpresa 23: Véspera da grande surpresa! Faltam apenas 24 horas!",
+      "Surpresa 24: Feliz Natal e Festas! Seu troféu do ecossistema periodic está aqui!"
+    ];
+
+    let htmlDoors = '';
+    for (let i = 1; i <= 24; i++) {
+      const dayStr = i < 10 ? '0' + i : '' + i;
+      const unlockDate = `2026-12-${dayStr}`;
+      const icon = icons[(i - 1) % icons.length];
+      const title = `Surpresa do Dia ${i}`;
+      const content = surprises[i - 1];
+
+      htmlDoors += `
+        <div class="col-6 col-md-4 col-lg-3 luiz-door-item">
+          <div
+            class="luiz-door-card"
+            data-day="${i}"
+            data-unlock-date="${unlockDate}"
+            data-bs-target="#luizModalDoor-${i}"
+          >
+            <div class="luiz-door-face luiz-door-front">
+              <div class="luiz-door-number">${i}</div>
+              <div class="luiz-door-icon">
+                <i class="fa-solid ${icon}"></i>
+              </div>
+              <span class="luiz-door-status-badge status-locked">
+                <i class="fa-solid fa-lock"></i> Trancado
+              </span>
+            </div>
+            <div class="luiz-door-face luiz-door-back">
+              <div class="luiz-door-back-title">${title}</div>
+              <span class="luiz-door-back-btn">
+                <i class="fa-solid fa-eye"></i> Revelar
+              </span>
+            </div>
+          </div>
+
+          <!-- Bootstrap 5 Modal -->
+          <div class="modal fade periodic-modal" id="luizModalDoor-${i}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">
+                    <i class="fa-solid ${icon} text-warning"></i> ${title}
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="lead text-info"><i class="fa-solid fa-gift"></i> Conteúdo Desbloqueado!</p>
+                  <p>${content}</p>
+                </div>
+                <div class="modal-footer">
+                  <span class="badge bg-secondary me-auto">Dia ${i} de Dezembro</span>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    doorsContainer.innerHTML = htmlDoors;
+
+    // QR live control updates
+    const qrInput = document.getElementById('demo-qr-input');
+    const qrColor = document.getElementById('demo-qr-color');
+    const qrBg = document.getElementById('demo-qr-bg');
+    const qrTarget = document.getElementById('demo-qr-target');
+    const qrContainer = document.querySelector('#tab-qr .periodic-interactive-container');
+
+    function updateQr() {
+      if (window.QRCode && qrTarget) {
+        qrTarget.innerHTML = '';
+        new QRCode(qrTarget, {
+          text: qrInput.value || 'https://github.com/periodic',
+          width: 240,
+          height: 240,
+          colorDark: qrColor.value,
+          colorLight: qrBg.value
+        });
+        const textVal = document.querySelector('.luiz-qr-text-value');
+        if (textVal) textVal.textContent = qrInput.value;
+        if (qrContainer) {
+          qrContainer.dataset.qrText = qrInput.value;
+          qrContainer.dataset.qrColor = qrColor.value;
+          qrContainer.dataset.qrBgColor = qrBg.value;
+        }
+      }
+    }
+
+    if (qrInput) qrInput.addEventListener('input', updateQr);
+    if (qrColor) qrColor.addEventListener('input', updateQr);
+    if (qrBg) qrBg.addEventListener('input', updateQr);
+
+    // Initial render
+    setTimeout(updateQr, 200);
+
+    // Translations Switcher Demo with embedded fallback for file:// protocol
+    const I18N_DICTS = {
+      'pt-br': {
+        heroTitle: 'Utilitários Interativos para WordPress',
+        heroSubtitle: 'Engaje visitantes com elementos lúdicos de alta conversão: Calendário do Advento com 24 caixas sincronizadas ao calendário real, gerador de QR Code vetorial personalizável e pistas com gatilhos de Realidade Aumentada.',
+        tabAdvent: 'Calendário do Advento',
+        tabQr: 'QR Code Dinâmico',
+        tabAr: 'Pistas com Marcador AR',
+        adventBadge: 'Dezembro Mágico',
+        adventTitle: 'Calendário do Advento Interativo',
+        adventSubtitle: 'Abra as caixas a cada dia de dezembro para revelar as surpresas e brindes exclusivos!',
+        simulateDateLabel: 'Simular Data do Calendário:',
+        btnReset: 'Reiniciar',
+        qrBadge: 'Utilitário de Compartilhamento',
+        qrTitle: 'Gerador de QR Code Dinâmico',
+        qrSubtitle: 'Insira um link ou mensagem, personalize as cores e faça o download instantâneo em PNG ou SVG.',
+        qrInputLabel: 'Alterar Link / Conteúdo:',
+        qrColorLabel: 'Cor do QR:',
+        qrBgLabel: 'Fundo:',
+        btnDownloadPng: 'Baixar PNG',
+        btnDownloadSvg: 'Baixar SVG',
+        btnCopy: 'Copiar Link',
+        arBadge: 'Experiência Imersiva',
+        arTitle: 'Pistas & Desafio AR',
+        arSubtitle: 'Aponte sua câmera para o marcador impresso ou na tela para revelar a chave secreta do enigma.',
+        arClueTitle: 'Enigma da Pista Holográfica',
+        arClueDesc: 'Aponte a câmera para o marcador de rastreamento para projetar a chave do desafio em 3D.',
+        btnShowHint: 'Revelar Dica',
+        btnHideHint: 'Ocultar Dica',
+        btnScanCamera: 'Ativar Scanner AR',
+        btnPrintMarker: 'Imprimir Marcador',
+        doorLocked: 'Trancado',
+        doorUnlocked: 'Liberado',
+        doorOpened: 'Aberto'
+      },
+      'en-us': {
+        heroTitle: 'Interactive Utilities for WordPress',
+        heroSubtitle: 'Engage visitors with high-conversion gamified elements: 24-door Advent Calendar synced with real-time calendar dates, customizable vector QR Code generator, and Augmented Reality clues.',
+        tabAdvent: 'Advent Calendar',
+        tabQr: 'Dynamic QR Code',
+        tabAr: 'AR Marker Clues',
+        adventBadge: 'Magic December',
+        adventTitle: 'Interactive Advent Calendar',
+        adventSubtitle: 'Open boxes every day in December to reveal exclusive surprises and bonuses!',
+        simulateDateLabel: 'Simulate Calendar Date:',
+        btnReset: 'Reset',
+        qrBadge: 'Sharing Utility',
+        qrTitle: 'Dynamic QR Code Generator',
+        qrSubtitle: 'Insert any link or message, customize colors, and download instantly as PNG or SVG.',
+        qrInputLabel: 'Change Link / Content:',
+        qrColorLabel: 'QR Color:',
+        qrBgLabel: 'Background:',
+        btnDownloadPng: 'Download PNG',
+        btnDownloadSvg: 'Download SVG',
+        btnCopy: 'Copy Link',
+        arBadge: 'Immersive Experience',
+        arTitle: 'AR Clues & Augmented Reality Challenge',
+        arSubtitle: 'Point your camera at the marker or solve the riddle to reveal the secret clue.',
+        arClueTitle: 'Holographic Clue Riddle',
+        arClueDesc: 'Point the device camera at the marker to project the challenge key in 3D.',
+        btnShowHint: 'Reveal Hint',
+        btnHideHint: 'Hide Hint',
+        btnScanCamera: 'Activate AR Scanner',
+        btnPrintMarker: 'Print Marker',
+        doorLocked: 'Locked',
+        doorUnlocked: 'Unlocked',
+        doorOpened: 'Opened'
+      },
+      'it': {
+        heroTitle: 'Utility Interattive per WordPress',
+        heroSubtitle: 'Coinvolgi i visitatori con elementi ludici ad alta conversione: Calendario dell\'Avvento a 24 caselle sincronizzato al calendario reale, generatore vettoriale di codici QR e indizi AR.',
+        tabAdvent: 'Calendario dell\'Avvento',
+        tabQr: 'Codice QR Dinamico',
+        tabAr: 'Indizi Marcatori AR',
+        adventBadge: 'Dicembre Magico',
+        adventTitle: 'Calendario dell\'Avvento Interattivo',
+        adventSubtitle: 'Apri le caselle ogni giorno di dicembre per scoprire sorprese e omaggi esclusivi!',
+        simulateDateLabel: 'Simula Data Calendario:',
+        btnReset: 'Reimposta',
+        qrBadge: 'Utility di Condivisione',
+        qrTitle: 'Generatore Dinamico di Codice QR',
+        qrSubtitle: 'Inserisci un link o messaggio, personalizza i colori e scarica istantaneamente in PNG o SVG.',
+        qrInputLabel: 'Modifica Link / Contenuto:',
+        qrColorLabel: 'Colore QR:',
+        qrBgLabel: 'Sfondo:',
+        btnDownloadPng: 'Scarica PNG',
+        btnDownloadSvg: 'Scarica SVG',
+        btnCopy: 'Copia Link',
+        arBadge: 'Esperienza Immersiva',
+        arTitle: 'Indizi & Sfida AR',
+        arSubtitle: 'Punta la fotocamera sul marcatore stampato o sullo schermo per rivelare la chiave segreta.',
+        arClueTitle: 'Enigma dell\'Indizio Olografico',
+        arClueDesc: 'Punta la fotocamera sul marcatore per proiettare la chiave della sfida in 3D.',
+        btnShowHint: 'Rivela Suggerimento',
+        btnHideHint: 'Nascondi Suggerimento',
+        btnScanCamera: 'Attiva Scanner AR',
+        btnPrintMarker: 'Stampa Marcatore',
+        doorLocked: 'Bloccato',
+        doorUnlocked: 'Sbloccato',
+        doorOpened: 'Aperto'
+      },
+      'es': {
+        heroTitle: 'Utilidades Interactivas para WordPress',
+        heroSubtitle: 'Atrae a los visitantes con elementos interactivos de alta conversión: Calendario de Adviento de 24 casillas sincronizado en tiempo real, generador de códigos QR vectoriales y pistas con disparadores AR.',
+        tabAdvent: 'Calendario de Adviento',
+        tabQr: 'Código QR Dinámico',
+        tabAr: 'Pistas con Marcador AR',
+        adventBadge: 'Diciembre Mágico',
+        adventTitle: 'Calendario de Adviento Interactivo',
+        adventSubtitle: '¡Abre las casillas cada día de diciembre para revelar sorpresas y regalos exclusivos!',
+        simulateDateLabel: 'Simular Fecha del Calendario:',
+        btnReset: 'Reiniciar',
+        qrBadge: 'Utilidad de Compartir',
+        qrTitle: 'Generador Dinámico de Código QR',
+        qrSubtitle: 'Inserta un enlace o mensaje, personaliza los colores y descarga instantáneamente en PNG o SVG.',
+        qrInputLabel: 'Cambiar Enlace / Contenido:',
+        qrColorLabel: 'Color del QR:',
+        qrBgLabel: 'Fondo:',
+        btnDownloadPng: 'Descargar PNG',
+        btnDownloadSvg: 'Descargar SVG',
+        btnCopy: 'Copiar Enlace',
+        arBadge: 'Experiencia Inmersiva',
+        arTitle: 'Pistas y Desafío AR',
+        arSubtitle: 'Apunta tu cámara al marcador impreso o en pantalla para revelar la clave secreta del enigma.',
+        arClueTitle: 'Enigma de la Pista Holográfica',
+        arClueDesc: 'Apunta la cámara al marcador de seguimiento para proyectar la clave en 3D.',
+        btnShowHint: 'Revelar Pista',
+        btnHideHint: 'Ocultar Pista',
+        btnScanCamera: 'Activar Escáner AR',
+        btnPrintMarker: 'Imprimir Marcador',
+        doorLocked: 'Bloqueado',
+        doorUnlocked: 'Desbloqueado',
+        doorOpened: 'Abierto'
+      }
+    };
+
+    const langButtons = document.querySelectorAll('.lang-pill');
+
+    function applyTranslations(lang) {
+      const t = I18N_DICTS[lang] || I18N_DICTS['pt-br'];
+
+      // Hero
+      const heroH1 = document.querySelector('.showcase-hero h1');
+      if (heroH1) heroH1.textContent = t.heroTitle;
+      const heroP = document.querySelector('.showcase-hero p');
+      if (heroP) heroP.textContent = t.heroSubtitle;
+
+      // Tabs
+      const tabBtns = document.querySelectorAll('.showcase-tab-btn');
+      if (tabBtns[0]) tabBtns[0].innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${t.tabAdvent}`;
+      if (tabBtns[1]) tabBtns[1].innerHTML = `<i class="fa-solid fa-qrcode"></i> ${t.tabQr}`;
+      if (tabBtns[2]) tabBtns[2].innerHTML = `<i class="fa-solid fa-vr-cardboard"></i> ${t.tabAr}`;
+
+      // Advent Calendar
+      const advTitle = document.querySelector('#tab-advent .luiz-util-title');
+      if (advTitle) advTitle.textContent = t.adventTitle;
+      const advSub = document.querySelector('#tab-advent .luiz-util-subtitle');
+      if (advSub) advSub.textContent = t.adventSubtitle;
+      const simLabel = document.querySelector('label[for="demo-test-date"]');
+      if (simLabel) simLabel.textContent = t.simulateDateLabel;
+      const btnReset = document.querySelector('.luiz-btn-reset-doors');
+      if (btnReset) btnReset.innerHTML = `<i class="fa-solid fa-rotate-right"></i> ${t.btnReset}`;
+
+      // QR
+      const qrTitle = document.querySelector('#tab-qr .luiz-util-title');
+      if (qrTitle) qrTitle.textContent = t.qrTitle;
+      const qrSub = document.querySelector('#tab-qr .luiz-util-subtitle');
+      if (qrSub) qrSub.textContent = t.qrSubtitle;
+      const btnPng = document.querySelector('.luiz-btn-dl-png');
+      if (btnPng) btnPng.innerHTML = `<i class="fa-solid fa-download"></i> ${t.btnDownloadPng}`;
+      const btnSvg = document.querySelector('.luiz-btn-dl-svg');
+      if (btnSvg) btnSvg.innerHTML = `<i class="fa-solid fa-file-code"></i> ${t.btnDownloadSvg}`;
+      const btnCopy = document.querySelector('.luiz-btn-copy');
+      if (btnCopy) btnCopy.innerHTML = `<i class="fa-solid fa-copy"></i> ${t.btnCopy}`;
+
+      // AR
+      const arTitle = document.querySelector('#tab-ar .luiz-util-title');
+      if (arTitle) arTitle.textContent = t.arTitle;
+      const arSub = document.querySelector('#tab-ar .luiz-util-subtitle');
+      if (arSub) arSub.textContent = t.arSubtitle;
+      const clueH4 = document.querySelector('.luiz-clue-box h4');
+      if (clueH4) clueH4.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> ${t.arClueTitle}`;
+      const clueP = document.querySelector('.luiz-clue-box p');
+      if (clueP) clueP.textContent = t.arClueDesc;
+      const btnScan = document.querySelector('.luiz-btn-ar-scan');
+      if (btnScan) btnScan.innerHTML = `<i class="fa-solid fa-camera"></i> ${t.btnScanCamera}`;
+      const btnPrint = document.querySelector('.luiz-btn-print-marker');
+      if (btnPrint) btnPrint.innerHTML = `<i class="fa-solid fa-print"></i> ${t.btnPrintMarker}`;
+      const hintBtnSpan = document.querySelector('.luiz-hint-btn-text');
+      if (hintBtnSpan) hintBtnSpan.textContent = t.btnShowHint;
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        langButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyTranslations(btn.dataset.lang);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/drag-drop-engine",
+  "version": "1.0.0",
+  "title": "Periodic Drag & Drop Engine",
+  "category": "widgets",
+  "icon": "move",
+  "description": "Bloco interativo de arrastar e soltar: reordenação de blocos/parágrafos, tokens de texto para lacunas e alvos sobre imagens.",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Exercício Interativo de Arrastar e Soltar"
+    },
+    "description": {
+      "type": "string",
+      "default": "Arraste os elementos correspondentes para suas respectivas posições e clique em verificar."
+    },
+    "dragMode": {
+      "type": "string",
+      "enum": ["reorder-paragraphs", "text-tokens", "image-targets"],
+      "default": "text-tokens"
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        { "id": "item-1", "text": "Introdução", "targetId": "target-1", "correctOrder": 1 },
+        { "id": "item-2", "text": "Desenvolvimento", "targetId": "target-2", "correctOrder": 2 },
+        { "id": "item-3", "text": "Conclusão", "targetId": "target-3", "correctOrder": 3 }
+      ]
+    },
+    "targets": {
+      "type": "array",
+      "default": [
+        { "id": "target-1", "label": "Zona 1 - Início do Texto", "x": 20, "y": 30 },
+        { "id": "target-2", "label": "Zona 2 - Argumentação", "x": 50, "y": 50 },
+        { "id": "target-3", "label": "Zona 3 - Fechamento", "x": 80, "y": 70 }
+      ]
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "allowRetry": {
+      "type": "boolean",
+      "default": true
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Excelente! Todos os itens foram posicionados corretamente!"
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": "Algumas posições estão incorretas. Tente novamente!"
+    }
+  },
+  "textdomain": "periodic-drag-drop-engine",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

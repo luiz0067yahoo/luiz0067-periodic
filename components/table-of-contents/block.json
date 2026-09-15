@@ -1,0 +1,85 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "periodic/table-of-contents",
+	"version": "1.0.0",
+	"title": "Sumário Automático (Table of Contents)",
+	"category": "widgets",
+	"icon": "editor-ul",
+	"description": "Sumário / índice automático que escaneia títulos (H2, H3, H4) gerando links de ancoragem com rolagem suave e rastreamento ativo.",
+	"keywords": [
+		"sumario",
+		"indice",
+		"toc",
+		"table of contents",
+		"periodic"
+	],
+	"textdomain": "periodic-table-of-contents",
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"anchor": true,
+		"customClassName": true,
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Índice de Conteúdo"
+		},
+		"includeH2": {
+			"type": "boolean",
+			"default": true
+		},
+		"includeH3": {
+			"type": "boolean",
+			"default": true
+		},
+		"includeH4": {
+			"type": "boolean",
+			"default": false
+		},
+		"listType": {
+			"type": "string",
+			"default": "numbered"
+		},
+		"visualTheme": {
+			"type": "string",
+			"default": "card"
+		},
+		"isCollapsible": {
+			"type": "boolean",
+			"default": true
+		},
+		"initialCollapsedMobile": {
+			"type": "boolean",
+			"default": true
+		},
+		"scrollOffset": {
+			"type": "number",
+			"default": 80
+		},
+		"enableScrollspy": {
+			"type": "boolean",
+			"default": true
+		},
+		"primaryColor": {
+			"type": "string",
+			"default": "#0d6efd"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#f8fafc"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 12
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css",
+	"viewScript": "file:./build/view.js"
+}

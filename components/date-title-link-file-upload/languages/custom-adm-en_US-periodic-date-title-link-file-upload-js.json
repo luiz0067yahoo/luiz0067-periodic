@@ -1,0 +1,150 @@
+{
+  "translation-revision-date": "2026-09-11 21:00:00+0000",
+  "generator": "WP-CLI 2.10.0",
+  "source": "js/blocks/date-title-link-file-upload.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Data, Título, Link e Upload de Arquivo": [
+        "Date, Title, Link and File Upload"
+      ],
+      "Exibe publicações, editais ou documentos com data destacada, título descritivo, link e download de anexo.": [
+        "Displays publications, notices, or documents with a highlighted date, descriptive title, link, and attachment download."
+      ],
+      "arquivo": [
+        "file"
+      ],
+      "download": [
+        "download"
+      ],
+      "edital": [
+        "notice"
+      ],
+      "pdf": [
+        "pdf"
+      ],
+      "data": [
+        "date"
+      ],
+      "Edital de Licitação": [
+        "Public Tender Notice"
+      ],
+      "Novo": [
+        "New"
+      ],
+      "Edital de Licitação Nº 042/2026 - Contratação de Serviços Especializados de TI": [
+        "Public Tender Notice No. 042/2026 - Procurement of Specialized IT Services"
+      ],
+      "Baixar Edital": [
+        "Download Notice"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Arquivo e Download": [
+        "File and Download"
+      ],
+      "Arquivo:": [
+        "File:"
+      ],
+      "Tamanho:": [
+        "Size:"
+      ],
+      "Substituir Arquivo": [
+        "Replace File"
+      ],
+      "Remover": [
+        "Remove"
+      ],
+      "Selecionar / Enviar Arquivo": [
+        "Select / Upload File"
+      ],
+      "URL Direta do Arquivo": [
+        "Direct File URL"
+      ],
+      "URL preenchida automaticamente pelo upload ou informada manualmente.": [
+        "URL populated automatically by upload or entered manually."
+      ],
+      "Nome de Exibição do Arquivo": [
+        "File Display Name"
+      ],
+      "Tamanho Formatado (ex: 2.5 MB)": [
+        "Formatted Size (e.g. 2.5 MB)"
+      ],
+      "Texto do Botão de Download": [
+        "Download Button Text"
+      ],
+      "Data e Metadados": [
+        "Date and Metadata"
+      ],
+      "Data de Publicação": [
+        "Publication Date"
+      ],
+      "Ex: 12/09/2026": [
+        "E.g. 09/12/2026"
+      ],
+      "Categoria / Órgão Emissor (Caption)": [
+        "Category / Issuing Agency (Caption)"
+      ],
+      "Ex: Secretaria de Finanças": [
+        "E.g. Department of Finance"
+      ],
+      "Etiqueta em Destaque (Badge)": [
+        "Highlight Badge"
+      ],
+      "Ex: Novo, Retificado, Edital": [
+        "E.g. New, Revised, Notice"
+      ],
+      "Link de Redirecionamento": [
+        "Redirect Link"
+      ],
+      "URL da Página ou Detalhes": [
+        "Page URL or Details"
+      ],
+      "Link alternativo ou página interna de detalhes da publicação.": [
+        "Alternative link or internal details page of the publication."
+      ],
+      "Abrir links em nova aba (_blank)": [
+        "Open links in a new tab (_blank)"
+      ],
+      "Estilo de Exibição": [
+        "Display Style"
+      ],
+      "Modelo de Apresentação": [
+        "Layout Template"
+      ],
+      "Cartão Moderno (Card)": [
+        "Modern Card"
+      ],
+      "Linha de Tabela / Lista (Row)": [
+        "Table Row / List"
+      ],
+      "Data (DD/MM/AAAA)": [
+        "Date (YYYY-MM-DD)"
+      ],
+      "Digite aqui o título descritivo do documento ou edital...": [
+        "Enter the descriptive title of the document or notice here..."
+      ],
+      "(Nenhum arquivo vinculado)": [
+        "(No file attached)"
+      ],
+      "Alterar Arquivo": [
+        "Change File"
+      ],
+      "Vincular Arquivo": [
+        "Attach File"
+      ],
+      "Acessar Página": [
+        "Visit Page"
+      ],
+      "Acessar": [
+        "View"
+      ]
+    }
+  }
+}

@@ -1,0 +1,144 @@
+/**
+ * Luiz Code - Gutenberg Block Editor Styles
+ * Author: Luiz (luiz0067)
+ * License: GPL-2.0-or-later
+ */
+
+.luiz-code-container {
+	.luiz-code-workspace {
+		display: flex;
+		position: relative;
+		min-height: 180px;
+		font-size: 14px;
+		line-height: 1.6;
+		font-family: Consolas, "Fira Code", "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
+		tab-size: 4;
+
+		/* Line numbers gutter */
+		.luiz-line-numbers {
+			padding: 16px 12px 16px 16px;
+			text-align: right;
+			user-select: none;
+			border-right: 1px solid rgba(128, 128, 128, 0.15);
+			overflow: hidden;
+			opacity: 0.45;
+			min-width: 45px;
+			font-size: 13px;
+			line-height: 1.6;
+
+			.line-num {
+				height: 22.4px; /* 14px * 1.6 */
+			}
+		}
+
+		/* Code input & highlighter wrapper */
+		.luiz-code-area {
+			position: relative;
+			flex: 1;
+			min-width: 0;
+			overflow: hidden;
+
+			/* Syntax highlighted background layer */
+			.luiz-highlight-layer {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: 0;
+				padding: 16px 20px;
+				overflow: hidden;
+				pointer-events: none;
+				white-space: pre;
+				word-break: normal;
+				word-wrap: normal;
+				background: transparent;
+				font-family: inherit;
+				font-size: inherit;
+				line-height: inherit;
+				tab-size: 4;
+
+				code {
+					font-family: inherit;
+					font-size: inherit;
+					line-height: inherit;
+					background: transparent;
+					padding: 0;
+					border: none;
+					white-space: pre;
+				}
+			}
+
+			/* Transparent editable textarea directly above */
+			.luiz-code-textarea {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				min-height: 180px;
+				margin: 0;
+				padding: 16px 20px;
+				border: none;
+				outline: none;
+				background: transparent;
+				color: transparent;
+				font-family: inherit;
+				font-size: inherit;
+				line-height: inherit;
+				tab-size: 4;
+				white-space: pre;
+				word-break: normal;
+				word-wrap: normal;
+				overflow: auto;
+				resize: vertical;
+				box-sizing: border-box;
+
+				/* Dynamic caret color according to theme */
+				caret-color: currentColor;
+
+				&::placeholder {
+					color: rgba(128, 128, 128, 0.6);
+				}
+
+				&:focus {
+					outline: none;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
+
+/* Caret color adjustments for themes */
+.luiz-code-container.theme-default .luiz-code-textarea {
+	caret-color: #24292e;
+}
+.luiz-code-container.theme-one-dark .luiz-code-textarea {
+	caret-color: #528bff;
+}
+.luiz-code-container.theme-dracula .luiz-code-textarea {
+	caret-color: #f8f8f0;
+}
+.luiz-code-container.theme-solarized .luiz-code-textarea {
+	caret-color: #93a1a1;
+}
+.luiz-code-container.theme-nord .luiz-code-textarea {
+	caret-color: #88c0d0;
+}
+
+/* Gutenberg sidebar panel row */
+.luiz-code-meta-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+	border-top: 1px solid #e0e0e0;
+
+	.luiz-code-stats-badge {
+		font-size: 11px;
+		font-weight: 600;
+		background: #f0f0f0;
+		padding: 2px 8px;
+		border-radius: 4px;
+		color: #555;
+	}
+}

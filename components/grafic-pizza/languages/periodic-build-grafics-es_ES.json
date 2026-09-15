@@ -1,0 +1,166 @@
+{
+  "translation-revision-date": "2026-09-11 16:40:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "assets/js/block.js",
+  "domain": "periodic-build-grafics",
+  "locale_data": {
+    "periodic-build-grafics": {
+      "": {
+        "domain": "periodic-build-grafics",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Gráfico pizza": [
+        "Gráfico circular"
+      ],
+      "Gere seu gráfico de pizza em uma tabela com cores personalizadas": [
+        "Genere su gráfico circular en una tabla con colores personalizados"
+      ],
+      "Exemplo Gráfico": [
+        "Gráfico de Ejemplo"
+      ],
+      "Subtítulo Exemplo": [
+        "Subtítulo de Ejemplo"
+      ],
+      "Vendas": [
+        "Ventas"
+      ],
+      "Serviços": [
+        "Servicios"
+      ],
+      "Outros": [
+        "Otros"
+      ],
+      "Carregando gráfico...": [
+        "Cargando gráfico..."
+      ],
+      "Nova legenda": [
+        "Nueva leyenda"
+      ],
+      "Escolha uma cor": [
+        "Elija un color"
+      ],
+      "Coloque o título aqui": [
+        "Coloque el título aquí"
+      ],
+      "Valor": [
+        "Valor"
+      ],
+      "Remover Linha": [
+        "Eliminar fila"
+      ],
+      "Adicionar Linha": [
+        "Agregar fila"
+      ],
+      "Editar Gráfico #%d": [
+        "Editar gráfico #%d"
+      ],
+      "Fechar tabela": [
+        "Cerrar tabla"
+      ],
+      "Coloque o título do gráfico aqui...": [
+        "Coloque el título del gráfico aquí..."
+      ],
+      "Coloque o subtítulo do gráfico aqui...": [
+        "Coloque el subtítulo del gráfico aquí..."
+      ],
+      "Cor": [
+        "Color"
+      ],
+      "Legenda": [
+        "Leyenda"
+      ],
+      "Ações": [
+        "Acciones"
+      ],
+      "Remover gráfico": [
+        "Eliminar gráfico"
+      ],
+      "Editar dados do gráfico": [
+        "Editar datos del gráfico"
+      ],
+      "Adicionar novo gráfico": [
+        "Agregar nuevo gráfico"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Gráfico pizza": [
+        "Gráfico circular"
+      ],
+      "Gere seu gráfico de pizza em uma tabela com cores personalizadas": [
+        "Genere su gráfico circular en una tabla con colores personalizados"
+      ],
+      "Exemplo Gráfico": [
+        "Gráfico de Ejemplo"
+      ],
+      "Subtítulo Exemplo": [
+        "Subtítulo de Ejemplo"
+      ],
+      "Vendas": [
+        "Ventas"
+      ],
+      "Serviços": [
+        "Servicios"
+      ],
+      "Outros": [
+        "Otros"
+      ],
+      "Carregando gráfico...": [
+        "Cargando gráfico..."
+      ],
+      "Nova legenda": [
+        "Nueva leyenda"
+      ],
+      "Escolha uma cor": [
+        "Elija un color"
+      ],
+      "Coloque o título aqui": [
+        "Coloque el título aquí"
+      ],
+      "Valor": [
+        "Valor"
+      ],
+      "Remover Linha": [
+        "Eliminar fila"
+      ],
+      "Adicionar Linha": [
+        "Agregar fila"
+      ],
+      "Editar Gráfico #%d": [
+        "Editar gráfico #%d"
+      ],
+      "Fechar tabela": [
+        "Cerrar tabla"
+      ],
+      "Coloque o título do gráfico aqui...": [
+        "Coloque el título del gráfico aquí..."
+      ],
+      "Coloque o subtítulo do gráfico aqui...": [
+        "Coloque el subtítulo del gráfico aquí..."
+      ],
+      "Cor": [
+        "Color"
+      ],
+      "Legenda": [
+        "Leyenda"
+      ],
+      "Ações": [
+        "Acciones"
+      ],
+      "Remover gráfico": [
+        "Eliminar gráfico"
+      ],
+      "Editar dados do gráfico": [
+        "Editar datos del gráfico"
+      ],
+      "Adicionar novo gráfico": [
+        "Agregar nuevo gráfico"
+      ]
+    }
+  }
+}

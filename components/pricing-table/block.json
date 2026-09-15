@@ -1,0 +1,116 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/pricing-table",
+  "version": "1.0.0",
+  "title": "Tabela de Preços (Bootstrap 5)",
+  "category": "design",
+  "icon": "money-alt",
+  "description": "Tabela comparativa de planos de preços para landing pages com destaque para Plano Popular, lista de recursos com ícones e suporte nativo ao Bootstrap 5 e Font Awesome 6.",
+  "keywords": [
+    "pricing",
+    "preços",
+    "planos",
+    "landing page",
+    "bootstrap"
+  ],
+  "textdomain": "periodic-pricing-table",
+  "attributes": {
+    "plans": {
+      "type": "array",
+      "default": [
+        {
+          "id": "plan-1",
+          "planName": "Básico",
+          "price": "29",
+          "currency": "R$",
+          "billingPeriod": "/mês",
+          "isFeatured": false,
+          "badgeText": "Econômico",
+          "features": [
+            { "id": "f-1-1", "text": "1 Domínio personalizado", "included": true },
+            { "id": "f-1-2", "text": "10 GB de armazenamento SSD", "included": true },
+            { "id": "f-1-3", "text": "Certificado SSL grátis", "included": true },
+            { "id": "f-1-4", "text": "Suporte por e-mail", "included": true },
+            { "id": "f-1-5", "text": "Backup diário automático", "included": false },
+            { "id": "f-1-6", "text": "Acesso via SSH / SFTP", "included": false }
+          ],
+          "buttonText": "Começar Agora",
+          "buttonUrl": "#",
+          "buttonStyle": "outline-primary"
+        },
+        {
+          "id": "plan-2",
+          "planName": "Profissional",
+          "price": "79",
+          "currency": "R$",
+          "billingPeriod": "/mês",
+          "isFeatured": true,
+          "badgeText": "Mais Popular",
+          "features": [
+            { "id": "f-2-1", "text": "5 Domínios personalizados", "included": true },
+            { "id": "f-2-2", "text": "50 GB de armazenamento SSD", "included": true },
+            { "id": "f-2-3", "text": "Certificado SSL grátis", "included": true },
+            { "id": "f-2-4", "text": "Suporte prioritário 24/7", "included": true },
+            { "id": "f-2-5", "text": "Backup diário automático", "included": true },
+            { "id": "f-2-6", "text": "Acesso via SSH / SFTP", "included": false }
+          ],
+          "buttonText": "Assinar Plano Pro",
+          "buttonUrl": "#",
+          "buttonStyle": "primary"
+        },
+        {
+          "id": "plan-3",
+          "planName": "Enterprise",
+          "price": "149",
+          "currency": "R$",
+          "billingPeriod": "/mês",
+          "isFeatured": false,
+          "badgeText": "Completo",
+          "features": [
+            { "id": "f-3-1", "text": "Domínios ilimitados", "included": true },
+            { "id": "f-3-2", "text": "200 GB de armazenamento SSD", "included": true },
+            { "id": "f-3-3", "text": "Certificado SSL Wildcard", "included": true },
+            { "id": "f-3-4", "text": "Gerente de conta dedicado", "included": true },
+            { "id": "f-3-5", "text": "Backup diário e CDN global", "included": true },
+            { "id": "f-3-6", "text": "Acesso completo SSH / SFTP", "included": true }
+          ],
+          "buttonText": "Falar com Consultor",
+          "buttonUrl": "#",
+          "buttonStyle": "dark"
+        }
+      ]
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "featuredBorderColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "featuredBadgeBg": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "featuredBadgeTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "showBadges": {
+      "type": "boolean",
+      "default": true
+    },
+    "elevateFeatured": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

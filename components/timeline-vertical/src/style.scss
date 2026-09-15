@@ -1,0 +1,281 @@
+/**
+ * luiz0067-timeline-vertical - Frontend and Editor Styles
+ * Standard architecture with Bootstrap 5 and Font Awesome 6 support.
+ */
+
+.luiz0067-timeline-vertical {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 2rem auto;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+
+  // Central or lateral connecting line
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--timeline-line-color, #dee2e6);
+    border-style: var(--timeline-connector-style, solid);
+    border-width: 0 2px 0 2px;
+    border-color: var(--timeline-line-color, #dee2e6);
+    box-sizing: border-box;
+  }
+
+  // Alternating layout (default desktop)
+  &.is-alternating {
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      position: relative;
+      margin-bottom: 2.5rem;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      // Odd items: Left side
+      &.is-left {
+        flex-direction: row-reverse;
+        text-align: right;
+
+        .timeline-card-wrapper {
+          padding-right: 45px;
+          padding-left: 0;
+        }
+
+        .timeline-arrow {
+          right: -10px;
+          left: auto;
+          border-width: 10px 0 10px 10px;
+          border-color: transparent transparent transparent #ffffff;
+        }
+
+        .timeline-date-container {
+          text-align: right;
+        }
+      }
+
+      // Even items: Right side
+      &.is-right {
+        flex-direction: row;
+        text-align: left;
+
+        .timeline-card-wrapper {
+          padding-left: 45px;
+          padding-right: 0;
+        }
+
+        .timeline-arrow {
+          left: -10px;
+          right: auto;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent #ffffff transparent transparent;
+        }
+
+        .timeline-date-container {
+          text-align: left;
+        }
+      }
+
+      .timeline-card-wrapper {
+        width: 50%;
+        box-sizing: border-box;
+      }
+
+      .timeline-empty-spacer {
+        width: 50%;
+      }
+    }
+  }
+
+  // Left-aligned layout
+  &.is-left-aligned {
+    &::before {
+      left: 24px;
+      transform: none;
+    }
+
+    .timeline-item {
+      display: flex;
+      position: relative;
+      margin-bottom: 2.5rem;
+      width: 100%;
+
+      .timeline-card-wrapper {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        box-sizing: border-box;
+      }
+
+      .timeline-badge {
+        left: 24px;
+        transform: translate(-50%, 0);
+      }
+
+      .timeline-arrow {
+        left: -10px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #ffffff transparent transparent;
+      }
+    }
+  }
+
+  // Circular Badge Marker
+  .timeline-badge {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 0 0 4px #ffffff, 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--timeline-badge-bg, #0d6efd);
+    color: var(--timeline-badge-color, #ffffff);
+    font-size: 1.15rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translate(-50%, 0) scale(1.1);
+      box-shadow: 0 0 0 6px #ffffff, 0 6px 14px rgba(0, 0, 0, 0.22);
+    }
+
+    i, svg {
+      color: inherit;
+    }
+  }
+
+  // Card Content
+  .timeline-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &.has-shadow {
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
+    }
+
+    &:hover {
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .timeline-arrow {
+      position: absolute;
+      top: 22px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      pointer-events: none;
+    }
+  }
+
+  // Date and Tag Headers
+  .timeline-date-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+
+    .timeline-date {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--timeline-primary-color, #0d6efd);
+      background-color: rgba(13, 110, 253, 0.1);
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+  }
+
+  .timeline-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    color: #212529;
+    line-height: 1.35;
+  }
+
+  .timeline-description {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+// Responsive layout for tablets and phones
+@media (max-width: 768px) {
+  .luiz0067-timeline-vertical {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &.is-alternating {
+      &::before {
+        left: 24px;
+        transform: none;
+      }
+
+      .timeline-item {
+        flex-direction: row !important;
+        text-align: left !important;
+
+        .timeline-badge {
+          left: 24px;
+          transform: translate(-50%, 0);
+        }
+
+        .timeline-card-wrapper {
+          width: calc(100% - 60px) !important;
+          margin-left: 60px !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .timeline-empty-spacer {
+          display: none;
+        }
+
+        .timeline-arrow {
+          left: -10px !important;
+          right: auto !important;
+          border-width: 10px 10px 10px 0 !important;
+          border-color: transparent #ffffff transparent transparent !important;
+        }
+
+        .timeline-date-container {
+          text-align: left !important;
+        }
+      }
+    }
+  }
+}

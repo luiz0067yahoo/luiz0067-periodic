@@ -1,0 +1,90 @@
+{
+  "translation-revision-date": "2026-09-13 19:00:00+0000",
+  "generator": "WP-CLI",
+  "source": "periodic-image-editor",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic Image Editor": [
+        "Periodic Image Editor"
+      ],
+      "Mídia e Seleção": [
+        "Medios y Selección"
+      ],
+      "Zoom e Rotação": [
+        "Zoom y Rotación"
+      ],
+      "Posicionamento X / Y": [
+        "Posicionamiento X / Y"
+      ],
+      "Seleção de Imagem": [
+        "Selección de Imagen"
+      ],
+      "Selecionar Imagem": [
+        "Seleccionar Imagen"
+      ],
+      "Trocar Imagem": [
+        "Reemplazar Imagen"
+      ],
+      "Remover Imagem": [
+        "Eliminar Imagen"
+      ],
+      "Texto Alternativo (Alt Text)": [
+        "Texto Alternativo (Alt Text)"
+      ],
+      "Dimensões e Moldura": [
+        "Dimensiones y Marco"
+      ],
+      "Altura do Contêiner": [
+        "Altura del Contenedor"
+      ],
+      "Cantos Arredondados (Bootstrap 5)": [
+        "Bordes Redondeados (Bootstrap 5)"
+      ],
+      "Sombra (Bootstrap 5)": [
+        "Sombra (Bootstrap 5)"
+      ],
+      "Escala e Zoom": [
+        "Escala y Zoom"
+      ],
+      "Fator de Zoom": [
+        "Factor de Zoom"
+      ],
+      "Giro e Rotação": [
+        "Giro y Rotación"
+      ],
+      "Ângulo em Graus": [
+        "Ángulo en Grados"
+      ],
+      "Giro Rápido:": [
+        "Giro Rápido:"
+      ],
+      "Deslocamento nos Eixos X e Y": [
+        "Desplazamiento en Ejes X e Y"
+      ],
+      "Posição Horizontal (Eixo X)": [
+        "Posición Horizontal (Eje X)"
+      ],
+      "Posição Vertical (Eixo Y)": [
+        "Posición Vertical (Eje Y)"
+      ],
+      "Centralizar Imagem (X: 0, Y: 0)": [
+        "Centrar Imagen (X: 0, Y: 0)"
+      ],
+      "Comportamento (Object Fit)": [
+        "Comportamiento (Object Fit)"
+      ],
+      "Resetar Todas as Transformações": [
+        "Restablecer Transformaciones"
+      ],
+      "Carregar Imagem": [
+        "Subir Imagen"
+      ]
+    }
+  }
+}

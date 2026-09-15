@@ -1,0 +1,40 @@
+/**
+ * Estilos Frontend: Luiz0067 Image Editor
+ */
+
+.luiz0067-image-editor-container {
+	margin: 2rem 0;
+	width: 100%;
+	box-sizing: border-box;
+
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	.luiz0067-image-frame {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #000000;
+		transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+		img.luiz0067-transformed-img {
+			display: block;
+			max-width: none;
+			will-change: transform;
+		}
+
+		&.rounded-0 { border-radius: 0; }
+		&.rounded { border-radius: 6px; }
+		&.rounded-3 { border-radius: 12px; }
+		&.rounded-4 { border-radius: 18px; }
+		&.rounded-circle { border-radius: 50%; }
+
+		&.shadow-none { box-shadow: none; }
+		&.shadow-sm { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
+		&.shadow { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); }
+		&.shadow-lg { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16); }
+	}
+}

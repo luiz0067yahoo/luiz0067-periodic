@@ -1,0 +1,9 @@
+/* Gutenberg editor styles for the Maps block */
+.wp-block-periodic-maps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background: #f0f0f0;
+    border: 1px dashed #ccc;
+}

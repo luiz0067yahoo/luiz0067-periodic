@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/gallery-lightbox",
+  "version": "1.0.0",
+  "title": "Galeria com Lightbox",
+  "category": "media",
+  "icon": "format-gallery",
+  "description": "Galeria responsiva de imagens com popup lightbox de tela cheia estilo LC-Lightbox em Vanilla JS, Bootstrap 5 e Font Awesome 6.",
+  "keywords": [
+    "gallery",
+    "galeria",
+    "lightbox",
+    "popup",
+    "fotos",
+    "imagens"
+  ],
+  "textdomain": "periodic-gallery-lightbox",
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": []
+    },
+    "columnsDesktop": {
+      "type": "number",
+      "default": 4
+    },
+    "columnsTablet": {
+      "type": "number",
+      "default": 2
+    },
+    "columnsMobile": {
+      "type": "number",
+      "default": 1
+    },
+    "gapSize": {
+      "type": "string",
+      "default": "g-3"
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "1x1"
+    },
+    "enableCaptions": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableThumbnailsBar": {
+      "type": "boolean",
+      "default": true
+    },
+    "lightboxTheme": {
+      "type": "string",
+      "default": "dark"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

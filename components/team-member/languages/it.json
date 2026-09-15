@@ -1,0 +1,183 @@
+{
+  "translation-revision-date": "2026-09-13 17:30:00+0000",
+  "generator": "WP-CLI/2.9.0",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Membros da Equipe": [
+        "Membri del Team"
+      ],
+      "Membros": [
+        "Membri"
+      ],
+      "Redes Sociais": [
+        "Social Network"
+      ],
+      "Estilo da Foto e Cartão": [
+        "Stile Foto e Scheda"
+      ],
+      "Gerenciar Membros da Equipe": [
+        "Gestisci Membri del Team"
+      ],
+      "Adicione os membros, defina fotos de perfil e preencha os dados institucionais.": [
+        "Aggiungi membri, imposta foto del profilo e compila le informazioni istituzionali."
+      ],
+      "Novo Membro": [
+        "Nuovo Membro"
+      ],
+      "Especialidade / Cargo": [
+        "Specialità / Ruolo"
+      ],
+      "Breve resumo biográfico destacando competências e histórico de atuação do profissional.": [
+        "Breve sintesi biografica che evidenzia competenze e percorso professionale."
+      ],
+      "(Sem Nome)": [
+        "(Senza Nome)"
+      ],
+      "Mover para cima": [
+        "Sposta in alto"
+      ],
+      "Mover para baixo": [
+        "Sposta in basso"
+      ],
+      "Remover membro": [
+        "Rimuovi membro"
+      ],
+      "Trocar Foto": [
+        "Cambia Foto"
+      ],
+      "Enviar Foto": [
+        "Carica Foto"
+      ],
+      "Remover": [
+        "Rimuovi"
+      ],
+      "Nome Completo": [
+        "Nome Completo"
+      ],
+      "Ex: Prof. Dr. Silva": [
+        "Es: Prof. Dr. Rossi"
+      ],
+      "Ex: Engenheiro de Software Sênior": [
+        "Es: Senior Software Engineer"
+      ],
+      "Resumo Biográfico": [
+        "Biografia Sintetica"
+      ],
+      "Destaque a formação, conquistas ou histórico de carreira...": [
+        "Evidenzia formazione, traguardi o percorso professionale..."
+      ],
+      "Adicionar Novo Membro": [
+        "Aggiungi Nuovo Membro"
+      ],
+      "Links de Redes Sociais": [
+        "Collegamenti ai Social Network"
+      ],
+      "Adicione membros na aba \"Membros\" antes de configurar redes sociais.": [
+        "Aggiungi membri nella scheda \"Membri\" prima di configurare i social network."
+      ],
+      "Selecionar Membro para Configurar Redes": [
+        "Seleziona Membro per Configurare i Social"
+      ],
+      "Redes de:": [
+        "Social di:"
+      ],
+      "Rede Social": [
+        "Social Network"
+      ],
+      "Excluir link": [
+        "Elimina collegamento"
+      ],
+      "URL / Link de Perfil": [
+        "URL / Profilo"
+      ],
+      "Classe do Ícone Font Awesome": [
+        "Classe Icona Font Awesome"
+      ],
+      "Exemplo: fa-brands fa-linkedin-in, fa-brands fa-github": [
+        "Esempio: fa-brands fa-linkedin-in, fa-brands fa-github"
+      ],
+      "Adicionar Rede Rápida:": [
+        "Aggiunta Rapida Social:"
+      ],
+      "Número de Colunas (Grid)": [
+        "Numero di Colonne (Grid)"
+      ],
+      "Escolha de 1 a 4 colunas para a exibição dos membros em telas grandes.": [
+        "Scegli da 1 a 4 colonne per la visualizzazione su schermi grandi."
+      ],
+      "Formato da Foto": [
+        "Formato della Foto"
+      ],
+      "Circular (rounded-circle)": [
+        "Circolare (rounded-circle)"
+      ],
+      "Cantos Arredondados (rounded)": [
+        "Angoli Arrotondati (rounded)"
+      ],
+      "Moldura com Borda (img-thumbnail)": [
+        "Cornice con Bordo (img-thumbnail)"
+      ],
+      "Tamanho da Foto (px)": [
+        "Dimensione Foto (px)"
+      ],
+      "Diâmetro ou largura da foto em pixels.": [
+        "Diametro o larghezza della foto in pixel."
+      ],
+      "Estilo de Cartão (Bootstrap 5)": [
+        "Stile della Scheda (Bootstrap 5)"
+      ],
+      "Sombra Suave (shadow-sm)": [
+        "Ombra Leggera (shadow-sm)"
+      ],
+      "Borda Delicada (border)": [
+        "Bordo Sottile (border)"
+      ],
+      "Plano / Sem Borda (flat)": [
+        "Piatto / Senza Bordo (flat)"
+      ],
+      "Alinhamento do Conteúdo": [
+        "Allineamento dei Contenuti"
+      ],
+      "Centralizado": [
+        "Centrato"
+      ],
+      "Alinhado à Esquerda": [
+        "Allineato a Sinistra"
+      ],
+      "Nenhum membro configurado": [
+        "Nessun membro configurato"
+      ],
+      "Clique no botão abaixo para adicionar o primeiro membro de equipe.": [
+        "Fai clic sul pulsante qui sotto per aggiungere il primo membro del team."
+      ],
+      "Adicionar Membro": [
+        "Aggiungi Membro"
+      ],
+      "Clique para alterar a foto": [
+        "Fai clic per cambiare la foto"
+      ],
+      "Nome do Membro": [
+        "Nome del Membro"
+      ],
+      "Biografia do membro...": [
+        "Biografia del membro..."
+      ],
+      "Nenhuma rede social configurada": [
+        "Nessun social network configurato"
+      ],
+      "Editar no Painel": [
+        "Modifica nel Pannello"
+      ],
+      "Adicionar Outro Membro": [
+        "Aggiungi Altro Membro"
+      ]
+    }
+  }
+}

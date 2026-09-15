@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Card Trainer - Gutenberg Block Showcase</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Card Trainer Styles -->
+  <link rel="stylesheet" href="./build/style-index.css">
+  <style>
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      padding-bottom: 4rem;
+    }
+    .demo-navbar {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .badge-pill-custom {
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2rem;
+      font-weight: 700;
+    }
+    .nav-tabs .nav-link {
+      color: #94a3b8;
+      font-weight: 600;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 0.75rem 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .nav-tabs .nav-link:hover {
+      color: #f8fafc;
+    }
+    .nav-tabs .nav-link.active {
+      color: #818cf8;
+      background: transparent;
+      border-bottom-color: #818cf8;
+    }
+    .preview-card-container {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      margin-top: 1.5rem;
+    }
+    .hero-banner {
+      padding: 2.5rem 0 1rem;
+      text-align: center;
+    }
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #a5b4fc 0%, #ffffff 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      color: #94a3b8;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0.5rem auto 1.5rem;
+    }
+    .feature-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="demo-navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <span style="font-size: 1.75rem;">🃏</span>
+        <div>
+          <h5 class="m-0 fw-bold text-white">Periodic Card Trainer</h5>
+          <small class="text-secondary">Gutenberg Block Plugin • Bootstrap 5 & CSS 3D Flip</small>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-pill-custom">WordPress 6.0+</span>
+        <span class="badge bg-secondary">3 Interactive Modes</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container hero-banner">
+    <h1 class="hero-title">Card Trainer Interativo para Gutenberg</h1>
+    <p class="hero-lead">
+      Apresente cartões interativos em 3 modos: Flashcard com verificação de input, Dialog Cards com giro 3D e Jogo da Memória com cronômetro, contador de movimentos e feedback sonoro.
+    </p>
+    <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+      <span class="feature-tag">⚡ 3D Flip CSS (preserve-3d)</span>
+      <span class="feature-tag">📱 Bootstrap 5 Grid Layout</span>
+      <span class="feature-tag">🔊 Web Audio API Synthesizer</span>
+      <span class="feature-tag">🌐 i18n (pt-BR, en-US, IT, ES)</span>
+    </div>
+  </section>
+
+  <!-- Main Demo Content -->
+  <main class="container">
+    <!-- Mode Tabs -->
+    <ul class="nav nav-tabs justify-content-center" id="modeTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="memory-tab" data-bs-toggle="tab" data-bs-target="#tab-memory" type="button" role="tab">
+          🧠 1. Jogo da Memória (Memory Grid)
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="flashcard-tab" data-bs-toggle="tab" data-bs-target="#tab-flashcard" type="button" role="tab">
+          ✍️ 2. Flashcard (Com Input de Texto)
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="dialog-tab" data-bs-toggle="tab" data-bs-target="#tab-dialog" type="button" role="tab">
+          🔄 3. Dialog Cards (Virar Frente/Verso)
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="modeTabsContent">
+
+      <!-- TAB 1: Memory Grid Mode -->
+      <div class="tab-pane fade show active" id="tab-memory" role="tabpanel">
+        <div class="preview-card-container">
+          <div
+            class="wp-block-periodic-card-trainer periodic-card-trainer"
+            data-game-mode="memory-grid"
+            data-columns="3"
+            data-show-timer="1"
+            data-show-moves="1"
+            data-card-height="240"
+            data-language="pt-br"
+            data-cards='[
+              {"id":"card-1","frontImage":"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&auto=format&fit=crop&q=80","frontText":"França / Paris","backText":"Torre Eiffel","tip":"Capital da França","audioUrl":""},
+              {"id":"card-2","frontImage":"https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&auto=format&fit=crop&q=80","frontText":"Inglaterra / Londres","backText":"Big Ben","tip":"Capital do Reino Unido","audioUrl":""},
+              {"id":"card-3","frontImage":"https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&auto=format&fit=crop&q=80","frontText":"Itália / Roma","backText":"Coliseu","tip":"Cidade Eterna","audioUrl":""}
+            ]'
+          >
+            <div class="trainer-header">
+              <h3 class="header-title">
+                <span>🃏</span>
+                <span class="title-text">Jogo da Memória (Memory Grid)</span>
+              </h3>
+              <div class="header-stats">
+                <div class="stat-badge stat-timer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="timer-display">00:00</span>
+                </div>
+                <div class="stat-badge stat-moves">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                  <span class="moves-display">0</span>
+                </div>
+                <div class="stat-badge stat-pairs">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="pairs-display">0 / 3</span>
+                </div>
+                <button type="button" class="btn-trainer-reset">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  <span>Reiniciar</span>
+                </button>
+              </div>
+            </div>
+            <div class="trainer-stage-container"></div>
+            <div class="victory-overlay" role="dialog">
+              <div class="victory-card">
+                <div class="trophy-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7v2h10v-2h-2c-.55 0-1-.45-1-1v-2.34c3.08-.63 5.4-3.1 5.4-6.16V4H6v4.5c0 3.06 2.32 5.53 5.4 6.16z"/></svg>
+                </div>
+                <h3 class="victory-title">Parabéns! Você Venceu!</h3>
+                <p class="victory-msg">Você completou o jogo da memória com sucesso!</p>
+                <button type="button" class="btn-play-again">Jogar Novamente</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Flashcard Mode -->
+      <div class="tab-pane fade" id="tab-flashcard" role="tabpanel">
+        <div class="preview-card-container">
+          <div
+            class="wp-block-periodic-card-trainer periodic-card-trainer"
+            data-game-mode="flashcard"
+            data-columns="3"
+            data-show-timer="1"
+            data-show-moves="1"
+            data-card-height="280"
+            data-language="pt-br"
+            data-cards='[
+              {"id":"fc-1","frontImage":"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&auto=format&fit=crop&q=80","frontText":"Qual é a capital da França?","backText":"Paris","tip":"Conhecida como a Cidade Luz","audioUrl":""},
+              {"id":"fc-2","frontImage":"https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&auto=format&fit=crop&q=80","frontText":"Qual monumento abriga o famoso sino Big Ben?","backText":"Palácio de Westminster / Parlamento","tip":"Localizado às margens do Rio Tâmisa","audioUrl":""},
+              {"id":"fc-3","frontImage":"https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&auto=format&fit=crop&q=80","frontText":"Qual famoso anfiteatro romano recebia lutas de gladiadores?","backText":"Coliseu","tip":"Construído em Roma na antiguidade","audioUrl":""}
+            ]'
+          >
+            <div class="trainer-header">
+              <h3 class="header-title">
+                <span>✍️</span>
+                <span class="title-text">Flashcard (Com Input de Texto)</span>
+              </h3>
+              <div class="header-stats">
+                <div class="stat-badge stat-timer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="timer-display">00:00</span>
+                </div>
+                <div class="stat-badge stat-moves">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                  <span class="moves-display">0</span>
+                </div>
+                <button type="button" class="btn-trainer-reset">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  <span>Reiniciar</span>
+                </button>
+              </div>
+            </div>
+            <div class="trainer-stage-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Dialog Cards Mode -->
+      <div class="tab-pane fade" id="tab-dialog" role="tabpanel">
+        <div class="preview-card-container">
+          <div
+            class="wp-block-periodic-card-trainer periodic-card-trainer"
+            data-game-mode="dialog-card"
+            data-columns="3"
+            data-show-timer="1"
+            data-show-moves="1"
+            data-card-height="280"
+            data-language="pt-br"
+            data-cards='[
+              {"id":"dc-1","frontImage":"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&auto=format&fit=crop&q=80","frontText":"Bonjour, comment allez-vous?","backText":"Olá, como você vai? (Francês)","tip":"Expressão formal de cumprimento","audioUrl":""},
+              {"id":"dc-2","frontImage":"https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&auto=format&fit=crop&q=80","frontText":"Nice to meet you!","backText":"Prazer em te conhecer! (Inglês)","tip":"Usado ao ser apresentado a alguém","audioUrl":""},
+              {"id":"dc-3","frontImage":"https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&auto=format&fit=crop&q=80","frontText":"Piacere di conoscerti!","backText":"Prazer em conhecê-lo! (Italiano)","tip":"Expressão comum na Itália","audioUrl":""}
+            ]'
+          >
+            <div class="trainer-header">
+              <h3 class="header-title">
+                <span>🔄</span>
+                <span class="title-text">Dialog Cards (3D Flip Deck)</span>
+              </h3>
+              <div class="header-stats">
+                <div class="stat-badge stat-timer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="timer-display">00:00</span>
+                </div>
+                <div class="stat-badge stat-moves">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                  <span class="moves-display">0</span>
+                </div>
+                <button type="button" class="btn-trainer-reset">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  <span>Reiniciar</span>
+                </button>
+              </div>
+            </div>
+            <div class="trainer-stage-container"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Card Trainer Frontend Script -->
+  <script src="./build/view.js"></script>
+  <script>
+    // Re-init blocks when tab is switched
+    document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(tab => {
+      tab.addEventListener('shown.bs.tab', () => {
+        if (window.initPeriodicCardTrainer) {
+          window.initPeriodicCardTrainer();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

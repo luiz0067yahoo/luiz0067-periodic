@@ -1,0 +1,192 @@
+# Italian translation for luiz0067 Separator.
+# Copyright (C) 2026 Luiz Fernando Brogliatto Ferreira
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: luiz0067 Separator 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/luiz0067yahoo/luiz0067-separator/issues\n"
+"Last-Translator: Luiz Fernando Brogliatto Ferreira\n"
+"Language-Team: Italian <it@li.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-11T16:30:00+00:00\n"
+"PO-Revision-Date: 2026-09-11 16:30+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WP-CLI/2.x\n"
+"X-Domain: luiz0067-separator\n"
+
+msgid "Alinhado à Direita"
+msgstr "Allineato a Destra"
+
+msgid "Alinhado à Esquerda"
+msgstr "Allineato a Sinistra"
+
+msgid "Alinhamento Horizontal"
+msgstr "Allineamento Orizzontale"
+
+msgid "Arredondamento dos Cantos (px)"
+msgstr "Arrotondamento degli Angoli (px)"
+
+msgid "Azul"
+msgstr "Blu"
+
+msgid "Azul Escuro"
+msgstr "Blu Scuro"
+
+msgid "Centralizado"
+msgstr "Centrato"
+
+msgid "Cinza Claro"
+msgstr "Grigio Chiaro"
+
+msgid "Cinza Médio"
+msgstr "Grigio Medio"
+
+msgid "Cor Principal"
+msgstr "Colore Principale"
+
+msgid "Cor Secundária (Gradiente)"
+msgstr "Colore Secondario (Gradiente)"
+
+msgid "Coral / Vermelho"
+msgstr "Corallo / Rosso"
+
+msgid "Coração (♥)"
+msgstr "Cuore (♥)"
+
+msgid "Círculo (●)"
+msgstr "Cerchio (●)"
+
+msgid "Dimensões e Posição"
+msgstr "Dimensioni e Posizione"
+
+msgid "Dourado / Amarelo"
+msgstr "Dorato / Giallo"
+
+msgid "Escolha o Símbolo"
+msgstr "Scegli il Simbolo"
+
+msgid "Espaçamento Inferior (px)"
+msgstr "Spaziatura Inferiore (px)"
+
+msgid "Espaçamento Superior (px)"
+msgstr "Spaziatura Superiore (px)"
+
+msgid "Espessura / Altura (px)"
+msgstr "Spessore / Altezza (px)"
+
+msgid "Estilo e Cor"
+msgstr "Stile e Colore"
+
+msgid "Estrela (★)"
+msgstr "Stella (★)"
+
+msgid "Exibir símbolo no centro"
+msgstr "Mostra simbolo al centro"
+
+msgid "Flor / Cruz (✤)"
+msgstr "Fiore / Croce (✤)"
+
+msgid "Folha (❧)"
+msgstr "Foglia (❧)"
+
+msgid "Gradiente Moderno"
+msgstr "Gradiente Moderno"
+
+msgid "Grafite Escuro"
+msgstr "Grafite Scuro"
+
+msgid "Largura (%)"
+msgstr "Larghezza (%)"
+
+msgid "Linha Dupla (Double)"
+msgstr "Linea Doppia (Double)"
+
+msgid "Linha Pontilhada (Dotted)"
+msgstr "Linea Punteggiata (Dotted)"
+
+msgid "Linha Sólida"
+msgstr "Linea Continua"
+
+msgid "Linha Tracejada (Dashed)"
+msgstr "Linea Tratteggiata (Dashed)"
+
+msgid "Linha com Sombra"
+msgstr "Linea con Ombra"
+
+msgid "Losango (◆)"
+msgstr "Rombo (◆)"
+
+msgid "Luiz Fernando Brogliatto Ferreira"
+msgstr "Luiz Fernando Brogliatto Ferreira"
+
+msgid "Modelo do Separador"
+msgstr "Modello del Separatore"
+
+msgid "O separador divide os conteúdos por uma linha elegante e personalizável."
+msgstr "Il separatore divide i contenuti con una linea elegante e personalizzabile."
+
+msgid "Opacidade (%)"
+msgstr "Opacità (%)"
+
+msgid "Preto"
+msgstr "Nero"
+
+msgid "Quadrado (■)"
+msgstr "Quadrato (■)"
+
+msgid "Roxo"
+msgstr "Viola"
+
+msgid "Separador"
+msgstr "Separatore"
+
+msgid "Separador (cms-adm)"
+msgstr "Separatore (cms-adm)"
+
+msgid "Separador compatível com customADM / prefeitura."
+msgstr "Separatore compatibile con customADM / comune."
+
+msgid "Símbolo Central (Decorativo)"
+msgstr "Simbolo Centrale (Decorativo)"
+
+msgid "Três Pontos Decorativos"
+msgstr "Tre Punti Decorativi"
+
+msgid "Verde Escuro"
+msgstr "Verde Scuro"
+
+msgid "Verde Esmeralda"
+msgstr "Verde Smeraldo"
+
+msgid "Verde Institucional"
+msgstr "Verde Istituzionale"
+
+msgid "Verde Institucional (Prefeitura)"
+msgstr "Verde Istituzionale (Comune)"
+
+msgid "WordPress Gutenberg Block para separadores e divisores de conteúdo personalizados, com suporte ao estilo clássico verde institucional da prefeitura, estilos sólidos, tracejados, pontilhados, duplos, gradientes, dimensões ajustáveis e total compatibilidade retroativa."
+msgstr "Blocco Gutenberg per WordPress per separatori e divisori di contenuti personalizzati, con supporto per il classico stile verde istituzionale del comune, stili continui, tratteggiati, punteggiati, doppi, sfumature, dimensioni regolabili e totale retrocompatibilità."
+
+msgid "divider"
+msgstr "divider"
+
+msgid "divisor"
+msgstr "divisore"
+
+msgid "https://github.com/luiz0067yahoo/luiz0067-separator"
+msgstr "https://github.com/luiz0067yahoo/luiz0067-separator"
+
+msgid "https://profiles.wordpress.org/luiz0067/"
+msgstr "https://profiles.wordpress.org/luiz0067/"
+
+msgid "linha"
+msgstr "linea"
+
+msgid "luiz0067 Separator"
+msgstr "luiz0067 Separator"
+
+msgid "separador"
+msgstr "separatore"

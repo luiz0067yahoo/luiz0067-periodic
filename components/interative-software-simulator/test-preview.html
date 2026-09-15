@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste e Demonstração: Simulador de Software Interativo (ABNT Windows 11)</title>
+  <link rel="stylesheet" href="build/style-index.css">
+  <style>
+    body {
+      background: #090d16;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 30px 20px;
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .demo-header {
+      text-align: center;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+    .demo-header h1 {
+      font-size: 1.8rem;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .demo-header p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+    .demo-container {
+      width: 100%;
+      max-width: 1100px;
+    }
+    .demo-badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 14px;
+    }
+    .demo-badge {
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-header">
+    <h1>Simulador de Software Interativo</h1>
+    <p>Demonstração pública e validação do fluxo: <strong>Formatação de Margens ABNT no Word (Windows 11)</strong></p>
+    <div class="demo-badges">
+      <span class="demo-badge">Gutenberg API v3</span>
+      <span class="demo-badge">100% Responsivo (%)</span>
+      <span class="demo-badge">Vanilla JS Isolado</span>
+      <span class="demo-badge">5 Passos ABNT</span>
+    </div>
+  </div>
+
+  <div class="demo-container">
+    <div class="wp-block-custom-simulador-software">
+      <div class="sim-player-wrapper" data-initialized="false">
+        <script type="application/json" class="sim-data-config">
+        {
+          "simulatorTitle": "Tutorial Interativo: Configuração de Margens ABNT no Windows 11",
+          "showProgressBar": true,
+          "showRestartButton": true,
+          "showStepIndicator": true,
+          "highlightHints": true,
+          "allowClickAnywhereHint": true,
+          "customSuccessMessage": "Excelente! Você concluiu com perfeição todas as etapas: abriu o Word via Menu Iniciar, acessou a aba Layout, abriu as Margens Personalizadas e aplicou os valores ABNT (Sup: 3, Esq: 3, Inf: 2, Dir: 2).",
+          "steps": [
+            {
+              "id": "step-1-desktop",
+              "title": "Área de Trabalho do Windows 11",
+              "imageUrl": "assets/step1-windows11-desktop.svg",
+              "instruction": "Passo 1: Clique no ícone do Menu Iniciar centralizado na barra de tarefas do Windows 11.",
+              "elements": [
+                {
+                  "id": "el-start-btn",
+                  "type": "click",
+                  "top": 95.0,
+                  "left": 44.5,
+                  "width": 3.0,
+                  "height": 4.8,
+                  "label": "Botão Iniciar",
+                  "targetStepIndex": 1
+                }
+              ]
+            },
+            {
+              "id": "step-2-startmenu",
+              "title": "Menu Iniciar e Pesquisa",
+              "imageUrl": "assets/step2-windows11-startmenu.svg",
+              "instruction": "Passo 2: Digite \"Word\" na caixa de pesquisa do Menu Iniciar e pressione Enter para abrir o programa.",
+              "elements": [
+                {
+                  "id": "el-search-input",
+                  "type": "input",
+                  "top": 30.1,
+                  "left": 35.4,
+                  "width": 29.2,
+                  "height": 4.3,
+                  "expectedValue": "Word",
+                  "placeholder": "Digite \"Word\" e pressione Enter...",
+                  "label": "Pesquisa do Menu Iniciar",
+                  "targetStepIndex": 2
+                }
+              ]
+            },
+            {
+              "id": "step-3-word-open",
+              "title": "Microsoft Word - Documento em Branco",
+              "imageUrl": "assets/step3-word-document.svg",
+              "instruction": "Passo 3: Com o Microsoft Word aberto, clique na aba \"Layout\" na faixa de opções superior.",
+              "elements": [
+                {
+                  "id": "el-tab-layout",
+                  "type": "click",
+                  "top": 4.1,
+                  "left": 22.4,
+                  "width": 4.0,
+                  "height": 3.4,
+                  "label": "Aba Layout",
+                  "targetStepIndex": 3
+                }
+              ]
+            },
+            {
+              "id": "step-4-layout-ribbon",
+              "title": "Aba Layout e Menu Margens",
+              "imageUrl": "assets/step4-word-layout-ribbon.svg",
+              "instruction": "Passo 4: No menu de Margens, role até o final da lista e clique em \"Margens Personalizadas...\".",
+              "elements": [
+                {
+                  "id": "el-custom-margins",
+                  "type": "click",
+                  "top": 44.4,
+                  "left": 1.5,
+                  "width": 15.8,
+                  "height": 4.9,
+                  "label": "Margens Personalizadas...",
+                  "targetStepIndex": 4
+                }
+              ]
+            },
+            {
+              "id": "step-5-page-setup-modal",
+              "title": "Configurar Página - Margens ABNT",
+              "imageUrl": "assets/step5-word-margins-modal.svg",
+              "instruction": "Passo 5: Preencha as 4 margens no padrão ABNT (Superior: 3, Esquerda: 3, Inferior: 2, Direita: 2) e clique em OK.",
+              "elements": [
+                {
+                  "id": "el-margin-superior",
+                  "type": "input",
+                  "top": 32.3,
+                  "left": 39.9,
+                  "width": 5.5,
+                  "height": 2.6,
+                  "expectedValue": "3",
+                  "placeholder": "3",
+                  "label": "Superior (3)"
+                },
+                {
+                  "id": "el-margin-esquerda",
+                  "type": "input",
+                  "top": 36.4,
+                  "left": 39.9,
+                  "width": 5.5,
+                  "height": 2.6,
+                  "expectedValue": "3",
+                  "placeholder": "3",
+                  "label": "Esquerda (3)"
+                },
+                {
+                  "id": "el-margin-inferior",
+                  "type": "input",
+                  "top": 32.3,
+                  "left": 54.0,
+                  "width": 5.5,
+                  "height": 2.6,
+                  "expectedValue": "2",
+                  "placeholder": "2",
+                  "label": "Inferior (2)"
+                },
+                {
+                  "id": "el-margin-direita",
+                  "type": "input",
+                  "top": 36.4,
+                  "left": 54.0,
+                  "width": 5.5,
+                  "height": 2.6,
+                  "expectedValue": "2",
+                  "placeholder": "2",
+                  "label": "Direita (2)"
+                },
+                {
+                  "id": "el-btn-ok",
+                  "type": "click",
+                  "top": 73.1,
+                  "left": 54.6,
+                  "width": 5.0,
+                  "height": 3.0,
+                  "label": "Botão OK",
+                  "requiresCompletedInputs": true,
+                  "targetStepIndex": -1
+                }
+              ]
+            }
+          ]
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <script src="build/view.js"></script>
+  <script>
+    // Permitir carregar um passo específico via ?step=X na URL para testes e capturas de tela
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const stepParam = params.get('step');
+      if (stepParam !== null) {
+        setTimeout(() => {
+          const wrapper = document.querySelector('.wp-block-custom-simulador-software');
+          // Simula o avanço para o passo desejado
+          const stepNum = parseInt(stepParam, 10);
+          if (window._currentSimInstance) {
+            if (stepNum >= 5) {
+              window._currentSimInstance.showCompletionScreen();
+            } else {
+              window._currentSimInstance.renderStep(stepNum);
+            }
+          }
+        }, 150);
+      }
+    });
+  </script>
+</body>
+</html>

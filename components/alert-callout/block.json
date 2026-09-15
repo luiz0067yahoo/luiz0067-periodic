@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/alert-callout",
+  "version": "1.0.0",
+  "title": "Alerta e Callout Contextual",
+  "category": "widgets",
+  "icon": "warning",
+  "description": "Caixas de alerta e avisos contextuais institucionais com Bootstrap 5 e Font Awesome 6.",
+  "keywords": [
+    "alerta",
+    "alert",
+    "callout",
+    "aviso",
+    "bootstrap"
+  ],
+  "textdomain": "periodic-alert-callout",
+  "attributes": {
+    "alertType": {
+      "type": "string",
+      "default": "info"
+    },
+    "alertTitle": {
+      "type": "string",
+      "default": "Aviso Importante"
+    },
+    "alertMessage": {
+      "type": "string",
+      "default": "Esta é uma mensagem informativa institucional para os usuários do site."
+    },
+    "iconClass": {
+      "type": "string",
+      "default": "fas fa-info-circle"
+    },
+    "isDismissible": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasBorderLeftHighlight": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "anchor": true
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "periodic-testimonials",
+  "version": "1.0.0",
+  "description": "Bloco Gutenberg de Depoimentos responsivo com cards Bootstrap 5, classificação por estrelas Font Awesome 6, fotos de perfil e suporte WYSIWYG nativo.",
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.1.0",
+    "sass": "^1.83.4"
+  }
+}

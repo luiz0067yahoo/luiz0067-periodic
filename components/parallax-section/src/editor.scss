@@ -1,0 +1,46 @@
+.luiz0067-parallax-section-block {
+	&.no-bg-image {
+		background-color: #1e293b;
+		border: 2px dashed #475569;
+		border-radius: 8px;
+	}
+
+	.luiz0067-parallax-editor-notice {
+		position: absolute;
+		bottom: 12px;
+		right: 16px;
+		background: rgba(15, 23, 42, 0.85);
+		color: #94a3b8;
+		font-size: 11px;
+		padding: 4px 10px;
+		border-radius: 4px;
+		backdrop-filter: blur(4px);
+		z-index: 5;
+		pointer-events: none;
+	}
+}
+
+.luiz0067-tab-panel {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e2e8f0;
+		margin-bottom: 15px;
+
+		.components-button {
+			flex: 1;
+			text-align: center;
+			justify-content: center;
+			padding: 8px 12px;
+			font-size: 12px;
+			font-weight: 500;
+			border-radius: 0;
+			border-bottom: 2px solid transparent;
+
+			&.active-tab {
+				color: var(--wp-admin-theme-color, #007cba);
+				border-bottom-color: var(--wp-admin-theme-color, #007cba);
+				font-weight: 600;
+			}
+		}
+	}
+}

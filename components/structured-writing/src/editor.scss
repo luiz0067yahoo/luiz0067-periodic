@@ -1,0 +1,56 @@
+/**
+ * Editor-specific styles for Luiz0067 Structured Writing Block
+ */
+
+.wp-block-luiz0067-structured-writing {
+	.editor-section-card {
+		border: 1px dashed #cbd5e1;
+		border-radius: 8px;
+		background: #ffffff;
+		padding: 1rem;
+		margin-bottom: 1rem;
+
+		&:hover {
+			border-color: #3b82f6;
+		}
+	}
+
+	.editor-inline-label {
+		font-weight: 600;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #64748b;
+		margin-bottom: 0.25rem;
+	}
+
+	.editor-guidance-input {
+		font-size: 0.875rem;
+		color: #475569;
+		background-color: #f8fafc;
+		border: 1px solid #e2e8f0;
+		border-radius: 4px;
+		padding: 6px 10px;
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+
+	.template-badge {
+		font-size: 0.75rem;
+		padding: 0.35em 0.65em;
+		border-radius: 50rem;
+		background-color: #e0f2fe;
+		color: #0369a1;
+		font-weight: 600;
+	}
+}
+
+.components-panel__body {
+	.section-item-control {
+		background: #f8fafc;
+		border: 1px solid #e2e8f0;
+		border-radius: 6px;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+}

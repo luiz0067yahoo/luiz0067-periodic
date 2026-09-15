@@ -1,0 +1,90 @@
+{
+  "translation-revision-date": "2026-09-13 19:00:00+0000",
+  "generator": "WP-CLI",
+  "source": "periodic-image-editor",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic Image Editor": [
+        "Periodic Image Editor"
+      ],
+      "Mídia e Seleção": [
+        "Media & Selection"
+      ],
+      "Zoom e Rotação": [
+        "Zoom & Rotation"
+      ],
+      "Posicionamento X / Y": [
+        "X / Y Positioning"
+      ],
+      "Seleção de Imagem": [
+        "Image Selection"
+      ],
+      "Selecionar Imagem": [
+        "Select Image"
+      ],
+      "Trocar Imagem": [
+        "Replace Image"
+      ],
+      "Remover Imagem": [
+        "Remove Image"
+      ],
+      "Texto Alternativo (Alt Text)": [
+        "Alternative Text (Alt Text)"
+      ],
+      "Dimensões e Moldura": [
+        "Dimensions & Frame"
+      ],
+      "Altura do Contêiner": [
+        "Container Height"
+      ],
+      "Cantos Arredondados (Bootstrap 5)": [
+        "Rounded Corners (Bootstrap 5)"
+      ],
+      "Sombra (Bootstrap 5)": [
+        "Shadow (Bootstrap 5)"
+      ],
+      "Escala e Zoom": [
+        "Scale & Zoom"
+      ],
+      "Fator de Zoom": [
+        "Zoom Factor"
+      ],
+      "Giro e Rotação": [
+        "Rotation & Turn"
+      ],
+      "Ângulo em Graus": [
+        "Angle in Degrees"
+      ],
+      "Giro Rápido:": [
+        "Quick Turn:"
+      ],
+      "Deslocamento nos Eixos X e Y": [
+        "X and Y Axis Offset"
+      ],
+      "Posição Horizontal (Eixo X)": [
+        "Horizontal Position (X Axis)"
+      ],
+      "Posição Vertical (Eixo Y)": [
+        "Vertical Position (Y Axis)"
+      ],
+      "Centralizar Imagem (X: 0, Y: 0)": [
+        "Center Image (X: 0, Y: 0)"
+      ],
+      "Comportamento (Object Fit)": [
+        "Behavior (Object Fit)"
+      ],
+      "Resetar Todas as Transformações": [
+        "Reset All Transforms"
+      ],
+      "Carregar Imagem": [
+        "Upload Image"
+      ]
+    }
+  }
+}

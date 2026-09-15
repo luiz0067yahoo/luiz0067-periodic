@@ -1,0 +1,370 @@
+/**
+ * periodic Buttons Banner - Frontend & Public Styles
+ *
+ * Estilos aplicados aos botões banner para o frontend público e para o canvas do editor Gutenberg.
+ * Totalmente compatível com a classe clássica .buttons-banner e .btn-m1 do projeto Prefeitura / customADM.
+ *
+ * @package Periodic_Buttons_Banner
+ * @version 1.0.0
+ */
+
+:root {
+	--periodic-bb-green: #01913a;
+	--periodic-bb-green-dark: #00702c;
+	--periodic-bb-blue: #233e95;
+	--periodic-bb-blue-dark: #172a6b;
+	--periodic-bb-gold: #d4ac0d;
+	--periodic-bb-white: #ffffff;
+	--periodic-bb-text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+	--periodic-bb-card-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+	--periodic-bb-card-hover-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+	--periodic-bb-radius: 8px;
+	--periodic-bb-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Container Principal (.block.buttons-banner)
+   ========================================================================== */
+.block.buttons-banner,
+.buttons-banner {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 28px 0;
+	padding: 0;
+}
+
+/* Alinhamentos */
+.buttons-banner.buttons-banner-align-center {
+	justify-content: center;
+}
+
+.buttons-banner.buttons-banner-align-left {
+	justify-content: flex-start;
+}
+
+.buttons-banner.buttons-banner-align-right {
+	justify-content: flex-end;
+}
+
+/* ==========================================================================
+   Grid de Colunas (1 a 5 botões por linha)
+   ========================================================================== */
+.buttons-banner .btn-m1 {
+	box-sizing: border-box;
+	text-decoration: none !important;
+	color: #ffffff;
+	flex: 1 1 calc(20% - 16px);
+	min-width: 210px;
+	max-width: 100%;
+}
+
+.buttons-banner-cols-1 .btn-m1 {
+	flex: 0 0 100%;
+	max-width: 680px;
+}
+
+.buttons-banner-cols-2 .btn-m1 {
+	flex: 1 1 calc(50% - 16px);
+}
+
+.buttons-banner-cols-3 .btn-m1 {
+	flex: 1 1 calc(33.333% - 16px);
+}
+
+.buttons-banner-cols-4 .btn-m1 {
+	flex: 1 1 calc(25% - 16px);
+}
+
+.buttons-banner-cols-5 .btn-m1 {
+	flex: 1 1 calc(20% - 16px);
+}
+
+/* ==========================================================================
+   Card do Botão (.btn-m1)
+   ========================================================================== */
+.btn-m1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 16px 14px 12px 14px;
+	border-radius: var(--periodic-bb-radius);
+	background: linear-gradient(135deg, var(--periodic-bb-green) 0%, var(--periodic-bb-blue) 100%);
+	box-shadow: var(--periodic-bb-card-shadow);
+	position: relative;
+	overflow: hidden;
+	transition: var(--periodic-bb-transition);
+	cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	min-height: 128px;
+}
+
+/* Linha superior de destaque translúcido */
+.btn-m1::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+	pointer-events: none;
+}
+
+/* Efeito Hover e Foco */
+.btn-m1:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--periodic-bb-card-hover-shadow);
+	filter: brightness(1.05);
+	color: #ffffff;
+}
+
+.btn-m1:focus-visible {
+	outline: 3px solid #ffcc00;
+	outline-offset: 3px;
+}
+
+.btn-m1:active {
+	transform: translateY(-1px);
+	box-shadow: var(--periodic-bb-card-shadow);
+}
+
+/* ==========================================================================
+   Layout Interno (Linhas, Logo e Descrição)
+   ========================================================================== */
+.btn-m1 .row {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.btn-m1 .row:first-child {
+	margin-bottom: 12px;
+}
+
+.btn-m1 .col-4 {
+	flex: 0 0 35%;
+	max-width: 35%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.btn-m1 .col-8 {
+	flex: 0 0 65%;
+	max-width: 65%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.btn-m1 .text-end {
+	text-align: right;
+}
+
+/* Logotipo / Imagem (.img_logo) */
+.btn-m1 .img_logo {
+	width: 48px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	background-size: contain;
+	position: relative;
+	transition: transform 0.25s ease;
+}
+
+.btn-m1:hover .img_logo {
+	transform: scale(1.08);
+}
+
+.btn-m1 .img_logo.no-image {
+	background-image: none;
+}
+
+/* Descrição com RichText (.rich-text) */
+.btn-m1 h2.rich-text,
+.btn-m1 .rich-text {
+	font-family: inherit;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #ffffff;
+	text-shadow: var(--periodic-bb-text-shadow);
+	margin: 0;
+	padding: 0;
+	line-height: 1.25;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* Linha Inferior: Sigla / Título (.sigla & .sigla-1) */
+.btn-m1 .sigla {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: auto;
+}
+
+.btn-m1 .sigla-1 {
+	display: block;
+	width: 100%;
+	min-width: 140px;
+	padding: 5px 8px;
+	background: rgba(255, 255, 255, 0.94);
+	color: #1a3365;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	font-weight: 800;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+	text-align: center;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.2s ease, color 0.2s ease;
+	line-height: 1.3;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.btn-m1:hover .sigla-1 {
+	background: #ffffff;
+	color: var(--periodic-bb-green);
+}
+
+/* ==========================================================================
+   Variações de Temas e Estilos
+   ========================================================================== */
+
+/* 1. Verde Institucional */
+.btn-m1.btn-style-institutional-green,
+.theme-institutional-green .btn-m1 {
+	background: linear-gradient(135deg, #01913a 0%, #005a24 100%);
+	border-left: 4px solid #48c774;
+}
+.theme-institutional-green .btn-m1:hover .sigla-1 {
+	color: #01913a;
+}
+
+/* 2. Azul Corporativo */
+.btn-m1.btn-style-corporate-blue,
+.theme-corporate-blue .btn-m1 {
+	background: linear-gradient(135deg, #233e95 0%, #0f1d4a 100%);
+	border-left: 4px solid #3273dc;
+}
+.theme-corporate-blue .btn-m1:hover .sigla-1 {
+	color: #233e95;
+}
+
+/* 3. Escuro / Dark Mode */
+.btn-m1.btn-style-dark,
+.theme-dark .btn-m1 {
+	background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+	border-left: 4px solid #01913a;
+	border-color: rgba(255, 255, 255, 0.08);
+}
+.theme-dark .btn-m1 .sigla-1 {
+	background: #34495e;
+	color: #ecf0f1;
+}
+.theme-dark .btn-m1:hover .sigla-1 {
+	background: #415b76;
+	color: #ffffff;
+}
+
+/* 4. Contorno / Outline */
+.btn-m1.btn-style-outline,
+.theme-outline .btn-m1 {
+	background: #ffffff;
+	border: 2px solid var(--periodic-bb-green);
+	color: #1a1a1a;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.theme-outline .btn-m1 h2.rich-text {
+	color: #1a1a1a;
+	text-shadow: none;
+}
+.theme-outline .btn-m1 .sigla-1 {
+	background: var(--periodic-bb-green);
+	color: #ffffff;
+}
+.theme-outline .btn-m1:hover {
+	background: #f8fafc;
+	border-color: var(--periodic-bb-blue);
+}
+.theme-outline .btn-m1:hover .sigla-1 {
+	background: var(--periodic-bb-blue);
+	color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsividade (Tablets e Dispositivos Móveis)
+   ========================================================================== */
+@media (max-width: 1024px) {
+	.buttons-banner .btn-m1 {
+		flex: 1 1 calc(33.333% - 16px);
+		min-width: 190px;
+	}
+	.btn-m1 h2.rich-text {
+		font-size: 1.05rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.buttons-banner .btn-m1 {
+		flex: 1 1 calc(50% - 12px);
+		min-width: 160px;
+		padding: 14px 10px 10px 10px;
+	}
+	.block.buttons-banner,
+	.buttons-banner {
+		gap: 12px;
+	}
+	.btn-m1 .img_logo {
+		width: 40px;
+		height: 40px;
+	}
+	.btn-m1 h2.rich-text {
+		font-size: 0.95rem;
+	}
+	.btn-m1 .sigla-1 {
+		font-size: 0.78rem;
+		padding: 4px 6px;
+	}
+}
+
+@media (max-width: 480px) {
+	.buttons-banner .btn-m1 {
+		flex: 1 1 100%;
+		min-width: 100%;
+	}
+	.block.buttons-banner,
+	.buttons-banner {
+		gap: 10px;
+	}
+}
+
+/* ==========================================================================
+   Acessibilidade e Impressão
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+	.btn-m1,
+	.btn-m1 .img_logo,
+	.btn-m1 .sigla-1 {
+		transition: none !important;
+		transform: none !important;
+	}
+}
+
+@media print {
+	.btn-m1 {
+		break-inside: avoid;
+		box-shadow: none !important;
+		border: 1px solid #333333 !important;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

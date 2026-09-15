@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/card-trainer",
+  "version": "1.0.0",
+  "title": "Periodic Card Trainer",
+  "category": "widgets",
+  "icon": "grid-view",
+  "description": "Interactive cards in 3 modes: Flashcard (with text input), Dialog Cards (3D flip), and Memory Game (paired grid with timer and moves).",
+  "keywords": [
+    "flashcard",
+    "dialog card",
+    "memory game",
+    "cards",
+    "quiz",
+    "bootstrap"
+  ],
+  "textdomain": "periodic-card-trainer",
+  "attributes": {
+    "gameMode": {
+      "type": "string",
+      "default": "flashcard"
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "id": "card-1",
+          "frontImage": "",
+          "frontText": "Bonjour",
+          "backText": "Hello / Olá",
+          "tip": "Greeting in French",
+          "audioUrl": ""
+        },
+        {
+          "id": "card-2",
+          "frontImage": "",
+          "frontText": "Merci",
+          "backText": "Thank you / Obrigado",
+          "tip": "Polite expression of gratitude",
+          "audioUrl": ""
+        },
+        {
+          "id": "card-3",
+          "frontImage": "",
+          "frontText": "Au revoir",
+          "backText": "Goodbye / Tchau",
+          "tip": "Used when parting or leaving",
+          "audioUrl": ""
+        },
+        {
+          "id": "card-4",
+          "frontImage": "",
+          "frontText": "S'il vous plaît",
+          "backText": "Please / Por favor",
+          "tip": "Used when asking politely",
+          "audioUrl": ""
+        }
+      ]
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "showTimer": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMoves": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardHeight": {
+      "type": "number",
+      "default": 260
+    },
+    "language": {
+      "type": "string",
+      "default": "pt-br"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

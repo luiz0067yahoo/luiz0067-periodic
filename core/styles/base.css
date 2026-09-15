@@ -1,0 +1,71 @@
+/**
+ * @fileoverview Periodic Base Styles & Reset Helpers
+ * @module Periodic.Styles.Base
+ */
+
+/* Scoped base resets without polluting global tags if isolated */
+.periodic-suite,
+.periodic-app {
+    font-family: var(--periodic-font-sans);
+    color: var(--periodic-text-main);
+    background-color: var(--periodic-bg-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+.periodic-suite *,
+.periodic-suite *::before,
+.periodic-suite *::after {
+    box-sizing: border-box;
+}
+
+/* Common utility classes */
+.periodic-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.periodic-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: var(--periodic-radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.periodic-badge--primary {
+    background-color: var(--periodic-primary-light);
+    color: var(--periodic-primary);
+}
+
+.periodic-badge--success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.periodic-badge--warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.periodic-card {
+    background-color: var(--periodic-bg-card);
+    border: 1px solid var(--periodic-border);
+    border-radius: var(--periodic-radius-lg);
+    box-shadow: var(--periodic-shadow-sm);
+    transition: box-shadow var(--periodic-transition-base), transform var(--periodic-transition-base);
+}
+
+.periodic-card:hover {
+    box-shadow: var(--periodic-shadow-md);
+}

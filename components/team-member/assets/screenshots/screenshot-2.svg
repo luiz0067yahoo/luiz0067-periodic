@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="panelShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#bg2)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 40)">
+    <rect x="0" y="0" width="180" height="28" rx="14" fill="#2563eb" fill-opacity="0.1" stroke="#2563eb"/>
+    <text x="90" y="19" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">INSPECTOR CONTROLS</text>
+    <text x="0" y="65" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800">Aba 1: Gerenciamento de Membros e MediaUpload</text>
+  </g>
+
+  <!-- Inspector Panel Frame -->
+  <g transform="translate(60, 130)" filter="url(#panelShadow)">
+    <rect width="880" height="520" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+    
+    <!-- Tab Bar -->
+    <rect width="880" height="52" rx="12" fill="#f8fafc"/>
+    <rect x="20" y="10" width="260" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="20" y="48" width="260" height="4" fill="#2563eb"/>
+    <text x="150" y="36" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Membros</text>
+
+    <text x="430" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Redes Sociais</text>
+    <text x="710" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Estilo da Foto e Cartão</text>
+
+    <!-- Content of Tab 1 -->
+    <g transform="translate(40, 80)">
+      <text x="0" y="25" fill="#1e293b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700">Gerenciar Membros da Equipe</text>
+      <text x="0" y="50" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14">Adicione os membros, defina fotos de perfil via biblioteca do WP e preencha os dados institucionais.</text>
+
+      <!-- Member Card in Panel -->
+      <rect x="0" y="70" width="800" height="270" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+      <!-- Header -->
+      <rect x="0" y="70" width="800" height="45" rx="8" fill="#f1f5f9"/>
+      <text x="20" y="98" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">1. Dra. Mariana Souza</text>
+      <rect x="670" y="78" width="28" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="684" y="97" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">▲</text>
+      <rect x="710" y="78" width="28" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="724" y="97" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">▼</text>
+      <rect x="750" y="78" width="28" height="28" rx="4" fill="#fee2e2" stroke="#fca5a5"/>
+      <text x="764" y="97" fill="#ef4444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="middle">✕</text>
+
+      <!-- Media Upload Preview -->
+      <circle cx="50" cy="160" r="28" fill="#cbd5e1"/>
+      <rect x="95" y="145" width="105" height="32" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="147" y="166" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Trocar Foto</text>
+      <text x="235" y="166" fill="#ef4444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Remover</text>
+
+      <!-- Form Inputs -->
+      <g transform="translate(20, 205)">
+        <text x="0" y="0" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">NOME COMPLETO</text>
+        <rect x="0" y="10" width="360" height="36" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="12" y="34" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Dra. Mariana Souza</text>
+
+        <text x="400" y="0" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">ESPECIALIDADE / CARGO</text>
+        <rect x="400" y="10" width="360" height="36" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="412" y="34" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Líder de Arquitetura de Software</text>
+
+        <text x="0" y="70" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">RESUMO BIOGRÁFICO</text>
+        <rect x="0" y="80" width="760" height="44" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="12" y="106" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Especialista em microsserviços e sistemas distribuídos de alta escala...</text>
+      </g>
+
+      <!-- Add Button -->
+      <rect x="0" y="365" width="800" height="42" rx="6" fill="#2563eb"/>
+      <text x="400" y="391" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">+ Adicionar Novo Membro</text>
+    </g>
+  </g>
+</svg>

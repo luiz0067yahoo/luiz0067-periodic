@@ -1,0 +1,265 @@
+{
+  "ui": {
+    "suite_title": "Suíte de Componentes Periodic",
+    "suite_subtitle": "61 componentes modulares unificados com isolamento BEM e internacionalização",
+    "search_placeholder": "Pesquisar componentes...",
+    "filter_all": "Todos",
+    "category_layout": "Layout & Estrutura",
+    "category_content": "Conteúdo & Tipografia",
+    "category_media": "Mídia & Galeria",
+    "category_interactive": "Interatividade & Engajamento",
+    "category_forms": "Formulários & Negócios",
+    "category_charts": "Gráficos & Dados",
+    "category_games": "Jogos & Educação",
+    "view_doc": "Ver Documentação",
+    "interactive_demo": "Demonstração Interativa",
+    "code_snippet": "Código de Exemplo",
+    "language_name": "Português (Brasil)"
+  },
+  "components": {
+    "accordion": {
+      "title": "Acordeão",
+      "description": "Painéis expansíveis e retráteis responsivos."
+    },
+    "ad-banner": {
+      "title": "Banner de Anúncio",
+      "description": "Faixa promocional para anúncios com CTA."
+    },
+    "advanced-banner": {
+      "title": "Banner Avançado",
+      "description": "Banner com gradientes, vídeos e efeitos dinâmicos."
+    },
+    "advanced-spacer": {
+      "title": "Espaçador Avançado",
+      "description": "Controle milimétrico de espaçamento responsivo."
+    },
+    "alert-callout": {
+      "title": "Alerta e Destaque",
+      "description": "Caixas de alerta e notificações de destaque."
+    },
+    "audio-embed": {
+      "title": "Player de Áudio",
+      "description": "Reprodutor de áudio HTML5 personalizável."
+    },
+    "big-button": {
+      "title": "Super Botão",
+      "description": "Botão de alta conversão com ícones e animações."
+    },
+    "breadcrumbs": {
+      "title": "Navegação Estruturada",
+      "description": "Trilha de navegação hierárquica com Schema.org."
+    },
+    "buttons-banner": {
+      "title": "Faixa de Botões",
+      "description": "Grupo organizado de botões para ações múltiplas."
+    },
+    "card-trainer": {
+      "title": "Treinador com Cartões",
+      "description": "Cartões de memorização e estudo interativo."
+    },
+    "card-wrapper": {
+      "title": "Envoltório de Cartão",
+      "description": "Container flexível para conteúdo estilizado."
+    },
+    "carousel-slides": {
+      "title": "Carrossel de Slides",
+      "description": "Slider fluido e responsivo para imagens e textos."
+    },
+    "carousel-slides-plus": {
+      "title": "Carrossel Pro",
+      "description": "Slider avançado com autoplay e gestos touch."
+    },
+    "code": {
+      "title": "Bloco de Código",
+      "description": "Exibição de código com destaque de sintaxe."
+    },
+    "cols-image": {
+      "title": "Colunas de Imagens",
+      "description": "Layout em colunas balanceadas para imagens."
+    },
+    "counter-stats": {
+      "title": "Contador Estatístico",
+      "description": "Contadores numéricos com contagem progressiva animada."
+    },
+    "custom-shapes": {
+      "title": "Formas Geométricas",
+      "description": "Divisores e formas SVG elegantes para seções."
+    },
+    "date-title-link": {
+      "title": "Data, Título e Link",
+      "description": "Item cronológico com título e link direto."
+    },
+    "date-title-link-file-upload": {
+      "title": "Link com Upload de Arquivo",
+      "description": "Item de download/upload documental com data."
+    },
+    "destack-buttons": {
+      "title": "Botões em Destaque",
+      "description": "Botões estilizados com efeitos de profundidade."
+    },
+    "drag-drop-engine": {
+      "title": "Motor de Arrastar e Soltar",
+      "description": "Interações fluidas de drag-and-drop sem conflitos."
+    },
+    "faq-schema": {
+      "title": "Perguntas Frequentes (FAQ)",
+      "description": "Seção de FAQ otimizada para SEO e Rich Snippets."
+    },
+    "form-builder": {
+      "title": "Construtor de Formulários",
+      "description": "Geração dinâmica de formulários com validação."
+    },
+    "gallery-lightbox": {
+      "title": "Galeria com Lightbox",
+      "description": "Galeria fotográfica com visualização em modal tela cheia."
+    },
+    "grafic-line-bar": {
+      "title": "Gráfico de Linha e Barras",
+      "description": "Visualização dinâmica de séries temporais e comparativos."
+    },
+    "grafic-pizza": {
+      "title": "Gráfico de Pizza",
+      "description": "Demonstração proporcional de fatias percentuais."
+    },
+    "grafic-torus": {
+      "title": "Gráfico Donut (Torus)",
+      "description": "Gráfico moderno em formato toroidal com indicadores."
+    },
+    "grid-flex": {
+      "title": "Grade Flexível",
+      "description": "Sistema de grid CSS e flexbox altamente responsivo."
+    },
+    "icons": {
+      "title": "Ícones & Vetores",
+      "description": "Biblioteca centralizada de ícones e pictogramas."
+    },
+    "image-destaque": {
+      "title": "Imagem em Destaque",
+      "description": "Tratamento e apresentação de imagem hero com sobreposição."
+    },
+    "image-editor": {
+      "title": "Editor de Imagens",
+      "description": "Filtros, cortes e ajustes de contraste no navegador."
+    },
+    "image-only": {
+      "title": "Imagem Otimizada",
+      "description": "Carregamento leve e lazy loading otimizado."
+    },
+    "interactive-utilities": {
+      "title": "Utilitários Interativos",
+      "description": "Conjunto de micro-helpers para eventos e UI."
+    },
+    "interative-software-simulator": {
+      "title": "Simulador de Software",
+      "description": "Demonstração interativa de telas e interfaces guiadas."
+    },
+    "maps": {
+      "title": "Mapas Interativos",
+      "description": "Exibição de mapas geográficos com marcadores."
+    },
+    "media-hotspot": {
+      "title": "Hotspots em Mídia",
+      "description": "Pontos clicáveis interativos sobre imagens e infográficos."
+    },
+    "modal-popup": {
+      "title": "Janela Modal / Popup",
+      "description": "Diálogos flutuantes acessíveis e isolados."
+    },
+    "parallax-section": {
+      "title": "Seção Parallax",
+      "description": "Efeito de rolagem tridimensional em camadas visuais."
+    },
+    "pdf-flipbook": {
+      "title": "Livro Digital (Flipbook)",
+      "description": "Visualizador de documentos com efeito de folhear páginas."
+    },
+    "pricing-table": {
+      "title": "Tabela de Preços",
+      "description": "Comparador de planos, benefícios e assinaturas."
+    },
+    "quiz-engine": {
+      "title": "Motor de Quiz e Provas",
+      "description": "Questionários interativos com pontuação e feedback imediato."
+    },
+    "scroll-top": {
+      "title": "Voltar ao Topo",
+      "description": "Botão flutuante suave para retornar ao início da página."
+    },
+    "section-container": {
+      "title": "Contêiner de Seção",
+      "description": "Bloco estrutural de largura e espaçamento padronizados."
+    },
+    "separator": {
+      "title": "Separador e Divisor",
+      "description": "Linhas decorativas e delimitadores visuais elegantes."
+    },
+    "smart-essay": {
+      "title": "Redação Inteligente",
+      "description": "Ambiente de escrita e redação com metas e métricas."
+    },
+    "structured-writing": {
+      "title": "Escrita Estruturada",
+      "description": "Guias e templates para elaboração de textos metódicos."
+    },
+    "table-of-contents": {
+      "title": "Índice de Conteúdos (Sumário)",
+      "description": "Geração automática de sumário a partir dos títulos da página."
+    },
+    "table-responsive": {
+      "title": "Tabela Responsiva",
+      "description": "Tabelas de dados fluidas com rolagem horizontal touch."
+    },
+    "tabs": {
+      "title": "Abas de Navegação",
+      "description": "Alternância instantânea de conteúdo em abas limpas."
+    },
+    "team-member": {
+      "title": "Membro da Equipe",
+      "description": "Perfil profissional com foto, cargo, biografia e redes sociais."
+    },
+    "testimonials": {
+      "title": "Depoimentos & Avaliações",
+      "description": "Exibição de avaliações de clientes com estrelas e citação."
+    },
+    "text-completion": {
+      "title": "Preenchimento de Texto",
+      "description": "Exercício de preenchimento de lacunas e gramática."
+    },
+    "thumbnail-pdf-link": {
+      "title": "Miniatura com Link para PDF",
+      "description": "Card com capa do documento para download ou visualização."
+    },
+    "thumbnail-pdf-link-multiple": {
+      "title": "Múltiplos Documentos PDF",
+      "description": "Grade de documentos e arquivos PDF para download."
+    },
+    "timeline-vertical": {
+      "title": "Linha do Tempo Vertical",
+      "description": "Histórico cronológico de marcos com ícones e conexões."
+    },
+    "title-text-block": {
+      "title": "Bloco de Título e Texto",
+      "description": "Composição tipográfica elegante para abertura de seções."
+    },
+    "topic-text-data": {
+      "title": "Tópico com Dados",
+      "description": "Apresentação estruturada de fatos, estatísticas e tópicos."
+    },
+    "topic-title-text": {
+      "title": "Tópico com Título",
+      "description": "Bloco com marcadores customizados e destaque conceitual."
+    },
+    "video-embed": {
+      "title": "Incorporador de Vídeo",
+      "description": "Player responsivo para YouTube, Vimeo e MP4 direto."
+    },
+    "voice-lab": {
+      "title": "Laboratório de Voz (Áudio/Voz)",
+      "description": "Gravação, reprodução e análise sonora interativa."
+    },
+    "word-games": {
+      "title": "Jogos de Palavras",
+      "description": "Jogos educativos de soletração, forca e vocabulário."
+    }
+  }
+}

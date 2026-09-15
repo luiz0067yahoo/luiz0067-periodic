@@ -1,0 +1,42 @@
+/**
+ * Estilos Frontend e Backend compartilhados para Luiz0067 Card Wrapper.
+ */
+
+.luiz0067-card-wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-clip: border-box;
+	transition: box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out;
+	margin-bottom: 1.5rem;
+
+	.luiz0067-card-header {
+		padding: 0.85rem 1.25rem;
+		margin-bottom: 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+		.card-title {
+			margin-bottom: 0;
+			font-size: 1.15rem;
+			font-weight: 600;
+			line-height: 1.35;
+		}
+	}
+
+	.luiz0067-card-body {
+		flex: 1 1 auto;
+		padding: 1.25rem;
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.luiz0067-card-footer {
+		padding: 0.75rem 1.25rem;
+		border-top: 1px solid rgba(0, 0, 0, 0.125);
+		font-size: 0.9rem;
+	}
+}

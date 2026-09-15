@@ -1,0 +1,168 @@
+{
+  "translation-revision-date": "2026-09-13 16:30:00+0000",
+  "generator": "WP-CLI",
+  "source": "src/edit.js",
+  "domain": "periodic-card-wrapper",
+  "locale_data": {
+    "periodic-card-wrapper": {
+      "": {
+        "domain": "periodic-card-wrapper",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic Card Wrapper": [
+        "Periodic Card Wrapper"
+      ],
+      "Bloco estrutural de Cartão Bootstrap 5 completo com suporte a InnerBlocks, cabeçalho, corpo e rodapé.": [
+        "Blocco strutturale per Schede Bootstrap 5 completo con supporto per InnerBlocks, intestazione, corpo e piè di pagina."
+      ],
+      "Adicione o conteúdo principal do cartão aqui (textos, botões, colunas, imagens)...": [
+        "Aggiungi qui il contenuto principale della scheda (testi, pulsanti, colonne, immagini)..."
+      ],
+      "Estrutura do Card": [
+        "Struttura della Scheda"
+      ],
+      "Estilo e Cores": [
+        "Stile e Colori"
+      ],
+      "Sombras e Efeitos": [
+        "Ombre ed Effetti"
+      ],
+      "Configurações de Estrutura": [
+        "Impostazioni della Struttura"
+      ],
+      "Exibir Cabeçalho (Header)": [
+        "Mostra Intestazione (Header)"
+      ],
+      "Cabeçalho do cartão ativo.": [
+        "Intestazione della scheda abilitata."
+      ],
+      "Cabeçalho do cartão oculto.": [
+        "Intestazione della scheda nascosta."
+      ],
+      "Exibir Rodapé (Footer)": [
+        "Mostra Piè di Pagina (Footer)"
+      ],
+      "Rodapé do cartão ativo.": [
+        "Piè di pagina della scheda abilitato."
+      ],
+      "Rodapé do cartão oculto.": [
+        "Piè di pagina della scheda nascosto."
+      ],
+      "Bordas e Cantos": [
+        "Bordi e Angoli"
+      ],
+      "Estilo de Borda (Bootstrap)": [
+        "Stile del Bordo (Bootstrap)"
+      ],
+      "Padrão (border)": [
+        "Predefinito (border)"
+      ],
+      "Sem Borda (border-0)": [
+        "Nessun Bordo (border-0)"
+      ],
+      "Primária (border-primary)": [
+        "Primario (border-primary)"
+      ],
+      "Secundária (border-secondary)": [
+        "Secondario (border-secondary)"
+      ],
+      "Sucesso (border-success)": [
+        "Successo (border-success)"
+      ],
+      "Perigo (border-danger)": [
+        "Pericolo (border-danger)"
+      ],
+      "Aviso (border-warning)": [
+        "Avviso (border-warning)"
+      ],
+      "Informativa (border-info)": [
+        "Informativo (border-info)"
+      ],
+      "Clara (border-light)": [
+        "Chiaro (border-light)"
+      ],
+      "Escura (border-dark)": [
+        "Scuro (border-dark)"
+      ],
+      "Arredondamento (Border Radius)": [
+        "Raggio del Bordo (Border Radius)"
+      ],
+      "Padrão (rounded)": [
+        "Predefinito (rounded)"
+      ],
+      "Reto (rounded-0)": [
+        "Ritto (rounded-0)"
+      ],
+      "Pequeno (rounded-1)": [
+        "Piccolo (rounded-1)"
+      ],
+      "Médio (rounded-2)": [
+        "Medio (rounded-2)"
+      ],
+      "Grande (rounded-3)": [
+        "Grande (rounded-3)"
+      ],
+      "Extra Grande (rounded-4)": [
+        "Extra Grande (rounded-4)"
+      ],
+      "Pílula (rounded-pill)": [
+        "Pillola (rounded-pill)"
+      ],
+      "Cores do Cartão": [
+        "Colori della Scheda"
+      ],
+      "Cor de Fundo do Cartão": [
+        "Colore di Sfondo della Scheda"
+      ],
+      "Cor do Texto do Cartão": [
+        "Colore del Testo della Scheda"
+      ],
+      "Cores do Cabeçalho": [
+        "Colori dell'Intestazione"
+      ],
+      "Fundo do Cabeçalho": [
+        "Sfondo dell'Intestazione"
+      ],
+      "Texto do Cabeçalho": [
+        "Testo dell'Intestazione"
+      ],
+      "Cores do Rodapé": [
+        "Colori del Piè di Pagina"
+      ],
+      "Fundo do Rodapé": [
+        "Sfondo del Piè di Pagina"
+      ],
+      "Texto do Rodapé": [
+        "Testo del Piè di Pagina"
+      ],
+      "Sombras Bootstrap 5": [
+        "Ombre Bootstrap 5"
+      ],
+      "Intensidade da Sombra": [
+        "Intensità dell'Ombra"
+      ],
+      "Sem Sombra (none)": [
+        "Nessuna Ombra (none)"
+      ],
+      "Sombra Suave (shadow-sm)": [
+        "Ombra Leggera (shadow-sm)"
+      ],
+      "Sombra Regular (shadow)": [
+        "Ombra Regolare (shadow)"
+      ],
+      "Sombra Pronunciada (shadow-lg)": [
+        "Ombra Marcata (shadow-lg)"
+      ],
+      "Aplica classes nativas de elevação do Bootstrap 5.": [
+        "Applica le classi native di elevazione di Bootstrap 5."
+      ],
+      "Título do Cartão...": [
+        "Titolo della Scheda..."
+      ],
+      "Texto ou notas do rodapé...": [
+        "Testo o note a piè di pagina..."
+      ]
+    }
+  }
+}

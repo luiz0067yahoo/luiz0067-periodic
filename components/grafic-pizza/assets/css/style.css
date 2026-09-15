@@ -1,0 +1,254 @@
+/**
+ * Public and Common Styles for periodic Build Grafics (Gráfico Pizza)
+ * Block Name: cms-adm/build-grafics
+ *
+ * @package Periodic_Build_Grafics
+ */
+
+/* Contêiner Geral */
+.all-grafics-element {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	margin: 25px 0;
+}
+
+.all-grafics-element * {
+	box-sizing: border-box;
+}
+
+/* Flexbox utilitários caso o tema não inclua Bootstrap */
+.all-grafics-element .d-flex {
+	display: flex !important;
+}
+
+.all-grafics-element .flex-wrap {
+	flex-wrap: wrap !important;
+}
+
+.all-grafics-element .flex-row {
+	flex-direction: row !important;
+}
+
+.all-grafics-element .justify-content-center {
+	justify-content: center !important;
+}
+
+.all-grafics-element .justify-content-between {
+	justify-content: space-between !important;
+}
+
+.all-grafics-element .align-items-start {
+	align-items: flex-start !important;
+}
+
+.all-grafics-element .align-items-center {
+	align-items: center !important;
+}
+
+.all-grafics-element .align-self-stretch {
+	align-self: stretch !important;
+}
+
+.all-grafics-element .w-100 {
+	width: 100% !important;
+}
+
+.all-grafics-element .text-center {
+	text-align: center !important;
+}
+
+.all-grafics-element .mx-auto {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.all-grafics-element .my-2 {
+	margin-top: 0.5rem !important;
+	margin-bottom: 0.5rem !important;
+}
+
+.all-grafics-element .mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.all-grafics-element .mb-3 {
+	margin-bottom: 1rem !important;
+}
+
+.all-grafics-element .rounded-circle {
+	border-radius: 50% !important;
+}
+
+/* Card do Gráfico Individual */
+.full-grafic-element {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 15px 10px;
+	flex: 0 1 auto;
+}
+
+.grafic-element {
+	position: relative;
+	width: 100%;
+	max-width: 380px;
+	margin: 0 auto;
+}
+
+.grafic-content-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	min-width: 280px;
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+/* Título e Subtítulo */
+.grafic-title {
+	width: 100%;
+	text-align: center;
+	font-size: 1.35rem;
+	font-weight: 700;
+	color: #222222;
+	margin: 0 0 5px 0;
+	line-height: 1.25;
+}
+
+.grafic-subtitle {
+	width: 100%;
+	text-align: center;
+	font-size: 0.95rem;
+	font-weight: 400;
+	color: #666666;
+	margin: 0 0 12px 0;
+}
+
+/* Legendas e Círculos de Porcentagem */
+.container-legends {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	width: 100%;
+	margin-bottom: 1rem;
+	min-height: 110px;
+}
+
+.legends-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 8px;
+	width: 100%;
+}
+
+.grafic-legend-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-width: 85px;
+	max-width: 110px;
+	text-align: center;
+}
+
+.percentage-circle {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.percentage-circle:hover {
+	transform: scale(1.04);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.percentage-circle h4 {
+	font-size: 15px;
+	font-weight: 700;
+	margin: 0;
+	color: #2b2b2b;
+	letter-spacing: -0.3px;
+}
+
+.legend-label {
+	font-size: 13px;
+	font-weight: 600;
+	margin: 6px 0 0 0;
+	text-align: center;
+	word-break: break-word;
+	line-height: 1.2;
+}
+
+/* Contêiner do Canvas Chart.js */
+.canvas-container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	max-width: 200px;
+	margin: 0 auto;
+}
+
+.canvas-grafic-pie {
+	display: block;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Divisores Visuais de Layout (Grid de 3) */
+.separator-vertical {
+	width: 2px;
+	min-height: 120px;
+	background-color: #e0e0e0;
+	margin: 0 10px;
+}
+
+.separator-horizontal {
+	width: 100%;
+	min-height: 2px;
+	background-color: #e0e0e0;
+	margin: 20px 0;
+}
+
+/* Fallback demo placeholder */
+.grafics-demo {
+	background: radial-gradient(circle, #f0f0f0 60%, #e0e0e0 100%);
+	border-radius: 50%;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+	.separator-vertical {
+		display: none !important;
+	}
+	.full-grafic-element {
+		width: 50%;
+		max-width: 50%;
+	}
+}
+
+@media (max-width: 650px) {
+	.full-grafic-element {
+		width: 100%;
+		max-width: 100%;
+		padding: 15px 0;
+	}
+	.percentage-circle {
+		width: 72px;
+		height: 72px;
+	}
+	.percentage-circle h4 {
+		font-size: 13px;
+	}
+}

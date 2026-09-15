@@ -1,0 +1,41 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-parallax-section",
+	"locale_data": {
+		"periodic-parallax-section": {
+			"": {
+				"domain": "periodic-parallax-section",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=(n > 1);"
+			},
+			"Seção com Paralaxe": [ "Seção com Paralaxe" ],
+			"Container de seção moderno com efeito paralaxe nativo e fluido na imagem de fundo durante a rolagem.": [
+				"Container de seção moderno com efeito paralaxe nativo e fluido na imagem de fundo durante a rolagem."
+			],
+			"Layout": [ "Layout" ],
+			"Fundo": [ "Fundo" ],
+			"Sobreposição": [ "Sobreposição" ],
+			"Configurações de Layout & Espaçamento": [ "Configurações de Layout & Espaçamento" ],
+			"Tipo de Container (Bootstrap 5)": [ "Tipo de Container (Bootstrap 5)" ],
+			"Container Padrão (container)": [ "Container Padrão (container)" ],
+			"Container Fluido (container-fluid)": [ "Container Fluido (container-fluid)" ],
+			"Sem Container (100% largura)": [ "Sem Container (100% largura)" ],
+			"Alinhamento Vertical do Conteúdo": [ "Alinhamento Vertical do Conteúdo" ],
+			"Alinhamento Horizontal do Conteúdo": [ "Alinhamento Horizontal do Conteúdo" ],
+			"Altura Mínima (Desktop)": [ "Altura Mínima (Desktop)" ],
+			"Altura Mínima (Mobile)": [ "Altura Mínima (Mobile)" ],
+			"Espaçamento Superior (Padding Top em px)": [ "Espaçamento Superior (Padding Top em px)" ],
+			"Espaçamento Inferior (Padding Bottom em px)": [ "Espaçamento Inferior (Padding Bottom em px)" ],
+			"Imagem de Fundo e Efeito Paralaxe": [ "Imagem de Fundo e Efeito Paralaxe" ],
+			"Imagem de Fundo em Alta Resolução": [ "Imagem de Fundo em Alta Resolução" ],
+			"Ponto Focal da Imagem": [ "Ponto Focal da Imagem" ],
+			"Velocidade do Paralaxe": [ "Velocidade do Paralaxe" ],
+			"Direção do Efeito": [ "Direção do Efeito" ],
+			"Camada de Sobreposição (Overlay)": [ "Camada de Sobreposição (Overlay)" ],
+			"Cor da Sobreposição": [ "Cor da Sobreposição" ],
+			"Opacidade da Sobreposição": [ "Opacidade da Sobreposição" ],
+			"Modo de Mesclagem (Blend Mode)": [ "Modo de Mesclagem (Blend Mode)" ]
+		}
+	}
+}

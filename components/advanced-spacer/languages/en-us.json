@@ -1,0 +1,49 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-spacer",
+	"locale_data": {
+		"periodic-advanced-spacer": {
+			"": {
+				"domain": "periodic-advanced-spacer",
+				"lang": "en_US",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Espaçador Avançado Responsivo": [ "Responsive Advanced Spacer" ],
+			"Espaçador vertical responsivo com controle de altura por dispositivo e opções de visibilidade do Bootstrap 5.": [
+				"Responsive vertical spacer with per-device height control and Bootstrap 5 visibility options."
+			],
+			"Alturas": [ "Heights" ],
+			"Visibilidade": [ "Visibility" ],
+			"Linha Divisória": [ "Divider Line" ],
+			"Alturas por Dispositivo": [ "Heights per Device" ],
+			"Simulação Visual no Editor": [ "Visual Simulation in Editor" ],
+			"Altura no Desktop (≥ 992px)": [ "Desktop Height (≥ 992px)" ],
+			"Altura no Tablet (768px a 991px)": [ "Tablet Height (768px to 991px)" ],
+			"Altura no Mobile (< 768px)": [ "Mobile Height (< 768px)" ],
+			"Regras de Visibilidade (Bootstrap 5)": [ "Visibility Rules (Bootstrap 5)" ],
+			"Ocultar no Desktop (d-lg-none)": [ "Hide on Desktop (d-lg-none)" ],
+			"Ocultar no Tablet": [ "Hide on Tablet" ],
+			"Ocultar no Mobile (d-none d-sm-block)": [ "Hide on Mobile (d-none d-sm-block)" ],
+			"Estilização da Linha Divisória": [ "Divider Line Styling" ],
+			"Estilo da Linha": [ "Line Style" ],
+			"Nenhuma (Apenas Espaço)": [ "None (Space Only)" ],
+			"Linha Sólida": [ "Solid Line" ],
+			"Linha Tracejada (Dashed)": [ "Dashed Line" ],
+			"Linha Pontilhada (Dotted)": [ "Dotted Line" ],
+			"Gradiente de Luxo": [ "Luxury Gradient" ],
+			"Cor da Linha": [ "Line Color" ],
+			"Espessura da Linha (px)": [ "Line Thickness (px)" ],
+			"Largura da Linha (%)": [ "Line Width (%)" ],
+			"Alinhamento da Linha": [ "Line Alignment" ],
+			"Esquerda": [ "Left" ],
+			"Centralizado": [ "Center" ],
+			"Direita": [ "Right" ],
+			"Ícone Decorativo Central": [ "Center Decorative Icon" ],
+			"Nenhum": [ "None" ],
+			"Estrela (★)": [ "Star (★)" ],
+			"Diamante (◆)": [ "Diamond (◆)" ],
+			"Círculo (●)": [ "Circle (●)" ]
+		}
+	}
+}

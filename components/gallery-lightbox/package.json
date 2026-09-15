@@ -1,0 +1,27 @@
+{
+  "name": "periodic-gallery-lightbox",
+  "version": "1.0.0",
+  "description": "Galeria de imagens responsiva com popup lightbox em tela cheia estilo LC-Lightbox em Vanilla JS, Bootstrap 5 e Font Awesome 6.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "gallery",
+    "lightbox",
+    "bootstrap",
+    "font-awesome"
+  ],
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@wordpress/scripts": "^27.9.0"
+  }
+}

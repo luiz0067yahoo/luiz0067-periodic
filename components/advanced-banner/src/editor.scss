@@ -1,0 +1,21 @@
+.luiz0067-advanced-banner-block {
+	.luiz0067-banner-placeholder-notice {
+		position: absolute;
+		bottom: 12px;
+		right: 16px;
+		background: rgba(15, 23, 42, 0.85);
+		color: #cbd5e1;
+		font-size: 11px;
+		padding: 4px 10px;
+		border-radius: 4px;
+		backdrop-filter: blur(4px);
+		z-index: 5;
+		pointer-events: none;
+	}
+
+	.luiz0067-banner-title:focus,
+	.luiz0067-banner-subtitle:focus {
+		outline: 1px dashed rgba(255, 255, 255, 0.5);
+		outline-offset: 4px;
+	}
+}

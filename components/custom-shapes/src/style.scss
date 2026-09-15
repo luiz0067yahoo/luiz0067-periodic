@@ -1,0 +1,41 @@
+.luiz0067-custom-shapes-section {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	box-sizing: border-box;
+
+	.luiz0067-shape-divider {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		line-height: 0;
+		pointer-events: none;
+		transition: transform 0.2s ease, opacity 0.2s ease;
+
+		&.luiz0067-shape-top {
+			top: 0;
+		}
+
+		&.luiz0067-shape-bottom {
+			bottom: 0;
+		}
+
+		.luiz0067-shape-svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.luiz0067-shape-content-wrapper {
+		position: relative;
+		z-index: 3;
+		width: 100%;
+
+		.container,
+		.container-fluid {
+			width: 100%;
+		}
+	}
+}

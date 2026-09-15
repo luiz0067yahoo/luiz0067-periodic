@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Header / Badge -->
+  <g transform="translate(60, 50)">
+    <rect x="0" y="0" width="220" height="34" rx="17" fill="#2563eb" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="110" y="22" fill="#60a5fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1">GUTENBERG BLOCK</text>
+    <text x="0" y="75" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800">Periodic Team Member</text>
+    <text x="0" y="105" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16">Apresentação moderna de equipe com Bootstrap 5 e Font Awesome 6</text>
+  </g>
+
+  <!-- Card 1 -->
+  <g transform="translate(60, 200)" filter="url(#cardShadow)">
+    <rect width="330" height="370" rx="16" fill="#ffffff"/>
+    <circle cx="165" cy="85" r="55" fill="#cbd5e1"/>
+    <!-- Photo Avatar Silhouette -->
+    <circle cx="165" cy="72" r="22" fill="#94a3b8"/>
+    <path d="M 130 115 A 38 38 0 0 1 200 115 Z" fill="#94a3b8"/>
+    <circle cx="165" cy="85" r="55" fill="none" stroke="#2563eb" stroke-width="3"/>
+
+    <text x="165" y="175" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="700" text-anchor="middle">Dra. Mariana Souza</text>
+    <text x="165" y="200" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.5">LÍDER DE ARQUITETURA</text>
+    <text x="165" y="235" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">Especialista em microsserviços e</text>
+    <text x="165" y="255" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">sistemas distribuídos de alta escala.</text>
+
+    <!-- Social buttons -->
+    <line x1="30" y1="290" x2="300" y2="290" stroke="#f1f5f9" stroke-width="1.5"/>
+    <circle cx="115" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="115" y="330" fill="#0284c7" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">in</text>
+    <circle cx="165" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="165" y="330" fill="#0f172a" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">git</text>
+    <circle cx="215" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="215" y="330" fill="#ea580c" font-family="'Font Awesome 6 Free', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">@</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(435, 200)" filter="url(#cardShadow)">
+    <rect width="330" height="370" rx="16" fill="#ffffff"/>
+    <circle cx="165" cy="85" r="55" fill="#e2e8f0"/>
+    <circle cx="165" cy="72" r="22" fill="#64748b"/>
+    <path d="M 130 115 A 38 38 0 0 1 200 115 Z" fill="#64748b"/>
+    <circle cx="165" cy="85" r="55" fill="none" stroke="#3b82f6" stroke-width="3"/>
+
+    <text x="165" y="175" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="700" text-anchor="middle">Prof. Carlos Eduardo</text>
+    <text x="165" y="200" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.5">INSTRUTOR UX/UI DESIGN</text>
+    <text x="165" y="235" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">Pesquisador de interação e interfaces</text>
+    <text x="165" y="255" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">com foco em acessibilidade digital.</text>
+
+    <!-- Social buttons -->
+    <line x1="30" y1="290" x2="300" y2="290" stroke="#f1f5f9" stroke-width="1.5"/>
+    <circle cx="115" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="115" y="330" fill="#0284c7" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">in</text>
+    <circle cx="165" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="165" y="330" fill="#0f172a" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">X</text>
+    <circle cx="215" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="215" y="330" fill="#16a34a" font-family="'Font Awesome 6 Free', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">web</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(810, 200)" filter="url(#cardShadow)">
+    <rect width="330" height="370" rx="16" fill="#ffffff"/>
+    <circle cx="165" cy="85" r="55" fill="#cbd5e1"/>
+    <circle cx="165" cy="72" r="22" fill="#94a3b8"/>
+    <path d="M 130 115 A 38 38 0 0 1 200 115 Z" fill="#94a3b8"/>
+    <circle cx="165" cy="85" r="55" fill="none" stroke="#2563eb" stroke-width="3"/>
+
+    <text x="165" y="175" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="700" text-anchor="middle">Beatriz Alencar</text>
+    <text x="165" y="200" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.5">ENGENHEIRA DE DADOS / IA</text>
+    <text x="165" y="235" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">Mestre em Computação com foco</text>
+    <text x="165" y="255" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">em modelos analíticos preditivos.</text>
+
+    <!-- Social buttons -->
+    <line x1="30" y1="290" x2="300" y2="290" stroke="#f1f5f9" stroke-width="1.5"/>
+    <circle cx="115" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="115" y="330" fill="#0284c7" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">in</text>
+    <circle cx="165" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="165" y="330" fill="#0f172a" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">git</text>
+    <circle cx="215" cy="325" r="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="215" y="330" fill="#db2777" font-family="'Font Awesome 6 Brands', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">ig</text>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/section-container",
+  "version": "1.0.0",
+  "title": "Section Container",
+  "category": "layout",
+  "icon": "layout",
+  "description": "Bloco de container e seção responsiva baseado em Bootstrap 5 com suporte a InnerBlocks para qualquer conteúdo.",
+  "keywords": [
+    "section",
+    "container",
+    "bootstrap",
+    "layout",
+    "wrapper"
+  ],
+  "textdomain": "periodic-section-container",
+  "attributes": {
+    "containerType": {
+      "type": "string",
+      "default": "container"
+    },
+    "htmlTag": {
+      "type": "string",
+      "default": "section"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "bgImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "bgImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "bgOverlayColor": {
+      "type": "string",
+      "default": "rgba(0, 0, 0, 0.4)"
+    },
+    "bgOverlayOpacity": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingTop": {
+      "type": "string",
+      "default": "py-4"
+    },
+    "paddingBottom": {
+      "type": "string",
+      "default": ""
+    },
+    "marginTop": {
+      "type": "string",
+      "default": "my-0"
+    },
+    "marginBottom": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": ""
+    },
+    "minHeight": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "innerBlocks": true,
+    "customClassName": true
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

@@ -1,0 +1,62 @@
+{
+  "locale": "it-IT",
+  "block": {
+    "title": "Utility Interattive Periodic",
+    "description": "Suite di blocchi interattivi: generatore dinamico di codici QR, Calendario dell'Avvento a 24 caselle con sblocco per data e finestre modali Bootstrap 5, e indizi AR con marcatori."
+  },
+  "utilityTypes": {
+    "qrCode": "Generatore di Codice QR",
+    "adventCalendar": "Calendario dell'Avvento (24 Giorni)",
+    "arTrigger": "Indizi con Marcatori AR"
+  },
+  "qrCode": {
+    "title": "Generatore Dinamico di Codice QR",
+    "labelContent": "Contenuto o URL del Codice QR",
+    "placeholderContent": "https://tuosito.it o qualsiasi testo...",
+    "labelFgColor": "Colore di Primo Piano",
+    "labelBgColor": "Colore di Sfondo",
+    "labelSize": "Dimensione (Pixel)",
+    "btnDownloadPng": "Scarica PNG",
+    "btnDownloadSvg": "Scarica SVG",
+    "btnCopy": "Copia Contenuto",
+    "copiedSuccess": "Contenuto copiato negli appunti!",
+    "livePreview": "Anteprima dal Vivo del Codice QR"
+  },
+  "adventCalendar": {
+    "title": "Calendario dell'Avvento Interattivo",
+    "subtitle": "Apri le caselle ogni giorno di dicembre per scoprire le sorprese!",
+    "day": "Giorno",
+    "doorLockedTitle": "Casella Bloccata!",
+    "doorLockedMessage": "Questa sorpresa si sbloccherà solo il",
+    "doorLockedRemainingDays": "Mancano {days} giorno/i allo sblocco!",
+    "doorUnlocked": "Sbloccato! Clicca per rivelare la sorpresa.",
+    "doorOpened": "Già Aperto",
+    "btnOpenDoor": "Apri la Sorpresa",
+    "btnCloseModal": "Chiudi",
+    "testDateLabel": "Simulatore di Data Corrente (Modalità Test):",
+    "resetProgress": "Reimposta Progressi",
+    "progressResetSuccess": "I progressi del calendario sono stati ripristinati!",
+    "doorsUnlockedCount": "caselle sbloccate finora"
+  },
+  "arTrigger": {
+    "title": "Indizi & Sfida di Realtà Aumentata",
+    "subtitle": "Punta la fotocamera verso il marcatore o risolvi l'indovinello per scoprire l'indizio.",
+    "markerInfo": "Marcatore Standard HIRO / QR di Tracciamento",
+    "btnViewMarker": "Visualizza Marcatore di Riferimento",
+    "btnPrintMarker": "Stampa Marcatore",
+    "btnScanCamera": "Attiva Scanner / Fotocamera AR",
+    "clueTitle": "Indizio Enigmatico",
+    "clueHint": "Suggerimento Speciale:",
+    "showHint": "Rivela Suggerimento",
+    "hideHint": "Nascondi Suggerimento",
+    "arStatusReady": "Pronto per il tracciamento",
+    "arModalTitle": "Marcatore di Riferimento per Realtà Aumentata"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore durante il caricamento dell'utility.",
+    "settings": "Impostazioni del Blocco",
+    "preview": "Anteprima",
+    "poweredBy": "Ecosistema Interattivo Periodic"
+  }
+}

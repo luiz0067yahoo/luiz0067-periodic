@@ -1,0 +1,127 @@
+.luiz0067-toc-block {
+	background-color: var(--luiz0067-toc-bg, #f8fafc);
+	border-radius: var(--luiz0067-toc-radius, 12px);
+	padding: 1.5rem;
+	margin: 1.75rem 0;
+	box-sizing: border-box;
+	transition: box-shadow 0.3s ease;
+
+	&.theme-card {
+		box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+		border: 1px solid #e2e8f0;
+	}
+
+	&.theme-minimal {
+		background: transparent !important;
+		border-left: 4px solid var(--luiz0067-toc-primary, #0d6efd);
+		border-radius: 0 !important;
+		padding: 0.5rem 0 0.5rem 1.25rem;
+	}
+
+	&.theme-flat {
+		border: 1px solid #f1f5f9;
+	}
+
+	.luiz0067-toc-header {
+		color: #0f172a;
+
+		.luiz0067-toc-icon {
+			color: var(--luiz0067-toc-primary, #0d6efd);
+		}
+
+		.luiz0067-toc-title {
+			font-size: 1.15rem;
+			color: inherit;
+		}
+
+		.luiz0067-toc-chevron {
+			transition: transform 0.25s ease;
+			color: #64748b;
+		}
+	}
+
+	.luiz0067-toc-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		.luiz0067-toc-item {
+			line-height: 1.4;
+
+			&.level-h2,
+			&.level-2 {
+				margin-left: 0;
+				font-weight: 600;
+			}
+
+			&.level-h3,
+			&.level-3 {
+				margin-left: 1.25rem;
+				font-size: 0.92rem;
+				font-weight: 500;
+			}
+
+			&.level-h4,
+			&.level-4 {
+				margin-left: 2.25rem;
+				font-size: 0.86rem;
+				font-weight: 400;
+			}
+		}
+
+		.luiz0067-toc-link {
+			color: #334155;
+			text-decoration: none;
+			transition: color 0.2s ease, transform 0.2s ease;
+			display: inline-block;
+
+			&:hover {
+				color: var(--luiz0067-toc-primary, #0d6efd);
+				transform: translateX(3px);
+			}
+
+			&.is-active {
+				color: var(--luiz0067-toc-primary, #0d6efd);
+				font-weight: 700;
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+		}
+	}
+
+	/* Estilos de Lista */
+	&.list-numbered .luiz0067-toc-list {
+		list-style-type: decimal;
+		padding-left: 1.25rem !important;
+
+		.luiz0067-toc-item {
+			display: list-item;
+		}
+	}
+
+	&.list-bullet .luiz0067-toc-list {
+		list-style-type: disc;
+		padding-left: 1.25rem !important;
+
+		.luiz0067-toc-item {
+			display: list-item;
+		}
+	}
+
+	&.list-plain .luiz0067-toc-list {
+		list-style: none;
+		padding-left: 0 !important;
+	}
+
+	/* Accordion Recolhido */
+	&.is-collapsed {
+		.luiz0067-toc-body {
+			display: none;
+		}
+
+		.luiz0067-toc-chevron {
+			transform: rotate(-90deg);
+		}
+	}
+}

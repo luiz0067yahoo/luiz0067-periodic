@@ -1,0 +1,201 @@
+{
+  "translation-revision-date": "2026-09-13 17:35:00-0300",
+  "generator": "WP-CLI/2.10.0",
+  "source": "periodic-table-responsive",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Tabela Responsiva (Bootstrap 5)": [
+        "Tabla Responsiva (Bootstrap 5)"
+      ],
+      "Tabela responsiva elegante com opções nativas do Bootstrap 5, edição inline estilo planilha e suporte ao Font Awesome 6.": [
+        "Elegante tabla responsiva con opciones nativas de Bootstrap 5, edición en línea estilo hoja de cálculo y soporte para Font Awesome 6."
+      ],
+      "Coluna": [
+        "Columna"
+      ],
+      "Item": [
+        "Artículo"
+      ],
+      "Categoria": [
+        "Categoría"
+      ],
+      "Preço": [
+        "Precio"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Hospedagem Cloud": [
+        "Alojamiento Cloud"
+      ],
+      "Serviços Web": [
+        "Servicios Web"
+      ],
+      "Ativo": [
+        "Activo"
+      ],
+      "Domínio .com.br": [
+        "Dominio Web"
+      ],
+      "Registro": [
+        "Registro"
+      ],
+      "Renovado": [
+        "Renovado"
+      ],
+      "Certificado SSL EV": [
+        "Certificado SSL EV"
+      ],
+      "Segurança": [
+        "Seguridad"
+      ],
+      "Instalado": [
+        "Instalado"
+      ],
+      "Adicionar Linha Abaixo": [
+        "Añadir Fila Debajo"
+      ],
+      "Adicionar Coluna à Direita": [
+        "Añadir Columna a la Derecha"
+      ],
+      "Remover Linha Selecionada": [
+        "Eliminar Fila Seleccionada"
+      ],
+      "Remover Coluna Selecionada": [
+        "Eliminar Columna Seleccionada"
+      ],
+      "Configurações da Tabela": [
+        "Configuración de la Tabla"
+      ],
+      "Estrutura da Tabela": [
+        "Estructura de la Tabla"
+      ],
+      "Estilos Bootstrap": [
+        "Estilos Bootstrap"
+      ],
+      "Cores do Cabeçalho": [
+        "Colores del Encabezado"
+      ],
+      "Gerenciar Linhas e Colunas": [
+        "Administrar Filas y Columnas"
+      ],
+      "Insira ou remova linhas e colunas na planilha diretamente aqui ou pela barra de ferramentas.": [
+        "Inserte o elimine filas y columnas en la hoja de cálculo directamente aquí o mediante la barra de herramientas."
+      ],
+      "Linhas": [
+        "Filas"
+      ],
+      "+ Adicionar Linha": [
+        "+ Añadir Fila"
+      ],
+      "Excluir Linha": [
+        "Eliminar Fila"
+      ],
+      "Colunas": [
+        "Columnas"
+      ],
+      "+ Adicionar Coluna": [
+        "+ Añadir Columna"
+      ],
+      "Excluir Coluna": [
+        "Eliminar Columna"
+      ],
+      "Restaurar Tabela de Exemplo": [
+        "Restaurar Tabla de Ejemplo"
+      ],
+      "Estilos Nativos do Bootstrap 5": [
+        "Estilos Nativos de Bootstrap 5"
+      ],
+      "Linhas Alternadas (Striped)": [
+        "Filas Alternadas (Striped)"
+      ],
+      "Aplica classe .table-striped para diferenciar linhas consecutivas com tons suaves.": [
+        "Aplica la clase .table-striped para diferenciar filas consecutivas con tonos suaves."
+      ],
+      "Efeito ao Passar o Mouse (Hover)": [
+        "Efecto al Pasar el Cursor (Hover)"
+      ],
+      "Aplica classe .table-hover para destacar a linha sob o cursor.": [
+        "Aplica la clase .table-hover para resaltar la fila al pasar el cursor."
+      ],
+      "Bordas em Todas as Células (Bordered)": [
+        "Bordes en Todas las Celdas (Bordered)"
+      ],
+      "Aplica classe .table-bordered exibindo moldura e divisórias nítidas.": [
+        "Aplica la clase .table-bordered mostrando bordes definidos en todos los lados."
+      ],
+      "Todas as tabelas são automaticamente envolvidas no container responsivo .table-responsive.": [
+        "Todas las tablas se envuelven automáticamente en el contenedor responsivo .table-responsive."
+      ],
+      "Tema do Cabeçalho (thead)": [
+        "Tema del Encabezado (thead)"
+      ],
+      "Selecione a Cor / Tema do Cabeçalho": [
+        "Seleccione Color / Tema del Encabezado"
+      ],
+      "Padrão do Tema": [
+        "Predeterminado del Tema"
+      ],
+      "Escuro (Dark)": [
+        "Oscuro (Dark)"
+      ],
+      "Azul Primário (Primary)": [
+        "Azul Primario (Primary)"
+      ],
+      "Cinza Secundário (Secondary)": [
+        "Gris Secundario (Secondary)"
+      ],
+      "Verde Sucesso (Success)": [
+        "Verde Éxito (Success)"
+      ],
+      "Vermelho Alerta (Danger)": [
+        "Rojo Peligro (Danger)"
+      ],
+      "Amarelo Aviso (Warning)": [
+        "Amarillo Advertencia (Warning)"
+      ],
+      "Ciano Informativo (Info)": [
+        "Cian Informativo (Info)"
+      ],
+      "Claro (Light)": [
+        "Claro (Light)"
+      ],
+      "Define o contraste e a cor temática do cabeçalho de acordo com a paleta do Bootstrap 5.": [
+        "Define el contraste y el color temático del encabezado de acuerdo con la paleta de Bootstrap 5."
+      ],
+      "Paleta Visual:": [
+        "Paleta Visual:"
+      ],
+      "Tabela Responsiva Bootstrap 5": [
+        "Tabla Responsiva Bootstrap 5"
+      ],
+      "Adicionar Coluna": [
+        "Añadir Columna"
+      ],
+      "Adicionar Linha": [
+        "Añadir Fila"
+      ],
+      "Cabeçalho...": [
+        "Encabezado..."
+      ],
+      "Excluir esta coluna": [
+        "Eliminar esta columna"
+      ],
+      "Texto...": [
+        "Texto..."
+      ],
+      "Excluir esta linha": [
+        "Eliminar esta fila"
+      ],
+      "Dica: Clique em qualquer célula para editar seu conteúdo inline com suporte a formatação.": [
+        "Consejo: Haga clic en cualquier celda para editar su contenido en línea con soporte de formato."
+      ]
+    }
+  }
+}

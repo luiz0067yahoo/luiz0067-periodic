@@ -1,0 +1,45 @@
+{
+  "translation-revision-date": "2026-09-11 21:00:00-03:00",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/blocks/image-destaque.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Imagem de Destaque": ["Immagine in Evidenza"],
+      "Exibe uma imagem principal ou banner promocional em destaque com suporte a link, legenda e acessibilidade.": ["Visualizza un'immagine principale o un banner promozionale in evidenza con supporto per link, didascalia e accessibilità."],
+      "imagem": ["immagine"],
+      "banner": ["banner"],
+      "destaque": ["evidenza"],
+      "Portal Institucional e Serviços Municipais": ["Portale Istituzionale e Servizi Comunali"],
+      "Campanha Oficial de Desenvolvimento e Infraestrutura 2026": ["Campagna Ufficiale per lo Sviluppo e le Infrastrutture 2026"],
+      "Configurações de Link": ["Impostazioni Link"],
+      "URL de Destino": ["URL di Destinazione"],
+      "Insira a URL que será aberta quando o usuário clicar na imagem.": ["Inserisci l'URL che verrà aperto quando l'utente fa clic sull'immagine."],
+      "Abrir em Nova Aba": ["Apri in una Nuova Scheda"],
+      "O link será aberto em uma nova aba do navegador.": ["Il collegamento si aprirà in una nuova scheda del browser."],
+      "O link será aberto na mesma aba.": ["Il collegamento si aprirà nella stessa scheda."],
+      "Acessibilidade e SEO": ["Accessibilità e SEO"],
+      "Texto Alternativo (Alt Text)": ["Testo Alternativo (Alt Text)"],
+      "Descreva a imagem para leitores de tela": ["Descrivi l'immagine per gli screen reader"],
+      "Essencial para acessibilidade digital e otimização para motores de busca.": ["Essenziale per l'accessibilità web e l'ottimizzazione per i motori di ricerca."],
+      "Alinhamento e Exibição": ["Allineamento e Visualizzazione"],
+      "Alinhamento do Bloco": ["Allineamento del Blocco"],
+      "Alinhar ao Centro": ["Allinea al Centro"],
+      "Alinhar à Esquerda": ["Allinea a Sinistra"],
+      "Alinhar à Direita": ["Allinea a Destra"],
+      "Largura Total": ["Larghezza Massima"],
+      "Imagem de Destaque / Banner": ["Immagine in Evidenza / Banner"],
+      "Carregue ou selecione uma imagem de alta resolução na biblioteca de mídia.": ["Carica o seleziona un'immagine ad alta risoluzione dalla libreria multimediale."],
+      "Selecionar Imagem de Destaque": ["Seleziona Immagine in Evidenza"],
+      "Substituir": ["Sostituisci"],
+      "Remover": ["Rimuovi"],
+      "Imagem de destaque": ["Immagine in evidenza"],
+      "Adicione uma legenda ou título em destaque...": ["Aggiungi una didascalia o un título in evidenza..."]
+    }
+  }
+}

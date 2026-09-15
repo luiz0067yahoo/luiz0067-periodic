@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Voice Lab - Interactive Gutenberg Block Showcase</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Plugin Styles -->
+    <link rel="stylesheet" href="./build/style-index.css">
+    <link rel="stylesheet" href="./build/index.css">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --accent-cyan: #06b6d4;
+            --bg-canvas: #090d16;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .hero-banner {
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .showcase-tab-btn {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            color: #cbd5e1;
+            padding: 0.65rem 1.4rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .showcase-tab-btn:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(51, 65, 85, 0.8);
+        }
+
+        .showcase-tab-btn.active {
+            background: #4f46e5;
+            color: #ffffff;
+            border-color: #6366f1;
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.45);
+        }
+
+        .feature-chip {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .glow-card {
+            background: #ffffff;
+            color: #0f172a;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .api-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        .lang-flag-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e2e8f0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-flag-btn.active {
+            background: #2563eb;
+            border-color: #3b82f6;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+        }
+
+        .demo-sim-panel {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero-banner py-5 px-3">
+        <div class="container text-center">
+            <div class="d-inline-flex align-items-center gap-2 mb-3">
+                <span class="badge bg-indigo text-white px-3 py-2 rounded-pill shadow-sm" style="background: #4f46e5;">
+                    <i class="fa-solid fa-cube me-1"></i> WordPress Gutenberg Block Plugin
+                </span>
+                <span class="badge bg-emerald text-white px-3 py-2 rounded-pill shadow-sm" style="background: #059669;">
+                    <i class="fa-solid fa-check me-1"></i> Production Ready v1.0.0
+                </span>
+            </div>
+
+            <h1 class="display-4 fw-black mb-2 text-white">
+                <i class="fa-solid fa-microphone-lines text-primary me-2"></i>periodic-voice-lab
+            </h1>
+            <p class="lead text-secondary mx-auto mb-4" style="max-width: 780px;">
+                Bloco Gutenberg nativo para gravação de voz com visualizador de ondas sonoras, exportação em <strong>.wav</strong> (Web Audio API) e validador de pronúncia em tempo real com distância <strong>Levenshtein</strong> (Web Speech API).
+            </p>
+
+            <!-- Quick Meta Badges -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                <span class="feature-chip"><i class="fa-brands fa-chrome text-warning"></i> Web Audio API</span>
+                <span class="feature-chip"><i class="fa-solid fa-ear-listen text-info"></i> Web Speech API</span>
+                <span class="feature-chip"><i class="fa-solid fa-wave-square text-success"></i> Realtime AnalyserNode</span>
+                <span class="feature-chip"><i class="fa-solid fa-file-audio text-danger"></i> True PCM .WAV Generator</span>
+                <span class="feature-chip"><i class="fa-solid fa-calculator text-primary"></i> Levenshtein Similarity</span>
+                <span class="feature-chip"><i class="fa-solid fa-language text-purple"></i> 4+ Idiomas (i18n)</span>
+            </div>
+
+            <!-- Mode Switcher Tabs -->
+            <div class="d-inline-flex p-1 rounded-pill bg-dark border border-secondary-subtle gap-2">
+                <button type="button" class="showcase-tab-btn active" id="tab-mode-recorder" onclick="switchPreviewMode('recorder')">
+                    <i class="fa-solid fa-microphone me-2"></i> Modo A: Gravador & .WAV
+                </button>
+                <button type="button" class="showcase-tab-btn" id="tab-mode-recognition" onclick="switchPreviewMode('recognition')">
+                    <i class="fa-solid fa-bullseye me-2"></i> Modo B: Validador de Pronúncia
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Live Showcase -->
+    <main class="container py-5">
+        <div class="row justify-content-center g-4">
+            
+            <!-- Main Block Presentation Column -->
+            <div class="col-12 col-xl-9">
+                <div class="glow-card p-4 p-md-5">
+
+                    <!-- Showcase Controls Header -->
+                    <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom flex-wrap gap-3">
+                        <div>
+                            <span class="text-uppercase text-muted fw-bold small">Preview do Bloco no Frontend / Editor</span>
+                            <h3 class="fw-bold mb-0 text-dark" id="showcase-mode-heading">
+                                🎙️ Gravador de Voz do Aluno (.wav)
+                            </h3>
+                        </div>
+
+                        <!-- Language Switcher Simulation -->
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="small text-muted me-2 d-none d-sm-inline">Idioma:</span>
+                            <button type="button" class="lang-flag-btn active" onclick="changeShowcaseLang('pt-BR', 'O sol brilha na cidade maravilhosa.')">🇧🇷 PT</button>
+                            <button type="button" class="lang-flag-btn" onclick="changeShowcaseLang('en-US', 'The quick brown fox jumps over the lazy dog.')">🇺🇸 EN</button>
+                            <button type="button" class="lang-flag-btn" onclick="changeShowcaseLang('it-IT', 'La vita è bella e piena di sorprese.')">🇮🇹 IT</button>
+                            <button type="button" class="lang-flag-btn" onclick="changeShowcaseLang('es-ES', 'El rápido zorro marrón salta sobre el perro perezoso.')">🇪🇸 ES</button>
+                        </div>
+                    </div>
+
+                    <!-- Block Instance: MODE RECORDER (A) -->
+                    <div id="block-instance-recorder" class="voice-lab-block-wrapper">
+                        <div class="periodic-voice-lab-container mode-recorder" 
+                             data-mode="recorder" 
+                             data-prompt-phrase="The quick brown fox jumps over the lazy dog." 
+                             data-language="pt-BR" 
+                             data-max-time="30">
+                            
+                            <div class="card shadow-sm border-0 rounded-4 overflow-hidden voice-lab-wrapper">
+                                <!-- Card Header -->
+                                <div class="card-header bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill font-monospace">
+                                            <i class="fa-solid fa-microphone-lines me-1"></i> Periodic Voice Lab
+                                        </span>
+                                        <span class="badge bg-secondary-subtle text-secondary rounded-pill lang-badge" id="recorder-lang-badge">
+                                            pt-BR
+                                        </span>
+                                    </div>
+                                    <span class="badge rounded-pill px-3 py-2 bg-success-subtle text-success border border-success-subtle">
+                                        🎙️ Modo: Gravador de Áudio (.wav)
+                                    </span>
+                                </div>
+
+                                <div class="card-body p-4">
+                                    <!-- Title & Subtitle -->
+                                    <div class="mb-3">
+                                        <h4 class="fw-bold text-dark mb-1">Gravador de Voz do Aluno</h4>
+                                        <p class="text-muted small mb-0">
+                                            Capture sua fala pelo microfone, acompanhe a onda sonora ao vivo e exporte o arquivo de áudio puro em formato <strong>.wav</strong>.
+                                        </p>
+                                    </div>
+
+                                    <!-- Visualizer Box -->
+                                    <div class="visualizer-box position-relative rounded-4 p-3 mb-4 bg-dark shadow-inner text-center">
+                                        <div class="d-flex justify-content-between align-items-center text-white-50 px-2 mb-2 small font-monospace">
+                                            <span class="live-status-indicator d-flex align-items-center gap-2">
+                                                <span class="status-dot"></span>
+                                                <span class="status-text">Pronto para gravar</span>
+                                            </span>
+                                            <span class="time-display">
+                                                <span class="current-time">00:00</span> / <span class="max-time">00:30</span>
+                                            </span>
+                                        </div>
+
+                                        <div class="canvas-wrapper position-relative">
+                                            <canvas class="voice-lab-canvas w-100" height="95"></canvas>
+                                            <div class="canvas-placeholder-wave d-flex justify-content-center align-items-center gap-1 position-absolute top-50 start-50 translate-middle w-100">
+                                                <span class="text-white-50 small">
+                                                    <i class="fa-solid fa-microphone me-1"></i> Clique no botão vermelho de microfone para iniciar a captura
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress mt-2" style="height: 4px; background-color: rgba(255,255,255,0.1);">
+                                            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bootstrap 5 Buttons Controls -->
+                                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-2">
+                                        <!-- REC - btn btn-danger rounded-circle -->
+                                        <button type="button" class="btn btn-danger rounded-circle btn-rec shadow p-0 d-flex align-items-center justify-content-center" style="width: 58px; height: 58px;" title="Iniciar Gravação">
+                                            <i class="fa-solid fa-microphone fs-4"></i>
+                                        </button>
+
+                                        <!-- STOP -->
+                                        <button type="button" class="btn btn-secondary rounded-circle btn-stop shadow-sm p-0 d-flex align-items-center justify-content-center" style="width: 58px; height: 58px;" title="Parar Gravação" disabled>
+                                            <i class="fa-solid fa-stop fs-4"></i>
+                                        </button>
+
+                                        <!-- PLAY - btn btn-success -->
+                                        <button type="button" class="btn btn-success btn-play px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2" disabled>
+                                            <i class="fa-solid fa-play"></i>
+                                            <span class="btn-play-text">Ouvir Gravação</span>
+                                        </button>
+
+                                        <!-- DOWNLOAD WAV -->
+                                        <button type="button" class="btn btn-outline-primary btn-download-wav px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2" disabled>
+                                            <i class="fa-solid fa-download"></i>
+                                            <span>Baixar Áudio (.wav)</span>
+                                        </button>
+                                    </div>
+
+                                    <audio class="voice-lab-audio d-none" preload="auto"></audio>
+                                </div>
+
+                                <div class="card-footer bg-light-subtle border-top py-2 px-4 d-flex justify-content-between align-items-center text-muted small">
+                                    <span><i class="fa-solid fa-wave-square me-1"></i> Web Audio API & MediaRecorder</span>
+                                    <span><i class="fa-solid fa-file-code me-1"></i> 16-bit PCM RIFF Header (.wav)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Block Instance: MODE SPEECH RECOGNITION (B) -->
+                    <div id="block-instance-recognition" class="voice-lab-block-wrapper" style="display: none;">
+                        <div class="periodic-voice-lab-container mode-speech-recognition" 
+                             data-mode="speech-recognition" 
+                             data-prompt-phrase="The quick brown fox jumps over the lazy dog." 
+                             data-language="en-US" 
+                             data-max-time="30">
+                            
+                            <div class="card shadow-sm border-0 rounded-4 overflow-hidden voice-lab-wrapper">
+                                <!-- Card Header -->
+                                <div class="card-header bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill font-monospace">
+                                            <i class="fa-solid fa-bullseye me-1"></i> Periodic Voice Lab
+                                        </span>
+                                        <span class="badge bg-secondary-subtle text-secondary rounded-pill lang-badge" id="recognition-lang-badge">
+                                            en-US
+                                        </span>
+                                    </div>
+                                    <span class="badge rounded-pill px-3 py-2 bg-info-subtle text-info-emphasis border border-info-subtle">
+                                        🎯 Modo: Validador de Pronúncia (Levenshtein)
+                                    </span>
+                                </div>
+
+                                <div class="card-body p-4">
+                                    <!-- Title & Subtitle -->
+                                    <div class="mb-3">
+                                        <h4 class="fw-bold text-dark mb-1">Validador de Pronúncia em Tempo Real</h4>
+                                        <p class="text-muted small mb-0">
+                                            Leia a frase em voz alta. O sistema ouve pelo microfone e calcula a precisão exata da pronúncia através da distância de Levenshtein.
+                                        </p>
+                                    </div>
+
+                                    <!-- Target Phrase Box -->
+                                    <div class="target-phrase-card p-3 mb-4 rounded-3 border">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <span class="small fw-semibold text-primary text-uppercase">
+                                                <i class="fa-solid fa-bullseye me-1"></i> Frase Alvo:
+                                            </span>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill py-0 px-2 btn-speak-target" title="Ouvir referência em voz alta">
+                                                <i class="fa-solid fa-volume-high me-1"></i> Ouvir Exemplo
+                                            </button>
+                                        </div>
+                                        <div class="target-phrase-text fs-5 fw-bold text-dark" id="target-phrase-display">
+                                            The quick brown fox jumps over the lazy dog.
+                                        </div>
+                                    </div>
+
+                                    <!-- Visualizer Box -->
+                                    <div class="visualizer-box position-relative rounded-4 p-3 mb-4 bg-dark shadow-inner text-center">
+                                        <div class="d-flex justify-content-between align-items-center text-white-50 px-2 mb-2 small font-monospace">
+                                            <span class="live-status-indicator d-flex align-items-center gap-2">
+                                                <span class="status-dot"></span>
+                                                <span class="status-text">Pronto para ouvir</span>
+                                            </span>
+                                            <span class="time-display">
+                                                <span class="current-time">00:00</span> / <span class="max-time">00:30</span>
+                                            </span>
+                                        </div>
+
+                                        <div class="canvas-wrapper position-relative">
+                                            <canvas class="voice-lab-canvas w-100" height="95"></canvas>
+                                            <div class="canvas-placeholder-wave d-flex justify-content-center align-items-center gap-1 position-absolute top-50 start-50 translate-middle w-100">
+                                                <span class="text-white-50 small">
+                                                    <i class="fa-solid fa-microphone me-1"></i> Clique em REC e pronuncie a frase indicada
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress mt-2" style="height: 4px; background-color: rgba(255,255,255,0.1);">
+                                            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bootstrap 5 Buttons Controls -->
+                                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-3">
+                                        <button type="button" class="btn btn-danger rounded-circle btn-rec shadow p-0 d-flex align-items-center justify-content-center" style="width: 58px; height: 58px;" title="Começar a Falar">
+                                            <i class="fa-solid fa-microphone fs-4"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-secondary rounded-circle btn-stop shadow-sm p-0 d-flex align-items-center justify-content-center" style="width: 58px; height: 58px;" title="Finalizar" disabled>
+                                            <i class="fa-solid fa-stop fs-4"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-success btn-play px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2" disabled>
+                                            <i class="fa-solid fa-play"></i>
+                                            <span class="btn-play-text">Ouvir Gravação</span>
+                                        </button>
+                                    </div>
+
+                                    <audio class="voice-lab-audio d-none" preload="auto"></audio>
+
+                                    <!-- Speech Recognition & Levenshtein Results -->
+                                    <div class="recognition-results-area mt-4 p-3 rounded-4 bg-light border" style="display: block;">
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-12 col-md-8">
+                                                <div class="small fw-bold text-muted text-uppercase mb-1">
+                                                    <i class="fa-solid fa-ear-listen me-1 text-primary"></i> Transcrição Reconhecida:
+                                                </div>
+                                                <div class="transcription-text fs-5 p-3 bg-white rounded-3 border">
+                                                    The quick brown fox jumps over the lazy dog
+                                                </div>
+                                                <div class="words-diff-container mt-2 small">
+                                                    <div class="d-flex flex-wrap gap-1 align-items-center mt-2">
+                                                        <span class="text-muted small me-2">Palavras:</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">the ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">quick ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">brown ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">fox ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">jumps ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">over ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">the ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">lazy ✓</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">dog ✓</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-4 text-center border-start-md">
+                                                <div class="small fw-bold text-muted text-uppercase mb-1">
+                                                    Similaridade Levenshtein
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center justify-content-center">
+                                                    <div class="score-circle-wrapper position-relative my-2">
+                                                        <div class="score-percentage fs-1 fw-black text-success">98%</div>
+                                                    </div>
+                                                    <div class="score-feedback-badge badge rounded-pill px-3 py-2 bg-success text-white">
+                                                        Excelente Pronúncia! 🌟
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light-subtle border-top py-2 px-4 d-flex justify-content-between align-items-center text-muted small">
+                                    <span><i class="fa-solid fa-microphone-lines me-1"></i> Web Speech API (webkitSpeechRecognition)</span>
+                                    <span><i class="fa-solid fa-square-root-variable me-1"></i> Algoritmo de Similaridade Levenshtein</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Simulation Bar (Easy Testing) -->
+                    <div class="demo-sim-panel p-3 mt-4 text-white">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <span class="small fw-bold text-light">
+                                <i class="fa-solid fa-wand-magic-sparkles text-warning me-1"></i> Demonstração Instantânea de Scores:
+                            </span>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button type="button" class="btn btn-sm btn-outline-success" onclick="simulateSpeechResult('The quick brown fox jumps over the lazy dog', 98, 'Excelente Pronúncia! 🌟')">
+                                    Simular 98% (Perfeito)
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-info" onclick="simulateSpeechResult('The fast brown fox jumps over the lazy dog', 82, 'Muito Bom! 👍')">
+                                    Simular 82% (Bom)
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-warning" onclick="simulateSpeechResult('A brown dog jumps over something', 52, 'Bom Esforço! 🔁')">
+                                    Simular 52% (Praticar)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Features & Architecture Sidebar Column -->
+            <div class="col-12 col-xl-3">
+                <div class="card bg-dark border border-secondary-subtle rounded-4 p-4 shadow-sm mb-4">
+                    <h5 class="fw-bold text-white mb-3">
+                        <i class="fa-solid fa-sliders text-primary me-2"></i>Atributos do Bloco
+                    </h5>
+                    <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-white-50">
+                        <li>
+                            <strong class="text-white">labMode</strong>:
+                            <span class="api-pill ms-1 text-white bg-secondary">'recorder'</span> |
+                            <span class="api-pill ms-1 text-white bg-secondary">'speech-recognition'</span>
+                        </li>
+                        <li>
+                            <strong class="text-white">promptPhrase</strong>:
+                            <div class="text-white-50 fst-italic">Frase alvo para comparação</div>
+                        </li>
+                        <li>
+                            <strong class="text-white">language</strong>:
+                            <span class="api-pill ms-1 text-white bg-secondary">pt-BR</span>
+                            <span class="api-pill ms-1 text-white bg-secondary">en-US</span>
+                            <span class="api-pill ms-1 text-white bg-secondary">it-IT</span>
+                            <span class="api-pill ms-1 text-white bg-secondary">es-ES</span>
+                        </li>
+                        <li>
+                            <strong class="text-white">maxRecordingTime</strong>:
+                            <span class="api-pill ms-1 text-white bg-secondary">30s (configurável)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card bg-dark border border-secondary-subtle rounded-4 p-4 shadow-sm">
+                    <h5 class="fw-bold text-white mb-3">
+                        <i class="fa-solid fa-code text-success me-2"></i>APIs Nativas Utilizadas
+                    </h5>
+                    <div class="d-flex flex-column gap-3 small text-white-50">
+                        <div>
+                            <strong class="text-white d-block">Web Audio API</strong>
+                            Utiliza <code>AudioContext</code>, <code>AnalyserNode</code> para frequência/osciloscópio e conversão para buffer PCM WAV canônico.
+                        </div>
+                        <div>
+                            <strong class="text-white d-block">MediaRecorder API</strong>
+                            Captura sem perdas do fluxo de microfone em chunks contínuos.
+                        </div>
+                        <div>
+                            <strong class="text-white d-block">Web Speech API</strong>
+                            Reconhecimento contínuo de voz com <code>SpeechRecognition</code> / <code>webkitSpeechRecognition</code>.
+                        </div>
+                        <div>
+                            <strong class="text-white d-block">Levenshtein Matrix</strong>
+                            Cálculo de similaridade de edição de texto com pontuação percentual e análise tokenizada por palavras.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="./build/view.js"></script>
+    <script>
+        function switchPreviewMode(mode) {
+            const btnRecorder = document.getElementById('tab-mode-recorder');
+            const btnRecognition = document.getElementById('tab-mode-recognition');
+            const blockRecorder = document.getElementById('block-instance-recorder');
+            const blockRecognition = document.getElementById('block-instance-recognition');
+            const heading = document.getElementById('showcase-mode-heading');
+
+            if (mode === 'recorder') {
+                btnRecorder.classList.add('active');
+                btnRecognition.classList.remove('active');
+                blockRecorder.style.display = 'block';
+                blockRecognition.style.display = 'none';
+                heading.innerHTML = '🎙️ Gravador de Voz do Aluno (.wav)';
+            } else {
+                btnRecognition.classList.add('active');
+                btnRecorder.classList.remove('active');
+                blockRecorder.style.display = 'none';
+                blockRecognition.style.display = 'block';
+                heading.innerHTML = '🎯 Validador de Pronúncia (Levenshtein)';
+            }
+        }
+
+        function changeShowcaseLang(lang, phrase) {
+            document.querySelectorAll('.lang-flag-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const recBadge = document.getElementById('recorder-lang-badge');
+            const recogBadge = document.getElementById('recognition-lang-badge');
+            const targetPhraseEl = document.getElementById('target-phrase-display');
+            const containerRec = document.querySelector('#block-instance-recorder .periodic-voice-lab-container');
+            const containerRecog = document.querySelector('#block-instance-recognition .periodic-voice-lab-container');
+
+            if (recBadge) recBadge.textContent = lang;
+            if (recogBadge) recogBadge.textContent = lang;
+            if (targetPhraseEl) targetPhraseEl.textContent = phrase;
+
+            if (containerRec) {
+                containerRec.setAttribute('data-language', lang);
+            }
+            if (containerRecog) {
+                containerRecog.setAttribute('data-language', lang);
+                containerRecog.setAttribute('data-prompt-phrase', phrase);
+            }
+        }
+
+        function simulateSpeechResult(spokenText, score, feedback) {
+            switchPreviewMode('recognition');
+            const transcriptEl = document.querySelector('#block-instance-recognition .transcription-text');
+            const scoreEl = document.querySelector('#block-instance-recognition .score-percentage');
+            const badgeEl = document.querySelector('#block-instance-recognition .score-feedback-badge');
+            const diffEl = document.querySelector('#block-instance-recognition .words-diff-container');
+            const target = document.getElementById('target-phrase-display').textContent.trim();
+
+            if (transcriptEl) transcriptEl.textContent = spokenText;
+            if (scoreEl) {
+                scoreEl.textContent = score + '%';
+                scoreEl.className = 'score-percentage fs-1 fw-black ' + (score >= 85 ? 'text-success' : (score >= 70 ? 'text-primary' : (score >= 50 ? 'text-warning' : 'text-danger')));
+            }
+            if (badgeEl) {
+                badgeEl.textContent = feedback;
+                badgeEl.className = 'score-feedback-badge badge rounded-pill px-3 py-2 ' + (score >= 85 ? 'bg-success text-white' : (score >= 70 ? 'bg-primary text-white' : (score >= 50 ? 'bg-warning text-dark' : 'bg-danger text-white')));
+            }
+
+            // diff words
+            if (diffEl) {
+                const targetWords = target.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/);
+                const spokenWords = spokenText.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/);
+                let diffHtml = '<div class="d-flex flex-wrap gap-1 align-items-center mt-2">';
+                diffHtml += '<span class="text-muted small me-2">Palavras:</span>';
+
+                targetWords.forEach(word => {
+                    if (spokenWords.includes(word)) {
+                        diffHtml += `<span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">${word} ✓</span>`;
+                    } else {
+                        diffHtml += `<span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1">${word} ✗</span>`;
+                    }
+                });
+                diffHtml += '</div>';
+                diffEl.innerHTML = diffHtml;
+            }
+        }
+    </script>
+</body>
+</html>

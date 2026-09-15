@@ -1,0 +1,225 @@
+/**
+ * Editor-specific styles for Software Simulator Gutenberg Block
+ * custom/simulador-software
+ */
+
+.wp-block-custom-simulador-software {
+  /* Editor canvas container */
+  .sim-editor-container {
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    background: #f8fafc;
+    overflow: hidden;
+    transition: border-color 0.2s;
+
+    &.is-selected {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+  }
+
+  /* Editor Quick Steps Bar */
+  .sim-editor-steps-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #0f172a;
+    border-bottom: 1px solid #1e293b;
+    overflow-x: auto;
+
+    .sim-nav-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      margin-right: 6px;
+      white-space: nowrap;
+    }
+
+    .sim-nav-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+
+      &:hover {
+        background: #334155;
+        color: #ffffff;
+      }
+
+      &.is-active {
+        background: #2563eb;
+        border-color: #3b82f6;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+      }
+    }
+
+    .sim-nav-add-btn {
+      background: #10b981;
+      border: 1px solid #059669;
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      &:hover {
+        background: #059669;
+      }
+    }
+  }
+
+  /* Empty state */
+  .sim-editor-empty-state {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f1f5f9;
+    border-radius: 8px;
+    margin: 16px;
+
+    h3 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    p {
+      color: #64748b;
+      max-width: 480px;
+      margin: 0 auto 20px auto;
+    }
+
+    .components-button {
+      margin: 4px;
+    }
+  }
+
+  /* Editor Canvas Overlays */
+  .sim-editor-overlay-element {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    transition: all 0.15s ease;
+
+    &.type-click {
+      background: rgba(59, 130, 246, 0.25);
+      border: 2px dashed #2563eb;
+      color: #1d4ed8;
+
+      &:hover {
+        background: rgba(59, 130, 246, 0.4);
+      }
+
+      &.is-element-selected {
+        background: rgba(37, 99, 235, 0.45);
+        border: 2px solid #1d4ed8;
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+      }
+    }
+
+    &.type-input {
+      background: rgba(16, 185, 129, 0.25);
+      border: 2px solid #059669;
+      color: #065f46;
+
+      &:hover {
+        background: rgba(16, 185, 129, 0.4);
+      }
+
+      &.is-element-selected {
+        background: rgba(16, 185, 129, 0.45);
+        border: 2px solid #047857;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+      }
+    }
+
+    .sim-element-badge {
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+  }
+}
+
+/* Inspector Controls Styles */
+.sim-inspector-step-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 6px;
+
+  &.is-active-step {
+    border-color: #3b82f6;
+    background: #eff6fc;
+  }
+
+  .sim-step-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sim-step-actions {
+    display: flex;
+    gap: 4px;
+  }
+}
+
+.sim-inspector-element-card {
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 12px;
+
+  &.is-active-element {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px #2563eb;
+    background: #f0f7ff;
+  }
+
+  .sim-element-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    strong {
+      font-size: 13px;
+      color: #0f172a;
+    }
+  }
+}

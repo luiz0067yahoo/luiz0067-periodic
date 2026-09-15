@@ -1,0 +1,121 @@
+/**
+ * Estilos Específicos do Editor Gutenberg para o Bloco cols-image
+ * Text Domain: custom-adm
+ */
+
+/* Barra de Ações Superior nos Cards no Editor */
+.col-image-item-toolbar {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 10;
+	display: flex;
+	gap: 6px;
+	background: rgba(15, 23, 42, 0.75);
+	backdrop-filter: blur(6px);
+	padding: 4px;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.col-image-item-toolbar .components-button {
+	color: #ffffff !important;
+	background: rgba(255, 255, 255, 0.15) !important;
+	border: 1px solid rgba(255, 255, 255, 0.2) !important;
+	padding: 2px 6px !important;
+	min-width: 28px !important;
+	height: 28px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	border-radius: 4px !important;
+	transition: all 0.2s ease !important;
+}
+
+.col-image-item-toolbar .components-button:hover {
+	background: rgba(255, 255, 255, 0.3) !important;
+	transform: scale(1.05);
+}
+
+.col-image-item-toolbar .btn-action-camera:hover {
+	background: #0d6efd !important;
+	border-color: #0d6efd !important;
+}
+
+.col-image-item-toolbar .btn-action-remove:hover {
+	background: #dc3545 !important;
+	border-color: #dc3545 !important;
+}
+
+/* Estado de Card Sem Imagem */
+.col-image-card.has-no-image {
+	background-color: #1e293b;
+	border: 2px dashed #475569;
+}
+
+.col-image-placeholder {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #94a3b8;
+	z-index: 2;
+	pointer-events: none;
+	width: 80%;
+}
+
+.col-image-placeholder .dashicons {
+	font-size: 40px;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+.col-image-placeholder .placeholder-text {
+	display: block;
+	font-size: 0.85rem;
+}
+
+/* Campos de RichText no Editor */
+.col-image-content-wrap .col-image-title {
+	outline: none;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+	padding-bottom: 4px;
+}
+
+.col-image-content-wrap .col-image-title:focus {
+	border-bottom: 1px solid #38bdf8;
+}
+
+.col-image-content-wrap .col-image-description {
+	outline: none;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+	padding-bottom: 4px;
+}
+
+.col-image-content-wrap .col-image-description:focus {
+	border-bottom: 1px solid #38bdf8;
+}
+
+/* Botão de Adicionar Coluna Rápido */
+.cols-image-add-trigger-wrap {
+	margin-top: 1.25rem;
+	text-align: center;
+}
+
+.btn-add-column-quick {
+	border-style: dashed !important;
+	width: 100%;
+	justify-content: center !important;
+	padding: 0.75rem !important;
+	border-radius: 8px !important;
+	font-weight: 600 !important;
+}
+
+.w-100-button {
+	width: 100%;
+	justify-content: center;
+	margin-top: 8px;
+}

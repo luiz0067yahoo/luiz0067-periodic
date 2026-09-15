@@ -1,0 +1,195 @@
+# Copyright (C) 2026 Luiz Fernando Brogliatto Ferreira
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: luiz0067 Date Title Link File Upload 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/luiz0067yahoo/luiz0067-date-title-link-file-upload/issues\n"
+"Last-Translator: Luiz Fernando Brogliatto Ferreira\n"
+"Language-Team: Portuguese (Brazil)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-11T21:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: custom-adm\n"
+
+#: js/blocks/date-title-link-file-upload.js:145
+msgid "Data, Título, Link e Upload de Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:146
+msgid "Exibe publicações, editais ou documentos com data destacada, título descritivo, link e download de anexo."
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:149
+msgid "arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:150
+msgid "download"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:151
+msgid "edital"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:152
+msgid "pdf"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:153
+msgid "data"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:162
+msgid "Edital de Licitação"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:163
+msgid "Novo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:164
+msgid "Edital de Licitação Nº 042/2026 - Contratação de Serviços Especializados de TI"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:170
+msgid "Baixar Edital"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:189
+msgid "Download"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:237
+msgid "Arquivo e Download"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:255
+msgid "Arquivo:"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:258
+msgid "Tamanho:"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:268
+msgid "Substituir Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:278
+msgid "Remover"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:290
+msgid "Selecionar / Enviar Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:295
+msgid "URL Direta do Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:297
+msgid "URL preenchida automaticamente pelo upload ou informada manualmente."
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:301
+msgid "Nome de Exibição do Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:306
+msgid "Tamanho Formatado (ex: 2.5 MB)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:311
+msgid "Texto do Botão de Download"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:321
+msgid "Data e Metadados"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:325
+msgid "Data de Publicação"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:327
+msgid "Ex: 12/09/2026"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:331
+msgid "Categoria / Órgão Emissor (Caption)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:333
+msgid "Ex: Secretaria de Finanças"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:337
+msgid "Etiqueta em Destaque (Badge)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:339
+msgid "Ex: Novo, Retificado, Edital"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:347
+msgid "Link de Redirecionamento"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:351
+msgid "URL da Página ou Detalhes"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:354
+msgid "Link alternativo ou página interna de detalhes da publicação."
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:358
+msgid "Abrir links em nova aba (_blank)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:367
+msgid "Estilo de Exibição"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:371
+msgid "Modelo de Apresentação"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:374
+msgid "Cartão Moderno (Card)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:375
+msgid "Linha de Tabela / Lista (Row)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:397
+msgid "Data (DD/MM/AAAA)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:415
+msgid "Digite aqui o título descritivo do documento ou edital..."
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:428
+msgid "(Nenhum arquivo vinculado)"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:451
+msgid "Alterar Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:451
+msgid "Vincular Arquivo"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:467
+msgid "Acessar Página"
+msgstr ""
+
+#: js/blocks/date-title-link-file-upload.js:560
+msgid "Acessar"
+msgstr ""

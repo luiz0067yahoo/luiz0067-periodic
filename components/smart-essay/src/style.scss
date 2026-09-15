@@ -1,0 +1,120 @@
+/**
+ * Frontend & Editor Shared Styles for Luiz0067 Smart Essay
+ */
+
+.luiz0067-smart-essay-container {
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+	.smart-essay-card {
+		border-radius: 12px;
+		overflow: hidden;
+		transition: all 0.3s ease;
+		background: #ffffff;
+		box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+		.card-header {
+			background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+			border-bottom: none;
+
+			.essay-title {
+				letter-spacing: -0.01em;
+			}
+		}
+
+		.prompt-instructions-box {
+			background-color: #f8fafc;
+			border-left: 4px solid #0d6efd !important;
+			border-radius: 8px;
+
+			.prompt-content {
+				line-height: 1.6;
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.smart-essay-textarea {
+			border: 2px solid #e2e8f0;
+			border-radius: 8px;
+			padding: 14px;
+			font-size: 1rem;
+			line-height: 1.6;
+			color: #1e293b;
+			transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+			&:focus {
+				border-color: #0d6efd;
+				box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+				outline: none;
+			}
+		}
+
+		.essay-metrics-bar {
+			background: #f1f5f9;
+			border: 1px solid #e2e8f0;
+			border-radius: 8px;
+
+			.word-count-badge {
+				transition: all 0.3s ease;
+			}
+
+			.progress {
+				background-color: #e2e8f0;
+				border-radius: 6px;
+				overflow: hidden;
+
+				.essay-progress-bar {
+					transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+				}
+			}
+		}
+
+		.submit-essay-btn {
+			background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+			border: none;
+			border-radius: 8px;
+			transition: transform 0.15s ease, box-shadow 0.2s ease;
+
+			&:hover {
+				transform: translateY(-1px);
+				box-shadow: 0 6px 16px rgba(13, 110, 253, 0.25);
+			}
+
+			&:active {
+				transform: translateY(0);
+			}
+		}
+
+		.reset-essay-btn {
+			border-radius: 8px;
+			transition: all 0.2s ease;
+		}
+
+		/* Results Report Card */
+		.results-report-card {
+			border-radius: 10px;
+			animation: fadeInReport 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+			.list-group-item {
+				transition: background-color 0.2s ease;
+
+				&:hover {
+					background-color: #f8fafc;
+				}
+			}
+		}
+	}
+}
+
+@keyframes fadeInReport {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

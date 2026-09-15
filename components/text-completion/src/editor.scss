@@ -1,0 +1,113 @@
+/**
+ * Editor styles for luiz0067-text-completion
+ */
+
+.wp-block-luiz0067-text-completion {
+  .text-completion-editor-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  .text-completion-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .editor-raw-textarea {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background-color: #fcfdfe;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    min-height: 110px;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      background-color: #ffffff;
+    }
+  }
+
+  .live-preview-box {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+
+    .preview-gap-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0284c7;
+      background-color: #e0f2fe;
+      border: 1px solid #bae6fd;
+      border-radius: 6px;
+      margin: 0 2px;
+      vertical-align: baseline;
+      transition: transform 0.15s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        background-color: #bae6fd;
+      }
+
+      .gap-options {
+        color: #0369a1;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .audio-dictation-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.25rem;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+
+    audio {
+      flex-grow: 1;
+      height: 38px;
+    }
+  }
+
+  .syntax-guide-alert {
+    background: #fdfaf3;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #92400e;
+
+    code {
+      background: #fef3c7;
+      color: #78350f;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+  }
+}

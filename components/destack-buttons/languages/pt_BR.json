@@ -1,0 +1,138 @@
+{
+  "translation-revision-date": "2026-09-11 21:20:00+0000",
+  "generator": "destack-buttons-i18n-builder",
+  "source": "js/blocks/destack-buttons.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Destack Buttons (Botões de Destaque)": [
+        "Destack Buttons (Botões de Destaque)"
+      ],
+      "Exiba uma grade de botões e atalhos rápidos com ícones, títulos e links customizados.": [
+        "Exiba uma grade de botões e atalhos rápidos com ícones, títulos e links customizados."
+      ],
+      "destaque": [
+        "destaque"
+      ],
+      "botões": [
+        "botões"
+      ],
+      "acesso rápido": [
+        "acesso rápido"
+      ],
+      "serviços": [
+        "serviços"
+      ],
+      "Serviço 1": [
+        "Serviço 1"
+      ],
+      "Serviço 2": [
+        "Serviço 2"
+      ],
+      "Serviço 3": [
+        "Serviço 3"
+      ],
+      "Serviço 4": [
+        "Serviço 4"
+      ],
+      "Novo Botão ": [
+        "Novo Botão "
+      ],
+      "Configurações do Grid": [
+        "Configurações do Grid"
+      ],
+      "Quantidade de Colunas por Linha": [
+        "Quantidade de Colunas por Linha"
+      ],
+      "Ajuste a quantidade de botões exibidos por linha em telas grandes.": [
+        "Ajuste a quantidade de botões exibidos por linha em telas grandes."
+      ],
+      "Adicionar Botão": [
+        "Adicionar Botão"
+      ],
+      "Gerenciador de Links e Atalhos": [
+        "Gerenciador de Links e Atalhos"
+      ],
+      "Sem título": [
+        "Sem título"
+      ],
+      "Mover para cima": [
+        "Mover para cima"
+      ],
+      "Mover para baixo": [
+        "Mover para baixo"
+      ],
+      "Excluir botão": [
+        "Excluir botão"
+      ],
+      "URL de Destino": [
+        "URL de Destino"
+      ],
+      "Abrir em nova aba": [
+        "Abrir em nova aba"
+      ],
+      "Botões de Destaque": [
+        "Botões de Destaque"
+      ],
+      "item": [
+        "item"
+      ],
+      "itens": [
+        "itens"
+      ],
+      "coluna": [
+        "coluna"
+      ],
+      "colunas": [
+        "colunas"
+      ],
+      "Mover para a esquerda": [
+        "Mover para a esquerda"
+      ],
+      "Mover para a direita": [
+        "Mover para a direita"
+      ],
+      "Excluir este botão": [
+        "Excluir este botão"
+      ],
+      "Ícone do botão": [
+        "Ícone do botão"
+      ],
+      "Alterar ícone": [
+        "Alterar ícone"
+      ],
+      "Trocar": [
+        "Trocar"
+      ],
+      "Remover ícone": [
+        "Remover ícone"
+      ],
+      "Remover": [
+        "Remover"
+      ],
+      "Escolha uma imagem ou ícone": [
+        "Escolha uma imagem ou ícone"
+      ],
+      "Inserir Ícone": [
+        "Inserir Ícone"
+      ],
+      "Nome do Botão...": [
+        "Nome do Botão..."
+      ],
+      "https://link-de-destino...": [
+        "https://link-de-destino..."
+      ],
+      "Abre em nova aba (ativo)": [
+        "Abre em nova aba (ativo)"
+      ],
+      "Abrir em mesma aba": [
+        "Abrir em mesma aba"
+      ]
+    }
+  }
+}

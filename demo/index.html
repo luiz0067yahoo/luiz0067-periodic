@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Component Suite — 61 Módulos Unificados</title>
+    
+    <!-- Centralized Vendor Styles -->
+    <link rel="stylesheet" href="../shared/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../shared/vendor/fontawesome/css/all.min.css">
+    
+    <!-- Core Periodic Design System -->
+    <link rel="stylesheet" href="../core/styles/variables.css">
+    <link rel="stylesheet" href="../core/styles/base.css">
+    
+    <!-- Demo Catalog Styles -->
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body class="periodic-suite">
+
+    <!-- Header & Navigation -->
+    <header class="periodic-demo-header">
+        <div class="periodic-container d-flex align-items-center justify-content-between py-3">
+            <div class="d-flex align-items-center gap-3">
+                <div class="periodic-demo-logo">
+                    <i class="fa-solid fa-cubes text-primary fs-3"></i>
+                </div>
+                <div>
+                    <h1 class="h4 mb-0 fw-bold" data-i18n="ui.suite_title">Suíte de Componentes Periodic</h1>
+                    <p class="small text-muted mb-0" data-i18n="ui.suite_subtitle">61 componentes modulares unificados com isolamento BEM e internacionalização</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <!-- i18n Selector -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2" type="button" id="langSelector" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="currentLangLabel">Português (BR)</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="langSelector">
+                        <li><a class="dropdown-item lang-opt" href="#" data-lang="pt-br">🇧🇷 Português (BR)</a></li>
+                        <li><a class="dropdown-item lang-opt" href="#" data-lang="en-us">🇺🇸 English (US)</a></li>
+                        <li><a class="dropdown-item lang-opt" href="#" data-lang="es">🇪🇸 Español</a></li>
+                        <li><a class="dropdown-item lang-opt" href="#" data-lang="it">🇮🇹 Italiano</a></li>
+                    </ul>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="btn btn-outline-secondary" id="themeToggle" title="Alternar tema claro/escuro">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toolbar: Search & Category Filter -->
+    <section class="periodic-demo-toolbar py-4 border-bottom">
+        <div class="periodic-container">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                        <input type="text" id="componentSearch" class="form-control border-start-0 ps-0" placeholder="Pesquisar componentes..." data-i18n-placeholder="ui.search_placeholder">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="d-flex flex-wrap gap-2 justify-content-md-end" id="categoryFilters">
+                        <button class="btn btn-sm btn-primary filter-btn active" data-cat="all" data-i18n="ui.filter_all">Todos</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="layout" data-i18n="ui.category_layout">Layout</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="content" data-i18n="ui.category_content">Conteúdo</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="media" data-i18n="ui.category_media">Mídia</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="interactive" data-i18n="ui.category_interactive">Interatividade</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="forms" data-i18n="ui.category_forms">Formulários</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="charts" data-i18n="ui.category_charts">Gráficos</button>
+                        <button class="btn btn-sm btn-outline-secondary filter-btn" data-cat="games" data-i18n="ui.category_games">Jogos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Grid -->
+    <main class="periodic-container py-5">
+        <div class="row g-4" id="componentsGrid">
+
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="accordion">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-accordion</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.accordion.title">Acordeão</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.accordion.description">Painéis expansíveis e retráteis responsivos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/accordion.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="accordion" data-title="Acordeão">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="ad-banner">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-ad-banner</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.ad-banner.title">Banner de Anúncio</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.ad-banner.description">Faixa promocional para anúncios com CTA.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/ad-banner.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="ad-banner" data-title="Banner de Anúncio">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="advanced-banner">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-advanced-banner</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.advanced-banner.title">Banner Avançado</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.advanced-banner.description">Banner com gradientes, vídeos e efeitos dinâmicos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/advanced-banner.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="advanced-banner" data-title="Banner Avançado">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="advanced-spacer">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-advanced-spacer</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.advanced-spacer.title">Espaçador Avançado</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.advanced-spacer.description">Controle milimétrico de espaçamento responsivo.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/advanced-spacer.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="advanced-spacer" data-title="Espaçador Avançado">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="alert-callout">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-alert-callout</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.alert-callout.title">Alerta e Destaque</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.alert-callout.description">Caixas de alerta e notificações de destaque.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/alert-callout.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="alert-callout" data-title="Alerta e Destaque">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="audio-embed">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-audio-embed</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.audio-embed.title">Player de Áudio</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.audio-embed.description">Reprodutor de áudio HTML5 personalizável.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/audio-embed.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="audio-embed" data-title="Player de Áudio">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="big-button">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-big-button</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.big-button.title">Super Botão</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.big-button.description">Botão de alta conversão com ícones e animações.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/big-button.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="big-button" data-title="Super Botão">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="breadcrumbs">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-breadcrumbs</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.breadcrumbs.title">Navegação Estruturada</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.breadcrumbs.description">Trilha de navegação hierárquica com Schema.org.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/breadcrumbs.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="breadcrumbs" data-title="Navegação Estruturada">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="buttons-banner">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-buttons-banner</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.buttons-banner.title">Faixa de Botões</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.buttons-banner.description">Grupo organizado de botões para ações múltiplas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/buttons-banner.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="buttons-banner" data-title="Faixa de Botões">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="card-trainer">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-card-trainer</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.card-trainer.title">Treinador com Cartões</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.card-trainer.description">Cartões de memorização e estudo interativo.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/card-trainer.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="card-trainer" data-title="Treinador com Cartões">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="card-wrapper">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-card-wrapper</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.card-wrapper.title">Envoltório de Cartão</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.card-wrapper.description">Container flexível para conteúdo estilizado.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/card-wrapper.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="card-wrapper" data-title="Envoltório de Cartão">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="carousel-slides">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-carousel-slides</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.carousel-slides.title">Carrossel de Slides</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.carousel-slides.description">Slider fluido e responsivo para imagens e textos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/carousel-slides.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="carousel-slides" data-title="Carrossel de Slides">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="carousel-slides-plus">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-carousel-slides-plus</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.carousel-slides-plus.title">Carrossel Pro</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.carousel-slides-plus.description">Slider avançado com autoplay e gestos touch.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/carousel-slides-plus.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="carousel-slides-plus" data-title="Carrossel Pro">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="code">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-code</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.code.title">Bloco de Código</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.code.description">Exibição de código com destaque de sintaxe.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/code.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="code" data-title="Bloco de Código">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="cols-image">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-cols-image</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.cols-image.title">Colunas de Imagens</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.cols-image.description">Layout em colunas balanceadas para imagens.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/cols-image.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="cols-image" data-title="Colunas de Imagens">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="counter-stats">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-counter-stats</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.counter-stats.title">Contador Estatístico</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.counter-stats.description">Contadores numéricos com contagem progressiva animada.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/counter-stats.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="counter-stats" data-title="Contador Estatístico">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="custom-shapes">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-custom-shapes</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.custom-shapes.title">Formas Geométricas</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.custom-shapes.description">Divisores e formas SVG elegantes para seções.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/custom-shapes.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="custom-shapes" data-title="Formas Geométricas">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="date-title-link">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-date-title-link</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.date-title-link.title">Data, Título e Link</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.date-title-link.description">Item cronológico com título e link direto.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/date-title-link.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="date-title-link" data-title="Data, Título e Link">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="date-title-link-file-upload">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-date-title-link-file-upload</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.date-title-link-file-upload.title">Link com Upload de Arquivo</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.date-title-link-file-upload.description">Item de download/upload documental com data.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/date-title-link-file-upload.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="date-title-link-file-upload" data-title="Link com Upload de Arquivo">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="destack-buttons">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-destack-buttons</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.destack-buttons.title">Botões em Destaque</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.destack-buttons.description">Botões estilizados com efeitos de profundidade.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/destack-buttons.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="destack-buttons" data-title="Botões em Destaque">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="drag-drop-engine">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-drag-drop-engine</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.drag-drop-engine.title">Motor de Arrastar e Soltar</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.drag-drop-engine.description">Interações fluidas de drag-and-drop sem conflitos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/drag-drop-engine.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="drag-drop-engine" data-title="Motor de Arrastar e Soltar">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="forms" data-slug="faq-schema">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">forms</span>
+                        <code class="small text-muted">.periodic-faq-schema</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.faq-schema.title">Perguntas Frequentes (FAQ)</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.faq-schema.description">Seção de FAQ otimizada para SEO e Rich Snippets.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/faq-schema.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="faq-schema" data-title="Perguntas Frequentes (FAQ)">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="forms" data-slug="form-builder">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">forms</span>
+                        <code class="small text-muted">.periodic-form-builder</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.form-builder.title">Construtor de Formulários</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.form-builder.description">Geração dinâmica de formulários com validação.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/form-builder.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="form-builder" data-title="Construtor de Formulários">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="gallery-lightbox">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-gallery-lightbox</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.gallery-lightbox.title">Galeria com Lightbox</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.gallery-lightbox.description">Galeria fotográfica com visualização em modal tela cheia.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/gallery-lightbox.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="gallery-lightbox" data-title="Galeria com Lightbox">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="charts" data-slug="grafic-line-bar">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">charts</span>
+                        <code class="small text-muted">.periodic-grafic-line-bar</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.grafic-line-bar.title">Gráfico de Linha e Barras</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.grafic-line-bar.description">Visualização dinâmica de séries temporais e comparativos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/grafic-line-bar.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="grafic-line-bar" data-title="Gráfico de Linha e Barras">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="charts" data-slug="grafic-pizza">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">charts</span>
+                        <code class="small text-muted">.periodic-grafic-pizza</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.grafic-pizza.title">Gráfico de Pizza</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.grafic-pizza.description">Demonstração proporcional de fatias percentuais.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/grafic-pizza.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="grafic-pizza" data-title="Gráfico de Pizza">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="charts" data-slug="grafic-torus">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">charts</span>
+                        <code class="small text-muted">.periodic-grafic-torus</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.grafic-torus.title">Gráfico Donut (Torus)</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.grafic-torus.description">Gráfico moderno em formato toroidal com indicadores.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/grafic-torus.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="grafic-torus" data-title="Gráfico Donut (Torus)">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="grid-flex">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-grid-flex</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.grid-flex.title">Grade Flexível</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.grid-flex.description">Sistema de grid CSS e flexbox altamente responsivo.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/grid-flex.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="grid-flex" data-title="Grade Flexível">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="icons">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-icons</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.icons.title">Ícones & Vetores</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.icons.description">Biblioteca centralizada de ícones e pictogramas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/icons.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="icons" data-title="Ícones & Vetores">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="image-destaque">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-image-destaque</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.image-destaque.title">Imagem em Destaque</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.image-destaque.description">Tratamento e apresentação de imagem hero com sobreposição.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/image-destaque.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="image-destaque" data-title="Imagem em Destaque">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="image-editor">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-image-editor</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.image-editor.title">Editor de Imagens</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.image-editor.description">Filtros, cortes e ajustes de contraste no navegador.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/image-editor.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="image-editor" data-title="Editor de Imagens">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="image-only">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-image-only</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.image-only.title">Imagem Otimizada</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.image-only.description">Carregamento leve e lazy loading otimizado.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/image-only.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="image-only" data-title="Imagem Otimizada">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="interactive-utilities">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-interactive-utilities</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.interactive-utilities.title">Utilitários Interativos</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.interactive-utilities.description">Conjunto de micro-helpers para eventos e UI.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/interactive-utilities.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="interactive-utilities" data-title="Utilitários Interativos">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="interative-software-simulator">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-interative-software-simulator</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.interative-software-simulator.title">Simulador de Software</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.interative-software-simulator.description">Demonstração interativa de telas e interfaces guiadas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/interative-software-simulator.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="interative-software-simulator" data-title="Simulador de Software">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="forms" data-slug="maps">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">forms</span>
+                        <code class="small text-muted">.periodic-maps</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.maps.title">Mapas Interativos</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.maps.description">Exibição de mapas geográficos com marcadores.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/maps.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="maps" data-title="Mapas Interativos">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="media-hotspot">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-media-hotspot</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.media-hotspot.title">Hotspots em Mídia</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.media-hotspot.description">Pontos clicáveis interativos sobre imagens e infográficos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/media-hotspot.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="media-hotspot" data-title="Hotspots em Mídia">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="modal-popup">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-modal-popup</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.modal-popup.title">Janela Modal / Popup</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.modal-popup.description">Diálogos flutuantes acessíveis e isolados.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/modal-popup.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="modal-popup" data-title="Janela Modal / Popup">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="parallax-section">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-parallax-section</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.parallax-section.title">Seção Parallax</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.parallax-section.description">Efeito de rolagem tridimensional em camadas visuais.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/parallax-section.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="parallax-section" data-title="Seção Parallax">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="pdf-flipbook">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-pdf-flipbook</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.pdf-flipbook.title">Livro Digital (Flipbook)</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.pdf-flipbook.description">Visualizador de documentos com efeito de folhear páginas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/pdf-flipbook.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="pdf-flipbook" data-title="Livro Digital (Flipbook)">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="forms" data-slug="pricing-table">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">forms</span>
+                        <code class="small text-muted">.periodic-pricing-table</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.pricing-table.title">Tabela de Preços</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.pricing-table.description">Comparador de planos, benefícios e assinaturas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/pricing-table.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="pricing-table" data-title="Tabela de Preços">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="games" data-slug="quiz-engine">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">games</span>
+                        <code class="small text-muted">.periodic-quiz-engine</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.quiz-engine.title">Motor de Quiz e Provas</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.quiz-engine.description">Questionários interativos com pontuação e feedback imediato.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/quiz-engine.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="quiz-engine" data-title="Motor de Quiz e Provas">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="scroll-top">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-scroll-top</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.scroll-top.title">Voltar ao Topo</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.scroll-top.description">Botão flutuante suave para retornar ao início da página.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/scroll-top.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="scroll-top" data-title="Voltar ao Topo">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="section-container">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-section-container</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.section-container.title">Contêiner de Seção</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.section-container.description">Bloco estrutural de largura e espaçamento padronizados.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/section-container.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="section-container" data-title="Contêiner de Seção">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="separator">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-separator</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.separator.title">Separador e Divisor</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.separator.description">Linhas decorativas e delimitadores visuais elegantes.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/separator.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="separator" data-title="Separador e Divisor">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="smart-essay">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-smart-essay</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.smart-essay.title">Redação Inteligente</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.smart-essay.description">Ambiente de escrita e redação com metas e métricas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/smart-essay.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="smart-essay" data-title="Redação Inteligente">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="structured-writing">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-structured-writing</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.structured-writing.title">Escrita Estruturada</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.structured-writing.description">Guias e templates para elaboração de textos metódicos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/structured-writing.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="structured-writing" data-title="Escrita Estruturada">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="table-of-contents">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-table-of-contents</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.table-of-contents.title">Índice de Conteúdos (Sumário)</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.table-of-contents.description">Geração automática de sumário a partir dos títulos da página.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/table-of-contents.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="table-of-contents" data-title="Índice de Conteúdos (Sumário)">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="table-responsive">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-table-responsive</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.table-responsive.title">Tabela Responsiva</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.table-responsive.description">Tabelas de dados fluidas com rolagem horizontal touch.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/table-responsive.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="table-responsive" data-title="Tabela Responsiva">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="layout" data-slug="tabs">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">layout</span>
+                        <code class="small text-muted">.periodic-tabs</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.tabs.title">Abas de Navegação</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.tabs.description">Alternância instantânea de conteúdo em abas limpas.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/tabs.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="tabs" data-title="Abas de Navegação">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="forms" data-slug="team-member">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">forms</span>
+                        <code class="small text-muted">.periodic-team-member</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.team-member.title">Membro da Equipe</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.team-member.description">Perfil profissional com foto, cargo, biografia e redes sociais.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/team-member.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="team-member" data-title="Membro da Equipe">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="forms" data-slug="testimonials">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">forms</span>
+                        <code class="small text-muted">.periodic-testimonials</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.testimonials.title">Depoimentos & Avaliações</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.testimonials.description">Exibição de avaliações de clientes com estrelas e citação.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/testimonials.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="testimonials" data-title="Depoimentos & Avaliações">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="text-completion">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-text-completion</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.text-completion.title">Preenchimento de Texto</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.text-completion.description">Exercício de preenchimento de lacunas e gramática.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/text-completion.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="text-completion" data-title="Preenchimento de Texto">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="thumbnail-pdf-link">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-thumbnail-pdf-link</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.thumbnail-pdf-link.title">Miniatura com Link para PDF</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.thumbnail-pdf-link.description">Card com capa do documento para download ou visualização.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/thumbnail-pdf-link.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="thumbnail-pdf-link" data-title="Miniatura com Link para PDF">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="thumbnail-pdf-link-multiple">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-thumbnail-pdf-link-multiple</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.thumbnail-pdf-link-multiple.title">Múltiplos Documentos PDF</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.thumbnail-pdf-link-multiple.description">Grade de documentos e arquivos PDF para download.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/thumbnail-pdf-link-multiple.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="thumbnail-pdf-link-multiple" data-title="Múltiplos Documentos PDF">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="timeline-vertical">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-timeline-vertical</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.timeline-vertical.title">Linha do Tempo Vertical</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.timeline-vertical.description">Histórico cronológico de marcos com ícones e conexões.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/timeline-vertical.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="timeline-vertical" data-title="Linha do Tempo Vertical">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="title-text-block">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-title-text-block</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.title-text-block.title">Bloco de Título e Texto</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.title-text-block.description">Composição tipográfica elegante para abertura de seções.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/title-text-block.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="title-text-block" data-title="Bloco de Título e Texto">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="topic-text-data">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-topic-text-data</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.topic-text-data.title">Tópico com Dados</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.topic-text-data.description">Apresentação estruturada de fatos, estatísticas e tópicos.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/topic-text-data.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="topic-text-data" data-title="Tópico com Dados">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="content" data-slug="topic-title-text">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">content</span>
+                        <code class="small text-muted">.periodic-topic-title-text</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.topic-title-text.title">Tópico com Título</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.topic-title-text.description">Bloco com marcadores customizados e destaque conceitual.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/topic-title-text.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="topic-title-text" data-title="Tópico com Título">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="media" data-slug="video-embed">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">media</span>
+                        <code class="small text-muted">.periodic-video-embed</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.video-embed.title">Incorporador de Vídeo</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.video-embed.description">Player responsivo para YouTube, Vimeo e MP4 direto.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/video-embed.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="video-embed" data-title="Incorporador de Vídeo">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="interactive" data-slug="voice-lab">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">interactive</span>
+                        <code class="small text-muted">.periodic-voice-lab</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.voice-lab.title">Laboratório de Voz (Áudio/Voz)</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.voice-lab.description">Gravação, reprodução e análise sonora interativa.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/voice-lab.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="voice-lab" data-title="Laboratório de Voz (Áudio/Voz)">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-lg-4 comp-card-wrapper" data-category="games" data-slug="word-games">
+                <div class="card h-100 periodic-card border p-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-light text-dark text-uppercase">games</span>
+                        <code class="small text-muted">.periodic-word-games</code>
+                    </div>
+                    <h2 class="h5 fw-bold mb-2" data-i18n="components.word-games.title">Jogos de Palavras</h2>
+                    <p class="text-muted small flex-grow-1" data-i18n="components.word-games.description">Jogos educativos de soletração, forca e vocabulário.</p>
+                    <div class="d-flex gap-2 pt-2 border-top mt-2">
+                        <a href="../docs/word-games.md" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1" data-i18n="ui.view_doc">
+                            <i class="fa-regular fa-file-lines me-1"></i> Doc
+                        </a>
+                        <button class="btn btn-sm btn-primary flex-grow-1 open-preview-btn" data-slug="word-games" data-title="Jogos de Palavras">
+                            <i class="fa-solid fa-play me-1"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </main>
+
+    <!-- Modal for Component Preview -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title fw-bold" id="previewModalLabel">Visualização do Componente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4" id="previewModalBody">
+                    <!-- Dynamic Component Render -->
+                </div>
+                <div class="modal-footer border-top justify-content-between">
+                    <span class="badge bg-secondary" id="previewModalSlug">.periodic-component</span>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts: Vendor, Core, i18n & Demo Logic -->
+    <script src="../shared/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../core/i18n/translations.js"></script>
+    <script src="../core/i18n/i18n.js"></script>
+    <script src="../core/js/periodic-core.js"></script>
+    
+    <!-- Canonical Component Scripts -->
+    <script src="../components/breadcrumbs/breadcrumbs.js"></script>
+    <script src="../components/ad-banner/ad-banner.js"></script>
+    <script src="../components/carousel-slides-plus/carousel-slides-plus.js"></script>
+    <script src="../components/counter-stats/counter-stats.js"></script>
+    <script src="../components/form-builder/form-builder.js"></script>
+    <script src="../components/icons/icons.js"></script>
+    <script src="../components/word-games/word-games.js"></script>
+    
+    <script src="demo.js"></script>
+</body>
+</html>

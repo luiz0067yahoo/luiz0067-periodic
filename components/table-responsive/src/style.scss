@@ -1,0 +1,153 @@
+/**
+ * Estilos Frontend & Backend
+ * luiz0067-table-responsive
+ */
+
+.luiz0067-table-responsive-block,
+.table-responsive.luiz0067-table-wrapper {
+	width: 100%;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	// Barra de rolagem sutil para mobile
+	&::-webkit-scrollbar {
+		height: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #f1f5f9;
+		border-radius: 3px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #cbd5e1;
+		border-radius: 3px;
+
+		&:hover {
+			background: #94a3b8;
+		}
+	}
+
+	table.table {
+		width: 100%;
+		caption-side: bottom;
+		border-collapse: collapse;
+		margin-bottom: 0;
+
+		th, td {
+			padding: 0.75rem 1rem;
+			vertical-align: middle;
+			line-height: 1.5;
+		}
+
+		thead {
+			th {
+				font-weight: 600;
+				letter-spacing: 0.2px;
+			}
+		}
+
+		tbody {
+			tr {
+				transition: background-color 0.15s ease-in-out;
+			}
+		}
+	}
+}
+
+// Suporte e reforço de temas Bootstrap 5 para garantir consistência visual
+.table-dark {
+	--bs-table-bg: #212529;
+	--bs-table-striped-bg: #2c3034;
+	--bs-table-hover-bg: #373b3e;
+	--bs-table-color: #fff;
+	color: #fff !important;
+	background-color: #212529 !important;
+
+	th, td {
+		color: #fff !important;
+		background-color: #212529 !important;
+		border-color: #373b3e;
+	}
+}
+
+.table-primary {
+	--bs-table-bg: #cfe2ff;
+	--bs-table-color: #000;
+	background-color: #cfe2ff !important;
+	color: #084298 !important;
+
+	th, td {
+		background-color: #cfe2ff !important;
+		color: #084298 !important;
+		border-color: #b6d4fe;
+	}
+}
+
+.table-secondary {
+	background-color: #e2e3e5 !important;
+	color: #41464b !important;
+
+	th, td {
+		background-color: #e2e3e5 !important;
+		color: #41464b !important;
+		border-color: #d3d6d8;
+	}
+}
+
+.table-success {
+	background-color: #d1e7dd !important;
+	color: #0f5132 !important;
+
+	th, td {
+		background-color: #d1e7dd !important;
+		color: #0f5132 !important;
+		border-color: #badbcc;
+	}
+}
+
+.table-danger {
+	background-color: #f8d7da !important;
+	color: #842029 !important;
+
+	th, td {
+		background-color: #f8d7da !important;
+		color: #842029 !important;
+		border-color: #f5c2c7;
+	}
+}
+
+.table-warning {
+	background-color: #fff3cd !important;
+	color: #664d03 !important;
+
+	th, td {
+		background-color: #fff3cd !important;
+		color: #664d03 !important;
+		border-color: #ffecb5;
+	}
+}
+
+.table-info {
+	background-color: #cff4fc !important;
+	color: #055160 !important;
+
+	th, td {
+		background-color: #cff4fc !important;
+		color: #055160 !important;
+		border-color: #b6effb;
+	}
+}
+
+.table-light {
+	background-color: #f8f9fa !important;
+	color: #000 !important;
+
+	th, td {
+		background-color: #f8f9fa !important;
+		color: #000 !important;
+		border-color: #dfe0e1;
+	}
+}

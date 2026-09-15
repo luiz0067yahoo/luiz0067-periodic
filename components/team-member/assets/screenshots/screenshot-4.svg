@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="panelShadow4" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="700" fill="url(#bg4)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 40)">
+    <rect x="0" y="0" width="180" height="28" rx="14" fill="#2563eb" fill-opacity="0.1" stroke="#2563eb"/>
+    <text x="90" y="19" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">INSPECTOR CONTROLS</text>
+    <text x="0" y="65" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800">Aba 3: Estilo da Foto e Cartão</text>
+  </g>
+
+  <!-- Inspector Panel Frame -->
+  <g transform="translate(60, 130)" filter="url(#panelShadow4)">
+    <rect width="880" height="520" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+    
+    <!-- Tab Bar -->
+    <rect width="880" height="52" rx="12" fill="#f8fafc"/>
+    <text x="150" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Membros</text>
+    <text x="430" y="36" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Redes Sociais</text>
+
+    <!-- Active Tab 3 -->
+    <rect x="580" y="10" width="280" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="580" y="48" width="280" height="4" fill="#2563eb"/>
+    <text x="720" y="36" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Estilo da Foto e Cartão</text>
+
+    <!-- Content of Tab 3 -->
+    <g transform="translate(40, 80)">
+      <!-- Columns Range -->
+      <text x="0" y="20" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">Número de Colunas (Grid): 3</text>
+      <rect x="0" y="35" width="800" height="6" rx="3" fill="#e2e8f0"/>
+      <rect x="0" y="35" width="533" height="6" rx="3" fill="#2563eb"/>
+      <circle cx="533" cy="38" r="9" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+      <text x="0" y="60" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Escolha de 1 a 4 colunas para a exibição dos membros em telas grandes.</text>
+
+      <!-- Image Shape Select -->
+      <g transform="translate(0, 90)">
+        <text x="0" y="15" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">Formato da Foto</text>
+        <rect x="0" y="28" width="800" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+        <text x="16" y="53" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14">Circular (rounded-circle)</text>
+        <text x="770" y="53" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">▼</text>
+      </g>
+
+      <!-- Image Size Range -->
+      <g transform="translate(0, 185)">
+        <text x="0" y="20" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">Tamanho da Foto (px): 140px</text>
+        <rect x="0" y="35" width="800" height="6" rx="3" fill="#e2e8f0"/>
+        <rect x="0" y="35" width="300" height="6" rx="3" fill="#2563eb"/>
+        <circle cx="300" cy="38" r="9" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+        <text x="0" y="60" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Diâmetro ou largura da foto em pixels (80px a 260px).</text>
+      </g>
+
+      <!-- Card Style & Alignment -->
+      <g transform="translate(0, 275)">
+        <g transform="translate(0, 0)">
+          <text x="0" y="15" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">Estilo de Cartão (Bootstrap 5)</text>
+          <rect x="0" y="28" width="380" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+          <text x="16" y="53" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14">Sombra Suave (shadow-sm)</text>
+          <text x="350" y="53" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">▼</text>
+        </g>
+
+        <g transform="translate(420, 0)">
+          <text x="0" y="15" fill="#334155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">Alinhamento do Conteúdo</text>
+          <rect x="0" y="28" width="380" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+          <text x="16" y="53" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14">Centralizado (center)</text>
+          <text x="350" y="53" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">▼</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

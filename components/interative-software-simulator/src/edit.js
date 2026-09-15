@@ -1,0 +1,613 @@
+import { __ } from '@wordpress/i18n';
+import { useBlockProps, InspectorControls, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+import {
+  PanelBody,
+  Button,
+  TextControl,
+  TextareaControl,
+  SelectControl,
+  RangeControl,
+  ToggleControl,
+  Card,
+  CardBody,
+  Notice
+} from '@wordpress/components';
+import { useState, useEffect } from '@wordpress/element';
+import { DEFAULT_ABNT_SCENARIO } from './default-data';
+import './editor.scss';
+
+export default function Edit({ attributes, setAttributes }) {
+  const {
+    simulatorTitle,
+    steps,
+    showProgressBar,
+    showRestartButton,
+    showStepIndicator,
+    highlightHints,
+    customSuccessMessage
+  } = attributes;
+
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const [activeElementId, setActiveElementId] = useState(null);
+
+  // Initialize with default scenario if empty
+  useEffect(() => {
+    if (!steps || steps.length === 0) {
+      setAttributes({ steps: DEFAULT_ABNT_SCENARIO });
+    }
+  }, []);
+
+  const getResolvedImageUrl = (url) => {
+    if (!url) return '';
+    if (url.startsWith('assets/') && typeof window !== 'undefined' && window.simuladorSoftwareSettings?.pluginUrl) {
+      return window.simuladorSoftwareSettings.pluginUrl + url;
+    }
+    return url;
+  };
+
+  // Safe active step
+  const currentStep = (steps && steps[activeStepIndex]) ? steps[activeStepIndex] : null;
+
+  // Step operations
+  const handleAddStep = () => {
+    const newStep = {
+      id: `step-${Date.now()}`,
+      title: `Passo ${steps.length + 1}`,
+      imageUrl: '',
+      imageId: null,
+      instruction: __('Nova instrução para o usuário.', 'simulador-software-abnt'),
+      elements: []
+    };
+    const updatedSteps = [...steps, newStep];
+    setAttributes({ steps: updatedSteps });
+    setActiveStepIndex(updatedSteps.length - 1);
+  };
+
+  const handleDuplicateStep = (index) => {
+    const stepToCopy = steps[index];
+    const duplicatedStep = {
+      ...JSON.parse(JSON.stringify(stepToCopy)),
+      id: `step-${Date.now()}`,
+      title: `${stepToCopy.title || 'Passo'} (Cópia)`
+    };
+    const updatedSteps = [...steps];
+    updatedSteps.splice(index + 1, 0, duplicatedStep);
+    setAttributes({ steps: updatedSteps });
+    setActiveStepIndex(index + 1);
+  };
+
+  const handleRemoveStep = (index) => {
+    if (steps.length <= 1) {
+      alert(__('A simulação deve conter ao menos um passo.', 'simulador-software-abnt'));
+      return;
+    }
+    const updatedSteps = steps.filter((_, i) => i !== index);
+    setAttributes({ steps: updatedSteps });
+    setActiveStepIndex(Math.max(0, index - 1));
+  };
+
+  const handleMoveStep = (index, direction) => {
+    const targetIndex = index + direction;
+    if (targetIndex < 0 || targetIndex >= steps.length) return;
+    const updatedSteps = [...steps];
+    const temp = updatedSteps[index];
+    updatedSteps[index] = updatedSteps[targetIndex];
+    updatedSteps[targetIndex] = temp;
+    setAttributes({ steps: updatedSteps });
+    setActiveStepIndex(targetIndex);
+  };
+
+  const handleLoadDefaultScenario = () => {
+    if (confirm(__('Deseja carregar o cenário padrão da Formatação ABNT no Windows 11?', 'simulador-software-abnt'))) {
+      setAttributes({ steps: DEFAULT_ABNT_SCENARIO });
+      setActiveStepIndex(0);
+      setActiveElementId(null);
+    }
+  };
+
+  const updateCurrentStep = (fields) => {
+    const updatedSteps = steps.map((step, idx) => {
+      if (idx === activeStepIndex) {
+        return { ...step, ...fields };
+      }
+      return step;
+    });
+    setAttributes({ steps: updatedSteps });
+  };
+
+  // Element operations
+  const handleAddElement = (type = 'click') => {
+    if (!currentStep) return;
+    const newEl = {
+      id: `el-${Date.now()}`,
+      type: type,
+      top: 40,
+      left: 40,
+      width: type === 'click' ? 12 : 20,
+      height: type === 'click' ? 6 : 5,
+      label: type === 'click' ? 'Novo Hotspot de Clique' : 'Novo Campo de Digitação',
+      expectedValue: type === 'input' ? 'Word' : '',
+      placeholder: type === 'input' ? 'Digite aqui...' : '',
+      targetStepIndex: activeStepIndex + 1
+    };
+    const updatedElements = [...(currentStep.elements || []), newEl];
+    updateCurrentStep({ elements: updatedElements });
+    setActiveElementId(newEl.id);
+  };
+
+  const handleUpdateElement = (elementId, fields) => {
+    if (!currentStep) return;
+    const updatedElements = (currentStep.elements || []).map((el) => {
+      if (el.id === elementId) {
+        return { ...el, ...fields };
+      }
+      return el;
+    });
+    updateCurrentStep({ elements: updatedElements });
+  };
+
+  const handleRemoveElement = (elementId) => {
+    if (!currentStep) return;
+    const updatedElements = (currentStep.elements || []).filter((el) => el.id !== elementId);
+    updateCurrentStep({ elements: updatedElements });
+    if (activeElementId === elementId) {
+      setActiveElementId(null);
+    }
+  };
+
+  const blockProps = useBlockProps({
+    className: 'wp-block-custom-simulador-software'
+  });
+
+  return (
+    <>
+      <InspectorControls>
+        {/* Painel Geral */}
+        <PanelBody title={__('Configurações Gerais do Simulador', 'simulador-software-abnt')} initialOpen={false}>
+          <TextControl
+            label={__('Título do Simulador', 'simulador-software-abnt')}
+            value={simulatorTitle}
+            onChange={(val) => setAttributes({ simulatorTitle: val })}
+          />
+          <ToggleControl
+            label={__('Exibir Barra de Progresso', 'simulador-software-abnt')}
+            checked={showProgressBar}
+            onChange={(val) => setAttributes({ showProgressBar: val })}
+          />
+          <ToggleControl
+            label={__('Exibir Botão de Reiniciar', 'simulador-software-abnt')}
+            checked={showRestartButton}
+            onChange={(val) => setAttributes({ showRestartButton: val })}
+          />
+          <ToggleControl
+            label={__('Exibir Indicador de Passo', 'simulador-software-abnt')}
+            checked={showStepIndicator}
+            onChange={(val) => setAttributes({ showStepIndicator: val })}
+          />
+          <ToggleControl
+            label={__('Destacar Áreas com Pulso Sutil', 'simulador-software-abnt')}
+            checked={highlightHints}
+            onChange={(val) => setAttributes({ highlightHints: val })}
+          />
+          <TextareaControl
+            label={__('Mensagem de Sucesso na Conclusão', 'simulador-software-abnt')}
+            value={customSuccessMessage}
+            onChange={(val) => setAttributes({ customSuccessMessage: val })}
+          />
+          <Button
+            variant="secondary"
+            isDestructive
+            onClick={handleLoadDefaultScenario}
+            style={{ width: '100%', marginTop: '10px' }}
+          >
+            {__('Restaurar Cenário Padrão (ABNT)', 'simulador-software-abnt')}
+          </Button>
+        </PanelBody>
+
+        {/* Gerenciador de Passos */}
+        <PanelBody title={__('Gerenciador de Passos (Slides)', 'simulador-software-abnt')} initialOpen={true}>
+          <div style={{ marginBottom: '14px' }}>
+            {steps && steps.map((step, idx) => (
+              <div
+                key={step.id || idx}
+                className={`sim-inspector-step-item ${idx === activeStepIndex ? 'is-active-step' : ''}`}
+                onClick={() => setActiveStepIndex(idx)}
+              >
+                <div className="sim-step-info">
+                  <span>{idx + 1}.</span>
+                  <span>{step.title || `Passo ${idx + 1}`}</span>
+                </div>
+                <div className="sim-step-actions" onClick={(e) => e.stopPropagation()}>
+                  <Button
+                    icon="arrow-up-alt2"
+                    isSmall
+                    disabled={idx === 0}
+                    onClick={() => handleMoveStep(idx, -1)}
+                    title={__('Subir', 'simulador-software-abnt')}
+                  />
+                  <Button
+                    icon="arrow-down-alt2"
+                    isSmall
+                    disabled={idx === steps.length - 1}
+                    onClick={() => handleMoveStep(idx, 1)}
+                    title={__('Descer', 'simulador-software-abnt')}
+                  />
+                  <Button
+                    icon="admin-page"
+                    isSmall
+                    onClick={() => handleDuplicateStep(idx)}
+                    title={__('Duplicar', 'simulador-software-abnt')}
+                  />
+                  <Button
+                    icon="trash"
+                    isSmall
+                    isDestructive
+                    onClick={() => handleRemoveStep(idx)}
+                    title={__('Remover', 'simulador-software-abnt')}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <Button
+            variant="primary"
+            onClick={handleAddStep}
+            icon="plus"
+            style={{ width: '100%' }}
+          >
+            {__('Adicionar Novo Passo', 'simulador-software-abnt')}
+          </Button>
+        </PanelBody>
+
+        {/* Configurações do Passo Selecionado */}
+        {currentStep && (
+          <PanelBody
+            title={`${__('Configurar Passo', 'simulador-software-abnt')} ${activeStepIndex + 1}: ${currentStep.title || ''}`}
+            initialOpen={true}
+          >
+            <TextControl
+              label={__('Título do Passo', 'simulador-software-abnt')}
+              value={currentStep.title || ''}
+              onChange={(val) => updateCurrentStep({ title: val })}
+            />
+
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '6px' }}>
+                {__('Imagem de Fundo (Print do Software)', 'simulador-software-abnt')}
+              </label>
+              {currentStep.imageUrl ? (
+                <div>
+                  <img
+                    src={getResolvedImageUrl(currentStep.imageUrl)}
+                    alt={currentStep.title}
+                    style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px', border: '1px solid #cbd5e1' }}
+                  />
+                  <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+                    <MediaUploadCheck>
+                      <MediaUpload
+                        onSelect={(media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id })}
+                        allowedTypes={['image']}
+                        value={currentStep.imageId}
+                        render={({ open }) => (
+                          <Button variant="secondary" isSmall onClick={open}>
+                            {__('Alterar Imagem', 'simulador-software-abnt')}
+                          </Button>
+                        )}
+                      />
+                    </MediaUploadCheck>
+                    <Button
+                      variant="link"
+                      isDestructive
+                      isSmall
+                      onClick={() => updateCurrentStep({ imageUrl: '', imageId: null })}
+                    >
+                      {__('Remover', 'simulador-software-abnt')}
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <MediaUploadCheck>
+                  <MediaUpload
+                    onSelect={(media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id })}
+                    allowedTypes={['image']}
+                    value={currentStep.imageId}
+                    render={({ open }) => (
+                      <Button variant="secondary" onClick={open} icon="upload" style={{ width: '100%' }}>
+                        {__('Selecionar Imagem da Biblioteca', 'simulador-software-abnt')}
+                      </Button>
+                    )}
+                  />
+                </MediaUploadCheck>
+              )}
+            </div>
+
+            <TextareaControl
+              label={__('Texto de Instrução para o Aluno', 'simulador-software-abnt')}
+              value={currentStep.instruction || ''}
+              onChange={(val) => updateCurrentStep({ instruction: val })}
+              rows={3}
+              help={__('Exibido no rodapé flutuante da simulação.', 'simulador-software-abnt')}
+            />
+          </PanelBody>
+        )}
+
+        {/* Gerenciador de Elementos Interativos */}
+        {currentStep && (
+          <PanelBody
+            title={`${__('Camadas Interativas do Passo', 'simulador-software-abnt')} (${(currentStep.elements || []).length})`}
+            initialOpen={true}
+          >
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '14px' }}>
+              <Button
+                variant="secondary"
+                icon="admin-links"
+                onClick={() => handleAddElement('click')}
+                style={{ flex: 1 }}
+              >
+                {__('+ Área de Clique', 'simulador-software-abnt')}
+              </Button>
+              <Button
+                variant="secondary"
+                icon="edit"
+                onClick={() => handleAddElement('input')}
+                style={{ flex: 1 }}
+              >
+                {__('+ Campo Input', 'simulador-software-abnt')}
+              </Button>
+            </div>
+
+            {(currentStep.elements || []).map((el, elIdx) => {
+              const isSelected = el.id === activeElementId;
+              return (
+                <div
+                  key={el.id || elIdx}
+                  className={`sim-inspector-element-card ${isSelected ? 'is-active-element' : ''}`}
+                  onClick={() => setActiveElementId(el.id)}
+                >
+                  <div className="sim-element-header">
+                    <strong>
+                      {el.type === 'click' ? '🎯 Clique: ' : '⌨️ Input: '}
+                      {el.label || `Elemento ${elIdx + 1}`}
+                    </strong>
+                    <Button
+                      icon="trash"
+                      isSmall
+                      isDestructive
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleRemoveElement(el.id);
+                      }}
+                      title={__('Remover Elemento', 'simulador-software-abnt')}
+                    />
+                  </div>
+
+                  <TextControl
+                    label={__('Rótulo / Identificador', 'simulador-software-abnt')}
+                    value={el.label || ''}
+                    onChange={(val) => handleUpdateElement(el.id, { label: val })}
+                  />
+
+                  <SelectControl
+                    label={__('Tipo de Interação', 'simulador-software-abnt')}
+                    value={el.type}
+                    options={[
+                      { label: __('Área de Clique (Hotspot)', 'simulador-software-abnt'), value: 'click' },
+                      { label: __('Caixa de Texto (Input com Enter)', 'simulador-software-abnt'), value: 'input' }
+                    ]}
+                    onChange={(val) => handleUpdateElement(el.id, { type: val })}
+                  />
+
+                  {el.type === 'input' && (
+                    <>
+                      <TextControl
+                        label={__('Valor Esperado (Correto)', 'simulador-software-abnt')}
+                        value={el.expectedValue || ''}
+                        onChange={(val) => handleUpdateElement(el.id, { expectedValue: val })}
+                        help={__('Ex: "Word", "3", "2". A verificação não diferencia maiúsculas/minúsculas.', 'simulador-software-abnt')}
+                      />
+                      <TextControl
+                        label={__('Texto do Placeholder', 'simulador-software-abnt')}
+                        value={el.placeholder || ''}
+                        onChange={(val) => handleUpdateElement(el.id, { placeholder: val })}
+                      />
+                    </>
+                  )}
+
+                  <div style={{ marginTop: '10px' }}>
+                    <label style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
+                      {__('Coordenadas Responsivas (%)', 'simulador-software-abnt')}
+                    </label>
+                    <RangeControl
+                      label={__('Topo (Top %)', 'simulador-software-abnt')}
+                      value={el.top}
+                      onChange={(val) => handleUpdateElement(el.id, { top: Number(val) })}
+                      min={0}
+                      max={100}
+                      step={0.1}
+                    />
+                    <RangeControl
+                      label={__('Esquerda (Left %)', 'simulador-software-abnt')}
+                      value={el.left}
+                      onChange={(val) => handleUpdateElement(el.id, { left: Number(val) })}
+                      min={0}
+                      max={100}
+                      step={0.1}
+                    />
+                    <RangeControl
+                      label={__('Largura (Width %)', 'simulador-software-abnt')}
+                      value={el.width}
+                      onChange={(val) => handleUpdateElement(el.id, { width: Number(val) })}
+                      min={1}
+                      max={100}
+                      step={0.1}
+                    />
+                    <RangeControl
+                      label={__('Altura (Height %)', 'simulador-software-abnt')}
+                      value={el.height}
+                      onChange={(val) => handleUpdateElement(el.id, { height: Number(val) })}
+                      min={1}
+                      max={100}
+                      step={0.1}
+                    />
+                  </div>
+
+                  <SelectControl
+                    label={__('Ao Acertar, Avançar Para', 'simulador-software-abnt')}
+                    value={el.targetStepIndex !== undefined ? el.targetStepIndex : activeStepIndex + 1}
+                    options={[
+                      ...steps.map((st, i) => ({
+                        label: `${__('Passo', 'simulador-software-abnt')} ${i + 1}: ${st.title || ''}`,
+                        value: i
+                      })),
+                      { label: __('Concluir Simulação (Tela Final)', 'simulador-software-abnt'), value: -1 }
+                    ]}
+                    onChange={(val) => handleUpdateElement(el.id, { targetStepIndex: Number(val) })}
+                  />
+                </div>
+              );
+            })}
+          </PanelBody>
+        )}
+      </InspectorControls>
+
+      {/* Editor Main Canvas */}
+      <div {...blockProps}>
+        <div className="sim-editor-container is-selected">
+          {/* Top Quick Navigation Bar */}
+          <div className="sim-editor-steps-nav">
+            <span className="sim-nav-label">{__('Passos:', 'simulador-software-abnt')}</span>
+            {steps && steps.map((step, idx) => (
+              <button
+                type="button"
+                key={step.id || idx}
+                className={`sim-nav-btn ${idx === activeStepIndex ? 'is-active' : ''}`}
+                onClick={() => {
+                  setActiveStepIndex(idx);
+                  setActiveElementId(null);
+                }}
+              >
+                <span>{idx + 1}. {step.title || `Passo ${idx + 1}`}</span>
+              </button>
+            ))}
+            <button
+              type="button"
+              className="sim-nav-add-btn"
+              onClick={handleAddStep}
+              title={__('Adicionar Passo', 'simulador-software-abnt')}
+            >
+              + {__('Novo', 'simulador-software-abnt')}
+            </button>
+          </div>
+
+          {/* Canvas Preview */}
+          {currentStep ? (
+            <div className="sim-player-wrapper">
+              {/* Header */}
+              <div className="sim-header-bar">
+                <div className="sim-title-group">
+                  <div className="sim-window-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span className="sim-header-title">{simulatorTitle}</span>
+                </div>
+                <div className="sim-header-controls">
+                  <span className="sim-step-badge">
+                    {__('Passo', 'simulador-software-abnt')} {activeStepIndex + 1} / {steps.length}
+                  </span>
+                </div>
+              </div>
+
+              {/* Progress */}
+              <div className="sim-progress-track">
+                <div
+                  className="sim-progress-fill"
+                  style={{ width: `${((activeStepIndex + 1) / steps.length) * 100}%` }}
+                ></div>
+              </div>
+
+              {/* Stage */}
+              <div className="sim-stage-canvas">
+                {currentStep.imageUrl ? (
+                  <img
+                    src={getResolvedImageUrl(currentStep.imageUrl)}
+                    alt={currentStep.title}
+                    className="sim-bg-image"
+                  />
+                ) : (
+                  <div style={{ padding: '60px 20px', textAlign: 'center', color: '#94a3b8' }}>
+                    <p style={{ fontSize: '16px', fontWeight: 600 }}>
+                      {__('Nenhuma imagem selecionada para este passo.', 'simulador-software-abnt')}
+                    </p>
+                    <MediaUploadCheck>
+                      <MediaUpload
+                        onSelect={(media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id })}
+                        allowedTypes={['image']}
+                        render={({ open }) => (
+                          <Button variant="primary" onClick={open}>
+                            {__('Carregar Imagem de Fundo', 'simulador-software-abnt')}
+                          </Button>
+                        )}
+                      />
+                    </MediaUploadCheck>
+                  </div>
+                )}
+
+                {/* Overlaid Interactive Elements */}
+                <div className="sim-elements-layer">
+                  {(currentStep.elements || []).map((el, elIdx) => {
+                    const isSelected = el.id === activeElementId;
+                    return (
+                      <div
+                        key={el.id || elIdx}
+                        className={`sim-editor-overlay-element type-${el.type} ${isSelected ? 'is-element-selected' : ''}`}
+                        style={{
+                          top: `${el.top}%`,
+                          left: `${el.left}%`,
+                          width: `${el.width}%`,
+                          height: `${el.height}%`,
+                        }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveElementId(el.id);
+                        }}
+                        title={`${el.label || el.type} (Clique para editar no painel)`}
+                      >
+                        <span className="sim-element-badge">
+                          {el.type === 'click' ? '🎯 ' : '⌨️ '}
+                          {el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Instruction Bar */}
+              <div className="sim-instruction-bar">
+                <div className="sim-instruction-content">
+                  <div className="sim-instruction-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                  </div>
+                  <p className="sim-instruction-text">
+                    {currentStep.instruction || __('Insira uma instrução para orientar o aluno.', 'simulador-software-abnt')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="sim-editor-empty-state">
+              <h3>{__('Nenhum passo criado ainda.', 'simulador-software-abnt')}</h3>
+              <Button variant="primary" onClick={handleLoadDefaultScenario}>
+                {__('Carregar Cenário Padrão (ABNT Windows 11)', 'simulador-software-abnt')}
+              </Button>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}

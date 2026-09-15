@@ -1,0 +1,100 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/interactive-utilities",
+  "version": "1.0.0",
+  "title": "Periodic Interactive Utilities",
+  "category": "widgets",
+  "icon": "superhero",
+  "description": "Interactive block suite: Dynamic QR Code Generator, 24-door Advent Calendar with calendar-date locking and Bootstrap 5 modals, and AR Marker Trigger clues.",
+  "keywords": [
+    "qr code",
+    "advent calendar",
+    "ar trigger",
+    "periodic",
+    "interactive"
+  ],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "utilityType": {
+      "type": "string",
+      "default": "advent-calendar"
+    },
+    "qrText": {
+      "type": "string",
+      "default": "https://github.com/periodic"
+    },
+    "qrColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "qrBgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "qrSize": {
+      "type": "number",
+      "default": 240
+    },
+    "qrShowDownload": {
+      "type": "boolean",
+      "default": true
+    },
+    "calendarTitle": {
+      "type": "string",
+      "default": "Calendário do Advento Interativo"
+    },
+    "calendarSubtitle": {
+      "type": "string",
+      "default": "Abra as caixas a cada dia de dezembro para revelar as surpresas!"
+    },
+    "calendarDoors": {
+      "type": "array",
+      "default": []
+    },
+    "calendarYear": {
+      "type": "number",
+      "default": 2026
+    },
+    "calendarTheme": {
+      "type": "string",
+      "default": "festive"
+    },
+    "arMarkerType": {
+      "type": "string",
+      "default": "hiro"
+    },
+    "arClueTitle": {
+      "type": "string",
+      "default": "Pista Enigmática de Realidade Aumentada"
+    },
+    "arClueHint": {
+      "type": "string",
+      "default": "Aponte sua câmera para o marcador impresso ou na tela para revelar a chave secreta."
+    },
+    "arInstructions": {
+      "type": "string",
+      "default": "Utilize o marcador padrão HIRO abaixo. Ao detectar o marcador, a pista tridimensional é projetada!"
+    },
+    "arTargetModelUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "periodic-interactive-utilities",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/editor.css",
+  "style": "file:./build/style.css",
+  "viewScript": "file:./build/view.js"
+}

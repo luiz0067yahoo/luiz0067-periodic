@@ -1,0 +1,15 @@
+{
+  "block_title": "Mappa Interattiva",
+  "block_description": "Incorpora mappe interattive e responsive da Google Maps o OpenStreetMap.",
+  "Mapa Interativo": "Mappa Interattiva",
+  "Configurações do Mapa": "Impostazioni della Mappa",
+  "URL do iframe (Google Maps / OSM)": "URL dell'iframe (Google Maps / OSM)",
+  "Cole o link completo de embed do mapa.": "Incolla il link di incorporamento completo della mappa.",
+  "Altura (px)": "Altezza (px)",
+  "Borda Arredondada (px)": "Bordo Arrotondato (px)",
+  "Legenda": "Didascalia",
+  "Classe CSS extra": "Classe CSS aggiuntiva",
+  "Use para estilos customizados.": "Usa per stili personalizzati.",
+  "Insira a URL do mapa no painel lateral.": "Inserisci l'URL della mappa nel pannello laterale.",
+  "Map URL not provided.": "URL della mappa non fornito."
+}

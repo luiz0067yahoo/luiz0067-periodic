@@ -1,0 +1,153 @@
+{
+  "translation-revision-date": "2026-09-13 17:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Depoimentos": [
+        "Testimonianze"
+      ],
+      "Avaliação/Estrelas": [
+        "Valutazione/Stelle"
+      ],
+      "Layout": [
+        "Layout"
+      ],
+      "Gerenciar Depoimentos": [
+        "Gestisci Testimonianze"
+      ],
+      "Adicione, reordene e configure cada um dos relatos dos seus clientes.": [
+        "Aggiungi, riordina e configura ciascuna delle testimonianze dei tuoi clienti."
+      ],
+      "Adicionar Depoimento": [
+        "Aggiungi Testimonianza"
+      ],
+      "Sem nome": [
+        "Senza nome"
+      ],
+      "Mover para cima": [
+        "Sposta su"
+      ],
+      "Mover para baixo": [
+        "Sposta giù"
+      ],
+      "Remover": [
+        "Rimuovi"
+      ],
+      "Foto de Perfil (Avatar)": [
+        "Foto del Profilo (Avatar)"
+      ],
+      "Alterar Foto": [
+        "Modifica Foto"
+      ],
+      "Enviar Foto": [
+        "Carica Foto"
+      ],
+      "Classificação (Estrelas)": [
+        "Valutazione (Stelle)"
+      ],
+      "Configurações de Avaliação e Estrelas": [
+        "Impostazioni di Valutazione e Stelle"
+      ],
+      "Exibir Avaliação por Estrelas": [
+        "Mostra Valutazione a Stelle"
+      ],
+      "Exibe ícones de estrelas correspondentes à nota de cada depoimento.": [
+        "Mostra le icone a stella corrispondenti al voto di ciascuna testimonianza."
+      ],
+      "Exibir Ícone Decorativo de Aspas": [
+        "Mostra Icona Decorativa Virgolette"
+      ],
+      "Mostra ícone sutil de aspas superiores no cabeçalho do card.": [
+        "Mostra un'icona discreta di virgolette nell'intestazione della scheda."
+      ],
+      "Cor das Estrelas": [
+        "Colore delle Stelle"
+      ],
+      "Layout e Estilo dos Cards": [
+        "Layout e Stile delle Schede"
+      ],
+      "Modo de Exibição": [
+        "Modalità di Visualizzazione"
+      ],
+      "Grid Responsivo (Múltiplas Colunas)": [
+        "Griglia Reattiva (Colonne Multiple)"
+      ],
+      "Card Único em Destaque": [
+        "Scheda Singola in Evidenza"
+      ],
+      "Quantidade de Colunas no Grid": [
+        "Numero di Colonne nella Griglia"
+      ],
+      "Número de cards exibidos por linha em telas desktop.": [
+        "Numero di schede visualizzate per riga su schermi desktop."
+      ],
+      "Sombra Suave nos Cards": [
+        "Ombra Morbida sulle Schede"
+      ],
+      "Aplica classe shadow-sm do Bootstrap 5 com elevação no hover.": [
+        "Applica la classe shadow-sm di Bootstrap 5 con elevazione al passaggio del mouse."
+      ],
+      "Arredondamento das Bordas (px)": [
+        "Raggio del Bordo (px)"
+      ],
+      "Cor de Fundo do Card": [
+        "Colore di Sfondo della Scheda"
+      ],
+      "Cor do Texto do Card": [
+        "Colore del Testo della Scheda"
+      ],
+      "Mover para esquerda / cima": [
+        "Sposta a sinistra / su"
+      ],
+      "Mover para direita / baixo": [
+        "Sposta a destra / giù"
+      ],
+      "Duplicar depoimento": [
+        "Duplica testimonianza"
+      ],
+      "Remover depoimento": [
+        "Rimuovi testimonianza"
+      ],
+      "Escreva aqui o depoimento do cliente...": [
+        "Scrivi qui la testimonianza del cliente..."
+      ],
+      "Digite aqui o depoimento ou citação com suas próprias palavras.": [
+        "Scrivi qui la testimonianza o citazione con le tue parole."
+      ],
+      "Nome do Cliente": [
+        "Nome del Cliente"
+      ],
+      "Cargo ou Empresa": [
+        "Ruolo o Azienda"
+      ],
+      "Alterar foto de perfil": [
+        "Modifica foto del profilo"
+      ],
+      "Nome do Autor": [
+        "Nome dell'Autore"
+      ],
+      "Cargo / Empresa": [
+        "Ruolo / Azienda"
+      ],
+      "Adicionar Outro Depoimento": [
+        "Aggiungi un'Altra Testimonianza"
+      ],
+      "É necessário manter pelo menos um depoimento.": [
+        "È necessario mantenere almeno una testimonianza."
+      ],
+      "estrela": [
+        "stella"
+      ],
+      "estrelas": [
+        "stelle"
+      ]
+    }
+  }
+}

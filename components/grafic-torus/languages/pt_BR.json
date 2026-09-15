@@ -1,0 +1,172 @@
+{
+  "translation-revision-date": "2026-09-12 10:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-grafic-torus",
+  "locale_data": {
+    "periodic-grafic-torus": {
+      "": {
+        "domain": "periodic-grafic-torus",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Grafic Torus": [
+        "Periodic - Gráfico Torus"
+      ],
+      "Responsive and modern Torus / Donut SVG chart with center values and interactive legend.": [
+        "Gráfico Torus / Donut responsivo e moderno em SVG nativo com valores centrais e legenda interativa."
+      ],
+      "Chart Settings": [
+        "Configurações do Gráfico"
+      ],
+      "Center Value": [
+        "Valor Central"
+      ],
+      "Center Subtitle": [
+        "Subtítulo Central"
+      ],
+      "Ring Thickness": [
+        "Espessura do Anel"
+      ],
+      "Chart Diameter (px)": [
+        "Diâmetro do Gráfico (px)"
+      ],
+      "Manage Segments": [
+        "Gerenciar Segmentos"
+      ],
+      "Segment": [
+        "Segmento"
+      ],
+      "Label": [
+        "Rótulo"
+      ],
+      "Value / Percentage": [
+        "Valor / Porcentagem"
+      ],
+      "Color": [
+        "Cor"
+      ],
+      "Remove Segment": [
+        "Remover Segmento"
+      ],
+      "+ Add Segment": [
+        "+ Adicionar Segmento"
+      ],
+      "New Segment": [
+        "Novo Segmento"
+      ],
+      "torus": [
+        "torus"
+      ],
+      "donut chart": [
+        "gráfico de rosca"
+      ],
+      "grafico rosca": [
+        "gráfico rosca"
+      ],
+      "Coral Red": [
+        "Vermelho Coral"
+      ],
+      "Vibrant Green": [
+        "Verde Vibrante"
+      ],
+      "Purple Violet": [
+        "Roxo Violeta"
+      ],
+      "Sky Blue": [
+        "Azul Céu"
+      ],
+      "Amber Orange": [
+        "Laranja Âmbar"
+      ],
+      "Teal Cyan": [
+        "Ciano Petróleo"
+      ],
+      "Dark Slate": [
+        "Ardósia Escuro"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Grafic Torus": [
+        "Periodic - Gráfico Torus"
+      ],
+      "Responsive and modern Torus / Donut SVG chart with center values and interactive legend.": [
+        "Gráfico Torus / Donut responsivo e moderno em SVG nativo com valores centrais e legenda interativa."
+      ],
+      "Chart Settings": [
+        "Configurações do Gráfico"
+      ],
+      "Center Value": [
+        "Valor Central"
+      ],
+      "Center Subtitle": [
+        "Subtítulo Central"
+      ],
+      "Ring Thickness": [
+        "Espessura do Anel"
+      ],
+      "Chart Diameter (px)": [
+        "Diâmetro do Gráfico (px)"
+      ],
+      "Manage Segments": [
+        "Gerenciar Segmentos"
+      ],
+      "Segment": [
+        "Segmento"
+      ],
+      "Label": [
+        "Rótulo"
+      ],
+      "Value / Percentage": [
+        "Valor / Porcentagem"
+      ],
+      "Color": [
+        "Cor"
+      ],
+      "Remove Segment": [
+        "Remover Segmento"
+      ],
+      "+ Add Segment": [
+        "+ Adicionar Segmento"
+      ],
+      "New Segment": [
+        "Novo Segmento"
+      ],
+      "torus": [
+        "torus"
+      ],
+      "donut chart": [
+        "gráfico de rosca"
+      ],
+      "grafico rosca": [
+        "gráfico rosca"
+      ],
+      "Coral Red": [
+        "Vermelho Coral"
+      ],
+      "Vibrant Green": [
+        "Verde Vibrante"
+      ],
+      "Purple Violet": [
+        "Roxo Violeta"
+      ],
+      "Sky Blue": [
+        "Azul Céu"
+      ],
+      "Amber Orange": [
+        "Laranja Âmbar"
+      ],
+      "Teal Cyan": [
+        "Ciano Petróleo"
+      ],
+      "Dark Slate": [
+        "Ardósia Escuro"
+      ]
+    }
+  }
+}

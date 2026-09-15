@@ -1,0 +1,168 @@
+{
+  "translation-revision-date": "2026-09-13 16:30:00+0000",
+  "generator": "WP-CLI",
+  "source": "src/edit.js",
+  "domain": "periodic-card-wrapper",
+  "locale_data": {
+    "periodic-card-wrapper": {
+      "": {
+        "domain": "periodic-card-wrapper",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic Card Wrapper": [
+        "Periodic Card Wrapper"
+      ],
+      "Bloco estrutural de Cartão Bootstrap 5 completo com suporte a InnerBlocks, cabeçalho, corpo e rodapé.": [
+        "Complete Bootstrap 5 Card structural block with InnerBlocks support, customizable header, body, and footer."
+      ],
+      "Adicione o conteúdo principal do cartão aqui (textos, botões, colunas, imagens)...": [
+        "Add the main card content here (text, buttons, columns, images)..."
+      ],
+      "Estrutura do Card": [
+        "Card Structure"
+      ],
+      "Estilo e Cores": [
+        "Style & Colors"
+      ],
+      "Sombras e Efeitos": [
+        "Shadows & Effects"
+      ],
+      "Configurações de Estrutura": [
+        "Structure Settings"
+      ],
+      "Exibir Cabeçalho (Header)": [
+        "Show Header"
+      ],
+      "Cabeçalho do cartão ativo.": [
+        "Card header is enabled."
+      ],
+      "Cabeçalho do cartão oculto.": [
+        "Card header is hidden."
+      ],
+      "Exibir Rodapé (Footer)": [
+        "Show Footer"
+      ],
+      "Rodapé do cartão ativo.": [
+        "Card footer is enabled."
+      ],
+      "Rodapé do cartão oculto.": [
+        "Card footer is hidden."
+      ],
+      "Bordas e Cantos": [
+        "Borders & Corners"
+      ],
+      "Estilo de Borda (Bootstrap)": [
+        "Border Style (Bootstrap)"
+      ],
+      "Padrão (border)": [
+        "Default (border)"
+      ],
+      "Sem Borda (border-0)": [
+        "No Border (border-0)"
+      ],
+      "Primária (border-primary)": [
+        "Primary (border-primary)"
+      ],
+      "Secundária (border-secondary)": [
+        "Secondary (border-secondary)"
+      ],
+      "Sucesso (border-success)": [
+        "Success (border-success)"
+      ],
+      "Perigo (border-danger)": [
+        "Danger (border-danger)"
+      ],
+      "Aviso (border-warning)": [
+        "Warning (border-warning)"
+      ],
+      "Informativa (border-info)": [
+        "Info (border-info)"
+      ],
+      "Clara (border-light)": [
+        "Light (border-light)"
+      ],
+      "Escura (border-dark)": [
+        "Dark (border-dark)"
+      ],
+      "Arredondamento (Border Radius)": [
+        "Border Radius"
+      ],
+      "Padrão (rounded)": [
+        "Default (rounded)"
+      ],
+      "Reto (rounded-0)": [
+        "Square (rounded-0)"
+      ],
+      "Pequeno (rounded-1)": [
+        "Small (rounded-1)"
+      ],
+      "Médio (rounded-2)": [
+        "Medium (rounded-2)"
+      ],
+      "Grande (rounded-3)": [
+        "Large (rounded-3)"
+      ],
+      "Extra Grande (rounded-4)": [
+        "Extra Large (rounded-4)"
+      ],
+      "Pílula (rounded-pill)": [
+        "Pill (rounded-pill)"
+      ],
+      "Cores do Cartão": [
+        "Card Colors"
+      ],
+      "Cor de Fundo do Cartão": [
+        "Card Background Color"
+      ],
+      "Cor do Texto do Cartão": [
+        "Card Text Color"
+      ],
+      "Cores do Cabeçalho": [
+        "Header Colors"
+      ],
+      "Fundo do Cabeçalho": [
+        "Header Background"
+      ],
+      "Texto do Cabeçalho": [
+        "Header Text"
+      ],
+      "Cores do Rodapé": [
+        "Footer Colors"
+      ],
+      "Fundo do Rodapé": [
+        "Footer Background"
+      ],
+      "Texto do Rodapé": [
+        "Footer Text"
+      ],
+      "Sombras Bootstrap 5": [
+        "Bootstrap 5 Shadows"
+      ],
+      "Intensidade da Sombra": [
+        "Shadow Intensity"
+      ],
+      "Sem Sombra (none)": [
+        "No Shadow (none)"
+      ],
+      "Sombra Suave (shadow-sm)": [
+        "Small Shadow (shadow-sm)"
+      ],
+      "Sombra Regular (shadow)": [
+        "Regular Shadow (shadow)"
+      ],
+      "Sombra Pronunciada (shadow-lg)": [
+        "Large Shadow (shadow-lg)"
+      ],
+      "Aplica classes nativas de elevação do Bootstrap 5.": [
+        "Applies native Bootstrap 5 elevation classes."
+      ],
+      "Título do Cartão...": [
+        "Card Title..."
+      ],
+      "Texto ou notas do rodapé...": [
+        "Footer text or notes..."
+      ]
+    }
+  }
+}

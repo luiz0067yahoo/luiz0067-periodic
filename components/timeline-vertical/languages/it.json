@@ -1,0 +1,159 @@
+{
+  "translation-revision-date": "2026-09-13 16:50:00-0300",
+  "generator": "WP-CLI/2.8.1",
+  "source": "periodic-timeline-vertical",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Timeline Vertical": [
+        "Cronologia Verticale"
+      ],
+      "Linha do tempo vertical elegante com marcadores circulares, ícones Font Awesome, datas e cards de conteúdo alternados ou alinhados.": [
+        "Elegante cronologia verticale con marcatori circolari, icone Font Awesome, date e schede di contenuto alternate o allineate."
+      ],
+      "Eventos": [
+        "Eventi"
+      ],
+      "Aparência": [
+        "Aspetto"
+      ],
+      "Ícones e Badges": [
+        "Icone e Badge"
+      ],
+      "Gerenciador de Eventos": [
+        "Gestore Eventi"
+      ],
+      "Adicione, ordene, edite e remova marcos cronológicos da linha do tempo.": [
+        "Aggiungi, ordina, modifica ed elimina traguardi cronologici dalla timeline."
+      ],
+      "+ Adicionar Marco Temporal": [
+        "+ Aggiungi Traguardo Cronologico"
+      ],
+      "+ Adicionar Novo Marco Temporal": [
+        "+ Aggiungi Nuovo Traguardo Cronologico"
+      ],
+      "Mover para cima": [
+        "Sposta in alto"
+      ],
+      "Mover para baixo": [
+        "Sposta in basso"
+      ],
+      "Excluir evento": [
+        "Elimina evento"
+      ],
+      "(Sem título)": [
+        "(Senza titolo)"
+      ],
+      "Data / Período": [
+        "Data / Periodo"
+      ],
+      "Título do Marco": [
+        "Titolo del Traguardo"
+      ],
+      "Tag / Etiqueta": [
+        "Tag / Etichetta"
+      ],
+      "Descrição": [
+        "Descrizione"
+      ],
+      "Classe Font Awesome 6 do Ícone": [
+        "Classe Icona Font Awesome 6"
+      ],
+      "Ex: fa-solid fa-flag, fa-solid fa-rocket": [
+        "Es: fa-solid fa-flag, fa-solid fa-rocket"
+      ],
+      "Cor do Marcador Circular": [
+        "Colore del Marcatore Circolare"
+      ],
+      "Aparência e Layout": [
+        "Aspetto e Layout"
+      ],
+      "Alinhamento dos Cards": [
+        "Allineamento delle Schede"
+      ],
+      "Alternado (Esquerda / Direita)": [
+        "Alternato (Sinistra / Destra)"
+      ],
+      "Alinhado à Esquerda": [
+        "Allineato a Sinistra"
+      ],
+      "Estilo da Linha Conectora": [
+        "Stile della Linea di Connessione"
+      ],
+      "Sólida": [
+        "Continua"
+      ],
+      "Tracejada": [
+        "Tratteggiata"
+      ],
+      "Pontilhada": [
+        "Puntinata"
+      ],
+      "Cor Primária / Marcadores": [
+        "Colore Primario / Marcatori"
+      ],
+      "Cor da Linha Conectora": [
+        "Colore della Linea di Connessione"
+      ],
+      "Sombra nos Cards": [
+        "Ombra sulle Schede"
+      ],
+      "Sombra suave ativa (Bootstrap shadow-sm).": [
+        "Ombra morbida attiva (Bootstrap shadow-sm)."
+      ],
+      "Sem sombra.": [
+        "Nessuna ombra."
+      ],
+      "Borda nos Cards": [
+        "Bordo delle Schede"
+      ],
+      "Ícones e Badges Circulares": [
+        "Icone e Badge Circolari"
+      ],
+      "Exibir Ícones nos Marcadores": [
+        "Mostra Icone nei Marcatori"
+      ],
+      "Cor de Fundo Padrão do Marcador": [
+        "Colore di Sfondo Predefinito del Marcatore"
+      ],
+      "Cor do Ícone / Texto": [
+        "Colore dell'Icona / Testo"
+      ],
+      "Ícones Rápidos Populares (Font Awesome 6)": [
+        "Icone Rapide Popolari (Font Awesome 6)"
+      ],
+      "Clique em um ícone para aplicá-lo ao evento atualmente aberto.": [
+        "Fai clic su un'icona per applicarla all'evento attualmente aperto."
+      ],
+      "Ano / Data": [
+        "Anno / Data"
+      ],
+      "Novo Marco Cronológico": [
+        "Nuovo Traguardo Cronologico"
+      ],
+      "Descreva aqui os detalhes mais importantes e conquistas deste marco temporal.": [
+        "Descrivi qui i dettagli più importanti e i successi di questo traguardo temporale."
+      ],
+      "Etapa": [
+        "Fase"
+      ],
+      "Data / Ano": [
+        "Data / Anno"
+      ],
+      "Tag": [
+        "Tag"
+      ],
+      "Título do marco...": [
+        "Titolo del traguardo..."
+      ],
+      "Escreva a descrição do evento...": [
+        "Scrivi la descrizione dell'evento..."
+      ]
+    }
+  }
+}

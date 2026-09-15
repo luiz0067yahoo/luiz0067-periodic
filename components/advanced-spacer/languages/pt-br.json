@@ -1,0 +1,49 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-spacer",
+	"locale_data": {
+		"periodic-advanced-spacer": {
+			"": {
+				"domain": "periodic-advanced-spacer",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=(n > 1);"
+			},
+			"Espaçador Avançado Responsivo": [ "Espaçador Avançado Responsivo" ],
+			"Espaçador vertical responsivo com controle de altura por dispositivo e opções de visibilidade do Bootstrap 5.": [
+				"Espaçador vertical responsivo com controle de altura por dispositivo e opções de visibilidade do Bootstrap 5."
+			],
+			"Alturas": [ "Alturas" ],
+			"Visibilidade": [ "Visibilidade" ],
+			"Linha Divisória": [ "Linha Divisória" ],
+			"Alturas por Dispositivo": [ "Alturas por Dispositivo" ],
+			"Simulação Visual no Editor": [ "Simulação Visual no Editor" ],
+			"Altura no Desktop (≥ 992px)": [ "Altura no Desktop (≥ 992px)" ],
+			"Altura no Tablet (768px a 991px)": [ "Altura no Tablet (768px a 991px)" ],
+			"Altura no Mobile (< 768px)": [ "Altura no Mobile (< 768px)" ],
+			"Regras de Visibilidade (Bootstrap 5)": [ "Regras de Visibilidade (Bootstrap 5)" ],
+			"Ocultar no Desktop (d-lg-none)": [ "Ocultar no Desktop (d-lg-none)" ],
+			"Ocultar no Tablet": [ "Ocultar no Tablet" ],
+			"Ocultar no Mobile (d-none d-sm-block)": [ "Ocultar no Mobile (d-none d-sm-block)" ],
+			"Estilização da Linha Divisória": [ "Estilização da Linha Divisória" ],
+			"Estilo da Linha": [ "Estilo da Linha" ],
+			"Nenhuma (Apenas Espaço)": [ "Nenhuma (Apenas Espaço)" ],
+			"Linha Sólida": [ "Linha Sólida" ],
+			"Linha Tracejada (Dashed)": [ "Linha Tracejada (Dashed)" ],
+			"Linha Pontilhada (Dotted)": [ "Linha Pontilhada (Dotted)" ],
+			"Gradiente de Luxo": [ "Gradiente de Luxo" ],
+			"Cor da Linha": [ "Cor da Linha" ],
+			"Espessura da Linha (px)": [ "Espessura da Linha (px)" ],
+			"Largura da Linha (%)": [ "Largura da Linha (%)" ],
+			"Alinhamento da Linha": [ "Alinhamento da Linha" ],
+			"Esquerda": [ "Esquerda" ],
+			"Centralizado": [ "Centralizado" ],
+			"Direita": [ "Direita" ],
+			"Ícone Decorativo Central": [ "Ícone Decorativo Central" ],
+			"Nenhum": [ "Nenhum" ],
+			"Estrela (★)": [ "Estrela (★)" ],
+			"Diamante (◆)": [ "Diamante (◆)" ],
+			"Círculo (●)": [ "Círculo (●)" ]
+		}
+	}
+}

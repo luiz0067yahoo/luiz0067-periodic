@@ -1,0 +1,145 @@
+# Translation of date-title-link-file-upload in it_IT
+msgid ""
+msgstr ""
+"Project-Id-Version: luiz0067 Date Title Link File Upload 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data, Título, Link e Upload de Arquivo"
+msgstr "Data, Titolo, Link e Caricamento File"
+
+msgid "Exibe publicações, editais ou documentos com data destacada, título descritivo, link e download de anexo."
+msgstr "Mostra pubblicazioni, bandi o documenti con data in evidenza, titolo descrittivo, link e download dell'allegato."
+
+msgid "arquivo"
+msgstr "file"
+
+msgid "download"
+msgstr "scarica"
+
+msgid "edital"
+msgstr "bando"
+
+msgid "pdf"
+msgstr "pdf"
+
+msgid "data"
+msgstr "data"
+
+msgid "Edital de Licitação"
+msgstr "Bando di Gara"
+
+msgid "Novo"
+msgstr "Nuovo"
+
+msgid "Edital de Licitação Nº 042/2026 - Contratação de Serviços Especializados de TI"
+msgstr "Bando di Gara N. 042/2026 - Appalto per Servizi Informatici Specializzati"
+
+msgid "Baixar Edital"
+msgstr "Scarica Bando"
+
+msgid "Download"
+msgstr "Scarica"
+
+msgid "Arquivo e Download"
+msgstr "File e Download"
+
+msgid "Arquivo:"
+msgstr "File:"
+
+msgid "Tamanho:"
+msgstr "Dimensione:"
+
+msgid "Substituir Arquivo"
+msgstr "Sostituisci File"
+
+msgid "Remover"
+msgstr "Rimuovi"
+
+msgid "Selecionar / Enviar Arquivo"
+msgstr "Seleziona / Carica File"
+
+msgid "URL Direta do Arquivo"
+msgstr "URL Diretto del File"
+
+msgid "URL preenchida automaticamente pelo upload ou informada manualmente."
+msgstr "URL compilato automaticamente dal caricamento o inserito manualmente."
+
+msgid "Nome de Exibição do Arquivo"
+msgstr "Nome Visualizzato del File"
+
+msgid "Tamanho Formatado (ex: 2.5 MB)"
+msgstr "Dimensione Formattata (es: 2.5 MB)"
+
+msgid "Texto do Botão de Download"
+msgstr "Testo del Pulsante di Download"
+
+msgid "Data e Metadados"
+msgstr "Data e Metadati"
+
+msgid "Data de Publicação"
+msgstr "Data di Pubblicazione"
+
+msgid "Ex: 12/09/2026"
+msgstr "Es: 12/09/2026"
+
+msgid "Categoria / Órgão Emissor (Caption)"
+msgstr "Categoria / Ente Emittente (Caption)"
+
+msgid "Ex: Secretaria de Finanças"
+msgstr "Es: Dipartimento delle Finanze"
+
+msgid "Etiqueta em Destaque (Badge)"
+msgstr "Etichetta in Evidenza (Badge)"
+
+msgid "Ex: Novo, Retificado, Edital"
+msgstr "Es: Nuovo, Rettificato, Bando"
+
+msgid "Link de Redirecionamento"
+msgstr "Link di Reindirizzamento"
+
+msgid "URL da Página ou Detalhes"
+msgstr "URL della Pagina o Dettagli"
+
+msgid "Link alternativo ou página interna de detalhes da publicação."
+msgstr "Link alternativo o pagina interna con i dettagli della pubblicazione."
+
+msgid "Abrir links em nova aba (_blank)"
+msgstr "Apri link in una nuova scheda (_blank)"
+
+msgid "Estilo de Exibição"
+msgstr "Stile di Visualizzazione"
+
+msgid "Modelo de Apresentação"
+msgstr "Modello di Presentazione"
+
+msgid "Cartão Moderno (Card)"
+msgstr "Scheda Moderna (Card)"
+
+msgid "Linha de Tabela / Lista (Row)"
+msgstr "Riga di Tabella / Elenco (Row)"
+
+msgid "Data (DD/MM/AAAA)"
+msgstr "Data (GG/MM/AAAA)"
+
+msgid "Digite aqui o título descritivo do documento ou edital..."
+msgstr "Inserisci qui il titolo descrittivo del documento o bando..."
+
+msgid "(Nenhum arquivo vinculado)"
+msgstr "(Nessun file allegato)"
+
+msgid "Alterar Arquivo"
+msgstr "Modifica File"
+
+msgid "Vincular Arquivo"
+msgstr "Collega File"
+
+msgid "Acessar Página"
+msgstr "Accedi alla Pagina"
+
+msgid "Acessar"
+msgstr "Accedi"
+

@@ -1,0 +1,112 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "periodic/custom-shapes",
+	"version": "1.0.0",
+	"title": "Divisores de Formas (Custom Shapes)",
+	"category": "design",
+	"icon": "art",
+	"description": "Divisores de formas geométricas personalizados (ondas, inclinados, triângulos e curvas) para as bordas de seções.",
+	"keywords": [
+		"shapes",
+		"divisor",
+		"ondas",
+		"seção",
+		"periodic"
+	],
+	"textdomain": "periodic-custom-shapes",
+	"supports": {
+		"align": [
+			"full",
+			"wide"
+		],
+		"anchor": true,
+		"customClassName": true,
+		"html": false
+	},
+	"attributes": {
+		"enableTopShape": {
+			"type": "boolean",
+			"default": false
+		},
+		"topShapeType": {
+			"type": "string",
+			"default": "wave-smooth"
+		},
+		"topShapeColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"topShapeHeight": {
+			"type": "number",
+			"default": 90
+		},
+		"topShapeFlipH": {
+			"type": "boolean",
+			"default": false
+		},
+		"topShapeInvert": {
+			"type": "boolean",
+			"default": false
+		},
+		"topShapeOpacity": {
+			"type": "number",
+			"default": 1
+		},
+		"topShapeZIndex": {
+			"type": "number",
+			"default": 2
+		},
+		"enableBottomShape": {
+			"type": "boolean",
+			"default": true
+		},
+		"bottomShapeType": {
+			"type": "string",
+			"default": "wave-smooth"
+		},
+		"bottomShapeColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"bottomShapeHeight": {
+			"type": "number",
+			"default": 90
+		},
+		"bottomShapeFlipH": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomShapeInvert": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomShapeOpacity": {
+			"type": "number",
+			"default": 1
+		},
+		"bottomShapeZIndex": {
+			"type": "number",
+			"default": 2
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#0d6efd"
+		},
+		"paddingTop": {
+			"type": "number",
+			"default": 80
+		},
+		"paddingBottom": {
+			"type": "number",
+			"default": 80
+		},
+		"containerType": {
+			"type": "string",
+			"default": "container"
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

@@ -1,0 +1,40 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-custom-shapes",
+	"locale_data": {
+		"periodic-custom-shapes": {
+			"": {
+				"domain": "periodic-custom-shapes",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=(n > 1);"
+			},
+			"Divisores de Formas (Custom Shapes)": [ "Divisores de Formas (Custom Shapes)" ],
+			"Divisores de formas geométricas personalizados (ondas, inclinados, triângulos e curvas) para as bordas de seções.": [
+				"Divisores de formas geométricas personalizados (ondas, inclinados, triângulos e curvas) para as bordas de seções."
+			],
+			"Forma Superior": [ "Forma Superior" ],
+			"Forma Inferior": [ "Forma Inferior" ],
+			"Fundo & Layout": [ "Fundo & Layout" ],
+			"Divisor Superior (Top Shape)": [ "Divisor Superior (Top Shape)" ],
+			"Divisor Inferior (Bottom Shape)": [ "Divisor Inferior (Bottom Shape)" ],
+			"Ativar Forma Superior": [ "Ativar Forma Superior" ],
+			"Ativar Forma Inferior": [ "Ativar Forma Inferior" ],
+			"Tipo de Forma Geométrica": [ "Tipo de Forma Geométrica" ],
+			"Cor de Preenchimento": [ "Cor de Preenchimento" ],
+			"Altura da Forma (px)": [ "Altura da Forma (px)" ],
+			"Opacidade": [ "Opacidade" ],
+			"Inverter Horizontalmente (Flip)": [ "Inverter Horizontalmente (Flip)" ],
+			"Inverter Verticalmente": [ "Inverter Verticalmente" ],
+			"Camada (Z-Index)": [ "Camada (Z-Index)" ],
+			"Estilização da Seção & Bootstrap 5": [ "Estilização da Seção & Bootstrap 5" ],
+			"Cor de Fundo da Seção": [ "Cor de Fundo da Seção" ],
+			"Largura do Container": [ "Largura do Container" ],
+			"Container Padrão (container)": [ "Container Padrão (container)" ],
+			"Container Fluido (container-fluid)": [ "Container Fluido (container-fluid)" ],
+			"Sem Container (100% largura)": [ "Sem Container (100% largura)" ],
+			"Espaçamento Superior (Padding Top em px)": [ "Espaçamento Superior (Padding Top em px)" ],
+			"Espaçamento Inferior (Padding Bottom em px)": [ "Espaçamento Inferior (Padding Bottom em px)" ]
+		}
+	}
+}

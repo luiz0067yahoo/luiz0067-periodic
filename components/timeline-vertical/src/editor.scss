@@ -1,0 +1,208 @@
+/**
+ * luiz0067-timeline-vertical - Editor SCSS
+ */
+
+.luiz0067-timeline-vertical-editor {
+  position: relative;
+
+  .timeline-item {
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:hover .timeline-item-actions {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // Floating or contextual toolbar for each item
+  .timeline-item-actions {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    display: flex;
+    gap: 4px;
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #dee2e6;
+    z-index: 10;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+
+    .components-button {
+      height: 28px;
+      min-width: 28px;
+      padding: 0 6px;
+      font-size: 11px;
+    }
+  }
+
+  // Inline editing inputs
+  .timeline-editable-date {
+    border-bottom: 1px dashed rgba(13, 110, 253, 0.4);
+    min-width: 60px;
+    display: inline-block;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: var(--timeline-primary-color, #0d6efd);
+      background: rgba(13, 110, 253, 0.05);
+    }
+  }
+
+  .timeline-editable-title {
+    border-bottom: 1px dashed #ced4da;
+    display: block;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #0d6efd;
+      background: #f8f9fa;
+    }
+  }
+
+  .timeline-editable-description {
+    border: 1px dashed transparent;
+    border-radius: 4px;
+    padding: 2px 4px;
+
+    &:focus, &:hover {
+      border-color: #ced4da;
+      background: #fafafa;
+    }
+  }
+
+  .timeline-badge-editor-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    &:hover {
+      box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.35);
+    }
+  }
+
+  // Add event bottom bar
+  .timeline-add-event-container {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 5;
+
+    .components-button {
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    }
+  }
+}
+
+// Inspector Controls tab styles
+.luiz0067-inspector-tabs {
+  .components-tab-panel__tabs {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+    display: flex;
+
+    .components-button {
+      flex: 1;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 8px 4px;
+      text-align: center;
+      justify-content: center;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+
+      &.is-active {
+        border-bottom-color: #0d6efd;
+        color: #0d6efd;
+      }
+    }
+  }
+}
+
+// Event manager list in inspector
+.timeline-inspector-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .timeline-inspector-event-item {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 10px;
+    transition: all 0.2s ease;
+
+    &.is-expanded {
+      background: #ffffff;
+      border-color: #0d6efd;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .event-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .event-item-title {
+        font-weight: 600;
+        font-size: 13px;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .event-item-actions {
+        display: flex;
+        gap: 2px;
+      }
+    }
+
+    .event-item-body {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+  }
+}
+
+// Icon quick-select grid in inspector
+.timeline-icon-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+
+  .icon-select-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: #e9ecef;
+      border-color: #adb5bd;
+    }
+
+    &.is-active {
+      background: #0d6efd;
+      color: #ffffff;
+      border-color: #0d6efd;
+    }
+  }
+}

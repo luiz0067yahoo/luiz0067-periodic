@@ -1,0 +1,159 @@
+{
+  "translation-revision-date": "2026-09-13 16:50:00-0300",
+  "generator": "WP-CLI/2.8.1",
+  "source": "periodic-timeline-vertical",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Timeline Vertical": [
+        "Vertical Timeline"
+      ],
+      "Linha do tempo vertical elegante com marcadores circulares, ícones Font Awesome, datas e cards de conteúdo alternados ou alinhados.": [
+        "Elegant vertical timeline with circular markers, Font Awesome icons, dates, and alternating or aligned content cards."
+      ],
+      "Eventos": [
+        "Events"
+      ],
+      "Aparência": [
+        "Appearance"
+      ],
+      "Ícones e Badges": [
+        "Icons & Badges"
+      ],
+      "Gerenciador de Eventos": [
+        "Events Manager"
+      ],
+      "Adicione, ordene, edite e remova marcos cronológicos da linha do tempo.": [
+        "Add, reorder, edit, and remove timeline chronological milestones."
+      ],
+      "+ Adicionar Marco Temporal": [
+        "+ Add Timeline Milestone"
+      ],
+      "+ Adicionar Novo Marco Temporal": [
+        "+ Add New Timeline Milestone"
+      ],
+      "Mover para cima": [
+        "Move Up"
+      ],
+      "Mover para baixo": [
+        "Move Down"
+      ],
+      "Excluir evento": [
+        "Delete Event"
+      ],
+      "(Sem título)": [
+        "(Untitled)"
+      ],
+      "Data / Período": [
+        "Date / Period"
+      ],
+      "Título do Marco": [
+        "Milestone Title"
+      ],
+      "Tag / Etiqueta": [
+        "Tag / Label"
+      ],
+      "Descrição": [
+        "Description"
+      ],
+      "Classe Font Awesome 6 do Ícone": [
+        "Font Awesome 6 Icon Class"
+      ],
+      "Ex: fa-solid fa-flag, fa-solid fa-rocket": [
+        "E.g.: fa-solid fa-flag, fa-solid fa-rocket"
+      ],
+      "Cor do Marcador Circular": [
+        "Circular Marker Color"
+      ],
+      "Aparência e Layout": [
+        "Appearance & Layout"
+      ],
+      "Alinhamento dos Cards": [
+        "Cards Alignment"
+      ],
+      "Alternado (Esquerda / Direita)": [
+        "Alternating (Left / Right)"
+      ],
+      "Alinhado à Esquerda": [
+        "Left-Aligned"
+      ],
+      "Estilo da Linha Conectora": [
+        "Connecting Line Style"
+      ],
+      "Sólida": [
+        "Solid"
+      ],
+      "Tracejada": [
+        "Dashed"
+      ],
+      "Pontilhada": [
+        "Dotted"
+      ],
+      "Cor Primária / Marcadores": [
+        "Primary Color / Markers"
+      ],
+      "Cor da Linha Conectora": [
+        "Connecting Line Color"
+      ],
+      "Sombra nos Cards": [
+        "Cards Shadow"
+      ],
+      "Sombra suave ativa (Bootstrap shadow-sm).": [
+        "Smooth shadow enabled (Bootstrap shadow-sm)."
+      ],
+      "Sem sombra.": [
+        "No shadow."
+      ],
+      "Borda nos Cards": [
+        "Cards Border"
+      ],
+      "Ícones e Badges Circulares": [
+        "Circular Icons & Badges"
+      ],
+      "Exibir Ícones nos Marcadores": [
+        "Display Icons in Markers"
+      ],
+      "Cor de Fundo Padrão do Marcador": [
+        "Default Marker Background Color"
+      ],
+      "Cor do Ícone / Texto": [
+        "Icon / Text Color"
+      ],
+      "Ícones Rápidos Populares (Font Awesome 6)": [
+        "Popular Quick Icons (Font Awesome 6)"
+      ],
+      "Clique em um ícone para aplicá-lo ao evento atualmente aberto.": [
+        "Click an icon to apply it to the currently open milestone."
+      ],
+      "Ano / Data": [
+        "Year / Date"
+      ],
+      "Novo Marco Cronológico": [
+        "New Chronological Milestone"
+      ],
+      "Descreva aqui os detalhes mais importantes e conquistas deste marco temporal.": [
+        "Describe key details and achievements of this milestone here."
+      ],
+      "Etapa": [
+        "Stage"
+      ],
+      "Data / Ano": [
+        "Date / Year"
+      ],
+      "Tag": [
+        "Tag"
+      ],
+      "Título do marco...": [
+        "Milestone title..."
+      ],
+      "Escreva a descrição do evento...": [
+        "Write milestone description..."
+      ]
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "translation-revision-date": "2026-09-11 20:30:00+0000",
+  "generator": "wp-cli/python",
+  "source": "assets/js/buttons-banner.js",
+  "domain": "periodic-buttons-banner",
+  "locale_data": {
+    "periodic-buttons-banner": {
+      "": {
+        "domain": "periodic-buttons-banner",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Abrir em Nova Aba (_blank)": [
+        "Open in New Tab (_blank)"
+      ],
+      "Adiciona Linha": [
+        "Add Row"
+      ],
+      "Adicionar Botão": [
+        "Add Button"
+      ],
+      "Agendamentos e consultas": [
+        "Appointments and consultations"
+      ],
+      "Alinhamento": [
+        "Alignment"
+      ],
+      "Alterar Logotipo": [
+        "Change Logo"
+      ],
+      "Atendimento Online": [
+        "Online Support"
+      ],
+      "Atendimento ao cidadão": [
+        "Citizen service"
+      ],
+      "Azul Corporativo": [
+        "Corporate Blue"
+      ],
+      "Azul Escuro": [
+        "Dark Blue"
+      ],
+      "Azul Institucional": [
+        "Institutional Blue"
+      ],
+      "Botão #": [
+        "Button #"
+      ],
+      "Botões Banner": [
+        "Buttons Banner"
+      ],
+      "Branco": [
+        "White"
+      ],
+      "Centralizado": [
+        "Center"
+      ],
+      "Certidões e IPTU": [
+        "Certificates and Property Tax"
+      ],
+      "Cinza Claro": [
+        "Light Gray"
+      ],
+      "Clique para enviar ou alterar o logotipo": [
+        "Click to upload or change logo"
+      ],
+      "Coloque seu Link aqui...": [
+        "Place your Link here..."
+      ],
+      "Coloque seu texto aqui...": [
+        "Place your text here..."
+      ],
+      "Coloque titulo aqui...": [
+        "Place title here..."
+      ],
+      "Colunas por Linha": [
+        "Columns per Row"
+      ],
+      "Configurações de Layout e Estilo": [
+        "Layout and Style Settings"
+      ],
+      "Contorno / Outline": [
+        "Outline"
+      ],
+      "Cor do Destaque / Fundo": [
+        "Highlight / Background Color"
+      ],
+      "Coral / Vermelho": [
+        "Coral / Red"
+      ],
+      "Cores Personalizadas": [
+        "Custom Colors"
+      ],
+      "Descrição do serviço": [
+        "Service description"
+      ],
+      "Deve haver pelo menos 1 botão no bloco.": [
+        "There must be at least 1 button in the block."
+      ],
+      "Direita": [
+        "Right"
+      ],
+      "Dourado / Amarelo": [
+        "Gold / Yellow"
+      ],
+      "EDUCAÇÃO": [
+        "EDUCATION"
+      ],
+      "Enviar Logotipo": [
+        "Upload Logo"
+      ],
+      "Escolas e Alunos": [
+        "Schools and Students"
+      ],
+      "Escuro / Dark Mode": [
+        "Dark / Dark Mode"
+      ],
+      "Esquerda": [
+        "Left"
+      ],
+      "Estilo Visual": [
+        "Visual Style"
+      ],
+      "Gerenciador de Botões (": [
+        "Button Manager ("
+      ],
+      "Grafite Escuro": [
+        "Dark Graphite"
+      ],
+      "Limite máximo recomendado atingido.": [
+        "Maximum recommended limit reached."
+      ],
+      "Link de Destino (URL)": [
+        "Target Link (URL)"
+      ],
+      "Link de destino": [
+        "Target link"
+      ],
+      "Logotipo / Ícone:": [
+        "Logo / Icon:"
+      ],
+      "Matrículas e escolas": [
+        "Enrollment and schools"
+      ],
+      "NOTÍCIAS": [
+        "NEWS"
+      ],
+      "NOVO BOTÃO": [
+        "NEW BUTTON"
+      ],
+      "Padrão Prefeitura (Gradiente Verde/Azul)": [
+        "City Hall Default (Green/Blue Gradient)"
+      ],
+      "Portal da Saúde": [
+        "Health Portal"
+      ],
+      "Preto": [
+        "Black"
+      ],
+      "Quantidade de até 5 botões por linha com logos, descrições ricas e links personalizáveis.": [
+        "Up to 5 buttons per row with logos, rich descriptions, and customizable links."
+      ],
+      "Remover": [
+        "Remove"
+      ],
+      "Remover Botão": [
+        "Remove Button"
+      ],
+      "Remover Linha": [
+        "Remove Row"
+      ],
+      "SAÚDE": [
+        "HEALTH"
+      ],
+      "SERVIÇOS": [
+        "SERVICES"
+      ],
+      "Selecione o logotipo do botão": [
+        "Select button logo"
+      ],
+      "Sem título": [
+        "Untitled"
+      ],
+      "TRIBUTOS": [
+        "TAXES"
+      ],
+      "Título / Sigla": [
+        "Title / Acronym"
+      ],
+      "Utilizar como logotipo": [
+        "Use as logo"
+      ],
+      "Verde Institucional": [
+        "Institutional Green"
+      ],
+      "banner": [
+        "banner"
+      ],
+      "botões": [
+        "buttons"
+      ],
+      "buttons": [
+        "buttons"
+      ],
+      "custom adm": [
+        "custom adm"
+      ],
+      "links": [
+        "links"
+      ],
+      "prefeitura": [
+        "city hall"
+      ],
+      "Últimos comunicados": [
+        "Latest announcements"
+      ]
+    }
+  }
+}

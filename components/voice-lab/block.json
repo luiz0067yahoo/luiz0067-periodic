@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/voice-lab",
+  "version": "1.0.0",
+  "title": "Voice Lab (Web Audio & Speech)",
+  "category": "media",
+  "icon": "microphone",
+  "description": "Native voice recorder (.wav) and pronunciation validator using Web Audio API and Web Speech API.",
+  "keywords": [
+    "voice",
+    "recorder",
+    "audio",
+    "pronunciation",
+    "speech recognition",
+    "speech to text",
+    "wav"
+  ],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "labMode": {
+      "type": "string",
+      "default": "recorder"
+    },
+    "promptPhrase": {
+      "type": "string",
+      "default": "The quick brown fox jumps over the lazy dog."
+    },
+    "language": {
+      "type": "string",
+      "default": "en-US"
+    },
+    "maxRecordingTime": {
+      "type": "number",
+      "default": 30
+    },
+    "customTitle": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "periodic-voice-lab",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

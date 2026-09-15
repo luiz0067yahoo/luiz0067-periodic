@@ -1,0 +1,46 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-advanced-banner",
+	"locale_data": {
+		"periodic-advanced-banner": {
+			"": {
+				"domain": "periodic-advanced-banner",
+				"lang": "es_ES",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Banner Avançado Interativo": [ "Banner Avanzado Interactivo" ],
+			"Banner de cobertura interativo (cover) com animações dinâmicas de zoom e transição de texto no efeito hover.": [
+				"Banner de cobertura interactivo (cover) con animaciones dinámicas de zoom y transición de texto al pasar el cursor (hover)."
+			],
+			"Conteúdo": [ "Contenido" ],
+			"Fundo": [ "Fondo" ],
+			"Efeitos Hover": [ "Efectos Hover" ],
+			"Layout": [ "Diseño" ],
+			"Textos & Chamada para Ação (CTA)": [ "Textos y Llamada a la Acción (CTA)" ],
+			"Exibir Selo / Badge": [ "Mostrar Insignia / Etiqueta" ],
+			"Texto do Selo": [ "Texto de la Insignia" ],
+			"Tag HTML do Título": [ "Etiqueta HTML del Título" ],
+			"Exibir Botão de Ação": [ "Mostrar Botón de Acción" ],
+			"Texto do Botão": [ "Texto del Botón" ],
+			"URL / Link do Botão": [ "URL / Enlace del Botón" ],
+			"Abrir em Nova Aba": [ "Abrir en Nueva Pestaña" ],
+			"Estilo do Botão (Bootstrap 5)": [ "Estilo del Botón (Bootstrap 5)" ],
+			"Imagem e Sobreposição": [ "Imagen y Superposición" ],
+			"Imagem de Capa (Cover Image)": [ "Imagen de Portada (Cover Image)" ],
+			"Ponto Focal da Imagem": [ "Punto Focal de la Imagen" ],
+			"Cor da Camada de Sobreposição": [ "Color de la Capa de Superposición" ],
+			"Opacidade Padrão da Sobreposição": [ "Opacidad Estándar de la Superposición" ],
+			"Opacidade da Sobreposição no Hover": [ "Opacidad de la Superposición en Hover" ],
+			"Animações & Transições no Hover": [ "Animaciones y Transiciones en Hover" ],
+			"Simular Efeito Hover no Editor": [ "Simular Efecto Hover en el Editor" ],
+			"Efeito de Imagem no Hover": [ "Efecto de Imagen en Hover" ],
+			"Efeito de Transição do Texto": [ "Efecto de Transición del Texto" ],
+			"Layout & Dimensões": [ "Diseño y Dimensiones" ],
+			"Alinhamento do Conteúdo": [ "Alineación del Contenido" ],
+			"Altura Mínima (Desktop)": [ "Altura Mínima (Escritorio)" ],
+			"Altura Mínima (Mobile)": [ "Altura Mínima (Móvil)" ],
+			"Cantos Arredondados (Border Radius em px)": [ "Bordes Redondeados (Border Radius en px)" ]
+		}
+	}
+}

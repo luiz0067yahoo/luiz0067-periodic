@@ -1,0 +1,59 @@
+.periodic-word-game {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+.periodic-word-game__card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+}
+.periodic-word-game__hint {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+.periodic-word-game__display {
+    font-family: monospace;
+    font-size: 2.25rem;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+}
+.periodic-word-game__stats {
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 1.5rem;
+}
+.periodic-word-game__keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: center;
+}
+.periodic-word-game__key {
+    width: 36px;
+    height: 38px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.periodic-word-game__key:hover:not(:disabled) {
+    background: #3b82f6;
+    color: #fff;
+    border-color: #3b82f6;
+}
+.periodic-word-game__key:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

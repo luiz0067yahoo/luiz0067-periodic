@@ -1,0 +1,37 @@
+.luiz0067-advanced-spacer-block {
+	position: relative;
+	border: 1px dashed rgba(100, 116, 139, 0.35);
+	border-radius: 4px;
+	transition: height 0.2s ease;
+
+	&.is-preview-desktop {
+		height: var(--luiz0067-spacer-desktop) !important;
+	}
+
+	&.is-preview-tablet {
+		height: var(--luiz0067-spacer-tablet) !important;
+	}
+
+	&.is-preview-mobile {
+		height: var(--luiz0067-spacer-mobile) !important;
+	}
+
+	.luiz0067-spacer-editor-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+		opacity: 0.75;
+		transition: opacity 0.2s;
+
+		.badge {
+			font-size: 10px;
+			letter-spacing: 0.5px;
+		}
+	}
+
+	&:hover .luiz0067-spacer-editor-overlay {
+		opacity: 1;
+	}
+}

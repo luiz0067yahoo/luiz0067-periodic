@@ -1,0 +1,255 @@
+/**
+ * periodic Separator - Frontend & Public Styles
+ * 
+ * Styles applied to the separator / content divider on both frontend and editor.
+ * Includes backwards compatibility for legacy .separator-green class.
+ *
+ * @package Periodic_Separator
+ * @version 1.0.0
+ */
+
+:root {
+	--periodic-separator-green: #01913a;
+	--periodic-separator-default-width: 80%;
+	--periodic-separator-default-height: 3px;
+}
+
+/* ==========================================================================
+   Wrapper de Alinhamento e Espaçamento
+   ========================================================================== */
+.periodic-separator-wrap {
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+	clear: both;
+	margin: 30px auto;
+	transition: margin 0.2s ease;
+}
+
+.periodic-separator-wrap.separator-align-center {
+	justify-content: center;
+	text-align: center;
+}
+
+.periodic-separator-wrap.separator-align-left {
+	justify-content: flex-start;
+	text-align: left;
+}
+
+.periodic-separator-wrap.separator-align-right {
+	justify-content: flex-end;
+	text-align: right;
+}
+
+/* ==========================================================================
+   Elemento Principal do Separador
+   ========================================================================== */
+.periodic-separator {
+	display: block;
+	box-sizing: border-box;
+	max-width: 100%;
+	height: var(--separator-height, 3px);
+	border: 0;
+	transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   Estilo Clássico: .separator-green (Compatibilidade Total com customADM / Prefeitura)
+   ========================================================================== */
+.separator-green,
+.periodic-separator.separator-green,
+.periodic-separator.style-separator-green {
+	background-color: var(--separator-color, #01913a);
+	height: var(--separator-height, 3px);
+	border-radius: var(--separator-radius, 2px);
+	width: var(--separator-width, 80%);
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	opacity: var(--separator-opacity, 1);
+}
+
+/* Se alinhado especificamente */
+.separator-align-left .separator-green,
+.separator-align-left .periodic-separator {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.separator-align-right .separator-green,
+.separator-align-right .periodic-separator {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+/* ==========================================================================
+   Variações de Estilo de Linha
+   ========================================================================== */
+
+/* 1. Linha Sólida Personalizável */
+.periodic-separator.style-solid {
+	background-color: var(--separator-color, #01913a);
+	border-radius: var(--separator-radius, 2px);
+	height: var(--separator-height, 3px);
+	opacity: var(--separator-opacity, 1);
+}
+
+/* 2. Linha Tracejada (Dashed) */
+.periodic-separator.style-dashed {
+	background-color: transparent !important;
+	border-top-style: dashed !important;
+	border-top-width: var(--separator-height, 3px) !important;
+	border-top-color: var(--separator-color, #01913a) !important;
+	height: 0 !important;
+	opacity: var(--separator-opacity, 1);
+}
+
+/* 3. Linha Pontilhada (Dotted) */
+.periodic-separator.style-dotted {
+	background-color: transparent !important;
+	border-top-style: dotted !important;
+	border-top-width: var(--separator-height, 3px) !important;
+	border-top-color: var(--separator-color, #01913a) !important;
+	height: 0 !important;
+	opacity: var(--separator-opacity, 1);
+}
+
+/* 4. Linha Dupla (Double) */
+.periodic-separator.style-double {
+	background-color: transparent !important;
+	border-top-style: double !important;
+	/* Para a linha dupla ficar visível, espessura mínima de 4px */
+	border-top-width: max(4px, var(--separator-height, 6px)) !important;
+	border-top-color: var(--separator-color, #01913a) !important;
+	height: 0 !important;
+	opacity: var(--separator-opacity, 1);
+}
+
+/* 5. Linha com Gradiente Suave */
+.periodic-separator.style-gradient {
+	height: var(--separator-height, 3px);
+	background: linear-gradient(90deg, 
+		rgba(255, 255, 255, 0) 0%, 
+		var(--separator-color, #01913a) 20%, 
+		var(--separator-secondary-color, #10b981) 50%, 
+		var(--separator-color, #01913a) 80%, 
+		rgba(255, 255, 255, 0) 100%
+	);
+	border-radius: var(--separator-radius, 2px);
+	border: 0;
+	opacity: var(--separator-opacity, 1);
+}
+
+/* 6. Linha com Efeito de Sombra / Relevo */
+.periodic-separator.style-shadow {
+	height: var(--separator-height, 3px);
+	background-color: var(--separator-color, #01913a);
+	border-radius: var(--separator-radius, 2px);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	opacity: var(--separator-opacity, 1);
+}
+
+/* 7. Três Pontos Decorativos (Dots) */
+.periodic-separator.style-dots {
+	height: auto !important;
+	background: transparent !important;
+	border: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	padding: 8px 0;
+	opacity: var(--separator-opacity, 1);
+}
+
+.periodic-separator.style-dots::before,
+.periodic-separator.style-dots::after,
+.periodic-separator.style-dots .dot-center {
+	content: '';
+	display: inline-block;
+	width: max(6px, calc(var(--separator-height, 3px) * 2));
+	height: max(6px, calc(var(--separator-height, 3px) * 2));
+	border-radius: 50%;
+	background-color: var(--separator-color, #01913a);
+	transition: transform 0.2s ease;
+}
+
+.periodic-separator.style-dots .dot-center {
+	transform: scale(1.3);
+}
+
+/* ==========================================================================
+   Separador com Ícone / Símbolo Central
+   ========================================================================== */
+.periodic-separator-with-icon {
+	display: flex;
+	align-items: center;
+	width: var(--separator-width, 80%);
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	gap: 16px;
+	opacity: var(--separator-opacity, 1);
+}
+
+.separator-align-left .periodic-separator-with-icon {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.separator-align-right .periodic-separator-with-icon {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.periodic-separator-with-icon .separator-line {
+	flex: 1;
+	height: var(--separator-height, 3px);
+	background-color: var(--separator-color, #01913a);
+	border-radius: var(--separator-radius, 2px);
+}
+
+.periodic-separator-with-icon.style-dashed .separator-line {
+	background-color: transparent !important;
+	border-top: var(--separator-height, 3px) dashed var(--separator-color, #01913a) !important;
+	height: 0 !important;
+}
+
+.periodic-separator-with-icon.style-dotted .separator-line {
+	background-color: transparent !important;
+	border-top: var(--separator-height, 3px) dotted var(--separator-color, #01913a) !important;
+	height: 0 !important;
+}
+
+.periodic-separator-with-icon .separator-symbol {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--separator-color, #01913a);
+	font-size: max(14px, calc(var(--separator-height, 3px) * 4));
+	line-height: 1;
+	user-select: none;
+	padding: 0 4px;
+}
+
+/* ==========================================================================
+   Suporte a Impressão e Telas Menores (Responsividade)
+   ========================================================================== */
+@media print {
+	.periodic-separator-wrap {
+		margin: 15px 0 !important;
+		page-break-inside: avoid;
+	}
+	.separator-green,
+	.periodic-separator {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}
+
+@media (max-width: 768px) {
+	.periodic-separator-wrap {
+		margin-top: calc(var(--separator-margin-top, 30px) * 0.75);
+		margin-bottom: calc(var(--separator-margin-bottom, 30px) * 0.75);
+	}
+}

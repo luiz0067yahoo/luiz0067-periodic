@@ -1,0 +1,24 @@
+{
+  "name": "interative-software-simulator",
+  "version": "1.0.0",
+  "description": "Bloco Gutenberg nativo para criar simuladores de software e tutoriais passo a passo interativos responsivos.",
+  "author": "Luiz",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "zip": "create-zip.bat"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0",
+    "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.11.0"
+  }
+}

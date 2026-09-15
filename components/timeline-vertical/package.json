@@ -1,0 +1,19 @@
+{
+  "name": "periodic-timeline-vertical",
+  "version": "1.0.0",
+  "description": "Bloco Gutenberg de Linha do Tempo Vertical elegante com marcadores circulares, ícones Font Awesome 6, datas e cards de conteúdo alternados ou alinhados.",
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "packages-update": "wp-scripts packages-update",
+    "screenshots": "node capture-screenshots.js"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.1.0",
+    "puppeteer-core": "^24.4.0",
+    "sass": "^1.83.4"
+  }
+}

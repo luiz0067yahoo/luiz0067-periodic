@@ -1,0 +1,62 @@
+{
+  "locale": "es-ES",
+  "block": {
+    "title": "Utilidades Interactivas Periodic",
+    "description": "Conjunto de bloques interactivos: generador dinámico de códigos QR, Calendario de Adviento de 24 casillas con bloqueo por fecha y modales Bootstrap 5, y pistas AR con marcadores."
+  },
+  "utilityTypes": {
+    "qrCode": "Generador de Código QR",
+    "adventCalendar": "Calendario de Adviento (24 Días)",
+    "arTrigger": "Pistas con Marcador AR"
+  },
+  "qrCode": {
+    "title": "Generador Dinámico de Código QR",
+    "labelContent": "Contenido o URL del Código QR",
+    "placeholderContent": "https://tusitio.com o cualquier texto...",
+    "labelFgColor": "Color de Primer Plano",
+    "labelBgColor": "Color de Fondo",
+    "labelSize": "Dimensión (Píxeles)",
+    "btnDownloadPng": "Descargar PNG",
+    "btnDownloadSvg": "Descargar SVG",
+    "btnCopy": "Copiar Contenido",
+    "copiedSuccess": "¡Contenido copiado al portapapeles!",
+    "livePreview": "Vista Previa en Vivo del Código QR"
+  },
+  "adventCalendar": {
+    "title": "Calendario de Adviento Interactivo",
+    "subtitle": "¡Abre las casillas cada día de diciembre para revelar las sorpresas!",
+    "day": "Día",
+    "doorLockedTitle": "¡Puerta Bloqueada!",
+    "doorLockedMessage": "Esta sorpresa solo estará disponible el",
+    "doorLockedRemainingDays": "¡Faltan {days} día(s) para el desbloqueo!",
+    "doorUnlocked": "¡Desbloqueado! Haz clic para revelar la sorpresa.",
+    "doorOpened": "Ya Abierto",
+    "btnOpenDoor": "Abrir Sorpresa",
+    "btnCloseModal": "Cerrar",
+    "testDateLabel": "Simulador de Fecha Actual (Modo Prueba):",
+    "resetProgress": "Reiniciar Progreso",
+    "progressResetSuccess": "¡El progreso del calendario ha sido reiniciado!",
+    "doorsUnlockedCount": "puertas desbloqueadas hasta ahora"
+  },
+  "arTrigger": {
+    "title": "Pistas y Desafío de Realidad Aumentada",
+    "subtitle": "Apunta la cámara al marcador o resuelve el enigma para revelar la pista.",
+    "markerInfo": "Marcador Estándar HIRO / QR de Seguimiento",
+    "btnViewMarker": "Ver Marcador de Referencia",
+    "btnPrintMarker": "Imprimir Marcador",
+    "btnScanCamera": "Activar Escáner / Cámara AR",
+    "clueTitle": "Pista Enigmática",
+    "clueHint": "Pista Especial:",
+    "showHint": "Revelar Pista",
+    "hideHint": "Ocultar Pista",
+    "arStatusReady": "Listo para rastrear",
+    "arModalTitle": "Marcador de Realidad Aumentada"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error al cargar la utilidad.",
+    "settings": "Configuración del Bloque",
+    "preview": "Vista Previa",
+    "poweredBy": "Ecosistema Interactivo Periodic"
+  }
+}

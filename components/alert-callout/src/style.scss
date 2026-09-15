@@ -1,0 +1,86 @@
+/**
+ * Estilos compartilhados (Frontend e Editor) para luiz0067-alert-callout
+ */
+
+.alert {
+	border-radius: 0.5rem;
+	padding: 1.1rem 1.25rem;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+
+	.alert-icon-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+
+		i {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.alert-content-container {
+		.alert-heading {
+			font-size: 1.15rem;
+			line-height: 1.35;
+			margin-top: 0;
+		}
+
+		.alert-body-content {
+			font-size: 0.975rem;
+			line-height: 1.55;
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Estilização do destaque lateral de Callout
+	&.callout-border-highlight {
+		border-left-width: 6px !important;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		&.alert-primary {
+			border-left-color: #0d6efd !important;
+		}
+
+		&.alert-secondary {
+			border-left-color: #6c757d !important;
+		}
+
+		&.alert-success {
+			border-left-color: #198754 !important;
+		}
+
+		&.alert-danger {
+			border-left-color: #dc3545 !important;
+		}
+
+		&.alert-warning {
+			border-left-color: #ffc107 !important;
+		}
+
+		&.alert-info {
+			border-left-color: #0dcaf0 !important;
+		}
+
+		&.alert-light {
+			border-left-color: #adb5bd !important;
+		}
+
+		&.alert-dark {
+			border-left-color: #212529 !important;
+		}
+	}
+
+	.btn-close {
+		outline: none;
+		box-shadow: none;
+
+		&:focus {
+			box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+		}
+	}
+}

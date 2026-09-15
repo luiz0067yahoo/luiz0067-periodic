@@ -1,0 +1,106 @@
+/**
+ * Estilos Exclusivos do Editor Gutenberg luiz0067/team-member
+ */
+
+.luiz0067-team-members-block-editor {
+	/* Destaque do avatar com ação de clique para upload */
+	.luiz0067-avatar-wrapper {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+
+		&:hover {
+			.luiz0067-avatar-badge {
+				transform: scale(1.15);
+				background-color: #0b5ed7 !important;
+			}
+		}
+
+		.luiz0067-avatar-badge {
+			position: absolute;
+			bottom: 4px;
+			right: 4px;
+			width: 26px;
+			height: 26px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: transform 0.2s ease, background-color 0.2s ease;
+			border: 2px solid #ffffff;
+		}
+	}
+
+	/* RichText no editor */
+	.card-title,
+	.card-subtitle,
+	.card-text {
+		outline: none;
+
+		&:hover,
+		&:focus {
+			background-color: rgba(13, 110, 253, 0.04);
+			border-radius: 4px;
+		}
+	}
+
+	/* Barra de ações rápida do editor no cartão */
+	.luiz0067-card-editor-actions {
+		opacity: 0.85;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+/* Painel de Configurações (InspectorControls) */
+.luiz0067-inspector-tabs {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0;
+		background: #f8f9fa;
+
+		.components-button {
+			flex: 1;
+			text-align: center;
+			justify-content: center;
+			padding: 10px 6px;
+			font-size: 11.5px;
+			font-weight: 600;
+			border-bottom: 2px solid transparent;
+			border-radius: 0;
+
+			&.is-active {
+				color: #0d6efd;
+				border-bottom-color: #0d6efd;
+				background: #ffffff;
+			}
+		}
+	}
+}
+
+.luiz0067-panel-member-card {
+	border: 1px solid #dee2e6;
+	border-radius: 6px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+	.components-card__header {
+		padding: 10px 14px;
+		background: #f8f9fa;
+		border-bottom: 1px solid #e9ecef;
+	}
+
+	.components-card__body {
+		padding: 14px;
+	}
+}
+
+.luiz0067-social-link-item {
+	background: #fcfcfc;
+	transition: border-color 0.2s ease;
+
+	&:hover {
+		border-color: #adb5bd;
+	}
+}

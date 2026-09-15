@@ -1,0 +1,47 @@
+{
+  "locale": "pt-BR",
+  "blockTitle": "Periodic Drag & Drop Engine",
+  "blockDescription": "Motor interativo para reordenação de parágrafos, preenchimento de lacunas com tokens e identificação de alvos sobre imagem.",
+  "modes": {
+    "reorderParagraphs": "Reordenação de Parágrafos",
+    "textTokens": "Tokens de Texto (Lacunas / Dropzones)",
+    "imageTargets": "Alvos sobre Imagem"
+  },
+  "settings": {
+    "modeSelection": "Modo de Funcionamento",
+    "modeDescription": "Escolha a mecânica interativa de arrastar e soltar.",
+    "itemsSection": "Itens Arrastáveis",
+    "addItem": "+ Adicionar Novo Item",
+    "removeItem": "Remover Item",
+    "itemText": "Texto do Item",
+    "correctOrder": "Posição Correta (Ordem)",
+    "targetAssociation": "Zona Alvo Associada (Gabarito)",
+    "targetsSection": "Zonas de Destino (Dropzones)",
+    "addTarget": "+ Adicionar Zona Alvo",
+    "removeTarget": "Remover Zona",
+    "targetLabel": "Rótulo / Descrição da Zona",
+    "targetCoords": "Coordenadas na Imagem (% X, % Y)",
+    "imageSection": "Configuração da Imagem de Fundo",
+    "uploadImage": "Selecionar Imagem de Fundo",
+    "removeImage": "Remover Imagem",
+    "feedbackSection": "Mensagens de Feedback",
+    "successMessage": "Mensagem de Acerto",
+    "errorMessage": "Mensagem de Erro",
+    "allowRetry": "Permitir tentar novamente"
+  },
+  "frontend": {
+    "dragInstruction": "Arraste os itens para suas respectivas zonas ou reordene conforme solicitado:",
+    "availableItems": "Itens Disponíveis:",
+    "dropzonePlaceholder": "Solte o item correspondente aqui...",
+    "checkButton": "Verificar Respostas",
+    "resetButton": "Tentar Novamente",
+    "scoreLabel": "Sua Pontuação:",
+    "allCorrect": "Excelente! Todos os itens foram posicionados corretamente!",
+    "partialCorrect": "Você acertou {correct} de {total} itens. Revise suas respostas!",
+    "noneCorrect": "Nenhuma correspondência correta. Tente novamente com calma!",
+    "targetPrefix": "Alvo",
+    "grabHandle": "Arraste para mover",
+    "correctBadge": "Correto!",
+    "incorrectBadge": "Incorreto!"
+  }
+}

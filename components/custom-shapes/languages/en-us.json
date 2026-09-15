@@ -1,0 +1,40 @@
+{
+	"translation-revision-date": "2026-09-13 21:00:00-0300",
+	"generator": "Periodic i18n System",
+	"domain": "periodic-custom-shapes",
+	"locale_data": {
+		"periodic-custom-shapes": {
+			"": {
+				"domain": "periodic-custom-shapes",
+				"lang": "en_US",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Divisores de Formas (Custom Shapes)": [ "Custom Shape Dividers" ],
+			"Divisores de formas geométricas personalizados (ondas, inclinados, triângulos e curvas) para as bordas de seções.": [
+				"Custom geometric shape dividers (waves, slanted, triangles and curves) for section borders."
+			],
+			"Forma Superior": [ "Top Shape" ],
+			"Forma Inferior": [ "Bottom Shape" ],
+			"Fundo & Layout": [ "Background & Layout" ],
+			"Divisor Superior (Top Shape)": [ "Top Shape Divider" ],
+			"Divisor Inferior (Bottom Shape)": [ "Bottom Shape Divider" ],
+			"Ativar Forma Superior": [ "Enable Top Shape" ],
+			"Ativar Forma Inferior": [ "Enable Bottom Shape" ],
+			"Tipo de Forma Geométrica": [ "Geometric Shape Type" ],
+			"Cor de Preenchimento": [ "Fill Color" ],
+			"Altura da Forma (px)": [ "Shape Height (px)" ],
+			"Opacidade": [ "Opacity" ],
+			"Inverter Horizontalmente (Flip)": [ "Flip Horizontally" ],
+			"Inverter Verticalmente": [ "Invert Vertically" ],
+			"Camada (Z-Index)": [ "Layer (Z-Index)" ],
+			"Estilização da Seção & Bootstrap 5": [ "Section Styling & Bootstrap 5" ],
+			"Cor de Fundo da Seção": [ "Section Background Color" ],
+			"Largura do Container": [ "Container Width" ],
+			"Container Padrão (container)": [ "Default Container (container)" ],
+			"Container Fluido (container-fluid)": [ "Fluid Container (container-fluid)" ],
+			"Sem Container (100% largura)": [ "No Container (100% width)" ],
+			"Espaçamento Superior (Padding Top em px)": [ "Top Spacing (Padding Top in px)" ],
+			"Espaçamento Inferior (Padding Bottom em px)": [ "Bottom Spacing (Padding Bottom in px)" ]
+		}
+	}
+}

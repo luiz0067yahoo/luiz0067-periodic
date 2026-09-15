@@ -1,0 +1,108 @@
+{
+	"translation-revision-date": "2026-09-13 16:35:00-0300",
+	"generator": "WP-CLI/2.8.1",
+	"source": "src/edit.js",
+	"domain": "messages",
+	"locale_data": {
+		"messages": {
+			"": {
+				"domain": "messages",
+				"lang": "es_ES",
+				"plural-forms": "nplurals=2; plural=(n != 1);"
+			},
+			"Gatilho / Botão": [ "Activador / Botón" ],
+			"Conteúdo do Modal": [ "Contenido del Modal" ],
+			"Comportamento": [ "Comportamiento" ],
+			"Ocultar Pré-visualização do Modal": [
+				"Ocultar Vista Previa del Modal"
+			],
+			"Alternar Pré-visualização do Modal": [
+				"Alternar Vista Previa del Modal"
+			],
+			"Fechar Modal": [ "Cerrar Modal" ],
+			"Pré-visualizar Modal": [ "Previsualizar Modal" ],
+			"Configurações do Gatilho": [ "Configuración del Activador" ],
+			"Texto do Botão": [ "Texto del Botón" ],
+			"Rótulo exibido no botão que abre a janela.": [
+				"Etiqueta mostrada en el botón que abre la ventana modal."
+			],
+			"Ícone do Botão (Font Awesome)": [
+				"Icono del Botón (Font Awesome)"
+			],
+			"Exemplo: fa-solid fa-circle-info, fa-solid fa-bell, fa-solid fa-envelope": [
+				"Ejemplo: fa-solid fa-circle-info, fa-solid fa-bell, fa-solid fa-envelope"
+			],
+			"Variante de Cor (Bootstrap 5)": [
+				"Variante de Color (Bootstrap 5)"
+			],
+			"Primary (Azul)": [ "Primary (Azul)" ],
+			"Secondary (Cinza)": [ "Secondary (Gris)" ],
+			"Success (Verde)": [ "Success (Verde)" ],
+			"Danger (Vermelho)": [ "Danger (Rojo)" ],
+			"Warning (Amarelo)": [ "Warning (Amarillo)" ],
+			"Info (Ciano)": [ "Info (Cian)" ],
+			"Light (Claro)": [ "Light (Claro)" ],
+			"Dark (Escuro)": [ "Dark (Oscuro)" ],
+			"Outline Primary": [ "Outline Primary" ],
+			"Outline Secondary": [ "Outline Secondary" ],
+			"Outline Success": [ "Outline Success" ],
+			"Outline Danger": [ "Outline Danger" ],
+			"Tamanho do Botão": [ "Tamaño del Botón" ],
+			"Padrão (Médio)": [ "Predeterminado (Medio)" ],
+			"Pequeno (btn-sm)": [ "Pequeño (btn-sm)" ],
+			"Grande (btn-lg)": [ "Grande (btn-lg)" ],
+			"Conteúdo da Janela Modal": [ "Contenido de la Ventana Modal" ],
+			"Título da Modal": [ "Título del Modal" ],
+			"Título exibido no cabeçalho superior da janela modal.": [
+				"Título mostrado en el encabezado superior de la ventana modal."
+			],
+			"Texto do Botão de Fechar": [ "Texto del Botón de Cerrar" ],
+			"Texto do botão de fechamento no rodapé do modal.": [
+				"Texto del botón de cierre en el pie de página del modal."
+			],
+			"Dica WYSIWYG:": [ "Consejo WYSIWYG:" ],
+			"Você pode editar o título e o texto completo da modal com formatações ricas diretamente no canvas ativando a pré-visualização.": [
+				"Puedes editar el título y el texto completo con formato enriquecido directamente en el lienzo activando la vista previa."
+			],
+			"Abrir Pré-visualização para Edição": [
+				"Abrir Vista Previa para Edición"
+			],
+			"Comportamento e Dimensões": [ "Comportamiento y Dimensiones" ],
+			"Tamanho da Janela": [ "Tamaño de la Ventana" ],
+			"Padrão (500px)": [ "Predeterminado (500px)" ],
+			"Pequeno (modal-sm - 300px)": [ "Pequeño (modal-sm - 300px)" ],
+			"Grande (modal-lg - 800px)": [ "Grande (modal-lg - 800px)" ],
+			"Extra Grande (modal-xl - 1140px)": [
+				"Extra Grande (modal-xl - 1140px)"
+			],
+			"Tela Cheia (modal-fullscreen)": [
+				"Pantalla Completa (modal-fullscreen)"
+			],
+			"Backdrop Estático": [ "Fondo Estático" ],
+			"Impede o fechamento acidental ao clicar fora da janela modal.": [
+				"Evita el cierre accidental al hacer clic fuera de la ventana modal."
+			],
+			"Centralizar Verticalmente": [ "Centrar Verticalmente" ],
+			"Posiciona a janela exatamente no centro vertical da tela.": [
+				"Posiciona la ventana exactamente en el centro vertical de la pantalla."
+			],
+			"Rolagem Interna": [ "Desplazamiento Interno" ],
+			"Adiciona barra de rolagem ao corpo quando o conteúdo ultrapassar a tela.": [
+				"Añade barra de desplazamiento al cuerpo si el contenido excede la pantalla."
+			],
+			"ID HTML Único": [ "ID HTML Único" ],
+			"Identificador exclusivo usado pelo gatilho Bootstrap para acionar esta janela.": [
+				"Identificador exclusivo utilizado por el activador Bootstrap."
+			],
+			"Abrir Modal": [ "Abrir Modal" ],
+			"Clique para alternar a pré-visualização do modal": [
+				"Haz clic para alternar la vista previa del modal"
+			],
+			"Título da Modal...": [ "Título del Modal..." ],
+			"Fechar": [ "Cerrar" ],
+			"Escreva aqui o conteúdo rico da sua janela modal...": [
+				"Escribe aquí el contenido enriquecido de tu ventana modal..."
+			]
+		}
+	}
+}

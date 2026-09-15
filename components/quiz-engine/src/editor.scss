@@ -1,0 +1,120 @@
+/**
+ * luiz0067 Quiz Engine - Editor Styles
+ */
+
+.wp-block-luiz0067-quiz-engine-editor {
+  border: 1px dashed #0d6efd;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background-color: #fcfdfe;
+
+  .editor-quiz-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    background: #e7f1ff;
+    color: #0d6efd;
+    border-radius: 20px;
+  }
+
+  .editor-question-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+
+    .question-tab-btn {
+      padding: 0.4rem 0.85rem;
+      border-radius: 0.35rem;
+      border: 1px solid #dee2e6;
+      background: #ffffff;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: #0d6efd;
+        color: #0d6efd;
+      }
+
+      &.active {
+        background: #0d6efd;
+        color: #ffffff;
+        border-color: #0d6efd;
+      }
+    }
+
+    .add-question-btn {
+      padding: 0.4rem 0.85rem;
+      border-radius: 0.35rem;
+      border: 1px dashed #198754;
+      background: #f0fff4;
+      color: #198754;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background: #198754;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .editor-active-question-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .question-title-input {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .editor-option-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: #f8f9fa;
+      border-radius: 0.35rem;
+      border: 1px solid #e9ecef;
+
+      &.is-correct-row {
+        border-color: #198754;
+        background-color: #e8f5e9;
+      }
+
+      .option-input-field {
+        flex-grow: 1;
+      }
+
+      .btn-set-correct {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .editor-question-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+  }
+}

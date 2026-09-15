@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/structured-writing",
+  "version": "1.0.0",
+  "title": "Structured Writing",
+  "category": "widgets",
+  "icon": "editor-alignleft",
+  "description": "Guia a escrita do usuário em seções estruturadas (Notas Cornell, Escrita Passo a Passo e Relatório) com salvamento no LocalStorage e exportação em PDF.",
+  "keywords": [
+    "writing",
+    "cornell",
+    "notes",
+    "structured",
+    "pdf"
+  ],
+  "textdomain": "periodic-structured-writing",
+  "attributes": {
+    "templateType": {
+      "type": "string",
+      "default": "cornell"
+    },
+    "documentTitle": {
+      "type": "string",
+      "default": "Anotações e Escrita Estruturada"
+    },
+    "documentSubtitle": {
+      "type": "string",
+      "default": "Organize suas ideias, produza seu texto guiado e exporte o resultado final em PDF."
+    },
+    "allowPrintPdf": {
+      "type": "boolean",
+      "default": true
+    },
+    "allowCopy": {
+      "type": "boolean",
+      "default": true
+    },
+    "allowClearDraft": {
+      "type": "boolean",
+      "default": true
+    },
+    "showWordCount": {
+      "type": "boolean",
+      "default": true
+    },
+    "sections": {
+      "type": "array",
+      "default": [
+        {
+          "id": "cues",
+          "title": "Tópicos & Palavras-chave",
+          "placeholder": "Perguntas-chave, conceitos centrais, dúvidas e tópicos para revisão rápida...",
+          "promptGuidance": "Destaque palavras-chave, indagações e ideias-força que sintetizem o conteúdo.",
+          "colSpan": "col-md-4"
+        },
+        {
+          "id": "notes",
+          "title": "Notas de Aula & Desenvolvimento",
+          "placeholder": "Anote as explicações detalhadas, esquemas, argumentos e observações...",
+          "promptGuidance": "Registre os pontos explicados com suas palavras, fórmulas ou argumentos de sustentação.",
+          "colSpan": "col-md-8"
+        },
+        {
+          "id": "summary",
+          "title": "Síntese & Conclusão",
+          "placeholder": "Resuma a essência de todo o aprendizado em 2 a 4 frases conclusivas...",
+          "promptGuidance": "Escreva um resumo conciso conectando os tópicos às notas para fixação definitiva.",
+          "colSpan": "col-12"
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

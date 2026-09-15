@@ -1,0 +1,268 @@
+/**
+ * Luiz Code - Shared & Frontend Styles
+ * Author: Luiz (luiz0067)
+ * License: GPL-2.0-or-later
+ */
+
+.luiz-code-container {
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	margin: 1.5rem 0;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+	font-family: Consolas, "Fira Code", "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
+	transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+	&:hover {
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+	}
+
+	/* Terminal Header Window */
+	.luiz-code-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 8px 14px;
+		font-size: 12px;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+		user-select: none;
+
+		.luiz-code-window-dots {
+			display: flex;
+			gap: 6px;
+			align-items: center;
+
+			.dot {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				display: inline-block;
+
+				&.dot-red {
+					background-color: #ff5f56;
+				}
+				&.dot-yellow {
+					background-color: #ffbd2e;
+				}
+				&.dot-green {
+					background-color: #27c93f;
+				}
+			}
+		}
+
+		.luiz-code-header-center {
+			display: flex;
+			align-items: center;
+			font-weight: 600;
+			font-size: 12px;
+			opacity: 0.85;
+		}
+
+		.luiz-code-header-right {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.luiz-code-language-badge {
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding: 2px 8px;
+			border-radius: 4px;
+			letter-spacing: 0.5px;
+			background: rgba(128, 128, 128, 0.15);
+		}
+
+		.luiz-code-theme-badge {
+			font-size: 10px;
+			padding: 2px 6px;
+			border-radius: 4px;
+			opacity: 0.7;
+			background: rgba(128, 128, 128, 0.1);
+		}
+
+		.luiz-code-copy-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			background: rgba(128, 128, 128, 0.15);
+			border: 1px solid rgba(128, 128, 128, 0.2);
+			border-radius: 4px;
+			padding: 4px 10px;
+			font-size: 11px;
+			font-weight: 600;
+			color: inherit;
+			cursor: pointer;
+			transition: all 0.2s ease;
+
+			&:hover {
+				background: rgba(128, 128, 128, 0.28);
+				transform: translateY(-1px);
+			}
+
+			&:active {
+				transform: translateY(0);
+			}
+
+			&.copied {
+				background: #27c93f;
+				color: #ffffff;
+				border-color: #27c93f;
+			}
+		}
+	}
+
+	pre.luiz-code-pre {
+		margin: 0;
+		padding: 16px 20px;
+		overflow-x: auto;
+		font-size: 14px;
+		line-height: 1.6;
+		tab-size: 4;
+		white-space: pre;
+
+		code {
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			background: transparent;
+			padding: 0;
+			border: none;
+		}
+	}
+}
+
+/* ==========================================================================
+   THEME PALETTES & SYNTAX TOKENS
+   ========================================================================== */
+
+/* 1. Theme: Default (Clean Light) */
+.luiz-code-container.theme-default {
+	background-color: #f8f9fa;
+	color: #24292e;
+	border: 1px solid #e1e4e8;
+
+	.luiz-code-header {
+		background-color: #f1f3f5;
+		color: #495057;
+	}
+
+	.tok-keyword { color: #d73a49; font-weight: 600; }
+	.tok-string { color: #032f62; }
+	.tok-comment { color: #6a737d; font-style: italic; }
+	.tok-number { color: #005cc5; }
+	.tok-func { color: #6f42c1; }
+	.tok-variable { color: #e36209; }
+	.tok-operator { color: #d73a49; }
+	.tok-tag { color: #22863a; }
+	.tok-attr { color: #6f42c1; }
+	.tok-property { color: #005cc5; }
+	.tok-heading { color: #032f62; font-weight: bold; }
+	.tok-decorator { color: #e36209; }
+	.tok-doctype { color: #6a737d; }
+}
+
+/* 2. Theme: One Dark */
+.luiz-code-container.theme-one-dark {
+	background-color: #282c34;
+	color: #abb2bf;
+	border: 1px solid #3b4048;
+
+	.luiz-code-header {
+		background-color: #21252b;
+		color: #9da5b4;
+	}
+
+	.tok-keyword { color: #c678dd; font-weight: 600; }
+	.tok-string { color: #98c379; }
+	.tok-comment { color: #5c6370; font-style: italic; }
+	.tok-number { color: #d19a66; }
+	.tok-func { color: #61afef; }
+	.tok-variable { color: #e06c75; }
+	.tok-operator { color: #56b6c2; }
+	.tok-tag { color: #e06c75; }
+	.tok-attr { color: #d19a66; }
+	.tok-property { color: #e5c07b; }
+	.tok-heading { color: #61afef; font-weight: bold; }
+	.tok-decorator { color: #e5c07b; }
+	.tok-doctype { color: #5c6370; }
+}
+
+/* 3. Theme: Dracula */
+.luiz-code-container.theme-dracula {
+	background-color: #282a36;
+	color: #f8f8f2;
+	border: 1px solid #44475a;
+
+	.luiz-code-header {
+		background-color: #1e1f29;
+		color: #6272a4;
+	}
+
+	.tok-keyword { color: #ff79c6; font-weight: 600; }
+	.tok-string { color: #f1fa8c; }
+	.tok-comment { color: #6272a4; font-style: italic; }
+	.tok-number { color: #bd93f9; }
+	.tok-func { color: #50fa7b; }
+	.tok-variable { color: #ffb86c; }
+	.tok-operator { color: #ff79c6; }
+	.tok-tag { color: #ff79c6; }
+	.tok-attr { color: #50fa7b; }
+	.tok-property { color: #8be9fd; }
+	.tok-heading { color: #8be9fd; font-weight: bold; }
+	.tok-decorator { color: #f1fa8c; }
+	.tok-doctype { color: #6272a4; }
+}
+
+/* 4. Theme: Solarized Dark */
+.luiz-code-container.theme-solarized {
+	background-color: #002b36;
+	color: #839496;
+	border: 1px solid #073642;
+
+	.luiz-code-header {
+		background-color: #001f27;
+		color: #586e75;
+	}
+
+	.tok-keyword { color: #859900; font-weight: 600; }
+	.tok-string { color: #2aa198; }
+	.tok-comment { color: #586e75; font-style: italic; }
+	.tok-number { color: #d33682; }
+	.tok-func { color: #268bd2; }
+	.tok-variable { color: #b58900; }
+	.tok-operator { color: #cb4b16; }
+	.tok-tag { color: #268bd2; }
+	.tok-attr { color: #b58900; }
+	.tok-property { color: #2aa198; }
+	.tok-heading { color: #cb4b16; font-weight: bold; }
+	.tok-decorator { color: #268bd2; }
+	.tok-doctype { color: #586e75; }
+}
+
+/* 5. Theme: Nord (Arctic Frost) */
+.luiz-code-container.theme-nord {
+	background-color: #2e3440;
+	color: #d8dee9;
+	border: 1px solid #3b4252;
+
+	.luiz-code-header {
+		background-color: #242933;
+		color: #4c566a;
+	}
+
+	.tok-keyword { color: #81a1c1; font-weight: 600; }
+	.tok-string { color: #a3be8c; }
+	.tok-comment { color: #4c566a; font-style: italic; }
+	.tok-number { color: #b48ead; }
+	.tok-func { color: #88c0d0; }
+	.tok-variable { color: #d08770; }
+	.tok-operator { color: #81a1c1; }
+	.tok-tag { color: #81a1c1; }
+	.tok-attr { color: #ebcb8b; }
+	.tok-property { color: #88c0d0; }
+	.tok-heading { color: #88c0d0; font-weight: bold; }
+	.tok-decorator { color: #ebcb8b; }
+	.tok-doctype { color: #4c566a; }
+}

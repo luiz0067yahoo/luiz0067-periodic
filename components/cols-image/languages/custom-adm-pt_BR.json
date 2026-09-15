@@ -1,0 +1,43 @@
+{
+	"translation-revision-date": "2026-09-11 20:00:00-0300",
+	"generator": "Antigravity i18n Generator",
+	"domain": "custom-adm",
+	"locale_data": {
+		"custom-adm": {
+			"": {
+				"domain": "custom-adm",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=(n > 1);"
+			},
+			"Imagem em Colunas": ["Imagem em Colunas"],
+			"Exibe uma grade de até 4 colunas de imagens com títulos, descrições e sobreposição.": ["Exibe uma grade de até 4 colunas de imagens com títulos, descrições e sobreposição."],
+			"colunas": ["colunas"],
+			"galeria": ["galeria"],
+			"imagens": ["imagens"],
+			"Paisagens Naturais": ["Paisagens Naturais"],
+			"Arquitetura Urbana": ["Arquitetura Urbana"],
+			"Cultura e História": ["Cultura e História"],
+			"Descubra os parques ecológicos e trilhas deslumbrantes da nossa região.": ["Descubra os parques ecológicos e trilhas deslumbrantes da nossa região."],
+			"Conheça os projetos modernos e sustentáveis de revitalização da cidade.": ["Conheça os projetos modernos e sustentáveis de revitalização da cidade."],
+			"Explore o patrimônio cultural e os monumentos históricos tombados.": ["Explore o patrimônio cultural e os monumentos históricos tombados."],
+			"Novo Título": ["Novo Título"],
+			"Descrição breve sobre este destaque...": ["Descrição breve sobre este destaque..."],
+			"Configurações de Layout": ["Configurações de Layout"],
+			"Número de Colunas": ["Número de Colunas"],
+			"Altura dos Cards (px)": ["Altura dos Cards (px)"],
+			"Aparência e Sobreposição": ["Aparência e Sobreposição"],
+			"Opacidade da Máscara Escura (%)": ["Opacidade da Máscara Escura (%)"],
+			"Bordas Arredondadas": ["Bordas Arredondadas"],
+			"Gerenciamento de Itens": ["Gerenciamento de Itens"],
+			"Adicionar Nova Coluna": ["Adicionar Nova Coluna"],
+			"Alterar Imagem": ["Alterar Imagem"],
+			"Mover para Esquerda": ["Mover para Esquerda"],
+			"Mover para Direita": ["Mover para Direita"],
+			"Remover Coluna": ["Remover Coluna"],
+			"Digite o título...": ["Digite o título..."],
+			"Digite a descrição (até 100 caracteres)...": ["Digite a descrição (até 100 caracteres)..."],
+			"Clique na câmera para enviar foto": ["Clique na câmera para enviar foto"],
+			" Adicionar Coluna": [" Adicionar Coluna"]
+		}
+	}
+}

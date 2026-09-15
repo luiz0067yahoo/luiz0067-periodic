@@ -1,0 +1,27 @@
+{
+  "name": "periodic-card-trainer",
+  "version": "1.0.0",
+  "description": "Gutenberg block plugin for interactive Flashcards, Dialog Cards, and Memory Game with Bootstrap 5 and 3D flip CSS animations.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "flashcard",
+    "dialog-cards",
+    "memory-game",
+    "bootstrap-5",
+    "3d-flip"
+  ],
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "homepage": "https://github.com/periodicyahoo/periodic-card-trainer",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "sass": "^1.85.0"
+  }
+}

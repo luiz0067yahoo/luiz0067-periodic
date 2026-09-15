@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Main Container -->
+  <g filter="url(#shadow)" transform="translate(180, 40)">
+    <rect width="440" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+
+    <!-- Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 430 0 Q 440 0 440 10 L 440 56 L 0 56 Z" fill="#0f172a"/>
+    <circle cx="32" cy="28" r="10" fill="#0d6efd"/>
+    <text x="52" y="33" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="15" font-weight="bold">Aba: Cores do Cabeçalho (thead)</text>
+
+    <!-- Sub Header Tabs -->
+    <rect x="0" y="56" width="440" height="42" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="294" y="56" width="146" height="42" fill="#ffffff"/>
+    <rect x="294" y="96" width="146" height="2" fill="#0d6efd"/>
+    <text x="44" y="82" fill="#64748b" font-family="sans-serif" font-size="12">Estrutura</text>
+    <text x="180" y="82" fill="#64748b" font-family="sans-serif" font-size="12">Estilos</text>
+    <text x="325" y="82" fill="#0d6efd" font-family="sans-serif" font-size="12" font-weight="bold">Cores</text>
+
+    <!-- Tab Content -->
+    <text x="28" y="130" fill="#1e293b" font-family="sans-serif" font-size="14" font-weight="bold">Paleta de Temas Bootstrap 5</text>
+    <text x="28" y="152" fill="#64748b" font-family="sans-serif" font-size="12">Personalize o contraste visual da linha de cabeçalho.</text>
+
+    <!-- Select Control Mock -->
+    <text x="28" y="185" fill="#334155" font-family="sans-serif" font-size="12" font-weight="bold">Tema Selecionado:</text>
+    <rect x="28" y="195" width="384" height="38" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="40" y="219" fill="#1e293b" font-family="sans-serif" font-size="13">Escuro (Dark) — .table-dark</text>
+    <path d="M 390 214 L 396 220 L 402 214" stroke="#64748b" stroke-width="2" fill="none"/>
+
+    <!-- Visual Color Badges -->
+    <text x="28" y="260" fill="#334155" font-family="sans-serif" font-size="12" font-weight="bold">Paleta Visual Interativa:</text>
+    
+    <!-- Grid Row 1 -->
+    <g transform="translate(28, 275)">
+      <!-- Dark -->
+      <rect x="0" y="0" width="118" height="34" rx="4" fill="#212529" stroke="#0d6efd" stroke-width="2"/>
+      <text x="28" y="21" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">✓ Dark</text>
+
+      <!-- Primary -->
+      <rect x="133" y="0" width="118" height="34" rx="4" fill="#0d6efd"/>
+      <text x="168" y="21" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">Primary</text>
+
+      <!-- Success -->
+      <rect x="266" y="0" width="118" height="34" rx="4" fill="#198754"/>
+      <text x="300" y="21" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">Success</text>
+    </g>
+
+    <!-- Grid Row 2 -->
+    <g transform="translate(28, 320)">
+      <!-- Danger -->
+      <rect x="0" y="0" width="118" height="34" rx="4" fill="#dc3545"/>
+      <text x="36" y="21" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">Danger</text>
+
+      <!-- Warning -->
+      <rect x="133" y="0" width="118" height="34" rx="4" fill="#ffc107"/>
+      <text x="165" y="21" fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold">Warning</text>
+
+      <!-- Info -->
+      <rect x="266" y="0" width="118" height="34" rx="4" fill="#0dcaf0"/>
+      <text x="310" y="21" fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold">Info</text>
+    </g>
+
+    <!-- Grid Row 3 -->
+    <g transform="translate(28, 365)">
+      <!-- Secondary -->
+      <rect x="0" y="0" width="118" height="34" rx="4" fill="#6c757d"/>
+      <text x="25" y="21" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">Secondary</text>
+
+      <!-- Light -->
+      <rect x="133" y="0" width="118" height="34" rx="4" fill="#f8f9fa" stroke="#ced4da"/>
+      <text x="175" y="21" fill="#212529" font-family="sans-serif" font-size="11" font-weight="bold">Light</text>
+
+      <!-- Default -->
+      <rect x="266" y="0" width="118" height="34" rx="4" fill="#ffffff" stroke="#ced4da"/>
+      <text x="300" y="21" fill="#212529" font-family="sans-serif" font-size="11" font-weight="bold">Padrão</text>
+    </g>
+
+    <rect x="28" y="420" width="384" height="60" rx="6" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="44" y="445" fill="#166534" font-family="sans-serif" font-size="12" font-weight="bold">Contraste Acessível (WCAG AA)</text>
+    <text x="44" y="465" fill="#15803d" font-family="sans-serif" font-size="11">Cores e fontes calibradas com ótima legibilidade em qualquer tema.</text>
+  </g>
+</svg>

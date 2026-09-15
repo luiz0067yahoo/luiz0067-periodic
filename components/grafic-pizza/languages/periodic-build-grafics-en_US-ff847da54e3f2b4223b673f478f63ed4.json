@@ -1,0 +1,166 @@
+{
+  "translation-revision-date": "2026-09-11 16:40:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "assets/js/block.js",
+  "domain": "periodic-build-grafics",
+  "locale_data": {
+    "periodic-build-grafics": {
+      "": {
+        "domain": "periodic-build-grafics",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Gráfico pizza": [
+        "Pie chart"
+      ],
+      "Gere seu gráfico de pizza em uma tabela com cores personalizadas": [
+        "Generate your pie chart in a table with custom colors"
+      ],
+      "Exemplo Gráfico": [
+        "Example Chart"
+      ],
+      "Subtítulo Exemplo": [
+        "Example Subtitle"
+      ],
+      "Vendas": [
+        "Sales"
+      ],
+      "Serviços": [
+        "Services"
+      ],
+      "Outros": [
+        "Others"
+      ],
+      "Carregando gráfico...": [
+        "Loading chart..."
+      ],
+      "Nova legenda": [
+        "New label"
+      ],
+      "Escolha uma cor": [
+        "Choose a color"
+      ],
+      "Coloque o título aqui": [
+        "Enter title here"
+      ],
+      "Valor": [
+        "Value"
+      ],
+      "Remover Linha": [
+        "Remove row"
+      ],
+      "Adicionar Linha": [
+        "Add row"
+      ],
+      "Editar Gráfico #%d": [
+        "Edit chart #%d"
+      ],
+      "Fechar tabela": [
+        "Close table"
+      ],
+      "Coloque o título do gráfico aqui...": [
+        "Enter chart title here..."
+      ],
+      "Coloque o subtítulo do gráfico aqui...": [
+        "Enter chart subtitle here..."
+      ],
+      "Cor": [
+        "Color"
+      ],
+      "Legenda": [
+        "Legend"
+      ],
+      "Ações": [
+        "Actions"
+      ],
+      "Remover gráfico": [
+        "Remove chart"
+      ],
+      "Editar dados do gráfico": [
+        "Edit chart data"
+      ],
+      "Adicionar novo gráfico": [
+        "Add new chart"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Gráfico pizza": [
+        "Pie chart"
+      ],
+      "Gere seu gráfico de pizza em uma tabela com cores personalizadas": [
+        "Generate your pie chart in a table with custom colors"
+      ],
+      "Exemplo Gráfico": [
+        "Example Chart"
+      ],
+      "Subtítulo Exemplo": [
+        "Example Subtitle"
+      ],
+      "Vendas": [
+        "Sales"
+      ],
+      "Serviços": [
+        "Services"
+      ],
+      "Outros": [
+        "Others"
+      ],
+      "Carregando gráfico...": [
+        "Loading chart..."
+      ],
+      "Nova legenda": [
+        "New label"
+      ],
+      "Escolha uma cor": [
+        "Choose a color"
+      ],
+      "Coloque o título aqui": [
+        "Enter title here"
+      ],
+      "Valor": [
+        "Value"
+      ],
+      "Remover Linha": [
+        "Remove row"
+      ],
+      "Adicionar Linha": [
+        "Add row"
+      ],
+      "Editar Gráfico #%d": [
+        "Edit chart #%d"
+      ],
+      "Fechar tabela": [
+        "Close table"
+      ],
+      "Coloque o título do gráfico aqui...": [
+        "Enter chart title here..."
+      ],
+      "Coloque o subtítulo do gráfico aqui...": [
+        "Enter chart subtitle here..."
+      ],
+      "Cor": [
+        "Color"
+      ],
+      "Legenda": [
+        "Legend"
+      ],
+      "Ações": [
+        "Actions"
+      ],
+      "Remover gráfico": [
+        "Remove chart"
+      ],
+      "Editar dados do gráfico": [
+        "Edit chart data"
+      ],
+      "Adicionar novo gráfico": [
+        "Add new chart"
+      ]
+    }
+  }
+}

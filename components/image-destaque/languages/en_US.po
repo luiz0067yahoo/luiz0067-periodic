@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Luiz0067 - Imagem de Destaque 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/luiz0067yahoo/luiz0067-image-destaque/issues\n"
+"POT-Creation-Date: 2026-09-11 21:00:00-03:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-09-11 21:00:00-03:00\n"
+"Last-Translator: Luiz Alberto <luiz0067@yahoo.com>\n"
+"Language: en_US\n"
+"Language-Team: English (United States)\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: luiz0067-image-destaque\n"
+
+#: js/blocks/image-destaque.js
+msgid "Imagem de Destaque"
+msgstr "Featured Image Banner"
+
+#: js/blocks/image-destaque.js
+msgid "Exibe uma imagem principal ou banner promocional em destaque com suporte a link, legenda e acessibilidade."
+msgstr "Displays a primary featured image or promotional banner with link support, caption, and accessibility options."
+
+#: js/blocks/image-destaque.js
+msgid "imagem"
+msgstr "image"
+
+#: js/blocks/image-destaque.js
+msgid "banner"
+msgstr "banner"
+
+#: js/blocks/image-destaque.js
+msgid "destaque"
+msgstr "featured"
+
+#: js/blocks/image-destaque.js
+msgid "Portal Institucional e Serviços Municipais"
+msgstr "Institutional Portal and Municipal Services"
+
+#: js/blocks/image-destaque.js
+msgid "Campanha Oficial de Desenvolvimento e Infraestrutura 2026"
+msgstr "Official Infrastructure and Development Campaign 2026"
+
+#: js/blocks/image-destaque.js
+msgid "Configurações de Link"
+msgstr "Link Settings"
+
+#: js/blocks/image-destaque.js
+msgid "URL de Destino"
+msgstr "Target URL"
+
+#: js/blocks/image-destaque.js
+msgid "Insira a URL que será aberta quando o usuário clicar na imagem."
+msgstr "Enter the URL to be opened when the user clicks the image."
+
+#: js/blocks/image-destaque.js
+msgid "Abrir em Nova Aba"
+msgstr "Open in New Tab"
+
+#: js/blocks/image-destaque.js
+msgid "O link será aberto em uma nova aba do navegador."
+msgstr "The link will open in a new browser tab."
+
+#: js/blocks/image-destaque.js
+msgid "O link será aberto na mesma aba."
+msgstr "The link will open in the same tab."
+
+#: js/blocks/image-destaque.js
+msgid "Acessibilidade e SEO"
+msgstr "Accessibility & SEO"
+
+#: js/blocks/image-destaque.js
+msgid "Texto Alternativo (Alt Text)"
+msgstr "Alternative Text (Alt Text)"
+
+#: js/blocks/image-destaque.js
+msgid "Descreva a imagem para leitores de tela"
+msgstr "Describe the image for screen readers"
+
+#: js/blocks/image-destaque.js
+msgid "Essencial para acessibilidade digital e otimização para motores de busca."
+msgstr "Essential for web accessibility and search engine optimization."
+
+#: js/blocks/image-destaque.js
+msgid "Alinhamento e Exibição"
+msgstr "Alignment & Display"
+
+#: js/blocks/image-destaque.js
+msgid "Alinhamento do Bloco"
+msgstr "Block Alignment"
+
+#: js/blocks/image-destaque.js
+msgid "Alinhar ao Centro"
+msgstr "Align Center"
+
+#: js/blocks/image-destaque.js
+msgid "Alinhar à Esquerda"
+msgstr "Align Left"
+
+#: js/blocks/image-destaque.js
+msgid "Alinhar à Direita"
+msgstr "Align Right"
+
+#: js/blocks/image-destaque.js
+msgid "Largura Total"
+msgstr "Full Width"
+
+#: js/blocks/image-destaque.js
+msgid "Imagem de Destaque / Banner"
+msgstr "Featured Image / Banner"
+
+#: js/blocks/image-destaque.js
+msgid "Carregue ou selecione uma imagem de alta resolução na biblioteca de mídia."
+msgstr "Upload or select a high-resolution image from your media library."
+
+#: js/blocks/image-destaque.js
+msgid "Selecionar Imagem de Destaque"
+msgstr "Select Featured Image"
+
+#: js/blocks/image-destaque.js
+msgid "Substituir"
+msgstr "Replace"
+
+#: js/blocks/image-destaque.js
+msgid "Remover"
+msgstr "Remove"
+
+#: js/blocks/image-destaque.js
+msgid "Imagem de destaque"
+msgstr "Featured image"
+
+#: js/blocks/image-destaque.js
+msgid "Adicione uma legenda ou título em destaque..."
+msgstr "Add a caption or featured title..."

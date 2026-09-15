@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/card-wrapper",
+  "version": "1.0.0",
+  "title": "Periodic Card Wrapper",
+  "category": "design",
+  "icon": "index-card",
+  "description": "Bloco estrutural de Cartão Bootstrap 5 completo com suporte a InnerBlocks, cabeçalho, corpo e rodapé.",
+  "keywords": [
+    "card",
+    "cartao",
+    "bootstrap",
+    "wrapper",
+    "periodic"
+  ],
+  "textdomain": "periodic-card-wrapper",
+  "attributes": {
+    "hasHeader": {
+      "type": "boolean",
+      "default": true
+    },
+    "headerTitle": {
+      "type": "string",
+      "default": "Título do Cartão"
+    },
+    "headerBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "hasFooter": {
+      "type": "boolean",
+      "default": false
+    },
+    "footerContent": {
+      "type": "string",
+      "default": ""
+    },
+    "footerBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardShadow": {
+      "type": "string",
+      "default": "none"
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "border"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "rounded"
+    },
+    "cardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

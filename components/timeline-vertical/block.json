@@ -1,0 +1,106 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/timeline-vertical",
+  "version": "1.0.0",
+  "title": "Timeline Vertical",
+  "category": "layout",
+  "icon": "backup",
+  "description": "Linha do tempo vertical elegante com marcadores circulares, ícones Font Awesome, datas e cards de conteúdo alternados ou alinhados.",
+  "keywords": [
+    "timeline",
+    "linha do tempo",
+    "cronologia",
+    "historia",
+    "events"
+  ],
+  "textdomain": "periodic-timeline-vertical",
+  "attributes": {
+    "events": {
+      "type": "array",
+      "default": [
+        {
+          "id": "event-1",
+          "date": "2024",
+          "title": "Fundação e Primeiros Passos",
+          "description": "Início das operações com foco em excelência e inovação no desenvolvimento de soluções digitais modernas.",
+          "icon": "fa-solid fa-flag",
+          "badgeColor": "#0d6efd",
+          "badgeTextColor": "#ffffff",
+          "tag": "Início"
+        },
+        {
+          "id": "event-2",
+          "date": "2025",
+          "title": "Expansão e Novos Recursos",
+          "description": "Lançamento da plataforma aprimorada, incorporando novos padrões arquiteturais e integrações robustas.",
+          "icon": "fa-solid fa-rocket",
+          "badgeColor": "#198754",
+          "badgeTextColor": "#ffffff",
+          "tag": "Crescimento"
+        },
+        {
+          "id": "event-3",
+          "date": "2026",
+          "title": "Reconhecimento e Consolidação",
+          "description": "Conquista de marcos significativos e consolidação da liderança em experiência do usuário e usabilidade.",
+          "icon": "fa-solid fa-trophy",
+          "badgeColor": "#ffc107",
+          "badgeTextColor": "#212529",
+          "tag": "Conquista"
+        }
+      ]
+    },
+    "alignment": {
+      "type": "string",
+      "default": "alternating"
+    },
+    "primaryColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "lineColor": {
+      "type": "string",
+      "default": "#dee2e6"
+    },
+    "connectorStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "badgeBgColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "badgeTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "showIcons": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardShadow": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardBorder": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}

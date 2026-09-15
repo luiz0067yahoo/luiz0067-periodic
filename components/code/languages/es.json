@@ -1,0 +1,49 @@
+{
+  "translation-revision-date": "2026-09-14 12:00:00+0000",
+  "generator": "Periodic-Code-i18n",
+  "domain": "periodic-code",
+  "locale_data": {
+    "periodic-code": {
+      "": {
+        "domain": "periodic-code",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic Code": [
+        "Periodic Code"
+      ],
+      "Native professional code block with authorial syntax highlighting.": [
+        "Bloque nativo profesional para edición de código con resaltado de sintaxis autoral."
+      ],
+      "Configurações do Código": [
+        "Configuración del Código"
+      ],
+      "Selecione a linguagem": [
+        "Seleccione el lenguaje"
+      ],
+      "Define a sintaxe e o realce de cores correspondente ao código inserido.": [
+        "Configura el resaltado de sintaxis para el lenguaje seleccionado."
+      ],
+      "Tema de formatação": [
+        "Tema de formato"
+      ],
+      "Escolha o esquema de cores para o editor e a exibição no site.": [
+        "Elija el esquema de colores para el editor y la visualización pública."
+      ],
+      "Estatísticas:": [
+        "Estadísticas:"
+      ],
+      "Digite ou cole seu código aqui...": [
+        "Escriba o pegue su código aquí..."
+      ]
+    }
+  },
+  "language.label": "Seleccione el lenguaje",
+  "language.help": "Configura el resaltado de sintaxis para el lenguaje seleccionado.",
+  "theme.label": "Tema de formato",
+  "theme.help": "Elija el esquema de colores para el editor y la visualización pública.",
+  "settings.title": "Configuración del Código",
+  "editor.placeholder": "Escriba o pegue su código aquí...",
+  "editor.copy": "Copiar Código",
+  "editor.copied": "¡Código copiado al portapapeles!"
+}

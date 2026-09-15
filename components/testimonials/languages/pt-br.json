@@ -1,0 +1,153 @@
+{
+  "translation-revision-date": "2026-09-13 17:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Depoimentos": [
+        "Depoimentos"
+      ],
+      "Avaliação/Estrelas": [
+        "Avaliação/Estrelas"
+      ],
+      "Layout": [
+        "Layout"
+      ],
+      "Gerenciar Depoimentos": [
+        "Gerenciar Depoimentos"
+      ],
+      "Adicione, reordene e configure cada um dos relatos dos seus clientes.": [
+        "Adicione, reordene e configure cada um dos relatos dos seus clientes."
+      ],
+      "Adicionar Depoimento": [
+        "Adicionar Depoimento"
+      ],
+      "Sem nome": [
+        "Sem nome"
+      ],
+      "Mover para cima": [
+        "Mover para cima"
+      ],
+      "Mover para baixo": [
+        "Mover para baixo"
+      ],
+      "Remover": [
+        "Remover"
+      ],
+      "Foto de Perfil (Avatar)": [
+        "Foto de Perfil (Avatar)"
+      ],
+      "Alterar Foto": [
+        "Alterar Foto"
+      ],
+      "Enviar Foto": [
+        "Enviar Foto"
+      ],
+      "Classificação (Estrelas)": [
+        "Classificação (Estrelas)"
+      ],
+      "Configurações de Avaliação e Estrelas": [
+        "Configurações de Avaliação e Estrelas"
+      ],
+      "Exibir Avaliação por Estrelas": [
+        "Exibir Avaliação por Estrelas"
+      ],
+      "Exibe ícones de estrelas correspondentes à nota de cada depoimento.": [
+        "Exibe ícones de estrelas correspondentes à nota de cada depoimento."
+      ],
+      "Exibir Ícone Decorativo de Aspas": [
+        "Exibir Ícone Decorativo de Aspas"
+      ],
+      "Mostra ícone sutil de aspas superiores no cabeçalho do card.": [
+        "Mostra ícone sutil de aspas superiores no cabeçalho do card."
+      ],
+      "Cor das Estrelas": [
+        "Cor das Estrelas"
+      ],
+      "Layout e Estilo dos Cards": [
+        "Layout e Estilo dos Cards"
+      ],
+      "Modo de Exibição": [
+        "Modo de Exibição"
+      ],
+      "Grid Responsivo (Múltiplas Colunas)": [
+        "Grid Responsivo (Múltiplas Colunas)"
+      ],
+      "Card Único em Destaque": [
+        "Card Único em Destaque"
+      ],
+      "Quantidade de Colunas no Grid": [
+        "Quantidade de Colunas no Grid"
+      ],
+      "Número de cards exibidos por linha em telas desktop.": [
+        "Número de cards exibidos por linha em telas desktop."
+      ],
+      "Sombra Suave nos Cards": [
+        "Sombra Suave nos Cards"
+      ],
+      "Aplica classe shadow-sm do Bootstrap 5 com elevação no hover.": [
+        "Aplica classe shadow-sm do Bootstrap 5 com elevação no hover."
+      ],
+      "Arredondamento das Bordas (px)": [
+        "Arredondamento das Bordas (px)"
+      ],
+      "Cor de Fundo do Card": [
+        "Cor de Fundo do Card"
+      ],
+      "Cor do Texto do Card": [
+        "Cor do Texto do Card"
+      ],
+      "Mover para esquerda / cima": [
+        "Mover para esquerda / cima"
+      ],
+      "Mover para direita / baixo": [
+        "Mover para direita / baixo"
+      ],
+      "Duplicar depoimento": [
+        "Duplicar depoimento"
+      ],
+      "Remover depoimento": [
+        "Remover depoimento"
+      ],
+      "Escreva aqui o depoimento do cliente...": [
+        "Escreva aqui o depoimento do cliente..."
+      ],
+      "Digite aqui o depoimento ou citação com suas próprias palavras.": [
+        "Digite aqui o depoimento ou citação com suas próprias palavras."
+      ],
+      "Nome do Cliente": [
+        "Nome do Cliente"
+      ],
+      "Cargo ou Empresa": [
+        "Cargo ou Empresa"
+      ],
+      "Alterar foto de perfil": [
+        "Alterar foto de perfil"
+      ],
+      "Nome do Autor": [
+        "Nome do Autor"
+      ],
+      "Cargo / Empresa": [
+        "Cargo / Empresa"
+      ],
+      "Adicionar Outro Depoimento": [
+        "Adicionar Outro Depoimento"
+      ],
+      "É necessário manter pelo menos um depoimento.": [
+        "É necessário manter pelo menos um depoimento."
+      ],
+      "estrela": [
+        "estrela"
+      ],
+      "estrelas": [
+        "estrelas"
+      ]
+    }
+  }
+}

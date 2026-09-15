@@ -1,0 +1,201 @@
+{
+  "translation-revision-date": "2026-09-13 17:35:00-0300",
+  "generator": "WP-CLI/2.10.0",
+  "source": "periodic-table-responsive",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Tabela Responsiva (Bootstrap 5)": [
+        "Responsive Table (Bootstrap 5)"
+      ],
+      "Tabela responsiva elegante com opções nativas do Bootstrap 5, edição inline estilo planilha e suporte ao Font Awesome 6.": [
+        "Elegant responsive table with native Bootstrap 5 options, spreadsheet-like inline editing, and Font Awesome 6 support."
+      ],
+      "Coluna": [
+        "Column"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Categoria": [
+        "Category"
+      ],
+      "Preço": [
+        "Price"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Hospedagem Cloud": [
+        "Cloud Hosting"
+      ],
+      "Serviços Web": [
+        "Web Services"
+      ],
+      "Ativo": [
+        "Active"
+      ],
+      "Domínio .com.br": [
+        "Domain Name"
+      ],
+      "Registro": [
+        "Registration"
+      ],
+      "Renovado": [
+        "Renewed"
+      ],
+      "Certificado SSL EV": [
+        "EV SSL Certificate"
+      ],
+      "Segurança": [
+        "Security"
+      ],
+      "Instalado": [
+        "Installed"
+      ],
+      "Adicionar Linha Abaixo": [
+        "Add Row Below"
+      ],
+      "Adicionar Coluna à Direita": [
+        "Add Column to Right"
+      ],
+      "Remover Linha Selecionada": [
+        "Remove Selected Row"
+      ],
+      "Remover Coluna Selecionada": [
+        "Remove Selected Column"
+      ],
+      "Configurações da Tabela": [
+        "Table Settings"
+      ],
+      "Estrutura da Tabela": [
+        "Table Structure"
+      ],
+      "Estilos Bootstrap": [
+        "Bootstrap Styles"
+      ],
+      "Cores do Cabeçalho": [
+        "Header Colors"
+      ],
+      "Gerenciar Linhas e Colunas": [
+        "Manage Rows and Columns"
+      ],
+      "Insira ou remova linhas e colunas na planilha diretamente aqui ou pela barra de ferramentas.": [
+        "Insert or delete rows and columns in the spreadsheet directly here or via the toolbar."
+      ],
+      "Linhas": [
+        "Rows"
+      ],
+      "+ Adicionar Linha": [
+        "+ Add Row"
+      ],
+      "Excluir Linha": [
+        "Delete Row"
+      ],
+      "Colunas": [
+        "Columns"
+      ],
+      "+ Adicionar Coluna": [
+        "+ Add Column"
+      ],
+      "Excluir Coluna": [
+        "Delete Column"
+      ],
+      "Restaurar Tabela de Exemplo": [
+        "Restore Sample Table"
+      ],
+      "Estilos Nativos do Bootstrap 5": [
+        "Bootstrap 5 Native Styles"
+      ],
+      "Linhas Alternadas (Striped)": [
+        "Zebra-Striping (Striped)"
+      ],
+      "Aplica classe .table-striped para diferenciar linhas consecutivas com tons suaves.": [
+        "Applies the .table-striped class to differentiate consecutive rows with subtle tones."
+      ],
+      "Efeito ao Passar o Mouse (Hover)": [
+        "Hover Effect (Hoverable)"
+      ],
+      "Aplica classe .table-hover para destacar a linha sob o cursor.": [
+        "Applies the .table-hover class to highlight rows on mouseover."
+      ],
+      "Bordas em Todas as Células (Bordered)": [
+        "All Cell Borders (Bordered)"
+      ],
+      "Aplica classe .table-bordered exibindo moldura e divisórias nítidas.": [
+        "Applies the .table-bordered class for borders on all sides of the table and cells."
+      ],
+      "Todas as tabelas são automaticamente envolvidas no container responsivo .table-responsive.": [
+        "All tables are automatically wrapped inside the .table-responsive container."
+      ],
+      "Tema do Cabeçalho (thead)": [
+        "Header Theme (thead)"
+      ],
+      "Selecione a Cor / Tema do Cabeçalho": [
+        "Select Header Color / Theme"
+      ],
+      "Padrão do Tema": [
+        "Theme Default"
+      ],
+      "Escuro (Dark)": [
+        "Dark"
+      ],
+      "Azul Primário (Primary)": [
+        "Primary Blue"
+      ],
+      "Cinza Secundário (Secondary)": [
+        "Secondary Gray"
+      ],
+      "Verde Sucesso (Success)": [
+        "Success Green"
+      ],
+      "Vermelho Alerta (Danger)": [
+        "Danger Red"
+      ],
+      "Amarelo Aviso (Warning)": [
+        "Warning Yellow"
+      ],
+      "Ciano Informativo (Info)": [
+        "Info Cyan"
+      ],
+      "Claro (Light)": [
+        "Light"
+      ],
+      "Define o contraste e a cor temática do cabeçalho de acordo com a paleta do Bootstrap 5.": [
+        "Sets header contrast and theme color using the Bootstrap 5 palette."
+      ],
+      "Paleta Visual:": [
+        "Visual Palette:"
+      ],
+      "Tabela Responsiva Bootstrap 5": [
+        "Bootstrap 5 Responsive Table"
+      ],
+      "Adicionar Coluna": [
+        "Add Column"
+      ],
+      "Adicionar Linha": [
+        "Add Row"
+      ],
+      "Cabeçalho...": [
+        "Header..."
+      ],
+      "Excluir esta coluna": [
+        "Delete this column"
+      ],
+      "Texto...": [
+        "Text..."
+      ],
+      "Excluir esta linha": [
+        "Delete this row"
+      ],
+      "Dica: Clique em qualquer célula para editar seu conteúdo inline com suporte a formatação.": [
+        "Tip: Click on any cell to edit its content inline with rich formatting support."
+      ]
+    }
+  }
+}

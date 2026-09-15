@@ -1,0 +1,90 @@
+{
+  "translation-revision-date": "2026-09-13 19:00:00+0000",
+  "generator": "WP-CLI",
+  "source": "periodic-image-editor",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic Image Editor": [
+        "Periodic Image Editor"
+      ],
+      "Mídia e Seleção": [
+        "Media e Selezione"
+      ],
+      "Zoom e Rotação": [
+        "Zoom e Rotazione"
+      ],
+      "Posicionamento X / Y": [
+        "Posizionamento X / Y"
+      ],
+      "Seleção de Imagem": [
+        "Selezione Immagine"
+      ],
+      "Selecionar Imagem": [
+        "Seleziona Immagine"
+      ],
+      "Trocar Imagem": [
+        "Sostituisci Immagine"
+      ],
+      "Remover Imagem": [
+        "Rimuovi Immagine"
+      ],
+      "Texto Alternativo (Alt Text)": [
+        "Testo Alternativo (Alt Text)"
+      ],
+      "Dimensões e Moldura": [
+        "Dimensioni e Cornice"
+      ],
+      "Altura do Contêiner": [
+        "Altezza Contenitore"
+      ],
+      "Cantos Arredondados (Bootstrap 5)": [
+        "Angoli Arrotondati (Bootstrap 5)"
+      ],
+      "Sombra (Bootstrap 5)": [
+        "Ombra (Bootstrap 5)"
+      ],
+      "Escala e Zoom": [
+        "Scala e Zoom"
+      ],
+      "Fator de Zoom": [
+        "Fattore di Zoom"
+      ],
+      "Giro e Rotação": [
+        "Rotazione"
+      ],
+      "Ângulo em Graus": [
+        "Angolo in Gradi"
+      ],
+      "Giro Rápido:": [
+        "Rotazione Rapida:"
+      ],
+      "Deslocamento nos Eixos X e Y": [
+        "Spostamento Assi X e Y"
+      ],
+      "Posição Horizontal (Eixo X)": [
+        "Posizione Orizzontale (Asse X)"
+      ],
+      "Posição Vertical (Eixo Y)": [
+        "Posizione Verticale (Asse Y)"
+      ],
+      "Centralizar Imagem (X: 0, Y: 0)": [
+        "Centra Immagine (X: 0, Y: 0)"
+      ],
+      "Comportamento (Object Fit)": [
+        "Comportamento (Object Fit)"
+      ],
+      "Resetar Todas as Transformações": [
+        "Ripristina Trasformazioni"
+      ],
+      "Carregar Imagem": [
+        "Carica Immagine"
+      ]
+    }
+  }
+}

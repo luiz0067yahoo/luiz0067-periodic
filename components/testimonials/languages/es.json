@@ -1,0 +1,153 @@
+{
+  "translation-revision-date": "2026-09-13 17:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Depoimentos": [
+        "Testimonios"
+      ],
+      "Avaliação/Estrelas": [
+        "Calificación/Estrellas"
+      ],
+      "Layout": [
+        "Diseño"
+      ],
+      "Gerenciar Depoimentos": [
+        "Gestionar Testimonios"
+      ],
+      "Adicione, reordene e configure cada um dos relatos dos seus clientes.": [
+        "Añade, reordena y configura cada uno de los testimonios de tus clientes."
+      ],
+      "Adicionar Depoimento": [
+        "Añadir Testimonio"
+      ],
+      "Sem nome": [
+        "Sin nombre"
+      ],
+      "Mover para cima": [
+        "Mover hacia arriba"
+      ],
+      "Mover para baixo": [
+        "Mover hacia abajo"
+      ],
+      "Remover": [
+        "Eliminar"
+      ],
+      "Foto de Perfil (Avatar)": [
+        "Foto de Perfil (Avatar)"
+      ],
+      "Alterar Foto": [
+        "Cambiar Foto"
+      ],
+      "Enviar Foto": [
+        "Subir Foto"
+      ],
+      "Classificação (Estrelas)": [
+        "Calificación (Estrellas)"
+      ],
+      "Configurações de Avaliação e Estrelas": [
+        "Configuración de Calificación y Estrellas"
+      ],
+      "Exibir Avaliação por Estrelas": [
+        "Mostrar Calificación por Estrellas"
+      ],
+      "Exibe ícones de estrelas correspondentes à nota de cada depoimento.": [
+        "Muestra iconos de estrellas correspondientes a la calificación de cada testimonio."
+      ],
+      "Exibir Ícone Decorativo de Aspas": [
+        "Mostrar Icono Decorativo de Comillas"
+      ],
+      "Mostra ícone sutil de aspas superiores no cabeçalho do card.": [
+        "Muestra un icono sutil de comillas en el encabezado de la tarjeta."
+      ],
+      "Cor das Estrelas": [
+        "Color de las Estrellas"
+      ],
+      "Layout e Estilo dos Cards": [
+        "Diseño y Estilo de las Tarjetas"
+      ],
+      "Modo de Exibição": [
+        "Modo de Visualización"
+      ],
+      "Grid Responsivo (Múltiplas Colunas)": [
+        "Cuadrícula Responsiva (Múltiples Columnas)"
+      ],
+      "Card Único em Destaque": [
+        "Tarjeta Única Destacada"
+      ],
+      "Quantidade de Colunas no Grid": [
+        "Cantidad de Columnas en la Cuadrícula"
+      ],
+      "Número de cards exibidos por linha em telas desktop.": [
+        "Número de tarjetas mostradas por fila en pantallas de escritorio."
+      ],
+      "Sombra Suave nos Cards": [
+        "Sombra Suave en las Tarjetas"
+      ],
+      "Aplica classe shadow-sm do Bootstrap 5 com elevação no hover.": [
+        "Aplica la clase shadow-sm de Bootstrap 5 con elevación al pasar el cursor."
+      ],
+      "Arredondamento das Bordas (px)": [
+        "Radio de los Bordes (px)"
+      ],
+      "Cor de Fundo do Card": [
+        "Color de Fondo de la Tarjeta"
+      ],
+      "Cor do Texto do Card": [
+        "Color del Texto de la Tarjeta"
+      ],
+      "Mover para esquerda / cima": [
+        "Mover a la izquierda / arriba"
+      ],
+      "Mover para direita / baixo": [
+        "Mover a la derecha / abajo"
+      ],
+      "Duplicar depoimento": [
+        "Duplicar testimonio"
+      ],
+      "Remover depoimento": [
+        "Eliminar testimonio"
+      ],
+      "Escreva aqui o depoimento do cliente...": [
+        "Escribe aquí el testimonio del cliente..."
+      ],
+      "Digite aqui o depoimento ou citação com suas próprias palavras.": [
+        "Escribe aquí el testimonio o cita con tus propias palabras."
+      ],
+      "Nome do Cliente": [
+        "Nombre del Cliente"
+      ],
+      "Cargo ou Empresa": [
+        "Cargo o Empresa"
+      ],
+      "Alterar foto de perfil": [
+        "Cambiar foto de perfil"
+      ],
+      "Nome do Autor": [
+        "Nombre del Autor"
+      ],
+      "Cargo / Empresa": [
+        "Cargo / Empresa"
+      ],
+      "Adicionar Outro Depoimento": [
+        "Añadir Otro Testimonio"
+      ],
+      "É necessário manter pelo menos um depoimento.": [
+        "Es necesario mantener al menos un testimonio."
+      ],
+      "estrela": [
+        "estrella"
+      ],
+      "estrelas": [
+        "estrellas"
+      ]
+    }
+  }
+}

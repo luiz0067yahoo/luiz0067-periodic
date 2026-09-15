@@ -1,0 +1,138 @@
+{
+  "translation-revision-date": "2026-09-13 16:45:00-0300",
+  "generator": "WP-CLI/2.11.0",
+  "source": "src/index.js",
+  "domain": "periodic-alert-callout",
+  "locale_data": {
+    "periodic-alert-callout": {
+      "": {
+        "domain": "periodic-alert-callout",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Alerta e Callout Contextual": [
+        "Avviso e Callout Contestuale"
+      ],
+      "Caixas de alerta e avisos contextuais institucionais com Bootstrap 5 e Font Awesome 6.": [
+        "Caselle di avviso e comunicazioni istituzionali con Bootstrap 5 e Font Awesome 6."
+      ],
+      "Tipo e Cor": [
+        "Tipo e Colore"
+      ],
+      "Ícone": [
+        "Icona"
+      ],
+      "Opções": [
+        "Opzioni"
+      ],
+      "Informativo (Info)": [
+        "Informativo (Info)"
+      ],
+      "Sucesso (Success)": [
+        "Successo (Success)"
+      ],
+      "Atenção / Alerta (Warning)": [
+        "Attenzione / Avviso (Warning)"
+      ],
+      "Perigo / Erro (Danger)": [
+        "Pericolo / Errore (Danger)"
+      ],
+      "Primário (Primary)": [
+        "Primario (Primary)"
+      ],
+      "Secundário (Secondary)": [
+        "Secondario (Secondary)"
+      ],
+      "Claro (Light)": [
+        "Chiaro (Light)"
+      ],
+      "Escuro (Dark)": [
+        "Scuro (Dark)"
+      ],
+      "Variante Semântica e Cor": [
+        "Variante Semantica e Colore"
+      ],
+      "Selecione o tipo de alerta contextual seguindo as diretrizes semânticas do Bootstrap 5.": [
+        "Seleziona il tipo di avviso contestuale seguendo le linee guida di Bootstrap 5."
+      ],
+      "Variante do Alerta": [
+        "Variante dell'Avviso"
+      ],
+      "Prévia de Estilo:": [
+        "Anteprima Stile:"
+      ],
+      "Configurações de Ícone": [
+        "Impostazioni Icona"
+      ],
+      "Selecione um ícone rápido do Font Awesome 6 ou informe a classe CSS personalizada.": [
+        "Seleziona un'icona rapida da Font Awesome 6 o inserisci una classe CSS personalizzata."
+      ],
+      "Ícones Recomendados": [
+        "Icone Consigliate"
+      ],
+      "Classe CSS do Ícone (Font Awesome)": [
+        "Classe CSS dell'Icona (Font Awesome)"
+      ],
+      "Exemplo: fas fa-info-circle, fas fa-bell, far fa-flag": [
+        "Esempio: fas fa-info-circle, fas fa-bell, far fa-flag"
+      ],
+      "Ícone atual:": [
+        "Icona attuale:"
+      ],
+      "Remover Ícone": [
+        "Rimuovi Icona"
+      ],
+      "Opções e Comportamento": [
+        "Opzioni e Comportamento"
+      ],
+      "Botão de Fechar (Dispensável)": [
+        "Pulsante di Chiusura (Eliminabile)"
+      ],
+      "Adiciona o botão \"X\" (btn-close) permitindo que o visitante dispense o alerta.": [
+        "Aggiunge il pulsante di chiusura (btn-close) consentendo di ignorare l'avviso."
+      ],
+      "Borda Lateral de Destaque (Callout)": [
+        "Bordo Laterale Evidenziato (Callout)"
+      ],
+      "Adiciona uma borda esquerda encorpada na cor tema, destacando o aviso institucional.": [
+        "Aggiunge un bordo sinistro pronunciato nel colore del tema per evidenziare l'avviso."
+      ],
+      "Título do alerta...": [
+        "Titolo dell'avviso..."
+      ],
+      "Digite a mensagem ou aviso institucional...": [
+        "Inserisci il messaggio o la comunicazione istituzionale..."
+      ],
+      "Fechar": [
+        "Chiudi"
+      ],
+      "No editor, o botão de fechar está desativado para edição.": [
+        "Nell'editor, il pulsante di chiusura è disattivato per facilitare la modifica."
+      ],
+      "Informação": [
+        "Informazione"
+      ],
+      "Sucesso": [
+        "Successo"
+      ],
+      "Aviso": [
+        "Avviso"
+      ],
+      "Perigo": [
+        "Pericolo"
+      ],
+      "Dica": [
+        "Suggerimento"
+      ],
+      "Notificação": [
+        "Notifica"
+      ],
+      "Segurança": [
+        "Sicurezza"
+      ],
+      "Comentário": [
+        "Commento"
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/quiz-engine",
+  "version": "1.0.0",
+  "title": "periodic Quiz Engine",
+  "category": "widgets",
+  "icon": "welcome-learn-more",
+  "description": "Native Gutenberg Quiz & Assessment Engine with Bootstrap 5 and Font Awesome 6.",
+  "keywords": [
+    "quiz",
+    "assessment",
+    "test",
+    "exam",
+    "survey",
+    "bootstrap",
+    "periodic"
+  ],
+  "textdomain": "periodic-quiz-engine",
+  "attributes": {
+    "quizTitle": {
+      "type": "string",
+      "default": "Quiz Interativo"
+    },
+    "quizDescription": {
+      "type": "string",
+      "default": "Teste seus conhecimentos e acompanhe sua pontuação em tempo real."
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "single",
+        "multiple",
+        "true-false",
+        "arithmetic",
+        "survey"
+      ],
+      "default": "single"
+    },
+    "questions": {
+      "type": "array",
+      "default": [
+        {
+          "id": "q1",
+          "question": "Qual framework CSS é amplamente utilizado para criar layouts modernos e responsivos em grade?",
+          "options": [
+            "Bootstrap 5",
+            "Express",
+            "Django",
+            "Laravel"
+          ],
+          "correctIndex": 0,
+          "correctIndices": [
+            0
+          ],
+          "explanation": "O Bootstrap 5 é o framework CSS mais popular para interfaces responsivas.",
+          "points": 10
+        },
+        {
+          "id": "q2",
+          "question": "O WordPress suporta a criação de blocos nativos modernos utilizando o editor Gutenberg e a API de blocos?",
+          "options": [
+            "Verdadeiro",
+            "Falso"
+          ],
+          "correctIndex": 0,
+          "correctIndices": [
+            0
+          ],
+          "explanation": "Sim! O Gutenberg fornece uma API robusta baseada em React e block.json.",
+          "points": 10
+        }
+      ]
+    },
+    "showFeedback": {
+      "type": "boolean",
+      "default": true
+    },
+    "timeLimit": {
+      "type": "number",
+      "default": 0
+    },
+    "passingScore": {
+      "type": "number",
+      "default": 70
+    },
+    "shuffleQuestions": {
+      "type": "boolean",
+      "default": false
+    },
+    "themeColor": {
+      "type": "string",
+      "default": "primary"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

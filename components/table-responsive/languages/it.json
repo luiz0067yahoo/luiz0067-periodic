@@ -1,0 +1,201 @@
+{
+  "translation-revision-date": "2026-09-13 17:35:00-0300",
+  "generator": "WP-CLI/2.10.0",
+  "source": "periodic-table-responsive",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Tabela Responsiva (Bootstrap 5)": [
+        "Tabella Reattiva (Bootstrap 5)"
+      ],
+      "Tabela responsiva elegante com opções nativas do Bootstrap 5, edição inline estilo planilha e suporte ao Font Awesome 6.": [
+        "Elegante tabella responsive con opzioni native Bootstrap 5, modifica inline in stile foglio di calcolo e supporto per Font Awesome 6."
+      ],
+      "Coluna": [
+        "Colonna"
+      ],
+      "Item": [
+        "Elemento"
+      ],
+      "Categoria": [
+        "Categoria"
+      ],
+      "Preço": [
+        "Prezzo"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "Hospedagem Cloud": [
+        "Hosting Cloud"
+      ],
+      "Serviços Web": [
+        "Servizi Web"
+      ],
+      "Ativo": [
+        "Attivo"
+      ],
+      "Domínio .com.br": [
+        "Dominio Web"
+      ],
+      "Registro": [
+        "Registrazione"
+      ],
+      "Renovado": [
+        "Rinnovato"
+      ],
+      "Certificado SSL EV": [
+        "Certificato SSL EV"
+      ],
+      "Segurança": [
+        "Sicurezza"
+      ],
+      "Instalado": [
+        "Installato"
+      ],
+      "Adicionar Linha Abaixo": [
+        "Aggiungi Riga Sotto"
+      ],
+      "Adicionar Coluna à Direita": [
+        "Aggiungi Colonna a Destra"
+      ],
+      "Remover Linha Selecionada": [
+        "Rimuovi Riga Selezionata"
+      ],
+      "Remover Coluna Selecionada": [
+        "Rimuovi Colonna Selezionata"
+      ],
+      "Configurações da Tabela": [
+        "Impostazioni Tabella"
+      ],
+      "Estrutura da Tabela": [
+        "Struttura della Tabella"
+      ],
+      "Estilos Bootstrap": [
+        "Stili Bootstrap"
+      ],
+      "Cores do Cabeçalho": [
+        "Colori Intestazione"
+      ],
+      "Gerenciar Linhas e Colunas": [
+        "Gestisci Righe e Colonne"
+      ],
+      "Insira ou remova linhas e colunas na planilha diretamente aqui ou pela barra de ferramentas.": [
+        "Inserisci o rimuovi righe e colonne nel foglio di calcolo direttamente qui o tramite la barra degli strumenti."
+      ],
+      "Linhas": [
+        "Righe"
+      ],
+      "+ Adicionar Linha": [
+        "+ Aggiungi Riga"
+      ],
+      "Excluir Linha": [
+        "Elimina Riga"
+      ],
+      "Colunas": [
+        "Colonne"
+      ],
+      "+ Adicionar Coluna": [
+        "+ Aggiungi Colonna"
+      ],
+      "Excluir Coluna": [
+        "Elimina Colonna"
+      ],
+      "Restaurar Tabela de Exemplo": [
+        "Ripristina Tabella Esempio"
+      ],
+      "Estilos Nativos do Bootstrap 5": [
+        "Stili Nativi Bootstrap 5"
+      ],
+      "Linhas Alternadas (Striped)": [
+        "Righe Alternate (Striped)"
+      ],
+      "Aplica classe .table-striped para diferenciar linhas consecutivas com tons suaves.": [
+        "Applica la classe .table-striped per differenziare le righe consecutive con toni delicati."
+      ],
+      "Efeito ao Passar o Mouse (Hover)": [
+        "Effetto al Passaggio del Mouse (Hover)"
+      ],
+      "Aplica classe .table-hover para destacar a linha sob o cursor.": [
+        "Applica la classe .table-hover per evidenziare la riga al passaggio del cursore."
+      ],
+      "Bordas em Todas as Células (Bordered)": [
+        "Bordi su Tutte le Celle (Bordered)"
+      ],
+      "Aplica classe .table-bordered exibindo moldura e divisórias nítidas.": [
+        "Applica la classe .table-bordered mostrando bordi netti su tutti i lati."
+      ],
+      "Todas as tabelas são automaticamente envolvidas no container responsivo .table-responsive.": [
+        "Tutte le tabelle sono racchiuse automaticamente nel contenitore responsive .table-responsive."
+      ],
+      "Tema do Cabeçalho (thead)": [
+        "Tema Intestazione (thead)"
+      ],
+      "Selecione a Cor / Tema do Cabeçalho": [
+        "Seleziona Colore / Tema Intestazione"
+      ],
+      "Padrão do Tema": [
+        "Predefinito del Tema"
+      ],
+      "Escuro (Dark)": [
+        "Scuro (Dark)"
+      ],
+      "Azul Primário (Primary)": [
+        "Blu Primario (Primary)"
+      ],
+      "Cinza Secundário (Secondary)": [
+        "Grigio Secondario (Secondary)"
+      ],
+      "Verde Sucesso (Success)": [
+        "Verde Successo (Success)"
+      ],
+      "Vermelho Alerta (Danger)": [
+        "Rosso Pericolo (Danger)"
+      ],
+      "Amarelo Aviso (Warning)": [
+        "Giallo Avviso (Warning)"
+      ],
+      "Ciano Informativo (Info)": [
+        "Ciano Informativo (Info)"
+      ],
+      "Claro (Light)": [
+        "Chiaro (Light)"
+      ],
+      "Define o contraste e a cor temática do cabeçalho de acordo com a paleta do Bootstrap 5.": [
+        "Imposta il contrasto e il colore a tema dell'intestazione secondo la tavolozza Bootstrap 5."
+      ],
+      "Paleta Visual:": [
+        "Tavolozza Visiva:"
+      ],
+      "Tabela Responsiva Bootstrap 5": [
+        "Tabella Responsive Bootstrap 5"
+      ],
+      "Adicionar Coluna": [
+        "Aggiungi Colonna"
+      ],
+      "Adicionar Linha": [
+        "Aggiungi Riga"
+      ],
+      "Cabeçalho...": [
+        "Intestazione..."
+      ],
+      "Excluir esta coluna": [
+        "Elimina questa colonna"
+      ],
+      "Texto...": [
+        "Testo..."
+      ],
+      "Excluir esta linha": [
+        "Elimina questa riga"
+      ],
+      "Dica: Clique em qualquer célula para editar seu conteúdo inline com suporte a formatação.": [
+        "Suggerimento: Fai clic su qualsiasi cella per modificare il contenuto inline con supporto alla formattazione."
+      ]
+    }
+  }
+}

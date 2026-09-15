@@ -1,0 +1,93 @@
+{
+  "translation-revision-date": "2026-09-12 08:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-video-embed",
+  "locale_data": {
+    "periodic-video-embed": {
+      "": {
+        "domain": "periodic-video-embed",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Periodic - Vídeo Incorporado": [
+        "Periodic - Vídeo Incorporado"
+      ],
+      "Incorpore vídeos do YouTube, Vimeo ou iframes com proporções personalizáveis, bordas e sombras.": [
+        "Incorpore vídeos do YouTube, Vimeo ou iframes com proporções personalizáveis, bordas e sombras."
+      ],
+      "video": [
+        "vídeo"
+      ],
+      "youtube": [
+        "youtube"
+      ],
+      "vimeo": [
+        "vimeo"
+      ],
+      "embed": [
+        "incorporação"
+      ],
+      "player": [
+        "player"
+      ],
+      "Configurações do Vídeo": [
+        "Configurações do Vídeo"
+      ],
+      "URL do Vídeo ou Código de Incorporação": [
+        "URL do Vídeo ou Código de Incorporação"
+      ],
+      "Cole a URL do YouTube, Vimeo ou a tag <iframe> completa.": [
+        "Cole a URL do YouTube, Vimeo ou a tag <iframe> completa."
+      ],
+      "Proporção da Tela (Aspect Ratio)": [
+        "Proporção da Tela (Aspect Ratio)"
+      ],
+      "16:9 - Widescreen (Padrão)": [
+        "16:9 - Widescreen (Padrão)"
+      ],
+      "4:3 - Clássico / TV": [
+        "4:3 - Clássico / TV"
+      ],
+      "1:1 - Quadrado / Feed": [
+        "1:1 - Quadrado / Feed"
+      ],
+      "Aparência e Estilo": [
+        "Aparência e Estilo"
+      ],
+      "Largura Máxima (px)": [
+        "Largura Máxima (px)"
+      ],
+      "Cantos Arredondados (px)": [
+        "Cantos Arredondados (px)"
+      ],
+      "Sombra Projetada Suave": [
+        "Sombra Projetada Suave"
+      ],
+      "Sombra ativada conferindo profundidade visual.": [
+        "Sombra ativada conferindo profundidade visual."
+      ],
+      "Sombra desativada.": [
+        "Sombra desativada."
+      ],
+      "Vídeo Incorporado Responsivo": [
+        "Vídeo Incorporado Responsivo"
+      ],
+      "Insira a URL do YouTube, Vimeo ou tag <iframe> para exibir o player.": [
+        "Insira a URL do YouTube, Vimeo ou tag <iframe> para exibir o player."
+      ],
+      "Incorporar Vídeo": [
+        "Incorporar Vídeo"
+      ],
+      "Pré-visualização do Vídeo": [
+        "Pré-visualização do Vídeo"
+      ],
+      "Adicione uma legenda opcional para o vídeo...": [
+        "Adicione uma legenda opcional para o vídeo..."
+      ],
+      "Vídeo Incorporado": [
+        "Vídeo Incorporado"
+      ]
+    }
+  }
+}

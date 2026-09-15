@@ -1,0 +1,85 @@
+/**
+ * Estilos Frontend e Globais do Bloco Periodic - Video Embed
+ * Text Domain: periodic-video-embed
+ */
+
+.periodic-video-embed-wrapper {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	box-sizing: border-box;
+	display: block;
+	clear: both;
+}
+
+/* Container de Proporção Fluida */
+.periodic-video-responsive-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: #0f172a;
+	transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s ease;
+}
+
+/* Proporções com CSS Moderno aspect-ratio */
+.periodic-video-responsive-container.is-aspect-16-9 {
+	aspect-ratio: 16 / 9;
+}
+
+.periodic-video-responsive-container.is-aspect-4-3 {
+	aspect-ratio: 4 / 3;
+}
+
+.periodic-video-responsive-container.is-aspect-1-1 {
+	aspect-ratio: 1 / 1;
+}
+
+/* Fallback de Padding para Browsers sem Suporte a aspect-ratio */
+@supports not (aspect-ratio: 16 / 9) {
+	.periodic-video-responsive-container.is-aspect-16-9 {
+		padding-top: 56.25%;
+		height: 0;
+	}
+
+	.periodic-video-responsive-container.is-aspect-4-3 {
+		padding-top: 75%;
+		height: 0;
+	}
+
+	.periodic-video-responsive-container.is-aspect-1-1 {
+		padding-top: 100%;
+		height: 0;
+	}
+}
+
+/* Encaixe Perfeito do Iframe */
+.periodic-video-responsive-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+	box-sizing: border-box;
+}
+
+/* Efeito de Sombra Projetada Suave */
+.periodic-video-responsive-container.has-shadow {
+	box-shadow: 0 14px 34px -8px rgba(15, 23, 42, 0.18), 0 6px 14px -4px rgba(15, 23, 42, 0.1);
+}
+
+/* Legenda Centralizada e Elegante */
+.periodic-video-caption {
+	margin-top: 12px;
+	margin-bottom: 0;
+	font-family: inherit;
+	font-size: 0.92rem;
+	line-height: 1.5;
+	color: #64748b;
+	text-align: center;
+	font-style: italic;
+	word-break: break-word;
+}

@@ -1,0 +1,506 @@
+/**
+ * Luiz0067 Gallery Lightbox - Estilos Frontend e Globais
+ * Padrão Bootstrap 5 + Font Awesome 6 com microinterações refinadas.
+ */
+
+// Reset e contêiner da galeria
+.luiz0067-gallery-lightbox-wrapper {
+	position: relative;
+	width: 100%;
+	margin-bottom: 2rem;
+
+	.luiz0067-gallery-grid {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.luiz0067-gallery-item-col {
+		padding: 0.5rem;
+	}
+}
+
+// Trigger / Card da Miniatura na Grade
+.luiz0067-lightbox-trigger {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	background-color: #f1f3f5;
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+
+		.luiz0067-gallery-thumbnail {
+			transform: scale(1.06);
+		}
+
+		.luiz0067-zoom-indicator {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1);
+		}
+
+		.luiz0067-caption-overlay {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	// Imagem da miniatura
+	.luiz0067-gallery-thumbnail {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	// Indicador central de zoom ao passar o mouse
+	.luiz0067-zoom-indicator {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.7);
+		width: 44px;
+		height: 44px;
+		background: rgba(13, 110, 253, 0.85);
+		color: #ffffff;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.15rem;
+		opacity: 0;
+		pointer-events: none;
+		backdrop-filter: blur(4px);
+		box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+		z-index: 2;
+	}
+
+	// Legenda sobreposta na grade
+	.luiz0067-caption-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 1.5rem 0.75rem 0.6rem;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+		color: #ffffff;
+		opacity: 0;
+		transform: translateY(8px);
+		transition: all 0.3s ease;
+		z-index: 3;
+
+		.luiz0067-caption-title {
+			font-size: 0.9rem;
+			color: #ffffff;
+		}
+
+		.luiz0067-caption-text {
+			font-size: 0.78rem;
+			color: rgba(255, 255, 255, 0.85);
+		}
+	}
+}
+
+// Fallbacks de Ratio do Bootstrap 5 se não houver Bootstrap CSS completo no tema
+.ratio {
+	position: relative;
+	width: 100%;
+
+	&::before {
+		display: block;
+		padding-top: var(--bs-aspect-ratio);
+		content: "";
+	}
+
+	& > * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.ratio-1x1 {
+	--bs-aspect-ratio: 100%;
+}
+.ratio-4x3 {
+	--bs-aspect-ratio: 75%;
+}
+.ratio-16x9 {
+	--bs-aspect-ratio: 56.25%;
+}
+.ratio-original {
+	position: relative;
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+
+/* ==========================================================================
+   POPUP LIGHTBOX EM TELA CHEIA (ESTILO LC-LIGHTBOX)
+   ========================================================================== */
+.luiz0067-lightbox-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 999999;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	user-select: none;
+
+	&.is-visible {
+		opacity: 1;
+	}
+
+	// Tema Escuro (Padrão)
+	&.theme-dark {
+		background-color: rgba(8, 10, 14, 0.94);
+		backdrop-filter: blur(16px);
+		color: #f8f9fa;
+
+		.luiz0067-lightbox-top-bar,
+		.luiz0067-lightbox-bottom-bar {
+			background: rgba(13, 17, 23, 0.85);
+			border-color: rgba(255, 255, 255, 0.1);
+		}
+
+		.luiz0067-lb-btn,
+		.luiz0067-nav-arrow {
+			background: rgba(255, 255, 255, 0.1);
+			color: #ffffff;
+			border: 1px solid rgba(255, 255, 255, 0.15);
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.25);
+				color: #ffffff;
+			}
+		}
+
+		.luiz0067-thumb-item {
+			border-color: rgba(255, 255, 255, 0.2);
+			opacity: 0.6;
+
+			&.is-active,
+			&:hover {
+				border-color: #0d6efd;
+				opacity: 1;
+				box-shadow: 0 0 12px rgba(13, 110, 253, 0.6);
+			}
+		}
+	}
+
+	// Tema Claro
+	&.theme-light {
+		background-color: rgba(248, 249, 250, 0.96);
+		backdrop-filter: blur(16px);
+		color: #212529;
+
+		.luiz0067-lightbox-top-bar,
+		.luiz0067-lightbox-bottom-bar {
+			background: rgba(255, 255, 255, 0.9);
+			border-color: rgba(0, 0, 0, 0.1);
+			color: #212529;
+		}
+
+		.luiz0067-top-title {
+			color: #212529;
+		}
+
+		.luiz0067-caption-heading {
+			color: #212529;
+		}
+
+		.luiz0067-caption-desc {
+			color: #495057;
+		}
+
+		.luiz0067-lb-btn,
+		.luiz0067-nav-arrow {
+			background: rgba(0, 0, 0, 0.06);
+			color: #212529;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+
+			&:hover {
+				background: rgba(0, 0, 0, 0.12);
+				color: #000000;
+			}
+		}
+
+		.luiz0067-thumb-item {
+			border-color: rgba(0, 0, 0, 0.2);
+			opacity: 0.6;
+
+			&.is-active,
+			&:hover {
+				border-color: #0d6efd;
+				opacity: 1;
+				box-shadow: 0 0 12px rgba(13, 110, 253, 0.4);
+			}
+		}
+	}
+
+	// Barra Superior
+	.luiz0067-lightbox-top-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 58px;
+		padding: 0 1.5rem;
+		border-bottom: 1px solid transparent;
+		z-index: 10;
+		flex-shrink: 0;
+
+		.luiz0067-counter-wrapper {
+			font-size: 0.95rem;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			min-width: 60px;
+		}
+
+		.luiz0067-top-title {
+			flex: 1;
+			text-align: center;
+			font-size: 1.05rem;
+			font-weight: 600;
+			padding: 0 1rem;
+		}
+
+		.luiz0067-lightbox-actions {
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+		}
+	}
+
+	// Botões de Ação do Topo
+	.luiz0067-lb-btn {
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		font-size: 1rem;
+		transition: all 0.2s ease;
+		outline: none;
+
+		&:focus-visible {
+			box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.5);
+		}
+	}
+
+	// Palco Central (Área da Imagem)
+	.luiz0067-lightbox-stage {
+		position: relative;
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		padding: 1rem;
+
+		.luiz0067-main-image-container {
+			position: relative;
+			max-width: 90vw;
+			max-height: calc(100vh - 220px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.luiz0067-image-loader {
+			position: absolute;
+			color: #0d6efd;
+			z-index: 5;
+		}
+
+		.luiz0067-main-image {
+			max-width: 90vw;
+			max-height: calc(100vh - 220px);
+			object-fit: contain;
+			border-radius: 6px;
+			box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+			transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+			cursor: zoom-in;
+
+			&.is-zoomed {
+				transform: scale(1.85);
+				cursor: zoom-out;
+				z-index: 15;
+			}
+		}
+
+		// Setas laterais de navegação
+		.luiz0067-nav-arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.25rem;
+			cursor: pointer;
+			z-index: 20;
+			transition: all 0.25s ease;
+			outline: none;
+
+			&:active {
+				transform: translateY(-50%) scale(0.92);
+			}
+
+			&:focus-visible {
+				box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.5);
+			}
+
+			&.luiz0067-prev-btn {
+				left: 1.5rem;
+			}
+
+			&.luiz0067-next-btn {
+				right: 1.5rem;
+			}
+		}
+	}
+
+	// Barra Inferior (Legendas + Miniaturas)
+	.luiz0067-lightbox-bottom-bar {
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid transparent;
+		padding: 0.75rem 1rem;
+		z-index: 10;
+		flex-shrink: 0;
+
+		.luiz0067-caption-box {
+			text-align: center;
+			margin-bottom: 0.5rem;
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+
+			.luiz0067-caption-heading {
+				font-size: 1.05rem;
+				font-weight: 600;
+				margin-bottom: 0.25rem;
+			}
+
+			.luiz0067-caption-desc {
+				font-size: 0.88rem;
+				opacity: 0.85;
+				margin-bottom: 0;
+			}
+		}
+
+		// Fita deslizante de miniaturas
+		.luiz0067-thumbs-tray {
+			width: 100%;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+
+			.luiz0067-thumbs-slider {
+				display: flex;
+				gap: 0.5rem;
+				overflow-x: auto;
+				padding: 0.25rem 0.5rem 0.5rem;
+				scroll-behavior: smooth;
+				max-width: 100%;
+
+				&::-webkit-scrollbar {
+					height: 4px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: rgba(13, 110, 253, 0.6);
+					border-radius: 4px;
+				}
+			}
+
+			.luiz0067-thumb-item {
+				flex: 0 0 54px;
+				height: 54px;
+				border-radius: 6px;
+				overflow: hidden;
+				border: 2px solid transparent;
+				padding: 0;
+				background: transparent;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				outline: none;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					display: block;
+				}
+
+				&:focus-visible {
+					box-shadow: 0 0 0 2px #0d6efd;
+				}
+			}
+		}
+	}
+}
+
+// Responsividade Mobile
+@media (max-width: 768px) {
+	.luiz0067-lightbox-overlay {
+		.luiz0067-lightbox-top-bar {
+			padding: 0 1rem;
+			height: 50px;
+
+			.luiz0067-top-title {
+				font-size: 0.9rem;
+			}
+		}
+
+		.luiz0067-lightbox-stage {
+			.luiz0067-nav-arrow {
+				width: 40px;
+				height: 40px;
+				font-size: 1rem;
+
+				&.luiz0067-prev-btn {
+					left: 0.5rem;
+				}
+				&.luiz0067-next-btn {
+					right: 0.5rem;
+				}
+			}
+
+			.luiz0067-main-image {
+				max-width: 95vw;
+				max-height: calc(100vh - 180px);
+			}
+		}
+
+		.luiz0067-lightbox-bottom-bar {
+			padding: 0.5rem 0.75rem;
+
+			.luiz0067-thumbs-tray .luiz0067-thumb-item {
+				flex: 0 0 44px;
+				height: 44px;
+			}
+		}
+	}
+}

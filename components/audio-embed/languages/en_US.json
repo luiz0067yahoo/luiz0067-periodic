@@ -1,0 +1,175 @@
+{
+  "translation-revision-date": "2026-09-12 10:00:00+0000",
+  "generator": "WP-CLI/2.8.1",
+  "source": "js/block.js",
+  "domain": "periodic-audio-embed",
+  "locale_data": {
+    "periodic-audio-embed": {
+      "": {
+        "domain": "periodic-audio-embed",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Periodic - Audio Embed": [
+        "Periodic - Audio Embed"
+      ],
+      "Player de áudio e podcast moderno com upload nativo, capa, informações e download.": [
+        "Modern audio and podcast player with native upload, cover art, track info, and download."
+      ],
+      "audio": [
+        "audio"
+      ],
+      "podcast": [
+        "podcast"
+      ],
+      "musica": [
+        "music"
+      ],
+      "player": [
+        "player"
+      ],
+      "mp3": [
+        "mp3"
+      ],
+      "Configurações de Áudio": [
+        "Audio Settings"
+      ],
+      "URL do Arquivo de Áudio": [
+        "Audio File URL"
+      ],
+      "Cole a URL direta ou utilize o botão abaixo para enviar um arquivo.": [
+        "Paste the direct URL or use the button below to upload a file."
+      ],
+      "Substituir Arquivo de Áudio": [
+        "Replace Audio File"
+      ],
+      "Selecionar / Upload de Áudio": [
+        "Select / Upload Audio"
+      ],
+      "Remover Áudio": [
+        "Remove Audio"
+      ],
+      "Capa do Áudio / Álbum": [
+        "Audio / Album Cover"
+      ],
+      "Pré-visualização da Capa": [
+        "Cover Preview"
+      ],
+      "Substituir Imagem de Capa": [
+        "Replace Cover Image"
+      ],
+      "Adicionar Imagem de Capa": [
+        "Add Cover Image"
+      ],
+      "Remover Imagem de Capa": [
+        "Remove Cover Image"
+      ],
+      "Exibir Botão de Download": [
+        "Show Download Button"
+      ],
+      "Permite que os visitantes façam download direto da faixa.": [
+        "Allows visitors to download the track directly."
+      ],
+      "Botão de download oculto.": [
+        "Download button hidden."
+      ],
+      "Repetição Contínua (Loop)": [
+        "Continuous Loop"
+      ],
+      "O áudio recomeçará automaticamente ao finalizar.": [
+        "Audio will automatically restart upon ending."
+      ],
+      "Reprodução única normal.": [
+        "Normal single playback."
+      ],
+      "Pré-carregamento (Preload)": [
+        "Preload"
+      ],
+      "Metadados apenas (Padrão)": [
+        "Metadata only (Default)"
+      ],
+      "Automático (Buffer completo)": [
+        "Auto (Full buffer)"
+      ],
+      "Nenhum (Economiza banda)": [
+        "None (Saves bandwidth)"
+      ],
+      "Cores e Aparência": [
+        "Colors and Appearance"
+      ],
+      "Cor de Fundo do Card": [
+        "Card Background Color"
+      ],
+      "Cor dos Textos e Títulos": [
+        "Text and Heading Color"
+      ],
+      "Periodic - Bloco de Áudio com Upload e Embed": [
+        "Periodic - Audio Block with Upload & Embed"
+      ],
+      "Envie um arquivo de áudio (MP3, WAV, OGG, M4A) da biblioteca ou insira uma URL direta para criar o player.": [
+        "Upload an audio file (MP3, WAV, OGG, M4A) from your media library or enter a direct URL to create the player."
+      ],
+      "Enviar ou Selecionar Áudio": [
+        "Upload or Select Audio"
+      ],
+      "ou insira a URL direta:": [
+        "or enter direct URL:"
+      ],
+      "Aplicar": [
+        "Apply"
+      ],
+      "Capa do Áudio": [
+        "Audio Cover"
+      ],
+      "Sem Capa": [
+        "No Cover"
+      ],
+      "Alterar Imagem de Capa": [
+        "Change Cover Image"
+      ],
+      "Título da faixa ou episódio...": [
+        "Track or episode title..."
+      ],
+      "Nome do artista, autor ou locutor...": [
+        "Artist, author or speaker name..."
+      ],
+      "Baixar Áudio": [
+        "Download Audio"
+      ],
+      "Trocar arquivo": [
+        "Change file"
+      ],
+      "Seu navegador não suporta a reprodução deste arquivo de áudio.": [
+        "Your browser does not support playing this audio file."
+      ],
+      "Branco Puro": [
+        "Pure White"
+      ],
+      "Cinza Claro": [
+        "Light Slate"
+      ],
+      "Azul Névoa": [
+        "Mist Sky"
+      ],
+      "Índigo Suave": [
+        "Soft Indigo"
+      ],
+      "Ardósia Escuro": [
+        "Dark Slate"
+      ],
+      "Carvão Grafite": [
+        "Charcoal Graphite"
+      ],
+      "Azul Oceano": [
+        "Ocean Blue"
+      ]
+    },
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      }
+    }
+  }
+}

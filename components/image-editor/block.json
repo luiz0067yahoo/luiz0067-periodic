@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "periodic/image-editor",
+  "version": "1.0.0",
+  "title": "Periodic Image Editor",
+  "category": "media",
+  "icon": "format-image",
+  "description": "Editor e enquadrador visual de imagem com ajustes de Zoom, Rotação e Posicionamento nos eixos X e Y em tempo real.",
+  "keywords": [
+    "image",
+    "imagem",
+    "editor",
+    "zoom",
+    "rotate",
+    "crop",
+    "enquadramento"
+  ],
+  "textdomain": "periodic-image-editor",
+  "attributes": {
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "zoom": {
+      "type": "number",
+      "default": 1
+    },
+    "rotation": {
+      "type": "number",
+      "default": 0
+    },
+    "positionX": {
+      "type": "number",
+      "default": 0
+    },
+    "positionY": {
+      "type": "number",
+      "default": 0
+    },
+    "containerHeight": {
+      "type": "string",
+      "default": "450px"
+    },
+    "objectFit": {
+      "type": "string",
+      "default": "cover"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "rounded-3"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "shadow-sm"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}

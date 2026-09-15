@@ -1,0 +1,45 @@
+/**
+ * Antigravity Prompt / Floating Cards - Gutenberg Editor Overrides
+ * Package: Periodic_Topic_Title_Text
+ */
+
+.wp-block-periodic-topic-title-text {
+	position: relative;
+	box-sizing: border-box;
+}
+
+/* Ensure levitation animation works inside Gutenberg canvas */
+.wp-block-periodic-topic-title-text .antigravity-card-float {
+	animation-play-state: running;
+}
+
+/* When the block is currently selected, smoothly pause float to make editing easy */
+.wp-block-periodic-topic-title-text.is-selected .antigravity-card-float,
+.wp-block-periodic-topic-title-text:focus-within .antigravity-card-float {
+	animation-play-state: paused;
+	box-shadow: 0 0 0 2px var(--ag-color, #6366f1), 0 16px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* RichText Placeholders & Focus in Editor */
+.antigravity-card-title:empty::before,
+.antigravity-card-title [data-rich-text-placeholder]::after,
+.antigravity-card-content:empty::before,
+.antigravity-card-content [data-rich-text-placeholder]::after,
+.antigravity-tag-badge:empty::before,
+.antigravity-tag-badge [data-rich-text-placeholder]::after {
+	opacity: 0.55;
+}
+
+.antigravity-tag-badge [contenteditable="true"] {
+	outline: none;
+}
+
+.antigravity-card-title [contenteditable="true"]:focus,
+.antigravity-card-content [contenteditable="true"]:focus {
+	outline: none;
+}
+
+/* Action button inside editor: disabled cursor & preview state */
+.antigravity-action-btn-editor {
+	cursor: default;
+}

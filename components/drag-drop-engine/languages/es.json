@@ -1,0 +1,47 @@
+{
+  "locale": "es-ES",
+  "blockTitle": "Periodic Drag & Drop Engine",
+  "blockDescription": "Motor interactivo para reordenación de párrafos, relleno de huecos con fichas de texto y destinos sobre imágenes.",
+  "modes": {
+    "reorderParagraphs": "Reordenación de Párrafos",
+    "textTokens": "Fichas de Texto (Huecos / Dropzones)",
+    "imageTargets": "Destinos sobre Imagen"
+  },
+  "settings": {
+    "modeSelection": "Modo de Funcionamiento",
+    "modeDescription": "Elija la mecánica interactiva de arrastrar y soltar.",
+    "itemsSection": "Elementos Arrastrables",
+    "addItem": "+ Añadir Nuevo Elemento",
+    "removeItem": "Eliminar Elemento",
+    "itemText": "Texto del Elemento",
+    "correctOrder": "Posición Correcta (Orden)",
+    "targetAssociation": "Zona de Destino Asociada (Clave)",
+    "targetsSection": "Zonas de Destino (Dropzones)",
+    "addTarget": "+ Añadir Zona de Destino",
+    "removeTarget": "Eliminar Destino",
+    "targetLabel": "Etiqueta / Descripción de Zona",
+    "targetCoords": "Coordenadas en la Imagen (% X, % Y)",
+    "imageSection": "Configuración de Imagen de Fondo",
+    "uploadImage": "Seleccionar Imagen de Fondo",
+    "removeImage": "Eliminar Imagen",
+    "feedbackSection": "Mensajes de Retroalimentación",
+    "successMessage": "Mensaje de Acierto",
+    "errorMessage": "Mensaje de Error",
+    "allowRetry": "Permitir reintentar"
+  },
+  "frontend": {
+    "dragInstruction": "Arrastre los elementos a sus zonas correspondientes o reordene según se solicite:",
+    "availableItems": "Elementos Disponibles:",
+    "dropzonePlaceholder": "Suelte el elemento correspondiente aquí...",
+    "checkButton": "Comprobar Respuestas",
+    "resetButton": "Intentar de Nuevo",
+    "scoreLabel": "Tu Puntuación:",
+    "allCorrect": "¡Excelente! ¡Todos los elementos han sido colocados correctamente!",
+    "partialCorrect": "Has acertado {correct} de {total} elementos. ¡Revisa tus respuestas!",
+    "noneCorrect": "Ninguna correspondencia correcta por ahora. ¡Inténtalo de nuevo con calma!",
+    "targetPrefix": "Destino",
+    "grabHandle": "Arrastre para mover",
+    "correctBadge": "¡Correcto!",
+    "incorrectBadge": "¡Incorrecto!"
+  }
+}

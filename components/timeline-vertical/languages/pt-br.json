@@ -1,0 +1,159 @@
+{
+  "translation-revision-date": "2026-09-13 16:50:00-0300",
+  "generator": "WP-CLI/2.8.1",
+  "source": "periodic-timeline-vertical",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Timeline Vertical": [
+        "Linha do Tempo Vertical"
+      ],
+      "Linha do tempo vertical elegante com marcadores circulares, ícones Font Awesome, datas e cards de conteúdo alternados ou alinhados.": [
+        "Linha do tempo vertical elegante com marcadores circulares, ícones Font Awesome, datas e cards de conteúdo alternados ou alinhados."
+      ],
+      "Eventos": [
+        "Eventos"
+      ],
+      "Aparência": [
+        "Aparência"
+      ],
+      "Ícones e Badges": [
+        "Ícones e Badges"
+      ],
+      "Gerenciador de Eventos": [
+        "Gerenciador de Eventos"
+      ],
+      "Adicione, ordene, edite e remova marcos cronológicos da linha do tempo.": [
+        "Adicione, ordene, edite e remova marcos cronológicos da linha do tempo."
+      ],
+      "+ Adicionar Marco Temporal": [
+        "+ Adicionar Marco Temporal"
+      ],
+      "+ Adicionar Novo Marco Temporal": [
+        "+ Adicionar Novo Marco Temporal"
+      ],
+      "Mover para cima": [
+        "Mover para cima"
+      ],
+      "Mover para baixo": [
+        "Mover para baixo"
+      ],
+      "Excluir evento": [
+        "Excluir evento"
+      ],
+      "(Sem título)": [
+        "(Sem título)"
+      ],
+      "Data / Período": [
+        "Data / Período"
+      ],
+      "Título do Marco": [
+        "Título do Marco"
+      ],
+      "Tag / Etiqueta": [
+        "Tag / Etiqueta"
+      ],
+      "Descrição": [
+        "Descrição"
+      ],
+      "Classe Font Awesome 6 do Ícone": [
+        "Classe Font Awesome 6 do Ícone"
+      ],
+      "Ex: fa-solid fa-flag, fa-solid fa-rocket": [
+        "Ex: fa-solid fa-flag, fa-solid fa-rocket"
+      ],
+      "Cor do Marcador Circular": [
+        "Cor do Marcador Circular"
+      ],
+      "Aparência e Layout": [
+        "Aparência e Layout"
+      ],
+      "Alinhamento dos Cards": [
+        "Alinhamento dos Cards"
+      ],
+      "Alternado (Esquerda / Direita)": [
+        "Alternado (Esquerda / Direita)"
+      ],
+      "Alinhado à Esquerda": [
+        "Alinhado à Esquerda"
+      ],
+      "Estilo da Linha Conectora": [
+        "Estilo da Linha Conectora"
+      ],
+      "Sólida": [
+        "Sólida"
+      ],
+      "Tracejada": [
+        "Tracejada"
+      ],
+      "Pontilhada": [
+        "Pontilhada"
+      ],
+      "Cor Primária / Marcadores": [
+        "Cor Primária / Marcadores"
+      ],
+      "Cor da Linha Conectora": [
+        "Cor da Linha Conectora"
+      ],
+      "Sombra nos Cards": [
+        "Sombra nos Cards"
+      ],
+      "Sombra suave ativa (Bootstrap shadow-sm).": [
+        "Sombra suave ativa (Bootstrap shadow-sm)."
+      ],
+      "Sem sombra.": [
+        "Sem sombra."
+      ],
+      "Borda nos Cards": [
+        "Borda nos Cards"
+      ],
+      "Ícones e Badges Circulares": [
+        "Ícones e Badges Circulares"
+      ],
+      "Exibir Ícones nos Marcadores": [
+        "Exibir Ícones nos Marcadores"
+      ],
+      "Cor de Fundo Padrão do Marcador": [
+        "Cor de Fundo Padrão do Marcador"
+      ],
+      "Cor do Ícone / Texto": [
+        "Cor do Ícone / Texto"
+      ],
+      "Ícones Rápidos Populares (Font Awesome 6)": [
+        "Ícones Rápidos Populares (Font Awesome 6)"
+      ],
+      "Clique em um ícone para aplicá-lo ao evento atualmente aberto.": [
+        "Clique em um ícone para aplicá-lo ao evento atualmente aberto."
+      ],
+      "Ano / Data": [
+        "Ano / Data"
+      ],
+      "Novo Marco Cronológico": [
+        "Novo Marco Cronológico"
+      ],
+      "Descreva aqui os detalhes mais importantes e conquistas deste marco temporal.": [
+        "Descreva aqui os detalhes mais importantes e conquistas deste marco temporal."
+      ],
+      "Etapa": [
+        "Etapa"
+      ],
+      "Data / Ano": [
+        "Data / Ano"
+      ],
+      "Tag": [
+        "Tag"
+      ],
+      "Título do marco...": [
+        "Título do marco..."
+      ],
+      "Escreva a descrição do evento...": [
+        "Escreva a descrição do evento..."
+      ]
+    }
+  }
+}

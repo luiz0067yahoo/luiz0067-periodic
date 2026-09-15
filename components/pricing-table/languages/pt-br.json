@@ -1,0 +1,216 @@
+{
+  "translation-revision-date": "2026-09-13 16:50:00-0300",
+  "generator": "WP-CLI/2.10.0",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_BR",
+        "plural-forms": "nplurals=2; plural=(n > 1);"
+      },
+      "Tabela de Preços (Bootstrap 5)": [
+        "Tabela de Preços (Bootstrap 5)"
+      ],
+      "Tabela comparativa de planos de preços para landing pages com destaque para Plano Popular, lista de recursos com ícones e suporte nativo ao Bootstrap 5 e Font Awesome 6.": [
+        "Tabela comparativa de planos de preços para landing pages com destaque para Plano Popular, lista de recursos com ícones e suporte nativo ao Bootstrap 5 e Font Awesome 6."
+      ],
+      "Planos": [
+        "Planos"
+      ],
+      "Recursos e Itens": [
+        "Recursos e Itens"
+      ],
+      "Estilo do Destaque": [
+        "Estilo do Destaque"
+      ],
+      "Configuração dos Planos": [
+        "Configuração dos Planos"
+      ],
+      "Selecionar Plano para Edição": [
+        "Selecionar Plano para Edição"
+      ],
+      "Mover para cima/esquerda": [
+        "Mover para cima/esquerda"
+      ],
+      "Mover para baixo/direita": [
+        "Mover para baixo/direita"
+      ],
+      "Duplicar este plano": [
+        "Duplicar este plano"
+      ],
+      "Excluir plano": [
+        "Excluir plano"
+      ],
+      "Nome do Plano": [
+        "Nome do Plano"
+      ],
+      "Moeda": [
+        "Moeda"
+      ],
+      "Preço": [
+        "Preço"
+      ],
+      "Período de Faturamento": [
+        "Período de Faturamento"
+      ],
+      "Exemplo: /mês, /ano, ou taxa única": [
+        "Exemplo: /mês, /ano, ou taxa única"
+      ],
+      "Plano em Destaque (Popular)": [
+        "Plano em Destaque (Popular)"
+      ],
+      "Texto do Distintivo (Badge)": [
+        "Texto do Distintivo (Badge)"
+      ],
+      "Texto do Botão": [
+        "Texto do Botão"
+      ],
+      "URL do Botão": [
+        "URL do Botão"
+      ],
+      "Estilo do Botão": [
+        "Estilo do Botão"
+      ],
+      "Azul Primário (btn-primary)": [
+        "Azul Primário (btn-primary)"
+      ],
+      "Contorno Azul (btn-outline-primary)": [
+        "Contorno Azul (btn-outline-primary)"
+      ],
+      "Verde Sucesso (btn-success)": [
+        "Verde Sucesso (btn-success)"
+      ],
+      "Contorno Verde (btn-outline-success)": [
+        "Contorno Verde (btn-outline-success)"
+      ],
+      "Preto / Escuro (btn-dark)": [
+        "Preto / Escuro (btn-dark)"
+      ],
+      "Contorno Escuro (btn-outline-dark)": [
+        "Contorno Escuro (btn-outline-dark)"
+      ],
+      "Cinza Secundário (btn-secondary)": [
+        "Cinza Secundário (btn-secondary)"
+      ],
+      "Adicionar Novo Plano": [
+        "Adicionar Novo Plano"
+      ],
+      "Colunas no Desktop": [
+        "Colunas no Desktop"
+      ],
+      "Gerenciar Recursos da Tabela": [
+        "Gerenciar Recursos da Tabela"
+      ],
+      "Plano Atual": [
+        "Plano Atual"
+      ],
+      "Adicione, edite e alterne entre recursos inclusos (ícone de visto verde) e exclusos (ícone de x cinza).": [
+        "Adicione, edite e alterne entre recursos inclusos (ícone de visto verde) e exclusos (ícone de x cinza)."
+      ],
+      "✓ Incluso no plano": [
+        "✓ Incluso no plano"
+      ],
+      "✕ Não incluso no plano": [
+        "✕ Não incluso no plano"
+      ],
+      "Remover": [
+        "Remover"
+      ],
+      "Recurso Incluso?": [
+        "Recurso Incluso?"
+      ],
+      "Adicionar Recurso a Este Plano": [
+        "Adicionar Recurso a Este Plano"
+      ],
+      "Personalização do Destaque": [
+        "Personalização do Destaque"
+      ],
+      "Exibir Distintivos (Badges)": [
+        "Exibir Distintivos (Badges)"
+      ],
+      "Exibe o distintivo flutuante sobre os planos com destaque.": [
+        "Exibe o distintivo flutuante sobre os planos com destaque."
+      ],
+      "Elevar Plano em Destaque": [
+        "Elevar Plano em Destaque"
+      ],
+      "Aplica leve ampliação e elevação com sombra mais profunda no plano em destaque.": [
+        "Aplica leve ampliação e elevação com sombra mais profunda no plano em destaque."
+      ],
+      "Cor da Borda de Destaque": [
+        "Cor da Borda de Destaque"
+      ],
+      "Cor de Fundo da Badge": [
+        "Cor de Fundo da Badge"
+      ],
+      "Cor do Texto da Badge": [
+        "Cor do Texto da Badge"
+      ],
+      "Novo Plano": [
+        "Novo Plano"
+      ],
+      "/mês": [
+        "/mês"
+      ],
+      "Destaque": [
+        "Destaque"
+      ],
+      "Mais Popular": [
+        "Mais Popular"
+      ],
+      "Recurso essencial incluso": [
+        "Recurso essencial incluso"
+      ],
+      "Suporte padrão incluso": [
+        "Suporte padrão incluso"
+      ],
+      "Funcionalidade avançada": [
+        "Funcionalidade avançada"
+      ],
+      "Novo recurso do plano": [
+        "Novo recurso do plano"
+      ],
+      "Assinar Agora": [
+        "Assinar Agora"
+      ],
+      "Cópia": [
+        "Cópia"
+      ],
+      "Alternar Plano em Destaque (Popular)": [
+        "Alternar Plano em Destaque (Popular)"
+      ],
+      "Destacar": [
+        "Destacar"
+      ],
+      "Mover para a esquerda": [
+        "Mover para a esquerda"
+      ],
+      "Mover para a direita": [
+        "Mover para a direita"
+      ],
+      "Duplicar plano": [
+        "Duplicar plano"
+      ],
+      "Recurso Incluso (clique para desmarcar)": [
+        "Recurso Incluso (clique para desmarcar)"
+      ],
+      "Recurso Não Incluso (clique para marcar)": [
+        "Recurso Não Incluso (clique para marcar)"
+      ],
+      "Descrição do recurso...": [
+        "Descrição do recurso..."
+      ],
+      "Remover item": [
+        "Remover item"
+      ],
+      "Adicionar Recurso": [
+        "Adicionar Recurso"
+      ],
+      "Adicionar Novo Card de Plano": [
+        "Adicionar Novo Card de Plano"
+      ]
+    }
+  }
+}

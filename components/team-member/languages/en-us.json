@@ -1,0 +1,183 @@
+{
+  "translation-revision-date": "2026-09-13 17:30:00+0000",
+  "generator": "WP-CLI/2.9.0",
+  "source": "src/edit.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "en_US",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Membros da Equipe": [
+        "Team Members"
+      ],
+      "Membros": [
+        "Members"
+      ],
+      "Redes Sociais": [
+        "Social Networks"
+      ],
+      "Estilo da Foto e Cartão": [
+        "Photo & Card Style"
+      ],
+      "Gerenciar Membros da Equipe": [
+        "Manage Team Members"
+      ],
+      "Adicione os membros, defina fotos de perfil e preencha os dados institucionais.": [
+        "Add members, set profile photos, and fill in institutional details."
+      ],
+      "Novo Membro": [
+        "New Member"
+      ],
+      "Especialidade / Cargo": [
+        "Specialty / Role"
+      ],
+      "Breve resumo biográfico destacando competências e histórico de atuação do profissional.": [
+        "Brief biographical summary highlighting competencies and professional background."
+      ],
+      "(Sem Nome)": [
+        "(Untitled)"
+      ],
+      "Mover para cima": [
+        "Move up"
+      ],
+      "Mover para baixo": [
+        "Move down"
+      ],
+      "Remover membro": [
+        "Remove member"
+      ],
+      "Trocar Foto": [
+        "Replace Photo"
+      ],
+      "Enviar Foto": [
+        "Upload Photo"
+      ],
+      "Remover": [
+        "Remove"
+      ],
+      "Nome Completo": [
+        "Full Name"
+      ],
+      "Ex: Prof. Dr. Silva": [
+        "E.g.: Prof. Dr. Smith"
+      ],
+      "Ex: Engenheiro de Software Sênior": [
+        "E.g.: Senior Software Engineer"
+      ],
+      "Resumo Biográfico": [
+        "Biographical Summary"
+      ],
+      "Destaque a formação, conquistas ou histórico de carreira...": [
+        "Highlight education, achievements, or career history..."
+      ],
+      "Adicionar Novo Membro": [
+        "Add New Member"
+      ],
+      "Links de Redes Sociais": [
+        "Social Network Links"
+      ],
+      "Adicione membros na aba \"Membros\" antes de configurar redes sociais.": [
+        "Add members in the \"Members\" tab before configuring social networks."
+      ],
+      "Selecionar Membro para Configurar Redes": [
+        "Select Member to Configure Networks"
+      ],
+      "Redes de:": [
+        "Networks of:"
+      ],
+      "Rede Social": [
+        "Social Network"
+      ],
+      "Excluir link": [
+        "Delete link"
+      ],
+      "URL / Link de Perfil": [
+        "URL / Profile Link"
+      ],
+      "Classe do Ícone Font Awesome": [
+        "Font Awesome Icon Class"
+      ],
+      "Exemplo: fa-brands fa-linkedin-in, fa-brands fa-github": [
+        "Example: fa-brands fa-linkedin-in, fa-brands fa-github"
+      ],
+      "Adicionar Rede Rápida:": [
+        "Quick Add Network:"
+      ],
+      "Número de Colunas (Grid)": [
+        "Number of Columns (Grid)"
+      ],
+      "Escolha de 1 a 4 colunas para a exibição dos membros em telas grandes.": [
+        "Choose from 1 to 4 columns for large screen display."
+      ],
+      "Formato da Foto": [
+        "Photo Shape"
+      ],
+      "Circular (rounded-circle)": [
+        "Circular (rounded-circle)"
+      ],
+      "Cantos Arredondados (rounded)": [
+        "Rounded Corners (rounded)"
+      ],
+      "Moldura com Borda (img-thumbnail)": [
+        "Border Frame (img-thumbnail)"
+      ],
+      "Tamanho da Foto (px)": [
+        "Photo Size (px)"
+      ],
+      "Diâmetro ou largura da foto em pixels.": [
+        "Diameter or width of the photo in pixels."
+      ],
+      "Estilo de Cartão (Bootstrap 5)": [
+        "Card Style (Bootstrap 5)"
+      ],
+      "Sombra Suave (shadow-sm)": [
+        "Soft Shadow (shadow-sm)"
+      ],
+      "Borda Delicada (border)": [
+        "Delicate Border (border)"
+      ],
+      "Plano / Sem Borda (flat)": [
+        "Flat / No Border (flat)"
+      ],
+      "Alinhamento do Conteúdo": [
+        "Content Alignment"
+      ],
+      "Centralizado": [
+        "Centered"
+      ],
+      "Alinhado à Esquerda": [
+        "Left Aligned"
+      ],
+      "Nenhum membro configurado": [
+        "No members configured"
+      ],
+      "Clique no botão abaixo para adicionar o primeiro membro de equipe.": [
+        "Click the button below to add the first team member."
+      ],
+      "Adicionar Membro": [
+        "Add Member"
+      ],
+      "Clique para alterar a foto": [
+        "Click to change photo"
+      ],
+      "Nome do Membro": [
+        "Member Name"
+      ],
+      "Biografia do membro...": [
+        "Member biography..."
+      ],
+      "Nenhuma rede social configurada": [
+        "No social networks configured"
+      ],
+      "Editar no Painel": [
+        "Edit in Panel"
+      ],
+      "Adicionar Outro Membro": [
+        "Add Another Member"
+      ]
+    }
+  }
+}
