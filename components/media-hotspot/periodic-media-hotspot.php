@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-media-hotspot
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  */
 
@@ -27,48 +27,26 @@ function periodic_media_hotspot_register_block() {
 add_action( 'init', 'periodic_media_hotspot_register_block' );
 
 /**
- * Enqueue Font Awesome and Bootstrap 5 for Frontend & Editor
+ * Enqueue Font Awesome and Bootstrap 5 for Frontend & Editor using local shared assets
  */
 function periodic_media_hotspot_enqueue_dependencies() {
-	// Font Awesome 6 Icons
-	wp_register_style(
-		'periodic-font-awesome',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
-		array(),
-		'6.5.1'
-	);
-	wp_enqueue_style( 'periodic-font-awesome' );
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
+	}
 
-	// Bootstrap 5 CSS (scoped or full)
-	wp_register_style(
-		'periodic-bootstrap-5',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-		array(),
-		'5.3.3'
-	);
-	wp_enqueue_style( 'periodic-bootstrap-5' );
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		wp_enqueue_style( 'bootstrap-5' );
+	}
 
-	// Bootstrap 5 Bundle JS (for native modal & popovers)
-	wp_register_script(
-		'periodic-bootstrap-5-bundle',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
-		array(),
-		'5.3.3',
-		true
-	);
-	wp_enqueue_script( 'periodic-bootstrap-5-bundle' );
+	if ( wp_script_is( 'periodic-vendor-bootstrap-js', 'registered' ) ) {
+		wp_enqueue_script( 'periodic-vendor-bootstrap-js' );
+	} elseif ( wp_script_is( 'bootstrap-5-bundle', 'registered' ) ) {
+		wp_enqueue_script( 'bootstrap-5-bundle' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'periodic_media_hotspot_enqueue_dependencies' );
 add_action( 'enqueue_block_editor_assets', 'periodic_media_hotspot_enqueue_dependencies' );
-
-/**
- * Load plugin textdomain for translations
- */
-function periodic_media_hotspot_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-media-hotspot',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'plugins_loaded', 'periodic_media_hotspot_load_textdomain' );

@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-parallax-section
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * GitHub:            https://github.com/periodicyahoo
@@ -32,11 +32,4 @@ add_action( 'init', 'periodic_parallax_section_block_init' );
 /**
  * Carrega as traduções do plugin.
  */
-function periodic_parallax_section_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-parallax-section',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_parallax_section_load_textdomain' );
+

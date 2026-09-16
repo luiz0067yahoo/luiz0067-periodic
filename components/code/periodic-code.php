@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-code
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           PeriodicCode
@@ -35,7 +35,7 @@ function periodic_code_init() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-code-editor-script',
-			'periodic-code',
+			'luiz0067-periodic',
 			plugin_dir_path( __FILE__ ) . 'languages'
 		);
 	}
@@ -45,11 +45,4 @@ add_action( 'init', 'periodic_code_init' );
 /**
  * Load plugin textdomain for internationalization.
  */
-function periodic_code_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-code',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'plugins_loaded', 'periodic_code_load_textdomain' );
+

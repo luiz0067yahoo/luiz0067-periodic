@@ -11,7 +11,7 @@
  * Author URI:        https://github.com/periodicyahoo
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-grafic-line-bar
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Grafic_Line_Bar
@@ -30,14 +30,7 @@ define( 'PERIODIC_GRAFIC_LINE_BAR_PATH', plugin_dir_path( __FILE__ ) );
 /**
  * Carrega a internacionalização (Text Domain) do Plugin
  */
-function periodic_grafic_line_bar_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-grafic-line-bar',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_grafic_line_bar_load_textdomain' );
+
 
 /**
  * Garante o carregamento dos arquivos JSON de tradução sem prefixo ({locale}.json)
@@ -102,7 +95,7 @@ function periodic_grafic_line_bar_register_blocks() {
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations(
 				'periodic-grafic-line-bar-editor',
-				'periodic-grafic-line-bar',
+				'luiz0067-periodic',
 				PERIODIC_GRAFIC_LINE_BAR_PATH . 'languages'
 			);
 		}

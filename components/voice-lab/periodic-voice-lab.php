@@ -9,7 +9,7 @@
  * Author:            Periodic
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-voice-lab
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  */
 
@@ -26,38 +26,20 @@ function periodic_voice_lab_block_init() {
 add_action( 'init', 'periodic_voice_lab_block_init' );
 
 /**
- * Enqueue common assets (Bootstrap 5 styles, Font Awesome 6 icons) for editor & frontend.
+ * Enqueue common assets (Bootstrap 5 styles, Font Awesome 6 icons) for editor & frontend using local shared assets.
  */
 function periodic_voice_lab_enqueue_dependencies() {
-    // Font Awesome 6
-    wp_register_style(
-        'font-awesome-6',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
-        array(),
-        '6.5.1'
-    );
-    wp_enqueue_style( 'font-awesome-6' );
+    if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+        wp_enqueue_style( 'periodic-vendor-fontawesome' );
+    } elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+        wp_enqueue_style( 'font-awesome-6' );
+    }
 
-    // Bootstrap 5 Buttons & Grid utility subset
-    wp_register_style(
-        'bootstrap-5-core',
-        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-        array(),
-        '5.3.3'
-    );
-    wp_enqueue_style( 'bootstrap-5-core' );
+    if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+        wp_enqueue_style( 'periodic-vendor-bootstrap' );
+    } elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+        wp_enqueue_style( 'bootstrap-5' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'periodic_voice_lab_enqueue_dependencies' );
 add_action( 'admin_enqueue_scripts', 'periodic_voice_lab_enqueue_dependencies' );
-
-/**
- * Load plugin text domain for internationalization.
- */
-function periodic_voice_lab_load_textdomain() {
-    load_plugin_textdomain(
-        'periodic-voice-lab',
-        false,
-        dirname( plugin_basename( __FILE__ ) ) . '/languages'
-    );
-}
-add_action( 'init', 'periodic_voice_lab_load_textdomain' );

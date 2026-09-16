@@ -10,14 +10,14 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-faq-schema
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * Metadados de Autoria:
  * - Desenvolvedor: Luiz Fernando Brogliatto Ferreira
  * - Perfil WordPress.org: https://profiles.wordpress.org/periodic/
  * - Perfil GitHub: https://github.com/periodicyahoo
- * - Perfil LinkedIn: https://www.linkedin.com/in/luiz-ferreira-260277379/
+ * - LinkedIn: https://www.linkedin.com/in/luiz-ferreira-260277379/
  *
  * @package Periodic\FaqSchema
  */
@@ -36,7 +36,7 @@ function periodic_faq_schema_register_block() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-faq-schema-editor-script',
-			'periodic-faq-schema',
+			'luiz0067-periodic',
 			plugin_dir_path( __FILE__ ) . 'languages'
 		);
 	}
@@ -44,16 +44,13 @@ function periodic_faq_schema_register_block() {
 add_action( 'init', 'periodic_faq_schema_register_block' );
 
 /**
- * Enfileira a folha de estilos do Font Awesome 6 caso o tema ativo ainda não a possua.
+ * Enfileira a folha de estilos do Font Awesome 6 usando assets locais.
  */
 function periodic_faq_schema_enqueue_assets() {
-	if ( ! wp_style_is( 'font-awesome-6', 'enqueued' ) && ! wp_style_is( 'font-awesome', 'enqueued' ) ) {
-		wp_enqueue_style(
-			'periodic-faq-font-awesome-6',
-			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
-			array(),
-			'6.5.2'
-		);
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
 	}
 }
 add_action( 'enqueue_block_assets', 'periodic_faq_schema_enqueue_assets' );

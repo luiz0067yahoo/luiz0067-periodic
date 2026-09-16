@@ -10,7 +10,7 @@
  * Author URI:        https://github.com/periodic
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-interactive-utilities
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package PeriodicInteractiveUtilities
@@ -28,26 +28,17 @@ define( 'PERIODIC_IU_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PERIODIC_IU_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Load plugin textdomain for translations.
- * Uses standard WordPress Domain Path: /languages.
- */
-function periodic_iu_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-interactive-utilities',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_iu_load_textdomain' );
-
-/**
- * Enqueue global vendor dependencies (FontAwesome & Bootstrap 5 Modal assets)
+ * Enqueue local vendor dependencies (FontAwesome & Bootstrap 5 Modal assets)
  */
 function periodic_iu_enqueue_assets() {
+	$bootstrap_css = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css' : plugins_url( '../../shared/vendor/bootstrap/css/bootstrap.min.css', __FILE__ );
+	$bootstrap_js  = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/js/bootstrap.bundle.min.js' : plugins_url( '../../shared/vendor/bootstrap/js/bootstrap.bundle.min.js', __FILE__ );
+	$fontawesome   = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/fontawesome/css/all.min.css' : plugins_url( '../../shared/vendor/fontawesome/css/all.min.css', __FILE__ );
+
 	// Font Awesome for door icons and status indicators
 	wp_register_style(
 		'periodic-iu-fontawesome',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+		$fontawesome,
 		array(),
 		'6.5.1'
 	);
@@ -55,13 +46,13 @@ function periodic_iu_enqueue_assets() {
 	// Bootstrap 5 (CSS & JS) for responsive grids and native modals
 	wp_register_style(
 		'periodic-iu-bootstrap',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+		$bootstrap_css,
 		array(),
 		'5.3.3'
 	);
 	wp_register_script(
 		'periodic-iu-bootstrap-js',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+		$bootstrap_js,
 		array(),
 		'5.3.3',
 		true
@@ -122,10 +113,12 @@ function periodic_iu_render_block_fallback( $attributes, $content ) {
  * Pass translation strings to block script
  */
 function periodic_iu_set_script_translations() {
-	wp_set_script_translations(
-		'periodic-interactive-utilities-editor-script',
-		'periodic-interactive-utilities',
-		PERIODIC_IU_PATH . 'languages'
-	);
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		wp_set_script_translations(
+			'periodic-interactive-utilities-editor-script',
+			'luiz0067-periodic',
+			PERIODIC_IU_PATH . 'languages'
+		);
+	}
 }
 add_action( 'init', 'periodic_iu_set_script_translations' );

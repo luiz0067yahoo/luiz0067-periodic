@@ -7,7 +7,7 @@
  * Author:      Luiz Alberto
  * Author URI:  https://github.com/periodicyahoo
  * License:     GPL-2.0-or-later
- * Text Domain: periodic-image-destaque
+ * Text Domain: luiz0067-periodic
  * Domain Path: /languages
  */
 
@@ -44,7 +44,7 @@ function periodic_image_destaque_register_block() {
     if ( function_exists( 'wp_set_script_translations' ) ) {
         wp_set_script_translations(
             'periodic-image-destaque-editor',
-            'periodic-image-destaque',
+            'luiz0067-periodic',
             $plugin_dir_path . 'languages'
         );
     }
@@ -101,11 +101,4 @@ add_action( 'init', 'periodic_image_destaque_register_block' );
 /**
  * Carrega arquivos de tradução do plugin (textdomain).
  */
-function periodic_image_destaque_load_textdomain() {
-    load_plugin_textdomain(
-        'periodic-image-destaque',
-        false,
-        dirname( plugin_basename( __FILE__ ) ) . '/languages'
-    );
-}
-add_action( 'plugins_loaded', 'periodic_image_destaque_load_textdomain' );
+

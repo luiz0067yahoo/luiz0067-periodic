@@ -62,7 +62,7 @@ add_action( 'admin_menu', 'periodic_mini_pdf_add_admin_menu' );
  */
 function periodic_mini_pdf_add_action_links( $links ) {
 	$settings_url  = admin_url( 'options-general.php?page=periodic-mini-pdf-settings' );
-	$settings_link = '<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings', 'periodic-mini-pdf-image' ) . '</a>';
+	$settings_link = '<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings', 'luiz0067-periodic' ) . '</a>';
 	array_unshift( $links, $settings_link );
 	return $links;
 }
@@ -88,23 +88,23 @@ function periodic_mini_pdf_render_settings_page() {
 				?>
 				
 				<h2 style="margin-top: 0; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0; font-size: 18px;">
-					<?php esc_html_e( 'Block Editor Language / Idioma do Bloco', 'periodic-mini-pdf-image' ); ?>
+					<?php esc_html_e( 'Block Editor Language / Idioma do Bloco', 'luiz0067-periodic' ); ?>
 				</h2>
 
 				<p style="color: #646970; font-size: 14px; margin-bottom: 20px;">
-					<?php esc_html_e( 'Selecione o idioma a ser exibido nos controles do editor Gutenberg / Select the language displayed in the Gutenberg block editor interface:', 'periodic-mini-pdf-image' ); ?>
+					<?php esc_html_e( 'Selecione o idioma a ser exibido nos controles do editor Gutenberg / Select the language displayed in the Gutenberg block editor interface:', 'luiz0067-periodic' ); ?>
 				</p>
 
 				<table class="form-table" role="presentation" style="margin-top: 0;">
 					<tbody>
 						<tr>
 							<th scope="row" style="padding-top: 10px; width: 220px;">
-								<label for="periodic_mini_pdf_language"><strong><?php esc_html_e( 'Language / Idioma', 'periodic-mini-pdf-image' ); ?></strong></label>
+								<label for="periodic_mini_pdf_language"><strong><?php esc_html_e( 'Language / Idioma', 'luiz0067-periodic' ); ?></strong></label>
 							</th>
 							<td style="padding-top: 10px;">
 								<select name="periodic_mini_pdf_language" id="periodic_mini_pdf_language" style="min-width: 280px; height: 38px; border-radius: 4px;">
 									<option value="auto" <?php selected( $current_lang, 'auto' ); ?>>
-										<?php esc_html_e( 'Auto (WordPress Default / Detect)', 'periodic-mini-pdf-image' ); ?>
+										<?php esc_html_e( 'Auto (WordPress Default / Detect)', 'luiz0067-periodic' ); ?>
 									</option>
 									<option value="pt-br" <?php selected( $current_lang, 'pt-br' ); ?>>
 										Português (Brasil)
@@ -120,7 +120,7 @@ function periodic_mini_pdf_render_settings_page() {
 									</option>
 								</select>
 								<p class="description" style="margin-top: 8px;">
-									<?php esc_html_e( 'Escolha um idioma fixo ou mantenha Auto para usar o idioma padrão da conta de usuário no WordPress.', 'periodic-mini-pdf-image' ); ?>
+									<?php esc_html_e( 'Escolha um idioma fixo ou mantenha Auto para usar o idioma padrão da conta de usuário no WordPress.', 'luiz0067-periodic' ); ?>
 								</p>
 							</td>
 						</tr>
@@ -128,7 +128,7 @@ function periodic_mini_pdf_render_settings_page() {
 				</table>
 
 				<div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
-					<?php submit_button( esc_html__( 'Salvar Alterações / Save Changes', 'periodic-mini-pdf-image' ), 'primary', 'submit', true ); ?>
+					<?php submit_button( esc_html__( 'Salvar Alterações / Save Changes', 'luiz0067-periodic' ), 'primary', 'submit', true ); ?>
 				</div>
 			</form>
 		</div>

@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-scroll-top
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * Metadados de Autoria:
@@ -34,32 +34,20 @@ define( 'PERIODIC_SCROLL_TOP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PERIODIC_SCROLL_TOP_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Enfileira bibliotecas essenciais compartilhadas (Bootstrap 5 e Font Awesome 6 Free).
+ * Enfileira bibliotecas essenciais locais (Bootstrap 5 e Font Awesome 6 Free).
  */
 function periodic_scroll_top_enqueue_shared_assets() {
-	// Font Awesome 6 Free (CDN estável e segura).
-	if ( ! wp_style_is( 'font-awesome-6', 'registered' ) && ! wp_style_is( 'font-awesome-6', 'enqueued' ) ) {
-		wp_register_style(
-			'font-awesome-6',
-			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
-			array(),
-			'6.5.2',
-			'all'
-		);
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
 	}
-	wp_enqueue_style( 'font-awesome-6' );
 
-	// Bootstrap 5 (CSS essencial de utilitários e botões).
-	if ( ! wp_style_is( 'bootstrap-5', 'registered' ) && ! wp_style_is( 'bootstrap-5', 'enqueued' ) ) {
-		wp_register_style(
-			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-			array(),
-			'5.3.3',
-			'all'
-		);
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		wp_enqueue_style( 'bootstrap-5' );
 	}
-	wp_enqueue_style( 'bootstrap-5' );
 }
 add_action( 'wp_enqueue_scripts', 'periodic_scroll_top_enqueue_shared_assets', 20 );
 add_action( 'enqueue_block_editor_assets', 'periodic_scroll_top_enqueue_shared_assets', 20 );
@@ -68,13 +56,6 @@ add_action( 'enqueue_block_editor_assets', 'periodic_scroll_top_enqueue_shared_a
  * Registra o bloco Gutenberg a partir do arquivo block.json e inicializa as traduções.
  */
 function periodic_scroll_top_block_init() {
-	// Carrega domínio de tradução do plugin
-	load_plugin_textdomain(
-		'periodic-scroll-top',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-
 	// Registra o bloco via block.json
 	register_block_type( __DIR__ );
 
@@ -82,12 +63,12 @@ function periodic_scroll_top_block_init() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-scroll-top-editor-script',
-			'periodic-scroll-top',
+			'luiz0067-periodic',
 			PERIODIC_SCROLL_TOP_DIR . 'languages'
 		);
 		wp_set_script_translations(
 			'periodic-scroll-top-view-script',
-			'periodic-scroll-top',
+			'luiz0067-periodic',
 			PERIODIC_SCROLL_TOP_DIR . 'languages'
 		);
 	}

@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-image-editor
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * GitHub:            https://github.com/periodicyahoo
@@ -26,18 +26,6 @@ define( 'PERIODIC_IMAGE_EDITOR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PERIODIC_IMAGE_EDITOR_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Carregamento das traduções (i18n).
- */
-function periodic_image_editor_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-image-editor',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_image_editor_load_textdomain' );
-
-/**
  * Registro do bloco a partir do block.json.
  */
 function periodic_image_editor_register_block() {
@@ -46,7 +34,7 @@ function periodic_image_editor_register_block() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-image-editor-editor-script',
-			'periodic-image-editor',
+			'luiz0067-periodic',
 			PERIODIC_IMAGE_EDITOR_PATH . 'languages'
 		);
 	}
@@ -54,15 +42,14 @@ function periodic_image_editor_register_block() {
 add_action( 'init', 'periodic_image_editor_register_block' );
 
 /**
- * Enfileiramento de bibliotecas externas (Font Awesome 6 e utilitários Bootstrap 5).
+ * Enfileiramento de bibliotecas compartilhadas locais (Font Awesome 6).
  */
 function periodic_image_editor_enqueue_assets() {
-	wp_enqueue_style(
-		'font-awesome-6',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
-		array(),
-		'6.5.1'
-	);
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'periodic_image_editor_enqueue_assets' );
 add_action( 'admin_enqueue_scripts', 'periodic_image_editor_enqueue_assets' );

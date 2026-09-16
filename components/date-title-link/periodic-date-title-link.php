@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       custom-adm
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Date_Title_Link

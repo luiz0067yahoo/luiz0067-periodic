@@ -62,7 +62,7 @@ add_action( 'admin_menu', 'periodic_carousel_add_admin_menu' );
  */
 function periodic_carousel_add_action_links( $links ) {
 	$settings_url  = admin_url( 'options-general.php?page=periodic-carousel-settings' );
-	$settings_link = '<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings', 'periodic-carousel-slides' ) . '</a>';
+	$settings_link = '<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings', 'luiz0067-periodic' ) . '</a>';
 	array_unshift( $links, $settings_link );
 	return $links;
 }
@@ -88,23 +88,23 @@ function periodic_carousel_render_settings_page() {
 				?>
 				
 				<h2 style="margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #eee;">
-					<?php esc_html_e( 'Block Editor Language / Idioma do Bloco', 'periodic-carousel-slides' ); ?>
+					<?php esc_html_e( 'Block Editor Language / Idioma do Bloco', 'luiz0067-periodic' ); ?>
 				</h2>
 
 				<p style="color: #646970; font-size: 14px; margin-bottom: 20px;">
-					<?php esc_html_e( 'Select the language displayed in the Gutenberg block editor interface:', 'periodic-carousel-slides' ); ?>
+					<?php esc_html_e( 'Select the language displayed in the Gutenberg block editor interface:', 'luiz0067-periodic' ); ?>
 				</p>
 
 				<table class="form-table" role="presentation" style="margin-top: 0;">
 					<tbody>
 						<tr>
 							<th scope="row" style="padding-top: 10px;">
-								<label for="periodic_carousel_language"><strong><?php esc_html_e( 'Language / Idioma', 'periodic-carousel-slides' ); ?></strong></label>
+								<label for="periodic_carousel_language"><strong><?php esc_html_e( 'Language / Idioma', 'luiz0067-periodic' ); ?></strong></label>
 							</th>
 							<td style="padding-top: 10px;">
 								<select name="periodic_carousel_language" id="periodic_carousel_language" style="min-width: 260px; height: 36px; border-radius: 4px;">
 									<option value="auto" <?php selected( $current_lang, 'auto' ); ?>>
-										<?php esc_html_e( 'Auto (WordPress Default / Detect)', 'periodic-carousel-slides' ); ?>
+										<?php esc_html_e( 'Auto (WordPress Default / Detect)', 'luiz0067-periodic' ); ?>
 									</option>
 									<option value="pt-br" <?php selected( $current_lang, 'pt-br' ); ?>>
 										Português (Brasil)
@@ -120,14 +120,14 @@ function periodic_carousel_render_settings_page() {
 									</option>
 								</select>
 								<p class="description" style="margin-top: 8px;">
-									<?php esc_html_e( 'Choose a specific language to override WordPress locale in the block editor.', 'periodic-carousel-slides' ); ?>
+									<?php esc_html_e( 'Choose a specific language to override WordPress locale in the block editor.', 'luiz0067-periodic' ); ?>
 								</p>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<?php submit_button( esc_html__( 'Save Changes', 'periodic-carousel-slides' ), 'primary', 'submit', true, array( 'style' => 'margin-top: 15px;' ) ); ?>
+				<?php submit_button( esc_html__( 'Save Changes', 'luiz0067-periodic' ), 'primary', 'submit', true, array( 'style' => 'margin-top: 15px;' ) ); ?>
 			</form>
 		</div>
 	</div>

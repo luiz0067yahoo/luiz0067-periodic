@@ -4,7 +4,7 @@
  * Description: Gutenberg block for Title and Text with accent bar.
  * Version: 1.0.0
  * Author: Periodic
- * Text Domain: custom-adm
+ * Text Domain: luiz0067-periodic
  * Domain Path: /languages
  */
 
@@ -12,13 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-function custom_adm_title_text_block_register() {
+function periodic_title_text_block_register() {
     // Register block script and style.
     wp_register_script(
         'custom-adm-title-text-block-js',
         plugins_url( 'js/blocks/title-text-block.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element', 'wp-i18n', 'wp-editor' ),
-        filemtime( plugin_dir_path( __FILE__ ) . 'js/blocks/title-text-block.js' )
+        filemtime( plugin_dir_path( __FILE__ ) . 'js/blocks/title-text-block.js' ),
+        true
     );
 
     wp_register_style(
@@ -34,15 +35,11 @@ function custom_adm_title_text_block_register() {
         'style'         => 'custom-adm-title-text-block-css',
     ) );
 }
-add_action( 'init', 'custom_adm_title_text_block_register' );
+add_action( 'init', 'periodic_title_text_block_register' );
 
-function custom_adm_load_textdomain() {
-    load_plugin_textdomain( 'custom-adm', false, basename( dirname( __FILE__ ) ) . '/languages' );
+function periodic_title_text_block_set_script_translations() {
+    if ( function_exists( 'wp_set_script_translations' ) ) {
+        wp_set_script_translations( 'custom-adm-title-text-block-js', 'luiz0067-periodic', plugin_dir_path( __FILE__ ) . 'languages' );
+    }
 }
-add_action( 'init', 'custom_adm_load_textdomain' );
-
-function custom_adm_set_script_translations() {
-    wp_set_script_translations( 'custom-adm-title-text-block-js', 'custom-adm', plugin_dir_path( __FILE__ ) . 'languages' );
-}
-add_action( 'init', 'custom_adm_set_script_translations' );
-?>
+add_action( 'init', 'periodic_title_text_block_set_script_translations' );

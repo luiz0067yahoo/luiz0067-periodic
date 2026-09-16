@@ -4,7 +4,7 @@
  * Description: Gutenberg block that displays a grid of PDFs with thumbnail images, titles and descriptions.
  * Version: 1.0.0
  * Author: Periodic
- * Text Domain: custom-adm
+ * Text Domain: luiz0067-periodic
  * Domain Path: /languages
  */
 
@@ -27,21 +27,31 @@ function periodic_multi_pdf_image_register_block() {
     // Pass plugin URL to JS for asset loading
     wp_localize_script( 'periodic-multi-pdf-image-js', 'pluginData', array( 'pluginUrl' => $plugin_url ) );
 
-    // Enqueue PDF.js from CDN (required for thumbnail generation).
-    wp_register_script(
-        'pdfjs-lib',
-        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js',
-        array(),
-        '2.14.305',
-        true
-    );
-    wp_register_script(
-        'pdfjs-worker',
-        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js',
-        array(),
-        '2.14.305',
-        true
-    );
+    // Local PDF.js assets (required for thumbnail generation).
+    if ( ! wp_script_is( 'pdfjs-lib', 'registered' ) ) {
+        $pdfjs_url = defined( 'PERIODIC_URL' )
+            ? PERIODIC_URL . 'shared/vendor/pdfjs/pdf.min.js'
+            : plugins_url( '../../shared/vendor/pdfjs/pdf.min.js', __FILE__ );
+        wp_register_script(
+            'pdfjs-lib',
+            $pdfjs_url,
+            array(),
+            '3.11.174',
+            true
+        );
+    }
+    if ( ! wp_script_is( 'pdfjs-worker', 'registered' ) ) {
+        $worker_url = defined( 'PERIODIC_URL' )
+            ? PERIODIC_URL . 'shared/vendor/pdfjs/pdf.worker.min.js'
+            : plugins_url( '../../shared/vendor/pdfjs/pdf.worker.min.js', __FILE__ );
+        wp_register_script(
+            'pdfjs-worker',
+            $worker_url,
+            array(),
+            '3.11.174',
+            true
+        );
+    }
     wp_enqueue_script( 'pdfjs-lib' );
     wp_enqueue_script( 'pdfjs-worker' );
 
@@ -70,12 +80,8 @@ function periodic_multi_pdf_image_register_block() {
     ) );
 
     // Load translations.
-    wp_set_script_translations( 'periodic-multi-pdf-image-js', 'custom-adm', $plugin_dir . 'languages' );
+    if ( function_exists( 'wp_set_script_translations' ) ) {
+        wp_set_script_translations( 'periodic-multi-pdf-image-js', 'luiz0067-periodic', $plugin_dir . 'languages' );
+    }
 }
 add_action( 'init', 'periodic_multi_pdf_image_register_block' );
-
-function periodic_multi_pdf_image_load_textdomain() {
-    load_plugin_textdomain( 'custom-adm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-}
-add_action( 'plugins_loaded', 'periodic_multi_pdf_image_load_textdomain' );
-?>

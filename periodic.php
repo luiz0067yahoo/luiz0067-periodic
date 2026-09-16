@@ -9,7 +9,7 @@
  * Author:            Luiz Fernando Brogliatto Ferreira & Periodic Team
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /core/i18n
  *
  * @package           Periodic_Suite
@@ -31,7 +31,7 @@ function periodic_register_block_category( $categories ) {
         array(
             array(
                 'slug'  => 'periodic-blocks',
-                'title' => __( 'Periodic Suite', 'periodic' ),
+                'title' => __( 'Periodic Suite', 'luiz0067-periodic' ),
                 'icon'  => 'screenoptions',
             ),
         ),
@@ -41,24 +41,93 @@ function periodic_register_block_category( $categories ) {
 add_filter( 'block_categories_all', 'periodic_register_block_category', 10, 1 );
 
 /**
- * Centralize common vendor assets (Bootstrap 5 and FontAwesome 6)
+ * Centralize common vendor assets (Bootstrap 5, FontAwesome 6, and PDF.js)
  */
 function periodic_enqueue_shared_assets() {
     // Bootstrap CSS
-    wp_register_style(
-        'periodic-vendor-bootstrap',
-        PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css',
-        array(),
-        '5.3.0'
-    );
+    if ( ! wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+        wp_register_style(
+            'periodic-vendor-bootstrap',
+            PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css',
+            array(),
+            '5.3.0'
+        );
+    }
+    if ( ! wp_style_is( 'bootstrap-5', 'registered' ) ) {
+        wp_register_style(
+            'bootstrap-5',
+            PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css',
+            array(),
+            '5.3.0'
+        );
+    }
 
     // FontAwesome CSS
-    wp_register_style(
-        'periodic-vendor-fontawesome',
-        PERIODIC_URL . 'shared/vendor/fontawesome/css/all.min.css',
-        array(),
-        '6.5.0'
-    );
+    if ( ! wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+        wp_register_style(
+            'periodic-vendor-fontawesome',
+            PERIODIC_URL . 'shared/vendor/fontawesome/css/all.min.css',
+            array(),
+            '6.5.0'
+        );
+    }
+    if ( ! wp_style_is( 'font-awesome-6', 'registered' ) ) {
+        wp_register_style(
+            'font-awesome-6',
+            PERIODIC_URL . 'shared/vendor/fontawesome/css/all.min.css',
+            array(),
+            '6.5.0'
+        );
+    }
+
+    // Bootstrap JS
+    if ( ! wp_script_is( 'periodic-vendor-bootstrap-js', 'registered' ) ) {
+        wp_register_script(
+            'periodic-vendor-bootstrap-js',
+            PERIODIC_URL . 'shared/vendor/bootstrap/js/bootstrap.bundle.min.js',
+            array(),
+            '5.3.0',
+            true
+        );
+    }
+    if ( ! wp_script_is( 'bootstrap-5-bundle', 'registered' ) ) {
+        wp_register_script(
+            'bootstrap-5-bundle',
+            PERIODIC_URL . 'shared/vendor/bootstrap/js/bootstrap.bundle.min.js',
+            array(),
+            '5.3.0',
+            true
+        );
+    }
+
+    // PDF.js local assets
+    if ( ! wp_script_is( 'pdfjs-dist', 'registered' ) ) {
+        wp_register_script(
+            'pdfjs-dist',
+            PERIODIC_URL . 'shared/vendor/pdfjs/pdf.min.js',
+            array(),
+            '3.11.174',
+            true
+        );
+    }
+    if ( ! wp_script_is( 'pdfjs-lib', 'registered' ) ) {
+        wp_register_script(
+            'pdfjs-lib',
+            PERIODIC_URL . 'shared/vendor/pdfjs/pdf.min.js',
+            array(),
+            '3.11.174',
+            true
+        );
+    }
+    if ( ! wp_script_is( 'pdfjs-worker', 'registered' ) ) {
+        wp_register_script(
+            'pdfjs-worker',
+            PERIODIC_URL . 'shared/vendor/pdfjs/pdf.worker.min.js',
+            array(),
+            '3.11.174',
+            true
+        );
+    }
 
     // Periodic Core Design Tokens & Base CSS
     wp_register_style(

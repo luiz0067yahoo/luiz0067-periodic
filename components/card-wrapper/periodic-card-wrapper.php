@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-card-wrapper
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * Author Socials:
@@ -31,57 +31,38 @@ define( 'PERIODIC_CARD_WRAPPER_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PERIODIC_CARD_WRAPPER_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Enfileira os estilos de Bootstrap 5 e Font Awesome 6 de forma segura e não intrusiva.
+ * Enfileira os estilos de Bootstrap 5 e Font Awesome 6 de forma local e segura.
  */
 function periodic_card_wrapper_enqueue_assets() {
-	// Bootstrap 5 CSS (caso não esteja previamente registrado pelo tema ou outro plugin).
-	if ( ! wp_style_is( 'bootstrap', 'registered' ) && ! wp_style_is( 'bootstrap-5', 'registered' ) ) {
-		wp_register_style(
-			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-			array(),
-			'5.3.3'
-		);
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		wp_enqueue_style( 'bootstrap-5' );
 	}
 
-	// Font Awesome 6 Free CSS.
-	if ( ! wp_style_is( 'font-awesome', 'registered' ) && ! wp_style_is( 'font-awesome-6', 'registered' ) ) {
-		wp_register_style(
-			'font-awesome-6',
-			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
-			array(),
-			'6.5.2'
-		);
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
 	}
-
-	$bootstrap_handle = wp_style_is( 'bootstrap', 'registered' ) ? 'bootstrap' : 'bootstrap-5';
-	$fa_handle        = wp_style_is( 'font-awesome', 'registered' ) ? 'font-awesome' : 'font-awesome-6';
-
-	wp_enqueue_style( $bootstrap_handle );
-	wp_enqueue_style( $fa_handle );
 }
 add_action( 'wp_enqueue_scripts', 'periodic_card_wrapper_enqueue_assets', 10 );
 add_action( 'enqueue_block_editor_assets', 'periodic_card_wrapper_enqueue_assets', 10 );
 
 /**
- * Registra o bloco usando a API de metadados block.json v3 e carrega os arquivos de tradução.
+ * Registra o bloco usando a API de metadados block.json v3.
  */
 function periodic_card_wrapper_init() {
-	// Carrega o domínio de tradução para arquivos PHP/MO.
-	load_plugin_textdomain(
-		'periodic-card-wrapper',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-
 	// Registra o bloco através do block.json.
 	register_block_type( __DIR__ );
 
 	// Configura as traduções do script do editor gerado pelo @wordpress/scripts.
-	wp_set_script_translations(
-		'periodic-card-wrapper-editor-script',
-		'periodic-card-wrapper',
-		PERIODIC_CARD_WRAPPER_PATH . 'languages'
-	);
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		wp_set_script_translations(
+			'periodic-card-wrapper-editor-script',
+			'luiz0067-periodic',
+			PERIODIC_CARD_WRAPPER_PATH . 'languages'
+		);
+	}
 }
 add_action( 'init', 'periodic_card_wrapper_init' );

@@ -4,7 +4,7 @@
  * Description: Gutenberg block that displays a title, description and optional link.
  * Version: 1.0.0
  * Author: Periodic
- * Text Domain: periodic-topic-text-data
+ * Text Domain: luiz0067-periodic
  * Domain Path: /languages
  */
 
@@ -18,7 +18,8 @@ function periodic_topic_text_data_register_block() {
         'periodic-topic-text-data-block',
         plugins_url( 'js/block.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'wp-editor' ),
-        filemtime( plugin_dir_path( __FILE__ ) . 'js/block.js' )
+        filemtime( plugin_dir_path( __FILE__ ) . 'js/block.js' ),
+        true
     );
 
     // Register editor and front-end styles.
@@ -40,9 +41,5 @@ function periodic_topic_text_data_register_block() {
         'editor_style'  => 'periodic-topic-text-data-editor',
         'style'         => 'periodic-topic-text-data-style',
     ) );
-
-    // Load translation files.
-    load_plugin_textdomain( 'periodic-topic-text-data', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'periodic_topic_text_data_register_block' );
-?>

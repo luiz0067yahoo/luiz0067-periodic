@@ -10,7 +10,7 @@
  * Author URI:        https://github.com/periodic
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-drag-drop-engine
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  */
 
@@ -34,11 +34,4 @@ add_action( 'init', 'periodic_drag_drop_engine_init' );
 /**
  * Carrega a internacionalização do plugin.
  */
-function periodic_drag_drop_engine_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-drag-drop-engine',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_drag_drop_engine_load_textdomain' );
+

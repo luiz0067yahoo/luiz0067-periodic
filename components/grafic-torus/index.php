@@ -11,7 +11,7 @@
  * Author URI:        https://github.com/periodicyahoo
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-grafic-torus
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Grafic_Torus
@@ -30,14 +30,7 @@ define( 'PERIODIC_GRAFIC_TORUS_PATH', plugin_dir_path( __FILE__ ) );
 /**
  * Carrega a internacionalização (Text Domain) do Plugin
  */
-function periodic_grafic_torus_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-grafic-torus',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_grafic_torus_load_textdomain' );
+
 
 /**
  * Garante o carregamento dos arquivos JSON de tradução sem prefixo ({locale}.json)
@@ -99,7 +92,7 @@ function periodic_grafic_torus_register_block() {
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations(
 				'periodic-grafic-torus-editor',
-				'periodic-grafic-torus',
+				'luiz0067-periodic',
 				PERIODIC_GRAFIC_TORUS_PATH . 'languages'
 			);
 		}

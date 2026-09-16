@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       custom-adm
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Date_Title_Link
@@ -39,21 +39,7 @@ if ( ! defined( 'PERIODIC_DATE_TITLE_LINK_PATH' ) ) {
 /**
  * Carrega a internacionalização (Text Domain) do plugin.
  */
-function custom_adm_date_title_link_load_textdomain() {
-	load_plugin_textdomain(
-		'custom-adm',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
 
-	// Suporte adicional ao textdomain alternativo periodic-date-title-link
-	load_plugin_textdomain(
-		'periodic-date-title-link',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'custom_adm_date_title_link_load_textdomain' );
 
 /**
  * Registra os scripts e estilos do bloco Gutenberg e registra o bloco no hook 'init'.
@@ -90,7 +76,7 @@ function custom_adm_date_title_link_register_block() {
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations(
 				'custom-adm-date-title-link-js',
-				'custom-adm',
+				'luiz0067-periodic',
 				PERIODIC_DATE_TITLE_LINK_PATH . 'languages'
 			);
 		}

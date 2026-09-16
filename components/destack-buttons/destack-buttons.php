@@ -10,7 +10,7 @@
  * Author URI:        https://github.com/periodicyahoo
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       destack-buttons
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           DestackButtons
@@ -24,47 +24,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Constantes do plugin
  */
-define( 'DESTACK_BUTTONS_VERSION', '1.0.0' );
-define( 'DESTACK_BUTTONS_PATH', plugin_dir_path( __FILE__ ) );
-define( 'DESTACK_BUTTONS_URL', plugin_dir_url( __FILE__ ) );
-
-/**
- * Carrega os arquivos de tradução do plugin (i18n).
- */
-function destack_buttons_load_textdomain() {
-	$locale = determine_locale();
-	$mofile = DESTACK_BUTTONS_PATH . 'languages/' . $locale . '.mo';
-	if ( file_exists( $mofile ) ) {
-		load_textdomain( 'destack-buttons', $mofile );
-	} else {
-		load_plugin_textdomain(
-			'destack-buttons',
-			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languages'
-		);
-	}
-}
-add_action( 'init', 'destack_buttons_load_textdomain' );
+define( 'PERIODIC_DESTACK_BUTTONS_VERSION', '1.0.0' );
+define( 'PERIODIC_DESTACK_BUTTONS_PATH', plugin_dir_path( __FILE__ ) );
+define( 'PERIODIC_DESTACK_BUTTONS_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * Filtro para carregar arquivos de tradução do script sem prefixo (ex: languages/pt_BR.json).
  */
-function destack_buttons_script_translations( $file, $handle, $domain ) {
-	if ( 'destack-buttons-editor-script' === $handle || 'destack-buttons' === $domain ) {
+function periodic_destack_buttons_script_translations( $file, $handle, $domain ) {
+	if ( 'destack-buttons-editor-script' === $handle || 'luiz0067-periodic' === $domain ) {
 		$locale = determine_locale();
-		$json_file = DESTACK_BUTTONS_PATH . 'languages/' . $locale . '.json';
+		$json_file = PERIODIC_DESTACK_BUTTONS_PATH . 'languages/' . $locale . '.json';
 		if ( file_exists( $json_file ) ) {
 			return $json_file;
 		}
 	}
 	return $file;
 }
-add_filter( 'load_script_translation_file', 'destack_buttons_script_translations', 10, 3 );
+add_filter( 'load_script_translation_file', 'periodic_destack_buttons_script_translations', 10, 3 );
 
 /**
  * Registra os scripts, estilos e o tipo de bloco Gutenberg.
  */
-function destack_buttons_register_block() {
+function periodic_destack_buttons_register_block() {
 	// Verifica se a função de registro de bloco existe (WordPress 5.0+).
 	if ( ! function_exists( 'register_block_type' ) ) {
 		return;
@@ -73,7 +55,7 @@ function destack_buttons_register_block() {
 	// 1. Registra o script do bloco para o editor Gutenberg
 	wp_register_script(
 		'destack-buttons-editor-script',
-		DESTACK_BUTTONS_URL . 'js/blocks/destack-buttons.js',
+		PERIODIC_DESTACK_BUTTONS_URL . 'js/blocks/destack-buttons.js',
 		array(
 			'wp-blocks',
 			'wp-element',
@@ -81,7 +63,7 @@ function destack_buttons_register_block() {
 			'wp-components',
 			'wp-i18n',
 		),
-		DESTACK_BUTTONS_VERSION,
+		PERIODIC_DESTACK_BUTTONS_VERSION,
 		true
 	);
 
@@ -89,25 +71,25 @@ function destack_buttons_register_block() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'destack-buttons-editor-script',
-			'destack-buttons',
-			DESTACK_BUTTONS_PATH . 'languages'
+			'luiz0067-periodic',
+			PERIODIC_DESTACK_BUTTONS_PATH . 'languages'
 		);
 	}
 
 	// 2. Registra o estilo compartilhado (Front-end e Editor)
 	wp_register_style(
 		'destack-buttons-style',
-		DESTACK_BUTTONS_URL . 'css/style.css',
+		PERIODIC_DESTACK_BUTTONS_URL . 'css/style.css',
 		array(),
-		DESTACK_BUTTONS_VERSION
+		PERIODIC_DESTACK_BUTTONS_VERSION
 	);
 
 	// 3. Registra o estilo específico do Editor
 	wp_register_style(
 		'destack-buttons-editor-style',
-		DESTACK_BUTTONS_URL . 'css/editor.css',
+		PERIODIC_DESTACK_BUTTONS_URL . 'css/editor.css',
 		array( 'wp-edit-blocks', 'destack-buttons-style' ),
-		DESTACK_BUTTONS_VERSION
+		PERIODIC_DESTACK_BUTTONS_VERSION
 	);
 
 	// 4. Registra o bloco customizado no WordPress
@@ -117,4 +99,4 @@ function destack_buttons_register_block() {
 		'style'         => 'destack-buttons-style',
 	) );
 }
-add_action( 'init', 'destack_buttons_register_block' );
+add_action( 'init', 'periodic_destack_buttons_register_block' );

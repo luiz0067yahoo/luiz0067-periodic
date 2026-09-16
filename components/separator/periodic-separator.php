@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-separator
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Separator
@@ -75,7 +75,7 @@ function periodic_separator_enqueue_editor_assets() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-separator-block-js',
-			'periodic-separator',
+			'luiz0067-periodic',
 			PERIODIC_SEPARATOR_PATH . 'languages'
 		);
 	}
@@ -153,11 +153,4 @@ add_action( 'after_setup_theme', 'periodic_separator_add_editor_styles' );
 /**
  * Carrega a internacionalização do plugin se necessário.
  */
-function periodic_separator_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-separator',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_separator_load_textdomain' );
+

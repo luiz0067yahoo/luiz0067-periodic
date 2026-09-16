@@ -1,7 +1,6 @@
-# Periodic Component Suite ⚛️
+# Periodic Component Suite
 
-
-[English](README.md) • [Português (BR)](README.pt-br.md) • [Español](README.es.md) • [Italiano](README.it.md)
+[English](README.md) • [Português (BR)](docs/i18n/README.pt-br.md) • [Español](docs/i18n/README.es.md) • [Italiano](docs/i18n/README.it.md)
 
 
 > **Unified Suite of 61 Frontend Components & Modular Blocks**  

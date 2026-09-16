@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       custom-adm
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Date_Title_Link_File_Upload
@@ -62,7 +62,7 @@ function periodic_dtlf_register_block() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-date-title-link-file-upload-js',
-			'custom-adm',
+			'luiz0067-periodic',
 			PERIODIC_DTLF_PATH . 'languages'
 		);
 	}
@@ -165,14 +165,7 @@ add_action( 'after_setup_theme', 'periodic_dtlf_add_editor_styles' );
 /**
  * Carrega a internacionalização (Text Domain) do plugin.
  */
-function periodic_dtlf_load_textdomain() {
-	load_plugin_textdomain(
-		'custom-adm',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_dtlf_load_textdomain' );
+
 
 /**
  * Obtém o array de traduções com base no locale atual do WordPress (Italiano, Inglês, Espanhol, Português).

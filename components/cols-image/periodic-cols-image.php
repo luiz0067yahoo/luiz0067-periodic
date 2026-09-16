@@ -10,7 +10,7 @@
  * Author:            Luiz Fernando Brogliatto Ferreira
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       custom-adm
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Cols_Image
@@ -24,14 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Carrega a internacionalização (Text Domain) do Plugin
  */
-function periodic_cols_image_load_textdomain() {
-	load_plugin_textdomain(
-		'custom-adm',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_cols_image_load_textdomain' );
+
 
 /**
  * Enfileira estilos compartilhados do bloco (Frontend e Canvas do Editor)
@@ -77,7 +70,7 @@ function periodic_cols_image_register_block() {
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations(
 				'periodic-cols-image-editor',
-				'custom-adm',
+				'luiz0067-periodic',
 				plugin_dir_path( __FILE__ ) . 'languages'
 			);
 		}

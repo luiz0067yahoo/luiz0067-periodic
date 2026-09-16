@@ -10,7 +10,7 @@
  * Author URI:        https://github.com/periodicyahoo
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-topic-title-text
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Topic_Title_Text
@@ -77,14 +77,7 @@ add_action( 'init', 'periodic_antigravity_cards_register_block' );
 /**
  * Load plugin textdomain for translations.
  */
-function periodic_antigravity_cards_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-topic-title-text',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_antigravity_cards_load_textdomain' );
+
 
 /**
  * Set script translations for Gutenberg block script.
@@ -92,7 +85,7 @@ add_action( 'init', 'periodic_antigravity_cards_load_textdomain' );
 function periodic_antigravity_cards_set_script_translations() {
 	wp_set_script_translations(
 		'periodic-topic-title-text-block',
-		'periodic-topic-title-text',
+		'luiz0067-periodic',
 		plugin_dir_path( __FILE__ ) . 'languages'
 	);
 }

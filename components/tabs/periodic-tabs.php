@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-tabs
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * Links do Autor:
@@ -24,26 +24,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Carrega a internacionalização do plugin.
- */
-function periodic_tabs_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-tabs',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'plugins_loaded', 'periodic_tabs_load_textdomain' );
-
-/**
- * Registra bibliotecas de terceiros (Bootstrap 5 e Font Awesome 6) com prevenção de duplicidade.
+ * Registra bibliotecas locais compartilhadas (Bootstrap 5 e Font Awesome 6) com prevenção de duplicidade.
  */
 function periodic_tabs_register_vendor_assets() {
+	$bootstrap_css = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css' : plugins_url( '../../shared/vendor/bootstrap/css/bootstrap.min.css', __FILE__ );
+	$bootstrap_js  = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/js/bootstrap.bundle.min.js' : plugins_url( '../../shared/vendor/bootstrap/js/bootstrap.bundle.min.js', __FILE__ );
+	$fontawesome   = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/fontawesome/css/all.min.css' : plugins_url( '../../shared/vendor/fontawesome/css/all.min.css', __FILE__ );
+
 	// Bootstrap 5 CSS
 	if ( ! wp_style_is( 'bootstrap-5', 'registered' ) && ! wp_style_is( 'bootstrap', 'registered' ) ) {
 		wp_register_style(
 			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+			$bootstrap_css,
 			array(),
 			'5.3.3'
 		);
@@ -53,7 +45,7 @@ function periodic_tabs_register_vendor_assets() {
 	if ( ! wp_script_is( 'bootstrap-5', 'registered' ) && ! wp_script_is( 'bootstrap', 'registered' ) ) {
 		wp_register_script(
 			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+			$bootstrap_js,
 			array(),
 			'5.3.3',
 			true
@@ -64,7 +56,7 @@ function periodic_tabs_register_vendor_assets() {
 	if ( ! wp_style_is( 'font-awesome-6', 'registered' ) && ! wp_style_is( 'font-awesome', 'registered' ) ) {
 		wp_register_style(
 			'font-awesome-6',
-			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
+			$fontawesome,
 			array(),
 			'6.5.2'
 		);
@@ -77,13 +69,21 @@ add_action( 'init', 'periodic_tabs_register_vendor_assets', 5 );
  */
 function periodic_tabs_enqueue_frontend_assets() {
 	if ( has_block( 'periodic/tabs' ) || is_admin() ) {
-		if ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+			wp_enqueue_style( 'periodic-vendor-bootstrap' );
+		} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
 			wp_enqueue_style( 'bootstrap-5' );
 		}
-		if ( wp_script_is( 'bootstrap-5', 'registered' ) ) {
+
+		if ( wp_script_is( 'periodic-vendor-bootstrap-js', 'registered' ) ) {
+			wp_enqueue_script( 'periodic-vendor-bootstrap-js' );
+		} elseif ( wp_script_is( 'bootstrap-5', 'registered' ) ) {
 			wp_enqueue_script( 'bootstrap-5' );
 		}
-		if ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+
+		if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+			wp_enqueue_style( 'periodic-vendor-fontawesome' );
+		} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
 			wp_enqueue_style( 'font-awesome-6' );
 		}
 	}
@@ -94,10 +94,15 @@ add_action( 'wp_enqueue_scripts', 'periodic_tabs_enqueue_frontend_assets' );
  * Enfileira Bootstrap e Font Awesome no editor Gutenberg para fidelidade visual WYSIWYG.
  */
 function periodic_tabs_enqueue_editor_assets() {
-	if ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
 		wp_enqueue_style( 'bootstrap-5' );
 	}
-	if ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
 		wp_enqueue_style( 'font-awesome-6' );
 	}
 }
@@ -113,7 +118,7 @@ function periodic_tabs_register_block() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-tabs-editor-script',
-			'periodic-tabs',
+			'luiz0067-periodic',
 			plugin_dir_path( __FILE__ ) . 'languages'
 		);
 	}

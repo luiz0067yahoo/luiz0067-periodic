@@ -10,7 +10,7 @@
  * Author:            Luiz Fernando Brogliatto Ferreira
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-text-completion
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Text_Completion
@@ -82,21 +82,3 @@ function periodic_text_completion_add_editor_styles() {
 }
 add_action( 'after_setup_theme', 'periodic_text_completion_add_editor_styles' );
 
-/**
- * Load plugin text domain for internationalization
- */
-function periodic_text_completion_load_textdomain() {
-	$loaded = load_plugin_textdomain(
-		'periodic-text-completion',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-	if ( ! $loaded ) {
-		load_plugin_textdomain(
-			'periodic-text-completion',
-			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languagens'
-		);
-	}
-}
-add_action( 'init', 'periodic_text_completion_load_textdomain' );

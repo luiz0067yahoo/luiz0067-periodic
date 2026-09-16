@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-big-button
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Big_Button
@@ -62,7 +62,7 @@ function periodic_big_button_register_block() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-big-button-js',
-			'periodic-big-button',
+			'luiz0067-periodic',
 			PERIODIC_BIG_BUTTON_PATH . 'languages'
 		);
 	}
@@ -165,14 +165,7 @@ add_action( 'after_setup_theme', 'periodic_big_button_add_editor_styles' );
 /**
  * Carrega a internacionalização (Text Domain) do plugin.
  */
-function periodic_big_button_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-big-button',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_big_button_load_textdomain' );
+
 
 /**
  * Obtém o array de traduções com base no locale atual do WordPress (Italiano, Inglês, Espanhol, Português).

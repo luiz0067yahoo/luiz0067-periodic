@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-alert-callout
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * Autor: Luiz Fernando Brogliatto Ferreira
@@ -26,35 +26,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registra os estilos e scripts de terceiros necessários (Bootstrap 5 e Font Awesome 6).
+ * Registra os estilos e scripts locais necessários (Bootstrap 5 e Font Awesome 6).
  */
 function periodic_alert_callout_register_assets() {
-	// Bootstrap 5.3.3 CSS.
+	$bootstrap_css = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css' : plugins_url( '../../shared/vendor/bootstrap/css/bootstrap.min.css', __FILE__ );
+	$bootstrap_js  = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/js/bootstrap.bundle.min.js' : plugins_url( '../../shared/vendor/bootstrap/js/bootstrap.bundle.min.js', __FILE__ );
+	$fontawesome   = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/fontawesome/css/all.min.css' : plugins_url( '../../shared/vendor/fontawesome/css/all.min.css', __FILE__ );
+
+	// Bootstrap 5 CSS.
 	if ( ! wp_style_is( 'bootstrap', 'registered' ) && ! wp_style_is( 'bootstrap-5', 'registered' ) ) {
 		wp_register_style(
 			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+			$bootstrap_css,
 			array(),
 			'5.3.3'
 		);
 	}
 
-	// Bootstrap 5.3.3 Bundle JS (com Popper para dismiss dos alertas).
+	// Bootstrap 5 Bundle JS.
 	if ( ! wp_script_is( 'bootstrap', 'registered' ) && ! wp_script_is( 'bootstrap-5-bundle', 'registered' ) ) {
 		wp_register_script(
 			'bootstrap-5-bundle',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+			$bootstrap_js,
 			array(),
 			'5.3.3',
 			true
 		);
 	}
 
-	// Font Awesome 6.5.2 Free CSS.
+	// Font Awesome 6 Free CSS.
 	if ( ! wp_style_is( 'font-awesome', 'registered' ) && ! wp_style_is( 'font-awesome-6', 'registered' ) ) {
 		wp_register_style(
 			'font-awesome-6',
-			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
+			$fontawesome,
 			array(),
 			'6.5.2'
 		);
@@ -63,16 +67,9 @@ function periodic_alert_callout_register_assets() {
 add_action( 'init', 'periodic_alert_callout_register_assets', 5 );
 
 /**
- * Inicializa o bloco e carrega o domínio de tradução.
+ * Inicializa o bloco.
  */
 function periodic_alert_callout_init() {
-	// Carrega as traduções do plugin.
-	load_plugin_textdomain(
-		'periodic-alert-callout',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-
 	// Registra o bloco baseado no block.json.
 	register_block_type( __DIR__ );
 
@@ -80,7 +77,7 @@ function periodic_alert_callout_init() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-alert-callout-editor-script',
-			'periodic-alert-callout',
+			'luiz0067-periodic',
 			plugin_dir_path( __FILE__ ) . 'languages'
 		);
 	}
@@ -91,8 +88,17 @@ add_action( 'init', 'periodic_alert_callout_init' );
  * Enfileira Bootstrap e Font Awesome no editor Gutenberg para fidelidade visual absoluta (WYSIWYG).
  */
 function periodic_alert_callout_enqueue_editor_assets() {
-	wp_enqueue_style( 'bootstrap-5' );
-	wp_enqueue_style( 'font-awesome-6' );
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		wp_enqueue_style( 'bootstrap-5' );
+	}
+
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'periodic_alert_callout_enqueue_editor_assets' );
 
@@ -101,9 +107,23 @@ add_action( 'enqueue_block_editor_assets', 'periodic_alert_callout_enqueue_edito
  */
 function periodic_alert_callout_enqueue_frontend_assets() {
 	if ( ! is_admin() ) {
-		wp_enqueue_style( 'bootstrap-5' );
-		wp_enqueue_script( 'bootstrap-5-bundle' );
-		wp_enqueue_style( 'font-awesome-6' );
+		if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+			wp_enqueue_style( 'periodic-vendor-bootstrap' );
+		} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+			wp_enqueue_style( 'bootstrap-5' );
+		}
+
+		if ( wp_script_is( 'periodic-vendor-bootstrap-js', 'registered' ) ) {
+			wp_enqueue_script( 'periodic-vendor-bootstrap-js' );
+		} elseif ( wp_script_is( 'bootstrap-5-bundle', 'registered' ) ) {
+			wp_enqueue_script( 'bootstrap-5-bundle' );
+		}
+
+		if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+			wp_enqueue_style( 'periodic-vendor-fontawesome' );
+		} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+			wp_enqueue_style( 'font-awesome-6' );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'periodic_alert_callout_enqueue_frontend_assets' );

@@ -10,7 +10,7 @@
  * Author:            Luiz Fernando Brogliatto Ferreira
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-quiz-engine
+ * Text Domain:       luiz0067-periodic
  *
  * @package           Periodic_Quiz_Engine
  */
@@ -88,11 +88,4 @@ add_action( 'after_setup_theme', 'periodic_quiz_engine_add_editor_styles' );
 /**
  * Load plugin text domain for internationalization
  */
-function periodic_quiz_engine_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-quiz-engine',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_quiz_engine_load_textdomain' );
+

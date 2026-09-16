@@ -10,7 +10,7 @@
  * Author URI:        https://github.com/periodicyahoo
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-build-grafics
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Build_Grafics
@@ -29,14 +29,7 @@ define( 'PERIODIC_BUILD_GRAFICS_PATH', plugin_dir_path( __FILE__ ) );
 /**
  * Load plugin textdomain for translations
  */
-function periodic_build_grafics_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-build-grafics',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_build_grafics_load_textdomain' );
+
 
 /**
  * Register Gutenberg block, scripts and styles
@@ -64,7 +57,7 @@ function periodic_build_grafics_register_block() {
 	// Script translations for Gutenberg block
 	wp_set_script_translations(
 		'periodic-build-grafics-block',
-		'periodic-build-grafics',
+		'luiz0067-periodic',
 		PERIODIC_BUILD_GRAFICS_PATH . 'languages'
 	);
 

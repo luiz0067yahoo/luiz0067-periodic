@@ -8,7 +8,7 @@
  * Author URI:  https://github.com/periodicyahoo
  * License:     GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: periodic-video-embed
+ * Text Domain: luiz0067-periodic
  * Domain Path: /languages
  *
  * @package Periodic_Video_Embed
@@ -22,14 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Carrega o domínio de tradução do plugin.
  */
-function periodic_video_embed_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-video-embed',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_video_embed_load_textdomain' );
+
 
 /**
  * Registra os scripts, estilos e o bloco Gutenberg periodic/video-embed.
@@ -73,7 +66,7 @@ function periodic_video_embed_register_block() {
 	// Habilitar suporte a traduções JSON JED no script do bloco.
 	wp_set_script_translations(
 		'periodic-video-embed-editor-script',
-		'periodic-video-embed',
+		'luiz0067-periodic',
 		$plugin_dir_path . 'languages'
 	);
 

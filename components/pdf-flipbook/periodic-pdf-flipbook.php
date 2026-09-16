@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-pdf-flipbook
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_PDF_Flipbook
@@ -28,16 +28,9 @@ define( 'PERIODIC_PDF_FLIPBOOK_URL', plugin_dir_url( __FILE__ ) );
 define( 'PERIODIC_PDF_FLIPBOOK_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
- * Registra o bloco Gutenberg e carrega os domínios de tradução.
+ * Registra o bloco Gutenberg.
  */
 function periodic_pdf_flipbook_init() {
-	// Carrega as traduções da pasta /languages.
-	load_plugin_textdomain(
-		'periodic-pdf-flipbook',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-
 	// Registra o bloco com base nos metadados de block.json.
 	if ( function_exists( 'register_block_type' ) ) {
 		register_block_type( __DIR__ );
@@ -46,52 +39,39 @@ function periodic_pdf_flipbook_init() {
 add_action( 'init', 'periodic_pdf_flipbook_init' );
 
 /**
- * Enfileira os recursos compartilhados (Bootstrap 5 e Font Awesome 6)
+ * Enfileira os recursos compartilhados (Bootstrap 5 e Font Awesome 6) usando assets locais
  * tanto no editor do Gutenberg quanto no frontend do site.
  */
 function periodic_pdf_flipbook_enqueue_shared_assets() {
-	// Font Awesome 6 Free (ícones para navegação, zoom, tela cheia, som e download).
-	if ( ! wp_style_is( 'font-awesome-6', 'enqueued' ) && ! wp_style_is( 'font-awesome', 'enqueued' ) ) {
-		wp_enqueue_style(
-			'font-awesome-6',
-			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
-			array(),
-			'6.5.2'
-		);
+	if ( wp_style_is( 'periodic-vendor-fontawesome', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-fontawesome' );
+	} elseif ( wp_style_is( 'font-awesome-6', 'registered' ) ) {
+		wp_enqueue_style( 'font-awesome-6' );
 	}
 
-	// Bootstrap 5.3 CSS para estilização moderna e componentes estruturados.
-	if ( ! wp_style_is( 'bootstrap-5', 'enqueued' ) && ! wp_style_is( 'bootstrap', 'enqueued' ) ) {
-		wp_enqueue_style(
-			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-			array(),
-			'5.3.3'
-		);
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		wp_enqueue_style( 'bootstrap-5' );
 	}
 
-	// Bootstrap 5.3 JS Bundle (com Popper).
-	if ( ! wp_script_is( 'bootstrap-5-bundle', 'enqueued' ) && ! wp_script_is( 'bootstrap', 'enqueued' ) ) {
-		wp_enqueue_script(
-			'bootstrap-5-bundle',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
-			array(),
-			'5.3.3',
-			true
-		);
+	if ( wp_script_is( 'periodic-vendor-bootstrap-js', 'registered' ) ) {
+		wp_enqueue_script( 'periodic-vendor-bootstrap-js' );
+	} elseif ( wp_script_is( 'bootstrap-5-bundle', 'registered' ) ) {
+		wp_enqueue_script( 'bootstrap-5-bundle' );
 	}
 }
 add_action( 'enqueue_block_assets', 'periodic_pdf_flipbook_enqueue_shared_assets' );
 
 /**
- * Enfileira a biblioteca PDF.js oficial e dados de configuração no frontend.
+ * Enfileira a biblioteca PDF.js oficial local e dados de configuração no frontend.
  */
 function periodic_pdf_flipbook_enqueue_frontend_scripts() {
 	if ( ! is_admin() ) {
 		// jQuery nativo do WordPress
 		wp_enqueue_script( 'jquery' );
 
-		// Turn.js v4.1.0 oficial (mesmo motor utilizado no catálogo periodicyahoo)
+		// Turn.js v4.1.0 oficial
 		wp_enqueue_script(
 			'periodic-turnjs',
 			PERIODIC_PDF_FLIPBOOK_URL . 'assets/js/turn.min.js',
@@ -100,35 +80,45 @@ function periodic_pdf_flipbook_enqueue_frontend_scripts() {
 			true
 		);
 
-		// Mozilla PDF.js v3.11.174
-		wp_enqueue_script(
-			'pdfjs-dist',
-			'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
-			array(),
-			'3.11.174',
-			true
-		);
+		// Mozilla PDF.js v3.11.174 local
+		$worker_url = defined( 'PERIODIC_URL' )
+			? PERIODIC_URL . 'shared/vendor/pdfjs/pdf.worker.min.js'
+			: plugins_url( '../../shared/vendor/pdfjs/pdf.worker.min.js', __FILE__ );
 
-		// Passa configurações e worker URL para o script view.js
+		if ( ! wp_script_is( 'pdfjs-dist', 'registered' ) ) {
+			$pdfjs_url = defined( 'PERIODIC_URL' )
+				? PERIODIC_URL . 'shared/vendor/pdfjs/pdf.min.js'
+				: plugins_url( '../../shared/vendor/pdfjs/pdf.min.js', __FILE__ );
+			wp_register_script(
+				'pdfjs-dist',
+				$pdfjs_url,
+				array(),
+				'3.11.174',
+				true
+			);
+		}
+		wp_enqueue_script( 'pdfjs-dist' );
+
+		// Passa configurações e worker URL local para o script view.js
 		wp_localize_script(
 			'periodic-pdf-flipbook-view-script',
 			'periodicFlipbookConfig',
 			array(
-				'pdfWorkerUrl' => 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
+				'pdfWorkerUrl' => $worker_url,
 				'pluginUrl'    => PERIODIC_PDF_FLIPBOOK_URL,
 				'strings'      => array(
-					'page'          => __( 'Página', 'periodic-pdf-flipbook' ),
-					'of'            => __( 'de', 'periodic-pdf-flipbook' ),
-					'loading'       => __( 'Carregando documento...', 'periodic-pdf-flipbook' ),
-					'errorLoading'  => __( 'Erro ao carregar o PDF. Verifique se a URL é válida ou configure o CORS do servidor.', 'periodic-pdf-flipbook' ),
-					'fullscreen'    => __( 'Tela Cheia', 'periodic-pdf-flipbook' ),
-					'exitFullscreen'=> __( 'Sair da Tela Cheia', 'periodic-pdf-flipbook' ),
-					'download'      => __( 'Baixar PDF', 'periodic-pdf-flipbook' ),
-					'zoomIn'        => __( 'Aumentar Zoom', 'periodic-pdf-flipbook' ),
-					'zoomOut'       => __( 'Diminuir Zoom', 'periodic-pdf-flipbook' ),
-					'toggleSound'   => __( 'Efeito Sonoro', 'periodic-pdf-flipbook' ),
-					'prevPage'      => __( 'Página Anterior', 'periodic-pdf-flipbook' ),
-					'nextPage'      => __( 'Próxima Página', 'periodic-pdf-flipbook' ),
+					'page'          => __( 'Página', 'luiz0067-periodic' ),
+					'of'            => __( 'de', 'luiz0067-periodic' ),
+					'loading'       => __( 'Carregando documento...', 'luiz0067-periodic' ),
+					'errorLoading'  => __( 'Erro ao carregar o PDF. Verifique se a URL é válida ou configure o CORS do servidor.', 'luiz0067-periodic' ),
+					'fullscreen'    => __( 'Tela Cheia', 'luiz0067-periodic' ),
+					'exitFullscreen'=> __( 'Sair da Tela Cheia', 'luiz0067-periodic' ),
+					'download'      => __( 'Baixar PDF', 'luiz0067-periodic' ),
+					'zoomIn'        => __( 'Aumentar Zoom', 'luiz0067-periodic' ),
+					'zoomOut'       => __( 'Diminuir Zoom', 'luiz0067-periodic' ),
+					'toggleSound'   => __( 'Efeito Sonoro', 'luiz0067-periodic' ),
+					'prevPage'      => __( 'Página Anterior', 'luiz0067-periodic' ),
+					'nextPage'      => __( 'Próxima Página', 'luiz0067-periodic' ),
 				),
 			)
 		);

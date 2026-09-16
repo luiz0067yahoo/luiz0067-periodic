@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-table-of-contents
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * GitHub:            https://github.com/periodicyahoo
@@ -32,11 +32,4 @@ add_action( 'init', 'periodic_table_of_contents_block_init' );
 /**
  * Carrega as traduções do plugin.
  */
-function periodic_table_of_contents_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-table-of-contents',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_table_of_contents_load_textdomain' );
+

@@ -262,9 +262,10 @@
 					throw new Error( 'Biblioteca PDF.js não pôde ser carregada.' );
 				}
 
-				const workerUrl = ( window.periodicFlipbookConfig && window.periodicFlipbookConfig.pdfWorkerUrl ) ||
-					'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-				window.pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+				const workerUrl = ( window.periodicFlipbookConfig && window.periodicFlipbookConfig.pdfWorkerUrl ) || '';
+				if ( workerUrl ) {
+					window.pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+				}
 
 				if ( this.loaderText ) {
 					this.loaderText.textContent = 'Baixando PDF...';

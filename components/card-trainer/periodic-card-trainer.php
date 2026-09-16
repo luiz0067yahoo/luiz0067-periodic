@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-card-trainer
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  */
 
@@ -24,9 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 function periodic_card_trainer_register_block() {
 	// Register Bootstrap 5 CSS if not already present
 	if ( ! wp_style_is( 'bootstrap-5', 'registered' ) && ! wp_style_is( 'bootstrap', 'registered' ) ) {
+		$bootstrap_css = defined( 'PERIODIC_URL' ) ? PERIODIC_URL . 'shared/vendor/bootstrap/css/bootstrap.min.css' : plugins_url( '../../shared/vendor/bootstrap/css/bootstrap.min.css', __FILE__ );
 		wp_register_style(
 			'bootstrap-5',
-			'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+			$bootstrap_css,
 			array(),
 			'5.3.3'
 		);
@@ -41,7 +42,11 @@ add_action( 'init', 'periodic_card_trainer_register_block' );
  * Enqueue scripts and styles for frontend and editor.
  */
 function periodic_card_trainer_enqueue_assets() {
-	wp_enqueue_style( 'bootstrap-5' );
+	if ( wp_style_is( 'periodic-vendor-bootstrap', 'registered' ) ) {
+		wp_enqueue_style( 'periodic-vendor-bootstrap' );
+	} elseif ( wp_style_is( 'bootstrap-5', 'registered' ) ) {
+		wp_enqueue_style( 'bootstrap-5' );
+	}
 
 	// Provide localized translation data to the frontend view script
 	$locale = determine_locale();
@@ -66,15 +71,3 @@ function periodic_card_trainer_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'periodic_card_trainer_enqueue_assets' );
 add_action( 'admin_enqueue_scripts', 'periodic_card_trainer_enqueue_assets' );
-
-/**
- * Load plugin textdomain for i18n.
- */
-function periodic_card_trainer_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-card-trainer',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_card_trainer_load_textdomain' );

@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       periodic-section-container
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           Periodic_Section_Container
@@ -49,14 +49,7 @@ function periodic_section_container_get_current_language() {
 /**
  * Load plugin textdomain for standard WordPress i18n
  */
-function periodic_section_container_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-section-container',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_section_container_load_textdomain' );
+
 
 /**
  * Enqueue styles and scripts for block frontend and editor canvas

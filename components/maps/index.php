@@ -4,7 +4,7 @@
  * Description: Gutenberg block for embedding responsive interactive maps.
  * Version: 1.0.0
  * Author: Periodic
- * Text Domain: periodic-maps
+ * Text Domain: luiz0067-periodic
  * Domain Path: /languages
  */
 
@@ -47,7 +47,8 @@ function periodic_maps_register_block() {
         'periodic-maps-block',
         $block_js,
         array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components', 'wp-block-editor' ),
-        filemtime( $dir . 'js/block.js' )
+        filemtime( $dir . 'js/block.js' ),
+        true
     );
 
     $lang      = periodic_maps_get_current_language();
@@ -107,7 +108,7 @@ add_action( 'init', 'periodic_maps_register_block' );
 function periodic_maps_render_callback( $attributes ) {
     $url = esc_url( $attributes['mapUrl'] );
     if ( empty( $url ) ) {
-        return '<p>' . esc_html__( 'Map URL not provided.', 'periodic-maps' ) . '</p>';
+        return '<p>' . esc_html__( 'Map URL not provided.', 'luiz0067-periodic' ) . '</p>';
     }
     $style  = sprintf( 'height:%s;', esc_attr( $attributes['height'] ) );
     $style .= sprintf( 'border-radius:%s;', esc_attr( $attributes['borderRadius'] ) );

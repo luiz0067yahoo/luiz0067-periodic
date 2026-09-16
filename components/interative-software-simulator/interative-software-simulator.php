@@ -10,7 +10,7 @@
  * Author URI:        https://profiles.wordpress.org/periodic/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       simulador-software-abnt
+ * Text Domain:       luiz0067-periodic
  * Domain Path:       /languages
  *
  * @package           InterativeSoftwareSimulator
@@ -20,39 +20,27 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'SIMULADOR_SOFTWARE_VERSION', '1.0.0' );
-define( 'SIMULADOR_SOFTWARE_DIR', plugin_dir_path( __FILE__ ) );
-define( 'SIMULADOR_SOFTWARE_URL', plugin_dir_url( __FILE__ ) );
-
-/**
- * Carrega a internacionalização do plugin
- */
-function simulador_software_load_textdomain() {
-    load_plugin_textdomain(
-        'simulador-software-abnt',
-        false,
-        dirname( plugin_basename( __FILE__ ) ) . '/languages'
-    );
-}
-add_action( 'init', 'simulador_software_load_textdomain' );
+define( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION', '1.0.0' );
+define( 'PERIODIC_SIMULADOR_SOFTWARE_DIR', plugin_dir_path( __FILE__ ) );
+define( 'PERIODIC_SIMULADOR_SOFTWARE_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * Registra o bloco Gutenberg custom/simulador-software a partir do block.json
  */
-function simulador_software_register_block() {
+function periodic_simulador_software_register_block() {
     register_block_type( __DIR__ . '/block.json' );
 
     // Garante que o script frontend e editor possam ser traduzidos
     if ( function_exists( 'wp_set_script_translations' ) ) {
         wp_set_script_translations(
             'custom-simulador-software-editor-script',
-            'simulador-software-abnt',
-            SIMULADOR_SOFTWARE_DIR . 'languages'
+            'luiz0067-periodic',
+            PERIODIC_SIMULADOR_SOFTWARE_DIR . 'languages'
         );
         wp_set_script_translations(
             'custom-simulador-software-view-script',
-            'simulador-software-abnt',
-            SIMULADOR_SOFTWARE_DIR . 'languages'
+            'luiz0067-periodic',
+            PERIODIC_SIMULADOR_SOFTWARE_DIR . 'languages'
         );
     }
 
@@ -61,11 +49,11 @@ function simulador_software_register_block() {
         'custom-simulador-software-editor-script',
         'simuladorSoftwareSettings',
         array(
-            'pluginUrl' => SIMULADOR_SOFTWARE_URL,
+            'pluginUrl' => PERIODIC_SIMULADOR_SOFTWARE_URL,
         )
     );
 }
-add_action( 'init', 'simulador_software_register_block' );
+add_action( 'init', 'periodic_simulador_software_register_block' );
 
 // Carrega os helpers auxiliares
-require_once SIMULADOR_SOFTWARE_DIR . 'inc/frontend-handler.php';
+require_once PERIODIC_SIMULADOR_SOFTWARE_DIR . 'inc/frontend-handler.php';

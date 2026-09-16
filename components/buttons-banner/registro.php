@@ -79,7 +79,7 @@ function periodic_buttons_banner_enqueue_editor_assets() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'periodic-buttons-banner-block-js',
-			'periodic-buttons-banner',
+			'luiz0067-periodic',
 			PERIODIC_BUTTONS_BANNER_PATH . 'languages'
 		);
 	}
@@ -157,11 +157,4 @@ add_action( 'after_setup_theme', 'periodic_buttons_banner_add_editor_styles' );
 /**
  * Carrega a internacionalização do plugin a partir da pasta /languages.
  */
-function periodic_buttons_banner_load_textdomain() {
-	load_plugin_textdomain(
-		'periodic-buttons-banner',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'init', 'periodic_buttons_banner_load_textdomain' );
+
