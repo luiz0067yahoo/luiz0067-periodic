@@ -68,7 +68,7 @@
     $schema: "https://schemas.wp.org/trunk/block.json",
     apiVersion: 3,
     name: "custom/simulador-software",
-    version: "1.0.0",
+    version: "1.1.0",
     title: "Simulador de Software Interativo",
     category: "periodic-blocks",
     icon: "desktop",
@@ -417,10 +417,17 @@
     stepsRef.current = steps;
     const activeIndexRef = (0, import_element.useRef)(activeStepIndex);
     activeIndexRef.current = activeStepIndex;
-    const handleStartMove = (e, el) => {
+    const handlePointerDownMove = (e, el) => {
       if (e.button !== 0) return;
       e.stopPropagation();
+      e.preventDefault();
       setActiveElementId(el.id);
+      const target = e.currentTarget;
+      const pointerId = e.pointerId;
+      try {
+        target.setPointerCapture(pointerId);
+      } catch (err) {
+      }
       if (!stageRef.current) return;
       const rect = stageRef.current.getBoundingClientRect();
       if (!rect.width || !rect.height) return;
@@ -430,8 +437,10 @@
       const initTop = el.top;
       const elWidth = el.width;
       const elHeight = el.height;
-      const onMouseMove = (moveEvent) => {
+      const onPointerMove = (moveEvent) => {
+        if (moveEvent.pointerId !== pointerId) return;
         moveEvent.preventDefault();
+        moveEvent.stopPropagation();
         const dx = (moveEvent.clientX - startX) / rect.width * 100;
         const dy = (moveEvent.clientY - startY) / rect.height * 100;
         const newLeft = Math.max(0, Math.min(100 - elWidth, initLeft + dx));
@@ -453,17 +462,33 @@
         );
         setAttributes({ steps: updatedSteps });
       };
-      const onMouseUp = () => {
-        window.removeEventListener("mousemove", onMouseMove);
-        window.removeEventListener("mouseup", onMouseUp);
+      const onPointerUp = (upEvent) => {
+        if (upEvent.pointerId !== pointerId) return;
+        try {
+          if (target.hasPointerCapture(pointerId)) {
+            target.releasePointerCapture(pointerId);
+          }
+        } catch (err) {
+        }
+        target.removeEventListener("pointermove", onPointerMove);
+        target.removeEventListener("pointerup", onPointerUp);
+        target.removeEventListener("pointercancel", onPointerUp);
       };
-      window.addEventListener("mousemove", onMouseMove);
-      window.addEventListener("mouseup", onMouseUp);
+      target.addEventListener("pointermove", onPointerMove);
+      target.addEventListener("pointerup", onPointerUp);
+      target.addEventListener("pointercancel", onPointerUp);
     };
-    const handleStartResize = (e, el, handle) => {
+    const handlePointerDownResize = (e, el, handle) => {
       if (e.button !== 0) return;
       e.stopPropagation();
+      e.preventDefault();
       setActiveElementId(el.id);
+      const target = e.currentTarget;
+      const pointerId = e.pointerId;
+      try {
+        target.setPointerCapture(pointerId);
+      } catch (err) {
+      }
       if (!stageRef.current) return;
       const rect = stageRef.current.getBoundingClientRect();
       if (!rect.width || !rect.height) return;
@@ -473,8 +498,10 @@
       const initTop = el.top;
       const initW = el.width;
       const initH = el.height;
-      const onMouseMove = (moveEvent) => {
+      const onPointerMove = (moveEvent) => {
+        if (moveEvent.pointerId !== pointerId) return;
         moveEvent.preventDefault();
+        moveEvent.stopPropagation();
         const dx = (moveEvent.clientX - startX) / rect.width * 100;
         const dy = (moveEvent.clientY - startY) / rect.height * 100;
         let newLeft = initLeft;
@@ -522,12 +549,21 @@
         );
         setAttributes({ steps: updatedSteps });
       };
-      const onMouseUp = () => {
-        window.removeEventListener("mousemove", onMouseMove);
-        window.removeEventListener("mouseup", onMouseUp);
+      const onPointerUp = (upEvent) => {
+        if (upEvent.pointerId !== pointerId) return;
+        try {
+          if (target.hasPointerCapture(pointerId)) {
+            target.releasePointerCapture(pointerId);
+          }
+        } catch (err) {
+        }
+        target.removeEventListener("pointermove", onPointerMove);
+        target.removeEventListener("pointerup", onPointerUp);
+        target.removeEventListener("pointercancel", onPointerUp);
       };
-      window.addEventListener("mousemove", onMouseMove);
-      window.addEventListener("mouseup", onMouseUp);
+      target.addEventListener("pointermove", onPointerMove);
+      target.addEventListener("pointerup", onPointerUp);
+      target.addEventListener("pointercancel", onPointerUp);
     };
     const blockProps = (0, import_block_editor.useBlockProps)({
       className: "wp-block-custom-simulador-software"
@@ -896,68 +932,96 @@
               width: `${el.width}%`,
               height: `${el.height}%`
             },
-            onMouseDown: (e) => handleStartMove(e, el),
+            onPointerDown: (e) => handlePointerDownMove(e, el),
             onClick: (e) => {
               e.stopPropagation();
               setActiveElementId(el.id);
             },
             title: (0, import_i18n.__)("Arraste para mover. Use os pontos ao redor para redimensionar.", "simulador-software-abnt")
           },
+          /* @__PURE__ */ React.createElement(
+            "div",
+            {
+              className: "sim-element-move-handle",
+              onPointerDown: (e) => handlePointerDownMove(e, el),
+              title: (0, import_i18n.__)("Clique e arraste para posicionar", "simulador-software-abnt")
+            },
+            /* @__PURE__ */ React.createElement(
+              "svg",
+              {
+                viewBox: "0 0 24 24",
+                width: "14",
+                height: "14",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2.5",
+                strokeLinecap: "round",
+                strokeLinejoin: "round"
+              },
+              /* @__PURE__ */ React.createElement("polyline", { points: "5 9 2 12 5 15" }),
+              /* @__PURE__ */ React.createElement("polyline", { points: "9 5 12 2 15 5" }),
+              /* @__PURE__ */ React.createElement("polyline", { points: "15 19 12 22 9 19" }),
+              /* @__PURE__ */ React.createElement("polyline", { points: "19 9 22 12 19 15" }),
+              /* @__PURE__ */ React.createElement("line", { x1: "2", y1: "12", x2: "22", y2: "12" }),
+              /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "2", x2: "12", y2: "22" })
+            ),
+            /* @__PURE__ */ React.createElement("span", { className: "sim-move-text" }, el.type === "click" ? "\u{1F3AF} Mover Clique" : "\u2328\uFE0F Mover Input")
+          ),
           /* @__PURE__ */ React.createElement("span", { className: "sim-element-badge" }, el.type === "click" ? "\u{1F3AF} " : "\u2328\uFE0F ", el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`),
           isSelected && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { className: "sim-coords-badge" }, el.type === "click" ? "\u{1F3AF} Clique" : "\u2328\uFE0F Input", ": X: ", el.left.toFixed(1), "% Y: ", el.top.toFixed(1), "% | L: ", el.width.toFixed(1), "% A: ", el.height.toFixed(1), "%"), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-nw",
-              onMouseDown: (e) => handleStartResize(e, el, "nw"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "nw"),
               title: (0, import_i18n.__)("Redimensionar (Noroeste)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-n",
-              onMouseDown: (e) => handleStartResize(e, el, "n"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "n"),
               title: (0, import_i18n.__)("Redimensionar (Norte)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-ne",
-              onMouseDown: (e) => handleStartResize(e, el, "ne"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "ne"),
               title: (0, import_i18n.__)("Redimensionar (Nordeste)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-e",
-              onMouseDown: (e) => handleStartResize(e, el, "e"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "e"),
               title: (0, import_i18n.__)("Redimensionar (Leste)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-se",
-              onMouseDown: (e) => handleStartResize(e, el, "se"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "se"),
               title: (0, import_i18n.__)("Redimensionar (Sudeste)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-s",
-              onMouseDown: (e) => handleStartResize(e, el, "s"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "s"),
               title: (0, import_i18n.__)("Redimensionar (Sul)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-sw",
-              onMouseDown: (e) => handleStartResize(e, el, "sw"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "sw"),
               title: (0, import_i18n.__)("Redimensionar (Sudoeste)", "simulador-software-abnt")
             }
           ), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-w",
-              onMouseDown: (e) => handleStartResize(e, el, "w"),
+              onPointerDown: (e) => handlePointerDownResize(e, el, "w"),
               title: (0, import_i18n.__)("Redimensionar (Oeste)", "simulador-software-abnt")
             }
           ))

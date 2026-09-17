@@ -86,7 +86,17 @@ async function run() {
     target: ['es2020'],
   });
 
-  console.log('✓ Successfully built build/index.js and build/view.js');
+  const assetHash = Date.now().toString(36);
+  fs.writeFileSync(
+    path.resolve(__dirname, 'build/index.asset.php'),
+    `<?php return array('dependencies' => array('react', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n'), 'version' => '${assetHash}');\n`
+  );
+  fs.writeFileSync(
+    path.resolve(__dirname, 'build/view.asset.php'),
+    `<?php return array('dependencies' => array(), 'version' => '${assetHash}');\n`
+  );
+
+  console.log('✓ Successfully built build/index.js and build/view.js with asset hash ' + assetHash);
 }
 
 run().catch(err => {

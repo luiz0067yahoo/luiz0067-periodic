@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "custom/simulador-software",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "Simulador de Software Interativo",
   "category": "periodic-blocks",
   "icon": "desktop",
