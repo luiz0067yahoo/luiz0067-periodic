@@ -3,7 +3,7 @@
  * Plugin Name:       Simulador de Software Interativo
  * Plugin URI:        https://github.com/periodicyahoo/periodic-interative-software-simulator
  * Description:       Bloco Gutenberg nativo para criar simulações guiadas passo a passo de softwares reais (ex: Windows 11, Microsoft Word) com prints e camadas interativas responsivas.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Luiz
@@ -20,9 +20,18 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION', '1.0.0' );
-define( 'PERIODIC_SIMULADOR_SOFTWARE_DIR', plugin_dir_path( __FILE__ ) );
-define( 'PERIODIC_SIMULADOR_SOFTWARE_URL', plugin_dir_url( __FILE__ ) );
+if ( ! defined( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION' ) ) {
+    define( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION', '1.1.0' );
+}
+if ( ! defined( 'PERIODIC_SIMULADOR_SOFTWARE_DIR' ) ) {
+    define( 'PERIODIC_SIMULADOR_SOFTWARE_DIR', plugin_dir_path( __FILE__ ) );
+}
+if ( ! defined( 'PERIODIC_SIMULADOR_SOFTWARE_URL' ) ) {
+    define( 'PERIODIC_SIMULADOR_SOFTWARE_URL', plugin_dir_url( __FILE__ ) );
+}
+
+// Carrega os helpers auxiliares e renderizador frontend
+require_once PERIODIC_SIMULADOR_SOFTWARE_DIR . 'inc/frontend-handler.php';
 
 /**
  * Registra o bloco Gutenberg custom/simulador-software a partir do block.json
@@ -52,8 +61,54 @@ function periodic_simulador_software_register_block() {
             'pluginUrl' => PERIODIC_SIMULADOR_SOFTWARE_URL,
         )
     );
+
+    // Passa parâmetros auxiliares também para o script de visualização do frontend
+    wp_localize_script(
+        'custom-simulador-software-view-script',
+        'simuladorSoftwareSettings',
+        array(
+            'pluginUrl' => PERIODIC_SIMULADOR_SOFTWARE_URL,
+        )
+    );
 }
 add_action( 'init', 'periodic_simulador_software_register_block' );
 
-// Carrega os helpers auxiliares
-require_once PERIODIC_SIMULADOR_SOFTWARE_DIR . 'inc/frontend-handler.php';
+/**
+ * Enfileira ativos no frontend para temas que usam o bloco em templates clássicos ou renderizações dinâmicas
+ */
+function periodic_simulador_software_enqueue_frontend() {
+    // Registra antecipadamente para disponibilidade global
+    if ( ! wp_style_is( 'custom-simulador-software-style', 'registered' ) ) {
+        wp_register_style(
+            'custom-simulador-software-style',
+            PERIODIC_SIMULADOR_SOFTWARE_URL . 'build/style-index.css',
+            array(),
+            PERIODIC_SIMULADOR_SOFTWARE_VERSION
+        );
+    }
+
+    if ( ! wp_script_is( 'custom-simulador-software-view-script', 'registered' ) ) {
+        wp_register_script(
+            'custom-simulador-software-view-script',
+            PERIODIC_SIMULADOR_SOFTWARE_URL . 'build/view.js',
+            array(),
+            PERIODIC_SIMULADOR_SOFTWARE_VERSION,
+            true
+        );
+    }
+
+    wp_localize_script(
+        'custom-simulador-software-view-script',
+        'simuladorSoftwareSettings',
+        array(
+            'pluginUrl' => PERIODIC_SIMULADOR_SOFTWARE_URL,
+        )
+    );
+
+    // Se o bloco estiver presente no post atual, enfileira
+    if ( is_singular() && function_exists( 'has_block' ) && has_block( 'custom/simulador-software' ) ) {
+        wp_enqueue_style( 'custom-simulador-software-style' );
+        wp_enqueue_script( 'custom-simulador-software-view-script' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'periodic_simulador_software_enqueue_frontend' );

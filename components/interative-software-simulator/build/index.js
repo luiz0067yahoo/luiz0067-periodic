@@ -60,10 +60,10 @@
     }
   });
 
-  // components/interative-software-simulator/src/index.js
+  // src/index.js
   var import_blocks = __toESM(require_blocks());
 
-  // components/interative-software-simulator/block.json
+  // block.json
   var block_default = {
     $schema: "https://schemas.wp.org/trunk/block.json",
     apiVersion: 3,
@@ -133,13 +133,13 @@
     render: "file:./inc/render.php"
   };
 
-  // components/interative-software-simulator/src/edit.js
+  // src/edit.js
   var import_i18n = __toESM(require_i18n());
   var import_block_editor = __toESM(require_block_editor());
   var import_components = __toESM(require_components());
   var import_element = __toESM(require_element());
 
-  // components/interative-software-simulator/src/default-data.js
+  // src/default-data.js
   var DEFAULT_ABNT_SCENARIO = [
     {
       id: "step-1-desktop",
@@ -290,7 +290,7 @@
     }
   ];
 
-  // components/interative-software-simulator/src/edit.js
+  // src/edit.js
   function Edit({ attributes, setAttributes }) {
     const {
       simulatorTitle,
@@ -1030,7 +1030,7 @@
     )), /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-bar" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-content" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-icon" }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2" }, /* @__PURE__ */ React.createElement("circle", { cx: "12", cy: "12", r: "10" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "16", x2: "12", y2: "12" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "8", x2: "12.01", y2: "8" }))), /* @__PURE__ */ React.createElement("p", { className: "sim-instruction-text" }, currentStep.instruction || (0, import_i18n.__)("Insira uma instru\xE7\xE3o para orientar o aluno.", "simulador-software-abnt"))))) : /* @__PURE__ */ React.createElement("div", { className: "sim-editor-empty-state" }, /* @__PURE__ */ React.createElement("h3", null, (0, import_i18n.__)("Nenhum passo criado ainda.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: handleLoadDefaultScenario }, (0, import_i18n.__)("Carregar Cen\xE1rio Padr\xE3o (ABNT Windows 11)", "simulador-software-abnt"))))));
   }
 
-  // components/interative-software-simulator/src/save.js
+  // src/save.js
   var import_block_editor2 = __toESM(require_block_editor());
   function save({ attributes }) {
     const {
@@ -1066,7 +1066,7 @@
     ), /* @__PURE__ */ React.createElement("div", { className: "sim-noscript-fallback", style: { padding: "30px", textAlign: "center", background: "#0f172a", color: "#ffffff", borderRadius: "12px" } }, /* @__PURE__ */ React.createElement("h3", null, simulatorTitle), /* @__PURE__ */ React.createElement("p", null, "Carregando simulador interativo..."))));
   }
 
-  // components/interative-software-simulator/src/index.js
+  // src/index.js
   (0, import_blocks.registerBlockType)(block_default.name, {
     ...block_default,
     edit: Edit,

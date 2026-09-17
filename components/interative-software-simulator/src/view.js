@@ -7,11 +7,16 @@
 class SoftwareSimulator {
   constructor(container) {
     this.container = container;
-    this.wrapper = container.querySelector('.sim-player-wrapper') || container;
+    this.wrapper = container.classList && container.classList.contains('sim-player-wrapper')
+      ? container
+      : (container.querySelector('.sim-player-wrapper') || container);
     
     // Read JSON config
-    const configScript = this.wrapper.querySelector('.sim-data-config');
-    if (!configScript) return;
+    const configScript = this.wrapper.querySelector('.sim-data-config') || this.container.querySelector('.sim-data-config');
+    if (!configScript) {
+      console.warn('Simulador de Software: elemento .sim-data-config não encontrado.');
+      return;
+    }
 
     try {
       this.config = JSON.parse(configScript.textContent);
@@ -21,7 +26,16 @@ class SoftwareSimulator {
     }
 
     this.steps = this.config.steps || [];
-    if (!this.steps.length) return;
+    if (!this.steps.length) {
+      this.wrapper.innerHTML = `
+        <div style="padding: 30px 20px; text-align: center; background: #0f172a; color: #f8fafc; border-radius: 12px; border: 1px solid #334155;">
+          <h4 style="margin: 0 0 8px 0; color: #f87171; font-size: 1.1rem;">${this.escapeHTML(this.config.simulatorTitle || 'Simulador de Software')}</h4>
+          <p style="margin: 0; color: #94a3b8; font-size: 0.9rem;">Nenhum passo de simulação foi configurado para este bloco.</p>
+        </div>
+      `;
+      this.wrapper.setAttribute('data-initialized', 'true');
+      return;
+    }
 
     this.currentStepIndex = 0;
     this.completedInputs = new Set();
@@ -31,6 +45,17 @@ class SoftwareSimulator {
     this.initDOM();
     this.renderStep(0);
     this.wrapper.setAttribute('data-initialized', 'true');
+  }
+
+  resolveImageUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('assets/')) {
+      const baseUrl = (typeof window !== 'undefined' && window.simuladorSoftwareSettings?.pluginUrl) || '';
+      if (baseUrl) {
+        return baseUrl.replace(/\/+$/, '') + '/' + url;
+      }
+    }
+    return url;
   }
 
   initDOM() {
@@ -157,8 +182,9 @@ class SoftwareSimulator {
 
     // Smooth transition on background image
     this.stageCanvas.classList.add('is-animating');
+    const resolvedUrl = this.resolveImageUrl(step.imageUrl || '');
     setTimeout(() => {
-      this.bgImage.src = step.imageUrl || '';
+      this.bgImage.src = resolvedUrl;
       this.bgImage.onload = () => {
         this.stageCanvas.classList.remove('is-animating');
       };
@@ -407,6 +433,15 @@ class SoftwareSimulator {
 
 // Auto-initialize all simulator instances on page load
 function initSoftwareSimulators() {
+  const wrappers = document.querySelectorAll('.sim-player-wrapper');
+  wrappers.forEach((wrapper) => {
+    if (wrapper.getAttribute('data-initialized') !== 'true') {
+      const block = wrapper.closest('.wp-block-custom-simulador-software') || wrapper;
+      const instance = new SoftwareSimulator(block);
+      window._currentSimInstance = instance;
+    }
+  });
+
   const blocks = document.querySelectorAll('.wp-block-custom-simulador-software');
   blocks.forEach((block) => {
     const wrapper = block.querySelector('.sim-player-wrapper');
@@ -421,6 +456,9 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initSoftwareSimulators);
 } else {
   initSoftwareSimulators();
+}
+if (typeof window !== 'undefined') {
+  window.addEventListener('load', initSoftwareSimulators);
 }
 
 export default SoftwareSimulator;
