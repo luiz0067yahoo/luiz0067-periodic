@@ -111,14 +111,20 @@
   /* Editor Canvas Overlays */
   .sim-editor-overlay-element {
     position: absolute;
-    cursor: pointer;
+    cursor: grab;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 11px;
     font-weight: 700;
-    transition: all 0.15s ease;
+    user-select: none;
+    touch-action: none;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+
+    &:active {
+      cursor: grabbing;
+    }
 
     &.type-click {
       background: rgba(59, 130, 246, 0.25);
@@ -127,12 +133,14 @@
 
       &:hover {
         background: rgba(59, 130, 246, 0.4);
+        border-color: #1d4ed8;
       }
 
       &.is-element-selected {
         background: rgba(37, 99, 235, 0.45);
         border: 2px solid #1d4ed8;
-        box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+        box-shadow: 0 0 0 1px #ffffff, 0 0 12px rgba(37, 99, 235, 0.7);
+        z-index: 20;
       }
     }
 
@@ -143,23 +151,131 @@
 
       &:hover {
         background: rgba(16, 185, 129, 0.4);
+        border-color: #047857;
       }
 
       &.is-element-selected {
         background: rgba(16, 185, 129, 0.45);
         border: 2px solid #047857;
-        box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+        box-shadow: 0 0 0 1px #ffffff, 0 0 12px rgba(16, 185, 129, 0.7);
+        z-index: 20;
       }
     }
 
     .sim-element-badge {
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.88);
       color: #ffffff;
-      padding: 2px 6px;
+      padding: 2px 7px;
       border-radius: 4px;
       font-size: 10px;
       pointer-events: none;
       white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Live coordinates and size badge */
+    .sim-coords-badge {
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-family: monospace;
+      font-weight: 700;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 30;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 8 Interactive Resize Handles */
+    .sim-resize-handle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ffffff;
+      border: 2px solid #2563eb;
+      border-radius: 2px;
+      z-index: 25;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      pointer-events: auto;
+      transition: transform 0.1s ease, background 0.1s ease;
+
+      &:hover {
+        background: #2563eb;
+        transform: scale(1.35) !important;
+      }
+
+      &.handle-nw {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        cursor: nwse-resize;
+      }
+
+      &.handle-n {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: ns-resize;
+      }
+
+      &.handle-ne {
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        cursor: nesw-resize;
+      }
+
+      &.handle-e {
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        cursor: ew-resize;
+      }
+
+      &.handle-se {
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+        cursor: nwse-resize;
+      }
+
+      &.handle-s {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        cursor: ns-resize;
+      }
+
+      &.handle-sw {
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+        cursor: nesw-resize;
+      }
+
+      &.handle-w {
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        cursor: ew-resize;
+      }
+    }
+
+    &.type-input .sim-resize-handle {
+      border-color: #059669;
+      &:hover {
+        background: #059669;
+      }
     }
   }
 }

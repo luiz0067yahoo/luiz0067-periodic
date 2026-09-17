@@ -184,11 +184,36 @@ function periodic_load_components() {
             if ( $comp === '.' || $comp === '..' ) {
                 continue;
             }
-            $loader = $components_dir . $comp . '/periodic-' . $comp . '.php';
-            if ( file_exists( $loader ) ) {
-                require_once $loader;
+            $comp_path = $components_dir . $comp . '/';
+            if ( ! is_dir( $comp_path ) ) {
+                continue;
+            }
+
+            // Check standard loader conventions
+            $possible_loaders = array(
+                $comp_path . 'periodic-' . $comp . '.php',
+                $comp_path . $comp . '.php',
+                $comp_path . 'index.php',
+            );
+
+            $loaded = false;
+            foreach ( $possible_loaders as $loader ) {
+                if ( file_exists( $loader ) ) {
+                    require_once $loader;
+                    $loaded = true;
+                    break;
+                }
+            }
+
+            // Fallback: check for any periodic-*.php in the component folder
+            if ( ! $loaded ) {
+                $comp_files = glob( $comp_path . 'periodic-*.php' );
+                if ( ! empty( $comp_files ) ) {
+                    require_once $comp_files[0];
+                }
             }
         }
     }
 }
 periodic_load_components();
+

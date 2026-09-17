@@ -12,7 +12,7 @@ import {
   CardBody,
   Notice
 } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+import { useState, useEffect, useRef } from '@wordpress/element';
 import { DEFAULT_ABNT_SCENARIO } from './default-data';
 import './editor.scss';
 
@@ -153,6 +153,151 @@ export default function Edit({ attributes, setAttributes }) {
     if (activeElementId === elementId) {
       setActiveElementId(null);
     }
+  };
+
+  // Mouse Drag & Resize Handlers
+  const stageRef = useRef(null);
+  const stepsRef = useRef(steps);
+  stepsRef.current = steps;
+  const activeIndexRef = useRef(activeStepIndex);
+  activeIndexRef.current = activeStepIndex;
+
+  const handleStartMove = (e, el) => {
+    if (e.button !== 0) return;
+    e.stopPropagation();
+    setActiveElementId(el.id);
+    if (!stageRef.current) return;
+
+    const rect = stageRef.current.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const initLeft = el.left;
+    const initTop = el.top;
+    const elWidth = el.width;
+    const elHeight = el.height;
+
+    const onMouseMove = (moveEvent) => {
+      moveEvent.preventDefault();
+      const dx = ((moveEvent.clientX - startX) / rect.width) * 100;
+      const dy = ((moveEvent.clientY - startY) / rect.height) * 100;
+
+      const newLeft = Math.max(0, Math.min(100 - elWidth, initLeft + dx));
+      const newTop = Math.max(0, Math.min(100 - elHeight, initTop + dy));
+
+      const roundedLeft = Math.round(newLeft * 10) / 10;
+      const roundedTop = Math.round(newTop * 10) / 10;
+
+      const currentSteps = stepsRef.current || [];
+      const currentActiveIdx = activeIndexRef.current;
+      const currStep = currentSteps[currentActiveIdx];
+      if (!currStep) return;
+
+      const updatedElements = (currStep.elements || []).map((item) => {
+        if (item.id === el.id) {
+          return { ...item, left: roundedLeft, top: roundedTop };
+        }
+        return item;
+      });
+
+      const updatedSteps = currentSteps.map((s, i) =>
+        i === currentActiveIdx ? { ...s, elements: updatedElements } : s
+      );
+      setAttributes({ steps: updatedSteps });
+    };
+
+    const onMouseUp = () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+  };
+
+  const handleStartResize = (e, el, handle) => {
+    if (e.button !== 0) return;
+    e.stopPropagation();
+    setActiveElementId(el.id);
+    if (!stageRef.current) return;
+
+    const rect = stageRef.current.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const initLeft = el.left;
+    const initTop = el.top;
+    const initW = el.width;
+    const initH = el.height;
+
+    const onMouseMove = (moveEvent) => {
+      moveEvent.preventDefault();
+      const dx = ((moveEvent.clientX - startX) / rect.width) * 100;
+      const dy = ((moveEvent.clientY - startY) / rect.height) * 100;
+
+      let newLeft = initLeft;
+      let newTop = initTop;
+      let newW = initW;
+      let newH = initH;
+
+      // Horizontal adjustments
+      if (handle.includes('e')) {
+        newW = Math.max(2, Math.min(100 - initLeft, initW + dx));
+      } else if (handle.includes('w')) {
+        const maxDx = initW - 2;
+        const clampedDx = Math.max(-initLeft, Math.min(maxDx, dx));
+        newLeft = initLeft + clampedDx;
+        newW = initW - clampedDx;
+      }
+
+      // Vertical adjustments
+      if (handle.includes('s')) {
+        newH = Math.max(2, Math.min(100 - initTop, initH + dy));
+      } else if (handle.includes('n')) {
+        const maxDy = initH - 2;
+        const clampedDy = Math.max(-initTop, Math.min(maxDy, dy));
+        newTop = initTop + clampedDy;
+        newH = initH - clampedDy;
+      }
+
+      const roundedLeft = Math.round(newLeft * 10) / 10;
+      const roundedTop = Math.round(newTop * 10) / 10;
+      const roundedW = Math.round(newW * 10) / 10;
+      const roundedH = Math.round(newH * 10) / 10;
+
+      const currentSteps = stepsRef.current || [];
+      const currentActiveIdx = activeIndexRef.current;
+      const currStep = currentSteps[currentActiveIdx];
+      if (!currStep) return;
+
+      const updatedElements = (currStep.elements || []).map((item) => {
+        if (item.id === el.id) {
+          return {
+            ...item,
+            left: roundedLeft,
+            top: roundedTop,
+            width: roundedW,
+            height: roundedH
+          };
+        }
+        return item;
+      });
+
+      const updatedSteps = currentSteps.map((s, i) =>
+        i === currentActiveIdx ? { ...s, elements: updatedElements } : s
+      );
+      setAttributes({ steps: updatedSteps });
+    };
+
+    const onMouseUp = () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
   };
 
   const blockProps = useBlockProps({
@@ -553,7 +698,11 @@ export default function Edit({ attributes, setAttributes }) {
                 )}
 
                 {/* Overlaid Interactive Elements */}
-                <div className="sim-elements-layer">
+                <div
+                  className="sim-elements-layer"
+                  ref={stageRef}
+                  onClick={() => setActiveElementId(null)}
+                >
                   {(currentStep.elements || []).map((el, elIdx) => {
                     const isSelected = el.id === activeElementId;
                     return (
@@ -566,16 +715,67 @@ export default function Edit({ attributes, setAttributes }) {
                           width: `${el.width}%`,
                           height: `${el.height}%`,
                         }}
+                        onMouseDown={(e) => handleStartMove(e, el)}
                         onClick={(e) => {
                           e.stopPropagation();
                           setActiveElementId(el.id);
                         }}
-                        title={`${el.label || el.type} (Clique para editar no painel)`}
+                        title={__('Arraste para mover. Use os pontos ao redor para redimensionar.', 'simulador-software-abnt')}
                       >
                         <span className="sim-element-badge">
                           {el.type === 'click' ? '🎯 ' : '⌨️ '}
                           {el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`}
                         </span>
+
+                        {isSelected && (
+                          <>
+                            <span className="sim-coords-badge">
+                              {el.type === 'click' ? '🎯 Clique' : '⌨️ Input'}: X: {el.left.toFixed(1)}% Y: {el.top.toFixed(1)}% | L: {el.width.toFixed(1)}% A: {el.height.toFixed(1)}%
+                            </span>
+
+                            {/* 8 Resize Handles */}
+                            <div
+                              className="sim-resize-handle handle-nw"
+                              onMouseDown={(e) => handleStartResize(e, el, 'nw')}
+                              title={__('Redimensionar (Noroeste)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-n"
+                              onMouseDown={(e) => handleStartResize(e, el, 'n')}
+                              title={__('Redimensionar (Norte)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-ne"
+                              onMouseDown={(e) => handleStartResize(e, el, 'ne')}
+                              title={__('Redimensionar (Nordeste)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-e"
+                              onMouseDown={(e) => handleStartResize(e, el, 'e')}
+                              title={__('Redimensionar (Leste)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-se"
+                              onMouseDown={(e) => handleStartResize(e, el, 'se')}
+                              title={__('Redimensionar (Sudeste)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-s"
+                              onMouseDown={(e) => handleStartResize(e, el, 's')}
+                              title={__('Redimensionar (Sul)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-sw"
+                              onMouseDown={(e) => handleStartResize(e, el, 'sw')}
+                              title={__('Redimensionar (Sudoeste)', 'simulador-software-abnt')}
+                            />
+                            <div
+                              className="sim-resize-handle handle-w"
+                              onMouseDown={(e) => handleStartResize(e, el, 'w')}
+                              title={__('Redimensionar (Oeste)', 'simulador-software-abnt')}
+                            />
+                          </>
+                        )}
                       </div>
                     );
                   })}

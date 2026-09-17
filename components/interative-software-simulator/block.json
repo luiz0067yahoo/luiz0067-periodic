@@ -4,7 +4,7 @@
   "name": "custom/simulador-software",
   "version": "1.0.0",
   "title": "Simulador de Software Interativo",
-  "category": "media",
+  "category": "periodic-blocks",
   "icon": "desktop",
   "description": "Crie tutoriais guiados passo a passo simulando softwares reais com prints e camadas interativas responsivas.",
   "keywords": [
@@ -13,9 +13,12 @@
     "tutorial",
     "abnt",
     "windows",
-    "interativo"
+    "interativo",
+    "interactive",
+    "simulator",
+    "periodic"
   ],
-  "textdomain": "simulador-software-abnt",
+  "textdomain": "luiz0067-periodic",
   "supports": {
     "html": false,
     "align": [
