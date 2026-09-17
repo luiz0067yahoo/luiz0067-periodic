@@ -378,18 +378,29 @@
     };
     const handleAddElement = (type = "click") => {
       if (!currentStep) return;
-      const newEl = {
+      let newEl = {
         id: `el-${Date.now()}`,
         type,
         top: 40,
-        left: 40,
-        width: type === "click" ? 12 : 20,
-        height: type === "click" ? 6 : 5,
-        label: type === "click" ? "Novo Hotspot de Clique" : "Novo Campo de Digita\xE7\xE3o",
+        left: type === "drag" ? 25 : 40,
+        width: type === "click" ? 12 : type === "drag" ? 14 : 20,
+        height: type === "click" ? 6 : type === "drag" ? 8 : 5,
+        label: type === "click" ? "Novo Hotspot de Clique" : type === "drag" ? "Novo Item Drag & Drop" : "Novo Campo de Digita\xE7\xE3o",
         expectedValue: type === "input" ? "Word" : "",
         placeholder: type === "input" ? "Digite aqui..." : "",
         targetStepIndex: activeStepIndex + 1
       };
+      if (type === "drag") {
+        newEl = {
+          ...newEl,
+          dragText: "Arrastar",
+          targetLabel: "Solte Aqui",
+          targetTop: 40,
+          targetLeft: 60,
+          targetWidth: 16,
+          targetHeight: 12
+        };
+      }
       const updatedElements = [...currentStep.elements || [], newEl];
       updateCurrentStep({ elements: updatedElements });
       setActiveElementId(newEl.id);
@@ -413,10 +424,48 @@
       }
     };
     const stageRef = (0, import_element.useRef)(null);
+    const stageCanvasRef = (0, import_element.useRef)(null);
+    const stageScreenRef = (0, import_element.useRef)(null);
+    const bgImageRef = (0, import_element.useRef)(null);
     const stepsRef = (0, import_element.useRef)(steps);
     stepsRef.current = steps;
     const activeIndexRef = (0, import_element.useRef)(activeStepIndex);
     activeIndexRef.current = activeStepIndex;
+    const updateEditorStageDimensions = () => {
+      if (!stageCanvasRef.current || !stageScreenRef.current) return;
+      const canvasWidth = stageCanvasRef.current.clientWidth;
+      const canvasHeight = stageCanvasRef.current.clientHeight;
+      if (!canvasWidth || !canvasHeight) return;
+      let ar = 16 / 9;
+      const img = bgImageRef.current;
+      if (img && img.naturalWidth && img.naturalHeight) {
+        ar = img.naturalWidth / img.naturalHeight;
+      }
+      let fitWidth = canvasWidth;
+      let fitHeight = canvasWidth / ar;
+      if (fitHeight > canvasHeight) {
+        fitHeight = canvasHeight;
+        fitWidth = canvasHeight * ar;
+      }
+      stageScreenRef.current.style.width = `${Math.round(fitWidth * 100) / 100}px`;
+      stageScreenRef.current.style.height = `${Math.round(fitHeight * 100) / 100}px`;
+    };
+    (0, import_element.useEffect)(() => {
+      updateEditorStageDimensions();
+      let ro;
+      if (typeof ResizeObserver !== "undefined" && stageCanvasRef.current) {
+        ro = new ResizeObserver(() => {
+          updateEditorStageDimensions();
+        });
+        ro.observe(stageCanvasRef.current);
+      }
+      const handleResize = () => updateEditorStageDimensions();
+      window.addEventListener("resize", handleResize);
+      return () => {
+        if (ro) ro.disconnect();
+        window.removeEventListener("resize", handleResize);
+      };
+    }, [activeStepIndex, currentStep?.imageUrl]);
     const handlePointerDownMove = (e, el) => {
       if (e.button !== 0) return;
       e.stopPropagation();
@@ -735,24 +784,33 @@
         title: `${(0, import_i18n.__)("Camadas Interativas do Passo", "simulador-software-abnt")} (${(currentStep.elements || []).length})`,
         initialOpen: true
       },
-      /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: "8px", marginBottom: "14px" } }, /* @__PURE__ */ React.createElement(
+      /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "6px", marginBottom: "14px" } }, /* @__PURE__ */ React.createElement(
         import_components.Button,
         {
           variant: "secondary",
           icon: "admin-links",
           onClick: () => handleAddElement("click"),
-          style: { flex: 1 }
+          style: { padding: "6px 4px", fontSize: "11px", display: "flex", justifyContent: "center" }
         },
-        (0, import_i18n.__)("+ \xC1rea de Clique", "simulador-software-abnt")
+        (0, import_i18n.__)("+ Clique", "simulador-software-abnt")
       ), /* @__PURE__ */ React.createElement(
         import_components.Button,
         {
           variant: "secondary",
           icon: "edit",
           onClick: () => handleAddElement("input"),
-          style: { flex: 1 }
+          style: { padding: "6px 4px", fontSize: "11px", display: "flex", justifyContent: "center" }
         },
-        (0, import_i18n.__)("+ Campo Input", "simulador-software-abnt")
+        (0, import_i18n.__)("+ Input", "simulador-software-abnt")
+      ), /* @__PURE__ */ React.createElement(
+        import_components.Button,
+        {
+          variant: "secondary",
+          icon: "move",
+          onClick: () => handleAddElement("drag"),
+          style: { padding: "6px 4px", fontSize: "11px", display: "flex", justifyContent: "center" }
+        },
+        (0, import_i18n.__)("+ Drag & Drop", "simulador-software-abnt")
       )),
       (currentStep.elements || []).map((el, elIdx) => {
         const isSelected = el.id === activeElementId;
@@ -763,7 +821,7 @@
             className: `sim-inspector-element-card ${isSelected ? "is-active-element" : ""}`,
             onClick: () => setActiveElementId(el.id)
           },
-          /* @__PURE__ */ React.createElement("div", { className: "sim-element-header" }, /* @__PURE__ */ React.createElement("strong", null, el.type === "click" ? "\u{1F3AF} Clique: " : "\u2328\uFE0F Input: ", el.label || `Elemento ${elIdx + 1}`), /* @__PURE__ */ React.createElement(
+          /* @__PURE__ */ React.createElement("div", { className: "sim-element-header" }, /* @__PURE__ */ React.createElement("strong", null, el.type === "click" ? "\u{1F3AF} Clique: " : el.type === "drag" ? "\u270B Drag & Drop: " : "\u2328\uFE0F Input: ", el.label || `Elemento ${elIdx + 1}`), /* @__PURE__ */ React.createElement(
             import_components.Button,
             {
               icon: "trash",
@@ -791,11 +849,69 @@
               value: el.type,
               options: [
                 { label: (0, import_i18n.__)("\xC1rea de Clique (Hotspot)", "simulador-software-abnt"), value: "click" },
-                { label: (0, import_i18n.__)("Caixa de Texto (Input com Enter)", "simulador-software-abnt"), value: "input" }
+                { label: (0, import_i18n.__)("Caixa de Texto (Input com Enter)", "simulador-software-abnt"), value: "input" },
+                { label: (0, import_i18n.__)("Arrastar e Soltar (Drag and Drop)", "simulador-software-abnt"), value: "drag" }
               ],
               onChange: (val) => handleUpdateElement(el.id, { type: val })
             }
           ),
+          el.type === "drag" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
+            import_components.TextControl,
+            {
+              label: (0, import_i18n.__)("Texto do Item Arrast\xE1vel", "simulador-software-abnt"),
+              value: el.dragText || "",
+              placeholder: (0, import_i18n.__)("Ex: Arraste at\xE9 o destino", "simulador-software-abnt"),
+              onChange: (val) => handleUpdateElement(el.id, { dragText: val })
+            }
+          ), /* @__PURE__ */ React.createElement(
+            import_components.TextControl,
+            {
+              label: (0, import_i18n.__)("Texto da \xC1rea de Destino (Drop)", "simulador-software-abnt"),
+              value: el.targetLabel || "",
+              placeholder: (0, import_i18n.__)("Ex: Solte Aqui", "simulador-software-abnt"),
+              onChange: (val) => handleUpdateElement(el.id, { targetLabel: val })
+            }
+          ), /* @__PURE__ */ React.createElement("div", { style: { marginTop: "10px", padding: "10px", background: "#f5f3ff", borderRadius: "6px", border: "1px solid #ddd6fe" } }, /* @__PURE__ */ React.createElement("label", { style: { fontSize: "11px", fontWeight: 700, textTransform: "uppercase", color: "#6d28d9", display: "block", marginBottom: "8px" } }, (0, import_i18n.__)("\u{1F3AF} \xC1rea de Destino do Drop (%)", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(
+            import_components.RangeControl,
+            {
+              label: (0, import_i18n.__)("Destino Topo (Top %)", "simulador-software-abnt"),
+              value: el.targetTop !== void 0 ? el.targetTop : el.top,
+              onChange: (val) => handleUpdateElement(el.id, { targetTop: Number(val) }),
+              min: 0,
+              max: 100,
+              step: 0.1
+            }
+          ), /* @__PURE__ */ React.createElement(
+            import_components.RangeControl,
+            {
+              label: (0, import_i18n.__)("Destino Esquerda (Left %)", "simulador-software-abnt"),
+              value: el.targetLeft !== void 0 ? el.targetLeft : el.left + 25,
+              onChange: (val) => handleUpdateElement(el.id, { targetLeft: Number(val) }),
+              min: 0,
+              max: 100,
+              step: 0.1
+            }
+          ), /* @__PURE__ */ React.createElement(
+            import_components.RangeControl,
+            {
+              label: (0, import_i18n.__)("Destino Largura (Width %)", "simulador-software-abnt"),
+              value: el.targetWidth !== void 0 ? el.targetWidth : 16,
+              onChange: (val) => handleUpdateElement(el.id, { targetWidth: Number(val) }),
+              min: 1,
+              max: 100,
+              step: 0.1
+            }
+          ), /* @__PURE__ */ React.createElement(
+            import_components.RangeControl,
+            {
+              label: (0, import_i18n.__)("Destino Altura (Height %)", "simulador-software-abnt"),
+              value: el.targetHeight !== void 0 ? el.targetHeight : 12,
+              onChange: (val) => handleUpdateElement(el.id, { targetHeight: Number(val) }),
+              min: 1,
+              max: 100,
+              step: 0.1
+            }
+          ))),
           el.type === "input" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
             import_components.TextControl,
             {
@@ -898,27 +1014,45 @@
         className: "sim-progress-fill",
         style: { width: `${(activeStepIndex + 1) / steps.length * 100}%` }
       }
-    )), /* @__PURE__ */ React.createElement("div", { className: "sim-stage-canvas" }, currentStep.imageUrl ? /* @__PURE__ */ React.createElement(
+    )), /* @__PURE__ */ React.createElement("div", { className: "sim-stage-canvas", ref: stageCanvasRef }, currentStep.imageUrl ? /* @__PURE__ */ React.createElement("div", { className: "sim-stage-screen", ref: stageScreenRef }, /* @__PURE__ */ React.createElement(
       "img",
       {
+        ref: bgImageRef,
         src: getResolvedImageUrl(currentStep.imageUrl),
         alt: currentStep.title,
-        className: "sim-bg-image"
+        className: "sim-bg-image",
+        onLoad: updateEditorStageDimensions
       }
-    ) : /* @__PURE__ */ React.createElement("div", { style: { padding: "60px 20px", textAlign: "center", color: "#94a3b8" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: "16px", fontWeight: 600 } }, (0, import_i18n.__)("Nenhuma imagem selecionada para este passo.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_block_editor.MediaUploadCheck, null, /* @__PURE__ */ React.createElement(
-      import_block_editor.MediaUpload,
-      {
-        onSelect: (media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id }),
-        allowedTypes: ["image"],
-        render: ({ open }) => /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: open }, (0, import_i18n.__)("Carregar Imagem de Fundo", "simulador-software-abnt"))
-      }
-    ))), /* @__PURE__ */ React.createElement(
+    ), /* @__PURE__ */ React.createElement(
       "div",
       {
         className: "sim-elements-layer",
         ref: stageRef,
         onClick: () => setActiveElementId(null)
       },
+      (currentStep.elements || []).map((el, elIdx) => {
+        if (el.type !== "drag") return null;
+        const isSelected = el.id === activeElementId;
+        const tTop = el.targetTop !== void 0 ? el.targetTop : el.top;
+        const tLeft = el.targetLeft !== void 0 ? el.targetLeft : el.left + 25;
+        const tWidth = el.targetWidth !== void 0 ? el.targetWidth : 16;
+        const tHeight = el.targetHeight !== void 0 ? el.targetHeight : 12;
+        return /* @__PURE__ */ React.createElement(
+          "div",
+          {
+            key: `dropzone-${el.id || elIdx}`,
+            className: `sim-editor-drop-zone ${isSelected ? "is-zone-selected" : ""}`,
+            style: {
+              top: `${tTop}%`,
+              left: `${tLeft}%`,
+              width: `${tWidth}%`,
+              height: `${tHeight}%`
+            },
+            title: (0, import_i18n.__)("\xC1rea de Destino (Drop Zone)", "simulador-software-abnt")
+          },
+          /* @__PURE__ */ React.createElement("span", { className: "sim-drop-zone-badge" }, "\u{1F4E5} ", el.targetLabel || "Solte Aqui")
+        );
+      }),
       (currentStep.elements || []).map((el, elIdx) => {
         const isSelected = el.id === activeElementId;
         return /* @__PURE__ */ React.createElement(
@@ -965,10 +1099,10 @@
               /* @__PURE__ */ React.createElement("line", { x1: "2", y1: "12", x2: "22", y2: "12" }),
               /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "2", x2: "12", y2: "22" })
             ),
-            /* @__PURE__ */ React.createElement("span", { className: "sim-move-text" }, el.type === "click" ? "\u{1F3AF} Mover Clique" : "\u2328\uFE0F Mover Input")
+            /* @__PURE__ */ React.createElement("span", { className: "sim-move-text" }, el.type === "click" ? "\u{1F3AF} Mover Clique" : el.type === "drag" ? "\u270B Mover Drag" : "\u2328\uFE0F Mover Input")
           ),
-          /* @__PURE__ */ React.createElement("span", { className: "sim-element-badge" }, el.type === "click" ? "\u{1F3AF} " : "\u2328\uFE0F ", el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`),
-          isSelected && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { className: "sim-coords-badge" }, el.type === "click" ? "\u{1F3AF} Clique" : "\u2328\uFE0F Input", ": X: ", el.left.toFixed(1), "% Y: ", el.top.toFixed(1), "% | L: ", el.width.toFixed(1), "% A: ", el.height.toFixed(1), "%"), /* @__PURE__ */ React.createElement(
+          /* @__PURE__ */ React.createElement("span", { className: "sim-element-badge" }, el.type === "click" ? "\u{1F3AF} " : el.type === "drag" ? "\u270B " : "\u2328\uFE0F ", el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`),
+          isSelected && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { className: "sim-coords-badge" }, el.type === "click" ? "\u{1F3AF} Clique" : el.type === "drag" ? "\u270B Drag" : "\u2328\uFE0F Input", ": X: ", el.left.toFixed(1), "% Y: ", el.top.toFixed(1), "% | L: ", el.width.toFixed(1), "% A: ", el.height.toFixed(1), "%"), /* @__PURE__ */ React.createElement(
             "div",
             {
               className: "sim-resize-handle handle-nw",
@@ -1027,7 +1161,14 @@
           ))
         );
       })
-    )), /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-bar" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-content" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-icon" }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2" }, /* @__PURE__ */ React.createElement("circle", { cx: "12", cy: "12", r: "10" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "16", x2: "12", y2: "12" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "8", x2: "12.01", y2: "8" }))), /* @__PURE__ */ React.createElement("p", { className: "sim-instruction-text" }, currentStep.instruction || (0, import_i18n.__)("Insira uma instru\xE7\xE3o para orientar o aluno.", "simulador-software-abnt"))))) : /* @__PURE__ */ React.createElement("div", { className: "sim-editor-empty-state" }, /* @__PURE__ */ React.createElement("h3", null, (0, import_i18n.__)("Nenhum passo criado ainda.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: handleLoadDefaultScenario }, (0, import_i18n.__)("Carregar Cen\xE1rio Padr\xE3o (ABNT Windows 11)", "simulador-software-abnt"))))));
+    )) : /* @__PURE__ */ React.createElement("div", { style: { padding: "60px 20px", textAlign: "center", color: "#94a3b8" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: "16px", fontWeight: 600 } }, (0, import_i18n.__)("Nenhuma imagem selecionada para este passo.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_block_editor.MediaUploadCheck, null, /* @__PURE__ */ React.createElement(
+      import_block_editor.MediaUpload,
+      {
+        onSelect: (media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id }),
+        allowedTypes: ["image"],
+        render: ({ open }) => /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: open }, (0, import_i18n.__)("Carregar Imagem de Fundo", "simulador-software-abnt"))
+      }
+    )))), /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-bar" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-content" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-icon" }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2" }, /* @__PURE__ */ React.createElement("circle", { cx: "12", cy: "12", r: "10" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "16", x2: "12", y2: "12" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "8", x2: "12.01", y2: "8" }))), /* @__PURE__ */ React.createElement("p", { className: "sim-instruction-text" }, currentStep.instruction || (0, import_i18n.__)("Insira uma instru\xE7\xE3o para orientar o aluno.", "simulador-software-abnt"))))) : /* @__PURE__ */ React.createElement("div", { className: "sim-editor-empty-state" }, /* @__PURE__ */ React.createElement("h3", null, (0, import_i18n.__)("Nenhum passo criado ainda.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: handleLoadDefaultScenario }, (0, import_i18n.__)("Carregar Cen\xE1rio Padr\xE3o (ABNT Windows 11)", "simulador-software-abnt"))))));
   }
 
   // src/save.js

@@ -118,18 +118,33 @@ export default function Edit({ attributes, setAttributes }) {
   // Element operations
   const handleAddElement = (type = 'click') => {
     if (!currentStep) return;
-    const newEl = {
+    let newEl = {
       id: `el-${Date.now()}`,
       type: type,
       top: 40,
-      left: 40,
-      width: type === 'click' ? 12 : 20,
-      height: type === 'click' ? 6 : 5,
-      label: type === 'click' ? 'Novo Hotspot de Clique' : 'Novo Campo de Digitação',
+      left: type === 'drag' ? 25 : 40,
+      width: type === 'click' ? 12 : (type === 'drag' ? 14 : 20),
+      height: type === 'click' ? 6 : (type === 'drag' ? 8 : 5),
+      label: type === 'click'
+        ? 'Novo Hotspot de Clique'
+        : (type === 'drag' ? 'Novo Item Drag & Drop' : 'Novo Campo de Digitação'),
       expectedValue: type === 'input' ? 'Word' : '',
       placeholder: type === 'input' ? 'Digite aqui...' : '',
       targetStepIndex: activeStepIndex + 1
     };
+
+    if (type === 'drag') {
+      newEl = {
+        ...newEl,
+        dragText: 'Arrastar',
+        targetLabel: 'Solte Aqui',
+        targetTop: 40,
+        targetLeft: 60,
+        targetWidth: 16,
+        targetHeight: 12
+      };
+    }
+
     const updatedElements = [...(currentStep.elements || []), newEl];
     updateCurrentStep({ elements: updatedElements });
     setActiveElementId(newEl.id);
@@ -157,10 +172,56 @@ export default function Edit({ attributes, setAttributes }) {
 
   // Mouse / Pointer Drag & Resize Handlers
   const stageRef = useRef(null);
+  const stageCanvasRef = useRef(null);
+  const stageScreenRef = useRef(null);
+  const bgImageRef = useRef(null);
   const stepsRef = useRef(steps);
   stepsRef.current = steps;
   const activeIndexRef = useRef(activeStepIndex);
   activeIndexRef.current = activeStepIndex;
+
+  const updateEditorStageDimensions = () => {
+    if (!stageCanvasRef.current || !stageScreenRef.current) return;
+    const canvasWidth = stageCanvasRef.current.clientWidth;
+    const canvasHeight = stageCanvasRef.current.clientHeight;
+    if (!canvasWidth || !canvasHeight) return;
+
+    let ar = 16 / 9;
+    const img = bgImageRef.current;
+    if (img && img.naturalWidth && img.naturalHeight) {
+      ar = img.naturalWidth / img.naturalHeight;
+    }
+
+    let fitWidth = canvasWidth;
+    let fitHeight = canvasWidth / ar;
+
+    if (fitHeight > canvasHeight) {
+      fitHeight = canvasHeight;
+      fitWidth = canvasHeight * ar;
+    }
+
+    stageScreenRef.current.style.width = `${Math.round(fitWidth * 100) / 100}px`;
+    stageScreenRef.current.style.height = `${Math.round(fitHeight * 100) / 100}px`;
+  };
+
+  useEffect(() => {
+    updateEditorStageDimensions();
+
+    let ro;
+    if (typeof ResizeObserver !== 'undefined' && stageCanvasRef.current) {
+      ro = new ResizeObserver(() => {
+        updateEditorStageDimensions();
+      });
+      ro.observe(stageCanvasRef.current);
+    }
+    const handleResize = () => updateEditorStageDimensions();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      if (ro) ro.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [activeStepIndex, currentStep?.imageUrl]);
 
   const handlePointerDownMove = (e, el) => {
     if (e.button !== 0) return;
@@ -518,22 +579,30 @@ export default function Edit({ attributes, setAttributes }) {
             title={`${__('Camadas Interativas do Passo', 'simulador-software-abnt')} (${(currentStep.elements || []).length})`}
             initialOpen={true}
           >
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '14px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '6px', marginBottom: '14px' }}>
               <Button
                 variant="secondary"
                 icon="admin-links"
                 onClick={() => handleAddElement('click')}
-                style={{ flex: 1 }}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center' }}
               >
-                {__('+ Área de Clique', 'simulador-software-abnt')}
+                {__('+ Clique', 'simulador-software-abnt')}
               </Button>
               <Button
                 variant="secondary"
                 icon="edit"
                 onClick={() => handleAddElement('input')}
-                style={{ flex: 1 }}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center' }}
               >
-                {__('+ Campo Input', 'simulador-software-abnt')}
+                {__('+ Input', 'simulador-software-abnt')}
+              </Button>
+              <Button
+                variant="secondary"
+                icon="move"
+                onClick={() => handleAddElement('drag')}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center' }}
+              >
+                {__('+ Drag & Drop', 'simulador-software-abnt')}
               </Button>
             </div>
 
@@ -547,7 +616,7 @@ export default function Edit({ attributes, setAttributes }) {
                 >
                   <div className="sim-element-header">
                     <strong>
-                      {el.type === 'click' ? '🎯 Clique: ' : '⌨️ Input: '}
+                      {el.type === 'click' ? '🎯 Clique: ' : (el.type === 'drag' ? '✋ Drag & Drop: ' : '⌨️ Input: ')}
                       {el.label || `Elemento ${elIdx + 1}`}
                     </strong>
                     <Button
@@ -573,10 +642,65 @@ export default function Edit({ attributes, setAttributes }) {
                     value={el.type}
                     options={[
                       { label: __('Área de Clique (Hotspot)', 'simulador-software-abnt'), value: 'click' },
-                      { label: __('Caixa de Texto (Input com Enter)', 'simulador-software-abnt'), value: 'input' }
+                      { label: __('Caixa de Texto (Input com Enter)', 'simulador-software-abnt'), value: 'input' },
+                      { label: __('Arrastar e Soltar (Drag and Drop)', 'simulador-software-abnt'), value: 'drag' }
                     ]}
                     onChange={(val) => handleUpdateElement(el.id, { type: val })}
                   />
+
+                  {el.type === 'drag' && (
+                    <>
+                      <TextControl
+                        label={__('Texto do Item Arrastável', 'simulador-software-abnt')}
+                        value={el.dragText || ''}
+                        placeholder={__('Ex: Arraste até o destino', 'simulador-software-abnt')}
+                        onChange={(val) => handleUpdateElement(el.id, { dragText: val })}
+                      />
+                      <TextControl
+                        label={__('Texto da Área de Destino (Drop)', 'simulador-software-abnt')}
+                        value={el.targetLabel || ''}
+                        placeholder={__('Ex: Solte Aqui', 'simulador-software-abnt')}
+                        onChange={(val) => handleUpdateElement(el.id, { targetLabel: val })}
+                      />
+                      <div style={{ marginTop: '10px', padding: '10px', background: '#f5f3ff', borderRadius: '6px', border: '1px solid #ddd6fe' }}>
+                        <label style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#6d28d9', display: 'block', marginBottom: '8px' }}>
+                          {__('🎯 Área de Destino do Drop (%)', 'simulador-software-abnt')}
+                        </label>
+                        <RangeControl
+                          label={__('Destino Topo (Top %)', 'simulador-software-abnt')}
+                          value={el.targetTop !== undefined ? el.targetTop : el.top}
+                          onChange={(val) => handleUpdateElement(el.id, { targetTop: Number(val) })}
+                          min={0}
+                          max={100}
+                          step={0.1}
+                        />
+                        <RangeControl
+                          label={__('Destino Esquerda (Left %)', 'simulador-software-abnt')}
+                          value={el.targetLeft !== undefined ? el.targetLeft : (el.left + 25)}
+                          onChange={(val) => handleUpdateElement(el.id, { targetLeft: Number(val) })}
+                          min={0}
+                          max={100}
+                          step={0.1}
+                        />
+                        <RangeControl
+                          label={__('Destino Largura (Width %)', 'simulador-software-abnt')}
+                          value={el.targetWidth !== undefined ? el.targetWidth : 16}
+                          onChange={(val) => handleUpdateElement(el.id, { targetWidth: Number(val) })}
+                          min={1}
+                          max={100}
+                          step={0.1}
+                        />
+                        <RangeControl
+                          label={__('Destino Altura (Height %)', 'simulador-software-abnt')}
+                          value={el.targetHeight !== undefined ? el.targetHeight : 12}
+                          onChange={(val) => handleUpdateElement(el.id, { targetHeight: Number(val) })}
+                          min={1}
+                          max={100}
+                          step={0.1}
+                        />
+                      </div>
+                    </>
+                  )}
 
                   {el.type === 'input' && (
                     <>
@@ -707,13 +831,156 @@ export default function Edit({ attributes, setAttributes }) {
               </div>
 
               {/* Stage */}
-              <div className="sim-stage-canvas">
+              <div className="sim-stage-canvas" ref={stageCanvasRef}>
                 {currentStep.imageUrl ? (
-                  <img
-                    src={getResolvedImageUrl(currentStep.imageUrl)}
-                    alt={currentStep.title}
-                    className="sim-bg-image"
-                  />
+                  <div className="sim-stage-screen" ref={stageScreenRef}>
+                    <img
+                      ref={bgImageRef}
+                      src={getResolvedImageUrl(currentStep.imageUrl)}
+                      alt={currentStep.title}
+                      className="sim-bg-image"
+                      onLoad={updateEditorStageDimensions}
+                    />
+
+                    {/* Overlaid Interactive Elements */}
+                    <div
+                      className="sim-elements-layer"
+                      ref={stageRef}
+                      onClick={() => setActiveElementId(null)}
+                    >
+                      {/* Render Drop Zones first behind draggable items */}
+                      {(currentStep.elements || []).map((el, elIdx) => {
+                        if (el.type !== 'drag') return null;
+                        const isSelected = el.id === activeElementId;
+                        const tTop = el.targetTop !== undefined ? el.targetTop : el.top;
+                        const tLeft = el.targetLeft !== undefined ? el.targetLeft : (el.left + 25);
+                        const tWidth = el.targetWidth !== undefined ? el.targetWidth : 16;
+                        const tHeight = el.targetHeight !== undefined ? el.targetHeight : 12;
+                        return (
+                          <div
+                            key={`dropzone-${el.id || elIdx}`}
+                            className={`sim-editor-drop-zone ${isSelected ? 'is-zone-selected' : ''}`}
+                            style={{
+                              top: `${tTop}%`,
+                              left: `${tLeft}%`,
+                              width: `${tWidth}%`,
+                              height: `${tHeight}%`,
+                            }}
+                            title={__('Área de Destino (Drop Zone)', 'simulador-software-abnt')}
+                          >
+                            <span className="sim-drop-zone-badge">
+                              📥 {el.targetLabel || 'Solte Aqui'}
+                            </span>
+                          </div>
+                        );
+                      })}
+
+                      {(currentStep.elements || []).map((el, elIdx) => {
+                        const isSelected = el.id === activeElementId;
+                        return (
+                          <div
+                            key={el.id || elIdx}
+                            className={`sim-editor-overlay-element type-${el.type} ${isSelected ? 'is-element-selected' : ''}`}
+                            style={{
+                              top: `${el.top}%`,
+                              left: `${el.left}%`,
+                              width: `${el.width}%`,
+                              height: `${el.height}%`,
+                            }}
+                            onPointerDown={(e) => handlePointerDownMove(e, el)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActiveElementId(el.id);
+                            }}
+                            title={__('Arraste para mover. Use os pontos ao redor para redimensionar.', 'simulador-software-abnt')}
+                          >
+                            {/* 4-way arrow move handle bar (Drag & Drop) */}
+                            <div
+                              className="sim-element-move-handle"
+                              onPointerDown={(e) => handlePointerDownMove(e, el)}
+                              title={__('Clique e arraste para posicionar', 'simulador-software-abnt')}
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="14"
+                                height="14"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <polyline points="5 9 2 12 5 15"></polyline>
+                                <polyline points="9 5 12 2 15 5"></polyline>
+                                <polyline points="15 19 12 22 9 19"></polyline>
+                                <polyline points="19 9 22 12 19 15"></polyline>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <line x1="12" y1="2" x2="12" y2="22"></line>
+                              </svg>
+                              <span className="sim-move-text">
+                                {el.type === 'click' ? '🎯 Mover Clique' : (el.type === 'drag' ? '✋ Mover Drag' : '⌨️ Mover Input')}
+                              </span>
+                            </div>
+
+                            <span className="sim-element-badge">
+                              {el.type === 'click' ? '🎯 ' : (el.type === 'drag' ? '✋ ' : '⌨️ ')}
+                              {el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`}
+                            </span>
+
+                            {isSelected && (
+                              <>
+                                <span className="sim-coords-badge">
+                                  {el.type === 'click' ? '🎯 Clique' : (el.type === 'drag' ? '✋ Drag' : '⌨️ Input')}: X: {el.left.toFixed(1)}% Y: {el.top.toFixed(1)}% | L: {el.width.toFixed(1)}% A: {el.height.toFixed(1)}%
+                                </span>
+
+                                {/* 8 Resize Handles */}
+                                <div
+                                  className="sim-resize-handle handle-nw"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'nw')}
+                                  title={__('Redimensionar (Noroeste)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-n"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'n')}
+                                  title={__('Redimensionar (Norte)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-ne"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'ne')}
+                                  title={__('Redimensionar (Nordeste)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-e"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'e')}
+                                  title={__('Redimensionar (Leste)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-se"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'se')}
+                                  title={__('Redimensionar (Sudeste)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-s"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 's')}
+                                  title={__('Redimensionar (Sul)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-sw"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'sw')}
+                                  title={__('Redimensionar (Sudoeste)', 'simulador-software-abnt')}
+                                />
+                                <div
+                                  className="sim-resize-handle handle-w"
+                                  onPointerDown={(e) => handlePointerDownResize(e, el, 'w')}
+                                  title={__('Redimensionar (Oeste)', 'simulador-software-abnt')}
+                                />
+                              </>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 ) : (
                   <div style={{ padding: '60px 20px', textAlign: 'center', color: '#94a3b8' }}>
                     <p style={{ fontSize: '16px', fontWeight: 600 }}>
@@ -732,118 +999,6 @@ export default function Edit({ attributes, setAttributes }) {
                     </MediaUploadCheck>
                   </div>
                 )}
-
-                {/* Overlaid Interactive Elements */}
-                <div
-                  className="sim-elements-layer"
-                  ref={stageRef}
-                  onClick={() => setActiveElementId(null)}
-                >
-                  {(currentStep.elements || []).map((el, elIdx) => {
-                    const isSelected = el.id === activeElementId;
-                    return (
-                      <div
-                        key={el.id || elIdx}
-                        className={`sim-editor-overlay-element type-${el.type} ${isSelected ? 'is-element-selected' : ''}`}
-                        style={{
-                          top: `${el.top}%`,
-                          left: `${el.left}%`,
-                          width: `${el.width}%`,
-                          height: `${el.height}%`,
-                        }}
-                        onPointerDown={(e) => handlePointerDownMove(e, el)}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setActiveElementId(el.id);
-                        }}
-                        title={__('Arraste para mover. Use os pontos ao redor para redimensionar.', 'simulador-software-abnt')}
-                      >
-                        {/* 4-way arrow move handle bar (Drag & Drop) */}
-                        <div
-                          className="sim-element-move-handle"
-                          onPointerDown={(e) => handlePointerDownMove(e, el)}
-                          title={__('Clique e arraste para posicionar', 'simulador-software-abnt')}
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            width="14"
-                            height="14"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <polyline points="5 9 2 12 5 15"></polyline>
-                            <polyline points="9 5 12 2 15 5"></polyline>
-                            <polyline points="15 19 12 22 9 19"></polyline>
-                            <polyline points="19 9 22 12 19 15"></polyline>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <line x1="12" y1="2" x2="12" y2="22"></line>
-                          </svg>
-                          <span className="sim-move-text">
-                            {el.type === 'click' ? '🎯 Mover Clique' : '⌨️ Mover Input'}
-                          </span>
-                        </div>
-
-                        <span className="sim-element-badge">
-                          {el.type === 'click' ? '🎯 ' : '⌨️ '}
-                          {el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`}
-                        </span>
-
-                        {isSelected && (
-                          <>
-                            <span className="sim-coords-badge">
-                              {el.type === 'click' ? '🎯 Clique' : '⌨️ Input'}: X: {el.left.toFixed(1)}% Y: {el.top.toFixed(1)}% | L: {el.width.toFixed(1)}% A: {el.height.toFixed(1)}%
-                            </span>
-
-                            {/* 8 Resize Handles */}
-                            <div
-                              className="sim-resize-handle handle-nw"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'nw')}
-                              title={__('Redimensionar (Noroeste)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-n"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'n')}
-                              title={__('Redimensionar (Norte)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-ne"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'ne')}
-                              title={__('Redimensionar (Nordeste)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-e"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'e')}
-                              title={__('Redimensionar (Leste)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-se"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'se')}
-                              title={__('Redimensionar (Sudeste)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-s"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 's')}
-                              title={__('Redimensionar (Sul)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-sw"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'sw')}
-                              title={__('Redimensionar (Sudoeste)', 'simulador-software-abnt')}
-                            />
-                            <div
-                              className="sim-resize-handle handle-w"
-                              onPointerDown={(e) => handlePointerDownResize(e, el, 'w')}
-                              title={__('Redimensionar (Oeste)', 'simulador-software-abnt')}
-                            />
-                          </>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
               </div>
 
               {/* Instruction Bar */}
