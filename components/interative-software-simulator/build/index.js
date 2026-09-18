@@ -191,10 +191,10 @@
         {
           id: "el-tab-layout",
           type: "click",
-          top: 4.1,
+          top: 4.5,
           left: 22.4,
-          width: 4,
-          height: 3.4,
+          width: 4.2,
+          height: 3.6,
           label: "Aba Layout",
           targetStepIndex: 3
         }
@@ -447,8 +447,13 @@
         fitHeight = canvasHeight;
         fitWidth = canvasHeight * ar;
       }
-      stageScreenRef.current.style.width = `${Math.round(fitWidth * 100) / 100}px`;
-      stageScreenRef.current.style.height = `${Math.round(fitHeight * 100) / 100}px`;
+      const wStr = `${Math.round(fitWidth * 100) / 100}px`;
+      const hStr = `${Math.round(fitHeight * 100) / 100}px`;
+      stageScreenRef.current.style.width = wStr;
+      stageScreenRef.current.style.height = hStr;
+      stageScreenRef.current.style.maxWidth = wStr;
+      stageScreenRef.current.style.maxHeight = hStr;
+      stageScreenRef.current.style.aspectRatio = `${ar}`;
     };
     (0, import_element.useEffect)(() => {
       updateEditorStageDimensions();

@@ -52,10 +52,10 @@ export const DEFAULT_ABNT_SCENARIO = [
       {
         id: 'el-tab-layout',
         type: 'click',
-        top: 4.1,
+        top: 4.5,
         left: 22.4,
-        width: 4.0,
-        height: 3.4,
+        width: 4.2,
+        height: 3.6,
         label: 'Aba Layout',
         targetStepIndex: 3
       }

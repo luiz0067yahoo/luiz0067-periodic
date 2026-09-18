@@ -200,8 +200,14 @@ export default function Edit({ attributes, setAttributes }) {
       fitWidth = canvasHeight * ar;
     }
 
-    stageScreenRef.current.style.width = `${Math.round(fitWidth * 100) / 100}px`;
-    stageScreenRef.current.style.height = `${Math.round(fitHeight * 100) / 100}px`;
+    const wStr = `${Math.round(fitWidth * 100) / 100}px`;
+    const hStr = `${Math.round(fitHeight * 100) / 100}px`;
+
+    stageScreenRef.current.style.width = wStr;
+    stageScreenRef.current.style.height = hStr;
+    stageScreenRef.current.style.maxWidth = wStr;
+    stageScreenRef.current.style.maxHeight = hStr;
+    stageScreenRef.current.style.aspectRatio = `${ar}`;
   };
 
   useEffect(() => {

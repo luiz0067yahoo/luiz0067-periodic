@@ -132,7 +132,16 @@
         this.resizeObserver.observe(this.stageCanvas);
       }
       window.addEventListener("resize", () => this.updateStageDimensions());
+      window.addEventListener("orientationchange", () => {
+        setTimeout(() => this.updateStageDimensions(), 60);
+        setTimeout(() => this.updateStageDimensions(), 250);
+      });
       document.addEventListener("fullscreenchange", () => {
+        setTimeout(() => this.updateStageDimensions(), 50);
+        setTimeout(() => this.updateStageDimensions(), 250);
+        setTimeout(() => this.updateStageDimensions(), 500);
+      });
+      document.addEventListener("webkitfullscreenchange", () => {
         setTimeout(() => this.updateStageDimensions(), 50);
         setTimeout(() => this.updateStageDimensions(), 250);
       });
@@ -162,8 +171,13 @@
         fitHeight = canvasHeight;
         fitWidth = canvasHeight * ar;
       }
-      this.stageScreen.style.width = `${Math.round(fitWidth * 100) / 100}px`;
-      this.stageScreen.style.height = `${Math.round(fitHeight * 100) / 100}px`;
+      const wStr = `${Math.round(fitWidth * 100) / 100}px`;
+      const hStr = `${Math.round(fitHeight * 100) / 100}px`;
+      this.stageScreen.style.width = wStr;
+      this.stageScreen.style.height = hStr;
+      this.stageScreen.style.maxWidth = wStr;
+      this.stageScreen.style.maxHeight = hStr;
+      this.stageScreen.style.aspectRatio = `${ar}`;
     }
     renderStep(stepIndex) {
       if (stepIndex < 0 || stepIndex >= this.steps.length) {
@@ -513,16 +527,21 @@
         if (this.wrapper.requestFullscreen) {
           this.wrapper.requestFullscreen().catch(() => {
           });
+        } else if (this.wrapper.webkitRequestFullscreen) {
+          this.wrapper.webkitRequestFullscreen();
         }
       } else {
         this.wrapper.classList.remove("is-fullscreen");
         if (document.fullscreenElement && document.exitFullscreen) {
           document.exitFullscreen().catch(() => {
           });
+        } else if (document.webkitFullscreenElement && document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
         }
       }
       setTimeout(() => this.updateStageDimensions(), 50);
       setTimeout(() => this.updateStageDimensions(), 250);
+      setTimeout(() => this.updateStageDimensions(), 500);
     }
     escapeHTML(str) {
       return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

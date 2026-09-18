@@ -25,26 +25,32 @@
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
+  &:fullscreen,
+  &:-webkit-full-screen,
   &.is-fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
     max-width: none !important;
     margin: 0 !important;
-    border-radius: 0;
-    z-index: 999999;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-radius: 0 !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: #0f172a !important;
 
     .sim-stage-canvas {
-      flex: 1 1 0;
-      min-height: 0;
-      height: 100%;
-      width: 100%;
-      aspect-ratio: unset;
+      flex: 1 1 0 !important;
+      min-height: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      aspect-ratio: unset !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
   }
 }
@@ -168,13 +174,15 @@
     position: relative;
     max-width: 100%;
     max-height: 100%;
-    width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
+    width: auto;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: visible;
     flex-shrink: 0;
+    margin: auto;
 
     .sim-bg-image {
       width: 100%;
@@ -214,6 +222,19 @@
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
   animation: sim-pulse 2s infinite;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  /* Invisible expansion for touch target on mobile */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    left: -8px;
+    right: -8px;
+    pointer-events: auto;
+  }
 
   &:hover {
     background: rgba(59, 130, 246, 0.32);
@@ -638,41 +659,147 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .wp-block-custom-simulador-software {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sim-player-wrapper {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+  }
+
   .sim-header-bar {
     padding: 8px 12px;
+    gap: 8px;
 
-    .sim-header-title {
-      font-size: 0.75rem;
+    .sim-title-group {
+      gap: 6px;
+
+      .sim-window-dots {
+        display: none;
+      }
+
+      .sim-header-title {
+        font-size: 0.78rem;
+      }
+    }
+
+    .sim-header-controls {
+      gap: 8px;
+
+      .sim-step-badge {
+        font-size: 0.68rem;
+        padding: 3px 8px;
+        white-space: nowrap;
+      }
+
+      .sim-btn-icon {
+        padding: 4px;
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
     }
   }
 
   .sim-instruction-bar {
-    padding: 10px 14px;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px 12px;
     gap: 8px;
 
+    .sim-instruction-content {
+      gap: 8px;
+
+      .sim-instruction-icon {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+        svg {
+          width: 13px;
+          height: 13px;
+        }
+      }
+
+      .sim-instruction-text {
+        font-size: 0.82rem;
+        line-height: 1.35;
+      }
+    }
+
     .sim-instruction-actions {
-      width: 100%;
-      justify-content: flex-end;
+      .sim-btn-restart {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
     }
   }
 
+  .sim-input-box {
+    font-size: clamp(10px, 2.6vw, 14px) !important;
+    padding: 0 4px !important;
+  }
+
+  .sim-input-submit-btn {
+    padding: 3px 6px !important;
+    svg {
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
+
+  .sim-drop-zone-content,
+  .sim-drag-item-inner {
+    font-size: clamp(9px, 2.2vw, 12px) !important;
+    gap: 4px !important;
+    padding: 1px 4px !important;
+  }
+
   .sim-completion-screen {
-    padding: 20px;
+    padding: 18px 14px;
 
     .sim-completion-badge {
-      width: 60px;
-      height: 60px;
-      svg { width: 32px; height: 32px; }
+      width: 52px;
+      height: 52px;
+      margin-bottom: 12px;
+      svg { width: 28px; height: 28px; }
     }
 
     .sim-completion-title {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
     }
 
     .sim-completion-desc {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+    }
+
+    .sim-btn-restart-large {
+      padding: 8px 18px;
+      font-size: 0.82rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .sim-instruction-bar {
+    flex-direction: column;
+    align-items: stretch;
+
+    .sim-instruction-actions {
+      justify-content: flex-end;
+      width: 100%;
     }
   }
 }
