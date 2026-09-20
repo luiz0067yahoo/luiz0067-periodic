@@ -71,7 +71,6 @@
 
       <div class="sim-stage-canvas">
         <div class="sim-stage-screen">
-          <img class="sim-bg-image" src="" alt="Tela do Software" />
           <div class="sim-elements-layer"></div>
         </div>
         <div class="sim-error-toast">
@@ -110,7 +109,6 @@
     `;
       this.stageCanvas = this.wrapper.querySelector(".sim-stage-canvas");
       this.stageScreen = this.wrapper.querySelector(".sim-stage-screen");
-      this.bgImage = this.wrapper.querySelector(".sim-bg-image");
       this.elementsLayer = this.wrapper.querySelector(".sim-elements-layer");
       this.instructionText = this.wrapper.querySelector(".sim-instruction-text");
       this.stepBadge = this.wrapper.querySelector(".sim-step-badge");
@@ -145,12 +143,9 @@
         setTimeout(() => this.updateStageDimensions(), 50);
         setTimeout(() => this.updateStageDimensions(), 250);
       });
-      this.bgImage.addEventListener("load", () => {
-        this.updateStageDimensions();
-      });
       if (this.config.allowClickAnywhereHint !== false) {
         this.stageCanvas.addEventListener("click", (e) => {
-          if (e.target === this.stageCanvas || e.target === this.stageScreen || e.target === this.bgImage || e.target === this.elementsLayer) {
+          if (e.target === this.stageCanvas || e.target === this.stageScreen || e.target === this.elementsLayer) {
             this.triggerMissedClick();
           }
         });
@@ -161,10 +156,7 @@
       const canvasWidth = this.stageCanvas.clientWidth;
       const canvasHeight = this.stageCanvas.clientHeight;
       if (!canvasWidth || !canvasHeight) return;
-      let ar = 16 / 9;
-      if (this.bgImage && this.bgImage.naturalWidth && this.bgImage.naturalHeight) {
-        ar = this.bgImage.naturalWidth / this.bgImage.naturalHeight;
-      }
+      let ar = this.currentImageRatio || 16 / 9;
       let fitWidth = canvasWidth;
       let fitHeight = canvasWidth / ar;
       if (fitHeight > canvasHeight) {
@@ -199,17 +191,35 @@
       }
       this.stageCanvas.classList.add("is-animating");
       const resolvedUrl = this.resolveImageUrl(step.imageUrl || "");
-      setTimeout(() => {
-        this.bgImage.src = resolvedUrl;
-        this.bgImage.onload = () => {
+      if (resolvedUrl) {
+        this.stageCanvas.style.backgroundImage = `url("${resolvedUrl}")`;
+        this.stageCanvas.style.backgroundSize = "contain";
+        this.stageCanvas.style.backgroundPosition = "center";
+        this.stageCanvas.style.backgroundRepeat = "no-repeat";
+        const preloadImg = new Image();
+        preloadImg.onload = () => {
+          if (preloadImg.naturalWidth && preloadImg.naturalHeight) {
+            this.currentImageRatio = preloadImg.naturalWidth / preloadImg.naturalHeight;
+          }
           this.stageCanvas.classList.remove("is-animating");
           this.updateStageDimensions();
         };
-        setTimeout(() => {
+        preloadImg.onerror = () => {
           this.stageCanvas.classList.remove("is-animating");
           this.updateStageDimensions();
-        }, 200);
-      }, 100);
+        };
+        preloadImg.src = resolvedUrl;
+        if (preloadImg.complete && preloadImg.naturalWidth) {
+          this.currentImageRatio = preloadImg.naturalWidth / preloadImg.naturalHeight;
+          this.stageCanvas.classList.remove("is-animating");
+          this.updateStageDimensions();
+        }
+      } else {
+        this.stageCanvas.style.backgroundImage = "none";
+        this.currentImageRatio = 16 / 9;
+        this.stageCanvas.classList.remove("is-animating");
+        this.updateStageDimensions();
+      }
       this.elementsLayer.innerHTML = "";
       const elements = step.elements || [];
       elements.forEach((el) => {

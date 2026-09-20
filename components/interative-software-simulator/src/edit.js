@@ -174,11 +174,29 @@ export default function Edit({ attributes, setAttributes }) {
   const stageRef = useRef(null);
   const stageCanvasRef = useRef(null);
   const stageScreenRef = useRef(null);
-  const bgImageRef = useRef(null);
+  const [imageRatio, setImageRatio] = useState(16 / 9);
   const stepsRef = useRef(steps);
   stepsRef.current = steps;
   const activeIndexRef = useRef(activeStepIndex);
   activeIndexRef.current = activeStepIndex;
+
+  useEffect(() => {
+    const url = currentStep?.imageUrl ? getResolvedImageUrl(currentStep.imageUrl) : '';
+    if (url) {
+      const img = new Image();
+      img.onload = () => {
+        if (img.naturalWidth && img.naturalHeight) {
+          setImageRatio(img.naturalWidth / img.naturalHeight);
+        }
+      };
+      img.src = url;
+      if (img.complete && img.naturalWidth) {
+        setImageRatio(img.naturalWidth / img.naturalHeight);
+      }
+    } else {
+      setImageRatio(16 / 9);
+    }
+  }, [currentStep?.imageUrl]);
 
   const updateEditorStageDimensions = () => {
     if (!stageCanvasRef.current || !stageScreenRef.current) return;
@@ -186,11 +204,7 @@ export default function Edit({ attributes, setAttributes }) {
     const canvasHeight = stageCanvasRef.current.clientHeight;
     if (!canvasWidth || !canvasHeight) return;
 
-    let ar = 16 / 9;
-    const img = bgImageRef.current;
-    if (img && img.naturalWidth && img.naturalHeight) {
-      ar = img.naturalWidth / img.naturalHeight;
-    }
+    let ar = imageRatio || (16 / 9);
 
     let fitWidth = canvasWidth;
     let fitHeight = canvasWidth / ar;
@@ -227,7 +241,7 @@ export default function Edit({ attributes, setAttributes }) {
       if (ro) ro.disconnect();
       window.removeEventListener('resize', handleResize);
     };
-  }, [activeStepIndex, currentStep?.imageUrl]);
+  }, [activeStepIndex, currentStep?.imageUrl, imageRatio]);
 
   const handlePointerDownMove = (e, el) => {
     if (e.button !== 0) return;
@@ -837,17 +851,18 @@ export default function Edit({ attributes, setAttributes }) {
               </div>
 
               {/* Stage */}
-              <div className="sim-stage-canvas" ref={stageCanvasRef}>
+              <div
+                className="sim-stage-canvas"
+                ref={stageCanvasRef}
+                style={{
+                  backgroundImage: currentStep.imageUrl ? `url("${getResolvedImageUrl(currentStep.imageUrl)}")` : 'none',
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
                 {currentStep.imageUrl ? (
                   <div className="sim-stage-screen" ref={stageScreenRef}>
-                    <img
-                      ref={bgImageRef}
-                      src={getResolvedImageUrl(currentStep.imageUrl)}
-                      alt={currentStep.title}
-                      className="sim-bg-image"
-                      onLoad={updateEditorStageDimensions}
-                    />
-
                     {/* Overlaid Interactive Elements */}
                     <div
                       className="sim-elements-layer"

@@ -426,21 +426,34 @@
     const stageRef = (0, import_element.useRef)(null);
     const stageCanvasRef = (0, import_element.useRef)(null);
     const stageScreenRef = (0, import_element.useRef)(null);
-    const bgImageRef = (0, import_element.useRef)(null);
+    const [imageRatio, setImageRatio] = (0, import_element.useState)(16 / 9);
     const stepsRef = (0, import_element.useRef)(steps);
     stepsRef.current = steps;
     const activeIndexRef = (0, import_element.useRef)(activeStepIndex);
     activeIndexRef.current = activeStepIndex;
+    (0, import_element.useEffect)(() => {
+      const url = currentStep?.imageUrl ? getResolvedImageUrl(currentStep.imageUrl) : "";
+      if (url) {
+        const img = new Image();
+        img.onload = () => {
+          if (img.naturalWidth && img.naturalHeight) {
+            setImageRatio(img.naturalWidth / img.naturalHeight);
+          }
+        };
+        img.src = url;
+        if (img.complete && img.naturalWidth) {
+          setImageRatio(img.naturalWidth / img.naturalHeight);
+        }
+      } else {
+        setImageRatio(16 / 9);
+      }
+    }, [currentStep?.imageUrl]);
     const updateEditorStageDimensions = () => {
       if (!stageCanvasRef.current || !stageScreenRef.current) return;
       const canvasWidth = stageCanvasRef.current.clientWidth;
       const canvasHeight = stageCanvasRef.current.clientHeight;
       if (!canvasWidth || !canvasHeight) return;
-      let ar = 16 / 9;
-      const img = bgImageRef.current;
-      if (img && img.naturalWidth && img.naturalHeight) {
-        ar = img.naturalWidth / img.naturalHeight;
-      }
+      let ar = imageRatio || 16 / 9;
       let fitWidth = canvasWidth;
       let fitHeight = canvasWidth / ar;
       if (fitHeight > canvasHeight) {
@@ -470,7 +483,7 @@
         if (ro) ro.disconnect();
         window.removeEventListener("resize", handleResize);
       };
-    }, [activeStepIndex, currentStep?.imageUrl]);
+    }, [activeStepIndex, currentStep?.imageUrl, imageRatio]);
     const handlePointerDownMove = (e, el) => {
       if (e.button !== 0) return;
       e.stopPropagation();
@@ -1019,161 +1032,165 @@
         className: "sim-progress-fill",
         style: { width: `${(activeStepIndex + 1) / steps.length * 100}%` }
       }
-    )), /* @__PURE__ */ React.createElement("div", { className: "sim-stage-canvas", ref: stageCanvasRef }, currentStep.imageUrl ? /* @__PURE__ */ React.createElement("div", { className: "sim-stage-screen", ref: stageScreenRef }, /* @__PURE__ */ React.createElement(
-      "img",
-      {
-        ref: bgImageRef,
-        src: getResolvedImageUrl(currentStep.imageUrl),
-        alt: currentStep.title,
-        className: "sim-bg-image",
-        onLoad: updateEditorStageDimensions
-      }
-    ), /* @__PURE__ */ React.createElement(
+    )), /* @__PURE__ */ React.createElement(
       "div",
       {
-        className: "sim-elements-layer",
-        ref: stageRef,
-        onClick: () => setActiveElementId(null)
+        className: "sim-stage-canvas",
+        ref: stageCanvasRef,
+        style: {
+          backgroundImage: currentStep.imageUrl ? `url("${getResolvedImageUrl(currentStep.imageUrl)}")` : "none",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }
       },
-      (currentStep.elements || []).map((el, elIdx) => {
-        if (el.type !== "drag") return null;
-        const isSelected = el.id === activeElementId;
-        const tTop = el.targetTop !== void 0 ? el.targetTop : el.top;
-        const tLeft = el.targetLeft !== void 0 ? el.targetLeft : el.left + 25;
-        const tWidth = el.targetWidth !== void 0 ? el.targetWidth : 16;
-        const tHeight = el.targetHeight !== void 0 ? el.targetHeight : 12;
-        return /* @__PURE__ */ React.createElement(
-          "div",
-          {
-            key: `dropzone-${el.id || elIdx}`,
-            className: `sim-editor-drop-zone ${isSelected ? "is-zone-selected" : ""}`,
-            style: {
-              top: `${tTop}%`,
-              left: `${tLeft}%`,
-              width: `${tWidth}%`,
-              height: `${tHeight}%`
-            },
-            title: (0, import_i18n.__)("\xC1rea de Destino (Drop Zone)", "simulador-software-abnt")
-          },
-          /* @__PURE__ */ React.createElement("span", { className: "sim-drop-zone-badge" }, "\u{1F4E5} ", el.targetLabel || "Solte Aqui")
-        );
-      }),
-      (currentStep.elements || []).map((el, elIdx) => {
-        const isSelected = el.id === activeElementId;
-        return /* @__PURE__ */ React.createElement(
-          "div",
-          {
-            key: el.id || elIdx,
-            className: `sim-editor-overlay-element type-${el.type} ${isSelected ? "is-element-selected" : ""}`,
-            style: {
-              top: `${el.top}%`,
-              left: `${el.left}%`,
-              width: `${el.width}%`,
-              height: `${el.height}%`
-            },
-            onPointerDown: (e) => handlePointerDownMove(e, el),
-            onClick: (e) => {
-              e.stopPropagation();
-              setActiveElementId(el.id);
-            },
-            title: (0, import_i18n.__)("Arraste para mover. Use os pontos ao redor para redimensionar.", "simulador-software-abnt")
-          },
-          /* @__PURE__ */ React.createElement(
+      currentStep.imageUrl ? /* @__PURE__ */ React.createElement("div", { className: "sim-stage-screen", ref: stageScreenRef }, /* @__PURE__ */ React.createElement(
+        "div",
+        {
+          className: "sim-elements-layer",
+          ref: stageRef,
+          onClick: () => setActiveElementId(null)
+        },
+        (currentStep.elements || []).map((el, elIdx) => {
+          if (el.type !== "drag") return null;
+          const isSelected = el.id === activeElementId;
+          const tTop = el.targetTop !== void 0 ? el.targetTop : el.top;
+          const tLeft = el.targetLeft !== void 0 ? el.targetLeft : el.left + 25;
+          const tWidth = el.targetWidth !== void 0 ? el.targetWidth : 16;
+          const tHeight = el.targetHeight !== void 0 ? el.targetHeight : 12;
+          return /* @__PURE__ */ React.createElement(
             "div",
             {
-              className: "sim-element-move-handle",
+              key: `dropzone-${el.id || elIdx}`,
+              className: `sim-editor-drop-zone ${isSelected ? "is-zone-selected" : ""}`,
+              style: {
+                top: `${tTop}%`,
+                left: `${tLeft}%`,
+                width: `${tWidth}%`,
+                height: `${tHeight}%`
+              },
+              title: (0, import_i18n.__)("\xC1rea de Destino (Drop Zone)", "simulador-software-abnt")
+            },
+            /* @__PURE__ */ React.createElement("span", { className: "sim-drop-zone-badge" }, "\u{1F4E5} ", el.targetLabel || "Solte Aqui")
+          );
+        }),
+        (currentStep.elements || []).map((el, elIdx) => {
+          const isSelected = el.id === activeElementId;
+          return /* @__PURE__ */ React.createElement(
+            "div",
+            {
+              key: el.id || elIdx,
+              className: `sim-editor-overlay-element type-${el.type} ${isSelected ? "is-element-selected" : ""}`,
+              style: {
+                top: `${el.top}%`,
+                left: `${el.left}%`,
+                width: `${el.width}%`,
+                height: `${el.height}%`
+              },
               onPointerDown: (e) => handlePointerDownMove(e, el),
-              title: (0, import_i18n.__)("Clique e arraste para posicionar", "simulador-software-abnt")
+              onClick: (e) => {
+                e.stopPropagation();
+                setActiveElementId(el.id);
+              },
+              title: (0, import_i18n.__)("Arraste para mover. Use os pontos ao redor para redimensionar.", "simulador-software-abnt")
             },
             /* @__PURE__ */ React.createElement(
-              "svg",
+              "div",
               {
-                viewBox: "0 0 24 24",
-                width: "14",
-                height: "14",
-                fill: "none",
-                stroke: "currentColor",
-                strokeWidth: "2.5",
-                strokeLinecap: "round",
-                strokeLinejoin: "round"
+                className: "sim-element-move-handle",
+                onPointerDown: (e) => handlePointerDownMove(e, el),
+                title: (0, import_i18n.__)("Clique e arraste para posicionar", "simulador-software-abnt")
               },
-              /* @__PURE__ */ React.createElement("polyline", { points: "5 9 2 12 5 15" }),
-              /* @__PURE__ */ React.createElement("polyline", { points: "9 5 12 2 15 5" }),
-              /* @__PURE__ */ React.createElement("polyline", { points: "15 19 12 22 9 19" }),
-              /* @__PURE__ */ React.createElement("polyline", { points: "19 9 22 12 19 15" }),
-              /* @__PURE__ */ React.createElement("line", { x1: "2", y1: "12", x2: "22", y2: "12" }),
-              /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "2", x2: "12", y2: "22" })
+              /* @__PURE__ */ React.createElement(
+                "svg",
+                {
+                  viewBox: "0 0 24 24",
+                  width: "14",
+                  height: "14",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2.5",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                },
+                /* @__PURE__ */ React.createElement("polyline", { points: "5 9 2 12 5 15" }),
+                /* @__PURE__ */ React.createElement("polyline", { points: "9 5 12 2 15 5" }),
+                /* @__PURE__ */ React.createElement("polyline", { points: "15 19 12 22 9 19" }),
+                /* @__PURE__ */ React.createElement("polyline", { points: "19 9 22 12 19 15" }),
+                /* @__PURE__ */ React.createElement("line", { x1: "2", y1: "12", x2: "22", y2: "12" }),
+                /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "2", x2: "12", y2: "22" })
+              ),
+              /* @__PURE__ */ React.createElement("span", { className: "sim-move-text" }, el.type === "click" ? "\u{1F3AF} Mover Clique" : el.type === "drag" ? "\u270B Mover Drag" : "\u2328\uFE0F Mover Input")
             ),
-            /* @__PURE__ */ React.createElement("span", { className: "sim-move-text" }, el.type === "click" ? "\u{1F3AF} Mover Clique" : el.type === "drag" ? "\u270B Mover Drag" : "\u2328\uFE0F Mover Input")
-          ),
-          /* @__PURE__ */ React.createElement("span", { className: "sim-element-badge" }, el.type === "click" ? "\u{1F3AF} " : el.type === "drag" ? "\u270B " : "\u2328\uFE0F ", el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`),
-          isSelected && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { className: "sim-coords-badge" }, el.type === "click" ? "\u{1F3AF} Clique" : el.type === "drag" ? "\u270B Drag" : "\u2328\uFE0F Input", ": X: ", el.left.toFixed(1), "% Y: ", el.top.toFixed(1), "% | L: ", el.width.toFixed(1), "% A: ", el.height.toFixed(1), "%"), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-nw",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "nw"),
-              title: (0, import_i18n.__)("Redimensionar (Noroeste)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-n",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "n"),
-              title: (0, import_i18n.__)("Redimensionar (Norte)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-ne",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "ne"),
-              title: (0, import_i18n.__)("Redimensionar (Nordeste)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-e",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "e"),
-              title: (0, import_i18n.__)("Redimensionar (Leste)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-se",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "se"),
-              title: (0, import_i18n.__)("Redimensionar (Sudeste)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-s",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "s"),
-              title: (0, import_i18n.__)("Redimensionar (Sul)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-sw",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "sw"),
-              title: (0, import_i18n.__)("Redimensionar (Sudoeste)", "simulador-software-abnt")
-            }
-          ), /* @__PURE__ */ React.createElement(
-            "div",
-            {
-              className: "sim-resize-handle handle-w",
-              onPointerDown: (e) => handlePointerDownResize(e, el, "w"),
-              title: (0, import_i18n.__)("Redimensionar (Oeste)", "simulador-software-abnt")
-            }
-          ))
-        );
-      })
-    )) : /* @__PURE__ */ React.createElement("div", { style: { padding: "60px 20px", textAlign: "center", color: "#94a3b8" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: "16px", fontWeight: 600 } }, (0, import_i18n.__)("Nenhuma imagem selecionada para este passo.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_block_editor.MediaUploadCheck, null, /* @__PURE__ */ React.createElement(
-      import_block_editor.MediaUpload,
-      {
-        onSelect: (media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id }),
-        allowedTypes: ["image"],
-        render: ({ open }) => /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: open }, (0, import_i18n.__)("Carregar Imagem de Fundo", "simulador-software-abnt"))
-      }
-    )))), /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-bar" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-content" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-icon" }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2" }, /* @__PURE__ */ React.createElement("circle", { cx: "12", cy: "12", r: "10" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "16", x2: "12", y2: "12" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "8", x2: "12.01", y2: "8" }))), /* @__PURE__ */ React.createElement("p", { className: "sim-instruction-text" }, currentStep.instruction || (0, import_i18n.__)("Insira uma instru\xE7\xE3o para orientar o aluno.", "simulador-software-abnt"))))) : /* @__PURE__ */ React.createElement("div", { className: "sim-editor-empty-state" }, /* @__PURE__ */ React.createElement("h3", null, (0, import_i18n.__)("Nenhum passo criado ainda.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: handleLoadDefaultScenario }, (0, import_i18n.__)("Carregar Cen\xE1rio Padr\xE3o (ABNT Windows 11)", "simulador-software-abnt"))))));
+            /* @__PURE__ */ React.createElement("span", { className: "sim-element-badge" }, el.type === "click" ? "\u{1F3AF} " : el.type === "drag" ? "\u270B " : "\u2328\uFE0F ", el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`),
+            isSelected && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { className: "sim-coords-badge" }, el.type === "click" ? "\u{1F3AF} Clique" : el.type === "drag" ? "\u270B Drag" : "\u2328\uFE0F Input", ": X: ", el.left.toFixed(1), "% Y: ", el.top.toFixed(1), "% | L: ", el.width.toFixed(1), "% A: ", el.height.toFixed(1), "%"), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-nw",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "nw"),
+                title: (0, import_i18n.__)("Redimensionar (Noroeste)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-n",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "n"),
+                title: (0, import_i18n.__)("Redimensionar (Norte)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-ne",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "ne"),
+                title: (0, import_i18n.__)("Redimensionar (Nordeste)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-e",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "e"),
+                title: (0, import_i18n.__)("Redimensionar (Leste)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-se",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "se"),
+                title: (0, import_i18n.__)("Redimensionar (Sudeste)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-s",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "s"),
+                title: (0, import_i18n.__)("Redimensionar (Sul)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-sw",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "sw"),
+                title: (0, import_i18n.__)("Redimensionar (Sudoeste)", "simulador-software-abnt")
+              }
+            ), /* @__PURE__ */ React.createElement(
+              "div",
+              {
+                className: "sim-resize-handle handle-w",
+                onPointerDown: (e) => handlePointerDownResize(e, el, "w"),
+                title: (0, import_i18n.__)("Redimensionar (Oeste)", "simulador-software-abnt")
+              }
+            ))
+          );
+        })
+      )) : /* @__PURE__ */ React.createElement("div", { style: { padding: "60px 20px", textAlign: "center", color: "#94a3b8" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: "16px", fontWeight: 600 } }, (0, import_i18n.__)("Nenhuma imagem selecionada para este passo.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_block_editor.MediaUploadCheck, null, /* @__PURE__ */ React.createElement(
+        import_block_editor.MediaUpload,
+        {
+          onSelect: (media) => updateCurrentStep({ imageUrl: media.url, imageId: media.id }),
+          allowedTypes: ["image"],
+          render: ({ open }) => /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: open }, (0, import_i18n.__)("Carregar Imagem de Fundo", "simulador-software-abnt"))
+        }
+      )))
+    ), /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-bar" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-content" }, /* @__PURE__ */ React.createElement("div", { className: "sim-instruction-icon" }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2" }, /* @__PURE__ */ React.createElement("circle", { cx: "12", cy: "12", r: "10" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "16", x2: "12", y2: "12" }), /* @__PURE__ */ React.createElement("line", { x1: "12", y1: "8", x2: "12.01", y2: "8" }))), /* @__PURE__ */ React.createElement("p", { className: "sim-instruction-text" }, currentStep.instruction || (0, import_i18n.__)("Insira uma instru\xE7\xE3o para orientar o aluno.", "simulador-software-abnt"))))) : /* @__PURE__ */ React.createElement("div", { className: "sim-editor-empty-state" }, /* @__PURE__ */ React.createElement("h3", null, (0, import_i18n.__)("Nenhum passo criado ainda.", "simulador-software-abnt")), /* @__PURE__ */ React.createElement(import_components.Button, { variant: "primary", onClick: handleLoadDefaultScenario }, (0, import_i18n.__)("Carregar Cen\xE1rio Padr\xE3o (ABNT Windows 11)", "simulador-software-abnt"))))));
   }
 
   // src/save.js

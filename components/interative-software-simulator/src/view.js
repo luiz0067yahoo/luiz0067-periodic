@@ -86,7 +86,6 @@ class SoftwareSimulator {
 
       <div class="sim-stage-canvas">
         <div class="sim-stage-screen">
-          <img class="sim-bg-image" src="" alt="Tela do Software" />
           <div class="sim-elements-layer"></div>
         </div>
         <div class="sim-error-toast">
@@ -127,7 +126,6 @@ class SoftwareSimulator {
     // Cache DOM nodes
     this.stageCanvas = this.wrapper.querySelector('.sim-stage-canvas');
     this.stageScreen = this.wrapper.querySelector('.sim-stage-screen');
-    this.bgImage = this.wrapper.querySelector('.sim-bg-image');
     this.elementsLayer = this.wrapper.querySelector('.sim-elements-layer');
     this.instructionText = this.wrapper.querySelector('.sim-instruction-text');
     this.stepBadge = this.wrapper.querySelector('.sim-step-badge');
@@ -168,18 +166,13 @@ class SoftwareSimulator {
       setTimeout(() => this.updateStageDimensions(), 250);
     });
 
-    this.bgImage.addEventListener('load', () => {
-      this.updateStageDimensions();
-    });
-
-    // Missed click on stage canvas or image
+    // Missed click on stage canvas
     if (this.config.allowClickAnywhereHint !== false) {
       this.stageCanvas.addEventListener('click', (e) => {
-        // If clicked directly on canvas, screen, image or layer (not on interactive element)
+        // If clicked directly on canvas, screen or layer (not on interactive element)
         if (
           e.target === this.stageCanvas ||
           e.target === this.stageScreen ||
-          e.target === this.bgImage ||
           e.target === this.elementsLayer
         ) {
           this.triggerMissedClick();
@@ -195,10 +188,7 @@ class SoftwareSimulator {
     if (!canvasWidth || !canvasHeight) return;
 
     // Detect natural aspect ratio of the active image, fallback to 16/9
-    let ar = 16 / 9;
-    if (this.bgImage && this.bgImage.naturalWidth && this.bgImage.naturalHeight) {
-      ar = this.bgImage.naturalWidth / this.bgImage.naturalHeight;
-    }
+    let ar = this.currentImageRatio || (16 / 9);
 
     // Fit within canvas bounds preserving exact image proportions
     let fitWidth = canvasWidth;
@@ -248,18 +238,36 @@ class SoftwareSimulator {
     // Smooth transition on background image
     this.stageCanvas.classList.add('is-animating');
     const resolvedUrl = this.resolveImageUrl(step.imageUrl || '');
-    setTimeout(() => {
-      this.bgImage.src = resolvedUrl;
-      this.bgImage.onload = () => {
+    if (resolvedUrl) {
+      this.stageCanvas.style.backgroundImage = `url("${resolvedUrl}")`;
+      this.stageCanvas.style.backgroundSize = 'contain';
+      this.stageCanvas.style.backgroundPosition = 'center';
+      this.stageCanvas.style.backgroundRepeat = 'no-repeat';
+
+      const preloadImg = new Image();
+      preloadImg.onload = () => {
+        if (preloadImg.naturalWidth && preloadImg.naturalHeight) {
+          this.currentImageRatio = preloadImg.naturalWidth / preloadImg.naturalHeight;
+        }
         this.stageCanvas.classList.remove('is-animating');
         this.updateStageDimensions();
       };
-      // Fallback if image is cached or load event already triggered
-      setTimeout(() => {
+      preloadImg.onerror = () => {
         this.stageCanvas.classList.remove('is-animating');
         this.updateStageDimensions();
-      }, 200);
-    }, 100);
+      };
+      preloadImg.src = resolvedUrl;
+      if (preloadImg.complete && preloadImg.naturalWidth) {
+        this.currentImageRatio = preloadImg.naturalWidth / preloadImg.naturalHeight;
+        this.stageCanvas.classList.remove('is-animating');
+        this.updateStageDimensions();
+      }
+    } else {
+      this.stageCanvas.style.backgroundImage = 'none';
+      this.currentImageRatio = 16 / 9;
+      this.stageCanvas.classList.remove('is-animating');
+      this.updateStageDimensions();
+    }
 
     // Render Elements
     this.elementsLayer.innerHTML = '';
