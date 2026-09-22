@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "periodic/modal-popup",
+	"version": "1.0.0",
+	"title": "Periodic Modal Popup",
+	"category": "design",
+	"icon": "admin-comments",
+	"description": "Botão de gatilho que abre uma janela modal nativa do Bootstrap 5 para avisos, termos ou mídias.",
+	"keywords": [ "modal", "popup", "bootstrap", "dialog", "lightbox" ],
+	"textdomain": "periodic-modal-popup",
+	"attributes": {
+		"modalId": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Abrir Modal"
+		},
+		"buttonIcon": {
+			"type": "string",
+			"default": "fa-solid fa-circle-info"
+		},
+		"buttonVariant": {
+			"type": "string",
+			"default": "btn-primary"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": ""
+		},
+		"modalTitle": {
+			"type": "string",
+			"default": "Título da Janela Modal"
+		},
+		"modalSize": {
+			"type": "string",
+			"default": ""
+		},
+		"modalContent": {
+			"type": "string",
+			"default": "<p>Este é o conteúdo principal da janela modal. Você pode personalizá-lo livremente com avisos, termos de uso, políticas ou informações importantes.</p>"
+		},
+		"closeButtonText": {
+			"type": "string",
+			"default": "Fechar"
+		},
+		"staticBackdrop": {
+			"type": "boolean",
+			"default": false
+		},
+		"centeredModal": {
+			"type": "boolean",
+			"default": false
+		},
+		"scrollableModal": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css",
+	"viewScript": "file:./build/view.js"
+}

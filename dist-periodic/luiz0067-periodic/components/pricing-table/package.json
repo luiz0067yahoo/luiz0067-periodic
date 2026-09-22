@@ -1,0 +1,19 @@
+{
+  "name": "periodic-pricing-table",
+  "version": "1.0.0",
+  "description": "Bloco Gutenberg de Tabela Comparativa de Preços para landing pages com destaque para Plano Popular, lista de recursos com ícones e suporte nativo ao Bootstrap 5 e Font Awesome 6.",
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  }
+}

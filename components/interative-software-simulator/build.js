@@ -23,11 +23,13 @@ function compileSass() {
   try {
     const styleResult = sass.compile(path.resolve(__dirname, 'src/style.scss'), { style: 'compressed' });
     fs.writeFileSync(path.resolve(__dirname, 'build/style-index.css'), styleResult.css);
-    console.log('✓ Compiled src/style.scss -> build/style-index.css');
+    fs.writeFileSync(path.resolve(__dirname, 'build/style-index-rtl.css'), styleResult.css);
+    console.log('✓ Compiled src/style.scss -> build/style-index.css & rtl');
 
     const editorResult = sass.compile(path.resolve(__dirname, 'src/editor.scss'), { style: 'compressed' });
     fs.writeFileSync(path.resolve(__dirname, 'build/index.css'), editorResult.css);
-    console.log('✓ Compiled src/editor.scss -> build/index.css');
+    fs.writeFileSync(path.resolve(__dirname, 'build/index-rtl.css'), editorResult.css);
+    console.log('✓ Compiled src/editor.scss -> build/index.css & rtl');
   } catch (err) {
     console.error('Sass Compilation Error:', err);
   }
