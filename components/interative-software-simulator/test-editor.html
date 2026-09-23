@@ -268,13 +268,33 @@
                 <div class="sim-progress-fill" style="width: 20%;"></div>
               </div>
 
-              <div class="sim-stage-canvas" style="background-image: url('assets/step1-windows11-desktop.svg'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-                <div class="sim-stage-screen">
-                  <div class="sim-elements-layer">
-                    <!-- Active Overlay Hotspot -->
-                    <div class="sim-editor-overlay-element type-click is-element-selected" style="top: 95.0%; left: 44.5%; width: 3.0%; height: 4.8%;">
-                      <span class="sim-element-badge">🎯 Botão Iniciar (44.5%, 95.0%)</span>
+              <div class="sim-stage-canvas">
+                <img class="sim-bg-image" src="assets/step1-windows11-desktop.png" alt="Cenário Desktop Windows 11">
+                <div class="sim-elements-layer">
+                  <!-- Active Overlay Hotspot -->
+                  <div class="sim-editor-overlay-element type-click is-element-selected" style="top: 95.0%; left: 44.5%; width: 3.0%; height: 4.8%;">
+                    <span class="sim-element-badge">🎯 Botão Iniciar (44.5%, 95.0%)</span>
+                  </div>
+
+                  <!-- Drop Zone Mockup -->
+                  <div class="sim-editor-drop-zone is-zone-selected" style="position: absolute; top: 40%; left: 60%; width: 16%; height: 12%; border: 2px solid #8b5cf6; background: rgba(139, 92, 246, 0.28); box-shadow: 0 0 16px rgba(139, 92, 246, 0.6); border-radius: 6px; display: flex; align-items: center; justify-content: center; pointer-events: auto; cursor: move; z-index: 45; box-sizing: border-box;">
+                    <div class="sim-element-move-handle sim-zone-move-handle" style="position: absolute; top: -26px; left: 0; height: 24px; background: #7c3aed; color: #ffffff; padding: 0 8px; border-radius: 4px 4px 0 0; display: inline-flex; align-items: center; gap: 5px; cursor: move; z-index: 9990; white-space: nowrap; font-size: 11px; font-weight: 700; line-height: 24px;">
+                      <span>📥 Destino</span>
                     </div>
+                    <span class="sim-drop-zone-badge" style="background: #7c3aed; color: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); white-space: nowrap;">
+                      📥 Solte Aqui
+                    </span>
+                    <span class="sim-coords-badge sim-zone-coords-badge" style="position: absolute; bottom: calc(100% + 28px); left: 50%; transform: translateX(-50%); background: #1e1b4b; color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.5); padding: 2px 8px; border-radius: 4px; font-size: 11px; font-family: monospace; font-weight: 700; white-space: nowrap; z-index: 9995;">
+                      📥 Destino: X: 60.0% Y: 40.0% | L: 16.0% A: 12.0%
+                    </span>
+                    <div class="sim-resize-handle handle-nw" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; top: 0; left: 0; transform: translate(-50%, -50%); cursor: nwse-resize;"></div>
+                    <div class="sim-resize-handle handle-n" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; top: 0; left: 50%; right: auto; bottom: auto; transform: translate(-50%, -50%); cursor: ns-resize;"></div>
+                    <div class="sim-resize-handle handle-ne" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; top: 0; right: 0; left: auto; bottom: auto; transform: translate(50%, -50%); cursor: nesw-resize;"></div>
+                    <div class="sim-resize-handle handle-e" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; top: 50%; right: 0; left: auto; bottom: auto; transform: translate(50%, -50%); cursor: ew-resize;"></div>
+                    <div class="sim-resize-handle handle-se" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; bottom: 0; right: 0; left: auto; top: auto; transform: translate(50%, 50%); cursor: nwse-resize;"></div>
+                    <div class="sim-resize-handle handle-s" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; bottom: 0; left: 50%; right: auto; top: auto; transform: translate(-50%, 50%); cursor: ns-resize;"></div>
+                    <div class="sim-resize-handle handle-sw" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; bottom: 0; left: 0; right: auto; top: auto; transform: translate(-50%, 50%); cursor: nesw-resize;"></div>
+                    <div class="sim-resize-handle handle-w" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; top: 50%; left: 0; right: auto; bottom: auto; transform: translate(-50%, -50%); cursor: ew-resize;"></div>
                   </div>
                 </div>
               </div>
@@ -342,7 +362,7 @@
         </div>
         <div class="field-group">
           <label>Imagem de Fundo (Print)</label>
-          <img src="assets/step1-windows11-desktop.svg" style="width: 100%; height: 75px; object-fit: cover; border-radius: 4px; border: 1px solid #cbd5e1;" />
+          <img src="assets/step1-windows11-desktop.png" style="width: 100%; height: 75px; object-fit: cover; border-radius: 4px; border: 1px solid #cbd5e1;" />
         </div>
         <div class="field-group">
           <label>Instrução Guiada</label>

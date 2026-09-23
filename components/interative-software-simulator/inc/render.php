@@ -73,7 +73,7 @@ $periodic_sim_wrapper_attributes = get_block_wrapper_attributes( array(
 ?>
 
 <div <?php echo $periodic_sim_wrapper_attributes; ?>>
-    <div class="sim-player-wrapper" data-initialized="false">
+    <div class="sim-player-wrapper" data-initialized="false" style="overflow: visible !important;">
         <script type="application/json" class="sim-data-config">
             <?php echo wp_json_encode( $periodic_sim_config ); ?>
         </script>

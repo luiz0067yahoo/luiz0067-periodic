@@ -41,6 +41,8 @@ class SoftwareSimulator {
     this.completedInputs = new Set();
     this.isFullscreen = false;
     this.toastTimer = null;
+    this.isMuted = false;
+    this.currentAudio = null;
 
     this.initDOM();
     this.renderStep(0);
@@ -85,9 +87,8 @@ class SoftwareSimulator {
       ` : ''}
 
       <div class="sim-stage-canvas">
-        <div class="sim-stage-screen">
-          <div class="sim-elements-layer"></div>
-        </div>
+        <img class="sim-bg-image" alt="Cenário do Passo" style="display: none;" />
+        <div class="sim-elements-layer"></div>
         <div class="sim-error-toast">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
@@ -110,6 +111,18 @@ class SoftwareSimulator {
           <p class="sim-instruction-text"></p>
         </div>
         <div class="sim-instruction-actions">
+          <button type="button" class="sim-btn-sound" title="Ativar ou desativar áudio" aria-label="Alternar Som">
+            <svg class="sim-icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <svg class="sim-icon-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <span>Som</span>
+          </button>
           ${this.config.showRestartButton ? `
             <button type="button" class="sim-btn-restart">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -124,8 +137,11 @@ class SoftwareSimulator {
     `;
 
     // Cache DOM nodes
+    if (this.wrapper) {
+      this.wrapper.style.setProperty('overflow', 'visible', 'important');
+    }
     this.stageCanvas = this.wrapper.querySelector('.sim-stage-canvas');
-    this.stageScreen = this.wrapper.querySelector('.sim-stage-screen');
+    this.bgImage = this.wrapper.querySelector('.sim-bg-image');
     this.elementsLayer = this.wrapper.querySelector('.sim-elements-layer');
     this.instructionText = this.wrapper.querySelector('.sim-instruction-text');
     this.stepBadge = this.wrapper.querySelector('.sim-step-badge');
@@ -144,8 +160,13 @@ class SoftwareSimulator {
       btnRestart.addEventListener('click', () => this.restart());
     }
 
-    // Responsive Dimension Sync (Locks overlay elements to exact image coordinates)
-    if (typeof ResizeObserver !== 'undefined') {
+    const btnSound = this.wrapper.querySelector('.sim-btn-sound');
+    if (btnSound) {
+      btnSound.addEventListener('click', () => this.toggleSound());
+    }
+
+    // Responsive Dimension Sync
+    if (typeof ResizeObserver !== 'undefined' && this.stageCanvas) {
       this.resizeObserver = new ResizeObserver(() => {
         this.updateStageDimensions();
       });
@@ -166,13 +187,13 @@ class SoftwareSimulator {
       setTimeout(() => this.updateStageDimensions(), 250);
     });
 
-    // Missed click on stage canvas
-    if (this.config.allowClickAnywhereHint !== false) {
+    // Missed click on stage canvas or background image
+    if (this.config.allowClickAnywhereHint !== false && this.stageCanvas) {
       this.stageCanvas.addEventListener('click', (e) => {
-        // If clicked directly on canvas, screen or layer (not on interactive element)
+        // If clicked directly on canvas, bg-image or elements-layer (not on interactive element)
         if (
           e.target === this.stageCanvas ||
-          e.target === this.stageScreen ||
+          e.target === this.bgImage ||
           e.target === this.elementsLayer
         ) {
           this.triggerMissedClick();
@@ -182,31 +203,7 @@ class SoftwareSimulator {
   }
 
   updateStageDimensions() {
-    if (!this.stageCanvas || !this.stageScreen) return;
-    const canvasWidth = this.stageCanvas.clientWidth;
-    const canvasHeight = this.stageCanvas.clientHeight;
-    if (!canvasWidth || !canvasHeight) return;
-
-    // Detect natural aspect ratio of the active image, fallback to 16/9
-    let ar = this.currentImageRatio || (16 / 9);
-
-    // Fit within canvas bounds preserving exact image proportions
-    let fitWidth = canvasWidth;
-    let fitHeight = canvasWidth / ar;
-
-    if (fitHeight > canvasHeight) {
-      fitHeight = canvasHeight;
-      fitWidth = canvasHeight * ar;
-    }
-
-    const wStr = `${Math.round(fitWidth * 100) / 100}px`;
-    const hStr = `${Math.round(fitHeight * 100) / 100}px`;
-
-    this.stageScreen.style.width = wStr;
-    this.stageScreen.style.height = hStr;
-    this.stageScreen.style.maxWidth = wStr;
-    this.stageScreen.style.maxHeight = hStr;
-    this.stageScreen.style.aspectRatio = `${ar}`;
+    // Canvas aspect-ratio 16/9 and sim-bg-image inset:0 fill 100% x 100% automatically via CSS
   }
 
   renderStep(stepIndex) {
@@ -218,6 +215,9 @@ class SoftwareSimulator {
     this.currentStepIndex = stepIndex;
     const step = this.steps[stepIndex];
     this.completedInputs.clear();
+
+    // Play step audio if configured
+    this.playStepAudio(step);
 
     // Update Progress
     if (this.progressFill) {
@@ -239,34 +239,27 @@ class SoftwareSimulator {
     this.stageCanvas.classList.add('is-animating');
     const resolvedUrl = this.resolveImageUrl(step.imageUrl || '');
     if (resolvedUrl) {
-      this.stageCanvas.style.backgroundImage = `url("${resolvedUrl}")`;
-      this.stageCanvas.style.backgroundSize = 'contain';
-      this.stageCanvas.style.backgroundPosition = 'center';
-      this.stageCanvas.style.backgroundRepeat = 'no-repeat';
-
+      if (this.bgImage) {
+        this.bgImage.src = resolvedUrl;
+        this.bgImage.style.display = 'block';
+      }
       const preloadImg = new Image();
       preloadImg.onload = () => {
-        if (preloadImg.naturalWidth && preloadImg.naturalHeight) {
-          this.currentImageRatio = preloadImg.naturalWidth / preloadImg.naturalHeight;
-        }
         this.stageCanvas.classList.remove('is-animating');
-        this.updateStageDimensions();
       };
       preloadImg.onerror = () => {
         this.stageCanvas.classList.remove('is-animating');
-        this.updateStageDimensions();
       };
       preloadImg.src = resolvedUrl;
-      if (preloadImg.complete && preloadImg.naturalWidth) {
-        this.currentImageRatio = preloadImg.naturalWidth / preloadImg.naturalHeight;
+      if (preloadImg.complete) {
         this.stageCanvas.classList.remove('is-animating');
-        this.updateStageDimensions();
       }
     } else {
-      this.stageCanvas.style.backgroundImage = 'none';
-      this.currentImageRatio = 16 / 9;
+      if (this.bgImage) {
+        this.bgImage.src = '';
+        this.bgImage.style.display = 'none';
+      }
       this.stageCanvas.classList.remove('is-animating');
-      this.updateStageDimensions();
     }
 
     // Render Elements
@@ -280,6 +273,8 @@ class SoftwareSimulator {
         this.createInputElement(el);
       } else if (el.type === 'drag') {
         this.createDragElement(el);
+      } else if (el.type === 'image') {
+        this.createImageElement(el);
       }
     });
 
@@ -600,6 +595,100 @@ class SoftwareSimulator {
     this.elementsLayer.appendChild(dragItem);
   }
 
+  createImageElement(el) {
+    if (!el.imageUrl) return;
+    const imgWrapper = document.createElement('div');
+    imgWrapper.className = `sim-overlaid-image-box anim-${el.animationType || 'appear'}`;
+    imgWrapper.style.top = `${el.top}%`;
+    imgWrapper.style.left = `${el.left}%`;
+    imgWrapper.style.width = `${el.width}%`;
+    imgWrapper.style.height = `${el.height}%`;
+
+    const duration = el.animationDuration !== undefined ? el.animationDuration : 1.5;
+    const delay = el.animationDelay !== undefined ? el.animationDelay : 0.2;
+    const iteration = el.animationIteration || 'once';
+
+    imgWrapper.style.setProperty('--anim-duration', `${duration}s`);
+    imgWrapper.style.setProperty('--anim-delay', `${delay}s`);
+    imgWrapper.style.setProperty('--anim-iteration', iteration === 'infinite' ? 'infinite' : '1');
+
+    if (el.animationType === 'move') {
+      const targetLeft = el.targetLeft !== undefined ? el.targetLeft : el.left + 25;
+      const targetTop = el.targetTop !== undefined ? el.targetTop : el.top;
+      const deltaX = ((targetLeft - el.left) / (el.width || 1)) * 100;
+      const deltaY = ((targetTop - el.top) / (el.height || 1)) * 100;
+      imgWrapper.style.setProperty('--move-tx', `${deltaX}%`);
+      imgWrapper.style.setProperty('--move-ty', `${deltaY}%`);
+    }
+
+    const img = document.createElement('img');
+    img.src = this.resolveImageUrl(el.imageUrl);
+    img.alt = el.label || 'Imagem sobreposta';
+    img.className = 'sim-overlaid-image';
+
+    imgWrapper.appendChild(img);
+    this.elementsLayer.appendChild(imgWrapper);
+  }
+
+  playStepAudio(step) {
+    if (this.currentAudio) {
+      try {
+        this.currentAudio.pause();
+        this.currentAudio.currentTime = 0;
+      } catch (e) {}
+      this.currentAudio = null;
+    }
+
+    if (this.isMuted) return;
+    const rawAudioUrl = step.audioUrl;
+    if (!rawAudioUrl || step.audioAutoPlay === false) return;
+
+    const audioUrl = this.resolveImageUrl(rawAudioUrl);
+    try {
+      const audio = new Audio(audioUrl);
+      this.currentAudio = audio;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay was blocked by browser policy; wait for first user gesture
+          const unlockAudio = () => {
+            if (this.currentAudio === audio && !this.isMuted) {
+              audio.play().catch(() => {});
+            }
+            window.removeEventListener('pointerdown', unlockAudio);
+            window.removeEventListener('keydown', unlockAudio);
+          };
+          window.addEventListener('pointerdown', unlockAudio, { once: true });
+          window.addEventListener('keydown', unlockAudio, { once: true });
+        });
+      }
+    } catch (e) {
+      console.warn('Simulador: erro ao reproduzir áudio:', e);
+    }
+  }
+
+  toggleSound() {
+    this.isMuted = !this.isMuted;
+    const soundBtn = this.wrapper.querySelector('.sim-btn-sound');
+    if (soundBtn) {
+      const soundOn = soundBtn.querySelector('.sim-icon-sound-on');
+      const soundOff = soundBtn.querySelector('.sim-icon-sound-off');
+      if (soundOn && soundOff) {
+        soundOn.style.display = this.isMuted ? 'none' : 'block';
+        soundOff.style.display = this.isMuted ? 'block' : 'none';
+      }
+      soundBtn.classList.toggle('is-muted', this.isMuted);
+    }
+
+    if (this.isMuted && this.currentAudio) {
+      try {
+        this.currentAudio.pause();
+      } catch (e) {}
+    } else if (!this.isMuted && this.steps[this.currentStepIndex]) {
+      this.playStepAudio(this.steps[this.currentStepIndex]);
+    }
+  }
+
   triggerMissedClick() {
     this.showErrorToast('Atenção: clique na área indicada para prosseguir!');
     this.stageCanvas.style.animation = 'none';
@@ -623,6 +712,14 @@ class SoftwareSimulator {
   }
 
   showCompletionScreen() {
+    if (this.currentAudio) {
+      try {
+        this.currentAudio.pause();
+        this.currentAudio.currentTime = 0;
+      } catch (e) {}
+      this.currentAudio = null;
+    }
+
     const existing = this.stageCanvas.querySelector('.sim-completion-screen');
     if (existing) existing.remove();
 
@@ -658,6 +755,14 @@ class SoftwareSimulator {
   }
 
   restart() {
+    if (this.currentAudio) {
+      try {
+        this.currentAudio.pause();
+        this.currentAudio.currentTime = 0;
+      } catch (e) {}
+      this.currentAudio = null;
+    }
+
     const completion = this.stageCanvas.querySelector('.sim-completion-screen');
     if (completion) completion.remove();
     this.renderStep(0);

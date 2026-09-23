@@ -21,7 +21,7 @@
 .sim-player-wrapper {
   background: #0f172a;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible !important;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -42,15 +42,71 @@
     justify-content: space-between !important;
     background: #0f172a !important;
 
+    .sim-header-bar {
+      flex-shrink: 0 !important;
+    }
+    .sim-progress-track {
+      flex-shrink: 0 !important;
+    }
+    .sim-instruction-bar {
+      flex-shrink: 0 !important;
+    }
+
     .sim-stage-canvas {
       flex: 1 1 0 !important;
       min-height: 0 !important;
       height: 100% !important;
       width: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
       aspect-ratio: unset !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
+      display: block !important;
+      position: relative !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: visible !important;
+      box-sizing: border-box !important;
+
+      .sim-stage-screen {
+        position: absolute !important;
+        inset: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+        z-index: 2 !important;
+
+        .sim-elements-layer {
+          position: absolute !important;
+          inset: 0 !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          min-width: 100% !important;
+          min-height: 100% !important;
+          max-width: 100% !important;
+          max-height: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          box-sizing: border-box !important;
+          pointer-events: auto !important;
+          z-index: 3 !important;
+        }
+      }
     }
   }
 }
@@ -159,44 +215,43 @@
 
 /* Stage Canvas Container */
 .sim-stage-canvas {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
   background-color: #020617;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
   user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   transition: opacity 0.3s ease;
 
-  /* Image Screen Container - Locks items to image dimensions */
-  .sim-stage-screen {
-    position: relative;
-    max-width: 100%;
-    max-height: 100%;
-    aspect-ratio: 16 / 9;
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-    flex-shrink: 0;
-    margin: auto;
+  .sim-bg-image {
+    position: absolute !important;
+    inset: 0 !important;
 
-    /* Interactive Elements Layer - Exactly matching image dimensions */
-    .sim-elements-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: auto;
-    }
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: fill !important;
+    object-position: 0 0 !important;
+
+    display: block !important;
+    margin: 0 !important;
+
+    z-index: 1 !important;
+  }
+
+  .sim-elements-layer {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    z-index: 3 !important;
   }
 
   &.is-animating {
@@ -535,7 +590,8 @@
     gap: 10px;
     flex-shrink: 0;
 
-    .sim-btn-restart {
+    .sim-btn-restart,
+    .sim-btn-sound {
       background: rgba(255, 255, 255, 0.08);
       color: #cbd5e1;
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -554,11 +610,138 @@
         color: #ffffff;
       }
 
+      &.is-muted {
+        color: #ef4444;
+        border-color: rgba(239, 68, 68, 0.4);
+        background: rgba(239, 68, 68, 0.12);
+      }
+
       svg {
         width: 14px;
         height: 14px;
       }
     }
+  }
+}
+
+/* Overlaid Animated Image (Imagem Sobreposta com Transições) */
+.sim-overlaid-image-box {
+  position: absolute;
+  z-index: 15;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+
+  img.sim-overlaid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+
+  &.anim-appear {
+    animation: sim-anim-surgir var(--anim-duration, 1.5s) cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0.2s) var(--anim-iteration, 1) both;
+  }
+
+  &.anim-move {
+    animation: sim-anim-mover var(--anim-duration, 1.5s) cubic-bezier(0.4, 0, 0.2, 1) var(--anim-delay, 0.2s) var(--anim-iteration, 1) both;
+  }
+
+  &.anim-zoom {
+    animation: sim-anim-zoom var(--anim-duration, 1.5s) ease-in-out var(--anim-delay, 0.2s) var(--anim-iteration, 1) both;
+  }
+
+  &.anim-rotate {
+    animation: sim-anim-girar var(--anim-duration, 1.5s) linear var(--anim-delay, 0.2s) var(--anim-iteration, 1) both;
+  }
+
+  &.anim-skew {
+    animation: sim-anim-inclinar var(--anim-duration, 1.5s) ease-in-out var(--anim-delay, 0.2s) var(--anim-iteration, 1) both;
+  }
+
+  &.anim-combined {
+    animation: sim-anim-combinado var(--anim-duration, 1.8s) cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0.2s) var(--anim-iteration, 1) both;
+  }
+}
+
+/* Keyframes de Animações e Transições */
+@keyframes sim-anim-surgir {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sim-anim-mover {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--move-tx, 50%), var(--move-ty, 0));
+  }
+}
+
+@keyframes sim-anim-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sim-anim-girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sim-anim-inclinar {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  25% {
+    transform: skew(-18deg, -6deg);
+  }
+  75% {
+    transform: skew(18deg, 6deg);
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+  }
+}
+
+@keyframes sim-anim-combinado {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-25deg) skew(-10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.15) rotate(8deg) skew(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) skew(0deg);
   }
 }
 
@@ -804,4 +987,157 @@
 .sim-loading-placeholder {
   transition: opacity 0.3s ease;
 }
+
+/* ==========================================================================
+   Editor Drag & Drop Target Drop Zone & Interactive Handles
+   ========================================================================== */
+.sim-editor-drop-zone {
+  position: absolute;
+  border: 2px dashed #8b5cf6;
+  background: rgba(139, 92, 246, 0.15);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: move !important;
+  touch-action: none;
+  user-select: none;
+  z-index: 16;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: #a78bfa;
+    background: rgba(139, 92, 246, 0.25);
+    z-index: 44;
+  }
+
+  &.is-zone-selected {
+    border: 2px solid #8b5cf6 !important;
+    background: rgba(139, 92, 246, 0.28) !important;
+    box-shadow: 0 0 16px rgba(139, 92, 246, 0.6) !important;
+    z-index: 45 !important;
+  }
+}
+
+.sim-drop-zone-badge {
+  background: #7c3aed !important;
+  color: #ffffff !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.sim-zone-move-handle {
+  position: absolute !important;
+  top: -26px !important;
+  left: 0 !important;
+  height: 24px !important;
+  background: #7c3aed !important;
+  color: #ffffff !important;
+  padding: 0 8px !important;
+  border-radius: 4px 4px 0 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  cursor: move !important;
+  user-select: none !important;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.35) !important;
+  z-index: 9990 !important;
+  touch-action: none !important;
+  white-space: nowrap !important;
+  pointer-events: auto !important;
+
+  svg {
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: #6d28d9 !important;
+  }
+  &:active {
+    cursor: grabbing !important;
+  }
+
+  .sim-move-text {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+  }
+}
+
+.sim-zone-coords-badge {
+  position: absolute !important;
+  bottom: calc(100% + 28px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: #1e1b4b !important;
+  color: #c4b5fd !important;
+  border: 1px solid rgba(167, 139, 250, 0.5) !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-family: monospace !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  z-index: 9995 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.sim-resize-handle {
+  position: absolute !important;
+  width: 12px !important;
+  height: 12px !important;
+  background: #ffffff !important;
+  border: 2px solid #2563eb !important;
+  border-radius: 3px !important;
+  z-index: 9999 !important;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+  pointer-events: auto !important;
+  touch-action: none !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    z-index: 10000;
+    cursor: inherit;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.9) !important;
+  }
+
+  &.handle-nw { top: 0 !important; left: 0 !important; right: auto !important; bottom: auto !important; transform: translate(-50%, -50%) !important; cursor: nwse-resize !important; }
+  &.handle-n  { top: 0 !important; left: 50% !important; right: auto !important; bottom: auto !important; transform: translate(-50%, -50%) !important; cursor: ns-resize !important; }
+  &.handle-ne { top: 0 !important; right: 0 !important; left: auto !important; bottom: auto !important; transform: translate(50%, -50%) !important; cursor: nesw-resize !important; }
+  &.handle-e  { top: 50% !important; right: 0 !important; left: auto !important; bottom: auto !important; transform: translate(50%, -50%) !important; cursor: ew-resize !important; }
+  &.handle-se { bottom: 0 !important; right: 0 !important; top: auto !important; left: auto !important; transform: translate(50%, 50%) !important; cursor: nwse-resize !important; }
+  &.handle-s  { bottom: 0 !important; left: 50% !important; right: auto !important; top: auto !important; transform: translate(-50%, 50%) !important; cursor: ns-resize !important; }
+  &.handle-sw { bottom: 0 !important; left: 0 !important; right: auto !important; top: auto !important; transform: translate(-50%, 50%) !important; cursor: nesw-resize !important; }
+  &.handle-w  { top: 50% !important; left: 0 !important; right: auto !important; bottom: auto !important; transform: translate(-50%, -50%) !important; cursor: ew-resize !important; }
+}
+
+.sim-editor-drop-zone .sim-resize-handle {
+  border-color: #7c3aed !important;
+  &:hover {
+    background: #7c3aed !important;
+  }
+}
+
 

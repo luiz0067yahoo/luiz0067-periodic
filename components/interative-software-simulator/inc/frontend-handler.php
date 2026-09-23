@@ -18,7 +18,7 @@ function periodic_simulador_software_get_default_steps() {
         array(
             'id'          => 'step-1-desktop',
             'title'       => __( 'Área de Trabalho do Windows 11', 'luiz0067-periodic' ),
-            'imageUrl'    => 'assets/step1-windows11-desktop.svg',
+            'imageUrl'    => 'assets/step1-windows11-desktop.png',
             'imageId'     => null,
             'instruction' => __( 'Passo 1: Clique no ícone do Menu Iniciar centralizado na barra de tarefas do Windows 11.', 'luiz0067-periodic' ),
             'elements'    => array(
@@ -37,7 +37,7 @@ function periodic_simulador_software_get_default_steps() {
         array(
             'id'          => 'step-2-startmenu',
             'title'       => __( 'Menu Iniciar e Pesquisa', 'luiz0067-periodic' ),
-            'imageUrl'    => 'assets/step2-windows11-startmenu.svg',
+            'imageUrl'    => 'assets/step2-windows11-startmenu.png',
             'imageId'     => null,
             'instruction' => __( 'Passo 2: Digite "Word" na caixa de pesquisa do Menu Iniciar e pressione Enter para abrir o programa.', 'luiz0067-periodic' ),
             'elements'    => array(
@@ -58,7 +58,7 @@ function periodic_simulador_software_get_default_steps() {
         array(
             'id'          => 'step-3-word-open',
             'title'       => __( 'Microsoft Word - Documento em Branco', 'luiz0067-periodic' ),
-            'imageUrl'    => 'assets/step3-word-document.svg',
+            'imageUrl'    => 'assets/step3-word-document.png',
             'imageId'     => null,
             'instruction' => __( 'Passo 3: Com o Microsoft Word aberto, clique na aba "Layout" na faixa de opções superior.', 'luiz0067-periodic' ),
             'elements'    => array(
@@ -77,7 +77,7 @@ function periodic_simulador_software_get_default_steps() {
         array(
             'id'          => 'step-4-layout-ribbon',
             'title'       => __( 'Aba Layout e Menu Margens', 'luiz0067-periodic' ),
-            'imageUrl'    => 'assets/step4-word-layout-ribbon.svg',
+            'imageUrl'    => 'assets/step4-word-layout-ribbon.png',
             'imageId'     => null,
             'instruction' => __( 'Passo 4: No menu de Margens, role até o final da lista e clique em "Margens Personalizadas...".', 'luiz0067-periodic' ),
             'elements'    => array(
@@ -96,7 +96,7 @@ function periodic_simulador_software_get_default_steps() {
         array(
             'id'          => 'step-5-page-setup-modal',
             'title'       => __( 'Configurar Página - Margens ABNT', 'luiz0067-periodic' ),
-            'imageUrl'    => 'assets/step5-word-margins-modal.svg',
+            'imageUrl'    => 'assets/step5-word-margins-modal.png',
             'imageId'     => null,
             'instruction' => __( 'Passo 5: Preencha as 4 margens no padrão ABNT (Superior: 3, Esquerda: 3, Inferior: 2, Direita: 2) e clique em OK.', 'luiz0067-periodic' ),
             'elements'    => array(

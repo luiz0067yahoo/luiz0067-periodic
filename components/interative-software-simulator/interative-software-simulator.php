@@ -3,7 +3,7 @@
  * Plugin Name:       Simulador de Software Interativo
  * Plugin URI:        https://github.com/periodicyahoo/periodic-interative-software-simulator
  * Description:       Bloco Gutenberg nativo para criar simulações guiadas passo a passo de softwares reais (ex: Windows 11, Microsoft Word) com prints e camadas interativas responsivas.
- * Version:           1.1.0
+ * Version:           1.2.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Luiz
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION' ) ) {
-    define( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION', '1.1.0' );
+    define( 'PERIODIC_SIMULADOR_SOFTWARE_VERSION', '1.2.0' );
 }
 if ( ! defined( 'PERIODIC_SIMULADOR_SOFTWARE_DIR' ) ) {
     define( 'PERIODIC_SIMULADOR_SOFTWARE_DIR', plugin_dir_path( __FILE__ ) );
@@ -105,10 +105,9 @@ function periodic_simulador_software_enqueue_frontend() {
         )
     );
 
-    // Se o bloco estiver presente no post atual, enfileira
-    if ( is_singular() && function_exists( 'has_block' ) && has_block( 'custom/simulador-software' ) ) {
-        wp_enqueue_style( 'custom-simulador-software-style' );
-        wp_enqueue_script( 'custom-simulador-software-view-script' );
-    }
+    // Enfileira os estilos e scripts para compatibilidade total com qualquer tema (incluindo React e SPA)
+    wp_enqueue_style( 'custom-simulador-software-style' );
+    wp_enqueue_script( 'custom-simulador-software-view-script' );
 }
 add_action( 'wp_enqueue_scripts', 'periodic_simulador_software_enqueue_frontend' );
+add_action( 'enqueue_block_assets', 'periodic_simulador_software_enqueue_frontend' );
