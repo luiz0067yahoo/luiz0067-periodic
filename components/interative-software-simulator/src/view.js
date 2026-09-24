@@ -7,20 +7,23 @@
 /**
  * Practical simulation helpers
  */
+
+// Exemplo A: Control + Clique Primário
 function simularCliqueComModificador(elementoAlvo, botao = 0, mod = { ctrl: false, shift: false, alt: false }) {
   const eventoMouse = new MouseEvent('click', {
     bubbles: true,
     cancelable: true,
     view: window,
     button: botao, // 0 = Primário (Esquerdo), 1 = Meio, 2 = Direito
-    buttons: botao === 2 ? 2 : (botao === 1 ? 4 : 1),
-    ctrlKey: !!mod.ctrl,
-    shiftKey: !!mod.shift,
-    altKey: !!mod.alt
+    buttons: 1, // 1 = Botão esquerdo pressionado
+    ctrlKey: mod.ctrl, // true/false
+    shiftKey: mod.shift, // true/false
+    altKey: mod.alt // true/false
   });
   elementoAlvo.dispatchEvent(eventoMouse);
 }
 
+// Exemplo B: Ctrl + Scroll Up / Scroll Down
 function simularScrollComModificador(elementoAlvo, direcao = 'up', mod = { ctrl: false, shift: false, alt: false }) {
   const deltaY = direcao === 'up' ? -100 : 100; // Negativo para cima, positivo para baixo
   const eventoWheel = new WheelEvent('wheel', {
@@ -29,18 +32,65 @@ function simularScrollComModificador(elementoAlvo, direcao = 'up', mod = { ctrl:
     view: window,
     deltaY: deltaY,
     deltaMode: 0,
-    ctrlKey: !!mod.ctrl,
-    shiftKey: !!mod.shift,
-    altKey: !!mod.alt
+    ctrlKey: mod.ctrl,
+    shiftKey: mod.shift,
+    altKey: mod.alt
   });
   elementoAlvo.dispatchEvent(eventoWheel);
 }
 
+// Simulação de Atalho de Teclado (respeitando ordem e simultaneidade dos modificadores)
 function simularAtalhoTeclado(elementoAlvo, config = { key: 'T', code: 'KeyT', ctrl: false, shift: false, alt: false }) {
   const keyVal = config.key || 'T';
-  const init = {
+  const targetCode = config.code || (keyVal.length === 1 ? `Key${keyVal.toUpperCase()}` : keyVal);
+  const target = elementoAlvo || window;
+  const currentMods = { ctrl: false, shift: false, alt: false };
+
+  // 1. Dispara os keydowns dos modificadores na ordem configurada
+  if (config.ctrl) {
+    currentMods.ctrl = true;
+    target.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'Control',
+      code: 'ControlLeft',
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: true,
+      shiftKey: currentMods.shift,
+      altKey: currentMods.alt
+    }));
+  }
+  if (config.shift) {
+    currentMods.shift = true;
+    target.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'Shift',
+      code: 'ShiftLeft',
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: currentMods.ctrl,
+      shiftKey: true,
+      altKey: currentMods.alt
+    }));
+  }
+  if (config.alt) {
+    currentMods.alt = true;
+    target.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'Alt',
+      code: 'AltLeft',
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: currentMods.ctrl,
+      shiftKey: currentMods.shift,
+      altKey: true
+    }));
+  }
+
+  // 2. Dispara o keydown da tecla principal com todos os modificadores ativos
+  const mainInit = {
     key: keyVal,
-    code: config.code || (keyVal.length === 1 ? `Key${keyVal.toUpperCase()}` : keyVal),
+    code: targetCode,
     bubbles: true,
     cancelable: true,
     view: window,
@@ -48,11 +98,51 @@ function simularAtalhoTeclado(elementoAlvo, config = { key: 'T', code: 'KeyT', c
     shiftKey: !!config.shift,
     altKey: !!config.alt
   };
-  const downEvent = new KeyboardEvent('keydown', init);
-  elementoAlvo.dispatchEvent(downEvent);
+  target.dispatchEvent(new KeyboardEvent('keydown', mainInit));
+
+  // 3. Dispara keyups em ordem inversa
   setTimeout(() => {
-    const upEvent = new KeyboardEvent('keyup', init);
-    elementoAlvo.dispatchEvent(upEvent);
+    target.dispatchEvent(new KeyboardEvent('keyup', mainInit));
+
+    if (config.alt) {
+      currentMods.alt = false;
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'Alt',
+        code: 'AltLeft',
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        ctrlKey: currentMods.ctrl,
+        shiftKey: currentMods.shift,
+        altKey: false
+      }));
+    }
+    if (config.shift) {
+      currentMods.shift = false;
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'Shift',
+        code: 'ShiftLeft',
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        ctrlKey: currentMods.ctrl,
+        shiftKey: false,
+        altKey: currentMods.alt
+      }));
+    }
+    if (config.ctrl) {
+      currentMods.ctrl = false;
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'Control',
+        code: 'ControlLeft',
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        ctrlKey: false,
+        shiftKey: currentMods.shift,
+        altKey: currentMods.alt
+      }));
+    }
   }, 40);
 }
 
@@ -352,8 +442,9 @@ class SoftwareSimulator {
     btn.style.height = `${el.height}%`;
     btn.setAttribute('aria-label', el.label || 'Área interativa');
 
-    const mouseAction = el.mouseAction || 'click-primary';
+    const mouseAction = el.mouseAction || el.actionType || 'click-primary';
     const isWheel = mouseAction === 'scroll-up' || mouseAction === 'scroll-down';
+    const button = typeof el.button === 'number' ? el.button : (mouseAction === 'click-secondary' ? 2 : (mouseAction === 'click-middle' ? 1 : 0));
     const mods = { ctrl: !!el.ctrlKey, shift: !!el.shiftKey, alt: !!el.altKey };
 
     const checkModMatch = (e) => {
@@ -365,11 +456,11 @@ class SoftwareSimulator {
       if (mods.ctrl) parts.push('Ctrl');
       if (mods.shift) parts.push('Shift');
       if (mods.alt) parts.push('Alt');
-      if (mouseAction === 'click-secondary') parts.push('Clique com Botão Direito');
-      else if (mouseAction === 'click-middle') parts.push('Clique com Botão do Meio (Scroll Click)');
-      else if (mouseAction === 'scroll-up') parts.push('Rolar Scroll para Cima');
-      else if (mouseAction === 'scroll-down') parts.push('Rolar Scroll para Baixo');
-      else parts.push('Clique do Botão Esquerdo');
+      if (mouseAction === 'click-secondary' || button === 2) parts.push('Botão Secundário (Direito)');
+      else if (mouseAction === 'click-middle' || button === 1) parts.push('Botão do Meio (Scroll Click)');
+      else if (mouseAction === 'scroll-up') parts.push('Rolagem do Scroll para Cima');
+      else if (mouseAction === 'scroll-down') parts.push('Rolagem do Scroll para Baixo');
+      else parts.push('Botão Primário (Esquerdo)');
       return parts.join(' + ');
     };
 
@@ -413,7 +504,11 @@ class SoftwareSimulator {
           this.showErrorToast(`Ação necessária: ${getActionDescription()}`);
         }
       }, { passive: false });
-    } else if (mouseAction === 'click-secondary') {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.showErrorToast(`Ação necessária: ${getActionDescription()}`);
+      });
+    } else if (mouseAction === 'click-secondary' || button === 2) {
       btn.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -425,9 +520,16 @@ class SoftwareSimulator {
         }
       });
       btn.addEventListener('mousedown', (e) => {
-        if (e.button === 2) e.preventDefault();
+        if (e.button === 2) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
       });
-    } else if (mouseAction === 'click-middle') {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.showErrorToast(`Ação necessária: ${getActionDescription()}`);
+      });
+    } else if (mouseAction === 'click-middle' || button === 1) {
       btn.addEventListener('auxclick', (e) => {
         if (e.button === 1) {
           e.preventDefault();
@@ -441,7 +543,20 @@ class SoftwareSimulator {
         }
       });
       btn.addEventListener('mousedown', (e) => {
-        if (e.button === 1) e.preventDefault();
+        if (e.button === 1) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+      btn.addEventListener('mouseup', (e) => {
+        if (e.button === 1) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.showErrorToast(`Ação necessária: ${getActionDescription()}`);
       });
     } else {
       // Primary click (button 0)
@@ -473,7 +588,13 @@ class SoftwareSimulator {
     if (el.ctrlKey) parts.push('Ctrl');
     if (el.shiftKey) parts.push('Shift');
     if (el.altKey) parts.push('Alt');
-    const keyVal = el.key || 'T';
+    let keyVal = el.key || 'T';
+    if (keyVal === 'ArrowRight') keyVal = 'Seta a Direita';
+    else if (keyVal === 'ArrowLeft') keyVal = 'Seta a Esquerda';
+    else if (keyVal === 'ArrowUp') keyVal = 'Seta Acima';
+    else if (keyVal === 'ArrowDown') keyVal = 'Seta Abaixo';
+    else if (keyVal === 'PageUp') keyVal = 'Page Up';
+    else if (keyVal === 'PageDown') keyVal = 'Page Down';
     parts.push(keyVal);
     const shortcutLabel = parts.join(' + ');
 

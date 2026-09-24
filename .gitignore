@@ -1,0 +1,12 @@
+# Build and Staging directories
+.build-tmp/
+dist-zip-stage/
+dist-zip/
+
+# Dependencies
+node_modules/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db

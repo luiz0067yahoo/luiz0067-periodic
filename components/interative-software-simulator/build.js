@@ -99,6 +99,23 @@ async function run() {
   );
 
   console.log('✓ Successfully built build/index.js and build/view.js with asset hash ' + assetHash);
+
+  // If not running under root build-zip, update root luiz0067-periodic.zip
+  if (!process.env.PERIODIC_BUILD_ROOT) {
+    const rootZipScript = path.resolve(__dirname, '../../scripts/build-zip.js');
+    if (fs.existsSync(rootZipScript)) {
+      try {
+        console.log('📦 Atualizando pacote luiz0067-periodic.zip...');
+        require('child_process').execSync('node scripts/build-zip.js', {
+          cwd: path.resolve(__dirname, '../..'),
+          stdio: 'inherit',
+          env: { ...process.env, PERIODIC_BUILD_ROOT: '1' }
+        });
+      } catch (e) {
+        console.warn('Aviso: Falha ao atualizar luiz0067-periodic.zip:', e.message);
+      }
+    }
+  }
 }
 
 run().catch(err => {

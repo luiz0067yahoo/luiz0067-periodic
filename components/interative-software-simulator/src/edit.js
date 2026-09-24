@@ -18,21 +18,21 @@ import { DEFAULT_ABNT_SCENARIO } from './default-data';
 import './editor.scss';
 
 export const KEY_OPTIONS = [
-  // Teclas Alfanuméricas (A-Z)
+  // Teclas Alfanuméricas: Letras (A-Z)
   ...('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(char => ({
     label: `Letra: ${char}`,
     value: char,
     code: `Key${char}`,
-    category: 'Alfanuméricas'
+    category: 'Teclas Alfanuméricas'
   }))),
-  // Números (0-9)
+  // Teclas Alfanuméricas: Números (0-9)
   ...('0123456789'.split('').map(digit => ({
     label: `Número: ${digit}`,
     value: digit,
     code: `Digit${digit}`,
-    category: 'Alfanuméricas'
+    category: 'Teclas Alfanuméricas'
   }))),
-  // Teclas de Função (F1 - F12)
+  // Teclas de Função: F1 - F12
   ...Array.from({ length: 12 }, (_, i) => ({
     label: `F${i + 1}`,
     value: `F${i + 1}`,
@@ -40,28 +40,28 @@ export const KEY_OPTIONS = [
     category: 'Teclas de Função'
   })),
   // Teclas de Navegação e Edição
-  { label: 'Home', value: 'Home', code: 'Home', category: 'Navegação e Edição' },
-  { label: 'End', value: 'End', code: 'End', category: 'Navegação e Edição' },
-  { label: 'Delete', value: 'Delete', code: 'Delete', category: 'Navegação e Edição' },
-  { label: 'Page Up', value: 'PageUp', code: 'PageUp', category: 'Navegação e Edição' },
-  { label: 'Page Down', value: 'PageDown', code: 'PageDown', category: 'Navegação e Edição' },
-  { label: 'Seta Acima (Arrow Up)', value: 'ArrowUp', code: 'ArrowUp', category: 'Navegação e Edição' },
-  { label: 'Seta Abaixo (Arrow Down)', value: 'ArrowDown', code: 'ArrowDown', category: 'Navegação e Edição' },
-  { label: 'Seta Esquerda (Arrow Left)', value: 'ArrowLeft', code: 'ArrowLeft', category: 'Navegação e Edição' },
-  { label: 'Seta Direita (Arrow Right)', value: 'ArrowRight', code: 'ArrowRight', category: 'Navegação e Edição' },
-  { label: 'Enter', value: 'Enter', code: 'Enter', category: 'Navegação e Edição' },
-  { label: 'Tab', value: 'Tab', code: 'Tab', category: 'Navegação e Edição' },
-  { label: 'Escape (Esc)', value: 'Escape', code: 'Escape', category: 'Navegação e Edição' },
-  { label: 'Espaço (Space)', value: ' ', code: 'Space', category: 'Navegação e Edição' },
-  { label: 'Backspace', value: 'Backspace', code: 'Backspace', category: 'Navegação e Edição' }
+  { label: 'Home', value: 'Home', code: 'Home', category: 'Teclas de Navegação e Edição' },
+  { label: 'End', value: 'End', code: 'End', category: 'Teclas de Navegação e Edição' },
+  { label: 'Delete', value: 'Delete', code: 'Delete', category: 'Teclas de Navegação e Edição' },
+  { label: 'Page Up', value: 'PageUp', code: 'PageUp', category: 'Teclas de Navegação e Edição' },
+  { label: 'Page Down', value: 'PageDown', code: 'PageDown', category: 'Teclas de Navegação e Edição' },
+  { label: 'Seta a Direita', value: 'ArrowRight', code: 'ArrowRight', category: 'Teclas de Navegação e Edição' },
+  { label: 'Seta a Esquerda', value: 'ArrowLeft', code: 'ArrowLeft', category: 'Teclas de Navegação e Edição' },
+  { label: 'Seta Acima', value: 'ArrowUp', code: 'ArrowUp', category: 'Teclas de Navegação e Edição' },
+  { label: 'Seta Abaixo', value: 'ArrowDown', code: 'ArrowDown', category: 'Teclas de Navegação e Edição' },
+  { label: 'Enter', value: 'Enter', code: 'Enter', category: 'Teclas de Navegação e Edição' },
+  { label: 'Tab', value: 'Tab', code: 'Tab', category: 'Teclas de Navegação e Edição' },
+  { label: 'Escape (Esc)', value: 'Escape', code: 'Escape', category: 'Teclas de Navegação e Edição' },
+  { label: 'Espaço (Space)', value: ' ', code: 'Space', category: 'Teclas de Navegação e Edição' },
+  { label: 'Backspace', value: 'Backspace', code: 'Backspace', category: 'Teclas de Navegação e Edição' }
 ];
 
 export const MOUSE_ACTION_OPTIONS = [
   { label: 'Botão Primário (Esquerdo)', value: 'click-primary', button: 0 },
   { label: 'Botão Secundário (Direito)', value: 'click-secondary', button: 2 },
   { label: 'Botão do Meio (Scroll Click)', value: 'click-middle', button: 1 },
-  { label: 'Rolagem do Scroll para Cima (Scroll Up)', value: 'scroll-up', button: 0 },
-  { label: 'Rolagem do Scroll para Baixo (Scroll Down)', value: 'scroll-down', button: 0 }
+  { label: 'Rolagem do Scroll para Cima', value: 'scroll-up', button: 0 },
+  { label: 'Rolagem do Scroll para Baixo', value: 'scroll-down', button: 0 }
 ];
 
 export function getShortcutDisplay(el) {
@@ -70,7 +70,15 @@ export function getShortcutDisplay(el) {
   if (el.shiftKey) parts.push('Shift');
   if (el.altKey) parts.push('Alt');
   const found = KEY_OPTIONS.find(k => k.value === el.key || k.code === el.code);
-  const keyLabel = found ? (found.label.includes(': ') ? found.label.split(': ')[1] : found.label) : (el.key || 'T');
+  let keyLabel = el.key || 'T';
+  if (found) {
+    if (found.value === 'ArrowRight') keyLabel = 'Seta a Direita';
+    else if (found.value === 'ArrowLeft') keyLabel = 'Seta a Esquerda';
+    else if (found.value === 'ArrowUp') keyLabel = 'Seta Acima';
+    else if (found.value === 'ArrowDown') keyLabel = 'Seta Abaixo';
+    else if (found.label.includes(': ')) keyLabel = found.label.split(': ')[1];
+    else keyLabel = found.label;
+  }
   parts.push(keyLabel);
   return parts.join(' + ');
 }
@@ -80,8 +88,9 @@ export function getMouseActionDisplay(el) {
   if (el.ctrlKey) parts.push('Ctrl');
   if (el.shiftKey) parts.push('Shift');
   if (el.altKey) parts.push('Alt');
-  const found = MOUSE_ACTION_OPTIONS.find(m => m.value === (el.mouseAction || 'click-primary'));
-  parts.push(found ? found.label : 'Botão Primário');
+  const action = el.mouseAction || el.actionType || 'click-primary';
+  const found = MOUSE_ACTION_OPTIONS.find(m => m.value === action);
+  parts.push(found ? found.label : 'Botão Primário (Esquerdo)');
   return parts.join(' + ');
 }
 
@@ -211,6 +220,7 @@ export default function Edit({ attributes, setAttributes }) {
       expectedValue: type === 'input' ? 'Word' : '',
       placeholder: type === 'input' ? 'Digite aqui...' : '',
       mouseAction: 'click-primary',
+      actionType: 'click-primary',
       button: 0,
       ctrlKey: type === 'keyboard' ? true : false,
       shiftKey: false,
@@ -1112,12 +1122,13 @@ export default function Edit({ attributes, setAttributes }) {
                       </label>
                       <SelectControl
                         label={__('Tipo de Ação do Mouse', 'simulador-software-abnt')}
-                        value={el.mouseAction || 'click-primary'}
+                        value={el.mouseAction || el.actionType || 'click-primary'}
                         options={MOUSE_ACTION_OPTIONS.map(opt => ({ label: opt.label, value: opt.value }))}
                         onChange={(val) => {
                           const opt = MOUSE_ACTION_OPTIONS.find(o => o.value === val);
                           handleUpdateElement(el.id, {
                             mouseAction: val,
+                            actionType: val,
                             button: opt ? opt.button : 0
                           });
                         }}

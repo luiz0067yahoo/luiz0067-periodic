@@ -28,44 +28,49 @@ O bloco permite enviar capturas de tela (prints) em alta resolução e desenhar 
 
 ## 🖱️ Suporte Completo a Mouse Avançado, Scroll e Teclas Modificadoras
 
-As camadas interativas do tipo **Clique / Mouse** suportam personalização completa de botões físicos, rolagens de scroll e combinações com teclas modificadoras:
+As camadas interativas do tipo **Clique / Mouse** suportam personalização completa de botões físicos, rolagens de scroll e combinações com teclas modificadoras (Ctrl, Shift, Alt):
 
-### 1. Botões e Ações Suportadas
-- **Botão Primário (Esquerdo)** (`button: 0`): Clique padrão de seleção e avanço.
-- **Botão Secundário (Direito)** (`button: 2`): Abre menus de contexto ou simula cliques com botão direito (`contextmenu`).
-- **Botão do Meio / Scroll Click** (`button: 1`): Clique da roda de rolagem do mouse (`auxclick`).
-- **Rolagem do Scroll para Cima (`scroll-up`)**: Evento `wheel` com `deltaY` negativo (-100).
-- **Rolagem do Scroll para Baixo (`scroll-down`)**: Evento `wheel` com `deltaY` positivo (+100).
+### 1. Botões do Mouse Completos e Ações Suportadas
+- **Botão Primário (Esquerdo)** (`button: 0`, `mouseAction: 'click-primary'`): Clique padrão de seleção e avanço de etapa (`click`).
+- **Botão Secundário (Direito)** (`button: 2`, `mouseAction: 'click-secondary'`): Acionamento de menus de contexto ou simulação de clique direito (`contextmenu`).
+- **Botão do Meio / Scroll Click (Central)** (`button: 1`, `mouseAction: 'click-middle'`): Clique físico pressionando a roda de rolagem do mouse (`auxclick`), com prevenção do scroll padrão do navegador.
+- **Rolagem do Scroll para Cima** (`mouseAction: 'scroll-up'`): Evento de roda do mouse (`wheel`) com `deltaY` negativo (-100).
+- **Rolagem do Scroll para Baixo** (`mouseAction: 'scroll-down'`): Evento de roda do mouse (`wheel`) com `deltaY` positivo (+100).
 
-### 2. Teclas Modificadoras Opcionais
-Qualquer ação de mouse pode ser combinada com uma ou mais teclas modificadoras:
+### 2. Teclas Modificadoras (Checkboxes Opcionais)
+Qualquer ação de mouse (cliques ou rolagens) pode ser combinada com uma ou mais teclas modificadoras via caixas de checagem no editor:
 - `[Ctrl]` (`ctrlKey: true`)
 - `[Shift]` (`shiftKey: true`)
 - `[Alt]` (`altKey: true`)
 
-Exemplos práticos:
-- `Ctrl + Clique Primário` (Seleção múltipla ou abrir em segundo plano)
-- `Shift + Clique Primário` (Seleção de intervalo contíguo)
-- `Ctrl + Scroll Up` / `Ctrl + Scroll Down` (Simulação de zoom in/out)
+Exemplos práticos de uso:
+- **Ctrl + Clique Primário**: Seleção múltipla de itens ou abertura em segundo plano.
+- **Shift + Clique Primário**: Seleção de intervalo contíguo de texto ou arquivos.
+- **Ctrl + Scroll Up / Ctrl + Scroll Down**: Simulação de zoom in e zoom out em softwares gráficos ou navegadores.
+- **Alt + Clique Primário**: Inspeção rápida ou download direto.
+- **Botão do Meio (Scroll Click)**: Abertura rápida de links em nova aba ou fechamento de abas.
 
-### 3. Exemplos de Simulação de Eventos
+### 3. Implementação Prática dos Eventos de Simulação
+
+#### Exemplo A: Control + Clique Primário
 ```javascript
-// Exemplo A: Control + Clique Primário
 function simularCliqueComModificador(elementoAlvo, botao = 0, mod = { ctrl: false, shift: false, alt: false }) {
   const eventoMouse = new MouseEvent('click', {
     bubbles: true,
     cancelable: true,
     view: window,
     button: botao, // 0 = Primário (Esquerdo), 1 = Meio, 2 = Direito
-    buttons: botao === 2 ? 2 : (botao === 1 ? 4 : 1),
-    ctrlKey: mod.ctrl,
-    shiftKey: mod.shift,
-    altKey: mod.alt
+    buttons: 1, // 1 = Botão esquerdo pressionado
+    ctrlKey: mod.ctrl, // true/false
+    shiftKey: mod.shift, // true/false
+    altKey: mod.alt // true/false
   });
   elementoAlvo.dispatchEvent(eventoMouse);
 }
+```
 
-// Exemplo B: Ctrl + Scroll Up / Scroll Down
+#### Exemplo B: Ctrl + Scroll Up / Scroll Down
+```javascript
 function simularScrollComModificador(elementoAlvo, direcao = 'up', mod = { ctrl: false, shift: false, alt: false }) {
   const deltaY = direcao === 'up' ? -100 : 100; // Negativo para cima, positivo para baixo
   const eventoWheel = new WheelEvent('wheel', {
@@ -112,9 +117,56 @@ No frontend, o simulador escuta o evento global `keydown` durante o passo ativo 
 
 ```javascript
 function simularAtalhoTeclado(elementoAlvo, config = { key: 'T', code: 'KeyT', ctrl: false, shift: false, alt: false }) {
-  const init = {
-    key: config.key,
-    code: config.code || `Key${config.key.toUpperCase()}`,
+  const keyVal = config.key || 'T';
+  const targetCode = config.code || (keyVal.length === 1 ? `Key${keyVal.toUpperCase()}` : keyVal);
+  const target = elementoAlvo || window;
+  const currentMods = { ctrl: false, shift: false, alt: false };
+
+  // 1. Dispara keydowns dos modificadores na ordem configurada
+  if (config.ctrl) {
+    currentMods.ctrl = true;
+    target.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'Control',
+      code: 'ControlLeft',
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: true,
+      shiftKey: currentMods.shift,
+      altKey: currentMods.alt
+    }));
+  }
+  if (config.shift) {
+    currentMods.shift = true;
+    target.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'Shift',
+      code: 'ShiftLeft',
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: currentMods.ctrl,
+      shiftKey: true,
+      altKey: currentMods.alt
+    }));
+  }
+  if (config.alt) {
+    currentMods.alt = true;
+    target.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'Alt',
+      code: 'AltLeft',
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: currentMods.ctrl,
+      shiftKey: currentMods.shift,
+      altKey: true
+    }));
+  }
+
+  // 2. Dispara keydown da tecla principal com todos os modificadores
+  const mainInit = {
+    key: keyVal,
+    code: targetCode,
     bubbles: true,
     cancelable: true,
     view: window,
@@ -122,11 +174,26 @@ function simularAtalhoTeclado(elementoAlvo, config = { key: 'T', code: 'KeyT', c
     shiftKey: !!config.shift,
     altKey: !!config.alt
   };
-  const downEvent = new KeyboardEvent('keydown', init);
-  elementoAlvo.dispatchEvent(downEvent);
+  target.dispatchEvent(new KeyboardEvent('keydown', mainInit));
+
+  // 3. Dispara keyups em ordem inversa
   setTimeout(() => {
-    const upEvent = new KeyboardEvent('keyup', init);
-    elementoAlvo.dispatchEvent(upEvent);
+    target.dispatchEvent(new KeyboardEvent('keyup', mainInit));
+    if (config.alt) {
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'Alt', code: 'AltLeft', bubbles: true, cancelable: true, view: window
+      }));
+    }
+    if (config.shift) {
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'Shift', code: 'ShiftLeft', bubbles: true, cancelable: true, view: window
+      }));
+    }
+    if (config.ctrl) {
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'Control', code: 'ControlLeft', bubbles: true, cancelable: true, view: window
+      }));
+    }
   }, 40);
 }
 ```
@@ -300,9 +367,65 @@ Para testar a simulação sem precisar de uma instalação ativa do WordPress:
       "width": 3.0,
       "height": 4.8,
       "label": "Botão Iniciar",
+      "mouseAction": "click-primary",
+      "actionType": "click-primary",
+      "button": 0,
+      "ctrlKey": false,
+      "shiftKey": false,
+      "altKey": false,
       "targetStepIndex": 1
     }
   ]
+}
+```
+
+### Propriedades das Camadas Interativas de Mouse (`type: "click"`)
+
+| Propriedade | Tipo | Valores Válidos | Padrão | Descrição |
+| :--- | :--- | :--- | :--- | :--- |
+| `mouseAction` / `actionType` | `string` | `'click-primary'`, `'click-secondary'`, `'click-middle'`, `'scroll-up'`, `'scroll-down'` | `'click-primary'` | Identifica a ação de clique ou rotação do scroll. |
+| `button` | `number` | `0` (esquerdo), `1` (meio/scroll), `2` (direito) | `0` | Código numérico W3C do botão físico do mouse. |
+| `ctrlKey` | `boolean` | `true`, `false` | `false` | Exige que a tecla Control esteja pressionada durante o evento. |
+| `shiftKey` | `boolean` | `true`, `false` | `false` | Exige que a tecla Shift esteja pressionada durante o evento. |
+| `altKey` | `boolean` | `true`, `false` | `false` | Exige que a tecla Alt esteja pressionada durante o evento. |
+
+#### Exemplo de Camada: Ctrl + Clique Primário
+```json
+{
+  "id": "el-ctrl-click",
+  "type": "click",
+  "top": 45.0,
+  "left": 30.0,
+  "width": 10.0,
+  "height": 6.0,
+  "label": "Seleção Múltipla com Ctrl",
+  "mouseAction": "click-primary",
+  "actionType": "click-primary",
+  "button": 0,
+  "ctrlKey": true,
+  "shiftKey": false,
+  "altKey": false,
+  "targetStepIndex": 2
+}
+```
+
+#### Exemplo de Camada: Ctrl + Scroll Up (Zoom In)
+```json
+{
+  "id": "el-ctrl-scroll-up",
+  "type": "click",
+  "top": 20.0,
+  "left": 25.0,
+  "width": 50.0,
+  "height": 50.0,
+  "label": "Área de Zoom com Ctrl + Scroll Up",
+  "mouseAction": "scroll-up",
+  "actionType": "scroll-up",
+  "button": 0,
+  "ctrlKey": true,
+  "shiftKey": false,
+  "altKey": false,
+  "targetStepIndex": 2
 }
 ```
 

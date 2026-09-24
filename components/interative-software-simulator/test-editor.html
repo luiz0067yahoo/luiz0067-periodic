@@ -271,9 +271,9 @@
               <div class="sim-stage-canvas">
                 <img class="sim-bg-image" src="assets/step1-windows11-desktop.png" alt="Cenário Desktop Windows 11">
                 <div class="sim-elements-layer">
-                  <!-- Active Overlay Hotspot -->
-                  <div class="sim-editor-overlay-element type-click is-element-selected" style="top: 95.0%; left: 44.5%; width: 3.0%; height: 4.8%;">
-                    <span class="sim-element-badge">🎯 Botão Iniciar (44.5%, 95.0%)</span>
+                  <!-- Active Overlay Hotspot: Mouse Click with Modifiers -->
+                  <div class="sim-editor-overlay-element type-click is-element-selected" id="canvas-click-el" style="top: 95.0%; left: 44.5%; width: 3.0%; height: 4.8%; cursor: move;">
+                    <span class="sim-element-badge" id="canvas-click-badge">🎯 Ctrl + Botão Primário (44.5%, 95.0%)</span>
                   </div>
 
                   <!-- Drop Zone Mockup -->
@@ -295,6 +295,13 @@
                     <div class="sim-resize-handle handle-s" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; bottom: 0; left: 50%; right: auto; top: auto; transform: translate(-50%, 50%); cursor: ns-resize;"></div>
                     <div class="sim-resize-handle handle-sw" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; bottom: 0; left: 0; right: auto; top: auto; transform: translate(-50%, 50%); cursor: nesw-resize;"></div>
                     <div class="sim-resize-handle handle-w" style="position: absolute; width: 12px; height: 12px; background: #ffffff; border: 2px solid #7c3aed; border-radius: 3px; z-index: 9999; top: 50%; left: 0; right: auto; bottom: auto; transform: translate(-50%, -50%); cursor: ew-resize;"></div>
+                  </div>
+
+                  <!-- Overlay Hotspot: Keyboard Shortcut Layer Mockup -->
+                  <div class="sim-editor-overlay-element type-keyboard" id="canvas-kbd-el" style="position: absolute; top: 18%; left: 35%; width: 28%; height: 7.2%; border: 2px dashed #f59e0b; background: rgba(245, 158, 11, 0.18); border-radius: 6px; display: flex; align-items: center; justify-content: center; z-index: 50; cursor: move; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+                    <span class="sim-element-badge" id="canvas-kbd-badge" style="background: #b45309; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; font-family: monospace;">
+                      ⌨️ Ctrl + Shift + Alt + T
+                    </span>
                   </div>
                 </div>
               </div>
@@ -370,22 +377,141 @@
         </div>
       </div>
 
-      <!-- Camada Interativa Selecionada -->
+      <!-- Camadas Interativas do Passo (Toolbar) -->
       <div class="panel-section">
-        <div class="panel-title">Elemento Interativo (Hotspot)</div>
-        <div class="field-group">
-          <label>Tipo</label>
-          <select><option selected>Área de Clique (Hotspot)</option><option>Caixa de Texto (Input)</option></select>
+        <div class="panel-title">
+          <span>Camadas Interativas do Passo (3)</span>
         </div>
-        <div class="field-group">
-          <label>Posicionamento (%)</label>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <div><span style="font-size: 10px;">Top: 95.0%</span><input type="range" min="0" max="100" value="95" /></div>
-            <div><span style="font-size: 10px;">Left: 44.5%</span><input type="range" min="0" max="100" value="44.5" /></div>
-            <div><span style="font-size: 10px;">Width: 3.0%</span><input type="range" min="0" max="100" value="3" /></div>
-            <div><span style="font-size: 10px;">Height: 4.8%</span><input type="range" min="0" max="100" value="4.8" /></div>
+        
+        <!-- Botoes de Acao de Camada com o Botao Teclado Requisitado -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px;">
+          <button type="button" class="layer-add-btn" id="btn-add-click" style="padding: 6px 4px; font-size: 11px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; font-weight: 600;">+ Clique</button>
+          <button type="button" class="layer-add-btn" id="btn-add-input" style="padding: 6px 4px; font-size: 11px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; font-weight: 600;">+ Input</button>
+          <button type="button" class="layer-add-btn" id="btn-add-drag" style="padding: 6px 4px; font-size: 11px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; font-weight: 600;">+ Drag</button>
+          <button type="button" class="layer-add-btn" id="btn-add-image" style="padding: 6px 4px; font-size: 11px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; font-weight: 600;">+ Imagem</button>
+          <button type="button" class="layer-add-btn" id="btn-add-keyboard" style="padding: 6px 4px; font-size: 11px; background: #fffbeb; border: 1.5px solid #fde68a; color: #b45309; border-radius: 4px; cursor: pointer; font-weight: 700; grid-column: span 2; display: flex; align-items: center; justify-content: center; gap: 4px;" title="Adicionar Evento / Atalho Exclusivo de Teclado">
+            ⌨️ Teclado
+          </button>
+        </div>
+
+        <!-- Seletor de Camada Ativa para Edicao -->
+        <div style="display: flex; gap: 4px; margin-bottom: 12px;">
+          <button type="button" id="tab-click" class="layer-tab is-active" style="flex: 1; padding: 6px; font-size: 11px; border: 1px solid #2271b1; background: #2271b1; color: #ffffff; border-radius: 4px; font-weight: 600; cursor: pointer;">
+            🎯 Clique
+          </button>
+          <button type="button" id="tab-keyboard" class="layer-tab" style="flex: 1; padding: 6px; font-size: 11px; border: 1px solid #cbd5e1; background: #ffffff; color: #334155; border-radius: 4px; font-weight: 600; cursor: pointer;">
+            ⌨️ Teclado
+          </button>
+        </div>
+
+        <!-- Painel de Configuracao: Acao do Mouse & Modificadores -->
+        <div id="panel-mouse-config" style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 12px; margin-bottom: 12px;">
+          <label style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #1d4ed8; display: block; margin-bottom: 8px;">
+            🖱️ Ação do Mouse & Modificadores
+          </label>
+          <div class="field-group" style="margin-bottom: 8px;">
+            <label style="font-size: 11px; color: #1e3a8a;">Tipo de Ação do Mouse</label>
+            <select id="select-mouse-action">
+              <option value="click-primary" selected>Botão Primário (Esquerdo)</option>
+              <option value="click-secondary">Botão Secundário (Direito)</option>
+              <option value="click-middle">Botão do Meio (Scroll Click)</option>
+              <option value="scroll-up">Rolagem do Scroll para Cima</option>
+              <option value="scroll-down">Rolagem do Scroll para Baixo</option>
+            </select>
+          </div>
+
+          <label style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-top: 6px; margin-bottom: 4px;">
+            Teclas Modificadoras Requeridas:
+          </label>
+          <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 10px;">
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+              <input type="checkbox" id="mouse-mod-ctrl" checked style="width: auto;" /> Ctrl
+            </label>
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+              <input type="checkbox" id="mouse-mod-shift" style="width: auto;" /> Shift
+            </label>
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+              <input type="checkbox" id="mouse-mod-alt" style="width: auto;" /> Alt
+            </label>
+          </div>
+
+          <div style="padding: 8px 10px; background: #ffffff; border-radius: 4px; border: 1px solid #93c5fd; font-size: 11px; color: #1e3a8a;">
+            Pré-visualização da Ação: <strong id="mouse-action-preview" style="color: #1d4ed8;">Ctrl + Botão Primário (Esquerdo)</strong>
           </div>
         </div>
+
+        <!-- Painel de Configuracao: Atalho de Teclado -->
+        <div id="panel-keyboard-config" style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 12px; margin-bottom: 12px; display: none;">
+          <label style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #b45309; display: block; margin-bottom: 8px;">
+            ⌨️ Configuração do Atalho de Teclado
+          </label>
+          
+          <label style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 4px;">
+            Teclas Modificadoras (Combine uma ou mais):
+          </label>
+          <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 10px;">
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+              <input type="checkbox" id="kbd-mod-ctrl" checked style="width: auto;" /> Ctrl
+            </label>
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+              <input type="checkbox" id="kbd-mod-shift" checked style="width: auto;" /> Shift
+            </label>
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer;">
+              <input type="checkbox" id="kbd-mod-alt" checked style="width: auto;" /> Alt
+            </label>
+          </div>
+
+          <div class="field-group" style="margin-bottom: 8px;">
+            <label style="font-size: 11px; color: #78350f;">Tecla Principal (Categorizada):</label>
+            <select id="select-kbd-key">
+              <optgroup label="Teclas Alfanuméricas: Letras">
+                <option value="A">Letra: A</option>
+                <option value="C">Letra: C</option>
+                <option value="T" selected>Letra: T</option>
+                <option value="V">Letra: V</option>
+                <option value="Z">Letra: Z</option>
+              </optgroup>
+              <optgroup label="Teclas Alfanuméricas: Números">
+                <option value="0">Número: 0</option>
+                <option value="1">Número: 1</option>
+                <option value="2">Número: 2</option>
+              </optgroup>
+              <optgroup label="Teclas de Função">
+                <option value="F1">F1</option>
+                <option value="F2">F2</option>
+                <option value="F5">F5</option>
+                <option value="F11">F11</option>
+                <option value="F12">F12</option>
+              </optgroup>
+              <optgroup label="Teclas de Navegação e Edição">
+                <option value="Home">Home</option>
+                <option value="End">End</option>
+                <option value="Delete">Delete</option>
+                <option value="PageUp">Page Up</option>
+                <option value="PageDown">Page Down</option>
+                <option value="ArrowRight">Seta a Direita</option>
+                <option value="ArrowLeft">Seta a Esquerda</option>
+                <option value="ArrowUp">Seta Acima</option>
+                <option value="ArrowDown">Seta Abaixo</option>
+                <option value="Enter">Enter</option>
+                <option value="Tab">Tab</option>
+                <option value="Escape">Escape (Esc)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div style="margin-top: 8px; padding: 10px; background: #1e293b; border-radius: 6px; color: #ffffff; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 11px; color: #94a3b8;">Pré-visualização:</span>
+            <span id="kbd-shortcut-preview" style="font-size: 13px; font-weight: 700; color: #fbbf24; font-family: monospace; letter-spacing: 0.5px;">
+              Ctrl + Shift + Alt + T
+            </span>
+          </div>
+
+          <p style="margin: 8px 0 0 0; font-size: 10px; color: #78350f; line-height: 1.4;">
+            💡 <strong>Exemplos suportados:</strong> Ctrl + C, Ctrl + T, Alt + A, Shift + Seta a Direita, F1..F12, Shift + Delete, Ctrl + Home, Ctrl + End, Shift + Page Up, Ctrl + Shift + Alt + T.
+          </p>
+        </div>
+
         <div class="field-group">
           <label>Ao Acertar, Avançar Para</label>
           <select><option selected>Passo 2: Menu Iniciar</option><option>Concluir Simulação</option></select>
@@ -393,6 +519,82 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Interatividade Dinamica do Mockup do Editor
+    const tabClick = document.getElementById('tab-click');
+    const tabKeyboard = document.getElementById('tab-keyboard');
+    const panelMouse = document.getElementById('panel-mouse-config');
+    const panelKbd = document.getElementById('panel-keyboard-config');
+
+    tabClick.addEventListener('click', () => {
+      tabClick.style.background = '#2271b1';
+      tabClick.style.color = '#ffffff';
+      tabClick.style.border = '1px solid #2271b1';
+      tabKeyboard.style.background = '#ffffff';
+      tabKeyboard.style.color = '#334155';
+      tabKeyboard.style.border = '1px solid #cbd5e1';
+      panelMouse.style.display = 'block';
+      panelKbd.style.display = 'none';
+    });
+
+    tabKeyboard.addEventListener('click', () => {
+      tabKeyboard.style.background = '#b45309';
+      tabKeyboard.style.color = '#ffffff';
+      tabKeyboard.style.border = '1px solid #b45309';
+      tabClick.style.background = '#ffffff';
+      tabClick.style.color = '#334155';
+      tabClick.style.border = '1px solid #cbd5e1';
+      panelMouse.style.display = 'none';
+      panelKbd.style.display = 'block';
+    });
+
+    document.getElementById('btn-add-keyboard').addEventListener('click', () => {
+      tabKeyboard.click();
+    });
+
+    // Atualizacao em tempo real do mouse
+    function updateMousePreview() {
+      const parts = [];
+      if (document.getElementById('mouse-mod-ctrl').checked) parts.push('Ctrl');
+      if (document.getElementById('mouse-mod-shift').checked) parts.push('Shift');
+      if (document.getElementById('mouse-mod-alt').checked) parts.push('Alt');
+      const actionSelect = document.getElementById('select-mouse-action');
+      const actionText = actionSelect.options[actionSelect.selectedIndex].text;
+      parts.push(actionText);
+      const fullText = parts.join(' + ');
+      document.getElementById('mouse-action-preview').textContent = fullText;
+      document.getElementById('canvas-click-badge').textContent = '🎯 ' + fullText + ' (44.5%, 95.0%)';
+    }
+
+    document.getElementById('select-mouse-action').addEventListener('change', updateMousePreview);
+    document.getElementById('mouse-mod-ctrl').addEventListener('change', updateMousePreview);
+    document.getElementById('mouse-mod-shift').addEventListener('change', updateMousePreview);
+    document.getElementById('mouse-mod-alt').addEventListener('change', updateMousePreview);
+
+    // Atualizacao em tempo real do teclado
+    function updateKbdPreview() {
+      const parts = [];
+      if (document.getElementById('kbd-mod-ctrl').checked) parts.push('Ctrl');
+      if (document.getElementById('kbd-mod-shift').checked) parts.push('Shift');
+      if (document.getElementById('kbd-mod-alt').checked) parts.push('Alt');
+      const keySelect = document.getElementById('select-kbd-key');
+      let keyVal = keySelect.value;
+      if (keyVal === 'ArrowRight') keyVal = 'Seta a Direita';
+      else if (keyVal === 'ArrowLeft') keyVal = 'Seta a Esquerda';
+      else if (keyVal === 'ArrowUp') keyVal = 'Seta Acima';
+      else if (keyVal === 'ArrowDown') keyVal = 'Seta Abaixo';
+      parts.push(keyVal);
+      const shortcutText = parts.join(' + ');
+      document.getElementById('kbd-shortcut-preview').textContent = shortcutText;
+      document.getElementById('canvas-kbd-badge').textContent = '⌨️ ' + shortcutText;
+    }
+
+    document.getElementById('select-kbd-key').addEventListener('change', updateKbdPreview);
+    document.getElementById('kbd-mod-ctrl').addEventListener('change', updateKbdPreview);
+    document.getElementById('kbd-mod-shift').addEventListener('change', updateKbdPreview);
+    document.getElementById('kbd-mod-alt').addEventListener('change', updateKbdPreview);
+  </script>
 
 </body>
 </html>

@@ -292,21 +292,21 @@
 
   // src/edit.js
   var KEY_OPTIONS = [
-    // Teclas Alfanuméricas (A-Z)
+    // Teclas Alfanuméricas: Letras (A-Z)
     ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((char) => ({
       label: `Letra: ${char}`,
       value: char,
       code: `Key${char}`,
-      category: "Alfanum\xE9ricas"
+      category: "Teclas Alfanum\xE9ricas"
     })),
-    // Números (0-9)
+    // Teclas Alfanuméricas: Números (0-9)
     ..."0123456789".split("").map((digit) => ({
       label: `N\xFAmero: ${digit}`,
       value: digit,
       code: `Digit${digit}`,
-      category: "Alfanum\xE9ricas"
+      category: "Teclas Alfanum\xE9ricas"
     })),
-    // Teclas de Função (F1 - F12)
+    // Teclas de Função: F1 - F12
     ...Array.from({ length: 12 }, (_, i) => ({
       label: `F${i + 1}`,
       value: `F${i + 1}`,
@@ -314,27 +314,27 @@
       category: "Teclas de Fun\xE7\xE3o"
     })),
     // Teclas de Navegação e Edição
-    { label: "Home", value: "Home", code: "Home", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "End", value: "End", code: "End", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Delete", value: "Delete", code: "Delete", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Page Up", value: "PageUp", code: "PageUp", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Page Down", value: "PageDown", code: "PageDown", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Seta Acima (Arrow Up)", value: "ArrowUp", code: "ArrowUp", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Seta Abaixo (Arrow Down)", value: "ArrowDown", code: "ArrowDown", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Seta Esquerda (Arrow Left)", value: "ArrowLeft", code: "ArrowLeft", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Seta Direita (Arrow Right)", value: "ArrowRight", code: "ArrowRight", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Enter", value: "Enter", code: "Enter", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Tab", value: "Tab", code: "Tab", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Escape (Esc)", value: "Escape", code: "Escape", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Espa\xE7o (Space)", value: " ", code: "Space", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" },
-    { label: "Backspace", value: "Backspace", code: "Backspace", category: "Navega\xE7\xE3o e Edi\xE7\xE3o" }
+    { label: "Home", value: "Home", code: "Home", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "End", value: "End", code: "End", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Delete", value: "Delete", code: "Delete", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Page Up", value: "PageUp", code: "PageUp", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Page Down", value: "PageDown", code: "PageDown", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Seta a Direita", value: "ArrowRight", code: "ArrowRight", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Seta a Esquerda", value: "ArrowLeft", code: "ArrowLeft", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Seta Acima", value: "ArrowUp", code: "ArrowUp", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Seta Abaixo", value: "ArrowDown", code: "ArrowDown", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Enter", value: "Enter", code: "Enter", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Tab", value: "Tab", code: "Tab", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Escape (Esc)", value: "Escape", code: "Escape", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Espa\xE7o (Space)", value: " ", code: "Space", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" },
+    { label: "Backspace", value: "Backspace", code: "Backspace", category: "Teclas de Navega\xE7\xE3o e Edi\xE7\xE3o" }
   ];
   var MOUSE_ACTION_OPTIONS = [
     { label: "Bot\xE3o Prim\xE1rio (Esquerdo)", value: "click-primary", button: 0 },
     { label: "Bot\xE3o Secund\xE1rio (Direito)", value: "click-secondary", button: 2 },
     { label: "Bot\xE3o do Meio (Scroll Click)", value: "click-middle", button: 1 },
-    { label: "Rolagem do Scroll para Cima (Scroll Up)", value: "scroll-up", button: 0 },
-    { label: "Rolagem do Scroll para Baixo (Scroll Down)", value: "scroll-down", button: 0 }
+    { label: "Rolagem do Scroll para Cima", value: "scroll-up", button: 0 },
+    { label: "Rolagem do Scroll para Baixo", value: "scroll-down", button: 0 }
   ];
   function getShortcutDisplay(el) {
     const parts = [];
@@ -342,7 +342,15 @@
     if (el.shiftKey) parts.push("Shift");
     if (el.altKey) parts.push("Alt");
     const found = KEY_OPTIONS.find((k) => k.value === el.key || k.code === el.code);
-    const keyLabel = found ? found.label.includes(": ") ? found.label.split(": ")[1] : found.label : el.key || "T";
+    let keyLabel = el.key || "T";
+    if (found) {
+      if (found.value === "ArrowRight") keyLabel = "Seta a Direita";
+      else if (found.value === "ArrowLeft") keyLabel = "Seta a Esquerda";
+      else if (found.value === "ArrowUp") keyLabel = "Seta Acima";
+      else if (found.value === "ArrowDown") keyLabel = "Seta Abaixo";
+      else if (found.label.includes(": ")) keyLabel = found.label.split(": ")[1];
+      else keyLabel = found.label;
+    }
     parts.push(keyLabel);
     return parts.join(" + ");
   }
@@ -351,8 +359,9 @@
     if (el.ctrlKey) parts.push("Ctrl");
     if (el.shiftKey) parts.push("Shift");
     if (el.altKey) parts.push("Alt");
-    const found = MOUSE_ACTION_OPTIONS.find((m) => m.value === (el.mouseAction || "click-primary"));
-    parts.push(found ? found.label : "Bot\xE3o Prim\xE1rio");
+    const action = el.mouseAction || el.actionType || "click-primary";
+    const found = MOUSE_ACTION_OPTIONS.find((m) => m.value === action);
+    parts.push(found ? found.label : "Bot\xE3o Prim\xE1rio (Esquerdo)");
     return parts.join(" + ");
   }
   var RESIZE_HANDLES_DEF = [
@@ -463,6 +472,7 @@
         expectedValue: type === "input" ? "Word" : "",
         placeholder: type === "input" ? "Digite aqui..." : "",
         mouseAction: "click-primary",
+        actionType: "click-primary",
         button: 0,
         ctrlKey: type === "keyboard" ? true : false,
         shiftKey: false,
@@ -1256,12 +1266,13 @@
             import_components.SelectControl,
             {
               label: (0, import_i18n.__)("Tipo de A\xE7\xE3o do Mouse", "simulador-software-abnt"),
-              value: el.mouseAction || "click-primary",
+              value: el.mouseAction || el.actionType || "click-primary",
               options: MOUSE_ACTION_OPTIONS.map((opt) => ({ label: opt.label, value: opt.value })),
               onChange: (val) => {
                 const opt = MOUSE_ACTION_OPTIONS.find((o) => o.value === val);
                 handleUpdateElement(el.id, {
                   mouseAction: val,
+                  actionType: val,
                   button: opt ? opt.button : 0
                 });
               }

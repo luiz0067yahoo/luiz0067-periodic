@@ -1,0 +1,13 @@
+{
+  "name": "luiz0067-periodic",
+  "version": "2.0.0",
+  "description": "Periodic Component Suite - WordPress Plugin",
+  "main": "periodic.php",
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "build": "node scripts/build-zip.js",
+    "zip": "node scripts/build-zip.js"
+  },
+  "author": "Luiz Fernando Brogliatto Ferreira & Periodic Team",
+  "license": "GPL-2.0-or-later"
+}
