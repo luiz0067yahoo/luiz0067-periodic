@@ -6,7 +6,7 @@
 
 # Periodic Advanced Banner
 
-[English](advanced-banner.md) • [Português (BR)](i18n/advanced-banner.pt-br.md) • [Español](i18n/advanced-banner.es.md) • [Italiano](i18n/advanced-banner.it.md)
+[English](../advanced-banner.md) • [Português (BR)](advanced-banner.pt-br.md) • [Español](advanced-banner.es.md) • [Italiano](advanced-banner.it.md)
 
 
 > Consolidated module standardized under namespace `.periodic-advanced-banner`.

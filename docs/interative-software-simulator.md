@@ -8,6 +8,8 @@
 
 > Consolidated module standardized under namespace `.periodic-interative-software-simulator`.
 
+[English](interative-software-simulator.md) • [Português (BR)](i18n/interative-software-simulator.pt-br.md) • [Español](i18n/interative-software-simulator.es.md) • [Italiano](i18n/interative-software-simulator.it.md)
+
 ---
 
 # Simulador de Software Interativo (WordPress Gutenberg Block)
@@ -20,7 +22,116 @@
 
 O **Simulador de Software Interativo** (`custom/simulador-software`) é um bloco Gutenberg nativo de alta performance para WordPress projetado para criar **tutoriais práticos guiados passo a passo simulando softwares reais** (como Windows 11, Microsoft Word, Excel, painéis SaaS, sistemas operacionais e ferramentas web).
 
-O bloco permite enviar capturas de tela (prints) em alta resolução e desenhar camadas interativas responsivas (áreas de clique com pulso visual e caixas de digitação com validação instantânea).
+O bloco permite enviar capturas de tela (prints) em alta resolução e desenhar camadas interativas responsivas (áreas de clique com pulso visual, caixas de digitação com validação instantânea, drag & drop, imagens animadas e eventos avançados de teclado e mouse).
+
+---
+
+## 🖱️ Suporte Completo a Mouse Avançado, Scroll e Teclas Modificadoras
+
+As camadas interativas do tipo **Clique / Mouse** suportam personalização completa de botões físicos, rolagens de scroll e combinações com teclas modificadoras:
+
+### 1. Botões e Ações Suportadas
+- **Botão Primário (Esquerdo)** (`button: 0`): Clique padrão de seleção e avanço.
+- **Botão Secundário (Direito)** (`button: 2`): Abre menus de contexto ou simula cliques com botão direito (`contextmenu`).
+- **Botão do Meio / Scroll Click** (`button: 1`): Clique da roda de rolagem do mouse (`auxclick`).
+- **Rolagem do Scroll para Cima (`scroll-up`)**: Evento `wheel` com `deltaY` negativo (-100).
+- **Rolagem do Scroll para Baixo (`scroll-down`)**: Evento `wheel` com `deltaY` positivo (+100).
+
+### 2. Teclas Modificadoras Opcionais
+Qualquer ação de mouse pode ser combinada com uma ou mais teclas modificadoras:
+- `[Ctrl]` (`ctrlKey: true`)
+- `[Shift]` (`shiftKey: true`)
+- `[Alt]` (`altKey: true`)
+
+Exemplos práticos:
+- `Ctrl + Clique Primário` (Seleção múltipla ou abrir em segundo plano)
+- `Shift + Clique Primário` (Seleção de intervalo contíguo)
+- `Ctrl + Scroll Up` / `Ctrl + Scroll Down` (Simulação de zoom in/out)
+
+### 3. Exemplos de Simulação de Eventos
+```javascript
+// Exemplo A: Control + Clique Primário
+function simularCliqueComModificador(elementoAlvo, botao = 0, mod = { ctrl: false, shift: false, alt: false }) {
+  const eventoMouse = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window,
+    button: botao, // 0 = Primário (Esquerdo), 1 = Meio, 2 = Direito
+    buttons: botao === 2 ? 2 : (botao === 1 ? 4 : 1),
+    ctrlKey: mod.ctrl,
+    shiftKey: mod.shift,
+    altKey: mod.alt
+  });
+  elementoAlvo.dispatchEvent(eventoMouse);
+}
+
+// Exemplo B: Ctrl + Scroll Up / Scroll Down
+function simularScrollComModificador(elementoAlvo, direcao = 'up', mod = { ctrl: false, shift: false, alt: false }) {
+  const deltaY = direcao === 'up' ? -100 : 100; // Negativo para cima, positivo para baixo
+  const eventoWheel = new WheelEvent('wheel', {
+    bubbles: true,
+    cancelable: true,
+    view: window,
+    deltaY: deltaY,
+    deltaMode: 0,
+    ctrlKey: mod.ctrl,
+    shiftKey: mod.shift,
+    altKey: mod.alt
+  });
+  elementoAlvo.dispatchEvent(eventoWheel);
+}
+```
+
+---
+
+## ⌨️ Interação Exclusiva de Teclado ("+ Teclado")
+
+O botão **`+ Teclado`** disponível no painel de camadas interativas permite cadastrar eventos exclusivos de atalhos e teclas de computador para reproduzir com fidelidade a operação de softwares:
+
+### 1. Configuração e Interface Visual
+- **Teclas Modificadoras**: Checkboxes para `[Ctrl]`, `[Shift]`, `[Alt]`.
+- **Seletor de Teclas Categorizado**:
+  - **Teclas Alfanuméricas**: Letras (`A-Z`) e Números (`0-9`).
+  - **Teclas de Função**: `F1` até `F12`.
+  - **Teclas de Navegação e Edição**: `Home`, `End`, `Delete`, `Page Up`, `Page Down`, Setas direcionais (`ArrowUp`, `ArrowDown`, `ArrowLeft`, `ArrowRight`), `Enter`, `Tab`, `Escape`, `Space`, `Backspace`.
+- **Pré-visualização em Tempo Real**: Exibe a combinação exata configurada (ex: `Ctrl + Shift + Alt + T`).
+
+### 2. Combinações e Atalhos Suportados
+- `Ctrl + C` (Copiar)
+- `Ctrl + T` (Nova aba)
+- `Alt + A`
+- `Shift + Seta a Direita` (Seleção de texto)
+- `F1` até `F12` (Ajuda, tela cheia, renomear, atualizar)
+- `Shift + Delete` (Exclusão permanente)
+- `Ctrl + Home` / `Ctrl + End` (Início / Fim de documento)
+- `Shift + Page Up`
+- **Combinação Complexa**: `Ctrl + Shift + Alt + T`
+
+### 3. Execução e Disparo em Tempo Real
+No frontend, o simulador escuta o evento global `keydown` durante o passo ativo e valida as teclas físicas pressionadas. Ao reconhecer o atalho, dispara a sequência simulada e avança imediatamente de etapa com feedback auditivo e tátil. Adicionalmente, um card visual estilizado com `<kbd>` permite que usuários em dispositivos móveis ou com leitores de tela toquem para acionar a simulação.
+
+```javascript
+function simularAtalhoTeclado(elementoAlvo, config = { key: 'T', code: 'KeyT', ctrl: false, shift: false, alt: false }) {
+  const init = {
+    key: config.key,
+    code: config.code || `Key${config.key.toUpperCase()}`,
+    bubbles: true,
+    cancelable: true,
+    view: window,
+    ctrlKey: !!config.ctrl,
+    shiftKey: !!config.shift,
+    altKey: !!config.alt
+  };
+  const downEvent = new KeyboardEvent('keydown', init);
+  elementoAlvo.dispatchEvent(downEvent);
+  setTimeout(() => {
+    const upEvent = new KeyboardEvent('keyup', init);
+    elementoAlvo.dispatchEvent(upEvent);
+  }, 40);
+}
+```
+
+---
 
 ---
 

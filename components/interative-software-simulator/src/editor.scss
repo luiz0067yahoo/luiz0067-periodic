@@ -384,6 +384,29 @@
       }
     }
 
+    &.type-keyboard {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+
+      .sim-element-move-handle {
+        background: #d97706;
+        &:hover {
+          background: #b45309;
+        }
+      }
+
+      .sim-element-badge {
+        background: #d97706;
+      }
+
+      .sim-resize-handle {
+        border-color: #d97706;
+        &:hover {
+          background: #d97706;
+        }
+      }
+    }
+
     /* Live animation preview in editor */
     &.sim-anim-preview {
       &.anim-appear {

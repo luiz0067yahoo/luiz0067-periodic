@@ -1,5 +1,52 @@
 (() => {
   // src/view.js
+  function simularCliqueComModificador(elementoAlvo, botao = 0, mod = { ctrl: false, shift: false, alt: false }) {
+    const eventoMouse = new MouseEvent("click", {
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      button: botao,
+      // 0 = Primário (Esquerdo), 1 = Meio, 2 = Direito
+      buttons: botao === 2 ? 2 : botao === 1 ? 4 : 1,
+      ctrlKey: !!mod.ctrl,
+      shiftKey: !!mod.shift,
+      altKey: !!mod.alt
+    });
+    elementoAlvo.dispatchEvent(eventoMouse);
+  }
+  function simularScrollComModificador(elementoAlvo, direcao = "up", mod = { ctrl: false, shift: false, alt: false }) {
+    const deltaY = direcao === "up" ? -100 : 100;
+    const eventoWheel = new WheelEvent("wheel", {
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      deltaY,
+      deltaMode: 0,
+      ctrlKey: !!mod.ctrl,
+      shiftKey: !!mod.shift,
+      altKey: !!mod.alt
+    });
+    elementoAlvo.dispatchEvent(eventoWheel);
+  }
+  function simularAtalhoTeclado(elementoAlvo, config = { key: "T", code: "KeyT", ctrl: false, shift: false, alt: false }) {
+    const keyVal = config.key || "T";
+    const init = {
+      key: keyVal,
+      code: config.code || (keyVal.length === 1 ? `Key${keyVal.toUpperCase()}` : keyVal),
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      ctrlKey: !!config.ctrl,
+      shiftKey: !!config.shift,
+      altKey: !!config.alt
+    };
+    const downEvent = new KeyboardEvent("keydown", init);
+    elementoAlvo.dispatchEvent(downEvent);
+    setTimeout(() => {
+      const upEvent = new KeyboardEvent("keyup", init);
+      elementoAlvo.dispatchEvent(upEvent);
+    }, 40);
+  }
   var SoftwareSimulator = class {
     constructor(container) {
       this.container = container;
@@ -32,6 +79,7 @@
       this.toastTimer = null;
       this.isMuted = false;
       this.currentAudio = null;
+      this.cleanupCurrentStepListeners = null;
       this.initDOM();
       this.renderStep(0);
       this.wrapper.setAttribute("data-initialized", "true");
@@ -217,6 +265,10 @@
         }
         this.stageCanvas.classList.remove("is-animating");
       }
+      if (this.cleanupCurrentStepListeners) {
+        this.cleanupCurrentStepListeners();
+        this.cleanupCurrentStepListeners = null;
+      }
       this.elementsLayer.innerHTML = "";
       const elements = step.elements || [];
       elements.forEach((el) => {
@@ -228,6 +280,8 @@
           this.createDragElement(el);
         } else if (el.type === "image") {
           this.createImageElement(el);
+        } else if (el.type === "keyboard") {
+          this.createKeyboardElement(el);
         }
       });
       this.updateStageDimensions();
@@ -241,16 +295,33 @@
       btn.style.width = `${el.width}%`;
       btn.style.height = `${el.height}%`;
       btn.setAttribute("aria-label", el.label || "\xC1rea interativa");
-      btn.title = el.label || "Clique aqui";
+      const mouseAction = el.mouseAction || "click-primary";
+      const isWheel = mouseAction === "scroll-up" || mouseAction === "scroll-down";
+      const mods = { ctrl: !!el.ctrlKey, shift: !!el.shiftKey, alt: !!el.altKey };
+      const checkModMatch = (e) => {
+        return !!e.ctrlKey === mods.ctrl && !!e.shiftKey === mods.shift && !!e.altKey === mods.alt;
+      };
+      const getActionDescription = () => {
+        const parts = [];
+        if (mods.ctrl) parts.push("Ctrl");
+        if (mods.shift) parts.push("Shift");
+        if (mods.alt) parts.push("Alt");
+        if (mouseAction === "click-secondary") parts.push("Clique com Bot\xE3o Direito");
+        else if (mouseAction === "click-middle") parts.push("Clique com Bot\xE3o do Meio (Scroll Click)");
+        else if (mouseAction === "scroll-up") parts.push("Rolar Scroll para Cima");
+        else if (mouseAction === "scroll-down") parts.push("Rolar Scroll para Baixo");
+        else parts.push("Clique do Bot\xE3o Esquerdo");
+        return parts.join(" + ");
+      };
+      btn.title = el.label ? `${el.label} (${getActionDescription()})` : getActionDescription();
       btn.innerHTML = `<span class="sim-hotspot-ripple"></span>`;
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
+      const handleSuccess = () => {
         if (el.requiresCompletedInputs) {
           const currentStep = this.steps[this.currentStepIndex];
           const requiredInputs = (currentStep.elements || []).filter((item) => item.type === "input");
           const allCompleted = requiredInputs.every((inputEl) => this.completedInputs.has(inputEl.id));
           if (!allCompleted) {
-            this.showErrorToast("Por favor, preencha todos os campos corretamente antes de clicar em OK!");
+            this.showErrorToast("Por favor, preencha todos os campos corretamente antes de prosseguir!");
             return;
           }
         }
@@ -263,8 +334,129 @@
             this.renderStep(nextTarget);
           }
         }, 250);
-      });
+      };
+      if (isWheel) {
+        btn.addEventListener("wheel", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const isMatchDirection = mouseAction === "scroll-up" && e.deltaY < 0 || mouseAction === "scroll-down" && e.deltaY > 0;
+          if (isMatchDirection && checkModMatch(e)) {
+            simularScrollComModificador(btn, mouseAction === "scroll-up" ? "up" : "down", mods);
+            handleSuccess();
+          } else {
+            this.showErrorToast(`A\xE7\xE3o necess\xE1ria: ${getActionDescription()}`);
+          }
+        }, { passive: false });
+      } else if (mouseAction === "click-secondary") {
+        btn.addEventListener("contextmenu", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (checkModMatch(e)) {
+            simularCliqueComModificador(btn, 2, mods);
+            handleSuccess();
+          } else {
+            this.showErrorToast(`A\xE7\xE3o necess\xE1ria: ${getActionDescription()}`);
+          }
+        });
+        btn.addEventListener("mousedown", (e) => {
+          if (e.button === 2) e.preventDefault();
+        });
+      } else if (mouseAction === "click-middle") {
+        btn.addEventListener("auxclick", (e) => {
+          if (e.button === 1) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (checkModMatch(e)) {
+              simularCliqueComModificador(btn, 1, mods);
+              handleSuccess();
+            } else {
+              this.showErrorToast(`A\xE7\xE3o necess\xE1ria: ${getActionDescription()}`);
+            }
+          }
+        });
+        btn.addEventListener("mousedown", (e) => {
+          if (e.button === 1) e.preventDefault();
+        });
+      } else {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (checkModMatch(e)) {
+            simularCliqueComModificador(btn, 0, mods);
+            handleSuccess();
+          } else {
+            this.showErrorToast(`A\xE7\xE3o necess\xE1ria: ${getActionDescription()}`);
+          }
+        });
+      }
       this.elementsLayer.appendChild(btn);
+    }
+    createKeyboardElement(el) {
+      const kbdBtn = document.createElement("button");
+      kbdBtn.type = "button";
+      kbdBtn.className = "sim-keyboard-item";
+      kbdBtn.style.top = `${el.top}%`;
+      kbdBtn.style.left = `${el.left}%`;
+      kbdBtn.style.width = `${el.width}%`;
+      kbdBtn.style.height = `${el.height}%`;
+      kbdBtn.setAttribute("aria-label", el.label || "Atalho de Teclado");
+      const parts = [];
+      if (el.ctrlKey) parts.push("Ctrl");
+      if (el.shiftKey) parts.push("Shift");
+      if (el.altKey) parts.push("Alt");
+      const keyVal = el.key || "T";
+      parts.push(keyVal);
+      const shortcutLabel = parts.join(" + ");
+      kbdBtn.title = `Pressione no teclado ou clique: ${shortcutLabel}`;
+      kbdBtn.innerHTML = `
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+        <rect x="2" y="4" width="20" height="16" rx="2.5"></rect>
+        <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path>
+      </svg>
+      <kbd>${this.escapeHTML(shortcutLabel)}</kbd>
+    `;
+      const triggerSuccess = () => {
+        simularAtalhoTeclado(kbdBtn, {
+          key: el.key || "T",
+          code: el.code || "KeyT",
+          ctrl: !!el.ctrlKey,
+          shift: !!el.shiftKey,
+          alt: !!el.altKey
+        });
+        kbdBtn.classList.add("is-triggered");
+        setTimeout(() => {
+          const nextTarget = el.targetStepIndex !== void 0 ? el.targetStepIndex : this.currentStepIndex + 1;
+          if (nextTarget === -1 || nextTarget >= this.steps.length) {
+            this.showCompletionScreen();
+          } else {
+            this.renderStep(nextTarget);
+          }
+        }, 300);
+      };
+      kbdBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        triggerSuccess();
+      });
+      const keydownHandler = (e) => {
+        const isCtrl = !!e.ctrlKey;
+        const isShift = !!e.shiftKey;
+        const isAlt = !!e.altKey;
+        const pressedKey = (e.key || "").toUpperCase();
+        const targetKey = (el.key || "").toUpperCase();
+        const pressedCode = e.code || "";
+        const targetCode = el.code || "";
+        const matchMod = isCtrl === !!el.ctrlKey && isShift === !!el.shiftKey && isAlt === !!el.altKey;
+        const matchKey = pressedKey === targetKey || targetCode && pressedCode === targetCode || el.key === " " && (e.key === " " || pressedCode === "Space") || el.key === "ArrowUp" && (e.key === "ArrowUp" || pressedCode === "ArrowUp") || el.key === "ArrowDown" && (e.key === "ArrowDown" || pressedCode === "ArrowDown") || el.key === "ArrowLeft" && (e.key === "ArrowLeft" || pressedCode === "ArrowLeft") || el.key === "ArrowRight" && (e.key === "ArrowRight" || pressedCode === "ArrowRight");
+        if (matchMod && matchKey) {
+          e.preventDefault();
+          e.stopPropagation();
+          triggerSuccess();
+        }
+      };
+      window.addEventListener("keydown", keydownHandler);
+      this.cleanupCurrentStepListeners = () => {
+        window.removeEventListener("keydown", keydownHandler);
+      };
+      this.elementsLayer.appendChild(kbdBtn);
     }
     createInputElement(el) {
       const wrapper = document.createElement("div");

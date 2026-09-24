@@ -6,7 +6,7 @@
 
 # Periodic Alert Callout
 
-[English](alert-callout.md) • [Português (BR)](i18n/alert-callout.pt-br.md) • [Español](i18n/alert-callout.es.md) • [Italiano](i18n/alert-callout.it.md)
+[English](../alert-callout.md) • [Português (BR)](alert-callout.pt-br.md) • [Español](alert-callout.es.md) • [Italiano](alert-callout.it.md)
 
 
 

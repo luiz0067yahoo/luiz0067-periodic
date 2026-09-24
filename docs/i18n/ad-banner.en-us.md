@@ -6,7 +6,7 @@
 
 # Periodic Ad Banner
 
-[English](ad-banner.md) • [Português (BR)](i18n/ad-banner.pt-br.md) • [Español](i18n/ad-banner.es.md) • [Italiano](i18n/ad-banner.it.md)
+[English](../ad-banner.md) • [Português (BR)](ad-banner.pt-br.md) • [Español](ad-banner.es.md) • [Italiano](ad-banner.it.md)
 
 
 

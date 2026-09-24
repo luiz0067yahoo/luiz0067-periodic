@@ -1,7 +1,7 @@
 # Suíte de Componentes Periodic ⚛️
 
 
-[English](README.md) • [Português (BR)](README.pt-br.md) • [Español](README.es.md) • [Italiano](README.it.md)
+[English](../../README.md) • [Português (BR)](README.pt-br.md) • [Español](README.es.md) • [Italiano](README.it.md)
 
 
 > **Suíte Unificada de 61 Componentes Frontend e Módulos Modulares**  

@@ -6,7 +6,7 @@
 
 # Periodic Accordion
 
-[English](accordion.md) • [Português (BR)](i18n/accordion.pt-br.md) • [Español](i18n/accordion.es.md) • [Italiano](i18n/accordion.it.md)
+[English](../accordion.md) • [Português (BR)](accordion.pt-br.md) • [Español](accordion.es.md) • [Italiano](accordion.it.md)
 
 
 > Consolidated module standardized under namespace `.periodic-accordion`.
@@ -28,7 +28,7 @@ Modern and intuitive WordPress plugin that adds native **Gutenberg** blocks for 
 
 | Gutenberg Editor (Visual Editing) | Responsive Frontend (Bootstrap 5) |
 | :---: | :---: |
-| ![Gutenberg Editor](.wordpress-org/screenshot-1.png) | ![Frontend Preview](.wordpress-org/screenshot-2.png) |
+| ![Gutenberg Editor](../.wordpress-org/screenshot-1.png) | ![Frontend Preview](../.wordpress-org/screenshot-2.png) |
 
 ---
 

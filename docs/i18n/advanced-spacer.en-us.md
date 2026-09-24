@@ -6,7 +6,7 @@
 
 # Periodic Advanced Spacer
 
-[English](advanced-spacer.md) • [Português (BR)](i18n/advanced-spacer.pt-br.md) • [Español](i18n/advanced-spacer.es.md) • [Italiano](i18n/advanced-spacer.it.md)
+[English](../advanced-spacer.md) • [Português (BR)](advanced-spacer.pt-br.md) • [Español](advanced-spacer.es.md) • [Italiano](advanced-spacer.it.md)
 
 
 > Consolidated module standardized under namespace `.periodic-advanced-spacer`.

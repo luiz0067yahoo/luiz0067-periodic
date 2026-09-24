@@ -10,11 +10,80 @@ import {
   ToggleControl,
   Card,
   CardBody,
-  Notice
+  Notice,
+  CheckboxControl
 } from '@wordpress/components';
 import { useState, useEffect, useRef } from '@wordpress/element';
 import { DEFAULT_ABNT_SCENARIO } from './default-data';
 import './editor.scss';
+
+export const KEY_OPTIONS = [
+  // Teclas Alfanuméricas (A-Z)
+  ...('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(char => ({
+    label: `Letra: ${char}`,
+    value: char,
+    code: `Key${char}`,
+    category: 'Alfanuméricas'
+  }))),
+  // Números (0-9)
+  ...('0123456789'.split('').map(digit => ({
+    label: `Número: ${digit}`,
+    value: digit,
+    code: `Digit${digit}`,
+    category: 'Alfanuméricas'
+  }))),
+  // Teclas de Função (F1 - F12)
+  ...Array.from({ length: 12 }, (_, i) => ({
+    label: `F${i + 1}`,
+    value: `F${i + 1}`,
+    code: `F${i + 1}`,
+    category: 'Teclas de Função'
+  })),
+  // Teclas de Navegação e Edição
+  { label: 'Home', value: 'Home', code: 'Home', category: 'Navegação e Edição' },
+  { label: 'End', value: 'End', code: 'End', category: 'Navegação e Edição' },
+  { label: 'Delete', value: 'Delete', code: 'Delete', category: 'Navegação e Edição' },
+  { label: 'Page Up', value: 'PageUp', code: 'PageUp', category: 'Navegação e Edição' },
+  { label: 'Page Down', value: 'PageDown', code: 'PageDown', category: 'Navegação e Edição' },
+  { label: 'Seta Acima (Arrow Up)', value: 'ArrowUp', code: 'ArrowUp', category: 'Navegação e Edição' },
+  { label: 'Seta Abaixo (Arrow Down)', value: 'ArrowDown', code: 'ArrowDown', category: 'Navegação e Edição' },
+  { label: 'Seta Esquerda (Arrow Left)', value: 'ArrowLeft', code: 'ArrowLeft', category: 'Navegação e Edição' },
+  { label: 'Seta Direita (Arrow Right)', value: 'ArrowRight', code: 'ArrowRight', category: 'Navegação e Edição' },
+  { label: 'Enter', value: 'Enter', code: 'Enter', category: 'Navegação e Edição' },
+  { label: 'Tab', value: 'Tab', code: 'Tab', category: 'Navegação e Edição' },
+  { label: 'Escape (Esc)', value: 'Escape', code: 'Escape', category: 'Navegação e Edição' },
+  { label: 'Espaço (Space)', value: ' ', code: 'Space', category: 'Navegação e Edição' },
+  { label: 'Backspace', value: 'Backspace', code: 'Backspace', category: 'Navegação e Edição' }
+];
+
+export const MOUSE_ACTION_OPTIONS = [
+  { label: 'Botão Primário (Esquerdo)', value: 'click-primary', button: 0 },
+  { label: 'Botão Secundário (Direito)', value: 'click-secondary', button: 2 },
+  { label: 'Botão do Meio (Scroll Click)', value: 'click-middle', button: 1 },
+  { label: 'Rolagem do Scroll para Cima (Scroll Up)', value: 'scroll-up', button: 0 },
+  { label: 'Rolagem do Scroll para Baixo (Scroll Down)', value: 'scroll-down', button: 0 }
+];
+
+export function getShortcutDisplay(el) {
+  const parts = [];
+  if (el.ctrlKey) parts.push('Ctrl');
+  if (el.shiftKey) parts.push('Shift');
+  if (el.altKey) parts.push('Alt');
+  const found = KEY_OPTIONS.find(k => k.value === el.key || k.code === el.code);
+  const keyLabel = found ? (found.label.includes(': ') ? found.label.split(': ')[1] : found.label) : (el.key || 'T');
+  parts.push(keyLabel);
+  return parts.join(' + ');
+}
+
+export function getMouseActionDisplay(el) {
+  const parts = [];
+  if (el.ctrlKey) parts.push('Ctrl');
+  if (el.shiftKey) parts.push('Shift');
+  if (el.altKey) parts.push('Alt');
+  const found = MOUSE_ACTION_OPTIONS.find(m => m.value === (el.mouseAction || 'click-primary'));
+  parts.push(found ? found.label : 'Botão Primário');
+  return parts.join(' + ');
+}
 
 const RESIZE_HANDLES_DEF = [
   { dir: 'nw', title: 'Noroeste', style: { top: 0, left: 0, right: 'auto', bottom: 'auto', transform: 'translate(-50%, -50%)', cursor: 'nwse-resize' } },
@@ -133,14 +202,21 @@ export default function Edit({ attributes, setAttributes }) {
       id: `el-${Date.now()}`,
       type: type,
       top: 40,
-      left: type === 'drag' ? 25 : 40,
-      width: type === 'click' ? 12 : (type === 'drag' ? 14 : 20),
-      height: type === 'click' ? 6 : (type === 'drag' ? 8 : 5),
+      left: type === 'drag' ? 25 : (type === 'keyboard' ? 35 : 40),
+      width: type === 'click' ? 12 : (type === 'drag' ? 14 : (type === 'keyboard' ? 26 : 20)),
+      height: type === 'click' ? 6 : (type === 'drag' ? 8 : (type === 'keyboard' ? 7 : 5)),
       label: type === 'click'
         ? 'Novo Hotspot de Clique'
-        : (type === 'drag' ? 'Novo Item Drag & Drop' : 'Novo Campo de Digitação'),
+        : (type === 'drag' ? 'Novo Item Drag & Drop' : (type === 'keyboard' ? 'Atalho: Ctrl + T' : 'Novo Campo de Digitação')),
       expectedValue: type === 'input' ? 'Word' : '',
       placeholder: type === 'input' ? 'Digite aqui...' : '',
+      mouseAction: 'click-primary',
+      button: 0,
+      ctrlKey: type === 'keyboard' ? true : false,
+      shiftKey: false,
+      altKey: false,
+      key: 'T',
+      code: 'KeyT',
       targetStepIndex: activeStepIndex + 1
     };
 
@@ -153,6 +229,18 @@ export default function Edit({ attributes, setAttributes }) {
         targetLeft: 60,
         targetWidth: 16,
         targetHeight: 12
+      };
+    }
+
+    if (type === 'keyboard') {
+      newEl = {
+        ...newEl,
+        label: 'Atalho: Ctrl + T',
+        ctrlKey: true,
+        shiftKey: false,
+        altKey: false,
+        key: 'T',
+        code: 'KeyT'
       };
     }
 
@@ -925,13 +1013,13 @@ export default function Edit({ attributes, setAttributes }) {
             title={`${__('Camadas Interativas do Passo', 'simulador-software-abnt')} (${(currentStep.elements || []).length})`}
             initialOpen={true}
           >
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '6px', marginBottom: '14px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px', marginBottom: '14px' }}>
               <Button
                 variant="secondary"
                 icon="admin-links"
                 onClick={() => handleAddElement('click')}
-                style={{ padding: '6px 8px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
-                title={__('Adicionar Hotspot de Clique', 'simulador-software-abnt')}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
+                title={__('Adicionar Hotspot de Clique / Mouse', 'simulador-software-abnt')}
               >
                 {__('+ Clique', 'simulador-software-abnt')}
               </Button>
@@ -939,7 +1027,7 @@ export default function Edit({ attributes, setAttributes }) {
                 variant="secondary"
                 icon="edit"
                 onClick={() => handleAddElement('input')}
-                style={{ padding: '6px 8px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
                 title={__('Adicionar Campo de Digitação', 'simulador-software-abnt')}
               >
                 {__('+ Input', 'simulador-software-abnt')}
@@ -948,7 +1036,7 @@ export default function Edit({ attributes, setAttributes }) {
                 variant="secondary"
                 icon="move"
                 onClick={() => handleAddElement('drag')}
-                style={{ padding: '6px 8px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
                 title={__('Adicionar Drag & Drop', 'simulador-software-abnt')}
               >
                 {__('+ Drag', 'simulador-software-abnt')}
@@ -957,10 +1045,19 @@ export default function Edit({ attributes, setAttributes }) {
                 variant="secondary"
                 icon="format-image"
                 onClick={() => handleAddElement('image')}
-                style={{ padding: '6px 8px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px' }}
                 title={__('Adicionar Imagem Sobreposta com Animação', 'simulador-software-abnt')}
               >
                 {__('+ Imagem', 'simulador-software-abnt')}
+              </Button>
+              <Button
+                variant="secondary"
+                icon="keyboard"
+                onClick={() => handleAddElement('keyboard')}
+                style={{ padding: '6px 4px', fontSize: '11px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '36px', gridColumn: 'span 2', background: '#fffbeb', borderColor: '#fde68a', color: '#b45309' }}
+                title={__('Adicionar Evento / Atalho Exclusivo de Teclado', 'simulador-software-abnt')}
+              >
+                {__('⌨️ + Teclado', 'simulador-software-abnt')}
               </Button>
             </div>
 
@@ -974,7 +1071,7 @@ export default function Edit({ attributes, setAttributes }) {
                 >
                   <div className="sim-element-header">
                     <strong>
-                      {el.type === 'click' ? '🎯 Clique: ' : (el.type === 'drag' ? '✋ Drag: ' : (el.type === 'image' ? '🖼️ Imagem: ' : '⌨️ Input: '))}
+                      {el.type === 'click' ? '🎯 Clique: ' : (el.type === 'drag' ? '✋ Drag: ' : (el.type === 'image' ? '🖼️ Imagem: ' : (el.type === 'keyboard' ? '⌨️ Teclado: ' : '✏️ Input: ')))}
                       {el.label || `Elemento ${elIdx + 1}`}
                     </strong>
                     <Button
@@ -999,12 +1096,136 @@ export default function Edit({ attributes, setAttributes }) {
                     label={__('Tipo de Interação', 'simulador-software-abnt')}
                     value={el.type}
                     options={[
-                      { label: __('Área de Clique (Hotspot)', 'simulador-software-abnt'), value: 'click' },
+                      { label: __('Área de Clique / Mouse (Hotspot)', 'simulador-software-abnt'), value: 'click' },
                       { label: __('Caixa de Texto (Input com Enter)', 'simulador-software-abnt'), value: 'input' },
-                      { label: __('Arrastar e Soltar (Drag and Drop)', 'simulador-software-abnt'), value: 'drag' }
+                      { label: __('Arrastar e Soltar (Drag and Drop)', 'simulador-software-abnt'), value: 'drag' },
+                      { label: __('Imagem Sobreposta (Animação)', 'simulador-software-abnt'), value: 'image' },
+                      { label: __('Atalho de Teclado (Evento de Teclado)', 'simulador-software-abnt'), value: 'keyboard' }
                     ]}
                     onChange={(val) => handleUpdateElement(el.id, { type: val })}
                   />
+
+                  {el.type === 'click' && (
+                    <div style={{ marginTop: '10px', padding: '10px', background: '#eff6ff', borderRadius: '6px', border: '1px solid #bfdbfe', marginBottom: '12px' }}>
+                      <label style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#1d4ed8', display: 'block', marginBottom: '8px' }}>
+                        {__('🖱️ Ação do Mouse & Modificadores', 'simulador-software-abnt')}
+                      </label>
+                      <SelectControl
+                        label={__('Tipo de Ação do Mouse', 'simulador-software-abnt')}
+                        value={el.mouseAction || 'click-primary'}
+                        options={MOUSE_ACTION_OPTIONS.map(opt => ({ label: opt.label, value: opt.value }))}
+                        onChange={(val) => {
+                          const opt = MOUSE_ACTION_OPTIONS.find(o => o.value === val);
+                          handleUpdateElement(el.id, {
+                            mouseAction: val,
+                            button: opt ? opt.button : 0
+                          });
+                        }}
+                      />
+                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#334155', display: 'block', marginTop: '6px', marginBottom: '4px' }}>
+                        {__('Teclas Modificadoras Requeridas:', 'simulador-software-abnt')}
+                      </label>
+                      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '8px' }}>
+                        <CheckboxControl
+                          label="Ctrl"
+                          checked={!!el.ctrlKey}
+                          onChange={(val) => handleUpdateElement(el.id, { ctrlKey: val })}
+                        />
+                        <CheckboxControl
+                          label="Shift"
+                          checked={!!el.shiftKey}
+                          onChange={(val) => handleUpdateElement(el.id, { shiftKey: val })}
+                        />
+                        <CheckboxControl
+                          label="Alt"
+                          checked={!!el.altKey}
+                          onChange={(val) => handleUpdateElement(el.id, { altKey: val })}
+                        />
+                      </div>
+                      <div style={{ padding: '6px 8px', background: '#ffffff', borderRadius: '4px', border: '1px solid #93c5fd', fontSize: '11px', color: '#1e3a8a' }}>
+                        {__('Pré-visualização da Ação:', 'simulador-software-abnt')} <strong>{getMouseActionDisplay(el)}</strong>
+                      </div>
+                    </div>
+                  )}
+
+                  {el.type === 'keyboard' && (
+                    <div style={{ marginTop: '10px', padding: '10px', background: '#fffbeb', borderRadius: '6px', border: '1px solid #fde68a', marginBottom: '12px' }}>
+                      <label style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#b45309', display: 'block', marginBottom: '8px' }}>
+                        {__('⌨️ Configuração do Atalho de Teclado', 'simulador-software-abnt')}
+                      </label>
+                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#334155', display: 'block', marginBottom: '4px' }}>
+                        {__('Teclas Modificadoras (Combine uma ou mais):', 'simulador-software-abnt')}
+                      </label>
+                      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '10px' }}>
+                        <CheckboxControl
+                          label="Ctrl"
+                          checked={!!el.ctrlKey}
+                          onChange={(val) => {
+                            const updated = { ...el, ctrlKey: val };
+                            handleUpdateElement(el.id, {
+                              ctrlKey: val,
+                              label: `Atalho: ${getShortcutDisplay(updated)}`
+                            });
+                          }}
+                        />
+                        <CheckboxControl
+                          label="Shift"
+                          checked={!!el.shiftKey}
+                          onChange={(val) => {
+                            const updated = { ...el, shiftKey: val };
+                            handleUpdateElement(el.id, {
+                              shiftKey: val,
+                              label: `Atalho: ${getShortcutDisplay(updated)}`
+                            });
+                          }}
+                        />
+                        <CheckboxControl
+                          label="Alt"
+                          checked={!!el.altKey}
+                          onChange={(val) => {
+                            const updated = { ...el, altKey: val };
+                            handleUpdateElement(el.id, {
+                              altKey: val,
+                              label: `Atalho: ${getShortcutDisplay(updated)}`
+                            });
+                          }}
+                        />
+                      </div>
+
+                      <SelectControl
+                        label={__('Tecla Principal:', 'simulador-software-abnt')}
+                        value={el.key || 'T'}
+                        options={KEY_OPTIONS.map(k => ({
+                          label: `[${k.category}] ${k.label}`,
+                          value: k.value
+                        }))}
+                        onChange={(val) => {
+                          const found = KEY_OPTIONS.find(k => k.value === val);
+                          const updated = {
+                            ...el,
+                            key: val,
+                            code: found ? found.code : `Key${val.toUpperCase()}`
+                          };
+                          handleUpdateElement(el.id, {
+                            key: val,
+                            code: found ? found.code : `Key${val.toUpperCase()}`,
+                            label: `Atalho: ${getShortcutDisplay(updated)}`
+                          });
+                        }}
+                      />
+
+                      <div style={{ marginTop: '8px', padding: '8px 10px', background: '#1e293b', borderRadius: '6px', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{ fontSize: '11px', color: '#94a3b8' }}>{__('Pré-visualização:', 'simulador-software-abnt')}</span>
+                        <span style={{ fontSize: '12px', fontWeight: 700, color: '#fbbf24', fontFamily: 'monospace', letterSpacing: '0.5px' }}>
+                          {getShortcutDisplay(el)}
+                        </span>
+                      </div>
+
+                      <p style={{ margin: '8px 0 0 0', fontSize: '10px', color: '#78350f', lineHeight: 1.4 }}>
+                        {__('💡 Exemplos suportados: Ctrl + C, Ctrl + T, Alt + A, Shift + Seta Direita, F1..F12, Shift + Delete, Ctrl + Home, Ctrl + End, Shift + Page Up, Ctrl + Shift + Alt + T.', 'simulador-software-abnt')}
+                      </p>
+                    </div>
+                  )}
 
                   {el.type === 'drag' && (
                     <>
@@ -1766,14 +1987,22 @@ export default function Edit({ attributes, setAttributes }) {
                                 <line x1="12" y1="2" x2="12" y2="22"></line>
                               </svg>
                               <span className="sim-move-text">
-                                {el.type === 'click' ? '🎯 Mover Clique' : (el.type === 'drag' ? '✋ Mover Drag' : (el.type === 'image' ? '🖼️ Mover Imagem' : '⌨️ Mover Input'))}
+                                {el.type === 'click' ? '🎯 Mover Clique' : (el.type === 'drag' ? '✋ Mover Drag' : (el.type === 'image' ? '🖼️ Mover Imagem' : (el.type === 'keyboard' ? '⌨️ Mover Atalho' : '⌨️ Mover Input')))}
                               </span>
                             </div>
 
                             <span className="sim-element-badge">
-                              {el.type === 'click' ? '🎯 ' : (el.type === 'drag' ? '✋ ' : (el.type === 'image' ? '🖼️ ' : '⌨️ '))}
-                              {el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`}
+                              {el.type === 'click' ? `🎯 ${getMouseActionDisplay(el)}` : (el.type === 'drag' ? '✋ ' : (el.type === 'image' ? '🖼️ ' : (el.type === 'keyboard' ? `⌨️ ${getShortcutDisplay(el)}` : '⌨️ ')))}
+                              {el.type !== 'click' && el.type !== 'keyboard' && (el.label || `${el.type} (${el.left.toFixed(1)}%, ${el.top.toFixed(1)}%)`)}
                             </span>
+
+                            {el.type === 'keyboard' && (
+                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', background: 'rgba(245, 158, 11, 0.15)', border: '1px dashed #f59e0b', borderRadius: '4px', padding: '2px', boxSizing: 'border-box' }}>
+                                <span style={{ fontSize: '11px', fontWeight: 700, color: '#b45309', fontFamily: 'monospace' }}>
+                                  ⌨️ {getShortcutDisplay(el)}
+                                </span>
+                              </div>
+                            )}
 
                             {el.type === 'image' && (
                               el.imageUrl ? (
@@ -1793,12 +2022,12 @@ export default function Edit({ attributes, setAttributes }) {
                             {isSelected && (
                               <>
                                 <span className="sim-coords-badge">
-                                  {el.type === 'click' ? '🎯 Clique' : (el.type === 'drag' ? '✋ Drag' : (el.type === 'image' ? '🖼️ Imagem' : '⌨️ Input'))}: X: {el.left.toFixed(1)}% Y: {el.top.toFixed(1)}% | L: {el.width.toFixed(1)}% A: {el.height.toFixed(1)}%
+                                  {el.type === 'click' ? '🎯 Clique' : (el.type === 'drag' ? '✋ Drag' : (el.type === 'image' ? '🖼️ Imagem' : (el.type === 'keyboard' ? '⌨️ Atalho' : '⌨️ Input')))}: X: {el.left.toFixed(1)}% Y: {el.top.toFixed(1)}% | L: {el.width.toFixed(1)}% A: {el.height.toFixed(1)}%
                                 </span>
 
                                 {/* 8 Resize Handles */}
                                 {RESIZE_HANDLES_DEF.map((h) => {
-                                  const handleColor = el.type === 'click' ? '#2563eb' : (el.type === 'input' ? '#059669' : (el.type === 'drag' ? '#7c3aed' : '#0284c7'));
+                                  const handleColor = el.type === 'click' ? '#2563eb' : (el.type === 'input' ? '#059669' : (el.type === 'drag' ? '#7c3aed' : (el.type === 'keyboard' ? '#d97706' : '#0284c7')));
                                   return (
                                     <div
                                       key={h.dir}
